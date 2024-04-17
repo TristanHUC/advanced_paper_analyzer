@@ -1,0 +1,15 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Muran Trus
+    given-names: Anastasia
+  - family-names: Gonzalez Mendez
+    given-names: Alvaro
+  - family-names: Hucher
+    given-names: Tristan
+title: "Advanced Paper Analizer"
+version: 0.1.0-alpha
+identifiers:
+  - type: doi
+    value: x
+date-released: 2024-04-17
