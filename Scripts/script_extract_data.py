@@ -1,5 +1,5 @@
 from lxml import etree
-from utils import extract_text
+from utils import extract_text, extract_arXiv_id
 import sys
 
 input_name = sys.argv[1]
@@ -32,7 +32,13 @@ for author in root[0][0][2][0][0]:
 abstract = ''
 abstract = extract_text(root[0][2])
 
+
+#extract ID_arXiv
+list_ID_arXiv = extract_arXiv_id(root)
+
+
 print(Title)
 print(Date)
 print(Authors)
 print(abstract)
+print(list_ID_arXiv)

@@ -13,7 +13,6 @@ def extract_text(element):
 def look_for_links(element):
     list = []
     if element.tag.endswith('ptr'):
-    #    print(element.tag)
         if element.attrib.get('target','default')[0:4] == 'http':
             list.append(element.attrib['target'])
     for child in element:
@@ -78,3 +77,22 @@ def count_figure(file_path):
     #            nb_figure+=1
 
     return nb_figure
+
+
+def extract_arXiv_id(root):
+    list_ID_arXiv = []
+    #root[2][1] is the 'back' element of the XML tree
+    for div in root[2][1]:
+        if div.get('type') == "references":
+            for ListBibli in div:
+                if ListBibli.tag[29:] == R'listBibl':
+                    for bibli in ListBibli:
+                        for child in bibli:
+                            if child.tag[29:] == R'monogr' or child.tag[29:] == R'analytic':
+                                for element in child:
+                                    if element.tag[29:] == R'idno':
+                                        if element.text[:5].lower() == R'arxiv' and (len(element.text) == 16 or len(element.text) == 15):
+                                            list_ID_arXiv.append(element.text[6:])
+                                        elif len(element.text) == 10:
+                                            list_ID_arXiv.append(element.text)
+    return list_ID_arXiv
