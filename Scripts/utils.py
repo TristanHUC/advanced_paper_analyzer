@@ -1,4 +1,5 @@
 from lxml import etree
+import numpy as np
 def extract_text(element):
     text = ''
     if element.text:
@@ -93,8 +94,11 @@ def extract_arXiv_id(root):
                                     if element.tag[29:] == R'idno':
                                         if element.text[:5].lower() == R'arxiv' and (len(element.text) == 16 or len(element.text) == 15):
                                             list_ID_arXiv.append(element.text[6:])
-                                        elif len(element.text) == 10:
+                                        elif element.get('type') == "arXiv" and len(element.text) < 11:
                                             list_ID_arXiv.append(element.text)
+                                        elif element.get('type') == "DOI" and len(element.text) < 11:
+                                            list_ID_arXiv.append(element.text[:7])
+
     return list_ID_arXiv
 
 
@@ -122,3 +126,7 @@ def remove_stopwords(text):
 # text is a collection of non-stopwords (in lowercase)
 # now join the words with space separator and return them as a string
     return " ".join(text)
+
+
+def cosine(u, v):
+    return np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))

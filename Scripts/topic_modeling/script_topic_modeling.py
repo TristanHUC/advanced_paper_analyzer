@@ -16,8 +16,6 @@ def topic_classification(title,path_directory):
     all_abstracts = ''
     for filename in os.listdir(path_directory):
         i += 1
-        file_path = os.path.join(path_directory, filename)
-        reduced_filename = filename[10:15]
         path_to_file = '../Grobid_processed_pdf/' + filename
         tree = etree.parse(path_to_file)
 

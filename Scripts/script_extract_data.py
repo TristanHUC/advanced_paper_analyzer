@@ -1,6 +1,7 @@
 from lxml import etree
 from utils import extract_text, extract_arXiv_id
 from topic_modeling.script_topic_modeling import topic_classification
+from similarity.Script_similarity import pdf_similarity
 import sys
 
 input_name = sys.argv[1]
@@ -12,11 +13,11 @@ tree = etree.parse(path_to_file)
 root = tree.getroot()
 
 Title = root[0][0][0][0].text
-Date = root[0][0][1][2].text
 
-#extract abstract
-abstract = ''
-abstract = extract_text(root[0][2])
+try :
+    Date = root[0][0][1][2].text
+except:
+    Date = None
 
 Authors = {}
 for author in root[0][0][2][0][0]:
@@ -36,10 +37,13 @@ list_ID_arXiv = extract_arXiv_id(root)
 #topics modeling and classification
 topics = topic_classification(Title,"../Grobid_processed_pdf")
 
+#compute the similarity between this paper and all the others
+similarities = pdf_similarity(Title,"../Grobid_processed_pdf")
+
 
 print(Title)
 print(Date)
-#print(abstract)
 print(Authors)
 print(list_ID_arXiv)
 print(topics)
+print(similarities)
