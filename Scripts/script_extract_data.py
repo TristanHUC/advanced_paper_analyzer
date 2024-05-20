@@ -1,5 +1,6 @@
 from lxml import etree
-from utils import extract_text, extract_arXiv_id, text_to_ListSentences, remove_stopwords
+from utils import extract_text, extract_arXiv_id
+from topic_modeling.script_topic_modeling import topic_classification
 import sys
 
 input_name = sys.argv[1]
@@ -10,10 +11,12 @@ tree = etree.parse(path_to_file)
 
 root = tree.getroot()
 
-
 Title = root[0][0][0][0].text
 Date = root[0][0][1][2].text
 
+#extract abstract
+abstract = ''
+abstract = extract_text(root[0][2])
 
 Authors = {}
 for author in root[0][0][2][0][0]:
@@ -27,34 +30,16 @@ for author in root[0][0][2][0][0]:
     except :
         None
 
-
-#extract abstract
-abstract = ''
-abstract = extract_text(root[0][2])
-
-
 #extract ID_arXiv
 list_ID_arXiv = extract_arXiv_id(root)
 
-#pre-process the abstract for topic modeling
-pre_processed_abstract = remove_stopwords(abstract)
-listSentences = text_to_ListSentences(pre_processed_abstract)
+#topics modeling and classification
+topics = topic_classification(Title,"../Grobid_processed_pdf")
 
-#topic modeling
-from sklearn.decomposition import LatentDirichletAllocation
-from sklearn.feature_extraction.text import CountVectorizer
-
-count_vectorizer = CountVectorizer()
-X = count_vectorizer.fit_transform(listSentences)
-lda = LatentDirichletAllocation(n_components=1, random_state=0)
-lda.fit(X)
-feature_names = count_vectorizer.get_feature_names_out()
-
-topic = " ".join([feature_names[i] for i in lda.components_[0].argsort()[:-6:-1]])
 
 print(Title)
 print(Date)
+#print(abstract)
 print(Authors)
-print(abstract)
 print(list_ID_arXiv)
-print(topic)
+print(topics)
