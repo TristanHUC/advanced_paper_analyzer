@@ -1,0 +1,288 @@
+@prefix ex: <http://example.org/#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Probability a rdfs:Class ;
+    rdfs:label "Probability" ;
+    rdfs:comment "Probabiliti of a given Scholar Article to be of certain topic." .
+
+ex:Similarity a rdfs:Class ;
+    rdfs:label "Similarity" ;
+    rdfs:comment "Similarity between two diferent Scholar Articles." .
+
+ex:Topic a rdfs:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "Topic of a given Scholar Article." .
+
+sch:Organization a rdfs:Class .
+
+sch:Person a rdfs:Class .
+
+sch:Project a rdfs:Class .
+
+sch:ScholarlyArticle a rdfs:Class .
+
+ex:Organization3 a sch:Organization ;
+    ex:hasOrganizationType "Foundation"^^xsd:string ;
+    sch:identifier "ORG-003"^^xsd:string ;
+    sch:legalName "Test Foundation Inc."^^xsd:string ;
+    sch:name "Test Foundation"^^xsd:string ;
+    sch:sameAs "http://www.testfoundation.org"^^xsd:string .
+
+ex:Organization4 a sch:Organization ;
+    ex:hasOrganizationType "Research Institute"^^xsd:string ;
+    sch:identifier "ORG-004"^^xsd:string ;
+    sch:legalName "Trial Research Institute"^^xsd:string ;
+    sch:name "Trial Institute"^^xsd:string ;
+    sch:sameAs "http://www.trialinstitute.edu"^^xsd:string .
+
+ex:Probability1 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.95"^^xsd:float .
+
+ex:Project1 a sch:Project ;
+    sch:dateCreated "2023-01-01"^^xsd:date ;
+    sch:employee ex:Person1 ;
+    sch:identifier "PROJ-001"^^xsd:string ;
+    sch:name "Project Alpha"^^xsd:string .
+
+ex:Project2 a sch:Project ;
+    sch:dateCreated "2023-02-15"^^xsd:date ;
+    sch:employee ex:Person1 ;
+    sch:identifier "PROJ-002"^^xsd:string ;
+    sch:name "Project Beta"^^xsd:string .
+
+ex:Project3 a sch:Project ;
+    sch:dateCreated "2023-03-30"^^xsd:date ;
+    sch:employee ex:Person3 ;
+    sch:identifier "PROJ-003"^^xsd:string ;
+    sch:name "Project Gamma"^^xsd:string .
+
+ex:Similarity1 a ex:Similarity ;
+    ex:firstArticle ex:Article1 ;
+    ex:secondArticle ex:Article2 ;
+    ex:value "0.85"^^xsd:float .
+
+ex:Similarity2 a ex:Similarity ;
+    ex:firstArticle ex:Article2 ;
+    ex:secondArticle ex:Article3 ;
+    ex:value "0.1"^^xsd:float .
+
+ex:Topic1 a ex:Topic ;
+    ex:identifier "TOPIC-001"^^xsd:string ;
+    ex:name "Semantic Web"^^xsd:string .
+
+ex:Topic2 a ex:Topic ;
+    ex:identifier "TOPIC-002"^^xsd:string ;
+    ex:name "Open Science"^^xsd:string .
+
+ex:Topic3 a ex:Topic ;
+    ex:identifier "TOPIC-003"^^xsd:string ;
+    ex:name "Artificial Intellingece"^^xsd:string .
+
+ex:firstArticle a rdf:Property ;
+    rdfs:label "First Article to be compared" ;
+    rdfs:comment "First Article to be compared by the similarity." ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:hasArticle a rdf:Property ;
+    rdfs:label "Article of a probabilty" ;
+    rdfs:comment "Indicates the article of an probabiliy." ;
+    rdfs:domain ex:Probability ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:hasOrganizationType a rdf:Property ;
+    rdfs:label "Organization Type" ;
+    rdfs:comment "The type of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string .
+
+ex:hasTopic a rdf:Property ;
+    rdfs:label "Topic of a probabilty" ;
+    rdfs:comment "Topic the article of an probabiliy." ;
+    rdfs:domain ex:Probability ;
+    rdfs:range ex:Topic .
+
+ex:identifier a rdf:Property ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "The identifier of a given topic." ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string .
+
+ex:name a rdf:Property ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of topic." ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string .
+
+ex:probabilityValue a rdf:Property ;
+    rdfs:label "Value of the Probability" ;
+    rdfs:comment "Probability of being a topic of a given Article." ;
+    rdfs:domain ex:Probability ;
+    rdfs:range xsd:float .
+
+ex:reference a rdf:Property ;
+    rdfs:label "Reference" ;
+    rdfs:comment "Reference of an Article from another Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:secondArticle a rdf:Property ;
+    rdfs:label "Second Article to be compared" ;
+    rdfs:comment "Second Article to be compared by the similarity." ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:value a rdf:Property ;
+    rdfs:label "Value of the similarity" ;
+    rdfs:comment "Value of the similarity between two Articles." ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range xsd:float .
+
+sch:about a rdf:Property ;
+    rdfs:label "Main title" ;
+    rdfs:comment "Main title of a given Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range xsd:string .
+
+sch:affiliation a rdf:Property ;
+    rdfs:label "Affiliation to an organization" ;
+    rdfs:comment "The given person is afiliated to the given organization." ;
+    rdfs:domain sch:Person ;
+    rdfs:range sch:Organization .
+
+sch:author a rdf:Property ;
+    rdfs:label "Author of an Article" ;
+    rdfs:comment "Indicates author (organization) of an Article.",
+        "Indicates author (person) of an Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Organization,
+        sch:Person .
+
+sch:employee a rdf:Property ;
+    rdfs:label "Employee" ;
+    rdfs:comment "Indicates employment of a person to a given project." ;
+    rdfs:domain sch:Project ;
+    rdfs:range sch:Person .
+
+sch:funder a rdf:Property ;
+    rdfs:label "Founder of an Article" ;
+    rdfs:comment "Indicates founder organization of an Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Organization .
+
+sch:identifier a rdf:Property ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "Identifier of a given Article.",
+        "Identifier of a given Organization.",
+        "Identifier of a given Project." ;
+    rdfs:domain sch:Organization,
+        sch:Project,
+        sch:ScholarlyArticle ;
+    rdfs:range xsd:string .
+
+sch:legalName a rdf:Property ;
+    rdfs:label "Legal Name" ;
+    rdfs:comment "Legal Name of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string .
+
+sch:name a rdf:Property ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of a Project.",
+        "The name of a person." ;
+    rdfs:domain sch:Person,
+        sch:Project ;
+    rdfs:range xsd:string .
+
+sch:nationality a rdf:Property ;
+    rdfs:label "Nationality" ;
+    rdfs:comment "Nationality of a given person." ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string .
+
+sch:orcid a rdf:Property ;
+    rdfs:label "ORCID" ;
+    rdfs:comment "Website of a given Organization." ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string .
+
+sch:sameAs a rdf:Property ;
+    rdfs:label "DOI",
+        "Website" ;
+    rdfs:comment "DOI of a given Article.",
+        "Website of a given Organization." ;
+    rdfs:domain sch:Organization,
+        sch:ScholarlyArticle ;
+    rdfs:range xsd:string .
+
+ex:Organization5 a sch:Organization ;
+    ex:hasOrganizationType "Association"^^xsd:string ;
+    sch:identifier "ORG-005"^^xsd:string ;
+    sch:legalName "Demo Association Group"^^xsd:string ;
+    sch:name "Demo Association"^^xsd:string ;
+    sch:sameAs "http://www.demoassociation.org"^^xsd:string .
+
+ex:Person2 a sch:Person ;
+    sch:name "Bob Johnson"^^xsd:string ;
+    sch:nationality "Canada"^^xsd:string ;
+    sch:orcid "0000-0003-1825-0098"^^xsd:string .
+
+ex:Topic4 a ex:Topic ;
+    ex:identifier "TOPIC-004"^^xsd:string ;
+    ex:name "Data Mining"^^xsd:string .
+
+ex:Article1 a sch:ScholarlyArticle ;
+    ex:reference ex:Article3 ;
+    sch:about "Título del Artículo 1"^^xsd:string ;
+    sch:author ex:Person2 ;
+    sch:dateCreated "2023-05-21"^^xsd:date ;
+    sch:funder ex:Organization5 ;
+    sch:identifier "ART-001"^^xsd:string ;
+    sch:sameAs "10.1234/example.doi1"^^xsd:string .
+
+ex:Article2 a sch:ScholarlyArticle ;
+    sch:about "Título del Artículo 2"^^xsd:string ;
+    sch:author ex:Person1 ;
+    sch:dateCreated "2023-06-15"^^xsd:date ;
+    sch:funder ex:Organization1 ;
+    sch:identifier "ART-002"^^xsd:string ;
+    sch:sameAs "10.5678/example.doi2"^^xsd:string .
+
+ex:Article3 a sch:ScholarlyArticle ;
+    sch:about "Título del Artículo 3"^^xsd:string ;
+    sch:author ex:Person3 ;
+    sch:dateCreated "2023-07-30"^^xsd:date ;
+    sch:funder ex:Organization2 ;
+    sch:identifier "ART-003"^^xsd:string ;
+    sch:sameAs "10.9012/example.doi3"^^xsd:string .
+
+ex:Organization1 a sch:Organization ;
+    ex:hasOrganizationType "Corporation"^^xsd:string ;
+    sch:identifier "ORG-001"^^xsd:string ;
+    sch:legalName "Example Corporation"^^xsd:string ;
+    sch:name "Example Corp"^^xsd:string ;
+    sch:sameAs "http://www.example.com"^^xsd:string .
+
+ex:Organization2 a sch:Organization ;
+    ex:hasOrganizationType "Limited Liability Company"^^xsd:string ;
+    sch:identifier "ORG-002"^^xsd:string ;
+    sch:legalName "Sample Limited Liability Company"^^xsd:string ;
+    sch:name "Sample LLC"^^xsd:string ;
+    sch:sameAs "http://www.samplellc.com"^^xsd:string .
+
+ex:Person3 a sch:Person ;
+    sch:affiliation ex:Organization2 ;
+    sch:name "Carol Williams"^^xsd:string ;
+    sch:nationality "United Kingdom"^^xsd:string ;
+    sch:orcid "0000-0004-1825-0099"^^xsd:string .
+
+ex:Person1 a sch:Person ;
+    sch:affiliation ex:Organization1 ;
+    sch:name "Alice Smith"^^xsd:string ;
+    sch:orcid "0000-0002-1825-0097"^^xsd:string .
+

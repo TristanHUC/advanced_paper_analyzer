@@ -1,0 +1,196 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/#> .
+@prefix sch: <http://schema.org/> .
+
+# Clases
+ex:Similarity a rdfs:Class ;
+    rdfs:label "Similarity" ;
+    rdfs:comment "Similarity between two diferent Scholar Articles." .
+
+ex:Topic a rdfs:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "Topic of a given Scholar Article." .
+
+ex:Probability a rdfs:Class ;
+    rdfs:label "Probability" ;
+    rdfs:comment "Probabiliti of a given Scholar Article to be of certain topic." .
+
+sch:Person a rdfs:Class .
+
+sch:Organization a rdfs:Class .
+
+sch:ScholarlyArticle a rdfs:Class .
+
+sch:Project a rdfs:Class .
+
+####### Propiedades
+
+sch:name a rdf:Property ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of a person." .
+
+sch:orcid a rdf:Property ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string;
+    rdfs:label "ORCID" ;
+    rdfs:comment "Website of a given Organization." .
+
+sch:nationality a rdf:Property ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "Nationality" ;
+    rdfs:comment "Nationality of a given person." .
+
+
+sch:identifier a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "Identifier of a given Organization." .
+
+sch:legalName a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "Legal Name" ;
+    rdfs:comment "Legal Name of a given Organization." .
+
+sch:sameAs a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string;
+    rdfs:label "Website" ;
+    rdfs:comment "Website of a given Organization." .
+
+ex:hasOrganizationType a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string;
+    rdfs:label "Organization Type" ;
+    rdfs:comment "The type of a given Organization." .
+
+
+sch:name a rdf:Property ;
+    rdfs:domain sch:Project ;
+    rdfs:range xsd:string ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of a Project." .
+
+sch:identifier a rdf:Property ;
+    rdfs:domain sch:Project ;
+    rdfs:range xsd:string ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "Identifier of a given Project." .
+
+
+ex:name a rdf:Property ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of topic." .
+
+ex:identifier a rdf:Property ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "The identifier of a given topic." .
+
+
+ex:value a rdf:Property ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range xsd:float ;
+    rdfs:label "Value of the similarity" ;
+    rdfs:comment "Value of the similarity between two Articles." .
+
+ex:firstArticle a rdf:Property ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range sch:ScholarlyArticle ;
+    rdfs:label "First Article to be compared" ;
+    rdfs:comment "First Article to be compared by the similarity." .
+
+ex:secondArticle a rdf:Property ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range sch:ScholarlyArticle ;
+    rdfs:label "Second Article to be compared" ;
+    rdfs:comment "Second Article to be compared by the similarity." .
+
+
+sch:about a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range xsd:string;
+    rdfs:label "Main title" ;
+    rdfs:comment "Main title of a given Article." .
+
+sch:identifier a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range xsd:string;
+    rdfs:label "Identifier" ;
+    rdfs:comment "Identifier of a given Article." .
+
+sch:sameAs a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range xsd:string;
+    rdfs:label "DOI" ;
+    rdfs:comment "DOI of a given Article." .
+
+ex:reference a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:ScholarlyArticle;
+    rdfs:label "Reference" ;
+    rdfs:comment "Reference of an Article from another Article." .
+
+
+ex:probabilityValue a rdf:Property ;
+    rdfs:domain ex:Probability ;
+    rdfs:range xsd:float;
+    rdfs:label "Value of the Probability" ;
+    rdfs:comment "Probability of being a topic of a given Article." .
+
+
+############## Porperties between classes
+
+sch:affiliation a rdf:Property ;
+    rdfs:domain sch:Person ;
+    rdfs:range sch:Organization;
+    rdfs:label "Affiliation to an organization" ;
+    rdfs:comment "The given person is afiliated to the given organization." .
+
+sch:funder a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Organization;
+    rdfs:label "Founder of an Article" ;
+    rdfs:comment "Indicates founder organization of an Article." .
+
+sch:author a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Person;
+    rdfs:label "Author of an Article" ;
+    rdfs:comment "Indicates author (person) of an Article." .
+
+sch:author a rdf:Property ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Organization;
+    rdfs:label "Author of an Article" ;
+    rdfs:comment "Indicates author (organization) of an Article." .
+
+sch:employee a rdf:Property ;
+    rdfs:domain sch:Project ;
+    rdfs:range sch:Person;
+    rdfs:label "Employee" ;
+    rdfs:comment "Indicates employment of a person to a given project." .
+
+ex:hasArticle a rdf:Property ;
+    rdfs:domain ex:Probability ;
+    rdfs:range sch:ScholarlyArticle;
+    rdfs:label "Article of a probabilty" ;
+    rdfs:comment "Indicates the article of an probabiliy." .
+
+ex:hasTopic a rdf:Property ;
+    rdfs:domain ex:Probability ;
+    rdfs:range ex:Topic;
+    rdfs:label "Topic of a probabilty" ;
+    rdfs:comment "Topic the article of an probabiliy." .
+
+
+
