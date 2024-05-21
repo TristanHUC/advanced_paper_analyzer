@@ -1,5 +1,7 @@
 import requests
 from SPARQLWrapper import SPARQLWrapper, JSON
+import os
+from pathlib import Path
 
 # Función para obtener datos de ROR
 def get_ror_data(organization_name):
@@ -72,27 +74,23 @@ def get_names(names_file):
     print(all_names)
     return all_names
 
-# Ejemplo de uso
-organizations = get_names("organizations.txt")
 
-# Recopilación de datos
-for org in organizations:
-    ror_data = get_ror_data(org)
-    wikidata_data = get_wikidata_data(org)
+def get_organization_data(title):
+    organizations = get_names(os.path.join("results", title, "organizations.txt"))
 
-    print(f"Organization: {org}")
-    print("ROR Data:")
-    if ror_data:
-        for key, value in ror_data.items():
-            print(f"  {key}: {value}")
-    else:
-        print("  No data found in ROR")
+    # Recopilación de datos
+    for org in organizations:
+        ror_data = get_ror_data(org)
+        wikidata_data = get_wikidata_data(org)
 
-    print("Wikidata Data:")
-    if wikidata_data:
-        for key, value in wikidata_data.items():
-            print(f"  {key}: {value}")
-    else:
-        print("  No data found in Wikidata")
+        Path(os.path.join("results", "organizations")).mkdir(parents=True, exist_ok=True)
 
-    print("\n" + "-"*50 + "\n")
+        path = os.path.join("results", "organizations", org)
+        with open(path,"w+") as file:
+            if ror_data:
+                for key, value in ror_data.items():
+                    file.write(f"{key}: {value}\n")
+
+            if wikidata_data:
+                for key, value in wikidata_data.items():
+                    file.write(f"{key}: {value}\n")
