@@ -22,7 +22,7 @@ organization_data = [
     (5, "Demo Association", "ORG-005", "Demo Association Group", "http://www.demoassociation.org", "Association")
 ]
 
-g = dtrdf.create_rdf()
+g = dtrdf.create_rdf(None)
 
 
 # Añadir las personas al grafo
