@@ -5,13 +5,19 @@ NAMESPACE = Namespace("http://example.org/#")
 SCH = Namespace("http://schema.org/")
 
 
-def create_rdf() -> Graph:
+def create_rdf(path) -> Graph:
+
+    if not path:
+        filename = "rdfschema.ttl"
+    else :
+        filename = path+"rdfschema.ttl"
+
     g = Graph()
 
     g.bind("ex", NAMESPACE)
     g.bind("sch", SCH)
 
-    g.parse("rdfschema.ttl",format="turtle")
+    g.parse(filename,format="turtle")
     return g
            
 # Función para añadir una persona al grafo
