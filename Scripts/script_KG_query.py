@@ -2,7 +2,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON, GET
 
 
 # URL of endpoint
-sparql_query_endpoint = "http://localhost:3035/test_creation_dataset/query"
+sparql_query_endpoint = "http://localhost:3035/KG_dataset/query"
 
 # if we want to do a query of the KG
 sparql_query = SPARQLWrapper(sparql_query_endpoint)

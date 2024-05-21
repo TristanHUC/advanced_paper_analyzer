@@ -1,8 +1,9 @@
 from SPARQLWrapper import SPARQLWrapper, POST
 import create_rdf.data_toRDF as dtrdf
 
+
 # URL of endpoint
-sparql_update_endpoint = "http://localhost:3035/test_creation_dataset/update"
+sparql_update_endpoint = "http://localhost:3035/KG_dataset/update"
 
 sparql_update = SPARQLWrapper(sparql_update_endpoint)
 sparql_update.setMethod(POST)
