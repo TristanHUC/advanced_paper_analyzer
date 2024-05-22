@@ -7,7 +7,7 @@ NAMESPACE = Namespace("http://example.org/#")
 SCH = Namespace("http://schema.org/")
 
 
-def create_rdf(path) -> Graph:
+def create_rdf(path = None) -> Graph:
 
     if not path:
         filename = "rdfschema.ttl"
@@ -378,3 +378,4 @@ def make_rdf_file():
     create_org_relations(g)
     create_similarities(g,data_location)
     g.serialize(destination=os.path.join("Scripts","output.ttl"), format="turtle")
+    return g
