@@ -1,0 +1,2756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,64.28,107.03,466.67,12.90">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2021-08-17">17 Aug 2021</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,141.94,147.01,32.21,10.37;1,174.15,145.26,1.99,6.91"><forename type="first">Ze</forename><surname>Liu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,193.58,147.01,54.13,10.37;1,247.71,145.26,2.66,6.91"><forename type="first">Yutong</forename><surname>Lin</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,271.12,147.01,40.84,10.37"><forename type="first">Yue</forename><surname>Cao</surname></persName>
+							<email>yuecao@microsoft.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,331.39,147.01,37.52,10.37"><forename type="first">Han</forename><surname>Hu</surname></persName>
+							<email>hanhu@microsoft.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,392.31,147.01,56.49,10.37;1,448.80,145.26,1.99,6.91"><forename type="first">Yixuan</forename><surname>Wei</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,196.83,160.96,64.08,10.37"><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,275.85,160.96,58.11,10.37"><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,348.91,160.96,61.44,10.37"><forename type="first">Baining</forename><surname>Guo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Microsoft Research Asia</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,64.28,107.03,466.67,12.90">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2021-08-17">17 Aug 2021</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">930F1A33661F56EF6E4BB0BAB3062769</idno>
+					<idno type="arXiv">arXiv:2103.14030v2[cs.CV]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:07+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper presents a new vision Transformer, called Swin Transformer, that capably serves as a general-purpose backbone for computer vision. Challenges in adapting Transformer from language to vision arise from differences between the two domains, such as large variations in the scale of visual entities and the high resolution of pixels in images compared to words in text. To address these differences, we propose a hierarchical Transformer whose representation is computed with Shifted windows. The shifted windowing scheme brings greater efficiency by limiting self-attention computation to non-overlapping local windows while also allowing for cross-window connection. This hierarchical architecture has the flexibility to model at various scales and has linear computational complexity with respect to image size. These qualities of Swin Transformer make it compatible with a broad range of vision tasks, including image classification (87.3 top-1 accuracy on ImageNet-1K) and dense prediction tasks such as object detection (58.7 box AP and 51.1 mask AP on COCO testdev) and semantic segmentation (53.5 mIoU on ADE20K val). Its performance surpasses the previous state-of-theart by a large margin of +2.7 box AP and +2.6 mask AP on COCO, and +3.2 mIoU on ADE20K, demonstrating the potential of Transformer-based models as vision backbones. The hierarchical design and the shifted window approach also prove beneficial for all-MLP architectures. The code and models are publicly available at https://github. com/microsoft/Swin-Transformer.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Modeling in computer vision has long been dominated by convolutional neural networks (CNNs). Beginning with AlexNet <ref type="bibr" coords="1,88.94,659.97,16.60,8.64" target="#b38">[39]</ref> and its revolutionary performance on the ImageNet image classification challenge, CNN architectures have evolved to become increasingly powerful through * Equal contribution. † Interns at MSRA. ‡ Contact person. greater scale <ref type="bibr" coords="1,361.05,497.65,15.77,8.64" target="#b29">[30,</ref><ref type="bibr" coords="1,379.12,497.65,11.83,8.64" target="#b75">76]</ref>, more extensive connections <ref type="bibr" coords="1,509.30,497.65,15.27,8.64" target="#b33">[34]</ref>, and more sophisticated forms of convolution <ref type="bibr" coords="1,472.94,509.61,15.77,8.64" target="#b69">[70,</ref><ref type="bibr" coords="1,491.32,509.61,12.45,8.64" target="#b17">18,</ref><ref type="bibr" coords="1,506.38,509.61,11.83,8.64" target="#b83">84]</ref>. With CNNs serving as backbone networks for a variety of vision tasks, these architectural advances have led to performance improvements that have broadly lifted the entire field.</p><p>On the other hand, the evolution of network architectures in natural language processing (NLP) has taken a different path, where the prevalent architecture today is instead the Transformer <ref type="bibr" coords="1,362.60,595.11,15.27,8.64" target="#b63">[64]</ref>. Designed for sequence modeling and transduction tasks, the Transformer is notable for its use of attention to model long-range dependencies in the data. Its tremendous success in the language domain has led researchers to investigate its adaptation to computer vision, where it has recently demonstrated promising results on certain tasks, specifically image classification <ref type="bibr" coords="1,487.99,666.84,16.60,8.64" target="#b19">[20]</ref> and joint vision-language modeling <ref type="bibr" coords="1,415.12,678.79,15.27,8.64" target="#b46">[47]</ref>.</p><p>In this paper, we seek to expand the applicability of Transformer such that it can serve as a general-purpose backbone for computer vision, as it does for NLP and as CNNs do in vision. We observe that significant challenges in transferring its high performance in the language domain to the visual domain can be explained by differences between the two modalities. One of these differences involves scale. Unlike the word tokens that serve as the basic elements of processing in language Transformers, visual elements can vary substantially in scale, a problem that receives attention in tasks such as object detection <ref type="bibr" coords="2,80.96,183.07,15.77,8.64" target="#b41">[42,</ref><ref type="bibr" coords="2,100.45,183.07,12.45,8.64" target="#b52">53,</ref><ref type="bibr" coords="2,116.63,183.07,11.83,8.64" target="#b53">54]</ref>. In existing Transformer-based models <ref type="bibr" coords="2,64.42,195.03,15.77,8.64" target="#b63">[64,</ref><ref type="bibr" coords="2,83.43,195.03,11.83,8.64" target="#b19">20]</ref>, tokens are all of a fixed scale, a property unsuitable for these vision applications. Another difference is the much higher resolution of pixels in images compared to words in passages of text. There exist many vision tasks such as semantic segmentation that require dense prediction at the pixel level, and this would be intractable for Transformer on high-resolution images, as the computational complexity of its self-attention is quadratic to image size. To overcome these issues, we propose a generalpurpose Transformer backbone, called Swin Transformer, which constructs hierarchical feature maps and has linear computational complexity to image size. As illustrated in Figure <ref type="figure" coords="2,78.10,338.49,3.71,8.64" target="#fig_0">1</ref>(a), Swin Transformer constructs a hierarchical representation by starting from small-sized patches (outlined in gray) and gradually merging neighboring patches in deeper Transformer layers. With these hierarchical feature maps, the Swin Transformer model can conveniently leverage advanced techniques for dense prediction such as feature pyramid networks (FPN) <ref type="bibr" coords="2,134.03,410.22,16.60,8.64" target="#b41">[42]</ref> or U-Net <ref type="bibr" coords="2,190.89,410.22,15.27,8.64" target="#b50">[51]</ref>. The linear computational complexity is achieved by computing self-attention locally within non-overlapping windows that partition an image (outlined in red). The number of patches in each window is fixed, and thus the complexity becomes linear to image size. These merits make Swin Transformer suitable as a general-purpose backbone for various vision tasks, in contrast to previous Transformer based architectures <ref type="bibr" coords="2,269.77,493.91,16.60,8.64" target="#b19">[20]</ref> which produce feature maps of a single resolution and have quadratic complexity.</p><p>A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers, as illustrated in Figure <ref type="figure" coords="2,181.89,554.89,3.74,8.64">2</ref>. The shifted windows bridge the windows of the preceding layer, providing connections among them that significantly enhance modeling power (see Table <ref type="table" coords="2,123.76,590.76,3.60,8.64" target="#tab_7">4</ref>). This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set<ref type="foot" coords="2,159.51,613.00,3.49,6.05" target="#foot_0">1</ref> , which facilitates memory access in hardware. In contrast, earlier sliding window based self-attention approaches <ref type="bibr" coords="2,154.39,638.58,15.77,8.64" target="#b32">[33,</ref><ref type="bibr" coords="2,173.62,638.58,13.28,8.64" target="#b49">50]</ref> suffer from low latency on general hardware due to different key sets for different query pixels<ref type="foot" coords="2,100.82,660.82,3.49,6.05" target="#foot_1">2</ref> . Our experiments show that the proposed Figure <ref type="figure" coords="2,334.70,168.58,3.36,7.77">2</ref>. An illustration of the shifted window approach for computing self-attention in the proposed Swin Transformer architecture. In layer l (left), a regular window partitioning scheme is adopted, and self-attention is computed within each window. In the next layer l + 1 (right), the window partitioning is shifted, resulting in new windows. The self-attention computation in the new windows crosses the boundaries of the previous windows in layer l, providing connections among them.</p><p>shifted window approach has much lower latency than the sliding window method, yet is similar in modeling power (see Tables <ref type="table" coords="2,358.24,289.09,4.98,8.64">5</ref> and<ref type="table" coords="2,385.18,289.09,3.60,8.64" target="#tab_8">6</ref>). The shifted window approach also proves beneficial for all-MLP architectures <ref type="bibr" coords="2,482.59,301.05,15.27,8.64" target="#b60">[61]</ref>.</p><p>The proposed Swin Transformer achieves strong performance on the recognition tasks of image classification, object detection and semantic segmentation. It outperforms the ViT / DeiT <ref type="bibr" coords="2,369.19,348.87,15.77,8.64" target="#b19">[20,</ref><ref type="bibr" coords="2,387.33,348.87,13.28,8.64" target="#b62">63]</ref> and ResNe(X)t models <ref type="bibr" coords="2,496.39,348.87,15.77,8.64" target="#b29">[30,</ref><ref type="bibr" coords="2,514.52,348.87,13.28,8.64" target="#b69">70]</ref> significantly with similar latency on the three tasks. Its 58.7 box AP and 51.1 mask AP on the COCO test-dev set surpass the previous state-of-the-art results by +2.7 box AP (Copy-paste <ref type="bibr" coords="2,360.28,396.69,16.60,8.64" target="#b25">[26]</ref> without external data) and +2.6 mask AP (DetectoRS <ref type="bibr" coords="2,358.52,408.64,14.94,8.64" target="#b45">[46]</ref>). On ADE20K semantic segmentation, it obtains 53.5 mIoU on the val set, an improvement of +3.2 mIoU over the previous state-of-the-art (SETR <ref type="bibr" coords="2,495.46,432.55,14.94,8.64" target="#b80">[81]</ref>). It also achieves a top-1 accuracy of 87.3% on ImageNet-1K image classification.</p><p>It is our belief that a unified architecture across computer vision and natural language processing could benefit both fields, since it would facilitate joint modeling of visual and textual signals and the modeling knowledge from both domains can be more deeply shared. We hope that Swin Transformer's strong performance on various vision problems can drive this belief deeper in the community and encourage unified modeling of vision and language signals.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related Work</head><p>CNN and variants CNNs serve as the standard network model throughout computer vision. While the CNN has existed for several decades <ref type="bibr" coords="2,409.32,618.19,15.27,8.64" target="#b39">[40]</ref>, it was not until the introduction of AlexNet <ref type="bibr" coords="2,378.33,630.15,16.60,8.64" target="#b38">[39]</ref> that the CNN took off and became mainstream. Since then, deeper and more effective convolutional neural architectures have been proposed to further propel the deep learning wave in computer vision, e.g., VGG <ref type="bibr" coords="2,333.91,677.97,15.27,8.64" target="#b51">[52]</ref>, GoogleNet <ref type="bibr" coords="2,404.21,677.97,15.27,8.64" target="#b56">[57]</ref>, ResNet <ref type="bibr" coords="2,460.14,677.97,15.27,8.64" target="#b29">[30]</ref>, DenseNet <ref type="bibr" coords="2,526.03,677.97,15.27,8.64" target="#b33">[34]</ref>,</p><p>weights across a feature map, it is difficult for a sliding-window based self-attention layer to have efficient memory access in practice.</p><p>HRNet <ref type="bibr" coords="3,82.52,75.48,15.27,8.64" target="#b64">[65]</ref>, and EfficientNet <ref type="bibr" coords="3,177.39,75.48,15.27,8.64" target="#b57">[58]</ref>. In addition to these architectural advances, there has also been much work on improving individual convolution layers, such as depthwise convolution <ref type="bibr" coords="3,119.97,111.34,16.60,8.64" target="#b69">[70]</ref> and deformable convolution <ref type="bibr" coords="3,252.52,111.34,15.77,8.64" target="#b17">[18,</ref><ref type="bibr" coords="3,270.59,111.34,11.83,8.64" target="#b83">84]</ref>. While the CNN and its variants are still the primary backbone architectures for computer vision applications, we highlight the strong potential of Transformer-like architectures for unified modeling between vision and language. Our work achieves strong performance on several basic visual recognition tasks, and we hope it will contribute to a modeling shift.</p><p>Self-attention based backbone architectures Also inspired by the success of self-attention layers and Transformer architectures in the NLP field, some works employ self-attention layers to replace some or all of the spatial convolution layers in the popular ResNet <ref type="bibr" coords="3,202.29,269.22,15.77,8.64" target="#b32">[33,</ref><ref type="bibr" coords="3,220.68,269.22,12.45,8.64" target="#b49">50,</ref><ref type="bibr" coords="3,235.75,269.22,11.83,8.64" target="#b79">80]</ref>. In these works, the self-attention is computed within a local window of each pixel to expedite optimization <ref type="bibr" coords="3,199.89,293.13,15.27,8.64" target="#b32">[33]</ref>, and they achieve slightly better accuracy/FLOPs trade-offs than the counterpart ResNet architecture. However, their costly memory access causes their actual latency to be significantly larger than that of the convolutional networks <ref type="bibr" coords="3,209.18,340.95,15.27,8.64" target="#b32">[33]</ref>. Instead of using sliding windows, we propose to shift windows between consecutive layers, which allows for a more efficient implementation in general hardware.</p><p>Self-attention/Transformers to complement CNNs Another line of work is to augment a standard CNN architecture with self-attention layers or Transformers. The selfattention layers can complement backbones <ref type="bibr" coords="3,232.21,439.04,15.77,8.64" target="#b66">[67,</ref><ref type="bibr" coords="3,251.65,439.04,7.47,8.64" target="#b6">7,</ref><ref type="bibr" coords="3,262.77,439.04,7.47,8.64" target="#b2">3,</ref><ref type="bibr" coords="3,273.91,439.04,12.45,8.64" target="#b70">71,</ref><ref type="bibr" coords="3,50.11,451.00,12.45,8.64" target="#b22">23,</ref><ref type="bibr" coords="3,65.52,451.00,12.45,8.64" target="#b73">74,</ref><ref type="bibr" coords="3,80.95,451.00,13.28,8.64" target="#b54">55]</ref> or head networks <ref type="bibr" coords="3,169.60,451.00,15.77,8.64" target="#b31">[32,</ref><ref type="bibr" coords="3,188.33,451.00,13.28,8.64" target="#b26">27]</ref> by providing the capability to encode distant dependencies or heterogeneous interactions. More recently, the encoder-decoder design in Transformer has been applied for the object detection and instance segmentation tasks <ref type="bibr" coords="3,165.26,498.82,10.79,8.64" target="#b7">[8,</ref><ref type="bibr" coords="3,179.25,498.82,12.45,8.64" target="#b12">13,</ref><ref type="bibr" coords="3,194.90,498.82,12.45,8.64" target="#b84">85,</ref><ref type="bibr" coords="3,210.55,498.82,11.83,8.64" target="#b55">56]</ref>. Our work explores the adaptation of Transformers for basic visual feature extraction and is complementary to these works.</p><p>Transformer based vision backbones Most related to our work is the Vision Transformer (ViT) <ref type="bibr" coords="3,235.77,561.05,16.60,8.64" target="#b19">[20]</ref> and its follow-ups <ref type="bibr" coords="3,96.86,573.01,15.77,8.64" target="#b62">[63,</ref><ref type="bibr" coords="3,116.44,573.01,12.45,8.64" target="#b71">72,</ref><ref type="bibr" coords="3,132.72,573.01,12.45,8.64" target="#b14">15,</ref><ref type="bibr" coords="3,148.99,573.01,12.45,8.64" target="#b27">28,</ref><ref type="bibr" coords="3,165.27,573.01,11.83,8.64" target="#b65">66]</ref>. The pioneering work of ViT directly applies a Transformer architecture on nonoverlapping medium-sized image patches for image classification. It achieves an impressive speed-accuracy tradeoff on image classification compared to convolutional networks. While ViT requires large-scale training datasets (i.e., JFT-300M) to perform well, DeiT <ref type="bibr" coords="3,207.21,644.74,16.60,8.64" target="#b62">[63]</ref> introduces several training strategies that allow ViT to also be effective using the smaller ImageNet-1K dataset. The results of ViT on image classification are encouraging, but its architecture is unsuitable for use as a general-purpose backbone network on dense vision tasks or when the input image resolution is high, due to its low-resolution feature maps and the quadratic increase in complexity with image size. There are a few works applying ViT models to the dense vision tasks of object detection and semantic segmentation by direct upsampling or deconvolution but with relatively lower performance <ref type="bibr" coords="3,413.77,135.25,10.79,8.64" target="#b1">[2,</ref><ref type="bibr" coords="3,427.84,135.25,11.83,8.64" target="#b80">81]</ref>. Concurrent to our work are some that modify the ViT architecture <ref type="bibr" coords="3,494.02,147.21,15.77,8.64" target="#b71">[72,</ref><ref type="bibr" coords="3,514.58,147.21,12.45,8.64" target="#b14">15,</ref><ref type="bibr" coords="3,531.84,147.21,13.28,8.64" target="#b27">28]</ref> for better image classification. Empirically, we find our Swin Transformer architecture to achieve the best speedaccuracy trade-off among these methods on image classification, even though our work focuses on general-purpose performance rather than specifically on classification. Another concurrent work <ref type="bibr" coords="3,400.13,218.94,16.60,8.64" target="#b65">[66]</ref> explores a similar line of thinking to build multi-resolution feature maps on Transformers. Its complexity is still quadratic to image size, while ours is linear and also operates locally which has proven beneficial in modeling the high correlation in visual signals <ref type="bibr" coords="3,328.78,278.72,15.77,8.64" target="#b35">[36,</ref><ref type="bibr" coords="3,348.41,278.72,12.45,8.64" target="#b24">25,</ref><ref type="bibr" coords="3,364.73,278.72,11.83,8.64" target="#b40">41]</ref>. Our approach is both efficient and effective, achieving state-of-the-art accuracy on both COCO object detection and ADE20K semantic segmentation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Method</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Overall Architecture</head><p>An overview of the Swin Transformer architecture is presented in Figure <ref type="figure" coords="3,375.62,379.90,3.74,8.64" target="#fig_1">3</ref>, which illustrates the tiny version (Swin-T). It first splits an input RGB image into non-overlapping patches by a patch splitting module, like ViT. Each patch is treated as a "token" and its feature is set as a concatenation of the raw pixel RGB values. In our implementation, we use a patch size of 4 × 4 and thus the feature dimension of each patch is 4 × 4 × 3 = 48. A linear embedding layer is applied on this raw-valued feature to project it to an arbitrary dimension (denoted as C).</p><p>Several Transformer blocks with modified self-attention computation (Swin Transformer blocks) are applied on these patch tokens. The Transformer blocks maintain the number of tokens ( H 4 × W 4 ), and together with the linear embedding are referred to as "Stage 1".</p><p>To produce a hierarchical representation, the number of tokens is reduced by patch merging layers as the network gets deeper. The first patch merging layer concatenates the features of each group of 2 × 2 neighboring patches, and applies a linear layer on the 4C-dimensional concatenated features. This reduces the number of tokens by a multiple of 2 × 2 = 4 (2× downsampling of resolution), and the output dimension is set to 2C. Swin Transformer blocks are applied afterwards for feature transformation, with the resolution kept at H 8 × W 8 . This first block of patch merging and feature transformation is denoted as "Stage 2". The procedure is repeated twice, as "Stage 3" and "Stage 4", with output resolutions of H 16 × W 16 and H 32 × W 32 , respectively. These stages jointly produce a hierarchical representation,  <ref type="formula" coords="4,67.69,235.62,3.14,7.77" target="#formula_2">3</ref>)). W-MSA and SW-MSA are multi-head self attention modules with regular and shifted windowing configurations, respectively.</p><p>with the same feature map resolutions as those of typical convolutional networks, e.g., VGG <ref type="bibr" coords="4,196.29,278.76,16.60,8.64" target="#b51">[52]</ref> and ResNet <ref type="bibr" coords="4,267.28,278.76,15.27,8.64" target="#b29">[30]</ref>. As a result, the proposed architecture can conveniently replace the backbone networks in existing methods for various vision tasks.</p><p>Swin Transformer block Swin Transformer is built by replacing the standard multi-head self attention (MSA) module in a Transformer block by a module based on shifted windows (described in Section 3.2), with other layers kept the same. As illustrated in Figure <ref type="figure" coords="4,234.03,406.54,3.82,8.64" target="#fig_1">3</ref>(b), a Swin Transformer block consists of a shifted window based MSA module, followed by a 2-layer MLP with GELU nonlinearity in between. A LayerNorm (LN) layer is applied before each MSA module and each MLP, and a residual connection is applied after each module.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Shifted Window based Self-Attention</head><p>The standard Transformer architecture <ref type="bibr" coords="4,216.96,516.96,16.60,8.64" target="#b63">[64]</ref> and its adaptation for image classification <ref type="bibr" coords="4,169.34,528.91,16.60,8.64" target="#b19">[20]</ref> both conduct global selfattention, where the relationships between a token and all other tokens are computed. The global computation leads to quadratic complexity with respect to the number of tokens, making it unsuitable for many vision problems requiring an immense set of tokens for dense prediction or to represent a high-resolution image.</p><p>Self-attention in non-overlapped windows For efficient modeling, we propose to compute self-attention within local windows. The windows are arranged to evenly partition the image in a non-overlapping manner. Supposing each window contains M × M patches, the computational complexity of a global MSA module and a window based one on an image of h × w patches are <ref type="foot" coords="4,443.18,265.14,3.49,6.05" target="#foot_2">3</ref> :</p><formula xml:id="formula_0" coords="4,353.05,286.23,192.07,11.03">Ω(MSA) = 4hwC 2 + 2(hw) 2 C,<label>(1)</label></formula><formula xml:id="formula_1" coords="4,353.05,302.41,192.07,11.03">Ω(W-MSA) = 4hwC 2 + 2M 2 hwC,<label>(2)</label></formula><p>where the former is quadratic to patch number hw, and the latter is linear when M is fixed (set to 7 by default). Global self-attention computation is generally unaffordable for a large hw, while the window based self-attention is scalable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Shifted window partitioning in successive blocks</head><p>The window-based self-attention module lacks connections across windows, which limits its modeling power. To introduce cross-window connections while maintaining the efficient computation of non-overlapping windows, we propose a shifted window partitioning approach which alternates between two partitioning configurations in consecutive Swin Transformer blocks. As illustrated in Figure <ref type="figure" coords="4,415.47,484.64,3.74,8.64">2</ref>, the first module uses a regular window partitioning strategy which starts from the top-left pixel, and the 8 × 8 feature map is evenly partitioned into 2 × 2 windows of size 4 × 4 (M = 4). Then, the next module adopts a windowing configuration that is shifted from that of the preceding layer, by displacing the windows by ( M 2 , M 2 ) pixels from the regularly partitioned windows. With the shifted window partitioning approach, consecutive Swin Transformer blocks are computed as</p><formula xml:id="formula_2" coords="4,356.19,599.71,188.93,60.61">ẑl = W-MSA LN z l-1 + z l-1 , z l = MLP LN ẑl + ẑl , ẑl+1 = SW-MSA LN z l + z l , z l+1 = MLP LN ẑl+1 + ẑl+1 ,<label>(3)</label></formula><p>where ẑl and z l denote the output features of the (S)W-MSA module and the MLP module for block l, respectively; W-MSA and SW-MSA denote window based multi-head self-attention using regular and shifted window partitioning configurations, respectively. The shifted window partitioning approach introduces connections between neighboring non-overlapping windows in the previous layer and is found to be effective in image classification, object detection, and semantic segmentation, as shown in Table <ref type="table" coords="5,144.26,263.04,3.74,8.64" target="#tab_7">4</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Efficient batch computation for shifted configuration</head><p>An issue with shifted window partitioning is that it will result in more windows, from h M × w M to ( h M + 1) × ( w M +1) in the shifted configuration, and some of the windows will be smaller than M × M<ref type="foot" coords="5,190.12,337.42,3.49,6.05" target="#foot_3">4</ref> . A naive solution is to pad the smaller windows to a size of M × M and mask out the padded values when computing attention. When the number of windows in regular partitioning is small, e.g. 2 × 2, the increased computation with this naive solution is considerable (2 × 2 → 3 × 3, which is 2.25 times greater). Here, we propose a more efficient batch computation approach by cyclic-shifting toward the top-left direction, as illustrated in Figure <ref type="figure" coords="5,124.07,434.73,3.74,8.64" target="#fig_2">4</ref>. After this shift, a batched window may be composed of several sub-windows that are not adjacent in the feature map, so a masking mechanism is employed to limit self-attention computation to within each sub-window. With the cyclic-shift, the number of batched windows remains the same as that of regular window partitioning, and thus is also efficient. The low latency of this approach is shown in Table <ref type="table" coords="5,112.99,518.42,3.74,8.64">5</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Relative position bias</head><p>In computing self-attention, we follow <ref type="bibr" coords="5,79.06,558.61,15.77,8.64" target="#b48">[49,</ref><ref type="bibr" coords="5,98.01,558.61,7.47,8.64" target="#b0">1,</ref><ref type="bibr" coords="5,108.67,558.61,12.45,8.64" target="#b31">32,</ref><ref type="bibr" coords="5,124.31,558.61,13.28,8.64" target="#b32">33]</ref> by including a relative position bias</p><formula xml:id="formula_3" coords="5,50.11,568.07,57.62,12.50">B ∈ R M 2 ×M 2</formula><p>to each head in computing similarity:</p><formula xml:id="formula_4" coords="5,59.52,584.84,226.85,17.93">Attention(Q, K, V ) = SoftMax(QK T / √ d + B)V,<label>(4)</label></formula><p>where Q, K, V ∈ R M 2 ×d are the query, key and value matrices; d is the query/key dimension, and M 2 is the number of patches in a window. Since the relative position along each axis lies in the range [-M + 1, M -1], we parameterize a smaller-sized bias matrix B ∈ R (2M -1)×(2M -1) , and values in B are taken from B.</p><p>We observe significant improvements over counterparts without this bias term or that use absolute position embedding, as shown in Table <ref type="table" coords="5,410.95,99.39,3.74,8.64" target="#tab_7">4</ref>. Further adding absolute position embedding to the input as in <ref type="bibr" coords="5,449.17,111.34,16.60,8.64" target="#b19">[20]</ref> drops performance slightly, thus it is not adopted in our implementation.</p><p>The learnt relative position bias in pre-training can be also used to initialize a model for fine-tuning with a different window size through bi-cubic interpolation <ref type="bibr" coords="5,497.88,159.16,15.77,8.64" target="#b19">[20,</ref><ref type="bibr" coords="5,516.14,159.16,11.83,8.64" target="#b62">63]</ref>. where C is the channel number of the hidden layers in the first stage. The model size, theoretical computational complexity (FLOPs), and throughput of the model variants for ImageNet image classification are listed in Table <ref type="table" coords="5,505.34,449.67,3.74,8.64">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Architecture Variants</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Experiments</head><p>We conduct experiments on ImageNet-1K image classification <ref type="bibr" coords="5,342.60,504.17,15.27,8.64" target="#b18">[19]</ref>, COCO object detection <ref type="bibr" coords="5,465.97,504.17,15.27,8.64" target="#b42">[43]</ref>, and ADE20K semantic segmentation <ref type="bibr" coords="5,402.01,516.12,15.27,8.64" target="#b82">[83]</ref>. In the following, we first compare the proposed Swin Transformer architecture with the previous state-of-the-arts on the three tasks. Then, we ablate the important design elements of Swin Transformer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Image Classification on ImageNet-1K</head><p>Settings For image classification, we benchmark the proposed Swin Transformer on ImageNet-1K <ref type="bibr" coords="5,479.05,601.50,15.27,8.64" target="#b18">[19]</ref>, which contains 1.28M training images and 50K validation images from 1,000 classes. The top-1 accuracy on a single crop is reported. We consider two training settings:</p><p>• Regular ImageNet-1K training. This setting mostly follows <ref type="bibr" coords="5,361.89,668.65,15.27,8.64" target="#b62">[63]</ref>. We employ an AdamW <ref type="bibr" coords="5,486.86,668.65,16.60,8.64" target="#b36">[37]</ref> optimizer for 300 epochs using a cosine decay learning rate scheduler and 20 epochs of linear warm-up. A batch size of 1024, an initial learning rate of 0.001, and a weight decay of 0.05 are used. We include most of the augmentation and regularization strategies of <ref type="bibr" coords="6,269.77,87.43,16.60,8.64" target="#b62">[63]</ref> in training, except for repeated augmentation <ref type="bibr" coords="6,252.72,99.39,16.60,8.64" target="#b30">[31]</ref> and EMA <ref type="bibr" coords="6,95.22,111.34,15.27,8.64" target="#b44">[45]</ref>, which do not enhance performance. Note that this is contrary to <ref type="bibr" coords="6,161.14,123.30,16.60,8.64" target="#b62">[63]</ref> where repeated augmentation is crucial to stabilize the training of ViT. Compared with the state-of-the-art ConvNets, i.e. Reg-Net <ref type="bibr" coords="6,70.28,465.03,16.60,8.64" target="#b47">[48]</ref> and EfficientNet <ref type="bibr" coords="6,167.02,465.03,15.27,8.64" target="#b57">[58]</ref>, the Swin Transformer achieves a slightly better speed-accuracy trade-off. Noting that while RegNet <ref type="bibr" coords="6,145.62,488.94,16.60,8.64" target="#b47">[48]</ref> and EfficientNet <ref type="bibr" coords="6,236.61,488.94,16.60,8.64" target="#b57">[58]</ref> are obtained via a thorough architecture search, the proposed Swin Transformer is adapted from the standard Transformer and has strong potential for further improvement.  <ref type="table" coords="6,330.42,408.22,3.36,7.77">1</ref>. Comparison of different backbones on ImageNet-1K classification. Throughput is measured using the GitHub repository of <ref type="bibr" coords="6,318.57,430.14,14.94,7.77" target="#b67">[68]</ref> and a V100 GPU, following <ref type="bibr" coords="6,438.63,430.14,13.74,7.77" target="#b62">[63]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results with</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Object Detection on COCO</head><p>Settings Object detection and instance segmentation experiments are conducted on COCO 2017, which contains 118K training, 5K validation and 20K test-dev images. An ablation study is performed using the validation set, and a system-level comparison is reported on test-dev. For the ablation study, we consider four typical object detection frameworks: Cascade Mask R-CNN <ref type="bibr" coords="6,463.62,558.53,15.77,8.64" target="#b28">[29,</ref><ref type="bibr" coords="6,483.46,558.53,7.19,8.64" target="#b5">6]</ref>, ATSS <ref type="bibr" coords="6,526.03,558.53,15.27,8.64" target="#b78">[79]</ref>, RepPoints v2 <ref type="bibr" coords="6,368.04,570.49,15.27,8.64" target="#b11">[12]</ref>, and Sparse RCNN <ref type="bibr" coords="6,472.67,570.49,16.60,8.64" target="#b55">[56]</ref> in mmdetection <ref type="bibr" coords="6,327.65,582.44,15.27,8.64" target="#b9">[10]</ref>. For these four frameworks, we utilize the same settings: multi-scale training <ref type="bibr" coords="6,424.55,594.40,10.79,8.64" target="#b7">[8,</ref><ref type="bibr" coords="6,437.48,594.40,13.28,8.64" target="#b55">56]</ref> (resizing the input such that the shorter side is between 480 and 800 while the longer side is at most 1333), AdamW <ref type="bibr" coords="6,432.90,618.31,16.60,8.64" target="#b43">[44]</ref> optimizer (initial learning rate of 0.0001, weight decay of 0.05, and batch size of 16), and 3x schedule (36 epochs). For system-level comparison, we adopt an improved HTC <ref type="bibr" coords="6,446.92,654.18,11.62,8.64" target="#b8">[9]</ref> (denoted as HTC++) with instaboost <ref type="bibr" coords="6,374.54,666.13,15.26,8.64" target="#b21">[22]</ref>, stronger multi-scale training <ref type="bibr" coords="6,516.95,666.13,10.58,8.64" target="#b6">[7]</ref>, 6x schedule (72 epochs), soft-NMS <ref type="bibr" coords="6,447.87,678.09,10.58,8.64" target="#b4">[5]</ref>, and ImageNet-22K pre-trained model as initialization.</p><p>We compare our Swin Transformer to standard Con- vNets, i.e. ResNe(X)t, and previous Transformer networks, e.g. DeiT. The comparisons are conducted by changing only the backbones with other settings unchanged. Note that while Swin Transformer and ResNe(X)t are directly applicable to all the above frameworks because of their hierarchical feature maps, DeiT only produces a single resolution of feature maps and cannot be directly applied. For fair comparison, we follow <ref type="bibr" coords="7,142.66,604.93,16.60,8.64" target="#b80">[81]</ref> to construct hierarchical feature maps for DeiT using deconvolution layers. under different model capacity using Cascade Mask R-CNN. Swin Transformer achieves a high detection accuracy of 51.9 box AP and 45.0 mask AP, which are significant gains of +3.6 box AP and +3.3 mask AP over ResNeXt101-64x4d, which has similar model size, FLOPs and latency. On a higher baseline of 52.3 box AP and 46.0 mask AP using an improved HTC framework, the gains by Swin Transformer are also high, at +4.1 box AP and +3.1 mask AP (see Table <ref type="table" coords="7,333.08,423.15,3.64,8.64" target="#tab_2">2</ref>(c)). Regarding inference speed, while ResNe(X)t is built by highly optimized Cudnn functions, our architecture is implemented with built-in PyTorch functions that are not all well-optimized. A thorough kernel optimization is beyond the scope of this paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparison to ResNe(X)t</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparison to DeiT</head><p>The performance of DeiT-S using the Cascade Mask R-CNN framework is shown in Table 2(b). The results of Swin-T are +2.5 box AP and +2.3 mask AP higher than DeiT-S with similar model size (86M vs. 80M) and significantly higher inference speed (15.3 FPS vs. 10.4 FPS). The lower inference speed of DeiT is mainly due to its quadratic complexity to input image size.  <ref type="bibr" coords="7,470.75,643.18,16.60,8.64" target="#b25">[26]</ref> without external data) and +2.6 mask AP (DetectoRS <ref type="bibr" coords="7,471.09,655.14,14.94,8.64" target="#b45">[46]</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparison to previous state-of-the-art</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Semantic Segmentation on ADE20K</head><p>Settings ADE20K <ref type="bibr" coords="7,394.66,692.56,16.60,8.64" target="#b82">[83]</ref> is a widely-used semantic segmentation dataset, covering a broad range of 150 semantic  <ref type="table" coords="8,72.31,174.93,3.36,7.77" target="#tab_7">4</ref>. Ablation study on the shifted windows approach and different position embedding methods on three benchmarks, using the Swin-T architecture. w/o shifting: all self-attention modules adopt regular window partitioning, without shifting; abs. pos.: absolute position embedding term of ViT; rel. pos.: the default settings with an additional relative position bias term (see Eq. ( <ref type="formula" coords="8,273.61,229.72,3.19,7.77" target="#formula_4">4</ref>)); app.: the first scaled dot-product term in Eq. ( <ref type="formula" coords="8,214.21,240.68,3.17,7.77" target="#formula_4">4</ref>).</p><p>categories. It has 25K images in total, with 20K for training, 2K for validation, and another 3K for testing. We utilize UperNet <ref type="bibr" coords="8,87.28,296.16,16.60,8.64" target="#b68">[69]</ref> in mmseg <ref type="bibr" coords="8,148.87,296.16,16.60,8.64" target="#b15">[16]</ref> as our base framework for its high efficiency. More details are presented in the Appendix.</p><p>Results Table <ref type="table" coords="8,117.97,335.72,4.98,8.64" target="#tab_4">3</ref> lists the mIoU, model size (#param), FLOPs and FPS for different method/backbone pairs. From these results, it can be seen that Swin-S is +5.3 mIoU higher (49.3 vs. 44.0) than DeiT-S with similar computation cost. It is also +4.4 mIoU higher than ResNet-101, and +2.4 mIoU higher than ResNeSt-101 <ref type="bibr" coords="8,183.44,395.49,15.27,8.64" target="#b77">[78]</ref>. Our Swin-L model with ImageNet-22K pre-training achieves 53.5 mIoU on the val set, surpassing the previous best model by +3.2 mIoU (50.3 mIoU by SETR <ref type="bibr" coords="8,138.39,431.36,16.60,8.64" target="#b80">[81]</ref> which has a larger model size).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">Ablation Study</head><p>In this section, we ablate important design elements in the proposed Swin Transformer, using ImageNet-1K image classification, Cascade Mask R-CNN on COCO object detection, and UperNet on ADE20K semantic segmentation.</p><p>Shifted windows Ablations of the shifted window approach on the three tasks are reported in Table <ref type="table" coords="8,243.59,545.41,3.74,8.64" target="#tab_7">4</ref>. Swin-T with the shifted window partitioning outperforms the counterpart built on a single window partitioning at each stage by +1.1% top-1 accuracy on ImageNet-1K, +2.8 box AP/+2.2 mask AP on COCO, and +2.8 mIoU on ADE20K. The results indicate the effectiveness of using shifted windows to build connections among windows in the preceding layers. The latency overhead by shifted window is also small, as shown in Table <ref type="table" coords="8,112.99,641.05,3.74,8.64">5</ref>. shifted window (cyclic) 3.0 1.9 1.3 1.0 755 437 278 Table <ref type="table" coords="8,331.29,164.53,3.36,7.77">5</ref>. Real speed of different self-attention computation methods and implementations on a V100 GPU.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Relative position bias</head><p>on COCO, and +2.3/+2.9 mIoU on ADE20K in relation to those without position encoding and with absolute position embedding, respectively, indicating the effectiveness of the relative position bias. Also note that while the inclusion of absolute position embedding improves image classification accuracy (+0.4%), it harms object detection and semantic segmentation (-0.2 box/mask AP on COCO and -0.6 mIoU on ADE20K).</p><p>While the recent ViT/DeiT models abandon translation invariance in image classification even though it has long been shown to be crucial for visual modeling, we find that inductive bias that encourages certain translation invariance is still preferable for general-purpose visual modeling, particularly for the dense prediction tasks of object detection and semantic segmentation.</p><p>Different self-attention methods The real speed of different self-attention computation methods and implementations are compared in Table <ref type="table" coords="8,424.84,423.12,3.74,8.64">5</ref>. Our cyclic implementation is more hardware efficient than naive padding, particularly for deeper stages. Overall, it brings a 13%, 18% and 18% speed-up on Swin-T, Swin-S and Swin-B, respectively.</p><p>The self-attention modules built on the proposed shifted window approach are 40.8×/2.5×, 20.2×/2.5×, 9.3×/2.1×, and 7.6×/1.8× more efficient than those of sliding windows in naive/kernel implementations on four network stages, respectively. Overall, the Swin Transformer architectures built on shifted windows are 4.1/1.5, 4.0/1.5, 3.6/1.5 times faster than variants built on sliding windows for Swin-T, Swin-S, and Swin-B, respectively. Table <ref type="table" coords="8,517.66,554.63,4.98,8.64" target="#tab_8">6</ref> compares their accuracy on the three tasks, showing that they are similarly accurate in visual modeling.</p><p>Compared to Performer <ref type="bibr" coords="8,418.56,590.50,15.27,8.64" target="#b13">[14]</ref>, which is one of the fastest Transformer architectures (see <ref type="bibr" coords="8,436.19,602.45,14.94,8.64" target="#b59">[60]</ref>), the proposed shifted window based self-attention computation and the overall Swin Transformer architectures are slightly faster (see Table <ref type="table" coords="8,323.90,638.32,3.60,8.64">5</ref>), while achieving +2.3% top-1 accuracy compared to Performer on ImageNet-1K using Swin-T (see Table <ref type="table" coords="8,520.83,650.27,3.60,8.64" target="#tab_8">6</ref>). sentation and has linear computational complexity with respect to input image size. Swin Transformer achieves the state-of-the-art performance on COCO object detection and ADE20K semantic segmentation, significantly surpassing previous best methods. We hope that Swin Transformer's strong performance on various vision problems will encourage unified modeling of vision and language signals.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusion</head><p>As a key element of Swin Transformer, the shifted window based self-attention is shown to be effective and efficient on vision problems, and we look forward to investigating its use in natural language processing as well.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A1. Detailed Architectures</head><p>The detailed architecture specifications are shown in Table <ref type="table" coords="9,64.47,417.82,3.74,8.64" target="#tab_9">7</ref>, where an input image size of 224×224 is assumed for all architectures. "Concat n × n" indicates a concatenation of n × n neighboring features in a patch. This operation results in a downsampling of the feature map by a rate of n. "96-d" denotes a linear layer with an output dimension of 96. "win. sz. 7 × 7" indicates a multi-head self-attention module with window size of 7 × 7.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A2. Detailed Experimental Settings</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A2.1. Image classification on ImageNet-1K</head><p>The image classification is performed by applying a global average pooling layer on the output feature map of the last stage, followed by a linear classifier. We find this strategy to be as accurate as using an additional class token as in ViT <ref type="bibr" coords="9,107.95,602.01,16.60,8.64" target="#b19">[20]</ref> and DeiT <ref type="bibr" coords="9,168.45,602.01,15.27,8.64" target="#b62">[63]</ref>. In evaluation, the top-1 accuracy using a single crop is reported.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Regular ImageNet-1K training</head><p>The training settings mostly follow <ref type="bibr" coords="9,108.89,656.69,15.27,8.64" target="#b62">[63]</ref>. For all model variants, we adopt a default input image resolution of 224 2 . For other resolutions such as 384 2 , we fine-tune the models trained at 224 2 resolution, instead of training from scratch, to reduce GPU consumption.</p><p>When training from scratch with a 224 2 input, we employ an AdamW <ref type="bibr" coords="9,377.95,87.43,16.60,8.64" target="#b36">[37]</ref> optimizer for 300 epochs using a cosine decay learning rate scheduler with 20 epochs of linear warm-up. A batch size of 1024, an initial learning rate of 0.001, a weight decay of 0.05, and gradient clipping with a max norm of 1 are used. We include most of the augmentation and regularization strategies of <ref type="bibr" coords="9,480.65,147.21,16.60,8.64" target="#b62">[63]</ref> in training, including RandAugment <ref type="bibr" coords="9,413.23,159.16,15.27,8.64" target="#b16">[17]</ref>, Mixup <ref type="bibr" coords="9,467.96,159.16,15.27,8.64" target="#b76">[77]</ref>, Cutmix <ref type="bibr" coords="9,526.03,159.16,15.27,8.64" target="#b74">[75]</ref>, random erasing <ref type="bibr" coords="9,374.53,171.12,16.60,8.64" target="#b81">[82]</ref> and stochastic depth <ref type="bibr" coords="9,479.84,171.12,15.27,8.64" target="#b34">[35]</ref>, but not repeated augmentation <ref type="bibr" coords="9,393.31,183.07,16.60,8.64" target="#b30">[31]</ref> and Exponential Moving Average (EMA) <ref type="bibr" coords="9,340.47,195.03,16.60,8.64" target="#b44">[45]</ref> which do not enhance performance. Note that this is contrary to <ref type="bibr" coords="9,380.92,206.98,16.60,8.64" target="#b62">[63]</ref> where repeated augmentation is crucial to stabilize the training of ViT. An increasing degree of stochastic depth augmentation is employed for larger models, i.e. 0.2, 0.3, 0.5 for Swin-T, Swin-S, and Swin-B, respectively.</p><p>For fine-tuning on input with larger resolution, we employ an adamW <ref type="bibr" coords="9,377.18,278.96,16.60,8.64" target="#b36">[37]</ref> optimizer for 30 epochs with a constant learning rate of 10 -5 , weight decay of 10 -8 , and the same data augmentation and regularizations as the first stage except for setting the stochastic depth ratio to 0.1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ImageNet-22K pre-training</head><p>We also pre-train on the larger ImageNet-22K dataset, which contains 14.2 million images and 22K classes. The training is done in two stages. For the first stage with 224 2 input, we employ an AdamW optimizer for 90 epochs using a linear decay learning rate scheduler with a 5-epoch linear warm-up. A batch size of 4096, an initial learning rate of 0.001, and a weight decay of 0.01 are used. In the second stage of ImageNet-1K finetuning with 224 2 /384 2 input, we train the models for 30 epochs with a batch size of 1024, a constant learning rate of 10 -5 , and a weight decay of 10 -8 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A2.2. Object detection on COCO</head><p>For an ablation study, we consider four typical object detection frameworks: Cascade Mask R-CNN <ref type="bibr" coords="9,515.51,512.99,15.77,8.64" target="#b28">[29,</ref><ref type="bibr" coords="9,534.33,512.99,7.19,8.64" target="#b5">6]</ref>, ATSS <ref type="bibr" coords="9,335.50,524.95,15.27,8.64" target="#b78">[79]</ref>, RepPoints v2 <ref type="bibr" coords="9,415.90,524.95,15.27,8.64" target="#b11">[12]</ref>, and Sparse RCNN <ref type="bibr" coords="9,517.38,524.95,16.60,8.64" target="#b55">[56]</ref> in mmdetection <ref type="bibr" coords="9,364.47,536.90,15.27,8.64" target="#b9">[10]</ref>. For these four frameworks, we utilize the same settings: multi-scale training <ref type="bibr" coords="9,465.37,548.86,10.79,8.64" target="#b7">[8,</ref><ref type="bibr" coords="9,479.04,548.86,13.28,8.64" target="#b55">56]</ref> (resizing the input such that the shorter side is between 480 and 800 while the longer side is at most 1333), AdamW <ref type="bibr" coords="9,506.48,572.77,16.60,8.64" target="#b43">[44]</ref> optimizer (initial learning rate of 0.0001, weight decay of 0.05, and batch size of 16), and 3x schedule (36 epochs with the learning rate decayed by 10× at epochs 27 and 33).</p><p>For system-level comparison, we adopt an improved HTC <ref type="bibr" coords="9,330.93,632.78,11.62,8.64" target="#b8">[9]</ref> (denoted as HTC++) with instaboost <ref type="bibr" coords="9,491.17,632.78,15.27,8.64" target="#b21">[22]</ref>, stronger multi-scale training <ref type="bibr" coords="9,393.25,644.74,11.62,8.64" target="#b6">[7]</ref> (resizing the input such that the shorter side is between 400 and 1400 while the longer side is at most 1600), 6x schedule (72 epochs with the learning rate decayed at epochs 63 and 69 by a factor of 0.1), soft-NMS <ref type="bibr" coords="9,333.12,692.56,10.58,8.64" target="#b4">[5]</ref>, and an extra global self-attention layer appended at the output of last stage and ImageNet-22K pre-trained model as initialization. We adopt stochastic depth with ratio of 0.2 for all Swin Transformer models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A2.3. Semantic segmentation on ADE20K</head><p>ADE20K <ref type="bibr" coords="10,103.34,315.05,16.60,8.64" target="#b82">[83]</ref> is a widely-used semantic segmentation dataset, covering a broad range of 150 semantic categories. It has 25K images in total, with 20K for training, 2K for validation, and another 3K for testing. We utilize UperNet <ref type="bibr" coords="10,269.77,350.92,16.60,8.64" target="#b68">[69]</ref> in mmsegmentation <ref type="bibr" coords="10,131.24,362.87,16.60,8.64" target="#b15">[16]</ref> as our base framework for its high efficiency.</p><p>In training, we employ the AdamW <ref type="bibr" coords="10,208.22,387.62,16.60,8.64" target="#b43">[44]</ref> optimizer with an initial learning rate of 6 × 10 -5 , a weight decay of 0.01, a scheduler that uses linear learning rate decay, and a linear warmup of 1,500 iterations. Models are trained on 8 GPUs with 2 images per GPU for 160K iterations. For augmentations, we adopt the default setting in mmsegmentation of random horizontal flipping, random re-scaling within ratio range [0.5, 2.0] and random photometric distortion. Stochastic depth with ratio of 0.2 is applied for all Swin Transformer models. Swin-T, Swin-S are trained on the standard setting as the previous approaches with an input of 512×512. Swin-B and Swin-L with ‡ indicate that these two models are pre-trained on ImageNet-22K, and trained with the input of 640×640.</p><p>In inference, a multi-scale test using resolutions that are [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]× of that in training is employed. When reporting test scores, both the training images and validation images are used for training, following common practice <ref type="bibr" coords="10,121.49,603.66,15.27,8.64" target="#b70">[71]</ref>.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A3. More Experiments</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A3.2. Different Optimizers for ResNe(X)t on COCO</head><p>Table <ref type="table" coords="10,346.29,521.80,4.98,8.64" target="#tab_12">9</ref> compares the AdamW and SGD optimizers of the ResNe(X)t backbones on COCO object detection. The Cascade Mask R-CNN framework is used in this comparison. While SGD is used as a default optimizer for Cascade Mask R-CNN framework, we generally observe improved accuracy by replacing it with an AdamW optimizer, particularly for smaller backbones. We thus use AdamW for ResNe(X)t backbones when compared to the proposed Swin Transformer architectures.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A3.3. Swin MLP-Mixer</head><p>We apply the proposed hierarchical design and the shifted window approach to the MLP-Mixer architectures <ref type="bibr" coords="10,331.49,680.60,15.27,8.64" target="#b60">[61]</ref>, referred to as Swin-Mixer. Table <ref type="table" coords="10,491.81,680.60,9.96,8.64">10</ref> shows the performance of Swin-Mixer compared to the original MLP-Mixer architectures MLP-Mixer <ref type="bibr" coords="10,443.10,704.51,16.60,8.64" target="#b60">[61]</ref> and a follow-up ap-</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="1,308.86,374.18,236.25,7.77;1,308.86,385.14,236.25,7.77;1,308.86,396.10,236.25,7.77;1,308.86,407.06,236.25,7.77;1,308.86,418.02,236.25,7.77;1,308.86,428.97,236.25,7.77;1,308.86,439.93,236.25,7.77;1,308.86,450.89,236.25,7.77;1,308.86,461.85,236.25,7.77;1,308.86,472.81,64.67,7.77;1,308.86,227.71,236.25,141.34"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (a) The proposed Swin Transformer builds hierarchical feature maps by merging image patches (shown in gray) in deeper layers and has linear computation complexity to input image size due to computation of self-attention only within each local window (shown in red). It can thus serve as a general-purpose backbone for both image classification and dense recognition tasks. (b) In contrast, previous vision Transformers [20] produce feature maps of a single low resolution and have quadratic computation complexity to input image size due to computation of selfattention globally.</figDesc><graphic coords="1,308.86,227.71,236.25,141.34" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="4,50.11,224.67,495.00,7.77;4,50.11,235.62,484.18,7.77"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. (a) The architecture of a Swin Transformer (Swin-T); (b) two successive Swin Transformer Blocks (notation presented with Eq. (3)). W-MSA and SW-MSA are multi-head self attention modules with regular and shifted windowing configurations, respectively.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="5,50.11,136.28,236.25,7.77;5,50.11,147.24,173.11,7.77"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Illustration of an efficient batch computation approach for self-attention in shifted window partitioning.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="5,320.82,196.72,224.30,8.64;5,308.86,208.68,236.25,8.64;5,308.86,220.63,236.25,8.64;5,308.86,232.27,236.25,8.96;5,308.86,244.54,236.25,8.64;5,308.86,256.50,236.25,8.64;5,308.86,268.45,236.25,8.64;5,308.86,280.09,236.25,8.96;5,308.86,292.04,236.25,8.96;5,308.86,304.00,236.25,8.96;5,308.86,316.27,181.82,8.64;5,320.32,335.28,189.67,8.96;5,320.32,354.91,192.11,8.96;5,320.32,374.53,198.19,8.96;5,320.32,394.16,197.64,8.96"><head></head><label></label><figDesc>We build our base model, called Swin-B, to have of model size and computation complexity similar to ViT-B/DeiT-B. We also introduce Swin-T, Swin-S and Swin-L, which are versions of about 0.25×, 0.5× and 2× the model size and computational complexity, respectively. Note that the complexity of Swin-T and Swin-S are similar to those of ResNet-50 (DeiT-S) and ResNet-101, respectively. The window size is set to M = 7 by default. The query dimension of each head is d = 32, and the expansion layer of each MLP is α = 4, for all experiments. The architecture hyper-parameters of these model variants are: • Swin-T: C = 96, layer numbers = {2, 2, 6, 2} • Swin-S: C = 96, layer numbers ={2, 2, 18, 2} • Swin-B: C = 128, layer numbers ={2, 2, 18, 2} • Swin-L: C = 192, layer numbers ={2, 2, 18, 2}</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4" coords="10,50.11,648.80,232.98,9.85"><head>A3. 1 .</head><label>1</label><figDesc>Image classification with different input size</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="6,50.11,162.07,236.25,285.93"><head>•</head><label></label><figDesc>Pre-training on ImageNet-22K and fine-tuning on ImageNet-1K. We also pre-train on the larger ImageNet-22K dataset, which contains 14.2 million images and 22K classes. We employ an AdamW optimizer for 90 epochs using a linear decay learning rate scheduler with a 5-epoch linear warm-up. A batch size of 4096, an initial learning rate of 0.001, and a weight decay of 0.01 are used. In ImageNet-1K fine-tuning, we train the models for 30 epochs with a batch size of 1024, a constant learning rate of 10 -5 , and a weight decay of 10 -8 .</figDesc><table coords="6,50.11,317.65,236.25,130.34"><row><cell>Results with regular ImageNet-1K training Table 1(a)</cell></row><row><cell>presents comparisons to other backbones, including both</cell></row><row><cell>Transformer-based and ConvNet-based, using regular</cell></row><row><cell>ImageNet-1K training.</cell></row><row><cell>Compared to the previous state-of-the-art Transformer-</cell></row><row><cell>based architecture, i.e. DeiT [63], Swin Transformers no-</cell></row><row><cell>ticeably surpass the counterpart DeiT architectures with</cell></row><row><cell>similar complexities: +1.5% for Swin-T (81.3%) over</cell></row><row><cell>DeiT-S (79.8%) using 224 2 input, and +1.5%/1.4% for</cell></row><row><cell>Swin-B (83.3%/84.5%) over DeiT-B (81.8%/83.1%) using</cell></row><row><cell>224 2 /384 2 input, respectively.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="7,50.11,74.48,236.86,422.94"><head>Table 2 .</head><label>2</label><figDesc>Results on COCO object detection and instance segmentation. † denotes that additional decovolution layers are used to produce hierarchical feature maps. * indicates multi-scale testing.</figDesc><table coords="7,50.31,74.48,236.67,389.63"><row><cell></cell><cell cols="4">(a) Various frameworks</cell><cell></cell><cell></cell></row><row><cell cols="8">Method Backbone AP box AP box 50 AP box 75 #param. FLOPs FPS</cell></row><row><cell>Cascade</cell><cell>R-50</cell><cell cols="6">46.3 64.3 50.5 82M 739G 18.0</cell></row><row><cell>Mask R-CNN</cell><cell cols="7">Swin-T 50.5 69.3 54.9 86M 745G 15.3</cell></row><row><cell>ATSS</cell><cell cols="7">R-50 Swin-T 47.2 66.5 51.3 36M 215G 22.3 43.5 61.9 47.0 32M 205G 28.3</cell></row><row><cell>RepPointsV2</cell><cell cols="7">R-50 Swin-T 50.0 68.5 54.2 45M 283G 12.0 46.5 64.6 50.3 42M 274G 13.6</cell></row><row><cell>Sparse</cell><cell>R-50</cell><cell cols="6">44.5 63.4 48.2 106M 166G 21.0</cell></row><row><cell>R-CNN</cell><cell cols="7">Swin-T 47.9 67.3 52.3 110M 172G 18.4</cell></row><row><cell cols="7">(b) Various backbones w. Cascade Mask R-CNN</cell></row><row><cell cols="8">AP box AP box 50 AP box 75 AP mask AP mask 50 AP mask 75 paramFLOPsFPS</cell></row><row><cell cols="8">DeiT-S  † 48.0 67.2 51.7 41.4 64.2 44.3 80M 889G 10.4</cell></row><row><cell cols="8">R50 46.3 64.3 50.5 40.1 61.7 43.4 82M 739G 18.0</cell></row><row><cell cols="8">Swin-T 50.5 69.3 54.9 43.7 66.6 47.1 86M 745G 15.3</cell></row><row><cell cols="8">X101-32 48.1 66.5 52.4 41.6 63.9 45.2 101M 819G 12.8</cell></row><row><cell cols="8">Swin-S 51.8 70.4 56.3 44.7 67.9 48.5 107M 838G 12.0</cell></row><row><cell cols="8">X101-64 48.3 66.4 52.3 41.7 64.0 45.1 140M 972G 10.4</cell></row><row><cell cols="8">Swin-B 51.9 70.9 56.5 45.0 68.4 48.7 145M 982G 11.6</cell></row><row><cell></cell><cell cols="5">(c) System-level Comparison</cell><cell></cell></row><row><cell>Method</cell><cell cols="7">mini-val AP box AP mask AP box AP mask test-dev #param. FLOPs</cell></row><row><cell cols="2">RepPointsV2* [12]</cell><cell>-</cell><cell>-</cell><cell>52.1</cell><cell>-</cell><cell>-</cell><cell>-</cell></row><row><cell cols="2">GCNet* [7]</cell><cell cols="4">51.8 44.7 52.3 45.4</cell><cell>-</cell><cell>1041G</cell></row><row><cell cols="3">RelationNet++* [13] -</cell><cell>-</cell><cell>52.7</cell><cell>-</cell><cell>-</cell><cell>-</cell></row><row><cell cols="3">SpineNet-190 [21] 52.6</cell><cell>-</cell><cell>52.8</cell><cell>-</cell><cell cols="2">164M 1885G</cell></row><row><cell cols="3">ResNeSt-200* [78] 52.5</cell><cell>-</cell><cell cols="2">53.3 47.1</cell><cell>-</cell><cell>-</cell></row><row><cell cols="3">EfficientDet-D7 [59] 54.4</cell><cell>-</cell><cell>55.1</cell><cell>-</cell><cell cols="2">77M 410G</cell></row><row><cell cols="2">DetectoRS* [46]</cell><cell>-</cell><cell>-</cell><cell cols="2">55.7 48.5</cell><cell>-</cell><cell>-</cell></row><row><cell cols="2">YOLOv4 P7* [4]</cell><cell>-</cell><cell>-</cell><cell>55.8</cell><cell>-</cell><cell>-</cell><cell>-</cell></row><row><cell cols="2">Copy-paste [26]</cell><cell cols="6">55.9 47.2 56.0 47.4 185M 1440G</cell></row><row><cell cols="4">X101-64 (HTC++) 52.3 46.0</cell><cell>-</cell><cell>-</cell><cell cols="2">155M 1033G</cell></row><row><cell cols="4">Swin-B (HTC++) 56.4 49.1</cell><cell>-</cell><cell>-</cell><cell cols="2">160M 1043G</cell></row><row><cell cols="8">Swin-L (HTC++) 57.1 49.5 57.7 50.2 284M 1470G</cell></row><row><cell cols="7">Swin-L (HTC++)* 58.0 50.4 58.7 51.1 284M</cell><cell>-</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="7,50.11,74.83,495.54,638.32"><head>Table 2</head><label>2</label><figDesc></figDesc><table coords="7,50.11,644.53,236.25,68.62"><row><cell>(a) lists the results of</cell></row><row><cell>Swin-T and ResNet-50 on the four object detection frame-</cell></row><row><cell>works. Our Swin-T architecture brings consistent +3.4∼4.2</cell></row><row><cell>box AP gains over ResNet-50, with slightly larger model</cell></row><row><cell>size, FLOPs and latency.</cell></row><row><cell>Table 2(b) compares Swin Transformer and ResNe(X)t</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="7,308.86,264.32,236.25,40.65"><head>Table 3 .</head><label>3</label><figDesc>Results of semantic segmentation on the ADE20K val and test set. † indicates additional deconvolution layers are used to produce hierarchical feature maps. ‡ indicates that the model is pre-trained on ImageNet-22K.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="7,308.86,595.36,236.25,56.46"><head>Table 2</head><label>2</label><figDesc></figDesc><table coords="7,533.08,595.36,12.03,8.64"><row><cell>(c)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" coords="8,50.11,74.83,488.99,638.32"><head>Table 4</head><label>4</label><figDesc></figDesc><table coords="8,50.11,668.65,236.25,44.50"><row><cell>shows comparisons of dif-</cell></row><row><cell>ferent position embedding approaches. Swin-T with rela-</cell></row><row><cell>tive position bias yields +1.2%/+0.8% top-1 accuracy on</cell></row><row><cell>ImageNet-1K, +1.3/+1.5 box AP and +1.1/+1.3 mask AP</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8" coords="8,308.86,692.56,236.25,20.59"><head>Table 6 .</head><label>6</label><figDesc>Accuracy of Swin Transformer using different methods for self-attention computation on three benchmarks.</figDesc><table coords="8,308.86,692.56,236.25,20.59"><row><cell>This paper presents Swin Transformer, a new vision</cell></row><row><cell>Transformer which produces a hierarchical feature repre-</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9" coords="10,58.08,73.83,479.07,164.62"><head>Table 7 .</head><label>7</label><figDesc>Detailed architecture specifications.</figDesc><table coords="10,58.08,73.83,479.07,154.22"><row><cell></cell><cell>downsp. rate (output size)</cell><cell>Swin-T</cell><cell>Swin-S</cell><cell>Swin-B</cell><cell>Swin-L</cell></row><row><cell>stage 1</cell><cell>4× (56×56)</cell><cell>concat 4×4, 96-d, LN win. sz. 7×7, dim 96, head 3 × 2</cell><cell>concat 4×4, 96-d, LN win. sz. 7×7, dim 96, head 3 × 2</cell><cell>concat 4×4, 128-d, LN win. sz. 7×7, dim 128, head 4 × 2</cell><cell>concat 4×4, 192-d, LN win. sz. 7×7, dim 192, head 6 × 2</cell></row><row><cell>stage 2</cell><cell>8× (28×28)</cell><cell cols="2">concat 2×2, 192-d , LN concat 2×2, 192-d , LN win. sz. 7×7, dim 192, head 6 × 2 win. sz. 7×7, dim 192, head 6 × 2</cell><cell>concat 2×2, 256-d , LN win. sz. 7×7, dim 256, head 8 × 2</cell><cell>concat 2×2, 384-d , LN win. sz. 7×7, dim 384, head 12 × 2</cell></row><row><cell>stage 3</cell><cell>16× (14×14)</cell><cell cols="2">concat 2×2, 384-d , LN concat 2×2, 384-d , LN win. sz. 7×7, dim 384, head 12 × 6 win. sz. 7×7, dim 384, head 12 × 18</cell><cell>concat 2×2, 512-d , LN win. sz. 7×7, dim 512, head 16 × 18</cell><cell>concat 2×2, 768-d , LN win. sz. 7×7, dim 768, head 24 × 18</cell></row><row><cell>stage 4</cell><cell>32× (7×7)</cell><cell cols="4">concat 2×2, 768-d , LN concat 2×2, 768-d , LN concat 2×2, 1024-d , LN concat 2×2, 1536-d , LN win. sz. 7×7, dim 768, head 24 × 2 win. sz. 7×7, dim 768, head 24 × 2 win. sz. 7×7, dim 1024, head 32 × 2 win. sz. 7×7, dim 1536, head 48 × 2</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10" coords="10,50.11,261.22,492.08,451.93"><head>Table 8</head><label>8</label><figDesc>lists the performance of Swin Transformers with different input image sizes from 224 2 to 384 2 . In general, a larger input resolution leads to better top-1 accuracy but with slower inference speed.</figDesc><table coords="10,311.85,261.22,230.34,73.93"><row><cell></cell><cell cols="2">Swin-T</cell><cell cols="2">Swin-S</cell><cell cols="2">Swin-B</cell></row><row><cell>input</cell><cell>top-1</cell><cell>throughput</cell><cell>top-1</cell><cell>throughput</cell><cell>top-1</cell><cell>throughput</cell></row><row><cell>size</cell><cell>acc</cell><cell>(image / s)</cell><cell>acc</cell><cell>(image / s)</cell><cell>acc</cell><cell>(image / s)</cell></row><row><cell cols="2">224 2 81.3</cell><cell>755.2</cell><cell>83.0</cell><cell>436.9</cell><cell>83.3</cell><cell>278.1</cell></row><row><cell cols="2">256 2 81.6</cell><cell>580.9</cell><cell>83.4</cell><cell>336.7</cell><cell>83.7</cell><cell>208.1</cell></row><row><cell cols="2">320 2 82.1</cell><cell>342.0</cell><cell>83.7</cell><cell>198.2</cell><cell>84.0</cell><cell>132.0</cell></row><row><cell cols="2">384 2 82.2</cell><cell>219.5</cell><cell>83.9</cell><cell>127.6</cell><cell>84.5</cell><cell>84.7</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11" coords="10,308.86,338.76,236.41,109.16"><head>Table 8 .</head><label>8</label><figDesc>Swin Transformers with different input image size on ImageNet-1K classification.</figDesc><table coords="10,310.06,371.33,235.22,76.59"><row><cell cols="2">Backbone Optimizer AP box AP box 50 AP box 75 AP mask AP mask 50</cell><cell>AP mask 75</cell></row><row><cell>R50</cell><cell cols="2">SGD AdamW 46.3 64.3 50.5 40.1 61.7 43.4 45.0 62.9 48.8 38.5 59.9 41.4</cell></row><row><cell>X101-32x4d</cell><cell cols="2">SGD AdamW 48.1 66.5 52.4 41.6 63.9 45.2 47.8 65.9 51.9 40.4 62.9 43.5</cell></row><row><cell>X101-64x4d</cell><cell cols="2">SGD AdamW 48.3 66.4 52.3 41.7 64.0 45.1 48.8 66.9 53.0 41.4 63.9 44.7</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12" coords="10,308.86,451.54,236.25,29.69"><head>Table 9 .</head><label>9</label><figDesc>Comparison of the SGD and AdamW optimizers for ResNe(X)t backbones on COCO object detection using the Cascade Mask R-CNN framework.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0" coords="2,64.46,686.48,206.51,7.05"><p>The query and key are projection vectors in a self-attention layer.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1" coords="2,64.46,696.35,221.90,6.91;2,50.11,705.81,236.25,6.91"><p>While there are efficient methods to implement a sliding-window based convolution layer on general hardware, thanks to its shared kernel</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2" coords="4,323.21,705.81,186.68,6.91"><p>We omit SoftMax computation in determining complexity.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3" coords="5,64.46,696.09,221.91,7.17;5,50.11,705.56,229.08,7.17"><p>To make the window size (M, M ) divisible by the feature map size of (h, w), bottom-right padding is employed on the feature map if needed.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgement</head><p>We thank many colleagues at <rs type="institution">Microsoft</rs> for their help, in particular, <rs type="person">Li Dong</rs> and <rs type="person">Furu Wei</rs> for useful discussions; <rs type="person">Bin Xiao</rs>, <rs type="person">Lu Yuan</rs> and <rs type="person">Lei Zhang</rs> for help on datasets.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"> <ref type="table" coords="11,71.71,219.33,7.47,7.77">10</ref><p>. Performance of Swin MLP-Mixer on ImageNet-1K classification. D indictes the number of channels per head. Throughput is measured using the GitHub repository of <ref type="bibr" coords="11,225.97,241.24,14.94,7.77" target="#b67">[68]</ref> and a V100 GPU, following <ref type="bibr" coords="11,109.42,252.20,13.74,7.77" target="#b62">[63]</ref>. proach, ResMLP <ref type="bibr" coords="11,121.93,281.76,15.27,8.64" target="#b60">[61]</ref>. Swin-Mixer performs significantly better than MLP-Mixer (81.3% vs. 76.4%) using slightly smaller computation budget (10.4G vs. 12.7G). It also has better speed accuracy trade-off compared to ResMLP <ref type="bibr" coords="11,267.28,317.63,15.27,8.64" target="#b61">[62]</ref>. These results indicate the proposed hierarchical design and the shifted window approach are generalizable.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="11,70.04,383.22,216.32,7.77;11,70.03,394.18,216.33,7.77;11,70.03,405.14,216.33,7.77;11,70.03,415.93,216.33,7.93;11,70.03,426.89,216.33,7.93;11,70.03,438.01,4.48,7.77" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="11,115.90,405.14,170.46,7.77;11,70.03,416.10,129.35,7.77">Unilmv2: Pseudo-masked language models for unified language model pre-training</title>
+		<author>
+			<persName coords=""><forename type="first">Hangbo</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Furu</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wenhui</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nan</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Songhao</forename><surname>Piao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno>PMLR, 2020. 5</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,218.27,415.93,68.10,7.73;11,70.03,426.89,103.49,7.73">International Conference on Machine Learning</title>
+		<imprint>
+			<biblScope unit="page" from="642" to="652" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,70.04,449.56,216.32,7.77;11,70.03,460.52,216.33,7.77;11,70.03,471.32,189.67,7.93" xml:id="b1">
+	<monogr>
+		<title level="m" type="main" coords="11,168.09,460.52,118.28,7.77;11,70.03,471.48,31.60,7.77">Toward transformer-based object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Josh</forename><surname>Beal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Eric</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Eric</forename><surname>Tzeng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dong</forename><forename type="middle">Huk</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><surname>Zhai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dmitry</forename><surname>Kislyuk</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.09958</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,70.04,483.03,216.32,7.77;11,70.03,493.99,216.33,7.77;11,70.03,504.95,54.19,7.77" xml:id="b2">
+	<monogr>
+		<title level="m" type="main" coords="11,139.75,493.99,146.61,7.77;11,70.03,504.95,20.05,7.77">Attention augmented convolutional networks</title>
+		<author>
+			<persName coords=""><forename type="first">Irwan</forename><surname>Bello</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Barret</forename><surname>Zoph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathon</forename><surname>Shlens</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Quoc</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Le</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,70.04,516.50,216.32,7.77;11,70.03,527.46,216.33,7.77;11,70.03,538.25,213.83,7.93" xml:id="b3">
+	<analytic>
+		<author>
+			<persName coords=""><forename type="first">Alexey</forename><surname>Bochkovskiy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chien-Yao</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hong-Yuan Mark</forename><surname>Liao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.10934</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,171.83,527.46,114.54,7.77;11,70.03,538.42,55.76,7.77">Optimal speed and accuracy of object detection</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">4</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,70.04,549.97,216.32,7.77;11,70.03,560.92,216.33,7.77;11,70.03,571.72,216.33,7.93;11,70.03,582.68,199.98,7.93" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="11,128.87,560.92,157.50,7.77;11,70.03,571.88,57.42,7.77">Soft-nms -improving object detection with one line of code</title>
+		<author>
+			<persName coords=""><forename type="first">Navaneeth</forename><surname>Bodla</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bharat</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rama</forename><surname>Chellappa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Larry</forename><forename type="middle">S</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,146.31,571.72,140.05,7.73;11,70.03,582.68,141.60,7.73">Proceedings of the IEEE International Conference on Computer Vision (ICCV)</title>
+		<meeting>the IEEE International Conference on Computer Vision (ICCV)</meeting>
+		<imprint>
+			<date type="published" when="2017-10">Oct 2017</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,70.04,594.39,216.32,7.77;11,70.03,605.19,216.33,7.93;11,70.03,616.15,216.33,7.73;11,70.03,627.11,122.78,7.93" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="11,208.48,594.39,77.88,7.77;11,70.03,605.35,131.91,7.77">Cascade r-cnn: Delving into high quality object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Zhaowei</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nuno</forename><surname>Vasconcelos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,219.16,605.19,67.20,7.73;11,70.03,616.15,216.33,7.73;11,70.03,627.11,12.95,7.73">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,70.04,638.82,216.32,7.77;11,70.03,649.78,216.33,7.77;11,70.03,660.57,216.33,7.93;11,70.03,671.53,216.33,7.73;11,70.03,682.65,69.97,7.77" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="11,85.70,649.78,200.67,7.77;11,70.03,660.74,64.71,7.77">Gcnet: Non-local networks meet squeeze-excitation networks and beyond</title>
+		<author>
+			<persName coords=""><forename type="first">Yue</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiarui</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fangyun</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,153.91,660.57,132.45,7.73;11,70.03,671.53,212.20,7.73">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops</meeting>
+		<imprint>
+			<date type="published" when="2006">Oct 2019. 3, 6</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,70.04,694.20,216.32,7.77;11,70.03,705.16,216.33,7.77;11,328.78,75.96,216.33,7.94;11,328.78,86.92,216.33,7.94;11,328.78,98.04,13.45,7.77" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="11,258.97,705.16,27.39,7.77;11,328.78,76.13,135.70,7.77">End-to-end object detection with transformers</title>
+		<author>
+			<persName coords=""><forename type="first">Nicolas</forename><surname>Carion</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Francisco</forename><surname>Massa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gabriel</forename><surname>Synnaeve</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nicolas</forename><surname>Usunier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Kirillov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sergey</forename><surname>Zagoruyko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,480.41,75.96,64.70,7.73;11,328.78,86.92,88.28,7.73">European Conference on Computer Vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,110.28,216.32,7.77;11,328.78,121.24,216.33,7.77;11,328.78,132.20,216.33,7.77;11,328.78,143.00,216.33,7.93;11,328.78,153.95,216.33,7.93;11,328.78,165.07,59.27,7.77" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="11,426.40,132.20,118.71,7.77;11,328.78,143.16,46.08,7.77">Hybrid task cascade for instance segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiangmiao</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiaqi</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaoxiao</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shuyang</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wansen</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ziwei</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianping</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wanli</forename><surname>Ouyang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,392.82,143.00,152.29,7.73;11,328.78,153.95,163.48,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,177.31,216.32,7.77;11,328.78,188.27,216.33,7.77;11,328.78,199.23,216.33,7.77;11,328.78,210.03,216.33,7.93;11,328.78,221.15,13.45,7.77" xml:id="b9">
+	<monogr>
+		<title level="m" type="main" coords="11,389.37,199.23,155.75,7.77;11,328.78,210.19,67.76,7.77">Mmdetection: Open mmlab detection toolbox and benchmark</title>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiaqi</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiangmiao</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuhang</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaoxiao</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shuyang</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wansen</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ziwei</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiarui</forename><surname>Xu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1906.07155</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,328.79,233.38,216.32,7.77;11,328.78,244.34,216.33,7.77;11,328.78,255.30,216.33,7.77;11,328.78,266.10,216.33,7.73;11,328.78,277.06,119.78,7.93" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="11,439.92,244.34,105.19,7.77;11,328.78,255.30,200.20,7.77">Encoder-decoder with atrous separable convolution for semantic image segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Liang-Chieh</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yukun</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">George</forename><surname>Papandreou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Florian</forename><surname>Schroff</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hartwig</forename><surname>Adam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,328.78,266.10,216.33,7.73;11,328.78,277.06,26.68,7.73">Proceedings of the European conference on computer vision (ECCV)</title>
+		<meeting>the European conference on computer vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="801" to="818" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,289.46,216.32,7.77;11,328.78,300.42,216.33,7.77;11,328.78,311.21,183.27,7.93" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="11,397.76,300.42,147.35,7.77;11,328.78,311.37,85.64,7.77">Reppoints v2: Verification meets regression for object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Yihong</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yue</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liwei</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,430.87,311.21,28.98,7.73">NeurIPS</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,323.61,216.32,7.77;11,328.78,334.57,216.33,7.77;11,328.78,345.37,141.92,7.93" xml:id="b12">
+	<monogr>
+		<title level="m" type="main" coords="11,491.17,323.61,53.94,7.77;11,328.78,334.57,216.33,7.77;11,328.78,345.53,53.00,7.77">Relationnet++: Bridging visual representations for object detection via transformer decoder</title>
+		<author>
+			<persName coords=""><forename type="first">Cheng</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fangyun</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>In NeurIPS, 2020. 3, 7</note>
+</biblStruct>
+
+<biblStruct coords="11,328.79,357.77,216.32,7.77;11,328.78,368.73,216.33,7.77;11,328.78,379.68,216.33,7.77;11,328.78,390.64,216.33,7.77;11,328.78,401.60,216.33,7.77;11,328.78,412.40,216.33,7.93;11,328.78,423.52,36.85,7.77" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="11,406.03,401.60,135.31,7.77">Rethinking attention with performers</title>
+		<author>
+			<persName coords=""><forename type="first">Valerii</forename><surname>Krzysztof Marcin Choromanski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Likhosherstov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xingyou</forename><surname>Dohan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andreea</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tamas</forename><surname>Gane</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Peter</forename><surname>Sarlos</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jared</forename><forename type="middle">Quincy</forename><surname>Hawkins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Afroz</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lukasz</forename><surname>Mohiuddin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><forename type="middle">Benjamin</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lucy</forename><forename type="middle">J</forename><surname>Belanger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adrian</forename><surname>Colwell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Weller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,340.05,412.40,201.33,7.73">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,435.76,216.32,7.77;11,328.78,446.72,216.33,7.77;11,328.78,457.51,216.33,7.93;11,328.78,468.63,27.89,7.77" xml:id="b14">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Xiangxiang</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bo</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhi</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaolin</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Huaxia</forename><surname>Xia</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2102.10882</idno>
+		<title level="m" coords="11,377.62,446.72,167.49,7.77;11,328.78,457.51,145.78,7.93">Do we really need explicit position encodings for vision transformers? arXiv preprint</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,480.87,122.07,7.77;11,477.49,480.87,67.62,7.77;11,328.78,491.83,216.33,7.77;11,328.78,502.79,20.67,7.77;11,383.22,503.63,161.90,6.31;11,328.78,513.75,121.13,7.77" xml:id="b15">
+	<monogr>
+		<title level="m" type="main" coords="11,477.49,480.87,67.62,7.77;11,328.78,491.83,216.33,7.77;11,328.78,502.79,16.53,7.77">MMSegmentation: Openmmlab semantic segmentation toolbox and benchmark</title>
+		<author>
+			<orgName type="collaboration" coords="11,328.79,480.87,118.42,7.77">MMSegmentation Contributors</orgName>
+		</author>
+		<ptr target="https://github.com/open-mmlab/mmsegmentation" />
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">10</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,525.99,216.32,7.77;11,328.78,536.94,216.33,7.77;11,328.78,547.74,216.33,7.93;11,328.78,558.70,216.33,7.73;11,328.78,569.66,175.40,7.93" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="11,350.77,536.94,194.35,7.77;11,328.78,547.90,122.88,7.77">Randaugment: Practical automated data augmentation with a reduced search space</title>
+		<author>
+			<persName coords=""><forename type="first">Barret</forename><surname>Ekin D Cubuk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathon</forename><surname>Zoph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc V</forename><surname>Shlens</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Le</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,475.06,547.74,70.05,7.73;11,328.78,558.70,216.33,7.73;11,328.78,569.66,82.62,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="702" to="703" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,582.06,216.32,7.77;11,328.78,593.02,216.33,7.77;11,328.78,603.81,216.33,7.93;11,328.78,614.77,190.10,7.93" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="11,451.28,593.02,93.83,7.77;11,328.78,603.98,31.13,7.77">Deformable convolutional networks</title>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haozhi</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuwen</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Guodong</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yichen</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,376.90,603.81,168.21,7.73;11,328.78,614.77,88.98,7.73">Proceedings of the IEEE International Conference on Computer Vision</title>
+		<meeting>the IEEE International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,627.17,216.32,7.77;11,328.78,638.13,216.33,7.77;11,328.78,648.93,216.33,7.93;11,328.78,659.89,179.37,7.93" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="11,388.01,638.13,157.10,7.77;11,328.78,649.09,29.43,7.77">Imagenet: A large-scale hierarchical image database</title>
+		<author>
+			<persName coords=""><forename type="first">Jia</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Richard</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li-Jia</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Fei-Fei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,375.97,648.93,169.14,7.73;11,328.78,659.89,67.71,7.73">2009 IEEE conference on computer vision and pattern recognition</title>
+		<imprint>
+			<publisher>Ieee</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="248" to="255" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,328.79,672.29,216.32,7.77;11,328.78,683.24,216.33,7.77;11,328.78,694.20,216.33,7.77;11,328.78,705.16,216.33,7.77;12,70.03,76.13,216.33,7.77;12,70.03,86.92,216.33,7.94;12,70.03,97.88,103.61,7.94" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="11,501.56,705.16,43.55,7.77;12,70.03,76.13,216.33,7.77;12,70.03,87.08,16.80,7.77">An image is worth 16x16 words: Transformers for image recognition at scale</title>
+		<author>
+			<persName coords=""><forename type="first">Alexey</forename><surname>Dosovitskiy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lucas</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Kolesnikov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dirk</forename><surname>Weissenborn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaohua</forename><surname>Zhai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Thomas</forename><surname>Unterthiner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mostafa</forename><surname>Dehghani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthias</forename><surname>Minderer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Georg</forename><surname>Heigold</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sylvain</forename><surname>Gelly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Neil</forename><surname>Houlsby</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,103.70,86.92,182.66,7.73;12,70.03,97.88,16.40,7.73">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2009">2021. 1, 2, 3, 4, 5, 6, 9</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,110.18,216.32,7.77;12,70.03,121.14,216.33,7.77;12,70.03,132.10,216.33,7.77;12,70.03,142.90,216.33,7.93;12,70.03,153.86,216.33,7.93;12,70.03,164.98,81.68,7.77" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="12,70.03,132.10,216.33,7.77;12,70.03,143.06,72.03,7.77">Spinenet: Learning scale-permuted backbone for recognition and localization</title>
+		<author>
+			<persName coords=""><forename type="first">Xianzhi</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengchong</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Golnaz</forename><surname>Ghiasi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mingxing</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yin</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodan</forename><surname>Quoc V Le</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Song</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,158.33,142.90,128.03,7.73;12,70.03,153.86,189.54,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="11592" to="11601" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,177.12,216.32,7.77;12,70.03,188.07,216.33,7.77;12,70.03,199.03,216.33,7.77;12,70.03,209.83,216.33,7.93;12,70.03,220.79,199.73,7.93" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coords="12,207.78,188.07,78.58,7.77;12,70.03,199.03,216.33,7.77;12,70.03,209.99,24.63,7.77">Instaboost: Boosting instance segmentation via probability map guided copypasting</title>
+		<author>
+			<persName coords=""><forename type="first">Jianhua</forename><surname>Hao-Shu Fang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Runzhong</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Minghao</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yong-Lu</forename><surname>Gou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cewu</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,110.18,209.83,176.19,7.73;12,70.03,220.79,98.61,7.73">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,233.09,216.32,7.77;12,70.03,244.05,216.33,7.77;12,70.03,254.85,216.33,7.93;12,70.03,265.81,216.33,7.93;12,70.03,276.93,59.27,7.77" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="12,185.38,244.05,100.98,7.77;12,70.03,255.01,68.19,7.77">Dual attention network for scene segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Jun</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jing</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haijie</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yong</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yongjun</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhiwei</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hanqing</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,154.83,254.85,131.53,7.73;12,70.03,265.81,163.49,7.73">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">7</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,289.06,216.32,7.77;12,70.03,300.02,216.33,7.77;12,70.03,310.82,216.33,7.93;12,70.03,321.78,216.33,7.93;12,70.03,332.90,27.89,7.77" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="12,177.83,300.02,108.54,7.77;12,70.03,310.98,48.63,7.77">Adaptive context network for scene parsing</title>
+		<author>
+			<persName coords=""><forename type="first">Jun</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jing</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuhang</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yong</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yongjun</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jinhui</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hanqing</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,141.14,310.82,145.22,7.73;12,70.03,321.78,142.24,7.73">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="6748" to="6757" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,345.04,216.32,7.77;12,70.03,355.84,216.33,7.93;12,70.03,366.96,45.82,7.77" xml:id="b24">
+	<analytic>
+		<title level="a" type="main" coords="12,154.59,345.04,131.77,7.77;12,70.03,356.00,81.84,7.77">Cognitron: A self-organizing multilayered neural network</title>
+		<author>
+			<persName coords=""><forename type="first">Kunihiko</forename><surname>Fukushima</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,160.59,355.84,79.48,7.73">Biological cybernetics</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="121" to="136" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,379.09,216.32,7.77;12,70.03,390.05,216.33,7.77;12,70.03,401.01,216.33,7.77;12,70.03,411.81,213.45,7.93" xml:id="b25">
+	<monogr>
+		<title level="m" type="main" coords="12,260.95,390.05,25.41,7.77;12,70.03,401.01,216.33,7.77;12,70.03,411.97,46.08,7.77">Simple copy-paste is a strong data augmentation method for instance segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Golnaz</forename><surname>Ghiasi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yin</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aravind</forename><surname>Srinivas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rui</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ekin</forename><forename type="middle">D</forename><surname>Cubuk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc V</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Barret</forename><surname>Zoph</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.07177</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">7</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,70.04,424.11,216.32,7.77;12,70.03,434.91,216.33,7.93;12,70.03,445.87,216.33,7.73;12,70.03,456.83,61.26,7.93" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="12,90.19,435.07,161.42,7.77">Learning region features for object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Jiayuan</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liwei</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yichen</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,270.33,434.91,16.03,7.73;12,70.03,445.87,216.33,7.73;12,70.03,456.83,26.68,7.73">Proceedings of the European Conference on Computer Vision (ECCV)</title>
+		<meeting>the European Conference on Computer Vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,469.13,216.32,7.77;12,70.03,479.92,216.33,7.93;12,70.03,490.88,97.87,7.93" xml:id="b27">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">An</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Enhua</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianyuan</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chunjing</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yunhe</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2103.00112</idno>
+		<title level="m" coords="12,134.68,480.08,95.01,7.77">Transformer in transformer</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,70.04,503.18,216.33,7.77;12,70.03,513.98,216.33,7.93;12,70.03,524.94,216.33,7.93;12,70.03,536.06,4.48,7.77" xml:id="b28">
+	<analytic>
+		<title level="a" type="main" coords="12,188.02,503.18,98.34,7.77;12,70.03,514.14,63.52,7.77">Piotr Dollár, and Ross Girshick. Mask r-cnn</title>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Georgia</forename><surname>Gkioxari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,149.46,513.98,136.91,7.73;12,70.03,524.94,110.16,7.73">Proceedings of the IEEE international conference on computer vision</title>
+		<meeting>the IEEE international conference on computer vision</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,548.20,216.32,7.77;12,70.03,559.00,216.33,7.93;12,70.03,569.95,216.33,7.73;12,70.03,580.91,149.75,7.93" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="12,70.03,559.16,163.88,7.77">Deep residual learning for image recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiangyu</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shaoqing</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,253.90,559.00,32.46,7.73;12,70.03,569.95,216.33,7.73;12,70.03,580.91,39.57,7.73">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2004">2016. 1, 2, 4</date>
+			<biblScope unit="page" from="770" to="778" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,593.21,216.32,7.77;12,70.03,604.17,216.33,7.77;12,70.03,614.97,216.33,7.93;12,70.03,625.93,216.33,7.73;12,70.03,636.89,152.07,7.93" xml:id="b30">
+	<analytic>
+		<title level="a" type="main" coords="12,170.83,604.17,115.53,7.77;12,70.03,615.13,147.39,7.77">Augment your batch: Improving generalization through instance repetition</title>
+		<author>
+			<persName coords=""><forename type="first">Elad</forename><surname>Hoffer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tal</forename><surname>Ben-Nun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Itay</forename><surname>Hubara</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niv</forename><surname>Giladi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Torsten</forename><surname>Hoefler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Soudry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,232.96,614.97,53.40,7.73;12,70.03,625.93,216.33,7.73;12,70.03,636.89,41.70,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,649.19,216.32,7.77;12,70.03,659.99,216.33,7.93;12,70.03,670.94,216.33,7.73;12,70.03,681.90,152.07,7.93" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coords="12,92.99,660.15,140.18,7.77">Relation networks for object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiayuan</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yichen</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,253.90,659.99,32.46,7.73;12,70.03,670.94,216.33,7.73;12,70.03,681.90,41.70,7.73">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">5</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,70.04,694.20,216.32,7.77;12,70.03,705.00,216.33,7.93;12,328.78,75.96,216.33,7.73;12,328.78,86.92,175.31,7.94" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coords="12,265.94,694.20,20.42,7.77;12,70.03,705.16,143.24,7.77">Local relation networks for image recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhenda</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,232.16,705.00,54.20,7.73;12,328.78,75.96,216.33,7.73;12,328.78,86.92,24.55,7.73">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision (ICCV)</meeting>
+		<imprint>
+			<date type="published" when="2005">October 2019. 2, 3, 5</date>
+			<biblScope unit="page" from="3464" to="3473" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,98.36,216.32,7.77;12,328.78,109.31,216.33,7.77;12,328.78,120.11,216.33,7.93;12,328.78,131.07,216.33,7.93" xml:id="b33">
+	<analytic>
+		<title level="a" type="main" coords="12,405.25,109.31,139.87,7.77;12,328.78,120.27,20.05,7.77">Densely connected convolutional networks</title>
+		<author>
+			<persName coords=""><forename type="first">Gao</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhuang</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Laurens</forename><surname>Van Der Maaten</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kilian</forename><forename type="middle">Q</forename><surname>Weinberger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,366.72,120.11,178.40,7.73;12,328.78,131.07,106.74,7.73">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,142.50,216.32,7.77;12,328.78,153.46,216.33,7.77;12,328.78,164.26,216.33,7.93;12,328.78,175.38,62.89,7.77" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coords="12,398.44,153.46,131.46,7.77">Deep networks with stochastic depth</title>
+		<author>
+			<persName coords=""><forename type="first">Gao</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhuang</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Sedra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kilian</forename><forename type="middle">Q</forename><surname>Weinberger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,328.78,164.26,151.41,7.73">European conference on computer vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="646" to="661" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,186.65,216.32,7.77;12,328.78,197.61,216.33,7.77;12,328.78,208.41,216.33,7.93;12,328.78,219.53,27.89,7.77" xml:id="b35">
+	<analytic>
+		<title level="a" type="main" coords="12,484.01,186.65,61.10,7.77;12,328.78,197.61,216.33,7.77;12,328.78,208.57,45.48,7.77">Receptive fields, binocular interaction and functional architecture in the cat&apos;s visual cortex</title>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>David</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Torsten</forename><forename type="middle">N</forename><surname>Hubel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Wiesel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,383.59,208.41,94.52,7.73">The Journal of physiology</title>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="106" to="154" />
+			<date type="published" when="1962">1962</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,230.80,216.32,7.77;12,328.78,241.60,216.33,7.93;12,328.78,252.72,36.85,7.77" xml:id="b36">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Diederik</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jimmy</forename><surname>Kingma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ba</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1412.6980</idno>
+		<title level="m" coords="12,465.82,230.80,79.29,7.77;12,328.78,241.76,83.32,7.77">Adam: A method for stochastic optimization</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,328.79,263.99,216.32,7.77;12,328.78,274.95,216.33,7.77;12,328.78,285.91,216.33,7.77;12,328.78,296.71,177.73,7.93" xml:id="b37">
+	<analytic>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Kolesnikov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lucas</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaohua</forename><surname>Zhai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Joan</forename><surname>Puigcerver</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jessica</forename><surname>Yung</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sylvain</forename><surname>Gelly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Neil</forename><surname>Houlsby</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1912.11370</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,401.09,285.91,140.51,7.77">General visual representation learning</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">8</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,328.79,308.14,216.32,7.77;12,328.78,319.10,216.33,7.77;12,328.78,329.90,216.33,7.93;12,328.78,340.85,125.26,7.93" xml:id="b38">
+	<analytic>
+		<title level="a" type="main" coords="12,328.78,319.10,216.33,7.77;12,328.78,330.06,20.05,7.77">Imagenet classification with deep convolutional neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Krizhevsky</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Geoffrey</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,369.79,329.90,175.32,7.73;12,328.78,340.85,14.94,7.73">Advances in neural information processing systems</title>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,352.29,216.33,7.77;12,328.78,363.25,216.33,7.77;12,328.78,374.04,216.33,7.93;12,328.78,385.16,4.48,7.77" xml:id="b39">
+	<analytic>
+		<title level="a" type="main" coords="12,353.39,363.25,191.72,7.77;12,328.78,374.21,19.86,7.77">Gradient-based learning applied to document recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Yann</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Léon</forename><surname>Bottou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yoshua</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Patrick</forename><surname>Haffner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,357.28,374.04,88.38,7.73">Proceedings of the IEEE</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2278" to="2324" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,396.44,216.33,7.77;12,328.78,407.39,216.33,7.77;12,328.78,418.19,216.33,7.93;12,328.78,429.31,80.82,7.77" xml:id="b40">
+	<analytic>
+		<title level="a" type="main" coords="12,436.05,396.44,109.06,7.77;12,328.78,407.39,197.61,7.77">Léon Bottou, and Yoshua Bengio. Object recognition with gradient-based learning</title>
+		<author>
+			<persName coords=""><forename type="first">Yann</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Patrick</forename><surname>Haffner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,328.78,418.19,170.67,7.73">Shape, contour and grouping in computer vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="page" from="319" to="345" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,440.58,216.32,7.77;12,328.78,451.54,216.33,7.77;12,328.78,462.34,216.33,7.93;12,328.78,473.30,216.33,7.93;12,328.78,484.42,27.89,7.77" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coords="12,484.90,451.54,60.22,7.77;12,328.78,462.50,109.36,7.77">Feature pyramid networks for object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bharath</forename><surname>Hariharan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Serge</forename><surname>Belongie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,462.83,462.34,82.28,7.73;12,328.78,473.30,194.04,7.73">The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<date type="published" when="2002">July 2017. 2</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,495.69,216.32,7.77;12,328.78,506.65,216.33,7.77;12,328.78,517.61,216.33,7.77;12,328.78,528.41,216.33,7.93;12,328.78,539.53,62.89,7.77" xml:id="b42">
+	<analytic>
+		<title level="a" type="main" coords="12,363.63,517.61,163.74,7.77">Microsoft coco: Common objects in context</title>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Maire</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Serge</forename><surname>Belongie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Hays</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pietro</forename><surname>Perona</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Deva</forename><surname>Ramanan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollár</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Lawrence</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zitnick</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,328.78,528.41,151.41,7.73">European conference on computer vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="740" to="755" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,550.80,216.32,7.77;12,328.78,561.60,216.33,7.93;12,328.78,572.56,112.23,7.93" xml:id="b43">
+	<analytic>
+		<title level="a" type="main" coords="12,463.26,550.80,81.85,7.77;12,328.78,561.76,63.12,7.77">Decoupled weight decay regularization</title>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Loshchilov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Frank</forename><surname>Hutter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,408.26,561.60,136.85,7.73;12,328.78,572.56,55.96,7.73">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">10</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,583.99,216.32,7.77;12,328.78,594.79,216.33,7.93;12,328.78,605.75,187.39,7.93" xml:id="b44">
+	<analytic>
+		<title level="a" type="main" coords="12,487.92,583.99,57.19,7.77;12,328.78,594.95,141.38,7.77">Acceleration of stochastic approximation by averaging</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Boris</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Anatoli</forename><forename type="middle">B</forename><surname>Polyak</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Juditsky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,481.87,594.79,63.25,7.73;12,328.78,605.75,86.89,7.73">SIAM journal on control and optimization</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">9</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,328.79,617.18,216.32,7.77;12,328.78,628.14,216.33,7.77;12,328.78,638.94,216.33,7.93;12,328.78,650.05,36.85,7.77" xml:id="b45">
+	<monogr>
+		<title level="m" type="main" coords="12,508.26,617.18,36.85,7.77;12,328.78,628.14,216.33,7.77;12,328.78,639.10,83.84,7.77">Detectors: Detecting objects with recursive feature pyramid and switchable atrous convolution</title>
+		<author>
+			<persName coords=""><forename type="first">Siyuan</forename><surname>Qiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liang-Chieh</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alan</forename><surname>Yuille</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2006.02334</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">7</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,328.79,661.33,216.32,7.77;12,328.78,672.29,216.33,7.77;12,328.78,683.24,216.33,7.77;12,328.78,694.20,216.33,7.77;12,328.78,705.16,183.28,7.77" xml:id="b46">
+	<monogr>
+		<title level="m" type="main" coords="12,441.89,694.20,103.22,7.77;12,328.78,705.16,149.52,7.77">Learning transferable visual models from natural language supervision</title>
+		<author>
+			<persName coords=""><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jong</forename><forename type="middle">Wook</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Hallacy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aditya</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gabriel</forename><surname>Goh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sandhini</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Girish</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanda</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pamela</forename><surname>Mishkin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jack</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gretchen</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,76.13,216.32,7.77;13,70.03,87.08,216.33,7.77;13,70.03,97.88,216.33,7.94;13,70.03,108.84,216.33,7.93;13,70.03,119.96,54.78,7.77" xml:id="b47">
+	<analytic>
+		<title level="a" type="main" coords="13,189.99,87.08,96.37,7.77;13,70.03,98.04,21.98,7.77">Designing network design spaces</title>
+		<author>
+			<persName coords=""><forename type="first">Ilija</forename><surname>Radosavovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Raj</forename><forename type="middle">Prateek</forename><surname>Kosaraju</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollár</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,115.63,97.88,170.73,7.73;13,70.03,108.84,156.30,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="10428" to="10436" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,132.20,216.32,7.77;13,70.03,143.16,216.33,7.77;13,70.03,154.12,216.33,7.77;13,70.03,164.91,216.34,7.93;13,70.03,175.87,132.26,7.93" xml:id="b48">
+	<analytic>
+		<title level="a" type="main" coords="13,117.73,154.12,168.63,7.77;13,70.03,165.07,109.78,7.77">Exploring the limits of transfer learning with a unified text-to-text transformer</title>
+		<author>
+			<persName coords=""><forename type="first">Colin</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adam</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Katherine</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sharan</forename><surname>Narang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Matena</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yanqi</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Peter</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="13,188.05,164.91,98.32,7.73;13,70.03,175.87,44.94,7.73">Journal of Machine Learning Research</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">140</biblScope>
+			<biblScope unit="page" from="1" to="67" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,188.27,216.32,7.77;13,70.03,199.23,216.33,7.77;13,70.03,210.03,216.33,7.93;13,70.03,220.99,216.33,7.93;13,70.03,232.11,36.85,7.77" xml:id="b49">
+	<analytic>
+		<title level="a" type="main" coords="13,225.01,199.23,61.36,7.77;13,70.03,210.19,92.17,7.77">Stand-alone selfattention in vision models</title>
+		<author>
+			<persName coords=""><forename type="first">Prajit</forename><surname>Ramachandran</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Irwan</forename><surname>Bello</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Anselm</forename><surname>Levskaya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jon</forename><surname>Shlens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,180.61,210.03,105.75,7.73;13,70.03,220.99,83.85,7.73">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<publisher>Curran Associates, Inc</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,244.34,216.32,7.77;13,70.03,255.30,216.33,7.77;13,70.03,266.10,216.33,7.93;13,70.03,277.06,216.33,7.93;13,70.03,288.18,62.89,7.77" xml:id="b50">
+	<analytic>
+		<title level="a" type="main" coords="13,276.90,244.34,9.46,7.77;13,70.03,255.30,216.33,7.77;13,70.03,266.26,19.43,7.77">Unet: Convolutional networks for biomedical image segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Olaf</forename><surname>Ronneberger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Philipp</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Thomas</forename><surname>Brox</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,107.09,266.10,179.27,7.73;13,70.03,277.06,152.56,7.73">International Conference on Medical image computing and computer-assisted intervention</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="234" to="241" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,300.42,216.32,7.77;13,70.03,311.21,216.33,7.93;13,70.03,322.17,207.03,7.93" xml:id="b51">
+	<analytic>
+		<title level="a" type="main" coords="13,196.89,300.42,89.47,7.77;13,70.03,311.38,152.38,7.77">Very deep convolutional networks for large-scale image recognition</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Simonyan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Zisserman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,239.04,311.21,47.32,7.73;13,70.03,322.17,145.53,7.73">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2004-02">May 2015. 2, 4</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,334.57,216.32,7.77;13,70.03,345.37,216.33,7.93;13,70.03,356.33,216.33,7.73;13,70.03,367.29,113.81,7.93" xml:id="b52">
+	<analytic>
+		<title level="a" type="main" coords="13,198.24,334.57,88.12,7.77;13,70.03,345.53,121.88,7.77">An analysis of scale invariance in object detection snip</title>
+		<author>
+			<persName coords=""><forename type="first">Bharat</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Larry</forename><forename type="middle">S</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,215.90,345.37,70.46,7.73;13,70.03,356.33,216.33,7.73;13,70.03,367.29,12.95,7.73">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="3578" to="3587" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,379.68,216.32,7.77;13,70.03,390.48,216.33,7.93;13,70.03,401.44,216.33,7.93;13,70.03,412.56,46.06,7.77" xml:id="b53">
+	<analytic>
+		<title level="a" type="main" coords="13,260.45,379.68,25.90,7.77;13,70.03,390.64,102.80,7.77">Sniper: Efficient multi-scale training</title>
+		<author>
+			<persName coords=""><forename type="first">Bharat</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mahyar</forename><surname>Najibi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Larry</forename><forename type="middle">S</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,191.26,390.48,95.11,7.73;13,70.03,401.44,97.07,7.73">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<publisher>Curran Associates, Inc</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">31</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,424.80,216.32,7.77;13,70.03,435.76,216.33,7.77;13,70.03,446.56,216.33,7.93;13,70.03,457.51,97.87,7.93" xml:id="b54">
+	<monogr>
+		<title level="m" type="main" coords="13,261.45,435.76,24.91,7.77;13,70.03,446.72,150.25,7.77">Bottleneck transformers for visual recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Aravind</forename><surname>Srinivas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathon</forename><surname>Shlens</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pieter</forename><surname>Abbeel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2101.11605</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,70.04,469.91,216.32,7.77;13,70.03,480.87,216.33,7.77;13,70.03,491.83,216.33,7.77;13,70.03,502.63,216.33,7.93;13,70.03,513.59,115.80,7.93" xml:id="b55">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Peize</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rufeng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tao</forename><surname>Kong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chenfeng</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Zhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Masayoshi</forename><surname>Tomizuka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zehuan</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Changhu</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2011.12450</idno>
+		<title level="m" coords="13,189.56,491.83,96.80,7.77;13,70.03,502.79,151.71,7.77">Sparse r-cnn: End-to-end object detection with learnable proposals</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,70.04,525.99,216.32,7.77;13,70.03,536.94,216.33,7.77;13,70.03,547.90,216.33,7.77;13,70.03,558.70,216.33,7.93;13,70.03,569.66,216.33,7.93;13,70.03,580.78,4.48,7.77" xml:id="b56">
+	<analytic>
+		<title level="a" type="main" coords="13,216.64,547.90,69.72,7.77;13,70.03,558.86,44.34,7.77">Going deeper with convolutions</title>
+		<author>
+			<persName coords=""><forename type="first">Christian</forename><surname>Szegedy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yangqing</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pierre</forename><surname>Sermanet</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Scott</forename><surname>Reed</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dragomir</forename><surname>Anguelov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dumitru</forename><surname>Erhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vincent</forename><surname>Vanhoucke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><surname>Rabinovich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,137.58,558.70,148.78,7.73;13,70.03,569.66,146.67,7.73">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,593.02,216.32,7.77;13,70.03,603.81,216.33,7.93;13,70.03,614.77,216.33,7.93;13,70.03,625.89,36.85,7.77" xml:id="b57">
+	<analytic>
+		<title level="a" type="main" coords="13,221.85,593.02,64.51,7.77;13,70.03,603.98,149.60,7.77">Rethinking model scaling for convolutional neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Mingxing</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Efficientnet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,239.04,603.81,47.32,7.73;13,70.03,614.77,117.54,7.73">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2006">2019. 3, 6</date>
+			<biblScope unit="page" from="6105" to="6114" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,638.13,216.32,7.77;13,70.03,648.93,216.33,7.93;13,70.03,659.89,216.33,7.73;13,70.03,670.85,149.75,7.93" xml:id="b58">
+	<analytic>
+		<title level="a" type="main" coords="13,242.25,638.13,44.11,7.77;13,70.03,649.09,139.87,7.77">Efficientdet: Scalable and efficient object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Mingxing</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ruoming</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc V</forename><surname>Le</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,231.50,648.93,54.86,7.73;13,70.03,659.89,216.33,7.73;13,70.03,670.85,39.57,7.73">Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE/CVF conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="10781" to="10790" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,70.04,683.24,216.32,7.77;13,70.03,694.20,216.33,7.77;13,70.03,705.16,216.33,7.77;13,328.78,75.96,216.33,7.94;13,328.78,86.92,136.14,7.94" xml:id="b59">
+	<analytic>
+		<title level="a" type="main" coords="13,178.07,705.16,108.30,7.77;13,328.78,76.12,108.84,7.77">Long range arena : A bench-mark for efficient transformers</title>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Tay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mostafa</forename><surname>Dehghani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Samira</forename><surname>Abnar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yikang</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dara</forename><surname>Bahri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Philip</forename><surname>Pham</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jinfeng</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liu</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sebastian</forename><surname>Ruder</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Donald</forename><surname>Metzler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,454.48,75.96,90.63,7.73;13,328.78,86.92,102.29,7.73">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,98.38,216.32,7.77;13,328.78,109.34,216.33,7.77;13,328.78,120.30,216.33,7.77;13,328.78,131.26,216.33,7.77;13,328.78,142.22,131.48,7.77" xml:id="b60">
+	<monogr>
+		<title level="m" type="main" coords="13,447.97,131.26,97.14,7.77;13,328.78,142.22,71.00,7.77">Mlp-mixer: An all-mlp architecture for vision</title>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Tolstikhin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Neil</forename><surname>Houlsby</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Kolesnikov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lucas</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaohua</forename><surname>Zhai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Thomas</forename><surname>Unterthiner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jessica</forename><surname>Yung</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andreas</forename><surname>Steiner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Keysers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mario</forename><surname>Lucic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexey</forename><surname>Dosovitskiy</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">11</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,153.51,216.32,7.77;13,328.78,164.47,216.33,7.77;13,328.78,175.43,216.33,7.77;13,328.78,186.39,216.33,7.77;13,328.78,197.35,167.38,7.77" xml:id="b61">
+	<monogr>
+		<title level="m" type="main" coords="13,377.81,186.39,167.30,7.77;13,328.78,197.35,129.42,7.77">Resmlp: Feedforward networks for image classification with data-efficient training</title>
+		<author>
+			<persName coords=""><forename type="first">Hugo</forename><surname>Touvron</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Bojanowski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mathilde</forename><surname>Caron</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthieu</forename><surname>Cord</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alaaeldin</forename><surname>El-Nouby</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Edouard</forename><surname>Grave</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gautier</forename><surname>Izacard</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Armand</forename><surname>Joulin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gabriel</forename><surname>Synnaeve</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Verbeek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hervé</forename><surname>Jégou</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,208.64,216.32,7.77;13,328.78,219.60,216.33,7.77;13,328.78,230.56,216.33,7.77;13,328.78,241.36,216.33,7.93;13,328.78,252.48,17.93,7.77" xml:id="b62">
+	<monogr>
+		<title level="m" type="main" coords="13,514.55,219.60,30.57,7.77;13,328.78,230.56,216.33,7.77;13,328.78,241.52,23.76,7.77">Training data-efficient image transformers &amp; distillation through attention</title>
+		<author>
+			<persName coords=""><forename type="first">Hugo</forename><surname>Touvron</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthieu</forename><surname>Cord</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthijs</forename><surname>Douze</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Francisco</forename><surname>Massa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexandre</forename><surname>Sablayrolles</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hervé</forename><surname>Jégou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.12877</idno>
+		<imprint>
+			<date type="published" when="2009">2020. 2, 3, 5, 6, 9</date>
+			<biblScope unit="page">11</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,328.79,263.77,216.32,7.77;13,328.78,274.73,216.33,7.77;13,328.78,285.53,216.33,7.93;13,328.78,296.49,216.33,7.93;13,328.78,307.61,13.45,7.77" xml:id="b63">
+	<analytic>
+		<title level="a" type="main" coords="13,373.95,285.69,85.36,7.77">Attention is all you need</title>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Llion</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aidan</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Łukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Illia</forename><surname>Polosukhin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,475.13,285.53,69.98,7.73;13,328.78,296.49,113.29,7.73">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2004">2017. 1, 2, 4</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,318.91,216.32,7.77;13,328.78,329.86,216.33,7.77;13,328.78,340.82,216.33,7.77;13,328.78,351.62,216.33,7.93;13,328.78,362.58,182.07,7.93" xml:id="b64">
+	<analytic>
+		<title level="a" type="main" coords="13,432.80,340.82,112.31,7.77;13,328.78,351.78,131.14,7.77">Deep high-resolution representation learning for visual recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Jingdong</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ke</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tianheng</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Borui</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chaorui</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yang</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yadong</forename><surname>Mu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mingkui</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xinggang</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="13,467.54,351.62,77.58,7.73;13,328.78,362.58,148.56,7.73">IEEE transactions on pattern analysis and machine intelligence</title>
+		<imprint>
+			<biblScope unit="issue">3</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,374.04,216.32,7.77;13,328.78,385.00,216.33,7.77;13,328.78,395.95,216.33,7.77;13,328.78,406.75,216.33,7.93;13,328.78,417.71,97.87,7.93" xml:id="b65">
+	<monogr>
+		<title level="m" type="main" coords="13,328.78,395.95,216.33,7.77;13,328.78,406.91,144.80,7.77">Pyramid vision transformer: A versatile backbone for dense prediction without convolutions</title>
+		<author>
+			<persName coords=""><forename type="first">Wenhai</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Enze</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiang</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Deng-Ping</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaitao</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ding</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tong</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ping</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ling</forename><surname>Shao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2102.12122</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,328.79,429.17,216.32,7.77;13,328.78,439.97,216.33,7.93;13,328.78,450.93,216.33,7.73;13,328.78,462.04,27.89,7.77" xml:id="b66">
+	<analytic>
+		<title level="a" type="main" coords="13,363.32,440.13,96.22,7.77">Non-local neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Xiaolong</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Abhinav</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,481.28,439.97,63.83,7.73;13,328.78,450.93,163.66,7.73">IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<imprint>
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,473.34,17.44,7.77;13,361.44,473.34,39.74,7.77;13,445.94,473.34,27.89,7.77;13,489.05,473.34,21.91,7.77;13,526.18,473.34,18.93,7.77;13,328.78,484.30,12.20,7.77;13,389.10,485.14,156.02,6.31;13,328.78,495.26,154.41,7.77" xml:id="b67">
+	<monogr>
+		<title level="m" type="main" coords="13,445.94,473.34,27.89,7.77;13,489.05,473.34,21.91,7.77;13,526.18,473.34,18.93,7.77;13,328.78,484.30,9.15,7.77">Pytorch image models</title>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Wightman</surname></persName>
+		</author>
+		<ptr target="https://github.com/rwightman/pytorch-image-models" />
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">11</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,506.55,216.32,7.77;13,328.78,517.51,216.33,7.77;13,328.78,528.31,216.33,7.93;13,328.78,539.27,187.86,7.93" xml:id="b68">
+	<analytic>
+		<title level="a" type="main" coords="13,367.48,517.51,177.63,7.77;13,328.78,528.47,10.28,7.77">Unified perceptual parsing for scene understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Tete</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yingcheng</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bolei</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuning</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,359.14,528.31,185.97,7.73;13,328.78,539.27,72.35,7.73">Proceedings of the European Conference on Computer Vision (ECCV)</title>
+		<meeting>the European Conference on Computer Vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">10</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,550.73,216.33,7.77;13,328.78,561.69,216.33,7.77;13,328.78,572.48,216.33,7.93;13,328.78,583.44,216.33,7.93;13,328.78,594.56,68.23,7.77" xml:id="b69">
+	<analytic>
+		<title level="a" type="main" coords="13,380.44,561.69,164.68,7.77;13,328.78,572.64,57.08,7.77">Aggregated residual transformations for deep neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Saining</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollár</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhuowen</forename><surname>Tu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,408.16,572.48,136.95,7.73;13,328.78,583.44,163.48,7.73">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,605.86,216.32,7.77;13,328.78,616.82,216.33,7.77;13,328.78,627.62,216.33,7.93;13,328.78,638.57,143.44,7.93" xml:id="b70">
+	<analytic>
+		<title level="a" type="main" coords="13,434.63,616.82,110.48,7.77;13,328.78,627.78,31.13,7.77">Disentangled non-local neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Minghao</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhuliang</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yue</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiu</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,382.17,627.62,162.95,7.73;13,328.78,638.57,86.45,7.73">Proceedings of the European conference on computer vision (ECCV)</title>
+		<meeting>the European conference on computer vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">10</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,328.79,650.03,216.32,7.77;13,328.78,660.99,216.33,7.77;13,328.78,671.95,216.33,7.77;13,328.78,682.75,189.67,7.93" xml:id="b71">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yunpeng</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tao</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weihao</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yujun</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Francis</forename><forename type="middle">Eh</forename><surname>Tay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiashi</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shuicheng</forename><surname>Yan</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2101.11986</idno>
+		<title level="m" coords="13,516.54,660.99,28.58,7.77;13,328.78,671.95,216.33,7.77;13,328.78,682.91,31.21,7.77">Tokensto-token vit: Training vision transformers from scratch on imagenet</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,328.79,694.20,216.32,7.77;13,328.78,705.16,216.33,7.77;14,70.03,75.96,216.33,7.73;14,70.03,87.08,56.03,7.77" xml:id="b72">
+	<analytic>
+		<title level="a" type="main" coords="13,518.22,694.20,26.89,7.77;13,328.78,705.16,196.06,7.77">Objectcontextual representations for semantic segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Yuhui</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xilin</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingdong</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,70.03,75.96,212.47,7.73">16th European Conference Computer Vision (ECCV 2020)</title>
+		<imprint>
+			<date type="published" when="2007">August 2020. 7</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,99.04,216.32,7.77;14,70.03,109.84,216.33,7.93;14,70.03,120.96,27.89,7.77" xml:id="b73">
+	<monogr>
+		<title level="m" type="main" coords="14,191.00,99.04,95.36,7.77;14,70.03,110.00,83.35,7.77">Ocnet: Object context network for scene parsing</title>
+		<author>
+			<persName coords=""><forename type="first">Yuhui</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingdong</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1809.00916</idno>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="14,70.04,132.91,216.32,7.77;14,70.03,143.87,216.33,7.77;14,70.03,154.83,216.33,7.77;14,70.03,165.63,216.33,7.93;14,70.03,176.59,199.73,7.93" xml:id="b74">
+	<analytic>
+		<title level="a" type="main" coords="14,222.76,143.87,63.60,7.77;14,70.03,154.83,216.33,7.77;14,70.03,165.79,16.39,7.77">Cutmix: Regularization strategy to train strong classifiers with localizable features</title>
+		<author>
+			<persName coords=""><forename type="first">Sangdoo</forename><surname>Yun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dongyoon</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Seong</forename><surname>Joon Oh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sanghyuk</forename><surname>Chun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Junsuk</forename><surname>Choe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Youngjoon</forename><surname>Yoo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,105.41,165.63,180.96,7.73;14,70.03,176.59,98.61,7.73">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="6023" to="6032" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,188.70,216.32,7.77;14,70.03,199.50,93.78,7.93" xml:id="b75">
+	<analytic>
+		<title level="a" type="main" coords="14,221.25,188.70,65.11,7.77;14,70.03,199.66,20.05,7.77">Wide residual networks</title>
+		<author>
+			<persName coords=""><forename type="first">Sergey</forename><surname>Zagoruyko</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nikos</forename><surname>Komodakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,107.04,199.50,21.32,7.73">BMVC</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,211.62,216.32,7.77;14,70.03,222.58,216.33,7.77;14,70.03,233.37,170.75,7.93" xml:id="b76">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Hongyi</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Moustapha</forename><surname>Cisse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Yann N Dauphin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Lopez-Paz</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1710.09412</idno>
+		<title level="m" coords="14,138.52,222.58,147.85,7.77;14,70.03,233.53,12.95,7.77">mixup: Beyond empirical risk minimization</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="14,70.04,245.49,216.32,7.77;14,70.03,256.45,216.33,7.77;14,70.03,267.25,216.33,7.93;14,70.03,278.21,138.13,7.93" xml:id="b77">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Hang</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chongruo</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhongyue</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhi</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haibin</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yue</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tong</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonas</forename><surname>Mueller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Manmatha</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.08955</idno>
+		<title level="m" coords="14,171.77,267.41,85.37,7.77">Split-attention networks</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">8</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="14,70.04,290.32,216.32,7.77;14,70.03,301.28,216.33,7.77;14,70.03,312.24,216.33,7.77;14,70.03,323.04,216.33,7.93;14,70.03,334.00,216.33,7.93;14,70.03,345.12,4.48,7.77" xml:id="b78">
+	<analytic>
+		<title level="a" type="main" coords="14,119.36,301.28,167.00,7.77;14,70.03,312.24,212.92,7.77">Bridging the gap between anchor-based and anchor-free detection via adaptive training sample selection</title>
+		<author>
+			<persName coords=""><forename type="first">Shifeng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cheng</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yongqiang</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhen</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stan</forename><forename type="middle">Z</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,80.62,323.04,205.74,7.73;14,70.03,334.00,111.04,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,357.07,216.32,7.77;14,70.03,367.87,216.33,7.93;14,70.03,378.83,216.33,7.73;14,70.03,389.79,152.07,7.93" xml:id="b79">
+	<analytic>
+		<title level="a" type="main" coords="14,259.15,357.07,27.21,7.77;14,70.03,368.03,142.45,7.77">Exploring self-attention for image recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Hengshuang</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiaya</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vladlen</forename><surname>Koltun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,232.01,367.87,54.35,7.73;14,70.03,378.83,216.33,7.73;14,70.03,389.79,41.70,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="10076" to="10085" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,401.90,216.32,7.77;14,70.03,412.86,216.33,7.77;14,70.03,423.82,216.33,7.77;14,70.03,434.78,216.33,7.77;14,70.03,445.58,216.33,7.93;14,70.03,456.70,4.48,7.77" xml:id="b80">
+	<monogr>
+		<title level="m" type="main" coords="14,178.77,423.82,107.60,7.77;14,70.03,434.78,216.33,7.77;14,70.03,445.74,26.36,7.77">Rethinking semantic segmentation from a sequence-to-sequence perspective with transformers</title>
+		<author>
+			<persName coords=""><forename type="first">Sixiao</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiachen</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hengshuang</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiatian</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zekun</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yabiao</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yanwei</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tao</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Philip Hs Torr</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.15840</idno>
+		<imprint>
+			<date type="published" when="2008">2020. 2, 3, 7, 8</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="14,70.04,468.65,216.32,7.77;14,70.03,479.45,216.33,7.93;14,70.03,490.41,216.33,7.93;14,70.03,501.53,104.34,7.77" xml:id="b81">
+	<analytic>
+		<title level="a" type="main" coords="14,103.13,479.61,123.55,7.77">Random erasing data augmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Zhun</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liang</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Guoliang</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shaozi</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,241.94,479.45,44.42,7.73;14,70.03,490.41,171.24,7.73">Proceedings of the AAAI Conference on Artificial Intelligence</title>
+		<meeting>the AAAI Conference on Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="13001" to="13008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,513.49,216.32,7.77;14,70.03,524.44,216.33,7.77;14,70.03,535.24,216.33,7.93;14,70.03,546.20,156.27,7.93" xml:id="b82">
+	<analytic>
+		<title level="a" type="main" coords="14,227.79,524.44,58.58,7.77;14,70.03,535.40,162.60,7.77">Semantic understanding of scenes through the ade20k dataset</title>
+		<author>
+			<persName coords=""><forename type="first">Bolei</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hang</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xavier</forename><surname>Puig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tete</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sanja</forename><surname>Fidler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adela</forename><surname>Barriuso</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Antonio</forename><surname>Torralba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="14,239.04,535.24,47.32,7.73;14,70.03,546.20,100.22,7.73">International Journal on Computer Vision</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">10</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,558.32,216.32,7.77;14,70.03,569.28,216.33,7.77;14,70.03,580.07,216.33,7.73;14,70.03,591.03,196.18,7.93" xml:id="b83">
+	<analytic>
+		<title level="a" type="main" coords="14,272.92,558.32,13.44,7.77;14,70.03,569.28,200.06,7.77">Deformable convnets v2: More deformable, better results</title>
+		<author>
+			<persName coords=""><forename type="first">Xizhou</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,70.03,580.07,216.33,7.73;14,70.03,591.03,85.81,7.73">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,70.04,603.15,216.32,7.77;14,70.03,613.82,216.33,8.06;14,70.03,624.91,216.33,7.93;14,70.03,635.86,154.81,7.93" xml:id="b84">
+	<analytic>
+		<title level="a" type="main" coords="14,129.01,613.82,157.35,8.06;14,70.03,625.07,122.39,7.77">Deformable {detr}: Deformable transformers for end-to-end object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Xizhou</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weijie</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lewei</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bin</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaogang</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,209.04,624.91,77.32,7.73;14,70.03,635.86,120.95,7.73">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,84.85,89.99,442.31,12.90">ControlMol: Adding Substruture Control To Molecule Diffusion Models</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,138.89,124.79,72.75,10.75"><forename type="first">Zhengyang</forename><surname>Qi</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">University of Science and Technology</orgName>
+								<address>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,232.06,124.79,52.16,10.75"><forename type="first">Zijing</forename><surname>Liu</surname></persName>
+							<email>liuzijing@idea.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department">International Digital Economy Academy(IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,299.92,124.79,67.44,10.75"><forename type="first">Jiying</forename><surname>Zhang</surname></persName>
+							<email>zhangjiying@idea.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department">International Digital Economy Academy(IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,383.05,124.79,38.18,10.75"><forename type="first">He</forename><surname>Cao</surname></persName>
+							<email>caohe@idea.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department">International Digital Economy Academy(IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,436.92,124.79,28.46,10.75"><forename type="first">Yu</forename><surname>Li</surname></persName>
+							<email>liyu@idea.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department">International Digital Economy Academy(IDEA)</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,84.85,89.99,442.31,12.90">ControlMol: Adding Substruture Control To Molecule Diffusion Models</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B6DB80D30196687921D332609A747F1A</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:10+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Designing new molecules is an important task in the field of pharmaceuticals. Due to the vast design space of molecules, generating molecules conditioned on a specific sub-structure relevant to a particular function or therapeutic target is a crucial task in computer-aided drug design. In this paper, we present ControlMol, which adds sub-structure control to molecule generation with diffusion models. Unlike previous methods which view this task as inpainting or conditional generation, we adopt the idea of ControlNet into conditional molecule generation and make adaptive adjustments to a pretrained diffusion model. We apply our method to both 2D and 3D molecule generation tasks. Conditioned on randomly partitioned sub-structure data, our method outperforms previous methods by generating more valid and diverse molecules. The method is easy to implement and can be quickly applied to a variety of pre-trained molecule generation models.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Molecule generation has become a fundamental task in drug design. Traditional methods of molecule design often relied on intuition, trial and error, and the expertise of medicinal chemists. In recent years, diffusion models <ref type="bibr" coords="1,228.15,522.90,64.56,9.53" target="#b5">[Ho et al., 2020]</ref>, a promising class of generative models, have been applied to molecule generation. Meanwhile, a multitude of diffusion models <ref type="bibr" coords="1,85.30,555.77,102.75,9.53" target="#b7">[Hoogeboom et al., 2022;</ref><ref type="bibr" coords="1,190.57,556.49,62.35,8.82" target="#b17">Xu et al., 2022;</ref><ref type="bibr" coords="1,255.43,556.49,41.57,8.82;1,54.00,567.63,22.69,8.64">Jing et al., 2022;</ref><ref type="bibr" coords="1,79.34,567.45,78.78,8.82" target="#b15">Vignac et al., 2023;</ref><ref type="bibr" coords="1,160.78,567.45,79.33,8.82">Vignac et al., 2022]</ref> automatically generating molecular geometries (i.e. 2D graphs or 3D point clouds) from scratch have been proposed.</p><p>The primary goal of molecular design is to propose novel molecules that satisfy desired properties. In the past few yeas, there have been many machine learning methods to address this problem <ref type="bibr" coords="1,145.93,632.60,96.11,9.53" target="#b10">[Kang and Cho, 2018;</ref><ref type="bibr" coords="1,246.86,633.31,50.14,8.82;1,54.00,644.45,21.44,8.64" target="#b18">Yang et al., 2023]</ref>. The diffusion-based generate-from-scratch methods can also easily be implemented to be conditioned on some predefined scalar properties <ref type="bibr" coords="1,192.45,665.47,104.55,9.53" target="#b7">[Hoogeboom et al., 2022;</ref><ref type="bibr" coords="1,54.00,677.15,75.78,8.82" target="#b8">Huang et al., 2022]</ref>. However, they still suffer from the huge space of diversity spaces. As in <ref type="bibr" coords="1,452.00,218.58,86.10,9.53" target="#b16">[Virshup et al., 2013]</ref>, the space of pharmacologically-relevant molecules is estimated to exceed 10 60 structures. Searching in such space poses significant challenges for drug design. To reduce the size of the searching space, the strategy fragment-based drug design(FBDD) <ref type="bibr" coords="1,366.78,273.38,87.92,9.53" target="#b4">[Erlanson et al., 2016]</ref> generates molecules from fragments. An important stage of drug design is Lead Optimization, which aims to optimize the favorable properties of compounds by changing part of their atoms <ref type="bibr" coords="1,513.11,306.25,44.89,9.31;1,315.00,317.93,38.90,8.82" target="#b8">[Hughes et al., 2011]</ref>. Some diffusion methods <ref type="bibr" coords="1,475.96,317.21,82.04,9.53" target="#b15">[Torge et al., 2023;</ref><ref type="bibr" coords="1,315.00,328.89,82.99,8.82" target="#b9">Igashov et al., 2022;</ref><ref type="bibr" coords="1,400.96,328.89,93.15,8.82" target="#b13">Schneuing et al., 2022]</ref>) also try to address this issue, they improve the de-novo molecule generation method by allowing it to receive 3D structure conditions. However, their focus is centered on some certain specific data, such as scaffold or linker data. We, on the other hand, aim to explore the possibility of conditioning on a wider and more diverse set of data, and study effective training methods.</p><p>DiffSBDD <ref type="bibr" coords="1,371.98,407.28,101.24,9.53" target="#b13">[Schneuing et al., 2022]</ref> treats this molecule generation task conditioned on the structure context as an inpainting <ref type="bibr" coords="1,355.60,429.20,78.70,9.53">[Song et al., 2020;</ref><ref type="bibr" coords="1,438.26,429.92,90.56,8.82" target="#b12">Lugmayr et al., 2022]</ref>task in images, this inspired us to draw technology from image processing. Recently, a lot of non-invasive tuning methods <ref type="bibr" coords="1,536.56,451.12,21.44,9.31;1,315.00,462.80,37.66,8.82" target="#b11">[Li et al., 2023;</ref><ref type="bibr" coords="1,354.83,462.80,68.00,8.82" target="#b13">Mou et al., 2023;</ref><ref type="bibr" coords="1,425.01,462.80,75.19,8.82" target="#b19">Zhang et al., 2023]</ref> have achieved surprising results in image control, instead of finetuning the origin model, they train an additional auxiliary module to change the features transferring between layers. Compared to traditional condition generation methods, these methods are more flexible and efficient. Among these studies, Control-Net <ref type="bibr" coords="1,332.59,527.83,81.73,9.53" target="#b19">[Zhang et al., 2023]</ref> has garnered more attention for its simple implementation and powerful effects, it addresses the lack of fine control in image generation and the redundancy and complexity of prompts combinations, bringing more diverse conditional control to the generative model. Although similar idea has expanded from images to other areas like voice and video, there is still a lack of such tries in molecule science.</p><p>In this work, we introduce ControlMol, a substructure conditional diffusion model architecture that exploits Control-Net <ref type="bibr" coords="1,331.88,639.82,77.61,9.53" target="#b19">[Zhang et al., 2023]</ref>. We will use the EDM <ref type="bibr" coords="1,505.43,639.82,52.57,8.64;1,315.00,651.50,50.30,8.82" target="#b7">[Hoogeboom et al., 2022]</ref>, an equivariant diffusion model for molecule generation to introduce our method. ControlMol receives a molecule substructure as a condition and generates conformers with this context. Compared to previous methods, Con-trolMol uses readily available data and can generate more valid molecules.</p><p>Our contributions can be summarized as follows. We introduce the concept of ControlNet <ref type="bibr" coords="2,210.81,79.81,86.19,9.53" target="#b19">[Zhang et al., 2023]</ref> into molecule generation, enabling an unconditional diffusion model to accept substructure control. We first focus on the task of 3D molecular conformation generation and then we further verify its effectiveness in 2D molecule graph generation. ControlMol method naturally utilizes the base model's performance and generates high-quality molecules. Interestingly, we find that the ControlMol model can accept various sub-structure control even though it is trained on the dataset of random subgraph partitioning, which indicates that Con-trolMol learns a more generalized distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Related Work</head><p>Diffusion Model And Controllable Generation Denoising Diffusion Probabilistic model(DDPM) <ref type="bibr" coords="2,228.38,248.36,68.61,9.53" target="#b5">[Ho et al., 2020]</ref> is a powerful class of generative model used to learn complex probability distributions. Diffusion models have shown powerful capabilities in processing image-like data when their underlying neural backbone is implemented as a UNets <ref type="bibr" coords="2,273.76,292.19,18.59,8.64;2,54.00,303.87,83.65,8.82">[Ronneberger et al., 2015]</ref>. After achieving success in image generation, diffusion models are quickly applied to synthesize text, speech, and other data. Compared to unconditional generation, controllable generation is more attractive. Existing works use classifier guided <ref type="bibr" coords="2,164.56,346.99,115.43,9.53" target="#b2">[Dhariwal and Nichol, 2021]</ref> and classifier free <ref type="bibr" coords="2,110.10,357.94,43.85,9.53" target="#b6">[Ho, 2022]</ref> method to generate images belonging to some class. Stable diffusion <ref type="bibr" coords="2,201.59,368.90,95.41,9.53">[Rombach et al., 2021]</ref> effectively employs text prompts as guidance for diffusion models, enabling them to generate images that adhere to specific textual contexts, they utilize a pre-trained text encoder to get text embeddings and map the embedding to crossattention layers to guide the hidden features in Unet layers. Later, a series of non-invasive fine-tuning methods, represented by GLIGEN <ref type="bibr" coords="2,136.95,445.62,64.25,9.53" target="#b11">[Li et al., 2023]</ref>, ControlNet <ref type="bibr" coords="2,257.55,445.62,39.45,9.30;2,54.00,457.29,36.24,8.82">[Zhang et al., 2023]</ref>, and T2IAdapter <ref type="bibr" coords="2,161.34,456.58,69.46,9.53" target="#b13">[Mou et al., 2023]</ref>, emerged. They enable the model to accept more diverse conditional controls by adding and fine-tuning additional modules.</p><p>Molecule Generation Deep generative models exhibit their effectiveness in modeling molecular data. Recently, generating molecules in 3D space has gained a lot of attention. G-Schnet <ref type="bibr" coords="2,94.72,530.23,89.64,9.53" target="#b4">[Gebauer et al., 2019]</ref> employs an auto-regressive process equipped with <ref type="bibr" coords="2,148.42,541.19,111.95,9.53">Schnet [Schütt et al., 2017]</ref>in which atoms and bonds are sampled iteratively. These years, inspired by the success of diffusion models <ref type="bibr" coords="2,225.91,563.11,66.80,9.53" target="#b5">[Ho et al., 2020]</ref>, several recent works proposed denoising diffusion models for molecular data in 3D. GeoDiff <ref type="bibr" coords="2,201.97,585.03,69.54,9.53" target="#b17">[Xu et al., 2022]</ref>, <ref type="bibr" coords="2,280.29,585.93,16.71,8.64;2,54.00,595.99,134.01,9.53">Tor-sionalDiffusion [Jing et al., 2022]</ref>condition the model on the adjacency matrix of the molecular graph. Equivirant Diffusion Model(EDM) <ref type="bibr" coords="2,132.76,617.91,107.09,9.53" target="#b7">[Hoogeboom et al., 2022]</ref> generates 3D molecules from scratch. MDM <ref type="bibr" coords="2,181.09,628.86,81.14,9.53" target="#b8">[Huang et al., 2022]</ref> encodes the interatomic relations between atoms, further improves the validness and diversity of molecular generation. MiDi <ref type="bibr" coords="2,281.00,650.78,12.00,8.64;2,54.00,662.46,67.88,8.82" target="#b15">[Vignac et al., 2023]</ref> offers an end-to-end differentiable approach that streamlines the molecule generation process, which can generate the 3D conformation and 2D graph of a molecule simultaneously.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Substructure</head><p>Based Molecule Generation Difflinker <ref type="bibr" coords="2,344.86,67.54,90.02,9.53" target="#b9">[Igashov et al., 2022]</ref> based on EDM <ref type="bibr" coords="2,505.43,67.54,52.57,8.64;2,315.00,79.22,47.89,8.82" target="#b7">[Hoogeboom et al., 2022]</ref>, is the first work trying to adding 3D molecule control to molecule diffusion models. It concentrates on the linker design task, given two or several fragments, it generates atoms that can link each part. DiffHopp <ref type="bibr" coords="2,531.87,111.37,26.13,8.64;2,315.00,123.05,51.92,8.82" target="#b15">[Torge et al., 2023]</ref> is designed for scaffold hopping task <ref type="bibr" coords="2,530.32,122.33,27.68,8.64;2,315.00,134.01,49.93,8.82" target="#b1">[Böhm et al., 2004]</ref> with a similar method to Difflinker, one of the differences between the two tasks is that scaffold hopping typically redesigns the majority of a molecule, while the linker part is minor. <ref type="bibr" coords="2,402.37,166.17,140.88,9.53">DiffSBDD [Schneuing et al., 2022</ref>] is a diffusion model for pocket-conditioned ligand generation. It adopts the method of Difflinker to deal with the protein pocket condition, while for ligand context, it treats this as an inpainting task, they diffuse the fixed atoms at each step and use it to replace the noise corresponding to fixed nodes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">PRELIMINARIES</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Diffusion And Controllable Diffusion</head><p>Diffusion Model The diffusion model defines two processes, diffusion process and reverse process.</p><p>At a timestep t = 0, . . . , T , the diffusion process distorts a data point x, mapping it to noise z t .</p><p>q</p><formula xml:id="formula_0" coords="2,384.59,318.60,173.41,12.69">(z t |x) = N (z t |α t x t , σ 2 t I),<label>(1)</label></formula><p>where α t ∈ R + controls how much signal is retained and σ t ∈ R + controls how much noise is added. This diffusion process is Markov and can be equivalently written with transition distributions as:</p><formula xml:id="formula_1" coords="2,372.00,381.25,186.00,12.94">q(z t |z s ) = N (z t |α t|s z s , σ 2 t|s I),<label>(2)</label></formula><p>for any t &gt; s with α t|s = α t /α s and σ 2 t|s = σ 2 t -α 2 t|s σ 2 s . The entire noising process is then written as:</p><formula xml:id="formula_2" coords="2,339.35,427.44,218.66,20.09">q(z 0 , z 1 , . . . , z T |x) = q(z 0 |x) T t=1 q(z t |z t-1 ). (3)</formula><p>And the reverse of the diffusion process, the true denoising process, also admits a closed-form solution when conditioned on x:</p><formula xml:id="formula_3" coords="2,354.13,485.85,203.87,12.69">q(z s |x, z t ) = N (z s |µ t→s (x, z t ), σ 2 t→s I),<label>(4)</label></formula><p>where the definitions for µ t→s (x, z t ) and σ t→s can be analytically obtained as</p><formula xml:id="formula_4" coords="2,323.89,525.43,127.13,24.49">µt→s(x, zt) = α t|s σ 2 s σ 2 t zt + αsσ 2 t|s σ 2 t</formula><p>x and σt→s = σ t|s σs σt .</p><p>The reverse process learns to invert this trajectory having the data point x unknown. The generative transition distribution is defined as:</p><formula xml:id="formula_5" coords="2,358.81,588.41,155.38,12.69">p(z s |z t ) = N (z s |µ t→s (x, z t ), σ 2 t→s I).</formula><p>(5) where x is an approximation of the data point x computed by a neural network φ, <ref type="bibr" coords="2,414.08,615.75,67.85,9.53" target="#b5">[Ho et al., 2020]</ref> empirically shows that it works better to predict the Gaussian noise, if z t = α t x + σ t , then the neural network φ outputs ϵ, ε = ϕ(z t , t), so that :</p><formula xml:id="formula_6" coords="2,383.27,660.16,174.73,9.65">x = (1/α t ) z t -(σ t /α t ) ε (6)</formula><p>The neural network is trained to maximize an evidence lower bound to the likelihood of the data under the model. The training objective can be simplied as Adding Control To Diffusion Models ControlNet <ref type="bibr" coords="3,268.23,237.83,28.77,8.64;3,54.00,249.51,49.07,8.82" target="#b19">[Zhang et al., 2023]</ref> successfully combines the visual prompts without retraining the entire diffusion model. We use Control-Net represents the method and controlnet represents the replicated network. Specifically, as Figure <ref type="figure" coords="3,208.00,282.56,4.98,8.64" target="#fig_0">1</ref> shows, it freezes the pre-trained model and reuses the deep and robust encoding layers as a robust backbone(trainable copy) for acquiring diverse conditional controls. The trainable copy and original model are linked by zero convolution layers, progressively growing parameters from zero, ensuring a stable fine-tuning process. This approach allows us to control diffusion models with learned conditions. In ControlNet, The denoising process takes input from both text and the outputs of the controlnet, so that the neural network φ outputs:</p><formula xml:id="formula_7" coords="2,480.90,693.62,73.30,10.53">L(t) = ||ϵ -εt || 2 .</formula><formula xml:id="formula_8" coords="3,105.79,399.62,187.34,9.81">ε = ϵ(z t , T , controlnet(z t + E 2D )), (<label>7</label></formula><formula xml:id="formula_9" coords="3,293.13,399.93,3.87,8.64">)</formula><p>where T is the text prompt, E 2D is the 2D visual prompts. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Diffusion For Molecules</head><formula xml:id="formula_10" coords="3,335.29,119.05,222.71,56.97">m ij = ϕ e h l i , h l j , d 2 ij , h l+1 i = ϕ h (h l i , j̸ =i m ij ), x l+1 i = x l i + j̸ =i x l i -x l j d ij + 1 ϕ x h l i , h l j , d 2 ij ,<label>(8)</label></formula><p>where l indexes the layer, d ij = ∥x l i -x l j ∥ 2 and ϕ e , ϕ h ,ϕ x are all learnable functions parameterized by fully connected neural networks.</p><p>At time t, EDM predicts noise ε includes coordinate and feature components: ε = [ε x , εh ]. To make the network φ invariant to translations, the initial coordinates from the coordinate component of the predicted noise are subtracted:</p><formula xml:id="formula_11" coords="3,331.70,268.12,226.30,12.69">ε = [ε x , εh ] = φ(z t , t) = EGNN(z t , t) -[z x t , 0].<label>(9)</label></formula><p>(For more details on the network structure, we refer the reader to <ref type="bibr" coords="3,327.73,297.86,100.72,9.53" target="#b7">[Hoogeboom et al., 2022]</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Inpainting Method</head><p>The diffusion model itself has the capacity for "inpainting" missing parts. As shown in DDPM <ref type="bibr" coords="3,468.25,342.31,69.00,9.53" target="#b5">[Ho et al., 2020]</ref>, the diffusion model can naturally recover the missing patches of images. Repaint <ref type="bibr" coords="3,382.95,364.22,91.02,9.53" target="#b12">[Lugmayr et al., 2022]</ref> further improves the inpainting method, so that the model can recover the missing parts more harmonizing in a non-training way. As in DiffS-BDD <ref type="bibr" coords="3,339.98,397.10,94.68,9.53" target="#b13">[Schneuing et al., 2022</ref>], it's natural and possible to view this substructure-based generation as an inpainting task using a model trained on de-novo molecule generation. Formally, given a known z 0 , a current z t and a mask indicating the known parts m, we can define</p><formula xml:id="formula_12" coords="3,363.11,452.68,194.89,17.80">z known t-1 ∼ N ( √ ᾱt-1 z 0 , (1 -ᾱt-1 )I)<label>(10)</label></formula><formula xml:id="formula_13" coords="3,366.72,477.50,191.28,12.47">z unknown t-1 ∼ N (µ θ (z t , t), Σ θ (z t , t))<label>(11)</label></formula><formula xml:id="formula_14" coords="3,353.11,494.26,166.28,12.47">z t-1 = m ⊙ z known t-1 + (1 -m) ⊙ z unknown t-1</formula><p>(12) Repaint <ref type="bibr" coords="3,359.88,510.09,89.00,9.53" target="#b12">[Lugmayr et al., 2022]</ref> notes that directly applying the method can lead to locally harmonized results that struggle to incorporate the global context. To compensate this, they use resampling, after getting z t-1 in Equation <ref type="formula" coords="3,525.37,543.86,8.30,8.64">12</ref>, they add noise to z t again and repeat the complete process several times:</p><formula xml:id="formula_15" coords="3,366.40,569.92,187.46,16.15">z t ∼ N ( √ α t-1 z t-1 , (1 -α t-1 )I)<label>(13</label></formula><p>) Following this way, we implement Repainti method (repeat for i times) in our experiment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Method</head><p>In this section, we introduce ControlMol, a unified substructure-conditioned diffusion model for molecules. Additionally, by selecting an appropriate base model and properly setting, we can also keep the E(3)-equivariant property of the base model. In Section 4.1, we introduce the architecture of our model, explain our motivation and show how we get inspiration from ControlNet <ref type="bibr" coords="4,185.24,325.50,81.27,9.53" target="#b19">[Zhang et al., 2023]</ref> on this problem and adapt it to non-Unets architecture. We discuss the details of the model and the equivariance requirements in Section 4.2.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">ControlMol</head><p>We use EDM <ref type="bibr" coords="4,105.17,420.06,112.40,8.82" target="#b7">[Hoogeboom et al., 2022]</ref> as our base model to introduce how to add 3D-substructure control to it. An overview of our method is presented in Figure <ref type="figure" coords="4,240.50,442.16,3.74,8.64" target="#fig_1">2</ref>.</p><p>EDM is an Equivariant diffusion model for 3D molecule generation. As in Equation <ref type="formula" coords="4,173.30,464.08,3.74,8.64" target="#formula_10">8</ref>, atom coordinates and node features influence and update each other. Additionally, the molecule should satisfy the correct valence relationship, it's more difficult to achieve good performance using a simple inpainting method.</p><p>Due to the distinctive architecture of the EGNN network, conditioning on a 3D structure can not be straightforwardly accomplished, as was previously done in EDM when conditioning on a desired property, by directly concat the property c and node feature h. Therefore, We try to utilize Control-Net <ref type="bibr" coords="4,71.20,572.77,80.47,9.53" target="#b19">[Zhang et al., 2023]</ref> to achieve this goal. While original ControlNet is designed for Unets <ref type="bibr" coords="4,188.85,583.73,103.86,9.53">[Ronneberger et al., 2015]</ref>, which copies all encoders in stable diffusion <ref type="bibr" coords="4,231.20,594.69,65.80,9.31;4,54.00,606.54,23.24,8.64">[Rombach et al., 2021]</ref> and passes the output to the decoder through zero-conv. Unlike Unets, EGNN consists of EGCL blocks, not encoder or decoder, and there are no explicit residual connections between its layers. For these reasons, as in Figure <ref type="figure" coords="4,245.23,639.42,3.74,8.64" target="#fig_1">2</ref>, we choose to replicate all layers of the primary network and introduce control mechanisms at each layer. In the Experiment section, we will show the correctness and efficacy of this configuration. In this way, The EGCL update process in Equation <ref type="formula" coords="4,289.53,683.26,3.74,8.64" target="#formula_10">8</ref>, after getting the update by EGCL block, x l+1 i , h l+1 i get extra update from ControlNet :</p><formula xml:id="formula_16" coords="4,349.56,343.58,208.44,29.53">x l+1 i = x l+1 i + zeroconv(∆control x l+1 i ) h l+1 i = h l+1 i + zeroconv(control h l+1 i ),<label>(14)</label></formula><p>where control prefix represents the features in controlnet, and ∆control x l+1 i := control x l+1 i -control x l i denotes the updated x in controlnet.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Model Details</head><p>Zero-conv The zero convolutions can be a unique type of connection layer that progressively grows from zeros to optimized parameters in a learned way so that it can stabilize the convergence of the model. Zero-conv in ControlNet <ref type="bibr" coords="4,521.05,471.68,36.95,8.82;4,315.00,482.64,39.00,8.82">[Zhang et al., 2023]</ref> is a 1 × 1 convolution layer with both weight and bias initialized with zeros. In our work, we adopt the name "zero-conv". Due to the different data types, we choose onelayer Linear with weight and bias initialized with zero and learnable scalar initialized zero as our zero-conv. Learnable scalar can keep the E(3)-equivariant property of EDM. However, by experimental comparison, we found that choosing Linear as the zero-conv can accelerate the convergence of the model and enhance the control effectiveness.</p><p>Get Condition (sub-structure selection) For each datapoint, we select a random proportion of atoms to be the 3D-context u. In practice, the proportion can also be set as a hyper-parameter. The reason for using a random substructure as a condition instead of selecting some specific pre-defined sub-structure data is that we expect the model to learn generalized distribution so that it can handle unseen sub-structures. For each datapoint, we sample a proportion p ∼ U (0, 1) and each atom is selected in sub-structure with this probability. Then we set the center of mass of u to be zero. In particular, we do not employ an additional encoder for feature extraction and instead directly feed it into controlnet. The input to controlnet( EGCL Block0(trainable copy) in Figure <ref type="figure" coords="5,92.74,305.38,4.15,8.64" target="#fig_1">2</ref>) at time t is:</p><formula xml:id="formula_17" coords="5,119.01,323.28,177.99,23.63">h = h t + zeroconv(sub h) x = x t + zeroconv(sub x)<label>(15)</label></formula><p>where sub prefix represents the features in substructure. Here we choose scalar as zero-conv to preserve the relative positional and type information. Time Noisy By experimentation, We observed that employing the ControlNet methodology in a straightforward way to an unconditional model is hard to train (difficulty in convergence or slow convergence rate). We reason that a welltrained model can estimate the data distribution effectively by itself, it may tend to overlook the information from additional modules. ControlNet <ref type="bibr" coords="5,171.83,457.87,83.30,9.53" target="#b19">[Zhang et al., 2023]</ref> randomly replaces 50% text prompts with empty strings to facilitate learning from the condition. We need to find a method to enhance the learning of conditions for unconditional diffusion model. In this case, inspired by emuEdit <ref type="bibr" coords="5,236.36,501.70,60.64,9.30;5,54.00,513.56,21.44,8.64" target="#b14">[Sheynin et al., 2023]</ref>, which adds task embedding to time-embeddings to facilitate learning for different edit tasks, we try to drop some time information to relax the module capacity. Specifically, In EDM's setting, it concats node feature h and time t to add time information. At time t, we treat the input as follows (both in training and sampling):</p><formula xml:id="formula_18" coords="5,83.17,586.25,213.84,23.30">h = concat(h feature , t/2) (in main network) h = concat(h feature , t) (in controlnet) (16)</formula><p>The proposed time noisy technique is simple and efficient. It is based on the following intuition, T2IAdapter <ref type="bibr" coords="5,248.70,628.86,48.30,9.31;5,54.00,640.72,23.24,8.64" target="#b13">[Mou et al., 2023]</ref> shows that the main of the generation results is determined in the early sampling stage. So, when t is large, we introduce a relatively significant bias to t, allowing the model to relearn the data distribution based on the condition. Therefore, the loss descends more steadily, reducing instances of training instability.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Algorithm 1 Training</head><p>Input: Datapoint x, pretrained neural network φ controlnet φ ′ = copy(φ) Sample t ∼ U(0, . . . , T ), ϵ t ∼ N (0, I), p ∼ U(0, 1) Sample context u with probability p, center it at zero</p><formula xml:id="formula_19" coords="5,315.00,339.98,228.17,204.95">z t ← α t x + σ t ϵ t c ← α • µ (α reprents learnable scalar) c t ← z t + c εt ← φ(z t , φ ′ (c t , t), t/2) Minimize ∥ϵ -εt ∥ 2 Algorithm 2 Sampling Input: context u, neural network φ, controlnet φ ′ Center context u at zero Sample z T ∼ N (0, I) for t in T, T -1, . . . 1: Sample ϵ t ∼ N (0, I) c ← α • µ c t ← z t + c εt ← φ(z t , φ ′ (c t , t), t/2) z t-1 ← (1/α t|s ) • z t -σ 2 t|s /(α t|s σ t ) • εt + σ t→s • ϵ end for Sample x ∼ p(x|z 0 , u)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Equivariance</head><p>With the proper settings, ControlMol can keep the equivariant property of the EDM. Following the Proposition 1 in Difflinker <ref type="bibr" coords="5,343.40,600.03,83.50,9.53" target="#b9">[Igashov et al., 2022]</ref>, we have Theorem 1. u is the corresponding context of the data point x, a prior noise distribution p(z</p><formula xml:id="formula_20" coords="5,315.00,625.98,243.00,41.60">T |u) = N (z T ; f (u), I), If f is O(3)-equivariant and φ is equivariant to joint O(3)-transformations of z t and u, then p(z 0 |u) is O(3)- equivariant.</formula><p>In this work, u is the 3D-substructure, and φ is the whole model including the base model and controlnet. The features h are invariant to group transformations, for fea- tures x, when we choose a E(3)-equivariant zero-conv such as a learnable scalar. The input in controlnet in Equation 15 is equivariant to joint O(3)-transformations of z t and u, the controlnet architecture is also the EGCL, which make zeroconv(∆control x l+1 i ) in Equation <ref type="formula" coords="6,239.80,285.52,9.96,8.64" target="#formula_16">14</ref>equivairant to input, so that the model φ is equivariant to joint O(3)transformations of z t and u. To make the model additionally translation invariant, we follow the same setting in Difflinker, center the context u at the center of mass zero and sample z t from N (0, I).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Experiment</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Experiments on EDM</head><p>Datasets We consider QM9 dataset. QM9 contains up to 9 atoms (29 atoms including hydrogens) and we use the same train/val/test partitions in EDM, which consists of 100k/18k/13k samples respectively for each partition.</p><p>Metrics We measure the validity, uniqueness of the samples. Same in the EDM <ref type="bibr" coords="6,152.06,455.12,102.47,9.53" target="#b7">[Hoogeboom et al., 2022]</ref>, we don't report the novelty. Additionally, to evaluate position control effectiveness, we estimate the Root Mean Squared Deviation (RMSD) between the generated and real sub-structure coordinates, and for node type control, we use h success(samples which have the right substructure node type / sample number) to measure the proportion of the generated samples that have the correct node type of the context.</p><p>Baselines We compare our method with the inpainting-like method in DiffSBDD <ref type="bibr" coords="6,145.09,558.43,99.33,9.53" target="#b13">[Schneuing et al., 2022]</ref> and we also incorporate the Repaint <ref type="bibr" coords="6,150.48,569.39,90.99,9.53" target="#b12">[Lugmayr et al., 2022]</ref> method. Further, we train Difflinker <ref type="bibr" coords="6,155.03,580.35,88.86,9.53" target="#b9">[Igashov et al., 2022]</ref> in randomly selected data(same as training ControlMol) instead of the fragment-linker data to be another baseline.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>In Table <ref type="table" coords="6,131.53,618.80,3.74,8.64" target="#tab_1">1</ref>. We report the performances of all the models in terms of four metrics. All methods share the same architecture of EDM <ref type="bibr" coords="6,139.90,639.82,102.46,9.53" target="#b7">[Hoogeboom et al., 2022]</ref>. From Table <ref type="table" coords="6,54.00,651.68,3.74,8.64" target="#tab_1">1</ref>, we can see that the proposed ControlMol outperforms all the previous baseline methods.</p><p>However, ControlMol generates all atoms while Difflinker only generates atoms excluding those in the sub-structure, so the structures in the samples may deviate slightly from those in the conditions and this deviation is assessed by RMSD. It's worth noting that the RMSD in Table <ref type="table" coords="6,483.96,252.65,4.98,8.64" target="#tab_1">1</ref> is the average of all samples, people can freely define a threshold to filter the desired molecules. In Figure <ref type="figure" coords="6,433.30,274.57,3.74,8.64" target="#fig_2">3</ref>, we show some samples with conditioned sub-structure and their RMSD.</p><p>Inpainting methods perform poorly in all cases, even with the extra implementation of Repaint, it doesn't improve its performance, so we don't list its performance additionally in the table. Difflinker can work in QM9 without H, but its performance sharply declines on "c1ccccc1". Difflinker even can't generate any valid molecules in QM9 with H. We believe it is due to the training data. "c1ccccc1" is rare in QM9 and due to randomly selecting sub-structure, it's hard for the model to see similar data in training data. The maximum number of atoms in QM9 is 29 when including Hydrogens, the data distribution with randomly selected substructures is more diverse, which makes the model hard to learn. Benefiting from the frozen parameters, ControlMol can work well in these cases, generating high ratio valid molecules. Ablation study of timenoisy and zero-conv To test the effect of the "time noisy" and the different performance for zero-conv, we conduct ablation experiments in QM9 with H. For time noisy, in Figure <ref type="figure" coords="6,425.37,618.80,4.98,8.64" target="#fig_3">4</ref> (a), at the same hyperparameter settings, ControlMol with tn can converge to a lower loss at a faster rate. Figure <ref type="figure" coords="6,396.63,640.72,19.29,8.64" target="#fig_3">4 (b)</ref> shows that ControlMol with tn can achieve an acceptable control performance after epoch 120 (the EDM baseline we use is trained for 1100 epochs). In Table <ref type="table" coords="6,340.32,673.60,3.74,8.64">2</ref>, without tn, even after 300 epochs, the control performance is still poor, we have conducted more experiments with different hyperparameters and obtained similar conclu- </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Experiments for 2D control</head><p>To verify ControlMol's effectiveness, we conduct extra experiments in Digress <ref type="bibr" coords="7,144.29,350.28,87.92,9.53">[Vignac et al., 2022]</ref> and MiDi <ref type="bibr" coords="7,281.00,350.28,12.00,8.64;7,54.00,361.95,73.96,8.82" target="#b15">[Vignac et al., 2023]</ref>. Digress utilizes the discrete diffusion to generate 2D graph, its neuron network is graph transformer <ref type="bibr" coords="7,85.62,383.15,121.69,9.53" target="#b3">[Dwivedi and Bresson, 2020]</ref>. Based on Digress, MiDi further leverages the <ref type="bibr" coords="7,168.46,394.11,128.54,9.53">EGNN [Satorras et al., 2021b]</ref> architecture to achieve the unified generation of 2D and 3D molecules.</p><p>For Digress, we test our method in QM9 and MOSES <ref type="bibr" coords="7,92.72,437.95,113.34,9.53" target="#b13">[Polykovskiy et al., 2018]</ref> both without H. As shown in Table <ref type="table" coords="7,118.67,449.80,4.98,8.64" target="#tab_4">3</ref> and<ref type="table" coords="7,144.21,449.80,3.74,8.64" target="#tab_5">4</ref>, our method outperforms Inpainting and Repaint method, especially in MOSES, which indicates our method can work better in larger datasets. However, we observe that "c1ccccc1" is a bad case for ControlMol in QM9, we speculate that the reason is that aromatic bond data is excessively sparse in QM9, so we test the performance on "C1CCCCC1", where the only difference between "c1ccccc1" and "C1CCCCC1" is their bond. Results show ControlMol can work successfully for "C1CCCCC1", so our method may still require some extra data augmentation methods in the future. For MiDi's experiments, We will show some visual results in Appendix ??.</p><p>Although the Repaint method can get more valid molecules compared with Inpainting, it needs extra inference processes, which leads to an increase in sampling time. In our experiment on 2D control in MOSES, in table 4, the average sampling time per sample for Inpainting, Repaint5, Repaint20, and ControlMol are 1.13s, 7.54s, 27.7s, 1.57s (test on the A100 GPU).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Conclusion</head><p>We presented ControlMol, a method for adding 3D-structure control to diffusion models. ControlMol can generate more  valid 3D-conditioned molecules and has more relaxed requirements for datasets compared to other methods. We also get considerable results in Digress <ref type="bibr" coords="7,456.78,574.07,83.82,9.53">[Vignac et al., 2022]</ref> and <ref type="bibr" coords="7,315.00,585.03,105.30,9.53">MiDi [Vignac et al., 2023]</ref>, which means it is likely to apply to other models in molecule science.</p><p>Our method does have some limitations, we replicate all layers of the base model, which results in the model requiring a quite larger GPU memory, especially when we try to extend our experiments to DRUGS <ref type="bibr" coords="7,466.75,639.82,91.25,9.53;7,315.00,651.68,74.04,8.64" target="#b0">[Axelrod and Gómez-Bombarelli, 2022]</ref> dataset (atoms number is up to 181), it's hard to train and work. So how to more effectively add additional module training and apply similar ideas to more applications in molecule science, may need to be explored in future work.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="3,54.00,199.71,243.00,7.77;3,54.00,209.39,211.26,8.06;3,78.30,54.00,194.40,134.61"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: ControlNet injects conditions into neural network, where x denotes the original input and C denotes condition input.</figDesc><graphic coords="3,78.30,54.00,194.40,134.61" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="4,54.00,275.95,504.00,8.06;4,54.00,285.91,504.00,8.06;4,54.00,296.16,169.49,7.77"><head>Figure 2 :</head><label>2</label><figDesc>Figure2: The overall architecture of ControlMol. The color of the node represents its node feature. After adding c, atoms corresponding to those in substructure in Ct are more similar to the origin substructure both in terms of their position and node feature compared to Zt, this will implicitly provide conditions to the model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="5,54.00,253.23,504.00,7.77;5,54.00,262.84,437.08,8.12;5,55.27,54.00,498.97,198.09"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Samples conditioned on "c1ccccc1" and "C1CCC1", we use RDkit to generate their conformer from smiles and sample condition on it. The number behind the figure is the RMSD between samples with the conditioned conformer (structure on the left).</figDesc><graphic coords="5,55.27,54.00,498.97,198.09" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="7,54.00,180.83,504.00,7.77;7,54.00,190.80,504.00,7.77;7,54.00,200.76,311.34,7.77;7,60.34,54.00,133.06,99.79"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Ablation study of timenoisy and zero-conv. We choose "c1ccccc1" to evaluate the control performance in these experiments. (a) The loss curve for tn(time noisy) and no tn. lr4 notes that the learning rate is 1e-4 and lr5 is 1e-5. (b) The control performance for tn lr4. (c) The loss curve for Linear and scalar (d) The control performance for Linear and scalar.</figDesc><graphic coords="7,60.34,54.00,133.06,99.79" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="6,54.00,65.80,504.00,153.43"><head>Table 1 :</head><label>1</label><figDesc>RMSD ↓ % Valid ↑ % Unique over Valid ↑ % h success ↑ RMSD ↓ % Valid ↑ % Unique over Valid ↑ The comparison over 1000 molecules of ControlMol and other baseline models on each conditional generation task. Three specific cyclic structures are chosen to show comparison results. EDM-Origin is the unconditioned base model we use. "-" in Difflinker means that it can not converge.</figDesc><table coords="6,62.81,65.80,460.66,111.90"><row><cell cols="3">Methods % h success ↑ EDM-origin substructure --</cell><cell>-</cell><cell cols="2">QM9(without H) 97.5</cell><cell>94.3</cell><cell>-</cell><cell>-</cell><cell>QM9(with H) 91.9</cell><cell>90.7</cell></row><row><cell></cell><cell>C1CC1</cell><cell>100</cell><cell>0</cell><cell></cell><cell>6.8</cell><cell>100</cell><cell>100</cell><cell>0</cell><cell>1.2</cell><cell>100</cell></row><row><cell>Inpainting</cell><cell>C1CCC1</cell><cell>100</cell><cell>0</cell><cell></cell><cell>7.7</cell><cell>97.4</cell><cell>100</cell><cell>0</cell><cell>1</cell><cell>100</cell></row><row><cell></cell><cell>c1ccccc1</cell><cell>100</cell><cell>0</cell><cell></cell><cell>0.9</cell><cell>11.1</cell><cell>100</cell><cell>0</cell><cell>0</cell><cell>-</cell></row><row><cell></cell><cell>C1CC1</cell><cell>100</cell><cell>0</cell><cell></cell><cell>78.9</cell><cell>83.3</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell></row><row><cell>Difflinker</cell><cell>C1CCC1</cell><cell>100</cell><cell>0</cell><cell></cell><cell>79.3</cell><cell>67.2</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell></row><row><cell></cell><cell>c1ccccc1</cell><cell>100</cell><cell>0</cell><cell></cell><cell>49.9</cell><cell>0.2</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell></row><row><cell></cell><cell>C1CC1</cell><cell>94.2</cell><cell cols="2">0.164</cell><cell>93.6</cell><cell>99.4</cell><cell>90.2</cell><cell>0.111</cell><cell>74.5</cell><cell>100</cell></row><row><cell>ControlMol</cell><cell>C1CCC1</cell><cell>96.4</cell><cell cols="2">0.071</cell><cell>93.2</cell><cell>99.0</cell><cell>89.6</cell><cell>0.088</cell><cell>82.4</cell><cell>99.7</cell></row><row><cell></cell><cell>c1ccccc1</cell><cell>97.9</cell><cell cols="2">0.099</cell><cell>94.9</cell><cell>75.5</cell><cell>75.6</cell><cell>0.085</cell><cell>75.9</cell><cell>95.3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="7,320.10,229.79,232.81,62.52"><head></head><label></label><figDesc>Methodsubstructure % condition ↑ % Relaxed Valid ↑ % Unique over valid ↑ % connectivity ↑</figDesc><table coords="7,320.10,238.09,219.47,54.22"><row><cell>Digress-Origin</cell><cell>-</cell><cell>-</cell><cell>100</cell><cell>100</cell><cell>99</cell></row><row><cell></cell><cell>C1CC1</cell><cell>1</cell><cell>77</cell><cell>100</cell><cell>97</cell></row><row><cell>Inpainting</cell><cell>C1CCC1 c1ccccc1</cell><cell>1 1</cell><cell>97 39</cell><cell>100 100</cell><cell>97 100</cell></row><row><cell></cell><cell>C1CCCCC1</cell><cell>1</cell><cell>95</cell><cell>93.68</cell><cell>100</cell></row><row><cell></cell><cell>C1CC1</cell><cell>99</cell><cell>97</cell><cell>100</cell><cell>88</cell></row><row><cell>ControlMol</cell><cell>C1CCC1 c1ccccc1</cell><cell>99 0</cell><cell>97 -</cell><cell>96.91 -</cell><cell>95 -</cell></row><row><cell></cell><cell>C1CCCCC1</cell><cell>99</cell><cell>100</cell><cell>83</cell><cell>100</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="7,315.00,305.27,243.00,173.19"><head>Table 3 :</head><label>3</label><figDesc>Performance metrics on QM9 (without H). For each experiment, we randomly sample 100 molecules with fixed 9 atoms. Digress-Origin is the unconditioned base model we use.</figDesc><table coords="7,324.80,370.35,209.53,108.11"><row><cell>Digress-Origin</cell><cell>-</cell><cell>-</cell><cell>72</cell><cell>100</cell><cell>99</cell></row><row><cell></cell><cell>C1CC1</cell><cell>100</cell><cell>43</cell><cell>100</cell><cell>98</cell></row><row><cell>Inpainting</cell><cell>C1CCC1 c1ccccc1</cell><cell>100 100</cell><cell>26 49</cell><cell>100 100</cell><cell>97 99</cell></row><row><cell></cell><cell>C1CCCCC1</cell><cell>100</cell><cell>23</cell><cell>100</cell><cell>98</cell></row><row><cell></cell><cell>C1CC1</cell><cell>100</cell><cell>45</cell><cell>100</cell><cell>100</cell></row><row><cell>Repaint5</cell><cell>C1CCC1 c1ccccc1</cell><cell>100 100</cell><cell>36 62</cell><cell>100 100</cell><cell>100 100</cell></row><row><cell></cell><cell>C1CCCCC1</cell><cell>100</cell><cell>36</cell><cell>100</cell><cell>100</cell></row><row><cell></cell><cell>C1CC1</cell><cell>100</cell><cell>66</cell><cell>100</cell><cell>97</cell></row><row><cell>Repaint20</cell><cell>C1CCC1 c1ccccc1</cell><cell>100 100</cell><cell>43 76</cell><cell>100 100</cell><cell>97 100</cell></row><row><cell></cell><cell>C1CCCCC1</cell><cell>100</cell><cell>45</cell><cell>100</cell><cell>100</cell></row><row><cell></cell><cell>C1CC1</cell><cell>85</cell><cell>84</cell><cell>100</cell><cell>97</cell></row><row><cell>ControlMol</cell><cell>C1CCC1 c1ccccc1</cell><cell>81 100</cell><cell>80 73</cell><cell>100 100</cell><cell>94 97</cell></row><row><cell></cell><cell>C1CCCCC1</cell><cell>100</cell><cell>80</cell><cell>100</cell><cell>98</cell></row></table><note coords="7,324.80,361.89,16.43,4.58;7,363.12,361.72,185.08,4.75"><p><p>Method</p>substructure % condition ↑ % Valid ↑ % Unique over valid ↑ % connectivity ↑</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="7,315.00,491.49,243.00,27.70"><head>Table 4 :</head><label>4</label><figDesc>Performance metrics on MOSES. For each experiment, we randomly sample 100 molecules with fixed 26 atoms. Digress-Origin is the unconditioned base model we use.</figDesc><table /></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="8,54.00,55.71,55.54,10.75;8,54.00,72.78,243.00,9.53;8,65.62,84.64,111.78,8.64" xml:id="b0">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">[</forename><surname>References</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gómez-Bombarelli</forename><surname>Axelrod</surname></persName>
+		</author>
+		<title level="m" coords="8,219.31,73.68,77.69,8.64;8,65.62,84.64,107.11,8.64">Simon Axelrod and Rafael Gómez-Bombarelli</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,193.72,84.64,103.28,8.64;8,65.62,95.60,231.38,8.64;8,65.62,106.38,186.76,8.82;8,54.00,121.86,243.00,9.53;8,65.62,133.54,231.38,8.82;8,65.62,144.50,129.45,8.82" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="8,228.02,84.64,68.98,8.64;8,65.62,95.60,231.38,8.64;8,65.62,106.38,147.41,8.82">energy-annotated molecular conformations for property prediction and molecular generation</title>
+		<author>
+			<persName coords=""><forename type="first">Hans-Joachim</forename><surname>Geom</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Böhm</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Martin</forename><surname>Flohr</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Stahl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,209.81,133.54,87.19,8.59;8,65.62,144.50,50.27,8.59">Drug discovery today. Technologies</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="217" to="224" />
+			<date type="published" when="2004">2022. 2004</date>
+		</imprint>
+	</monogr>
+	<note>Scientific Data. Böhm et al., 2004. Scaffold hopping</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,159.98,243.00,9.53;8,65.62,171.84,231.38,8.64;8,65.62,182.62,118.99,8.82" xml:id="b2">
+	<monogr>
+		<title level="m" type="main" coords="8,173.98,160.88,123.02,8.64;8,65.62,171.84,227.48,8.64">Diffusion models beat gans on image synthesis</title>
+		<author>
+			<persName coords=""><forename type="first">Nichol</forename><surname>Dhariwal</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2105.05233</idno>
+		<imprint>
+			<date type="published" when="2021">2021. 2021</date>
+		</imprint>
+	</monogr>
+	<note>Prafulla Dhariwal and Alex Nichol</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,198.11,243.00,9.53;8,65.62,209.96,231.38,8.64;8,65.62,220.74,161.87,8.82" xml:id="b3">
+	<monogr>
+		<title level="m" type="main" coords="8,175.90,199.00,121.10,8.64;8,65.62,209.96,231.38,8.64;8,65.62,220.92,35.14,8.64">Vijay Prakash Dwivedi and Xavier Bresson. A generalization of transformer networks to graphs</title>
+		<author>
+			<persName coords=""><forename type="first">Bresson</forename><surname>Dwivedi</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2012.09699</idno>
+		<imprint>
+			<date type="published" when="2020">2020. 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,236.23,243.00,9.53;8,65.62,248.08,231.38,8.64;8,65.62,259.04,231.38,8.64;8,65.62,269.82,231.38,8.82;8,65.62,280.96,22.42,8.64;8,54.00,296.26,243.00,9.53;8,65.62,308.12,231.38,8.64;8,65.62,319.08,231.38,8.64;8,65.62,329.86,231.38,8.82;8,65.62,341.00,22.42,8.64" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="8,92.73,259.04,204.26,8.64;8,65.62,270.00,36.25,8.64;8,200.86,308.12,96.14,8.64;8,65.62,319.08,231.38,8.64;8,65.62,330.04,38.60,8.64">Symmetry-adapted generation of 3d point sets for the targeted discovery of molecules</title>
+		<author>
+			<persName coords=""><surname>Erlanson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,130.85,329.86,161.89,8.59">Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2016">2016. 2016. 2019. 2019</date>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="605" to="619" />
+		</imprint>
+	</monogr>
+	<note>Twenty years on: the impact of fragments on drug discovery</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,356.30,243.00,9.53;8,65.62,368.16,183.05,8.64;8,271.27,367.98,25.73,8.59;8,65.62,379.12,90.77,8.64" xml:id="b5">
+	<monogr>
+		<title level="m" type="main" coords="8,65.62,368.16,178.59,8.64">Denoising diffusion probabilistic models</title>
+		<author>
+			<persName coords=""><surname>Ho</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2006.11239</idno>
+		<imprint>
+			<date type="published" when="2020">2020. 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,394.42,243.00,9.53;8,65.62,406.10,118.99,8.82;8,54.00,421.59,131.99,9.53;8,201.05,422.48,51.75,8.64;8,270.99,422.48,26.01,8.64" xml:id="b6">
+	<monogr>
+		<title level="m" type="main" coords="8,160.72,395.32,132.01,8.64">Classifier-free diffusion guidance</title>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ho</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2207.12598</idno>
+		<imprint>
+			<date type="published" when="2022">2022. 2022</date>
+			<publisher>Didrik</publisher>
+		</imprint>
+	</monogr>
+	<note>Hoogeboom et al., 2021</note>
+</biblStruct>
+
+<biblStruct coords="8,65.62,433.44,231.38,8.64;8,65.62,444.40,231.38,8.64;8,65.62,455.18,231.38,8.82;8,65.62,466.14,58.94,8.82;8,54.00,481.63,243.00,9.53;8,65.62,493.48,231.38,8.64;8,65.62,504.44,231.38,8.64;8,65.62,515.40,231.38,8.64;8,65.62,526.18,231.38,8.82;8,65.62,537.14,231.38,8.82;8,65.62,548.10,231.38,8.82;8,65.62,559.23,171.03,8.64" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="8,65.62,444.40,231.38,8.64;8,65.62,455.36,83.73,8.64;8,259.87,493.48,37.13,8.64;8,65.62,504.44,172.23,8.64">Argmax flows and multinomial diffusion: Learning categorical distributions</title>
+		<author>
+			<persName coords=""><forename type="first">Priyank</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Patrick</forename><surname>Jaini</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Max</forename><surname>Forr'e</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Welling ; Emiel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Víctor</forename><surname>Hoogeboom</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Clément</forename><surname>Garcia Satorras</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Max</forename><surname>Vignac</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Welling</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,171.25,455.18,125.75,8.59;8,65.62,466.14,29.78,8.59;8,221.06,526.18,75.94,8.59;8,65.62,537.14,208.50,8.59;8,116.13,548.10,176.53,8.59">Proceedings of the 39th International Conference on Machine Learning</title>
+		<editor>
+			<persName><forename type="first">Kamalika</forename><surname>Chaudhuri</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Stefanie</forename><surname>Jegelka</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Le</forename><surname>Song</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Csaba</forename><surname>Szepesvari</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Gang</forename><surname>Niu</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Sivan</forename><surname>Sabato</surname></persName>
+		</editor>
+		<meeting>the 39th International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2021-07">2021. Jul 2022</date>
+			<biblScope unit="page" from="17" to="23" />
+		</imprint>
+	</monogr>
+	<note>Proceedings of Machine Learning Research</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,574.54,243.00,9.53;8,65.62,586.40,231.38,8.64;8,65.62,597.18,231.38,8.82;8,54.00,612.66,243.00,9.53;8,65.62,624.52,231.38,8.64;8,65.62,635.30,178.98,8.82" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="8,163.66,586.40,133.34,8.64;8,65.62,597.35,105.49,8.64;8,158.67,624.52,134.30,8.64">Mdm: Molecular diffusion model for 3d molecule generation</title>
+		<author>
+			<persName coords=""><surname>Huang</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2209.05710</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,65.62,635.30,129.45,8.59">British Journal of Pharmacology</title>
+		<editor>
+			<persName><forename type="first">Steven</forename><surname>Hughes</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Rees</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Sb Kalindjian</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Philpott</surname></persName>
+		</editor>
+		<imprint>
+			<biblScope unit="volume">162</biblScope>
+			<date type="published" when="2011">2022. 2022. 2011. 2011</date>
+		</imprint>
+	</monogr>
+	<note>Principles of early drug discovery</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,650.78,243.00,9.53;8,65.62,662.64,231.38,8.64;8,65.62,673.60,231.38,8.64;8,65.62,684.56,231.38,8.64;8,65.62,695.34,176.72,8.82;8,315.00,56.58,243.00,9.53;8,326.62,68.44,231.38,8.64;8,326.62,79.22,231.38,8.82;8,326.62,90.35,90.77,8.64" xml:id="b9">
+	<monogr>
+		<title level="m" type="main" coords="8,65.62,684.56,231.38,8.64;8,65.62,695.51,50.06,8.64;8,520.61,68.44,37.39,8.64;8,326.62,79.40,189.62,8.64">Equivariant 3d-conditional diffusion models for molecular linker design</title>
+		<author>
+			<persName coords=""><surname>Igashov</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2206.01729</idno>
+		<imprint>
+			<date type="published" when="2022">2022. 2022. 2022</date>
+		</imprint>
+	</monogr>
+	<note>Torsional diffusion for molecular conformer generation</note>
+</biblStruct>
+
+<biblStruct coords="8,315.00,105.04,243.00,9.53;8,326.62,116.90,231.38,8.64;8,326.62,127.68,231.39,8.82;8,326.62,138.82,60.05,8.64" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="8,326.62,116.90,231.38,8.64;8,326.62,127.86,10.17,8.64">Conditional molecular design with deep generative models</title>
+		<author>
+			<persName coords=""><forename type="first">Cho</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Seokho</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kyunghyun</forename><surname>Cho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,348.32,127.68,191.05,8.59">Journal of chemical information and modeling</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="43" to="52" />
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,315.00,153.50,243.00,9.53;8,326.62,165.36,231.38,8.64;8,326.62,176.32,231.38,8.64;8,326.62,187.10,231.38,8.82;8,326.62,198.06,231.38,8.82;8,326.62,209.19,82.19,8.64" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="8,424.41,176.32,133.59,8.64;8,326.62,187.28,81.08,8.64">Gligen: Open-set grounded textto-image generation</title>
+		<author>
+			<persName coords=""><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,448.99,187.10,109.01,8.59;8,326.62,198.06,200.84,8.59">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<date type="published" when="2023">2023. 2023. 2023</date>
+			<biblScope unit="page" from="22511" to="22521" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,315.00,223.88,243.00,9.53;8,326.62,235.74,231.38,8.64;8,326.62,246.70,231.38,8.64;8,326.62,257.48,231.38,8.82;8,326.62,268.44,231.38,8.82;8,326.62,279.57,82.19,8.64" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="8,362.00,246.70,195.99,8.64;8,326.62,257.66,81.63,8.64">Repaint: Inpainting using denoising diffusion probabilistic models</title>
+		<author>
+			<persName coords=""><surname>Lugmayr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,449.30,257.48,108.70,8.59;8,326.62,268.44,200.84,8.59">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<date type="published" when="2022">2022. 2022. 2022</date>
+			<biblScope unit="page" from="11451" to="11461" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,315.00,294.26,243.00,9.53;8,326.62,306.12,231.38,8.64;8,326.62,317.08,231.38,8.64;8,326.62,327.86,231.38,8.82;8,326.62,338.99,90.77,8.64;8,315.00,353.68,243.00,9.53;8,326.62,365.54,231.39,8.64;8,326.62,376.50,231.38,8.64;8,326.62,387.45,231.38,8.64;8,326.62,398.41,231.38,8.64;8,326.62,409.37,231.38,8.64;8,326.62,420.33,231.38,8.64;8,326.62,431.11,207.45,8.82;8,315.00,445.98,243.00,9.53;8,326.62,457.83,231.38,8.64;8,326.62,468.79,231.38,8.64;8,326.62,479.57,231.38,8.59;8,326.62,490.53,212.97,8.82;8,315.00,505.40,243.00,9.53;8,326.62,517.25,231.38,8.64;8,326.62,528.21,187.77,8.64;8,532.27,528.03,25.73,8.59;8,326.62,539.17,90.77,8.64;8,315.00,553.86,243.00,9.53;8,326.62,565.72,231.38,8.64;8,326.62,576.50,231.38,8.82;8,326.62,587.45,155.35,8.82;8,315.00,602.32,243.00,9.53;8,326.62,614.18,231.38,8.64;8,326.62,624.96,188.88,8.82;8,315.00,639.82,243.00,9.53;8,326.62,651.68,231.38,8.64;8,326.62,662.64,231.38,8.64;8,326.62,673.60,231.38,8.64;8,326.62,684.56,231.38,8.64;8,326.62,695.34,153.85,8.82;9,54.00,56.58,243.00,9.53;9,65.62,68.44,231.38,8.64;9,65.62,79.39,231.38,8.64;9,65.62,90.35,231.38,8.64;9,65.62,101.13,231.39,8.82;9,65.62,112.09,74.16,8.82" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="8,381.38,317.08,176.62,8.64;8,326.62,328.03,192.66,8.64;8,538.63,398.41,19.37,8.64;8,326.62,409.37,231.38,8.64;8,326.62,420.33,231.38,8.64;8,326.62,431.29,49.22,8.64;8,534.76,457.83,23.24,8.64;8,326.62,468.79,226.91,8.64;8,445.77,517.25,112.23,8.64;8,326.62,528.21,183.51,8.64;8,367.26,576.67,140.58,8.64;8,469.79,614.18,88.21,8.64;8,326.62,625.14,61.98,8.64;8,326.62,684.56,231.38,8.64;8,326.62,695.51,26.81,8.64">Alán Aspuru-Guzik, and Alex Zhavoronkov. Molecular sets (moses): A benchmarking platform for molecular generation models</title>
+		<author>
+			<persName coords=""><surname>Mou</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2210.13695</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,348.95,479.57,209.04,8.59;8,326.62,490.53,98.25,8.59;8,530.47,576.50,27.53,8.59;8,326.62,587.45,126.19,8.59;9,182.25,101.13,114.75,8.59;9,65.62,112.09,45.00,8.59">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<editor>
+			<persName><forename type="first">Garcia</forename><surname>Satorras</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Emiel</forename><surname>Hoogeboom</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Max</forename><forename type="middle">Welling E</forename></persName>
+		</editor>
+		<imprint>
+			<publisher>Huziel Enoc Sauceda Felix</publisher>
+			<date type="published" when="2015">2023. 2023. 2018. 2018. 2022. 2021. 2015. 2021. 2021. 2022. 2017</date>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="10674" to="10685" />
+		</imprint>
+	</monogr>
+	<note>Neural Information Processing Systems</note>
+</biblStruct>
+
+<biblStruct coords="9,54.00,126.32,243.00,9.53;9,65.62,138.17,231.38,8.64;9,65.62,149.13,231.38,8.64;9,65.62,159.91,231.38,8.82;9,65.62,171.05,90.77,8.64;9,54.00,185.10,243.00,9.53;9,65.62,196.95,231.38,8.64;9,65.62,207.91,231.38,8.64;9,65.62,218.69,231.38,8.82;9,65.62,229.83,90.77,8.64" xml:id="b14">
+	<monogr>
+		<title level="m" type="main" coords="9,198.25,149.13,98.75,8.64;9,65.62,160.09,195.13,8.64;9,176.64,207.91,120.36,8.64;9,65.62,218.87,190.35,8.64">Score-based generative modeling through stochastic differential equations</title>
+		<author>
+			<persName coords=""><surname>Sheynin</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2011.13456</idno>
+		<editor>Song, Jascha Narain Sohl-Dickstein, Diederik P. Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole</editor>
+		<imprint>
+			<date type="published" when="2020">2023. 2023. 2020</date>
+		</imprint>
+	</monogr>
+	<note>Emu edit: Precise image editing via recognition and generation tasks</note>
+</biblStruct>
+
+<biblStruct coords="9,54.00,243.88,243.00,9.53;9,65.62,255.73,231.38,8.64;9,65.62,266.69,225.23,8.64;9,54.00,280.74,243.00,9.53;9,65.62,292.60,231.38,8.64;9,65.62,303.55,231.38,8.64;9,65.62,314.33,167.12,8.82;9,54.00,328.56,243.00,9.53;9,65.62,340.42,231.38,8.64;9,65.62,351.38,231.38,8.64;9,65.62,362.15,83.85,8.82" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="9,222.67,255.73,74.33,8.64;9,65.62,266.69,194.84,8.64;9,106.97,303.55,190.03,8.64;9,65.62,314.51,40.49,8.64;9,214.61,340.42,82.39,8.64;9,65.62,351.38,210.90,8.64">Midi: Mixed graph and 3d denoising diffusion for molecule generation</title>
+		<author>
+			<persName coords=""><surname>Torge</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2209.14734</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="9,65.62,362.15,53.05,8.59">ECML/PKDD</title>
+		<imprint>
+			<date type="published" when="2022">2023. 2023. 2022. 2022. 2023</date>
+		</imprint>
+	</monogr>
+	<note>A graph diffusion model for novel drug design via scaffold hopping</note>
+</biblStruct>
+
+<biblStruct coords="9,54.00,376.38,243.00,9.53;9,65.62,388.24,231.38,8.64;9,65.62,399.20,231.38,8.64;9,65.62,410.15,231.38,8.64;9,65.62,420.93,231.38,8.82;9,65.62,432.07,97.41,8.64" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="9,65.62,399.20,231.38,8.64;9,65.62,410.15,231.38,8.64;9,65.62,421.11,43.59,8.64">Stochastic voyages into uncharted chemical space produce a representative library of all possible drug-like compounds</title>
+		<author>
+			<persName coords=""><surname>Virshup</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,120.78,420.93,172.31,8.59">Journal of the American Chemical Society</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page" from="7296" to="7303" />
+			<date type="published" when="2013">2013. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,446.12,243.00,9.53;9,65.62,457.98,231.38,8.64;9,65.62,468.93,231.38,8.64;9,65.62,479.71,118.99,8.82" xml:id="b17">
+	<monogr>
+		<title level="m" type="main" coords="9,212.71,457.98,84.28,8.64;9,65.62,468.93,227.33,8.64">Geodiff: a geometric diffusion model for molecular conformation generation</title>
+		<author>
+			<persName coords=""><surname>Xu</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2203.02923</idno>
+		<imprint>
+			<date type="published" when="2022">2022. 2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,493.94,243.00,9.53;9,65.62,505.80,231.38,8.64;9,65.62,516.75,231.38,8.64;9,65.62,527.53,231.39,8.82;9,65.62,538.49,53.41,8.82" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="9,241.61,505.80,55.39,8.64;9,65.62,516.75,231.38,8.64;9,65.62,527.71,135.46,8.64">Cmgn: a conditional molecular generation net to design target-specific molecules with desired properties</title>
+		<author>
+			<persName coords=""><forename type="first">Yang</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="9,211.32,527.53,85.69,8.59;9,65.62,538.49,24.43,8.59">Briefings in bioinformatics</title>
+		<imprint>
+			<date type="published" when="2023">2023. 2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,552.72,243.00,9.53;9,65.62,564.58,231.38,8.64;9,65.62,575.53,83.58,8.64" xml:id="b19">
+	<monogr>
+		<title level="m" type="main" coords="9,108.89,564.58,188.10,8.64;9,65.62,575.53,54.20,8.64">Adding conditional control to text-to-image diffusion models</title>
+		<author>
+			<persName coords=""><surname>Zhang</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2023">2023. 2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

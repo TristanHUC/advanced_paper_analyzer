@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,108.00,28.88,282.69,8.64;1,108.43,82.10,283.47,14.93;1,108.43,102.03,182.26,14.93;1,108.43,121.95,374.52,14.93">Machine Learning for Genomics Explorations workshop at ICLR 2024 PROTEIN REPRESENTATION LEARNING BY CAPTURING PROTEIN SEQUENCE-STRUCTURE-FUNCTION RELATIONSHIP</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2024-04-29">29 Apr 2024</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,113.98,159.61,38.78,8.96"><forename type="first">Eunji</forename><surname>Ko</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">KAIST</orgName>
+								<address>
+									<country key="KR">South Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,173.77,159.61,36.25,8.96"><forename type="first">Seul</forename><surname>Lee</surname></persName>
+							<email>seul.lee@kaist.ac.kr</email>
+							<affiliation key="aff0">
+								<orgName type="institution">KAIST</orgName>
+								<address>
+									<country key="KR">South Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,231.02,159.61,57.84,8.96"><forename type="first">Minseon</forename><surname>Kim</surname></persName>
+							<email>minseonkim@kaist.ac.kr</email>
+							<affiliation key="aff0">
+								<orgName type="institution">KAIST</orgName>
+								<address>
+									<country key="KR">South Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,305.79,159.61,52.31,8.96"><forename type="first">Dongki</forename><surname>Kim</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">KAIST</orgName>
+								<address>
+									<country key="KR">South Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,375.03,159.61,67.40,8.96"><forename type="first">Sung</forename><forename type="middle">Ju</forename><surname>Hwang</surname></persName>
+							<email>sjhwang82@kaist.ac.kr</email>
+							<affiliation key="aff0">
+								<orgName type="institution">KAIST</orgName>
+								<address>
+									<country key="KR">South Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,108.00,28.88,282.69,8.64;1,108.43,82.10,283.47,14.93;1,108.43,102.03,182.26,14.93;1,108.43,121.95,374.52,14.93">Machine Learning for Genomics Explorations workshop at ICLR 2024 PROTEIN REPRESENTATION LEARNING BY CAPTURING PROTEIN SEQUENCE-STRUCTURE-FUNCTION RELATIONSHIP</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2024-04-29">29 Apr 2024</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BD1533EC7FB37743F2007430B7DEA4C0</idno>
+					<idno type="arXiv">arXiv:2405.06663v1[q-bio.BM]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:10+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The goal of protein representation learning is to extract knowledge from protein databases that can be applied to various protein-related downstream tasks. Although protein sequence, structure, and function are the three key modalities for a comprehensive understanding of proteins, existing methods for protein representation learning have utilized only one or two of these modalities due to the difficulty of capturing the asymmetric interrelationships between them. To account for this asymmetry, we introduce our novel asymmetric multi-modal masked autoencoder (AMMA). AMMA adopts (1) a unified multi-modal encoder to integrate all three modalities into a unified representation space and (2) asymmetric decoders to ensure that sequence latent features reflect structural and functional information. The experiments demonstrate that the proposed AMMA is highly effective in learning protein representations that exhibit well-aligned inter-modal relationships, which in turn makes it effective for various downstream protein-related tasks.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">INTRODUCTION</head><p>Proteins are generated in an organism in the form of a sequence, which is then folded into a threedimensional structure, and as a three-dimensional structure, they become functional and fulfill their roles. This is the so-called protein sequence-structure-function paradigm <ref type="bibr" coords="1,414.22,443.25,89.78,8.64" target="#b12">(Liberles et al., 2012;</ref><ref type="bibr" coords="1,108.00,454.21,108.54,8.64">Serc ¸inoglu &amp; Ozbek, 2020)</ref>. Of the three modalities-sequence, structure, and function-sequence information underlies many protein applications and is the most abundant, making it a popular choice for training neural networks. The challenge lies in developing sophisticated protein representations that utilize information across various modalities based on sequence data. However, existing methods for protein representation learning have only utilized some of the modalities, overlooking the importance of comprehensive integration of these modalities.</p><p>A significant hurdle to comprehensively considering the three modalities is the complexity of capturing the relationship between them. The correspondence between them is not straightforward, for example, even if the amino acid sequences are very similar, substrate specificity can change dramatically as the three-dimensional structure of the active site changes <ref type="bibr" coords="1,369.84,558.82,85.78,8.64" target="#b1">(Bunsupa et al., 2012)</ref>. Moreover, proteins that have acquired the same function by convergent evolution, or that have accumulated sequence mutations where they do not affect protein folding, can have very little similarity in sequence. As has been described by many literatures <ref type="bibr" coords="1,313.92,591.69,87.44,8.64" target="#b11">(Illergård et al., 2009;</ref><ref type="bibr" coords="1,404.01,591.69,83.21,8.64" target="#b15">Mahlich et al., 2018;</ref><ref type="bibr" coords="1,489.87,591.69,14.14,8.64;1,108.00,602.65,83.98,8.64" target="#b21">van Kempen et al., 2022)</ref>, it is a generally accepted fact that it is the structure, not the sequence, that is more conserved and directly related to the function of a protein. Figure <ref type="figure" coords="1,413.47,613.61,4.98,8.64" target="#fig_0">1</ref> empirically supports this claim, showing that proteins with similar functional features are encoded into similar structural features, while their sequence features can differ largely. The first column of Table <ref type="table" coords="1,441.98,635.53,4.98,8.64" target="#tab_0">1</ref> quantitatively shows that the structure-function relationship is correlated more compared to the sequence-structure or sequence-function relationships. We refer to this relationship, where structure and function exhibit a strong alignment, while sequence and the other two show a relatively weaker correlation, as the asymmetric relationship between modalities.</p><p>To utilize information from multiple modalities, albeit not all three, most previous works <ref type="bibr" coords="1,475.23,696.30,28.77,8.64;1,108.00,707.26,48.08,8.64" target="#b24">(Zhang et al., 2022;</ref><ref type="bibr" coords="1,159.09,707.26,63.26,8.64" target="#b23">Xu et al., 2023;</ref><ref type="bibr" coords="1,225.35,707.26,77.09,8.64" target="#b25">Zhang et al., 2024)</ref> have leveraged contrastive learning, which learns  scores between the relation matrices which calculate relationship between the protein latents in a batch. The latents are extracted from the uni-modal encoders (i.e., ESM-1b, GearNet, and PubMedBERT-abs with additional projection layers). We report the similarity values calculated before and after applying contrastive learning (CL) and our proposed AMMA. Details are provided in Section B.5. the instance similarity and difference between two modalities. However, these approaches focus on improving representations of a single modality (e.g., protein sequence) by utilizing guidance from other "auxiliary" modalities. This leads to a skewed integration of modalities, as shown in the second column of Table <ref type="table" coords="2,174.51,307.18,3.74,8.64" target="#tab_0">1</ref>, where contrastive learning shows high sequence-structure and sequence-function similarity but low structure-function similarity.</p><p>To this end, we propose Asymmetric Multi-modal Masked Autoencoder (AMMA), an integrated protein representation learning method that jointly embeds the three core modalities of proteins.</p><p>Under the masked autoencoder framework <ref type="bibr" coords="2,279.43,356.99,93.92,8.64" target="#b0">(Bachmann et al., 2022)</ref>, AMMA captures the asymmetric sequence-structure-function relationship inherent in the protein domain through (1) the unified multi-modal encoder and (2) the asymmetric design of the decoder. By having the multi-modal encoder, AMMA explicitly integrates information from all of the modalities rather than letting one modality guide the others. Furthermore, by learning to predict structure and function from sequence with the asymmetric decoders, AMMA ensures that sequence latent features faithfully reflect structure and function information. As shown in the last column of Table <ref type="table" coords="2,409.42,422.75,3.74,8.64" target="#tab_0">1</ref>, AMMA successfully yields well-aligned multi-modal protein representations. We experimentally validate the proposed AMMA on various tasks that require accurate protein representation learning. The experimental results demonstrate that AMMA outperforms existing state-of-the-art methods, showing its superiority in learning protein representations by comprehensively and effectively considering the multi-modal aspects of proteins. We summarize our contributions as follows:</p><p>• We are the first to propose utilizing the three core modalities for protein representation learning: sequence, structure, and function. • We point out the asymmetric relationship between sequence, structure, and function of proteins and propose AMMA, a masked autoencoder framework that adopts a unified multimodal encoder and asymmetric decoders to account for the asymmetric relationship. • We experimentally demonstrate that AMMA is highly effective in learning protein representations and benefits performance on a variety of downstream protein-related tasks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">RELATED WORKS</head><p>As a means to overcome the limitations of uni-modal protein representation learning, protein representation learning using multiple modalities has gained traction. Most previous studies have adopted a contrastive learning approach to capture the relationship between modalities. <ref type="bibr" coords="2,426.88,618.77,77.12,8.64" target="#b24">Zhang et al. (2022)</ref> employed knowledge-aware negative sampling to identify negative instances, enabling contrastive learning across proteins. <ref type="bibr" coords="2,209.25,640.69,63.71,8.64" target="#b23">Xu et al. (2023)</ref> conducted contrastive learning between protein sequence and functional description. However, contrastive learning may not be an optimal for multi-modal representation learning, as it focuses on learning improved representations of a single modality using other modal information and thus cannot yield balanced multi-modal representations.</p><p>Apart from contrastive learning, there are other approaches to multi-modal protein representation learning. <ref type="bibr" coords="2,146.19,701.46,61.10,8.64" target="#b20">Su et al. (2023)</ref> proposed using structure-aware tokens from FoldSeek <ref type="bibr" coords="2,426.53,701.46,77.47,8.64;2,108.00,712.42,23.24,8.64" target="#b21">(van Kempen et al., 2022)</ref> to train a token-based ESM <ref type="bibr" coords="2,253.35,712.42,69.53,8.64" target="#b13">(Lin et al., 2022)</ref>. However, the method of <ref type="bibr" coords="2,438.47,712.42,65.53,8.64" target="#b20">Su et al. (2023)</ref> uses 20 different structural tokens, which restricts diversity when encoding structural information. Moreover, these methods do not consider another important modality for proteins, the function description, and are therefore suboptimal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">METHOD</head><p>3.1 ASYMMETRIC MULTI-MODAL MASKED AUTOENCODER (AMMA) Sequence, Structure, and Function Uni-modal Encoders To integrate the protein information of sequence, structure, and function equally to construct a unified protein representation, we first propose to utilize a single multi-modal encoder. The inputs to the multi-modal encoder are the features extracted from each of the uni-modal encoders. The input data can be the sequence X seq , structure X str , or function X func , or a combination of these modalities. We adopt pretrained feature extractors as the uni-modal encoders ENC seq , ENC str , and ENC func . Specifically, we use ESM-1b <ref type="bibr" coords="3,121.02,405.79,75.62,8.64" target="#b18">(Rives et al., 2021)</ref>, GearNet <ref type="bibr" coords="3,240.94,405.79,78.77,8.64" target="#b26">(Zhang et al., 2023)</ref>, and PubMedBERT-abs <ref type="bibr" coords="3,422.03,405.79,67.29,8.64" target="#b8">(Gu et al., 2021)</ref> for extracting features from the sequence, structure, and function inputs, respectively. Note that our approach is model-agnostic, and any off-the-shelf uni-modal feature extractors can be used. X seq , X str , and X func are each passed to the corresponding uni-modal encoder and becomes</p><formula xml:id="formula_0" coords="3,108.00,436.78,396.00,25.81">X ′ seq ∈ R L×1280 , X ′ str ∈ R L×3072 , and X ′ func ∈ R L ′ ×768 .</formula><p>L is the number of amino acids of the protein and L ′ is the number of the tokens of the function description. Then, we add two fully connected layers, PROJ seq , PROJ str , and PROJ func , to each of the uni-modal encoders to project the latent features of multiple modalities to the same size of projection dimension. The result becomes Z seq ∈ R L×D , Z str ∈ R L×D , and Z func ∈ R L ′ ×D . D is the projection dimension. We set D to 512. Mask Sampling Under the masked autoencoder framework, we mask the encoded latent features Z. Specifically, we first sample the preserving ratios between the modalities, λ seq , λ str , and λ func , based on the Dirichlet distribution following <ref type="bibr" coords="3,284.00,537.13,90.15,8.64" target="#b0">Bachmann et al. (2022)</ref>, where λ seq +λ str +λ func = 1, λ seq ≥ 0, λ str ≥ 0, and λ func ≥ 0 as follows:</p><formula xml:id="formula_1" coords="3,202.05,565.96,207.91,9.32">(λ seq , λ str , λ func ) ∼ Dirichlet(α seq , α str , α func ).</formula><p>(1)</p><p>We set the value of α seq , α str , and α func to 1, 2, and 2, respectively. We then randomly mask the latent features Z seq , Z str , and Z func such that the number of preserved tokens has the ratio λ seq : λ str : λ func and sums to the total number of tokens M . Subsequently, we concatenate the masked features from all three modalities to be Z ∈ R M ×D , which will be the input to the multi-modal encoder described in the next paragraph. We set M to 160.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Multi-modal Encoder</head><p>To learn protein representations that faithfully contain information from multiple modalities uniformly in a well-aligned manner, we propose to use a unified protein multimodal encoder ENC multi that integrates different modalities into a single representation space. ENC multi encodes the concatenated and masked multi-modal latent features as follows:</p><formula xml:id="formula_2" coords="3,235.62,694.72,268.38,11.40">Z multi = ENC multi (Z) ∈ R M ×D .<label>(2)</label></formula><p>We adopt an 8-layer Transformer as ENC multi . Through the self-attention mechanism, ENC multi facilitates the fusion of multiple modality information.</p><p>Asymmetric Decoder To train the multi-modal encoder under the autoencoder framework, we adopt individual modality decoders that reconstruct the original latent variables X ′ seq , X ′ str , and X ′ func , respectively. Unlike multi-modal representation learning in the image domain, multi-modal protein representation learning should consider that the three protein modalities exhibit a unique asymmetric relationship in which sequence-structure and sequence-function are relatively poorly aligned compared to structure-function (see Figure <ref type="figure" coords="4,312.90,141.22,3.60,8.64" target="#fig_0">1</ref>). To effectively represent proteins by incorporating information across modalities and capturing their asymmetric interrelationships, we introduce asymmetric decoders.</p><p>The multi-modal latent variable Z multi computed by the multi-modal encoder ENC multi is first passed to each of the three single linear layers <ref type="table" coords="4,304.29,190.71,26.19,9.65" target="#tab_0">ℓ 0 , ℓ 1 ,</ref> and<ref type="table" coords="4,352.51,190.71,8.12,9.65" target="#tab_2">ℓ 2</ref> and<ref type="table" coords="4,382.87,190.71,45.33,8.96">becomes Z</ref> </p><formula xml:id="formula_3" coords="4,108.00,189.14,396.00,25.34">′ multi,0 ∈ R M ×D , Z ′ multi,1 ∈ R M ×D , and Z ′ multi,2 ∈ R M ×D .</formula><p>Tokens of zero are then inserted into the masked positions of Z ′ multi,0 , Z ′ multi,1 , and Z ′ multi,2 to regain the original unmasked length 2L + L ′ . The three latent features of size (2L+L ′ )×D each split into three modal-specific latent features</p><formula xml:id="formula_4" coords="4,108.00,227.36,396.00,26.79">Z ′ seq,k ∈ R L×D , Z ′ str,k ∈ R L×D , and Z ′ func,k ∈ R L ′ ×D for k = 0, 1, 2.</formula><p>Subsequently, the latent features are asymmetrically passed to modal-specific decoders DEC seq , DEC str , and DEC func depending on the modality as follows:</p><formula xml:id="formula_5" coords="4,213.21,279.93,290.79,47.74">Xseq = DEC seq (Z ′ seq,0 ) ∈ R L×1280 , Xstr = DEC str (Z ′ seq,1 , Z ′ func,1 ) ∈ R L×3072 , Xfunc = DEC func (Z ′ seq,2 , Z ′ str,2 ) ∈ R L ′ ×768 ,<label>(3)</label></formula><p>where Xseq , Xstr , and Xfunc are the reconstructed latent features of X ′ seq , X ′ str , and X ′ func , respectively. Each decoder consists of two Transformer layers followed by a single linear layer. During the pretraining, we keep the uni-modal encoders frozen and train AMMA using the mean squared error (MSE) loss as follows:</p><formula xml:id="formula_6" coords="4,124.28,388.66,351.82,27.06">L seq = MSE( Xseq , X ′ seq ), L str =MSE( Xstr , X ′ str ), L func = MSE( Xfunc , X ′ func ), L =L seq + L str + L func .</formula><p>(4)</p><p>The key to the proposed AMMA is the specialized asymmetric design of each decoder. The sequence decoder takes Z ′ seq as input to predict the original sequence latent feature. This ensures that the sequence information remains intact during the fusion process. On the other hand, the structure decoder takes both Z ′ seq and Z ′ func as input to reconstruct the original structural latent feature. This design is crucial to ensure the sequence latent features to reflect structural information during the fusion process of the multi-modal encoder. Similarly, the function decoder takes both Z ′ seq and Z ′ str as input to predict the original function latent feature, ensuring the sequence latent features to reflect function information during the fusion process. Because structure and function are difficult to predict from sequence features alone and structure and function are relatively well aligned, structure and function can provide the auxiliary information needed to reconstruct each other. Using other modalities as auxiliary information for the structure and function decoders is more effective than using their own features as auxiliary information. This strategy prevents the decoders from overly relying on their own explicit inputs, which can weaken the modality information propagating backwards to the sequence features, preventing the integration of the modalities.</p><p>Through the proposed multi-modal encoder and asymmetric decoders, AMMA adeptly learns to encapsulate all three core protein modalities: sequence, structure, and function. This results in effective and comprehensive multi-modal protein representations that reflects the complex interdependencies of protein modalities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">EXPERIMENTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">PROTEIN FUNCTION PREDICTION</head><p>As shown in Table <ref type="table" coords="4,185.90,668.58,3.74,8.64" target="#tab_2">2</ref>, AMMA outperforms all baselines on all tasks in terms of AUPR and on two out of four tasks in terms of F max . This demonstrates that the proposed pretraining scheme with AMMA is highly effective in learning high-quality protein representations that can be universally used in downstream tasks to improve performance. Specifically, AMMA largely outperforms its sequence encoder ESM-1b and its structure encoder GearNet in terms of average score, showing that utilizing protein representations that integrate information from multiple modalities benefits One of the biggest limitations of contrastive learning approach is its inability to leverage abundant unpaired data, i.e., data without all modality information. On the contrary, the pretraining strategy using AMMA can be flexibly applied to unpaired data under the masked autoencoder framework. Since there is much more data that only partially has the sequence-structure-function triplet, this is a huge advantage and can be leveraged to further improve the performance of AMMA.We construct an unpaired dataset of 50k with 25k sequence-structure pairs randomly selected from AlphaFoldDB and 25k sequence-function pairs randomly selected from ProtDescribe and further train AMMA on them.</p><p>As shown in Table <ref type="table" coords="5,185.19,384.97,3.74,8.64" target="#tab_3">3</ref>, we found that further pretraining AMMA on the unpaired data improves prediction performance, demonstrating the scalability of AMMA. The detailed experimental setting is provided in Section B.6.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">ABLATION STUDIES AND QUALITATIVE ANALYSIS</head><p>Effect of the Asymmetric Decoders To capture the asymmetric relationship between protein sequence, structure, and function, AMMA employs asymmetric decoding, where the structure decoder predicts structural features by considering sequence and function, and the function decoder predicts functional features by considering sequence and structure. To examine the effect of the asymmetric decoding, we compare AMMA to AMMA-symmetric, a variant of AMMA that uses symmetric decoding. The sequence decoder, structure decoder, and function decoder of AMMA-symmetric take sequence, structure, and function inputs, respectively, and predict its own features, i.e., sequence, structure, and function features, respectively, without reference to other modalities.  As shown in Table <ref type="table" coords="5,188.95,531.10,3.74,8.64" target="#tab_2">2</ref>, AMMA outperforms AMMAsymmetric by a large margin, demonstrating that the asymmetric design of decoders greatly benefits performance as it allows the multi-modal encoder to encode a more comprehensive protein representation by considering the asymmetric relationship between the protein modalities.</p><p>To further investigate the effect of the asymmetric decoders and understand the inter-modal relationship at the residue level, we visualize the residues with the highest function-to-residue attention values in AMMA and AMMA-symmetric. As shown in Figure <ref type="figure" coords="5,124.15,668.58,3.74,8.64" target="#fig_3">3</ref>, residues heavily attended by functional tokens correspond to actual protein-ligand binding regions in AMMA, while heavily attended residues in AMMA-symmetric do not correlate with the actual interaction region. This demonstrates that the asymmetric design of decoders helps AMMA understand the relationship between functional context and residual information. Furthermore, this also suggests that AMMA could be utilized to find the active region of a protein, another important research problem with various applications. We provide the experimental details in Section B.8. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparison with Contrastive Learning</head><p>We also compare AMMA to contrastive learning, a popular pretraining strategy for learning relationships between multiple modalities. Specifically, we construct AMMA-contrastive, a model that uses a similar architecture to AMMA but uses contrastive learning to obtain multi-modal protein representations.</p><p>As shown in Table <ref type="table" coords="6,184.14,248.20,3.74,8.64" target="#tab_2">2</ref>, AMMA largely outperforms AMMA-contrastive, indicating that the proposed strategy to utilize a unified multi-modal encoder and asymmetric decoders is much more effective than contrastive learning in integrating the multi-modal information of proteins. Compared to its uni-modal sequence encoder ESM-1b, AMMA-contrastive shows better EC prediction performance but worse GO prediction performance, suggesting that contrastive learning is not beneficial to all tasks, while AMMA learns high-quality protein representations that are universally applicable to a variety of downstream tasks.</p><p>In addition, we provide t-SNE visualization of the uni-modal latent features obtained after training with AMMA and contrastive learning in Figure <ref type="figure" coords="6,303.32,341.85,9.40,8.64">4a</ref> and 4b, respectively. While the features of the difference modalities after training with AMMA are well aligned, those after contrastive learning are not aligned in a balanced way, because AMMA-contrastive only utilizes structure and function features to guide sequence features and does not uniformly fuse the multi-modal information. This results can also quantitatively reconfirmed in Table <ref type="table" coords="6,316.50,385.69,3.74,8.64" target="#tab_0">1</ref>, indicating that AMMA uniformly integrates information of multiple modalities while the contrastive learning approach cannot. Effect of the Masking Ratio We examine the effect of the α value used for Dirichlet sampling to sample the masking ratio. As shown in Table <ref type="table" coords="6,142.26,453.70,3.74,8.64" target="#tab_4">4</ref>, the choice of α value has a large impact on the final performance of AMMA. Note that the higher the α value, the less masking is applied and the more tokens are preserved. We can observe a trend that preserving fewer sequence features favors model performance. This is due to the two reasons. First, as we saw in the previous paragraph, auxiliary structure or function features are important for successful pretraining of AMMA, so preserving them over less aligned sequence features is beneficial to performance. This can be seen by the fact that the third row performs the worst due to minimal auxiliary features, while the fourth and fifth rows perform better by utilizing more auxiliary information. Second, masking more tokens in a sequence feature make the sequence feature more robust because it must contain a wealth of information in its small subset. As a result, the best performance is achieved by setting α seq , α str , and α func to 1, 2, and 2, respectively, which are the values used in the main experiment (Table <ref type="table" coords="6,386.86,596.17,3.60,8.64" target="#tab_2">2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">CONCLUSION</head><p>In this paper, we proposed AMMA to address the problem of multi-modal protein representation learning that considers three core protein modalities: sequence, structure, and function. AMMA utilizes a unified multi-modal encoder and asymmetric decoders to capture the asymmetric relationship between the protein modalities, resulting in high-quality, comprehensive multi-modal protein representations. Through various experiments, AMMA demonstrated its effectiveness on proteinrelated downstream tasks with much less pretraining data. We believe that AMMA can be applied to improve our understanding of proteins by providing a comprehensive view of their properties, and we expect AMMA to spawn many interesting future studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix A RELATED WORKS</head><p>A.1 UNI-MODAL PROTEIN REPRESENTATION LEARNING For learning protein representations using a single modality, the most basic and widely used is the sequence of the protein, i.e., a linear chain of amino acid residues. Many previous sequencebased protein representation learning methods have utilized language modeling techniques such as masked language modeling (MLM) <ref type="bibr" coords="9,255.48,193.33,80.83,8.64" target="#b4">(Devlin et al., 2019)</ref>. ProtBERT <ref type="bibr" coords="9,390.79,193.33,91.68,8.64" target="#b6">(Elnaggar et al., 2021)</ref> used BERT <ref type="bibr" coords="9,135.27,204.29,80.00,8.64" target="#b4">(Devlin et al., 2019)</ref> to reconstruct missing amino acid residues. ESM-1b <ref type="bibr" coords="9,428.57,204.29,75.44,8.64" target="#b18">(Rives et al., 2021)</ref> conducted masked language modeling (MLM) unsupervised learning on 250M protein sequences. ESM-1v <ref type="bibr" coords="9,144.57,226.20,78.13,8.64" target="#b16">(Meier et al., 2021)</ref> focused on capturing the effect of variations in sequence on function. ESM-2 <ref type="bibr" coords="9,139.40,237.16,67.65,8.64" target="#b13">(Lin et al., 2022)</ref> proposed a language model with the larger 15B parameters than ESM-1b. <ref type="bibr" coords="9,108.00,248.12,96.14,8.64" target="#b9">Heinzinger et al. (2022)</ref> proposed to obtain optimized sequence embeddings for the CATH protein structure hierarchy <ref type="bibr" coords="9,185.52,259.08,83.45,8.64" target="#b17">(Orengo et al., 1997)</ref> by using contrastive learning to maximize the distance between sequences from different CATH classes and minimize the distance for those within the same class. Recently, the importance of structural information in learning protein representations has came to the fore and recent works have been proposed to exploit structural features in protein 3D geometry. <ref type="bibr" coords="9,151.26,302.92,122.73,8.64" target="#b10">Hermosilla &amp; Ropinski (2022)</ref> and <ref type="bibr" coords="9,293.82,302.92,77.06,8.64" target="#b26">Zhang et al. (2023)</ref> proposed to learn geometric features through contrastive learning between substructures of a given protein. While these sequenceor structure-based methods can capture properties of proteins thanks to the vast amount of protein data available, they are limited to learning a single modality of proteins and cannot obtain comprehensive protein representations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.2 MULTI-MODAL PROTEIN REPRESENTATION LEARNING</head><p>Contrastive Learning-based Multi-modal Learning As a means to overcome the limitations of uni-modal protein representation learning, protein representation learning using multiple modalities has gained traction. Most previous studies have adopted a contrastive learning approach to capture the relationship between modalities. <ref type="bibr" coords="9,255.29,418.05,76.51,8.64" target="#b24">Zhang et al. (2022)</ref> employed knowledge-aware negative sampling to identify negative instances, enabling contrastive learning across proteins. <ref type="bibr" coords="9,439.68,429.01,64.32,8.64" target="#b23">Xu et al. (2023)</ref> conducted contrastive learning between protein sequence and functional description. <ref type="bibr" coords="9,455.26,439.97,48.75,8.64;9,108.00,450.93,26.56,8.64" target="#b25">Zhang et al. (2024)</ref> utilized ESM <ref type="bibr" coords="9,193.27,450.93,76.56,8.64" target="#b18">(Rives et al., 2021)</ref> and GearNet <ref type="bibr" coords="9,326.30,450.93,79.72,8.64" target="#b26">(Zhang et al., 2023)</ref> to encode sequence and structure data, respectively, and performed contrastive learning between the encoded sequence and structure features. However, contrastive learning may not be an optimal choice for multi-modal protein representation learning, as it essentially focuses on learning improved representations of a single modality using other modal information and thus cannot yield balanced multi-modal representations.</p><p>Other Multi-modal Learning Approaches Apart from contrastive learning, there are other approaches to multi-modal protein representation learning. Chen et al. ( <ref type="formula" coords="9,396.35,529.61,17.71,8.64">2023</ref>) incorporated protein structural information by learning to predict residue distance or dihedral angle. This work also proposed to maximize the mutual information between the sequential representation and structural representation. <ref type="bibr" coords="9,169.91,562.49,60.42,8.64" target="#b20">Su et al. (2023)</ref> proposed using structure-aware tokens extracted from FoldSeek <ref type="bibr" coords="9,486.55,562.49,17.45,8.64;9,108.00,573.45,82.08,8.64" target="#b21">(van Kempen et al., 2022)</ref> to train a token-based ESM <ref type="bibr" coords="9,300.98,573.45,65.73,8.64" target="#b13">(Lin et al., 2022)</ref> backbone. These methods showed superior results as they consider the structure of proteins. However, the method of <ref type="bibr" coords="9,433.03,584.41,70.97,8.64" target="#b2">Chen et al. (2023)</ref> has the limitation that it only uses sequence information as an auxiliary to guide and enhance structural representation. The method of <ref type="bibr" coords="9,262.32,606.33,65.89,8.64" target="#b20">Su et al. (2023)</ref> uses 20 different structural tokens, which restricts diversity when encoding structural information. Moreover, these methods do not consider another important modality for proteins, the function description, and are therefore suboptimal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B EXPERIMENTAL DETAILS B.1 DETAILS ON PRETRAINING</head><p>Details For pretraining, we set the batch size as 4 and the number of training epochs as 10. We used the AdamW <ref type="bibr" coords="9,182.33,712.42,117.09,8.64" target="#b14">(Loshchilov &amp; Hutter, 2019)</ref> optimizer with a learning rate of 1 × 10 -4 and a weight decay of 0.05. The pretraining scheduler was StepLR with gamma 0.5.</p><p>Dataset For pretraining, we built a dataset of 120k sequence, structure, and function triplets. We extracted common proteins from the AlphaFold v2 dataset <ref type="bibr" coords="10,348.32,96.30,81.43,8.64" target="#b22">(Varadi et al., 2022)</ref> of 440k sequence and structure pairs and the ProtDescribe <ref type="bibr" coords="10,275.47,107.26,68.24,8.64" target="#b23">(Xu et al., 2023)</ref> dataset of 553k sequence and function description pairs. We used the preprocessed sequences of AlphaFold using the torchdrug <ref type="bibr" coords="10,460.81,118.22,43.20,8.64;10,108.00,129.17,23.24,8.64" target="#b27">(Zhu et al., 2022)</ref> library when extracting the common proteins.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.2 DETAILS ON PROTEIN FUNCTION PREDICTION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Downstream Tasks</head><p>We evaluated the performance of our model on two standard downstream tasks following <ref type="bibr" coords="10,172.07,184.94,98.40,8.64" target="#b7">Gligorijević et al. (2021)</ref>: Enzyme Commission (EC) number prediction and Gene Ontology (GO) term prediction. The GO benchmark has three sub-tasks, i.e., the tasks to predict Molecular Function (GO-MF), Cellular Component (GO-CC), and Biological Process (GO-BP), respectively.</p><p>Supervised Finetuning To finetune AMMA, sequence and structural features extracted from unimodal encoders, respectively, were concatenated and passed to the multi-modal encoder without masking. Following <ref type="bibr" coords="10,190.07,262.67,75.39,8.64" target="#b4">Devlin et al. (2019)</ref>, we use the latent feature corresponding to first token as the multi-modal representation. We add two fully connected (FC) layers after the multi-modal encoder and use cross entropy loss to finetune the sequence encoder, multi-modal encoder, and two FC layers together.</p><p>We set the batch size to 1 on EC, GO-MF, and GO-CC and 4 on GO-BP. We trained for 100 epochs on EC, and 50 epochs on GO. For EC and GO-BP, we used the AdamW <ref type="bibr" coords="10,390.87,323.44,113.13,8.64" target="#b14">(Loshchilov &amp; Hutter, 2019)</ref> optimizer with a learning rate of 1.0×10 -5 for ENC multi , ENC seq , and PROJ str , and 1.0×10 -4 for the Multi-Layer Perceptron (MLP) classifier. For GO-MF and GO-CC, we used the Adam optimizer with a learning rate of 1.0×10 -5 for ENC multi , ENC seq , and PROJ str , and 1.0×10 -4 for the Multi-Layer Perceptron (MLP) classifier. We used the ExponentialLR scheduler with a gamma value of 0.95.</p><p>Baselines We compared AMMA with five protein representation learning baselines. ESM-1b <ref type="bibr" coords="10,122.25,412.13,79.40,8.64" target="#b18">(Rives et al., 2021)</ref> used masked language modeling (MLM) to learn protein representations from a large sequence database. OntoProtein <ref type="bibr" coords="10,295.59,423.09,79.70,8.64" target="#b24">(Zhang et al., 2022)</ref> incorporated knowledge graphs (KGs) to enhance protein sequence embeddings with biological knowledge facts. GearNet <ref type="bibr" coords="10,475.23,434.05,28.77,8.64;10,108.00,445.01,49.45,8.64" target="#b26">(Zhang et al., 2023)</ref> leveraged multiview contrastive learning to train the structural encoder. SaProt <ref type="bibr" coords="10,490.16,445.01,13.84,8.64;10,108.00,455.97,49.42,8.64" target="#b20">(Su et al., 2023)</ref> used structure-aware tokens to incorporate structure information to ESM <ref type="bibr" coords="10,460.66,455.97,43.35,8.64;10,108.00,466.93,21.44,8.64" target="#b13">(Lin et al., 2022)</ref>. ProtST <ref type="bibr" coords="10,174.29,466.93,68.69,8.64" target="#b23">(Xu et al., 2023)</ref> used contrastive learning to align sequence information from a protein language model with functional information from a biomedical language model.</p><p>Finetuning Dataset We tested on the Enzyme Commission (EC) and Gene Ontology (GO) in downstream tasks. We used a 95% sequence identity cutoff for both EC and GO, following Gear-Net <ref type="bibr" coords="10,124.88,522.74,77.06,8.64" target="#b26">(Zhang et al., 2023)</ref>. The dataset size of each dataset is shown in Table <ref type="table" coords="10,409.13,522.74,3.74,8.64" target="#tab_5">5</ref>. Evaluation Metrics To quantify the effectiveness of protein representation learning methods, we used two commonly used metrics: the protein-centric maximum F-score (F max ) and pair-centric area under precision-recall curve (AUPR) that are implemented in torchdrug <ref type="bibr" coords="10,395.32,631.63,67.65,8.64" target="#b27">(Zhu et al., 2022)</ref>.</p><p>The F max is the protein-centric maximum F-score. t ∈ [0, 1] denotes a decision threshold for a target protein i, and we calculated precision and recall as follows:</p><formula xml:id="formula_7" coords="10,227.05,670.58,276.95,28.41">precision i (t) = f 1[f ∈ P i (t) ∩ T i ] f 1[f ∈ P i (t)] ,<label>(5)</label></formula><formula xml:id="formula_8" coords="10,241.44,701.45,262.56,28.41">recall i (t) = f 1[f ∈ P i (t) ∩ T i ] f 1[f ∈ T i ] ,<label>(6)</label></formula><p>encoder, we extracted the function-to-residue attention from the whole self-attention map of the last layer and averaged the attention values of each residue token with respect to the function tokens. Then, we selected residues with the highest attention values in the same number as the actual interacting residues annotated from UniProtKB (Consortium, 2019). For visualization, the conformations for the protein-ligand interaction were simulated by AutoDockVina <ref type="bibr" coords="13,379.06,129.17,88.53,8.64" target="#b5">Eberhardt et al. (2021)</ref>.</p><p>B.9 DETAILS ON CONTRASTIVE LEARNING AMMA-contrastive first took a length-wise average over the uni-modal features X ′ seq ∈ R L×1280 , X ′ str ∈ R L×3072 , and X ′ func ∈ R L ′ ×768 obtained in 3.1 to yield X ′′ seq ∈ R 1280 , X ′′ str ∈ R 3072 , and X ′′ func ∈ R 768 . The features were then processed as follows:</p><formula xml:id="formula_9" coords="13,237.82,217.74,266.18,61.36">z ′ seq = PROJ seq (X ′′ seq ) ∈ R D , z seq = ENC con (z ′ seq ) ∈ R D , z str = PROJ str (X ′′ str ) ∈ R D , z func = PROJ func (X ′′ func ) ∈ R D .<label>(14)</label></formula><p>Here, ENC con is a sequence encoder for contrastive learning. We adopted the same 8-layer Transformer as ENC multi of AMMA as ENC con . By utilizing the following contrastive loss that aligns sequence-structure and sequence-function, AMMA-contrastive was trained to guide sequence features with structure and function information:</p><formula xml:id="formula_10" coords="13,218.86,334.53,285.14,54.23">L seq2str = L con (z seq , z str ), L seq2func = L con (z seq , z func ), L reg = L con (z seq , z ′ seq ), L = L seq2str + L seq2func + L reg ,<label>(15)</label></formula><p>where L reg was for regularization and contrastive loss L con was defined as follows:</p><formula xml:id="formula_11" coords="13,187.20,407.60,316.80,61.46">L con (z P , z Q ) = - 1 2N N i=1 log exp(z P,i • z Q,i /τ ) N j=1 exp(z P,i • z Q,j /τ ) (16) +log exp(z P,i • z Q,i /τ ) N j=1 exp(z P,j • z Q,i /τ )</formula><p>.</p><p>We provide the overall architecture of AMMA-contrastive in Section D.3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C ADDITIONAL EXPERIMENTS C.1 EFFECT OF THE AUXILIARY MODALITIES IN DECODERS</head><p>In addition to sequence features, the AMMA structure decoder takes function features as inputs and the AMMA function decoder takes structure features as inputs. We examined the effect of these auxiliary inputs in Table <ref type="table" coords="13,208.90,568.06,3.74,8.64" target="#tab_6">6</ref>. AMMA-w/o auxiliary is the AMMA variant that only takes sequence features as inputs, i.e., that uses the following decoding strategy instead of equation 3: Xseq = DEC seq (Z ′ seq,0 ), Xstr = DEC str (Z ′ seq,1 ), Xfunc = DEC func (Z ′ seq,2 ).</p><p>(17) As shown in the table, the auxiliary inputs to the decoders were beneficial to the performance. This is because structure and function are difficult to predict based on sequence alone, making pretraining of AMMA-w/o auxiliary too challenging. As structure and function are relatively well aligned and therefore easy to predict from each other, the auxiliary inputs aid the structure and function decoders.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D ARCHITECTURE</head><p>In this section, we illustrate the architecture of our model, AMMA, and two variants of AMMA: AMMA-symmetric and AMMA-contrastive. Architecture of AMMA consists of four procedures: uni-modal feature extraction, masking, multimodal encoding, and model-asymmetric decoding as shown in Figure <ref type="figure" coords="14,398.09,591.87,3.74,8.64" target="#fig_5">5</ref>. First, we extracted the features of each modality using a feature encoder: ESM-1b <ref type="bibr" coords="14,354.17,602.83,76.27,8.64" target="#b18">(Rives et al., 2021)</ref>, GearNet <ref type="bibr" coords="14,475.23,602.83,28.77,8.64;14,108.00,613.79,48.39,8.64" target="#b26">(Zhang et al., 2023)</ref>, PubMedBERT-abs <ref type="bibr" coords="14,242.91,613.79,67.68,8.64" target="#b8">(Gu et al., 2021)</ref>. To be specific, the sequence encoder, ESM-1b <ref type="bibr" coords="14,121.42,624.75,73.94,8.64" target="#b18">(Rives et al., 2021</ref>) is a model with 33 layers of Transformers with ∼650M parameters. The structure encoder, GearNet <ref type="bibr" coords="14,221.83,635.71,82.68,8.64" target="#b26">(Zhang et al., 2023)</ref> is composed of 6 GearNet layers, using hidden dimension of 512. The function encoder, PubMedBERT-abs <ref type="bibr" coords="14,347.88,646.66,64.58,8.64" target="#b8">(Gu et al., 2021)</ref> is a model based on 12 layers of BERT <ref type="bibr" coords="14,172.73,657.62,78.77,8.64" target="#b4">(Devlin et al., 2019)</ref>. Then, we masked the latents, leaving only 160 latents in total according to the masking sampling proposed in 3.1. Afterwards, we have a multi-modal encoder to fuse all modalities into a unified representation space. Finally, we performed asymmetric decoding, which reconstructs structure latent vector from sequence and function information and function latent vector from sequence and structure information, allowing AMMA to capture asymmetric sequence-structure-function relationships. The multi-modal encoder is an 8-layer transformer and the three decoders are 2-layer transformers each.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,108.00,189.71,269.28,8.64;2,108.00,200.32,269.28,7.77;2,108.00,210.28,269.28,7.77;2,108.00,220.24,269.28,7.77;2,108.00,230.21,269.28,7.77;2,108.00,240.17,269.28,7.77;2,108.00,250.13,269.28,7.77;2,108.00,260.09,210.84,7.77;2,196.41,95.32,89.30,89.30"><head>Figure 1</head><label>1</label><figDesc>Figure 1: t-SNE visualization of the three modalities of proteins. Latent features for sequence (red), structure (yellow), and function (blue) extracted from ESM-1b, GearNet, and PubMedBERT-abs, respectively, are visualized. Two proteins, 30S ribosomal protein S13 (S) and 50S ribosomal protein L22 (L), are functionally similar and therefore proximal in function space (left). These proteins are encoded close together in structure space, but far apart in sequence space (middle). This trend is common across ribosomal proteins (right). Details are provided in Section B.4.</figDesc><graphic coords="2,196.41,95.32,89.30,89.30" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="3,108.00,199.97,396.00,8.64;3,108.00,210.58,396.00,7.77;3,108.00,220.54,396.00,7.77;3,108.00,230.50,396.00,7.77;3,108.00,240.47,396.00,7.77;3,108.00,250.43,396.00,7.77;3,108.00,260.39,395.33,7.77"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Multi-modal protein representation learning with AMMA. AMMA has two key components: (a) a unified multi-modal encoder and (b) asymmetric decoders. Each modality is encoded by a frozen pretrained encoder, then integrated by a multi-modal encoder after masking. Asymmetric decoders then reconstruct original features of each modality. During decoding, the input latent features, designed to hold target-specific information, are asymmetrically passed to the decoders for target modality reconstruction. This requires AMMA to encode structural and functional information into sequence latent features, which allows AMMA to capture unique asymmetric sequence-structure-function relationships. The overall architecture is provided in Figure 5.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="5,333.72,644.09,170.28,8.64;5,333.72,654.35,121.14,8.06;5,392.10,583.54,51.08,51.08"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Visualization of highly attended residues in a functional context.</figDesc><graphic coords="5,392.10,583.54,51.08,51.08" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4" coords="6,108.00,157.45,396.00,8.64;6,108.00,168.06,396.00,7.77;6,108.00,178.02,388.94,7.77;6,227.06,95.94,51.33,51.01"><head></head><label></label><figDesc>Figure 4: t-SNE visualization of the three protein modalities after (a) AMMA training and (b) contrastive learning. Sequence, structure, and function features are well-aligned after training with AMMA while contrastive learning fails to align the three modalities in a balanced manner. Details are provided in Section B.4.</figDesc><graphic coords="6,227.06,95.94,51.33,51.01" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5" coords="14,210.66,519.73,190.67,9.03"><head>DFigure 5 :</head><label>5</label><figDesc>Figure 5: The overall architecture of AMMA.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="2,382.71,90.25,118.80,8.64"><head>Table 1 :</head><label>1</label><figDesc>Cosine similarity</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="5,108.00,83.05,396.00,186.78"><head>Table 2 :</head><label>2</label><figDesc>Performance on protein function annotation tasks.prediction performance. On the other hand, AMMA shows better or comparable results to ProtST, a model that use significantly more parameters and training resources than AMMA. While ProtST has 650M parameters and takes 205 hours to pretrain, AMMA has 111M parameters and takes only 120 hours to train on fewer GPUs as shown in Section B.3. This result demonstrates that AMMA learns comprehensive protein representations in an efficient and effective way to improve the performance of a wide range of downstream tasks.</figDesc><table coords="5,108.25,98.25,391.04,171.58"><row><cell>Method</cell><cell cols="11">Modality Seq. Str. Func. Fmax AUPR Fmax AUPR Fmax AUPR Fmax AUPR EC GO-MF GO-CC GO-BP</cell><cell cols="2">Avg. Fmax Avg. AUPR</cell></row><row><cell>ESM-1b (Rives et al., 2021)</cell><cell>✓</cell><cell></cell><cell></cell><cell>86.9</cell><cell>88.4</cell><cell>65.9</cell><cell>63.0</cell><cell>47.7</cell><cell>32.4</cell><cell>45.2</cell><cell>33.2</cell><cell>61.4</cell><cell>54.3</cell></row><row><cell>OntoProtein (Zhang et al., 2022)</cell><cell>✓</cell><cell></cell><cell>✓</cell><cell>84.1</cell><cell>85.4</cell><cell>63.1</cell><cell>60.3</cell><cell>44.1</cell><cell>30.0</cell><cell>43.6</cell><cell>28.4</cell><cell>58.7</cell><cell>51.0</cell></row><row><cell>GearNet (Zhang et al., 2023)</cell><cell></cell><cell>✓</cell><cell></cell><cell>87.4</cell><cell>89.2</cell><cell>65.4</cell><cell>59.6</cell><cell>48.8</cell><cell>33.6</cell><cell>49.0</cell><cell>29.2</cell><cell>62.7</cell><cell>52.9</cell></row><row><cell>SaProt (Su et al., 2023)</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>88.8</cell><cell>85.5</cell><cell>68.8</cell><cell>58.2</cell><cell>41.2</cell><cell>20.6</cell><cell>45.1</cell><cell>23.8</cell><cell>61.0</cell><cell>47.0</cell></row><row><cell>ProtST (Xu et al., 2023)</cell><cell>✓</cell><cell></cell><cell>✓</cell><cell>87.8</cell><cell>89.4</cell><cell>66.1</cell><cell>64.4</cell><cell>48.8</cell><cell>36.4</cell><cell>48.0</cell><cell>32.8</cell><cell>62.7</cell><cell>55.8</cell></row><row><cell>AMMA-symmetric (ours)</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>71.6</cell><cell>74.9</cell><cell>52.0</cell><cell>52.3</cell><cell>48.8</cell><cell>35.1</cell><cell>35.5</cell><cell>24.3</cell><cell>52.0</cell><cell>46.7</cell></row><row><cell>AMMA-contrastive (ours)</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>87.7</cell><cell>89.5</cell><cell>65.2</cell><cell>61.3</cell><cell>44.3</cell><cell>28.2</cell><cell>28.2</cell><cell>17.3</cell><cell>56.4</cell><cell>49.1</cell></row><row><cell>AMMA (ours)</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>88.7</cell><cell>89.8</cell><cell>67.3</cell><cell>65.5</cell><cell>49.8</cell><cell>36.9</cell><cell>46.9</cell><cell>33.6</cell><cell>63.2</cell><cell>56.5</cell></row><row><cell cols="8">4.2 IMPROVING PERFORMANCE WITH UNPAIRED DATA</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="5,325.80,277.93,174.24,55.85"><head>Table 3 :</head><label>3</label><figDesc>EC/GO results of 15 epochs with extra unpaired data.</figDesc><table coords="5,333.77,302.99,161.28,30.79"><row><cell cols="6">Data Paired Unpaired Fmax AUPR Fmax AUPR EC GO-MF</cell><cell>Average</cell></row><row><cell>120k</cell><cell>0k</cell><cell>88.1</cell><cell>89.7</cell><cell>66.4</cell><cell>64.6</cell><cell>77.2</cell></row><row><cell>120k</cell><cell>50k</cell><cell>88.2</cell><cell>90.4</cell><cell>66.9</cell><cell>64.6</cell><cell>77.5</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="6,306.00,423.37,198.00,90.45"><head>Table 4 :</head><label>4</label><figDesc>Experimental results with different α for</figDesc><table coords="6,306.00,433.64,198.00,80.19"><row><cell cols="8">Dirichlet sampling. The pretraining is conducted using</cell></row><row><cell cols="8">a 22k dataset, a random subset of the 120k dataset.</cell></row><row><cell cols="3">Ratio αseq αstr αfunc</cell><cell cols="4">EC Fmax AUPR Fmax AUPR GO-MF</cell><cell>Average</cell></row><row><cell>1</cell><cell>1</cell><cell>1</cell><cell>84.6</cell><cell>87.2</cell><cell>66.4</cell><cell>64.8</cell><cell>75.8</cell></row><row><cell>1</cell><cell>2</cell><cell>2</cell><cell>87.7</cell><cell>89.8</cell><cell>66.4</cell><cell>64.2</cell><cell>77.0</cell></row><row><cell>2</cell><cell>1</cell><cell>1</cell><cell>73.0</cell><cell>75.9</cell><cell>65.1</cell><cell>63.2</cell><cell>69.3</cell></row><row><cell>2</cell><cell>1</cell><cell>2</cell><cell>86.7</cell><cell>89.2</cell><cell>65.9</cell><cell>64.7</cell><cell>76.6</cell></row><row><cell>2</cell><cell>2</cell><cell>1</cell><cell>87.9</cell><cell>89.5</cell><cell>52.4</cell><cell>53.6</cell><cell>70.9</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="10,221.96,543.91,167.44,42.28"><head>Table 5 :</head><label>5</label><figDesc>The size of the finetuning datasets.</figDesc><table coords="10,221.96,559.71,167.44,26.49"><row><cell></cell><cell cols="3"># Train # Valid # Test</cell></row><row><cell cols="2">Enzyme Commission (EC) 15,035</cell><cell>1,665</cell><cell>1,840</cell></row><row><cell>Gene Ontology (GO)</cell><cell>27,581</cell><cell>3,061</cell><cell>2,991</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="13,108.00,659.31,396.00,68.14"><head>Table 6 :</head><label>6</label><figDesc>Experimental results without auxiliary structure or function inputs in the AMMA decoders. The pretraining is conducted using a 22k dataset, a random subset of the 120k dataset.</figDesc><table coords="13,213.73,693.54,185.34,33.91"><row><cell>Method</cell><cell cols="4">EC Fmax AUPR Fmax AUPR GO-MF</cell><cell>Average</cell></row><row><cell>AMMA</cell><cell>87.7</cell><cell>89.8</cell><cell>66.4</cell><cell>64.2</cell><cell>77.0</cell></row><row><cell cols="2">AMMA-w/o auxiliary 87.7</cell><cell>90.1</cell><cell>65.0</cell><cell>63.6</cell><cell>76.6</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0" coords="11,124.14,724.87,145.25,6.31"><p>https://alphafold.ebi.ac.uk</p></note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>where f indicates a functional term in EC or GO ontology. For protein i, T i denotes the set comprising all experimentally validated functional terms for the protein. P i (t) is the set of predicted functional terms for protein i, each with a score at least threshold t. 1 <ref type="bibr" coords="11,386.03,104.74,10.73,12.01">[•]</ref> denotes an indicator function.</p><p>The average precision and recall with threshold t for all proteins are defined as follows:</p><p>where N is the number of proteins, and M (t) represents the count of proteins that have at least one predicted function exceeding the threshold t.</p><p>F max is calculated as follows:</p><p>The second metric, AUPR is pair-centric area under precision-recall curve which calculate the average precision score over all protein-function pairs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.3 NUMBER OF PRETRAINING DATA, PARAMETERS AND TRAINING TIME</head><p>We compare the number of pretraining data, number of parameter, and training time required for pretraining ProtST <ref type="bibr" coords="11,187.16,361.97,68.92,8.64" target="#b23">(Xu et al., 2023)</ref> and AMMA. ProtST was pretrained on 553k dataset, while AMMA was pretrained on 120k dataset. AMMA has 111M parameters, while ProtST has 675M parameters. ProtST takes 205 hours of pretraining using 4 Tesla V100 GPUs, while AMMA takes 120 hours using 2 NVIDIA RTX 3090 GPUs. AMMA requires less amount of pretraining data, less number of parameters, and shorter training time, while achieving better performance. This shows that AMMA is a very efficient and powerful model with much less pretraining data, parameters, and training time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.4 DETAILS ON THE T-SNE VISUALIZATION</head><p>In Figure <ref type="figure" coords="11,147.65,473.07,3.74,8.64">1</ref>, Figure <ref type="figure" coords="11,186.53,473.07,7.93,8.64">4a</ref>, and Figure <ref type="figure" coords="11,246.87,473.07,8.30,8.64">4b</ref>, we visualized representation space of encoders using t-SNE.</p><p>In this section, we describe in more detail how we performed t-SNE.</p><p>To visualize t-SNE in Figure <ref type="figure" coords="11,224.43,500.97,3.74,8.64">1</ref>, a subset of 1,000 paired data points was randomly selected from the larger 120k pretraining dataset for visualization purposes. Prior to t-SNE visualization, Principal Component Analysis (PCA) was applied to reduce the dimension of the outputs from each modality encoder, namely ESM-1b, GearNet, and PubMedBERT, to 100, and the resulting latent representations were then visualized in 2D using t-SNE. The t-SNE algorithm was executed for 2,500 iterations with a perplexity setting of 200. To incorporate real data insights, two specific instances, representing the proteins 30S ribosomal S13 and 50S ribosomal L22, were included. Furthermore, the 3D structures were visualized using the PDB data available on AlphaFold 1 .</p><p>In Figure <ref type="figure" coords="11,148.86,594.62,7.93,8.64">4a</ref>, 500 paired data points were randomly selected for visualization from the 120k pretraining dataset. These paired data were forwarded to our multi-modal encoder without masking, resulting in</p><p>similar to Eq. equation 3. We then average theses vectors over the length dimension to make z ′′ seq,0 ∈ R 512 , z ′′ str,0 ∈ R 512 , z ′′ func,0 ∈ R 512 . Before performing principle component analysis (PCA), we scaled the latent of each modality based on its minimum and maximum values for normalization, and then performed PCA to reduce the dimensionality to 500 components for each z ′′ . Finally, we concatenated the latents and applied t-SNE to visualize into 2D space.</p><p>For Figure <ref type="figure" coords="11,152.80,693.80,8.30,8.64">4b</ref>, we used z seq , z str , z func from equation 14 instead of z ′′ seq , z ′′ str , z ′′ func in the above paragraph.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.5 DETAILS ON THE COSINE SIMILARITY CALCULATION</head><p>To compute the cosine similarity in Table <ref type="table" coords="12,274.53,105.86,3.74,8.64">1</ref>, we first normalized each latent to the L2 norm. We will denote sequence latent, structure latent, function latent used for the cosine similarity calculation process as z seq , z str , z func . When computing the first column of Table 1, X ′ seq , X ′ str , X ′ func from 3.1 worked as z seq , z str , z func . When computing the second column, z seq , z str , z func from B.9 worked as z seq , z str , z func . When computing the third column, Z ′ seq,0 , Z ′ str,0 , Z ′ func,0 from Eq. equation 3 worked as z seq , z str , z func . We then computed the relation matrix (Relation) for each latent by performing matrix multiplication with its transposed counterparts as follows:</p><p>The resulting relation matrices contains the interrelationships between the various protein features within the modalities. We then calculated cosine similarity (CosineSim) to capture the relationships between the modalities as follows:</p><p>ϵ is a sufficiently small number (10 -8 ) to avoid division by zero. This cosine similarity measure is averaged over the training dataset to get the final value reported in Table <ref type="table" coords="12,398.20,375.38,3.74,8.64">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.6 DETAILS ON EXPERIMENTAL RESULTS WITH UNPAIRED DATA</head><p>We further trained the 120k-pretrained AMMA with the 50k dataset consists of 25k sequencestructure pairs and 25k sequence-function pairs. At each step, the batch of sequence-structure pairs and the batch of sequence-function pairs were updated simultaneously. Let us denote sequence and structure data of the sequence-structure pairs as X ′ seq1 , X ′ str1 and the sequence and function data of the sequence-function pairs as X ′ seq2 , X ′ func2 . AMMA was trained using the following objective function:</p><p>B.7 DETAILS ON SYMMETRIC LEARNING AMMA-symmetric used the following decoding strategy instead of equation 3:</p><p>We provide the overall architecture of AMMA-symmetric in Section D.2.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.8 DETAILS ON ATTENTION VISUALIZATION</head><p>To understand the inter-modal relationship, we concatenated the latent features of sequence, structure, and protein name without masking. After forwarding these features through the multi-modal In AMMA-symmetric, the only part that differs from the original AMMA lies in the design of decoders. Each decoder processes and predicts its corresponding modality from corresponding inputs as shown in Figure <ref type="figure" coords="15,184.86,327.66,3.74,8.64">6</ref>. Specifically, structure latent vector is employed to structure decoder to predict the original structure latent vector. Also, function latent vector is employed to function decoder to predict the original function latent vector. For AMMA-contrastive, we introduced contrastive encoder with 8-layers of transformers as shown in Figure <ref type="figure" coords="15,148.95,606.00,3.74,8.64">7</ref>. To train the AMMA-contrastive, we utilized contrastive loss between the output of contrastive encoder and structure encoder, and between the output of contrastive encoder and function encoder. We also took advantage of the regularization loss between the input and output of the contrastive encoder to regularize the output of the sequence feature extractor and the ouput of the contrastive encoder.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.3 AMMA-CONTRASTIVE</head><note type="other">Sequence Encoder Contrastive Encoder</note></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="7,108.00,103.13,396.00,8.64;7,117.96,113.91,386.04,8.82;7,117.96,125.05,22.42,8.64" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="7,382.42,103.13,121.58,8.64;7,117.96,114.09,102.21,8.64">Multimae: Multi-modal multitask masked autoencoders</title>
+		<author>
+			<persName coords=""><forename type="first">Roman</forename><surname>Bachmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Mizrahi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrei</forename><surname>Atanov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amir</forename><surname>Zamir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="7,238.83,113.91,167.55,8.59">European Conference on Computer Vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="348" to="367" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,144.30,396.00,8.64;7,117.96,155.26,386.04,8.64;7,117.96,166.04,386.04,8.82;7,117.96,177.18,22.42,8.64" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="7,191.38,155.26,312.63,8.64;7,117.96,166.22,243.54,8.64">Lysine decarboxylase catalyzes the first step of quinolizidine alkaloid biosynthesis and coevolved with alkaloid production in leguminosae</title>
+		<author>
+			<persName coords=""><forename type="first">Somnuk</forename><surname>Bunsupa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kae</forename><surname>Katayama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Emi</forename><surname>Ikeura</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Akira</forename><surname>Oikawa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kiminori</forename><surname>Toyooka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kazuki</forename><surname>Saito</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mami</forename><surname>Yamazaki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,369.37,166.04,56.69,8.59">The Plant Cell</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1202" to="1216" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,196.44,396.00,8.64;7,117.96,207.22,231.88,8.82" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="7,386.12,196.44,117.89,8.64;7,117.96,207.39,76.33,8.64">Structure-aware protein selfsupervised learning</title>
+		<author>
+			<persName coords=""><forename type="first">Can</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingbo</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fan</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xue</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dejing</forename><surname>Dou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,201.79,207.22,57.60,8.59">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">189</biblScope>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,226.47,396.00,8.82;7,117.96,237.61,98.23,8.64" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="7,196.65,226.65,191.54,8.64">Uniprot: a worldwide hub of protein knowledge</title>
+		<author>
+			<orgName type="collaboration" coords="7,108.00,226.65,79.43,8.64">UniProt Consortium</orgName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,397.49,226.47,89.56,8.59">Nucleic acids research</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="506" to="D515" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,256.86,396.00,8.64;7,117.96,267.64,386.03,8.82;7,117.96,278.60,367.31,8.82" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="7,398.39,256.86,105.61,8.64;7,117.96,267.82,213.12,8.64">Bert: Pre-training of deep bidirectional transformers for language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Jacob</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming-Wei</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kenton</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kristina</forename><surname>Toutanova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="7,339.00,267.64,165.00,8.59;7,117.96,278.60,338.21,8.59">Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,298.03,396.00,8.64;7,117.96,308.81,386.04,8.82;7,117.96,319.77,205.62,8.82" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="7,443.87,298.03,60.13,8.64;7,117.96,308.99,295.77,8.64">Autodock vina 1.2. 0: New docking methods, expanded force field, and python bindings</title>
+		<author>
+			<persName coords=""><forename type="first">Jerome</forename><surname>Eberhardt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Diogo</forename><surname>Santos-Martins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andreas</forename><forename type="middle">F</forename><surname>Tillack</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stefano</forename><surname>Forli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,423.44,308.81,80.56,8.59;7,117.96,319.77,102.15,8.59">Journal of chemical information and modeling</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="3891" to="3898" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,339.21,396.00,8.64;7,117.96,350.16,386.04,8.64;7,117.96,360.94,386.03,8.82;7,117.96,371.90,241.60,8.82" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="7,413.75,350.16,90.25,8.64;7,117.96,361.12,259.07,8.64">Prottrans: Toward understanding the language of life through self-supervised learning</title>
+		<author>
+			<persName coords=""><forename type="first">Ahmed</forename><surname>Elnaggar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Heinzinger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christian</forename><surname>Dallago</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ghalia</forename><surname>Rehawi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Llion</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Gibbs</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tamas</forename><surname>Feher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christoph</forename><surname>Angerer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Martin</forename><surname>Steinegger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,385.85,360.94,118.15,8.59;7,117.96,371.90,133.79,8.59">IEEE transactions on pattern analysis and machine intelligence</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="7112" to="7127" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,391.34,396.00,8.64;7,117.96,402.30,386.04,8.64;7,117.96,413.08,386.04,8.82;7,117.96,424.21,71.67,8.64" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="7,464.16,402.30,39.84,8.64;7,117.96,413.25,278.46,8.64">Structurebased protein function prediction using graph convolutional networks</title>
+		<author>
+			<persName coords=""><forename type="first">Vladimir</forename><surname>Gligorijević</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Douglas Renfrew</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tomasz</forename><surname>Kosciolek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julia</forename><surname>Koehler Leman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Berenberg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tommi</forename><surname>Vatanen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Chandler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bryn</forename><forename type="middle">C</forename><surname>Taylor</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><forename type="middle">M</forename><surname>Fisk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hera</forename><surname>Vlamakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,405.91,413.08,93.57,8.59">Nature communications</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">3168</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,443.47,396.00,8.64;7,117.96,454.43,386.04,8.64;7,117.96,465.21,386.03,8.82;7,117.96,476.34,47.32,8.64" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="7,261.09,454.43,242.92,8.64;7,117.96,465.39,110.10,8.64">Domain-specific language model pretraining for biomedical natural language processing</title>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Robert</forename><surname>Tinn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Lucas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Naoto</forename><surname>Usuyama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tristan</forename><surname>Naumann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hoifung</forename><surname>Poon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,236.53,465.21,240.19,8.59">ACM Transactions on Computing for Healthcare (HEALTH)</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="23" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,495.60,396.00,8.64;7,117.96,506.38,386.04,8.82;7,117.96,517.34,141.41,8.82" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="7,142.71,506.56,276.79,8.64">Contrastive learning on protein embeddings enlightens midnight zone</title>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Heinzinger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Maria</forename><surname>Littmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><surname>Sillitoe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nicola</forename><surname>Bordin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christine</forename><surname>Orengo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Burkhard</forename><surname>Rost</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,427.75,506.38,76.25,8.59;7,117.96,517.34,56.57,8.59">NAR genomics and bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">43</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,536.77,396.00,8.64;7,117.96,547.55,159.58,8.82" xml:id="b10">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Pedro</forename><surname>Hermosilla</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Timo</forename><surname>Ropinski</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2205.15675</idno>
+		<title level="m" coords="7,263.30,536.77,236.96,8.64">Contrastive representation learning for 3d protein structures</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="7,108.00,566.98,396.00,8.64;7,117.96,577.76,386.04,8.82;7,117.96,588.72,188.74,8.82" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="7,340.56,566.98,163.44,8.64;7,117.96,577.94,273.66,8.64">Structure is three to ten times more conserved than sequence-a study of structural response in protein cores</title>
+		<author>
+			<persName coords=""><forename type="first">Kristoffer</forename><surname>Illergård</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><forename type="middle">H</forename><surname>Ardell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Arne</forename><surname>Elofsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,398.98,577.76,105.02,8.59;7,117.96,588.72,95.52,8.59">Proteins: Structure, Function, and Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="499" to="508" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,608.16,396.00,8.64;7,117.96,619.11,386.04,8.64;7,117.96,629.89,386.04,8.82;7,117.96,641.03,76.65,8.64" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="7,488.51,619.11,15.49,8.64;7,117.96,630.07,297.51,8.64">The interface of protein structure, protein biophysics, and molecular evolution</title>
+		<author>
+			<persName coords=""><forename type="first">Sarah</forename><forename type="middle">A</forename><surname>David A Liberles</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ivet</forename><surname>Teichmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ugo</forename><surname>Bahar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jesse</forename><surname>Bastolla</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Erich</forename><surname>Bloom</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lucy</forename><forename type="middle">J</forename><surname>Bornberg-Bauer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><forename type="middle">De</forename><surname>Colwell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Koning</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julian</forename><surname>Nikolay V Dokholyan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Echave</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,425.18,629.89,61.41,8.59">Protein Science</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="769" to="785" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,660.29,396.00,8.64;7,117.96,671.25,386.04,8.64;7,117.96,682.03,386.04,8.82;7,117.96,693.16,22.42,8.64" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="7,390.06,671.25,113.94,8.64;7,117.96,682.20,284.86,8.64">Language models of protein sequences at the scale of evolution enable accurate structure prediction</title>
+		<author>
+			<persName coords=""><forename type="first">Zeming</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Halil</forename><surname>Akin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Roshan</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Brian</forename><surname>Hie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhongkai</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wenting</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Allan</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Santos</forename><surname>Costa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Maryam</forename><surname>Fazel-Zarandi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Sercu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sal</forename><surname>Candido</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="7,411.81,682.03,29.78,8.59">BioRxiv</title>
+		<imprint>
+			<biblScope unit="page">500902</biblScope>
+			<date type="published" when="2022">2022. 2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,108.00,712.24,396.00,8.82;7,117.96,723.20,163.44,8.82" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="7,245.99,712.42,154.43,8.64">Decoupled weight decay regularization</title>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Loshchilov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Frank</forename><surname>Hutter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="7,418.26,712.24,85.75,8.59;7,117.96,723.20,134.39,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,85.34,396.00,8.64;8,117.96,96.12,361.83,8.82" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="8,430.12,85.34,73.88,8.64;8,117.96,96.30,193.06,8.64">Hfsp: high speed homology-driven function annotation of proteins</title>
+		<author>
+			<persName coords=""><forename type="first">Yannick</forename><surname>Mahlich</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Martin</forename><surname>Steinegger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Burkhard</forename><surname>Rost</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yana</forename><surname>Bromberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,318.45,96.12,57.60,8.59">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">13</biblScope>
+			<biblScope unit="page" from="304" to="312" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,115.23,396.00,8.64;8,117.96,126.01,386.03,8.82;8,117.96,136.97,257.87,8.82" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="8,464.72,115.23,39.28,8.64;8,117.96,126.19,328.38,8.64">Language models enable zero-shot prediction of the effects of mutations on protein function</title>
+		<author>
+			<persName coords=""><forename type="first">Joshua</forename><surname>Meier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Roshan</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Robert</forename><surname>Verkuil</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Sercu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Rives</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,455.18,126.01,48.82,8.59;8,117.96,136.97,156.20,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="29287" to="29303" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,156.07,396.00,8.64;8,117.96,166.85,386.04,8.82;8,117.96,177.99,47.32,8.64" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="8,163.62,167.03,243.60,8.64">Cath-a hierarchic classification of protein domain structures</title>
+		<author>
+			<persName coords=""><forename type="first">Christine</forename><forename type="middle">A</forename><surname>Orengo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><forename type="middle">D</forename><surname>Michie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Susan</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><forename type="middle">T</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mark</forename><forename type="middle">B</forename><surname>Swindells</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Janet</forename><forename type="middle">M</forename><surname>Thornton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,417.06,166.85,35.28,8.59">Structure</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1093" to="1109" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,196.92,396.00,8.64;8,117.96,207.88,386.04,8.64;8,117.96,218.66,386.04,8.82;8,117.96,229.62,204.47,8.82" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="8,315.61,207.88,188.39,8.64;8,117.96,218.84,258.39,8.64">Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences</title>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Rives</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Joshua</forename><surname>Meier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Sercu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Siddharth</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zeming</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Demi</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Myle</forename><surname>Ott</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Lawrence Zitnick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jerry</forename><surname>Ma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,388.43,218.66,115.58,8.59;8,117.96,229.62,81.95,8.59">Proceedings of the National Academy of Sciences</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<date type="published" when="2021">2016239118. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,248.73,396.00,8.64;8,117.96,259.51,248.61,8.82" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="8,108.00,248.73,396.00,8.64;8,117.96,259.69,109.36,8.64">Onur Serc ¸inoglu and Pemra Ozbek. Sequence-structure-function relationships in class i mhc: A local frustration perspective</title>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,234.86,259.51,33.97,8.59">PloS one</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page">232849</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,278.61,396.00,8.64;8,117.96,289.39,324.91,8.82" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="8,441.75,278.61,62.26,8.64;8,117.96,289.57,204.54,8.64">Saprot: Protein language modeling with structure-aware vocabulary</title>
+		<author>
+			<persName coords=""><forename type="first">Jin</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chenchen</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuyang</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Junjie</forename><surname>Shan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xibin</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fajie</forename><surname>Yuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,330.25,289.39,28.81,8.59">bioRxiv</title>
+		<imprint>
+			<biblScope unit="page" from="2023" to="2033" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,308.50,396.00,8.64;8,117.96,319.46,386.04,8.64;8,117.96,330.24,111.52,8.82" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coords="8,291.02,319.46,208.99,8.64">Foldseek: fast and accurate protein structure search</title>
+		<author>
+			<persName coords=""><forename type="first">Stephanie</forename><forename type="middle">S</forename><surname>Michel Van Kempen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Charlotte</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Milot</forename><surname>Tumescheit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Mirdita</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">M</forename><surname>Cameron</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Johannes</forename><surname>Gilchrist</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Martin</forename><surname>Söding</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Steinegger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,117.96,330.24,27.84,8.59">Biorxiv</title>
+		<imprint>
+			<biblScope unit="page" from="2022" to="2022" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,349.35,396.00,8.64;8,117.96,360.31,386.04,8.64;8,117.96,371.27,386.04,8.64;8,117.96,382.05,297.22,8.82" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="8,431.70,360.31,72.31,8.64;8,117.96,371.27,386.04,8.64;8,117.96,382.23,85.57,8.64">Alphafold protein structure database: massively expanding the structural coverage of protein-sequence space with high-accuracy models</title>
+		<author>
+			<persName coords=""><forename type="first">Mihaly</forename><surname>Varadi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Anyango</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mandar</forename><surname>Deshpande</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sreenath</forename><surname>Nair</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cindy</forename><surname>Natassia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Galabina</forename><surname>Yordanova</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Oana</forename><surname>Stroe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gemma</forename><surname>Wood</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Agata</forename><surname>Laydon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,211.59,382.05,88.86,8.59">Nucleic acids research</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="439" to="D444" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,401.15,396.00,8.64;8,117.96,411.93,347.97,8.82" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="8,338.59,401.15,165.41,8.64;8,117.96,412.11,124.15,8.64">Protst: Multi-modality learning of protein sequences and biomedical texts</title>
+		<author>
+			<persName coords=""><forename type="first">Minghao</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xinyu</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Santiago</forename><surname>Miret</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,249.23,411.93,187.46,8.59">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,431.04,396.00,8.64;8,117.96,442.00,386.04,8.64;8,117.96,452.78,296.18,8.82" xml:id="b24">
+	<analytic>
+		<title level="a" type="main" coords="8,286.89,442.00,217.12,8.64;8,117.96,452.96,42.09,8.64">Ontoprotein: Protein pretraining with gene ontology embedding</title>
+		<author>
+			<persName coords=""><forename type="first">Ningyu</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhen</forename><surname>Bi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaozhuan</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Siyuan</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haosen</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shumin</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiazhang</forename><surname>Lian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Qiang</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Huajun</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,168.31,452.78,216.77,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,471.89,396.00,8.64;8,117.96,482.85,386.04,8.64;8,117.96,493.63,386.04,8.82;8,117.96,504.77,22.42,8.64" xml:id="b25">
+	<monogr>
+		<title level="m" type="main" coords="8,264.45,482.85,239.55,8.64;8,117.96,493.81,242.78,8.64">Pepharmony: A multi-view contrastive learning framework for integrated sequence and structure-based peptide encoding</title>
+		<author>
+			<persName coords=""><forename type="first">Ruochi</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haoran</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chang</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Huaping</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuqian</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kewei</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yifan</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yifan</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiahui</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fengfeng</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2401.11360</idno>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="8,108.00,523.70,396.00,8.64;8,117.96,534.48,386.04,8.82;8,117.96,545.43,190.75,8.82" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="8,180.95,534.65,261.92,8.64">Protein representation learning by geometric structure pretraining</title>
+		<author>
+			<persName coords=""><forename type="first">Zuobai</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Minghao</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Arian</forename><surname>Jamasb</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aurelie</forename><surname>Vijil Chenthamarakshan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Payel</forename><surname>Lozano</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,451.42,534.48,52.58,8.59;8,117.96,545.43,161.70,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,108.00,564.54,396.00,8.64;8,117.96,575.50,386.04,8.64;8,117.96,586.28,310.24,8.82" xml:id="b27">
+	<monogr>
+		<title level="m" type="main" coords="8,322.64,575.50,181.36,8.64;8,117.96,586.46,143.05,8.64">Torchdrug: A powerful and flexible machine learning platform for drug discovery</title>
+		<author>
+			<persName coords=""><forename type="first">Zhaocheng</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chence</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zuobai</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shengchao</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Minghao</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xinyu</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yangtian</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Junkun</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Huiyu</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiarui</forename><surname>Lu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2202.08320</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

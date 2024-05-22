@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,108.43,82.24,398.43,14.93;1,108.43,102.17,179.64,14.93">DEBERTA: DECODING-ENHANCED BERT WITH DIS-ENTANGLED ATTENTION</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2021-10-06">6 Oct 2021</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,113.98,137.54,60.40,8.96"><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Microsoft Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,183.83,137.54,58.41,8.96"><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Microsoft Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,251.69,137.54,56.74,8.96"><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+							<email>jfgao@microsoft.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Microsoft Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,317.88,137.54,57.19,8.96"><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+							<email>wzchen@microsoft.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Microsoft Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,120.94,149.32,82.18,8.64"><forename type="first">Microsoft</forename><surname>Dynamics</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Microsoft Research</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,108.43,82.24,398.43,14.93;1,108.43,102.17,179.64,14.93">DEBERTA: DECODING-ENHANCED BERT WITH DIS-ENTANGLED ATTENTION</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2021-10-06">6 Oct 2021</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F2E6233A1289AE11F83D9711E881BEC2</idno>
+					<idno type="arXiv">arXiv:2006.03654v6[cs.CL]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-04-29T18:50+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Recent progress in pre-trained neural language models has significantly improved the performance of many natural language processing (NLP) tasks. In this paper we propose a new model architecture DeBERTa (Decoding-enhanced BERT with disentangled attention) that improves the BERT and RoBERTa models using two novel techniques. The first is the disentangled attention mechanism, where each word is represented using two vectors that encode its content and position, respectively, and the attention weights among words are computed using disentangled matrices on their contents and relative positions, respectively. Second, an enhanced mask decoder is used to incorporate absolute positions in the decoding layer to predict the masked tokens in model pre-training. In addition, a new virtual adversarial training method is used for fine-tuning to improve models' generalization. We show that these techniques significantly improve the efficiency of model pre-training and the performance of both natural language understand (NLU) and natural langauge generation (NLG) downstream tasks. Compared to RoBERTa-Large, a DeBERTa model trained on half of the training data performs consistently better on a wide range of NLP tasks, achieving improvements on MNLI by +0.9% (90.2% vs. 91.1%), on SQuAD v2.0 by +2.3% (88.4% vs. 90.7%) and RACE by +3.6% (83.2% vs. 86.8%). Notably, we scale up DeBERTa by training a larger version that consists of 48 Transform layers with 1.5 billion parameters. The significant performance boost makes the single DeBERTa model surpass the human performance on the SuperGLUE benchmark (Wang et al.,  2019a)  for the first time in terms of macro-average score (89.9 versus 89.8), and the ensemble DeBERTa model sits atop the SuperGLUE leaderboard as of January 6, 2021, outperforming the human baseline by a decent margin (90.3 versus 89.8). The pre-trained DeBERTa models and the source code were released at: https://github.com/microsoft/DeBERTa 1 .</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="21" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="22" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="23" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">INTRODUCTION</head><p>The Transformer has become the most effective neural network architecture for neural language modeling. Unlike recurrent neural networks (RNNs) that process text in sequence, Transformers apply self-attention to compute in parallel every word from the input text an attention weight that gauges the influence each word has on another, thus allowing for much more parallelization than RNNs for large-scale model training <ref type="bibr" coords="1,257.37,611.65,86.14,8.64" target="#b54">(Vaswani et al., 2017)</ref>. Since 2018, we have seen the rise of a set of large-scale Transformer-based Pre-trained Language Models (PLMs), such as GPT <ref type="bibr" coords="1,467.75,622.61,36.25,8.64;1,108.00,633.57,47.64,8.64" target="#b41">(Radford et al., 2019;</ref><ref type="bibr" coords="1,158.14,633.57,76.12,8.64" target="#b4">Brown et al., 2020)</ref>, BERT <ref type="bibr" coords="1,268.83,633.57,79.48,8.64" target="#b13">(Devlin et al., 2019)</ref>, RoBERTa <ref type="bibr" coords="1,398.34,633.57,70.74,8.64">(Liu et al., 2019c)</ref>, XLNet <ref type="bibr" coords="1,107.67,644.53,74.36,8.64" target="#b60">(Yang et al., 2019)</ref>, UniLM <ref type="bibr" coords="1,222.52,644.53,75.93,8.64" target="#b15">(Dong et al., 2019)</ref>, ELECTRA <ref type="bibr" coords="1,354.19,644.53,75.92,8.64" target="#b9">(Clark et al., 2020)</ref>, T5 <ref type="bibr" coords="1,451.41,644.53,53.84,8.64;1,108.00,655.49,21.87,8.64" target="#b42">(Raffel et al., 2020)</ref>, ALUM <ref type="bibr" coords="1,169.34,655.49,66.85,8.64" target="#b33">(Liu et al., 2020)</ref>, StructBERT <ref type="bibr" coords="1,295.38,655.49,82.54,8.64">(Wang et al., 2019c)</ref> and ERINE <ref type="bibr" coords="1,430.24,655.49,70.38,8.64" target="#b52">(Sun et al., 2019)</ref> . These PLMs have been fine-tuned using task-specific labels and created new state of the art in many downstream natural language processing (NLP) tasks <ref type="bibr" coords="1,325.20,677.41,72.37,8.64">(Liu et al., 2019b;</ref><ref type="bibr" coords="1,400.05,677.41,80.19,8.64" target="#b38">Minaee et al., 2020;</ref><ref type="bibr" coords="1,482.74,677.41,21.26,8.64;1,108.00,688.36,47.04,8.64" target="#b22">Jiang et al., 2020;</ref><ref type="bibr" coords="1,157.53,688.36,64.61,8.64">He et al., 2019a;</ref><ref type="bibr" coords="1,222.14,688.36,8.72,8.64">b;</ref><ref type="bibr" coords="1,233.35,688.36,68.21,8.64" target="#b48">Shen et al., 2020)</ref>. attention weights among words are computed using disentangled matrices on their contents and relative positions, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">MASKED LANGUAGE MODEL</head><p>Large-scale Transformer-based PLMs are typically pre-trained on large amounts of text to learn contextual word representations using a self-supervision objective, known as Masked Language Model (MLM) <ref type="bibr" coords="3,171.14,163.05,80.75,8.64" target="#b13">(Devlin et al., 2019)</ref>. Specifically, given a sequence X " tx i u, we corrupt it into X by masking 15% of its tokens at random and then train a language model parameterized by θ to reconstruct X by predicting the masked tokens x conditioned on X:</p><formula xml:id="formula_0" coords="3,205.99,201.30,298.01,22.52">max θ log p θ pX| Xq " max θ ÿ iPC log p θ px i " x i | Xq (1)</formula><p>where C is the index set of the masked tokens in the sequence. The authors of BERT propose to keep 10% of the masked tokens unchanged, another 10% replaced with randomly picked tokens and the rest replaced with the [MASK] token.</p><p>3 THE DEBERTA ARCHITECTURE</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">DISENTANGLED ATTENTION: A TWO-VECTOR APPROACH TO CONTENT AND POSITION EMBEDDING</head><p>For a token at position i in a sequence, we represent it using two vectors, tH i u and tP i|j u, which represent its content and relative position with the token at position j, respectively. The calculation of the cross attention score between tokens i and j can be decomposed into four components as A i,j " tH i , P i|j u ˆtH j , P j|i u " H i H j `Hi P j|i `Pi|j H j `Pi|j P j|i (2)</p><p>That is, the attention weight of a word pair can be computed as a sum of four attention scores using disentangled matrices on their contents and positions as content-to-content, content-to-position, position-to-content, and position-to-position<ref type="foot" coords="3,286.78,420.05,3.49,6.05" target="#foot_1">2</ref> .</p><p>Existing approaches to relative position encoding use a separate embedding matrix to compute the relative position bias in computing attention weights <ref type="bibr" coords="3,323.36,449.61,76.25,8.64" target="#b47">(Shaw et al., 2018;</ref><ref type="bibr" coords="3,402.13,449.61,76.26,8.64" target="#b21">Huang et al., 2018)</ref>. This is equivalent to computing the attention weights using only the content-to-content and content-toposition terms in equation 2. We argue that the position-to-content term is also important since the attention weight of a word pair depends not only on their contents but on their relative positions, which can only be fully modeled using both the content-to-position and position-to-content terms. Since we use relative position embedding, the position-to-position term does not provide much additional information and is removed from equation 2 in our implementation.</p><p>Taking single-head attention as an example, the standard self-attention operation <ref type="bibr" coords="3,441.78,532.30,63.46,8.64;3,108.00,543.26,23.24,8.64" target="#b54">(Vaswani et al., 2017)</ref> can be formulated as:</p><formula xml:id="formula_1" coords="3,201.01,555.65,203.50,37.24">Q " HW q , K " HW k , V " HW v , A " QK ? d H o " softmaxpAqV</formula><p>where H P R N ˆd represents the input hidden vectors, H o P R N ˆd the output of self-attention, W q , W k , W v P R dˆd the projection matrices, A P R N ˆN the attention matrix, N the length of the input sequence, and d the dimension of hidden states.</p><p>Denote k as the maximum relative distance, δpi, jq P r0, 2kq as the relative distance from token i to token j, which is defined as:</p><formula xml:id="formula_2" coords="3,211.46,662.64,182.58,31.21">δpi, jq " # 0 for i ´j ď ´k 2k ´1 for i ´j ě k i ´j `k others.</formula><p>(3)</p><p>We can represent the disentangled self-attention with relative position bias as equation 4, where Q c , K c and V c are the projected content vectors generated using projection matrices W q,c , W k,c , W v,c P R dˆd respectively, P P R 2kˆd represents the relative position embedding vectors shared across all layers (i.e., staying fixed during forward propagation), and Q r and K r are projected relative position vectors generated using projection matrices W q,r , W k,r P R dˆd , respectively.</p><formula xml:id="formula_3" coords="4,148.41,169.99,355.59,73.89">Q c " HW q,c , K c " HW k,c , V c " HW v,c , Q r " P W q,r , K r " P W k,r Ãi,j " Q c i K c j looomooon (a) content-to-content `Qc i K r δpi,jq looooomooooon (b) content-to-position `Kc j Q r δpj,iq looooomooooon (c) position-to-content H o " softmaxp Ã ? 3d qV c (4)</formula><p>Ãi,j is the element of attention matrix Ã, representing the attention score from token i to token j.</p><formula xml:id="formula_4" coords="4,119.52,260.56,251.41,13.02">Q c i is the i-th row of Q c . K c j is the j-th row of K c . K r δpi,jq</formula><p>is the δpi, jq-th row of K r with regarding to relative distance δpi, jq. Q r δpj,iq is the δpj, iq-th row of Q r with regarding to relative distance δpj, iq. Note that we use δpj, iq rather than δpi, jq here. This is because for a given position i, position-to-content computes the attention weight of the key content at j with respect to the query position at i, thus the relative distance is δpj, iq. The position-to-content term is calculated as K c j Q r δpj,iq . The content-to-position term is calculated in a similar way.</p><p>Finally, we apply a scaling factor of 1 ? 3d on Ã. The factor is important for stabilizing model training <ref type="bibr" coords="4,141.48,356.75,85.25,8.64" target="#b54">(Vaswani et al., 2017)</ref>, especially for large-scale PLMs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Algorithm 1 Disentangled Attention</head><p>Input: Hidden state H, relative distance embedding P , relative distance matrix δ. Content projection matrix W k,c , W q,c , W v,c , position projection matrix W k,r , W q,r . 1: K c " HW k,c , Q c " HW q,c , V c " HW v,c , K r " P W k,r , Q r " P W q,r 2: A cÑc " Q c K c 3: for i " 0, ..., N ´1 do 4:</p><p>ÃcÑp ri, :s " Q c ri, :sK r 5: end for 6: for i " 0, ..., N ´1 do 7:</p><p>for j " 0, ..., N ´1 do 8:</p><p>A cÑp ri, js " ÃcÑp ri, δri, jss 9: end for 10: end for 11: for j " 0, ..., N ´1 do 12: ÃpÑc r:, js " K c rj, :sQ r 13: end for 14: for j " 0, ..., N ´1 do 15:</p><p>for i " 0, ..., N ´1 do 16:</p><p>A pÑc ri, js " ÃpÑc rδrj, is, js For an input sequence of length N , it requires a space complexity of OpN 2 dq <ref type="bibr" coords="4,427.82,701.46,77.01,8.64" target="#b47">(Shaw et al., 2018;</ref><ref type="bibr" coords="4,108.00,712.42,74.44,8.64" target="#b21">Huang et al., 2018;</ref><ref type="bibr" coords="4,184.84,712.42,63.05,8.64" target="#b11">Dai et al., 2019)</ref> to store the relative position embedding for each token. However, taking content-to-position as an example, we note that since δpi, jq P r0, 2kq and the embeddings of all possible relative positions are always a subset of K r P R 2kˆd , then we can reuse K r in the attention calculation for all the queries.</p><p>In our experiments, we set the maximum relative distance k to 512 for pre-training. The disentangled attention weights can be computed efficiently using Algorithm 1. Let δ be the relative position matrix according to equation 3, i.e., δri, js " δpi, jq. Instead of allocating a different relative position embedding matrix for each query, we multiply each query vector Q c ri, :s by K r P R dˆ2k , as in line 3 ´5. Then, we extract the attention weight using the relative position matrix δ as the index, as in line 6 ´10. To compute the position-to-content attention score, we calculate ÃpÑc r:, js, i.e., the column vector of the attention matrix ÃpÑc , by multiplying each key vector K c rj, :s by Q r , as in line 11 ´13. Finally, we extract the corresponding attention score via the relative position matrix δ as the index, as in line 14 ´18. In this way, we do not need to allocate memory to store a relative position embedding for each query and thus reduce the space complexity to Opkdq (for storing K r and Q r ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">ENHANCED MASK DECODER ACCOUNTS FOR ABSOLUTE WORD POSITIONS</head><p>DeBERTa is pretrained using MLM, where a model is trained to use the words surrounding a mask token to predict what the masked word should be. DeBERTa uses the content and position information of the context words for MLM. The disentangled attention mechanism already considers the contents and relative positions of the context words, but not the absolute positions of these words, which in many cases are crucial for the prediction.</p><p>Given a sentence "a new store opened beside the new mall" with the words "store" and "mall" masked for prediction. Using only the local context (e.g., relative positions and surrounding words) is insufficient for the model to distinguish store and mall in this sentence, since both follow the word new with the same relative positions. To address this limitation, the model needs to take into account absolute positions, as complement information to the relative positions. For example, the subject of the sentence is "store" not "mall". These syntactical nuances depend, to a large degree, upon the words' absolute positions in the sentence.</p><p>There are two methods of incorporating absolute positions. The BERT model incorporates absolute positions in the input layer. In DeBERTa, we incorporate them right after all the Transformer layers but before the softmax layer for masked token prediction, as shown in Figure <ref type="figure" coords="5,407.42,448.73,3.66,8.64">2</ref>. In this way, DeBERTa captures the relative positions in all the Transformer layers and only uses absolute positions as complementary information when decoding the masked words. Thus, we call DeBERTa's decoding component an Enhanced Mask Decoder (EMD). In the empirical study, we compare these two methods of incorporating absolute positions and observe that EMD works much better. We conjecture that the early incorporation of absolute positions used by BERT might undesirably hamper the model from learning sufficient information of relative positions. In addition, EMD also enables us to introduce other useful information, in addition to positions, for pre-training. We leave it to future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">SCALE INVARIANT FINE-TUNING</head><p>This section presents a new virtual adversarial training algorithm, Scale-invariant-Fine-Tuning (SiFT), a variant to the algorithm described in <ref type="bibr" coords="5,261.87,612.79,78.27,8.64" target="#b39">Miyato et al. (2018)</ref>; <ref type="bibr" coords="5,346.82,612.79,70.28,8.64" target="#b22">Jiang et al. (2020)</ref>, for fine-tuning.</p><p>Virtual adversarial training is a regularization method for improving models' generalization. It does so by improving a model's robustness to adversarial examples, which are created by making small perturbations to the input. The model is regularized so that when given a task-specific example, the model produces the same output distribution as it produces on an adversarial perturbation of that example.</p><p>For NLP tasks, the perturbation is applied to the word embedding instead of the original word sequence. However, the value ranges (norms) of the embedding vectors vary among different words and models. The variance gets larger for bigger models with billions of parameters, leading to some instability of adversarial training.</p><p>Inspired by layer normalization <ref type="bibr" coords="6,236.96,85.34,63.19,8.64" target="#b0">(Ba et al., 2016)</ref>, we propose the SiFT algorithm that improves the training stability by applying the perturbations to the normalized word embeddings. Specifically, when fine-tuning DeBERTa to a downstream NLP task in our experiments, SiFT first normalizes the word embedding vectors into stochastic vectors, and then applies the perturbation to the normalized embedding vectors. We find that the normalization substantially improves the performance of the fine-tuned models. The improvement is more prominent for larger DeBERTa models. Note that we only apply SiFT to DeBERTa 1.5B on SuperGLUE tasks in our experiments and we will provide a more comprehensive study of SiFT in our future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">EXPERIMENT</head><p>This section reports DeBERTa results on various NLU tasks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">MAIN RESULTS ON NLU TASKS</head><p>Following previous studies of PLMs, we report results using large and base models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.1">PERFORMANCE ON LARGE MODELS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model</head><p>CoLA We use 6 DGX-2 machines (96 V100 GPUs) to train the models. A single model trained with 2K batch size and 1M steps takes about 20 days. Refer to Appendix A for the detailed hyperparamters.</p><p>We summarize the results on eight NLU tasks of GLUE <ref type="bibr" coords="6,343.46,533.65,84.94,8.64">(Wang et al., 2019b)</ref>  Published as a conference paper at ICLR 2021</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">MODEL ANALYSIS</head><p>In this section, we first present an ablation study to quantify the relative contributions of different components introduced in DeBERTa. Then, we study the convergence property to characterize the model training efficiency. We run experiments for analysis using the base model setting: a model is pre-trained using the Wikipedia + Bookcorpus dataset for 1M steps with batch size 256 in 7 days on a DGX-2 machine with 16 V-100 GPUs. Due to space limit, we visualize the different attention patterns of DeBERTa and RoBERTa in Appendix A.7.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.1">ABLATION STUDY</head><p>To verify our experimental setting, we pre-train the RoBERTa base model from scratch. The re-pretrained RoBERTa model is denoted as RoBERTa-ReImp base . To investigate the relative contributions of different components in DeBERTa, we develop three variations:</p><p>• -EMD is the DeBERTa base model without EMD.</p><p>• -C2P is the DeBERTa base model without the content-to-position term ((c) in Eq. 4).</p><p>• -P2C is the DeBERTa base model without the position-to-content term ((b) in Eq. 4). As XLNet also uses the relative position bias, this model is close to XLNet plus EMD. ) on MNLI-m/mm, respectively. Similarly, removing either content-to-position or position-to-content leads to inferior performance in all the benchmarks. As expected, removing two components results in even more substantial loss in performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">SCALE UP TO 1.5 BILLION PARAMETERS</head><p>Larger pre-trained models have shown better generalization results <ref type="bibr" coords="8,374.70,611.01,77.09,8.64" target="#b42">(Raffel et al., 2020;</ref><ref type="bibr" coords="8,454.29,611.01,50.95,8.64;8,108.00,621.97,23.15,8.64" target="#b4">Brown et al., 2020;</ref><ref type="bibr" coords="8,134.55,621.97,85.02,8.64" target="#b49">Shoeybi et al., 2019)</ref>. Thus, we have built a larger version of DeBERTa with 1.5 billion parameters, denoted as DeBERTa 1.5B . The model consists of 48 layers with a hidden size of 1,536 and 24 attention heads<ref type="foot" coords="8,204.31,642.22,3.49,6.05" target="#foot_5">6</ref> . DeBERTa 1.5B is trained on a pre-training dataset amounting to 160G, similar to that in <ref type="bibr" coords="8,174.85,654.85,66.23,8.64">Liu et al. (2019c)</ref>, with a new vocabulary of size 128K constructed using the dataset.</p><p>To train DeBERTa 1.5B , we optimize the model architecture as follows. First, we share the projection matrices of relative position embedding W k,r , W q,r with W k,c , W q,c , respectively, in all attention layers to reduce the number of model parameters. Our ablation study in Table <ref type="table" coords="8,428.24,693.70,10.16,8.64" target="#tab_8">13</ref> on base models shows that the projection matrix sharing reduces the model size while retaining the model performance.</p><p>Second, a convolution layer is added aside the first Transformer layer to induce n-gram knowledge of sub-word encodings and their outputs are summed up before feeding to the next Transformer layer<ref type="foot" coords="9,499.20,94.63,3.49,6.05" target="#foot_6">7</ref> .</p><p>Table <ref type="table" coords="9,131.94,113.23,4.95,8.64" target="#tab_5">5</ref> reports the test results of SuperGLUE <ref type="bibr" coords="9,291.33,113.23,80.39,8.64">(Wang et al., 2019a)</ref> which is one of the most popular NLU benchmarks. SuperGLUE consists of a wide of NLU tasks, including Question Answering <ref type="bibr" coords="9,107.67,135.15,75.97,8.64" target="#b8">(Clark et al., 2019;</ref><ref type="bibr" coords="9,186.12,135.15,88.34,8.64" target="#b25">Khashabi et al., 2018;</ref><ref type="bibr" coords="9,276.94,135.15,74.70,8.64" target="#b62">Zhang et al., 2018)</ref>, Natural Language Inference <ref type="bibr" coords="9,474.29,135.15,29.71,8.64;9,108.00,146.11,47.88,8.64" target="#b10">(Dagan et al., 2006;</ref><ref type="bibr" coords="9,158.37,146.11,90.82,8.64" target="#b1">Bar-Haim et al., 2006;</ref><ref type="bibr" coords="9,251.68,146.11,102.87,8.64" target="#b17">Giampiccolo et al., 2007;</ref><ref type="bibr" coords="9,357.04,146.11,91.56,8.64" target="#b3">Bentivogli et al., 2009)</ref>, Word Sense Disambiguation <ref type="bibr" coords="9,176.68,157.07,158.50,8.64" target="#b40">(Pilehvar &amp; Camacho-Collados, 2019)</ref>, and Reasoning <ref type="bibr" coords="9,408.72,157.07,96.11,8.64" target="#b30">(Levesque et al., 2011;</ref><ref type="bibr" coords="9,108.00,168.03,93.38,8.64" target="#b45">Roemmele et al., 2011)</ref>. Since its release in 2019, top research teams around the world have been developing large-scale PLMs that have driven striking performance improvement on SuperGLUE.</p><p>The significant performance boost due to scaling DeBERTa to a larger model makes the single DeBERTa 1.5B surpass the human performance on SuperGLUE for the first time in terms of macroaverage score (89.9 versus 89.8) as of December 29, 2020, and the ensemble DeBERTa model (DeBERTa Ensemble ) sits atop the SuperGLUE benchmark rankings as of January 6, 2021, outperforming the human baseline by a decent margin (90.3 versus 89.8). Compared to T5, which consists of 11 billion parameters, the 1.5-billion-parameter DeBERTa is much more energy efficient to train and maintain, and it is easier to compress and deploy to apps of various settings. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">CONCLUSIONS</head><p>This paper presents a new model architecture DeBERTa (Decoding-enhanced BERT with disentangled attention) that improves the BERT and RoBERTa models using two novel techniques. The first is the disentangled attention mechanism, where each word is represented using two vectors that encode its content and position, respectively, and the attention weights among words are computed using disentangled matrices on their contents and relative positions, respectively. The second is an enhanced mask decoder which incorporates absolute positions in the decoding layer to predict the masked tokens in model pre-training. In addition, a new virtual adversarial training method is used for fine-tuning to improve model's generalization on downstream tasks.</p><p>We show through a comprehensive empirical study that these techniques significantly improve the efficiency of model pre-training and the performance of downstream tasks. The DeBERTa model with 1.5 billion parameters surpasses the human performance on the SuperGLUE benchmark for the first time in terms of macro-average score.</p><p>DeBERTa surpassing human performance on SuperGLUE marks an important milestone toward general AI. Despite its promising results on SuperGLUE, the model is by no means reaching the human-level intelligence of NLU. Humans are extremely good at leveraging the knowledge learned from different tasks to solve a new task with no or little task-specific demonstration. This is referred to as compositional generalization, the ability to generalize to novel compositions (new tasks) of familiar constituents (subtasks or basic problem-solving skills). Moving forward, it is worth exploring how to make DeBERTa incorporate compositional structures in a more explicit manner, which could allow combining neural and symbolic computation of natural language similar to what humans do.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A APPENDIX</head><p>A ‚ GLUE. The General Language Understanding Evaluation (GLUE) benchmark is a collection of nine natural language understanding (NLU) tasks. As shown in Table <ref type="table" coords="15,385.09,519.14,3.71,8.64" target="#tab_6">6</ref>, it includes question answering <ref type="bibr" coords="15,122.72,530.10,89.02,8.64" target="#b43">(Rajpurkar et al., 2016)</ref>, linguistic acceptability <ref type="bibr" coords="15,308.97,530.10,84.43,8.64" target="#b58">(Warstadt et al., 2018)</ref>, sentiment analysis <ref type="bibr" coords="15,473.80,530.10,30.36,8.64;15,108.00,541.06,42.10,8.64" target="#b51">(Socher et al., 2013</ref>), text similarity <ref type="bibr" coords="15,220.16,541.06,66.95,8.64" target="#b5">(Cer et al., 2017)</ref>, paraphrase detection <ref type="bibr" coords="15,379.93,541.06,102.59,8.64" target="#b14">(Dolan &amp; Brockett, 2005)</ref>, and natural language inference (NLI) <ref type="bibr" coords="15,246.55,552.02,81.86,8.64" target="#b10">(Dagan et al., 2006;</ref><ref type="bibr" coords="15,331.44,552.02,92.45,8.64" target="#b1">Bar-Haim et al., 2006;</ref><ref type="bibr" coords="15,426.92,552.02,78.33,8.64;15,108.00,562.98,22.40,8.64" target="#b17">Giampiccolo et al., 2007;</ref><ref type="bibr" coords="15,132.89,562.98,90.05,8.64" target="#b3">Bentivogli et al., 2009;</ref><ref type="bibr" coords="15,225.42,562.98,86.26,8.64" target="#b29">Levesque et al., 2012;</ref><ref type="bibr" coords="15,314.16,562.98,83.40,8.64" target="#b59">Williams et al., 2018)</ref>. The diversity of the tasks makes GLUE very suitable for evaluating the generalization and robustness of NLU models.</p><p>‚ SuperGLUE. SuperGLUE is an extension of the GLUE benchmark, but more difficult, which is a collection of eight NLU tasks. It covers a various of tasks including question answering <ref type="bibr" coords="15,474.65,601.83,29.35,8.64;15,108.00,612.79,49.40,8.64" target="#b62">(Zhang et al., 2018;</ref><ref type="bibr" coords="15,160.65,612.79,75.23,8.64" target="#b8">Clark et al., 2019;</ref><ref type="bibr" coords="15,239.12,612.79,89.75,8.64" target="#b25">Khashabi et al., 2018)</ref>, natural language inference <ref type="bibr" coords="15,449.13,612.79,56.11,8.64;15,108.00,623.75,23.15,8.64" target="#b10">(Dagan et al., 2006;</ref><ref type="bibr" coords="15,133.70,623.75,91.00,8.64" target="#b1">Bar-Haim et al., 2006;</ref><ref type="bibr" coords="15,227.25,623.75,103.06,8.64" target="#b17">Giampiccolo et al., 2007;</ref><ref type="bibr" coords="15,332.86,623.75,93.02,8.64" target="#b3">Bentivogli et al., 2009;</ref><ref type="bibr" coords="15,428.43,623.75,76.81,8.64;15,108.00,634.71,21.87,8.64" target="#b12">De Marneffe et al., 2019)</ref>, coreference resolution <ref type="bibr" coords="15,230.33,634.71,93.40,8.64" target="#b29">(Levesque et al., 2012)</ref> and word sense disambiguation <ref type="bibr" coords="15,457.20,634.71,47.58,8.64;15,108.00,645.67,102.80,8.64" target="#b40">(Pilehvar &amp; Camacho-Collados, 2019)</ref>.</p><p>‚ RACE is a large-scale machine reading comprehension dataset, collected from English examinations in China, which are designed for middle school and high school students <ref type="bibr" coords="15,399.93,673.56,64.88,8.64" target="#b27">(Lai et al., 2017)</ref>.</p><p>‚ SQuAD v1.1/v2.0 is the Stanford Question Answering Dataset (SQuAD) v1.1 and v2.0 <ref type="bibr" coords="15,461.87,690.50,42.29,8.64;15,108.00,701.46,47.57,8.64" target="#b43">(Rajpurkar et al., 2016;</ref><ref type="bibr" coords="15,158.07,701.46,23.52,8.64">2018)</ref> are popular machine reading comprehension benchmarks. Their passages come from approximately 500 Wikipedia articles and the questions and answers are obtained by crowdsourcing. The SQuAD v2.0 dataset includes unanswerable questions about the same paragraphs. With the disentangled attention mechanism, we introduce three additional sets of parameters W q,r , W k,r P R dˆd and P P R 2kˆd . The total increase in model parameters is 2L ˆd2 `2k ˆd.</p><p>For the large model pd " 1024, L " 24, k " 512q, this amounts to about 49M additional parameters, an increase of 13%. For the base modelpd " 768, L " 12, k " 512q, this amounts to 14M additional parameters, an increase of 12%. However, by sharing the projection matrix between content and position embedding, i.e. W q,r " W q,c , W k,r " W k,c , the number of parameters of DeBERTa is the same as RoBERTa. Our experiment on base model shows that the results are almost the same, as in Table <ref type="table" coords="19,142.62,428.54,8.30,8.64" target="#tab_8">13</ref>.</p><p>The additional computational complexity is OpN kdq due to the calculation of the additional positionto-content and content-to-position attention scores. Compared with BERT or RoBERTa, this increases the computational cost by 30%. Compared with XLNet which also uses relative position embedding, the increase of computational cost is about 15%. A further optimization by fusing the attention computation kernel can significantly reduce this additional cost. For EM D, since the decoder in pre-training only reconstructs the masked tokens, it does not introduce additional computational cost for unmasked tokens. In the situation where 15% tokens are masked and we use only two decoder layers, the additional cost is 0.15 ˆ2{L which results in an additional computational cost of only 3% for base model(L " 12) and 2% for large model(L " 24) in EMD.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.8 ADDITIONAL DETAILS OF ENHANCED MASK DECODER</head><p>The structure of EMD is shown in Figure <ref type="figure" coords="19,273.68,578.95,8.25,8.64">2b</ref>. There are two inputs for EMD, (i.e., I, H). H denotes the hidden states from the previous Transformer layer, and I can be any necessary information for decoding, e.g., H, absolute position embedding or output from previous EMD layer. n denotes n stacked layers of EMD where the output of each EMD layer will be the input I for next EMD layer and the output of last EMD layer will be fed to the language model head directly. The n layers can share the same weight. In our experiment we share the same weight for n " 2 layers to reduce the number of parameters and use absolute position embedding as I of the first EMD layer. When I " H and n " 1, EMD is the same as the BERT decoder layer. However, EMD is more general and flexible as it can take various types of input information for decoding.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.9 ATTENTION PATTERNS</head><p>To visualize how DeBERTa operates differently from RoBERTa, we present in Figure <ref type="figure" coords="19,447.61,712.42,4.92,8.64">3</ref> the attention patterns (taken in the last self-attention layers) of RoBERTa, DeBERTa and three DeBERTa variants.  In addition to scaling up transformer models with billions or trillions of parameters <ref type="bibr" coords="22,451.38,690.50,53.87,8.64;22,108.00,701.46,22.33,8.64" target="#b42">(Raffel et al., 2020;</ref><ref type="bibr" coords="22,132.82,701.46,75.28,8.64" target="#b4">Brown et al., 2020;</ref><ref type="bibr" coords="22,210.59,701.46,71.04,8.64" target="#b16">Fedus et al., 2021)</ref>, it is important to improve model's parameter efficiency <ref type="bibr" coords="22,107.67,712.42,102.41,8.64" target="#b24">(Kanakarajan et al., 2021)</ref>. In A.3.1 we have shown that DeBERTa is more parameter efficient than BERT and RoBERTa. In this section, we show further improvements in terms of parameter efficiency.</p><p>Replaced token detection (RTD) is a new pre-training objective introduced by ELECTRA <ref type="bibr" coords="23,478.29,85.34,25.96,8.64;23,108.00,96.30,46.45,8.64" target="#b9">(Clark et al., 2020)</ref>. It has been shown to be more effective than masked language model (MLM) <ref type="bibr" coords="23,473.32,96.30,30.68,8.64;23,108.00,107.26,46.77,8.64" target="#b13">(Devlin et al., 2019;</ref><ref type="bibr" coords="23,157.27,107.26,66.15,8.64">Liu et al., 2019c)</ref>. In DeBERTa, we replace the MLM objective with the RTD objective, and denote the new variant as DeBERTa RT D . We pre-train DeBERTa RT D using small, base and large settings with the same 160GB data as DeBERTa 1.5B . Following <ref type="bibr" coords="23,360.61,129.17,73.20,8.64" target="#b36">(Meng et al., 2021)</ref>, we set the width of the generator the same as that of the discriminator, but set its depth only half of the discriminator's depth. Other hyper-parameters remain the same as DeBERTa base or DeBERTa large . For the new member DeBERTa RT D small , it has 6 layers with the same width as DeBERTa RT D base . We evaluate our models on MNLI and SQuAD v2 datasets. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="21,117.83,595.61,376.35,8.64;21,177.30,464.87,257.40,105.65"><head>Figure 4 :Figure 5 :</head><label>45</label><figDesc>Figure 4: Comparison on attention patterns of the last layer between DeBERTa and RoBERTa.</figDesc><graphic coords="21,177.30,464.87,257.40,105.65" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="6,107.53,316.58,398.21,180.88"><head>Table 1 :</head><label>1</label><figDesc>Comparison results on the GLUE development set.</figDesc><table coords="6,121.45,327.54,370.09,70.72"><row><cell></cell><cell>Mcc Acc</cell><cell>Acc</cell><cell>Acc</cell><cell>Corr</cell><cell>Acc Acc</cell><cell>Acc</cell></row><row><cell>BERT large</cell><cell>60.6 91.3</cell><cell>86.6/-</cell><cell>93.2</cell><cell>90.0</cell><cell cols="2">92.3 70.4 88.0 84.05</cell></row><row><cell cols="2">RoBERTa large 68.0 92.2</cell><cell>90.2/90.2</cell><cell>96.4</cell><cell>92.4</cell><cell cols="2">93.9 86.6 90.9 88.82</cell></row><row><cell>XLNet large</cell><cell>69.0 92.3</cell><cell>90.8/90.8</cell><cell>97.0</cell><cell>92.5</cell><cell cols="2">94.9 85.9 90.8 89.15</cell></row><row><cell cols="2">ELECTRA large 69.1 92.4</cell><cell>90.9/-</cell><cell>96.9</cell><cell>92.6</cell><cell cols="2">95.0 88.0 90.8 89.46</cell></row><row><cell cols="2">DeBERTa large 70.5 92.3</cell><cell>91.1/91.1</cell><cell>96.8</cell><cell>92.8</cell><cell cols="2">95.3 88.3 91.9 90.00</cell></row></table><note coords="6,214.46,316.58,275.34,8.64;6,107.53,434.03,396.47,8.64;6,108.00,444.98,396.00,8.64;6,107.67,455.94,100.67,8.64;6,208.35,454.27,3.49,6.05;6,212.33,455.94,291.66,8.64;6,108.00,466.90,395.99,8.64;6,107.61,477.86,398.13,8.64;6,108.00,488.82,300.75,8.64"><p><p><p><p><p><p><p><p><p><p><p><p><p><p>QQP MNLI-m/mm SST-2 STS-B QNLI RTE MRPC Avg.</p>We pre-train our large models following the setting of BERT</p><ref type="bibr" coords="6,348.07,434.03,77.20,8.64" target="#b13">(Devlin et al., 2019)</ref></p>, except that we use the BPE vocabulary of</p><ref type="bibr" coords="6,201.94,444.98,81.10,8.64" target="#b41">Radford et al. (2019)</ref></p>;</p>Liu et al. (2019c)</p>. For training data, we use Wikipedia (English Wikipedia dump 3 ; 12GB), BookCorpus</p><ref type="bibr" coords="6,300.98,455.94,68.26,8.64" target="#b63">(Zhu et al., 2015)</ref> </p>(6GB), OPENWEBTEXT (public Reddit content</p><ref type="bibr" coords="6,167.82,466.90,104.47,8.64" target="#b18">(Gokaslan &amp; Cohen, 2019)</ref></p>; 38GB), and STORIES (a subset of CommonCrawl (Trinh &amp; Le, 2018); 31GB). The total data size after data deduplication</p><ref type="bibr" coords="6,364.58,477.86,85.51,8.64" target="#b49">(Shoeybi et al., 2019)</ref> </p>is about 78G. Refer to Appendix A.2 for a detailed description of the pre-training dataset.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="6,107.64,533.65,398.02,179.00"><head>Table 2 :</head><label>2</label><figDesc>in Table1, where DeBERTa is compared DeBERTa with previous Transform-based PLMs of similar structures (i.e. 24 layers with hidden size of 1024) including BERT, RoBERTa, XLNet, ALBERT and ELECTRA. Note that RoBERTa, XLNet and ELECTRA are pre-trained on 160G training data while DeBERTa is pretrained on 78G training data. RoBERTa and XLNet are pre-trained for 500K steps with 8K samples in a step, which amounts to four billion training samples. DeBERTa is pre-trained for one million steps with 2K samples in each step. This amounts to two billion training samples, approximately half of either RoBERTa or XLNet. Table1shows that compared to BERT and RoBERTa, DeBERTa performs consistently better across all the tasks. Meanwhile, DeBERTa outperforms XLNet in six out Results on MNLI in/out-domain, SQuAD v1.1, SQuAD v2.0, RACE, ReCoRD, SWAG, CoNLL 2003 NER development set. Note that missing results in literature are signified by "-".In addition to GLUE, DeBERTa is evaluated on three categories of NLU benchmarks: (1) Question Answering: SQuAD v1.1<ref type="bibr" coords="7,210.69,279.16,90.53,8.64" target="#b43">(Rajpurkar et al., 2016)</ref>, SQuAD v2.0<ref type="bibr" coords="7,361.94,279.16,90.53,8.64" target="#b44">(Rajpurkar et al., 2018)</ref>, RACE<ref type="bibr" coords="7,487.58,279.16,16.42,8.64;7,108.00,290.12,46.24,8.64" target="#b27">(Lai et al., 2017)</ref>, ReCoRD<ref type="bibr" coords="7,200.49,290.12,79.63,8.64" target="#b62">(Zhang et al., 2018)</ref> and SWAG<ref type="bibr" coords="7,330.19,290.12,80.29,8.64" target="#b61">(Zellers et al., 2018)</ref>; (2) Natural Language Inference: MNLI<ref type="bibr" coords="7,179.91,301.08,88.58,8.64" target="#b59">(Williams et al., 2018)</ref>; and (3) NER: CoNLL-2003. For comparison, we include ALBERT xxlarge<ref type="bibr" coords="7,170.30,312.03,70.06,8.64" target="#b28">(Lan et al., 2019)</ref> 4 and Megatron<ref type="bibr" coords="7,308.23,312.03,87.40,8.64" target="#b49">(Shoeybi et al., 2019)</ref> with three different model sizes, denoted as Megatron 336M , Megatron 1.3B and Megatron 3.9B , respectively, which are trained using the same dataset as RoBERTa. Note that Megatron 336M has a similar model size as other models mentioned above 5 .We summarize the results in Table2. Compared to the previous SOTA PLMs with a similar model size (i.e., BERT, RoBERTa, XLNet, ALBERT large , and Megatron 336M ), DeBERTa shows superior performance in all seven tasks. Taking the RACE benchmark as an example, DeBERTa significantly outperforms XLNet by +1.4% (86.8% vs. 85.4%). Although Megatron 1.3B is three times larger than DeBERTa, DeBERTa outperforms it in three of the four benchmarks. We further report DeBERTa on text generation tasks in Appendix A.4. We use 4 DGX-2 with 64 V100 GPUs to train the base model. It takes 10 days to finish a single pre-training of 1M training steps with batch size 2048. We train DeBERTa using the same 78G dataset, and compare it to RoBERTa and XLNet trained on 160G text data.We summarize the base model results in Table3. Across all three tasks, DeBERTa consistently outperforms RoBERTa and XLNet by a larger margin than that in large models. For example, on MNLI-m, DeBERTa base obtains +1.2% (88.8% vs. 87.6%) over RoBERTa base , and +2% (88.8% vs. 86.8%) over XLNet base .</figDesc><table coords="6,107.64,632.28,397.60,41.51"><row><cell>of eight tasks. Particularly, the improvements on MRPC (1.1% over XLNet and 1.0% over RoBERTa),</cell></row><row><cell>RTE (2.4% over XLNet and 1.7% over RoBERTa) and CoLA (1.5% over XLNet and 2.5% over</cell></row><row><cell>RoBERTa) are significant. DeBERTa also outperforms other SOTA PLMs, i.e., ELECTRA large and</cell></row><row><cell>XLNet</cell></row></table><note coords="6,135.31,665.16,150.63,9.49;6,107.64,682.10,396.36,8.64;6,108.00,693.05,396.00,8.64;6,108.00,704.01,131.98,8.64;7,108.25,446.11,178.12,8.64;7,108.00,467.62,396.00,8.64;7,108.00,478.26,287.58,9.29"><p><p><p>large , in terms of average GLUE score. Among all GLUE tasks, MNLI is most often used as an indicative task to monitor the research progress of PLMs. DeBERTa significantly outperforms all existing PLMs of similar size on MNLI and creates a new state of the art.</p>5.1.2 PERFORMANCE ON BASE MODELS</p>Our setting for base model pre-training is similar to that for large models. The base model structure follows that of the BERT base model, i.e., L " 12, H " 768, A " 12.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="7,124.61,653.54,362.47,8.64"><head>Table 3 :</head><label>3</label><figDesc>Results on MNLI in/out-domain (m/mm), SQuAD v1.1 and v2.0 development set.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="8,107.64,315.34,398.10,236.99"><head>Table 4 :</head><label>4</label><figDesc>Ablation study of the DeBERTa base model.</figDesc><table coords="8,107.64,315.34,398.10,236.99"><row><cell></cell><cell cols="4">MNLI-m/mm SQuAD v1.1 SQuAD v2.0 RACE</cell></row><row><cell></cell><cell>Acc</cell><cell>F1/EM</cell><cell>F1/EM</cell><cell>Acc</cell></row><row><cell>BERT base Devlin et al. (2019)</cell><cell>84.3/84.7</cell><cell>88.5/81.0</cell><cell>76.3/73.7</cell><cell>65.0</cell></row><row><cell>RoBERTa base Liu et al. (2019c)</cell><cell>84.7/-</cell><cell>90.6/-</cell><cell>79.7/-</cell><cell>65.6</cell></row><row><cell>XLNet base Yang et al. (2019)</cell><cell>85.8/85.4</cell><cell>-/-</cell><cell>81.3/78.5</cell><cell>66.7</cell></row><row><cell>RoBERTa-ReImp base</cell><cell>84.9/85.1</cell><cell>91.1/84.8</cell><cell>79.5/76.0</cell><cell>66.8</cell></row><row><cell>DeBERTa base</cell><cell>86.3/86.2</cell><cell>92.1/86.1</cell><cell>82.5/79.3</cell><cell>71.7</cell></row><row><cell>-EMD</cell><cell>86.1/86.1</cell><cell>91.8/85.8</cell><cell>81.3/78.0</cell><cell>70.3</cell></row><row><cell>-C2P</cell><cell>85.9/85.7</cell><cell>91.6/85.8</cell><cell>81.3/78.3</cell><cell>69.3</cell></row><row><cell>-P2C</cell><cell>86.0/85.8</cell><cell>91.7/85.7</cell><cell>80.8/77.6</cell><cell>69.6</cell></row><row><cell>-(EMD+C2P)</cell><cell>85.8/85.9</cell><cell>91.5/85.3</cell><cell>80.3/77.2</cell><cell>68.1</cell></row><row><cell>-(EMD+P2C)</cell><cell>85.8/85.8</cell><cell>91.3/85.1</cell><cell>80.2/77.1</cell><cell>68.5</cell></row><row><cell cols="5">Table 4 summarizes the results on four benchmark datasets. First, RoBERTa-ReImp performs</cell></row><row><cell cols="5">similarly to RoBERTa across all benchmark datasets, verfiying that our setting is reasonable. Second,</cell></row><row><cell cols="5">we see that removing any one component in DeBERTa results in a sheer performance drop. For</cell></row><row><cell cols="5">instance, removing EMD (-EMD) results in a loss of 1.4% (71.7% vs. 70.3%) on RACE, 0.3%</cell></row><row><cell cols="5">(92.1% vs. 91.8%) on SQuAD v1.1, 1.2% (82.5% vs. 81.3%) on SQuAD v2.0, 0.2% (86.3% vs.</cell></row><row><cell>86.1%) and 0.1% (86.2% vs. 86.1%</cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="9,107.69,285.47,396.30,142.48"><head>Table 5 :</head><label>5</label><figDesc>SuperGLUE test set results scored using the SuperGLUE evaluation server. All the results are obtained from https://super.gluebenchmark.com on January 6, 2021.</figDesc><table coords="9,110.35,285.47,392.29,108.78"><row><cell></cell><cell>BoolQ</cell><cell>CB</cell><cell>COPA MultiRC ReCoRD RTE WiC WSC Average</cell></row><row><cell></cell><cell cols="3">Acc F1/Acc Acc F1a/EM F1/EM Acc Acc Acc Score</cell></row><row><cell>RoBERTa large</cell><cell cols="3">87.1 90.5/95.2 90.6 84.4/52.5 90.6/90.0 88.2 69.9 89.0 84.6</cell></row><row><cell>NEXHA-Plus</cell><cell cols="3">87.8 94.4/96.0 93.6 84.6/55.1 90.1/89.6 89.1 74.6 93.2 86.7</cell></row><row><cell>T5 11B</cell><cell cols="3">91.2 93.9/96.8 94.8 88.1/63.3 94.1/93.4 92.5 76.9 93.8 89.3</cell></row><row><cell>T5 11B +Meena</cell><cell cols="3">91.3 95.8/97.6 97.4 88.3/63.0 94.2/93.5 92.7 77.9 95.9 90.2</cell></row><row><cell>Human</cell><cell cols="3">89.0 95.8/98.9 100.0 81.8/51.9 91.7/91.3 93.6 80.0 100.0 89.8</cell></row><row><cell cols="4">DeBERTa 1.5B +SiFT 90.4 94.9/97.2 96.8 88.2/63.7 94.5/94.1 93.2 76.4 95.9 89.9</cell></row><row><cell>DeBERTa Ensemble</cell><cell cols="3">90.4 95.7/97.6 98.4 88.2/63.7 94.5/94.1 93.2 77.5 95.9 90.3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="15,113.47,111.79,383.99,374.79"><head>Table 6 :</head><label>6</label><figDesc>.1 DATASET Summary information of the NLP application benchmarks.</figDesc><table coords="15,114.54,144.28,382.92,313.88"><row><cell>Corpus</cell><cell>Task</cell><cell cols="4">#Train #Dev #Test #Label</cell><cell>Metrics</cell></row><row><cell></cell><cell cols="5">General Language Understanding Evaluation (GLUE)</cell><cell></cell></row><row><cell>CoLA</cell><cell>Acceptability</cell><cell>8.5k</cell><cell>1k</cell><cell>1k</cell><cell>2</cell><cell>Matthews corr</cell></row><row><cell>SST</cell><cell>Sentiment</cell><cell>67k</cell><cell>872</cell><cell>1.8k</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>MNLI</cell><cell>NLI</cell><cell>393k</cell><cell>20k</cell><cell>20k</cell><cell>3</cell><cell>Accuracy</cell></row><row><cell>RTE</cell><cell>NLI</cell><cell>2.5k</cell><cell>276</cell><cell>3k</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>WNLI</cell><cell>NLI</cell><cell>634</cell><cell>71</cell><cell>146</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>QQP</cell><cell>Paraphrase</cell><cell>364k</cell><cell>40k</cell><cell>391k</cell><cell>2</cell><cell>Accuracy/F1</cell></row><row><cell>MRPC</cell><cell>Paraphrase</cell><cell>3.7k</cell><cell>408</cell><cell>1.7k</cell><cell>2</cell><cell>Accuracy/F1</cell></row><row><cell>QNLI</cell><cell>QA/NLI</cell><cell>108k</cell><cell>5.7k</cell><cell>5.7k</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>STS-B</cell><cell>Similarity</cell><cell>7k</cell><cell>1.5k</cell><cell>1.4k</cell><cell>1</cell><cell>Pearson/Spearman corr</cell></row><row><cell></cell><cell cols="2">SuperGLUE</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>WSC</cell><cell>Coreference</cell><cell>554k</cell><cell>104</cell><cell>146</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>BoolQ</cell><cell>QA</cell><cell cols="3">9,427 3,270 3,245</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>COPA</cell><cell>QA</cell><cell>400k</cell><cell>100</cell><cell>500</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>CB</cell><cell>NLI</cell><cell>250</cell><cell>57</cell><cell>250</cell><cell>3</cell><cell>Accuracy/F1</cell></row><row><cell>RTE</cell><cell>NLI</cell><cell>2.5k</cell><cell>276</cell><cell>3k</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>WiC</cell><cell>WSD</cell><cell>2.5k</cell><cell>276</cell><cell>3k</cell><cell>2</cell><cell>Accuracy</cell></row><row><cell>ReCoRD</cell><cell>MRC</cell><cell>101k</cell><cell>10k</cell><cell>10k</cell><cell>-</cell><cell>Exact Match (EM)/F1</cell></row><row><cell>MultiRC</cell><cell cols="2">Multiple choice 5,100</cell><cell>953</cell><cell>1,800</cell><cell>-</cell><cell>Exact Match (EM)/F1</cell></row><row><cell></cell><cell></cell><cell cols="3">Question Answering</cell><cell></cell><cell></cell></row><row><cell cols="2">SQuAD v1.1 MRC</cell><cell cols="3">87.6k 10.5k 9.5k</cell><cell>-</cell><cell>Exact Match (EM)/F1</cell></row><row><cell cols="2">SQuAD v2.0 MRC</cell><cell cols="3">130.3k 11.9k 8.9k</cell><cell>-</cell><cell>Exact Match (EM)/F1</cell></row><row><cell>RACE</cell><cell>MRC</cell><cell cols="3">87,866 4,887 4,934</cell><cell>4</cell><cell>Accuracy</cell></row><row><cell>SWAG</cell><cell cols="2">Multiple choice 73.5k</cell><cell>20k</cell><cell>20k</cell><cell>4</cell><cell>Accuracy</cell></row><row><cell></cell><cell></cell><cell cols="2">Token Classification</cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">CoNLL 2003 NER</cell><cell cols="3">14,987 3,466 3,684</cell><cell>8</cell><cell>F1</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" coords="19,107.69,86.63,396.89,185.49"><head>Table 12 :</head><label>12</label><figDesc>Comparison results of DeBERTa models with different sizes on the GLUE development set.</figDesc><table coords="19,110.99,86.63,393.59,185.49"><row><cell>Model</cell><cell cols="6">CoLA QQP MNLI-m/mm SST-2 STS-B QNLI RTE MRPC Avg. Mcc Acc Acc Acc Corr Acc Acc Acc</cell></row><row><cell>DeBERTa large</cell><cell cols="2">70.5 92.3</cell><cell cols="2">91.1/91.1</cell><cell>96.8</cell><cell>92.8</cell><cell>95.3 88.3 91.9 90.00</cell></row><row><cell>DeBERTa 900M</cell><cell cols="2">71.1 92.3</cell><cell cols="2">91.7/91.6</cell><cell>97.5</cell><cell>92.0</cell><cell>95.8 93.5 93.1 90.86</cell></row><row><cell>DeBERTa 1.5B</cell><cell cols="2">72.0 92.7</cell><cell cols="2">91.7/91.9</cell><cell>97.2</cell><cell>92.9</cell><cell>96.0 93.9 92.0 91.17</cell></row><row><cell cols="3">DeBERTa 1.5B +SiFT 73.5 93.0</cell><cell cols="2">92.0/92.1</cell><cell>97.5</cell><cell>93.2</cell><cell>96.5 96.5 93.2 91.93</cell></row><row><cell>Model</cell><cell></cell><cell cols="5">Parameters MNLI-m/mm SQuAD v1.1 SQuAD v2.0</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Acc</cell><cell>F1/EM</cell><cell>F1/EM</cell></row><row><cell cols="2">RoBERTa-ReImp base</cell><cell cols="2">120M</cell><cell cols="2">84.9/85.1</cell><cell>91.1/84.8</cell><cell>79.5/76.0</cell></row><row><cell>DeBERTa base</cell><cell></cell><cell cols="2">134M</cell><cell cols="2">86.3/86.2</cell><cell>92.1/86.1</cell><cell>82.5/79.3</cell></row><row><cell cols="2">+ ShareProjection</cell><cell cols="2">120M</cell><cell cols="2">86.3/86.3</cell><cell>92.2/86.2</cell><cell>82.3/79.5</cell></row><row><cell>+ Conv</cell><cell></cell><cell cols="2">122M</cell><cell cols="2">86.3/86.5</cell><cell>92.5/86.4</cell><cell>82.5/79.7</cell></row><row><cell>+ 128k Vocab</cell><cell></cell><cell cols="2">190M</cell><cell cols="2">86.7/86.9</cell><cell>93.1/86.8</cell><cell>83.0/80.1</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8" coords="19,107.69,286.92,398.05,52.94"><head>Table 13 :</head><label>13</label><figDesc>Ablation study of the additional modifications in DeBERTa 1.5B and DeBERTa 900M models. Note that we progressively add each component on the top of DeBERTa base .</figDesc><table coords="19,108.25,331.22,116.96,8.64"><row><cell>A.7 MODEL COMPLEXITY</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9" coords="22,121.42,560.60,369.16,59.02"><head>Table 14 ,</head><label>14</label><figDesc>DeBERTa base significantly outperforms RoBERTa base (p-value &lt; 0.05).</figDesc><table coords="22,121.42,587.26,369.16,32.37"><row><cell>Model</cell><cell cols="3">MNLI-matched (Min/Max/Avg) SQuAD v1.1 (Min/Max/Avg) p-value</cell></row><row><cell>RoBERTa base</cell><cell>84.7/85.0/84.9</cell><cell>90.8/91.3/91.1</cell><cell>0.02</cell></row><row><cell>DeBERTa base</cell><cell>86.1/86.5/86.3</cell><cell>91.8/92.2/92.1</cell><cell>0.01</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10" coords="22,108.25,633.73,374.16,44.17"><head>Table 14 :</head><label>14</label><figDesc>Comparison of DeBERTa and RoBERTa on MNLI-matched and SQuAD v1.1.</figDesc><table /><note coords="22,108.25,669.25,217.79,8.64"><p>A.11 FURTHER IMPROVE THE MODEL EFFICIENCY</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11" coords="23,108.00,173.01,397.24,275.46"><head>Table 15 :</head><label>15</label><figDesc>Table15summarizes the results. We observe that both DeBERTa RT D base and DeBERTa RT D large significantly outperform other models. For example, DeBERTa RT D large obtains 0.9 absolute improvement over DeBERTa Large (the previous SoTA model) on MNLI and SQuAD v2.0, respectively. It is worth noting that DeBERTa RT D large is on-par with DeBERTa 1.5B while has only 1/3 parameters of DeBERTa 1.5B . Furthermore, DeBERTa RT D small even outperforms BERT large by a large margin. All these demonstrate the efficiency of DeBERTa RT D models and clearly show a huge potential to further improve model's parameter efficiency. Our work lays the base for future studies on far more parameter-efficient pre-trained language models. Comparison of different variants of DeBERTa models on MNLI and SQuAD 2.0.</figDesc><table coords="23,172.51,275.09,266.98,150.64"><row><cell>Model</cell><cell cols="2">MNLI(m/mm Acc) SQuAD v2.0 (F1/EM)</cell></row><row><cell>BERT RT D small</cell><cell>88.2/87.9</cell><cell>82.9/80.4</cell></row><row><cell>BERT base</cell><cell>84.3/84.7</cell><cell>76.3/73.7</cell></row><row><cell>RoBERTa base</cell><cell>87.6/-</cell><cell>83.7/80.5</cell></row><row><cell>ELECTRA base</cell><cell>88.8/-</cell><cell>83.3/80.5</cell></row><row><cell>DeBERTa base</cell><cell>88.8/88.5</cell><cell>86.2/83.1</cell></row><row><cell>DeBERTa RT D base</cell><cell>90.6/90.8</cell><cell>88.4/85.4</cell></row><row><cell>BERT large</cell><cell>86.6/-</cell><cell>81.8/79.0</cell></row><row><cell>RoBERTa large</cell><cell>90.2/90.2</cell><cell>89.4/86.5</cell></row><row><cell>ELECTRA large</cell><cell>90.9/-</cell><cell>90.6/88.0</cell></row><row><cell>DeBERTa large</cell><cell>91.1/91.1</cell><cell>90.7/88.0</cell></row><row><cell>DeBERTa RT D large</cell><cell>92.0/91.9</cell><cell>91.5/89.0</cell></row><row><cell>DeBERTa 1.5B</cell><cell>91.7/91.9</cell><cell>92.2/89.7</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0" coords="1,124.14,714.06,380.94,7.77;1,108.00,724.87,370.31,6.31"><p>Our code and models are also available at HuggingFace Transformers: https://github.com/ huggingface/transformers, https://huggingface.co/models?filter=deberta</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1" coords="3,124.14,704.10,379.86,7.77;3,108.00,714.06,396.15,7.77;3,108.00,724.02,103.22,7.77"><p>In this sense, our model shares some similarity to Tensor Product Representation<ref type="bibr" coords="3,411.36,704.10,66.43,7.77" target="#b50">(Smolensky, 1990;</ref><ref type="bibr" coords="3,480.04,704.10,23.96,7.77;3,108.00,714.06,42.83,7.77" target="#b46">Schlag et al., 2019;</ref><ref type="bibr" coords="3,153.06,714.06,64.73,7.77" target="#b6">Chen et al., 2019)</ref> where a word is represented using a tensor product of its filler (content) vector and its role (position) vector.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2" coords="6,124.14,724.02,132.35,7.77"><p>https://dumps.wikimedia.org/enwiki/</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3" coords="7,124.14,693.25,379.86,7.77;7,108.00,703.21,48.05,7.77"><p>The hidden dimension of ALBERTxxlarge is 4 times of DeBERTa and the computation cost is about 4 times of DeBERTa.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4" coords="7,124.14,714.06,379.86,7.77;7,107.68,724.02,162.11,7.77"><p>T5<ref type="bibr" coords="7,136.62,714.06,71.74,7.77" target="#b42">(Raffel et al., 2020)</ref> has more parameters (11B).<ref type="bibr" coords="7,314.68,714.06,69.45,7.77" target="#b42">Raffel et al. (2020)</ref> only report the test results of T5 which are not comparable with other models.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_5" coords="8,124.14,724.02,203.18,7.77"><p>See Table8in Appendix for the model hyperparameters.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_6" coords="9,124.14,714.06,379.86,7.77;9,107.68,724.02,209.47,7.77"><p>Please refer toTable 12 in Appendix A.6 for the ablation study of different model sizes, and Table 13 in Appendix A.6 for the ablation study of new modifications.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>We thank <rs type="person">Jade Huang</rs> and <rs type="person">Nikos Karampatziakis</rs> for proofreading the paper and providing insightful comments. We thank <rs type="person">Yoyo Liang</rs>, <rs type="person">Saksham Singhal</rs>, <rs type="person">Xia Song</rs>, and <rs type="person">Saurabh Tiwary</rs> for their help with large-scale model training. We also thank the anonymous reviewers for valuable discussions.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>‚ SWAG is a large-scale adversarial dataset for the task of grounded commonsense inference, which unifies natural language inference and physically grounded reasoning <ref type="bibr" coords="16,388.81,96.30,79.81,8.64" target="#b61">(Zellers et al., 2018)</ref>. SWAG consists of 113k multiple choice questions about grounded situations.</p><p>‚ CoNLL 2003 is an English dataset consisting of text from a wide variety of sources. It has 4 types of named entity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.2 PRE-TRAINING DATASET</head><p>For DeBERTa pre-training, we use Wikipedia (English Wikipedia dump 8 ; 12GB), BookCorpus <ref type="bibr" coords="16,484.86,182.62,19.13,8.64;16,108.00,193.58,47.79,8.64" target="#b63">(Zhu et al., 2015)</ref> 9 (6GB), OPENWEBTEXT (public Reddit content <ref type="bibr" coords="16,363.76,193.58,106.81,8.64" target="#b18">(Gokaslan &amp; Cohen, 2019)</ref>; 38GB) and STORIES 10 (a subset of CommonCrawl <ref type="bibr" coords="16,291.42,204.54,72.45,8.64" target="#b53">(Trinh &amp; Le, 2018</ref>); 31GB). The total data size after data deduplication <ref type="bibr" coords="16,181.54,215.50,83.01,8.64" target="#b49">(Shoeybi et al., 2019)</ref> is about 78GB. For pre-training, we also sample 5% training data as the validation set to monitor the training process.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.3 IMPLEMENTATION DETAILS</head><p>Following RoBERTa <ref type="bibr" coords="16,196.31,410.61,72.58,8.64">(Liu et al., 2019c)</ref>, we adopt dynamic data batching. We also include span masking <ref type="bibr" coords="16,144.13,421.57,73.63,8.64" target="#b23">(Joshi et al., 2020)</ref> as an additional masking strategy with the span size up to three. We list the detailed hyperparameters of pre-training in Table <ref type="table" coords="16,322.20,432.53,3.77,8.64">8</ref>. For pre-training, we use Adam <ref type="bibr" coords="16,458.73,432.53,46.04,8.64;16,108.00,443.49,40.17,8.64">(Kingma &amp; Ba, 2014)</ref> as the optimizer with weight decay <ref type="bibr" coords="16,295.81,443.49,115.13,8.64" target="#b35">(Loshchilov &amp; Hutter, 2018)</ref>. For fine-tuning, even though we can get better and robust results with RAdam <ref type="bibr" coords="16,324.20,454.45,74.61,8.64">(Liu et al., 2019a)</ref> on some tasks, e.g. CoLA, RTE and RACE, we use Adam <ref type="bibr" coords="16,232.56,465.41,92.92,8.64">(Kingma &amp; Ba, 2014)</ref> as the optimizer for a fair comparison. For fine-tuning, we train each task with a hyper-parameter search procedure, each run takes about 1-2 hours on a DGX-2 node. All the hyper-parameters are presented in Table <ref type="table" coords="16,402.89,487.33,3.76,8.64">9</ref>. The model selection is based on the performance on the task-specific development sets.</p><p>Our code is implemented based on Huggingface Transformers 11 , FairSeq 12 and Megatron <ref type="bibr" coords="16,468.03,515.22,35.97,8.64;16,108.00,526.18,47.59,8.64" target="#b49">(Shoeybi et al., 2019)</ref>  13 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.3.1 PRE-TRAINING EFFICIENCY</head><p>To investigate the efficiency of model pre-training, we plot the performance of the fine-tuned model on downstream tasks as a function of the number of pre-training steps. As shown in Figure <ref type="figure" coords="16,481.97,581.92,3.81,8.64">1</ref>, for RoBERTa-ReImp base and DeBERTa base , we dump a checkpoint every 150K pre-training steps, and then fine-tune the checkpoint on two representative downstream tasks, MNLI and SQuAD v2.0, and then report the accuracy and F1 score, respectively. As a reference, we also report the final model performance of both the original RoBERTa base <ref type="bibr" coords="16,295.46,625.75,70.47,8.64">(Liu et al., 2019c)</ref> and XLNet base <ref type="bibr" coords="16,430.56,625.75,70.97,8.64" target="#b60">(Yang et al., 2019)</ref>  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.4 MAIN RESULTS ON GENERATION TASKS</head><p>In addition to NLU tasks, DeBERTa can also be extended to handle NLG tasks. To allow DeBERTa operating like an auto-regressive model for text generation, we use a triangular matrix for selfattention and set the upper triangular part of the self-attention mask to ´8, following <ref type="bibr" coords="18,460.53,129.89,45.21,8.64;18,107.67,140.85,24.90,8.64" target="#b15">Dong et al. (2019)</ref>.</p><p>We evaluate DeBERTa on the task of auto-regressive language model (ARLM) using Wikitext-103 <ref type="bibr" coords="18,124.81,168.74,79.27,8.64" target="#b37">(Merity et al., 2016)</ref>. To do so, we train a new version of DeBERTa, denoted as DeBERTa-MT.</p><p>It is jointly pre-trained using the MLM and ARLM tasks as in UniLM <ref type="bibr" coords="18,402.11,179.70,76.84,8.64" target="#b15">(Dong et al., 2019)</ref> Table <ref type="table" coords="18,131.35,344.03,9.76,8.64">10</ref> summarizes the results on Wikitext-103. We see that DeBERTa base obtains lower perplexities on both dev and test data, and joint training using MLM and ARLM reduces perplexity further. That DeBERTa-AP is inferior to DeBERTa indicates that it is more effective to incorporate absolute position embeddings of words in the decoding layer as the EMD in DeBERTa than in the input layer as RoBERTa.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.5 HANDLING LONG SEQUENCE INPUT</head><p>With relative position bias, we choose to truncate the maximum relative distance to k as in equation 3.</p><p>Thus in each layer, each token can attend directly to at most 2pk ´1q tokens and itself. By stacking Transformer layers, each token in the l´th layer can attend to at most p2k ´1ql tokens implicitly.</p><p>Taking DeBERTa large as an example, where k " 512, L " 24, in theory, the maximum sequence length that can be handled is 24,528. This is a byproduct benefit of our design choice and we find it beneficial for the RACE task. A comparison of long sequence effect on the RACE task is shown in Table <ref type="table" coords="18,132.07,506.53,8.30,8.64">11</ref>. Long sequence handling is an active research area. There have been a lot of studies where the Transformer architecture is extended for long sequence handling <ref type="bibr" coords="18,366.81,626.63,84.85,8.64" target="#b2">(Beltagy et al., 2020;</ref><ref type="bibr" coords="18,454.14,626.63,51.11,8.64;18,108.00,637.59,22.24,8.64" target="#b26">Kitaev et al., 2019;</ref><ref type="bibr" coords="18,132.51,637.59,69.72,8.64" target="#b7">Child et al., 2019;</ref><ref type="bibr" coords="18,204.49,637.59,60.89,8.64" target="#b11">Dai et al., 2019)</ref>. One of our future research directions is to extend DeBERTa to deal with extremely long sequences.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.6 PERFORMANCE IMPROVEMENTS OF DIFFERENT MODEL SCALES</head><p>In this subsection, we study the effect of different model sizes applied to large models on GLUE.   We observe two differences. First, RoBERTa has a clear diagonal line effect for a token attending to itself. But this effect is not very visible in DeBERTa. This can be attributed to the use of EMD, in which the absolute position embedding is added to the hidden state of content as the query vector, as verified by the attention pattern of DeBERTa-EMD where the diagonal line effect is more visible than that of the original DeBERTa. Second, we observe vertical strips in the attention patterns of RoBERTa, which are mainly caused by high-frequent functional words or tokens (e.g., "a", "the", and punctuation). For DeBERTa, the strip only appears in the first column, which represents the [CLS] token. We conjecture that a dominant emphasis on [CLS] is desirable since the feature vector of [CLS] is often used as a contextual representation of the entire input sequence in downstream tasks. We also observe that the vertical strip effect is quite obvious in the patterns of the three DeBERTa variants.</p><p>We present three additional examples to illustrate the different attention patterns of DeBERTa and RoBERTa in Figures <ref type="figure" coords="20,193.23,627.78,4.98,8.64">4</ref> and<ref type="figure" coords="20,217.58,627.78,3.74,8.64">5</ref>.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="10,108.00,178.61,396.00,8.82;10,117.96,189.57,100.17,8.82" xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Jimmy</forename><surname>Lei Ba</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jamie</forename><surname>Ryan Kiros</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Geoffrey</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1607.06450</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Layer normalization. arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,209.72,396.49,8.64;10,117.96,220.50,386.04,8.82;10,117.14,231.46,220.91,8.82" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="10,418.24,209.72,86.25,8.64;10,117.96,220.68,165.43,8.64">The second PASCAL recognising textual entailment challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Roy</forename><surname>Bar-Haim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ido</forename><surname>Dagan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bill</forename><surname>Dolan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lisa</forename><surname>Ferro</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Danilo</forename><surname>Giampiccolo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,306.00,220.50,198.00,8.59;10,117.14,231.46,179.35,8.59">Proceedings of the Second PASCAL Challenges Workshop on Recognising Textual Entailment</title>
+		<meeting>the Second PASCAL Challenges Workshop on Recognising Textual Entailment</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page">1</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,251.61,397.74,8.64;10,117.96,262.39,159.58,8.82" xml:id="b2">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Iz</forename><surname>Beltagy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthew</forename><forename type="middle">E</forename><surname>Peters</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Arman</forename><surname>Cohan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Longformer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.05150</idno>
+		<title level="m" coords="10,373.06,251.61,128.57,8.64">The long-document transformer</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,282.54,396.00,8.64;10,117.96,293.32,387.28,8.82;10,117.96,304.46,22.42,8.64" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="10,488.20,282.54,15.80,8.64;10,117.96,293.50,201.97,8.64">The fifth pascal recognizing textual entailment challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Luisa</forename><surname>Bentivogli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ido</forename><surname>Dagan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hoa</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Trang</forename><surname>Dang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Danilo</forename><surname>Giampiccolo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bernardo</forename><surname>Magnini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,348.13,293.32,152.64,8.59">Proc Text Analysis Conference (TAC&apos;09</title>
+		<meeting>Text Analysis Conference (TAC&apos;09</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,324.43,397.25,8.64;10,117.60,335.39,386.40,8.64;10,117.96,346.17,234.29,8.82" xml:id="b4">
+	<monogr>
+		<title level="m" type="main" coords="10,417.33,335.39,86.67,8.64;10,117.96,346.35,67.34,8.64">Language models are few-shot learners</title>
+		<author>
+			<persName coords=""><forename type="first">Benjamin</forename><surname>Tom B Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nick</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Melanie</forename><surname>Ryder</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jared</forename><surname>Subbiah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Prafulla</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Arvind</forename><surname>Dhariwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pranav</forename><surname>Neelakantan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Girish</forename><surname>Shyam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanda</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Askell</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2005.14165</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,366.33,396.25,8.64;10,117.22,377.11,386.78,8.82;10,117.96,388.06,100.17,8.82" xml:id="b5">
+	<monogr>
+		<title level="m" type="main" coords="10,427.93,366.33,76.32,8.64;10,117.22,377.28,321.40,8.64">Semeval-2017 task 1: Semantic textual similarity-multilingual and cross-lingual focused evaluation</title>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Cer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mona</forename><surname>Diab</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Eneko</forename><surname>Agirre</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Inigo</forename><surname>Lopez-Gazpio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lucia</forename><surname>Specia</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1708.00055</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,408.22,396.00,8.64;10,117.96,419.00,386.04,8.82;10,117.96,429.96,100.17,8.82" xml:id="b6">
+	<monogr>
+		<title level="m" type="main" coords="10,140.62,419.18,298.98,8.64">Natural-to formal-language generation using tensor product representations</title>
+		<author>
+			<persName coords=""><forename type="first">Kezhen</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Qiuyuan</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hamid</forename><surname>Palangi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Paul</forename><surname>Smolensky</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kenneth</forename><forename type="middle">D</forename><surname>Forbus</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1910.02339</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,450.11,396.00,8.64;10,117.96,460.89,216.01,8.82" xml:id="b7">
+	<monogr>
+		<title level="m" type="main" coords="10,349.77,450.11,154.22,8.64;10,117.96,461.07,48.78,8.64">Generating long sequences with sparse transformers</title>
+		<author>
+			<persName coords=""><forename type="first">Rewon</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Scott</forename><surname>Gray</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1904.10509</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,481.04,396.00,8.64;10,117.65,491.82,386.34,8.82;10,117.96,502.78,111.88,8.82" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="10,164.60,492.00,272.42,8.64">BoolQ: Exploring the surprising difficulty of natural yes/no questions</title>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kenton</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming-Wei</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tom</forename><surname>Kwiatkowski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Collins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kristina</forename><surname>Toutanova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,455.24,491.82,48.75,8.59;10,117.96,502.78,62.07,8.59">Proceedings of NAACL-HLT</title>
+		<meeting>NAACL-HLT</meeting>
+		<imprint>
+			<date type="published" when="2019">2019, 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,522.93,396.00,8.64;10,117.96,533.71,278.18,8.82" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="10,408.42,522.93,95.58,8.64;10,117.96,533.89,210.82,8.64">ELECTRA: Pre-training text encoders as discriminators rather than generators</title>
+		<author>
+			<persName coords=""><forename type="first">Kevin</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Minh-Thang</forename><surname>Luong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc</forename><forename type="middle">V</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><forename type="middle">D</forename><surname>Manning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,347.16,533.71,19.26,8.59">ICLR</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,553.87,396.00,8.64;10,117.96,564.65,387.69,8.82;10,117.96,575.60,386.04,8.59;10,117.65,586.56,199.33,8.82" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="10,331.06,553.87,172.93,8.64;10,117.96,564.82,37.33,8.64">The pascal recognising textual entailment challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Ido</forename><surname>Dagan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Oren</forename><surname>Glickman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bernardo</forename><surname>Magnini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,178.21,564.65,327.44,8.59;10,117.96,575.60,386.04,8.59;10,117.65,586.56,89.62,8.82">Proceedings of the First International Conference on Machine Learning Challenges: Evaluating Predictive Uncertainty Visual Object Classification, and Recognizing Textual Entailment, MLCW&apos;05</title>
+		<meeting>the First International Conference on Machine Learning Challenges: Evaluating Predictive Uncertainty Visual Object Classification, and Recognizing Textual Entailment, MLCW&apos;05<address><addrLine>Berlin, Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,606.72,397.74,8.64;10,117.65,617.50,386.34,8.82;10,117.71,628.46,372.79,8.82" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="10,117.65,617.68,293.29,8.64">Transformer-xl: Attentive language models beyond a fixed-length context</title>
+		<author>
+			<persName coords=""><forename type="first">Zihang</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhilin</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yiming</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jaime</forename><forename type="middle">G</forename><surname>Carbonell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ruslan</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,429.38,617.50,74.62,8.59;10,117.71,628.46,279.27,8.59">Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 57th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="2978" to="2988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,648.61,397.65,8.64;10,117.71,659.39,387.53,8.82;10,117.71,670.53,124.33,8.64" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="10,397.39,648.61,108.26,8.64;10,117.71,659.57,219.61,8.64">The commitmentbank: Investigating projection in naturally occurring discourse</title>
+		<author>
+			<persName coords=""><forename type="first">Marie-Catherine</forename><surname>De Marneffe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mandy</forename><surname>Simons</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Judith</forename><surname>Tonhauser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,357.44,659.39,143.21,8.59">proceedings of Sinn und Bedeutung</title>
+		<meeting>Sinn und Bedeutung</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="107" to="124" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,690.50,396.00,8.64;10,117.96,701.28,386.03,8.82;10,117.96,712.24,386.04,8.59;10,117.41,723.20,286.84,8.82" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="10,398.27,690.50,105.72,8.64;10,117.96,701.46,212.73,8.64">Bert: Pre-training of deep bidirectional transformers for language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Jacob</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming-Wei</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kenton</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kristina</forename><surname>Toutanova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,349.23,701.28,154.76,8.59;10,117.96,712.24,113.51,8.59">Proceedings of the 2019 Conference of the North American Chapter</title>
+		<title level="s" coords="10,218.40,723.20,87.90,8.59">Long and Short Papers</title>
+		<meeting>the 2019 Conference of the North American Chapter</meeting>
+		<imprint>
+			<publisher>the Association for Computational Linguistics</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="4171" to="4186" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,85.34,397.74,8.64;11,117.96,96.12,349.72,8.82" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="11,259.11,85.34,242.53,8.64">Automatically constructing a corpus of sentential paraphrases</title>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>William</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Dolan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Brockett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,128.75,96.12,309.34,8.59">Proceedings of the Third International Workshop on Paraphrasing (IWP2005)</title>
+		<meeting>the Third International Workshop on Paraphrasing (IWP2005)</meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,116.31,397.25,8.64;11,117.96,127.27,386.04,8.64;11,117.96,138.05,386.78,8.82" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="11,212.00,127.27,292.00,8.64;11,117.96,138.23,57.37,8.64">Unified language model pre-training for natural language understanding and generation</title>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nan</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wenhui</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Furu</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hsiao-Wuen</forename><surname>Hon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,193.76,138.05,207.11,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="13042" to="13054" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,158.24,396.17,8.64;11,117.96,169.02,328.30,8.82" xml:id="b16">
+	<monogr>
+		<title level="m" type="main" coords="11,305.72,158.24,198.46,8.64;11,117.96,169.20,161.49,8.64">Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity</title>
+		<author>
+			<persName coords=""><forename type="first">William</forename><surname>Fedus</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Barret</forename><surname>Zoph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2101.03961</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,189.22,396.00,8.64;11,117.96,200.00,386.03,8.82;11,117.96,210.96,386.52,8.82;11,117.96,223.03,248.07,7.01" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="11,379.80,189.22,124.20,8.64;11,117.96,200.18,108.48,8.64">The third PASCAL recognizing textual entailment challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Danilo</forename><surname>Giampiccolo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bernardo</forename><surname>Magnini</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ido</forename><surname>Dagan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bill</forename><surname>Dolan</surname></persName>
+		</author>
+		<ptr target="https://www.aclweb.org/anthology/W07-1401" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,244.61,200.00,259.39,8.59;11,117.96,210.96,70.02,8.59">Proceedings of the ACL-PASCAL Workshop on Textual Entailment and Paraphrasing</title>
+		<meeting>the ACL-PASCAL Workshop on Textual Entailment and Paraphrasing<address><addrLine>Prague</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2007-06">June 2007</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,242.11,366.61,8.64" xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Aaron</forename><surname>Gokaslan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vanya</forename><surname>Cohen</surname></persName>
+		</author>
+		<ptr target="http://Skylion007.github.io" />
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note>Openwebtext corpus</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,262.12,396.16,8.64;11,117.96,272.90,267.75,8.82" xml:id="b19">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1907.11983</idno>
+		<title level="m" coords="11,365.06,262.12,139.11,8.64;11,117.96,273.08,96.04,8.64">A hybrid neural network model for commonsense reasoning</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,293.10,397.65,8.64;11,117.96,303.88,238.02,8.82" xml:id="b20">
+	<monogr>
+		<title level="m" type="main" coords="11,365.34,293.10,140.31,8.64;11,117.96,304.05,65.91,8.64">X-sql: reinforce schema representation with context</title>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaushik</forename><surname>Chakrabarti</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1908.08113</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,324.07,396.00,8.64;11,117.96,335.03,386.04,8.64;11,117.96,345.99,250.72,8.64" xml:id="b21">
+	<monogr>
+		<title level="m" type="main" coords="11,478.60,335.03,25.40,8.64;11,117.96,345.99,220.98,8.64">Music transformer: Generating music with long-term structure</title>
+		<author>
+			<persName coords=""><forename type="first">Cheng-Zhi Anna</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><surname>Simon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Curtis</forename><surname>Hawthorne</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><forename type="middle">M</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Matthew</forename><forename type="middle">D</forename><surname>Hoffman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Monica</forename><surname>Dinculescu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Douglas</forename><surname>Eck</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,366.00,397.38,8.64;11,117.96,376.96,387.69,8.64;11,117.96,387.74,314.04,8.82" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="11,469.53,366.00,35.85,8.64;11,117.96,376.96,387.69,8.64;11,117.96,387.92,78.39,8.64">SMART: Robust and efficient fine-tuning for pre-trained natural language models through principled regularized optimization</title>
+		<author>
+			<persName coords=""><forename type="first">Haoming</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tuo</forename><surname>Zhao</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2020.acl-main.197</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,214.80,387.74,15.35,8.59">ACL</title>
+		<imprint>
+			<date type="published" when="2020-07">July 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,407.93,397.39,8.64;11,117.96,418.71,386.04,8.82;11,117.63,429.67,171.05,8.82" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="11,467.96,407.93,37.42,8.64;11,117.96,418.89,238.79,8.64">Spanbert: Improving pre-training by representing and predicting spans</title>
+		<author>
+			<persName coords=""><forename type="first">Mandar</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Danqi</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yinhan</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Luke</forename><surname>Daniel S Weld</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Omer</forename><surname>Zettlemoyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Levy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="11,364.43,418.71,139.57,8.59;11,117.63,429.67,104.65,8.59">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="64" to="77" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,449.87,396.00,8.64;11,117.96,460.65,387.28,8.82;11,117.96,471.78,90.77,8.64" xml:id="b24">
+	<monogr>
+		<title level="m" type="main" coords="11,452.63,449.87,51.37,8.64;11,117.96,460.82,349.68,8.64">Small-bench nlp: Benchmark for small single gpu trained models in natural language processing</title>
+		<author>
+			<persName coords=""><forename type="first">Raj</forename><surname>Kamal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bhuvana</forename><surname>Kanakarajan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Malaikannan</forename><surname>Kundumani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Sankarasubbu</surname></persName>
+		</author>
+		<idno>ArXiv, abs/2109.10847</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,491.80,396.00,8.64;11,117.96,502.76,386.04,8.64;11,117.65,513.54,388.00,8.59;11,117.96,524.50,387.29,8.82;11,117.96,535.63,22.42,8.64;11,108.00,555.47,396.00,8.82;11,117.96,566.43,95.19,8.82" xml:id="b25">
+	<analytic>
+		<title level="a" type="main" coords="11,469.56,491.80,34.44,8.64;11,117.96,502.76,366.33,8.64">Looking beyond the surface: A challenge set for reading comprehension over multiple sentences</title>
+		<author>
+			<persName coords=""><forename type="first">Daniel</forename><surname>Khashabi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Snigdha</forename><surname>Chaturvedi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Roth</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shyam</forename><surname>Upadhyay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dan</forename><surname>Roth</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1412.6980</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,117.65,513.54,388.00,8.59;11,117.96,524.50,222.93,8.59;11,108.00,555.65,327.35,8.64">Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<meeting>the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</meeting>
+		<imprint>
+			<date type="published" when="2014">2018. 2014</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="252" to="262" />
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Diederik Kingma and Jimmy Ba. Adam: A method for stochastic optimization</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,586.62,396.00,8.64;11,117.79,597.40,245.83,8.82" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="11,336.34,586.62,148.15,8.64">Reformer: The efficient transformer</title>
+		<author>
+			<persName coords=""><forename type="first">Nikita</forename><surname>Kitaev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Anselm</forename><surname>Levskaya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,117.79,597.40,216.77,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,617.59,395.99,8.64;11,117.96,628.37,386.04,8.82;11,117.54,639.33,248.55,8.82" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coords="11,398.31,617.59,105.69,8.64;11,117.96,628.55,167.19,8.64">Race: Large-scale reading comprehension dataset from examinations</title>
+		<author>
+			<persName coords=""><forename type="first">Guokun</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Qizhe</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hanxiao</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yiming</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Eduard</forename><surname>Hovy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,303.81,628.37,200.20,8.59;11,117.54,639.33,164.64,8.59">Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2017 Conference on Empirical Methods in Natural Language Processing</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="785" to="794" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,659.53,397.74,8.64;11,117.60,670.31,386.40,8.82;11,117.63,681.27,190.75,8.82" xml:id="b28">
+	<analytic>
+		<title level="a" type="main" coords="11,117.60,670.49,309.95,8.64">Albert: A lite bert for self-supervised learning of language representations</title>
+		<author>
+			<persName coords=""><forename type="first">Zhenzhong</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mingda</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sebastian</forename><surname>Goodman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kevin</forename><surname>Gimpel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piyush</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Radu</forename><surname>Soricut</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,450.37,670.31,53.63,8.59;11,117.63,681.27,161.70,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,701.46,396.00,8.64;11,117.41,712.24,387.84,8.59;11,117.96,723.38,22.42,8.64" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="11,351.16,701.46,132.93,8.64">The winograd schema challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Hector</forename><surname>Levesque</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ernest</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Leora</forename><surname>Morgenstern</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,117.41,712.24,383.47,8.59">Thirteenth International Conference on the Principles of Knowledge Representation and Reasoning</title>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,85.16,396.00,8.82;12,117.71,96.12,387.94,8.82" xml:id="b30">
+	<analytic>
+		<title level="a" type="main" coords="12,337.82,85.34,126.84,8.64">The Winograd schema challenge</title>
+		<author>
+			<persName coords=""><forename type="first">Hector</forename><forename type="middle">J</forename><surname>Levesque</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ernest</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Leora</forename><surname>Morgenstern</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,482.85,85.16,21.15,8.59;12,117.71,96.12,280.96,8.59">AAAI Spring Symposium: Logical Formalizations of Commonsense Reasoning</title>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">47</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,116.31,396.00,8.64;12,117.96,127.09,386.03,8.82;12,117.68,138.05,134.67,8.82" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coords="12,141.25,127.27,227.89,8.64">On the variance of the adaptive learning rate and beyond</title>
+		<author>
+			<persName coords=""><forename type="first">Liyuan</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haoming</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiawei</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,388.60,127.09,115.40,8.59;12,117.68,138.05,101.20,8.59">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,158.24,396.00,8.64;12,117.96,169.02,387.69,8.82;12,117.96,179.98,386.20,8.82;12,117.96,191.12,382.56,8.64" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coords="12,372.08,158.24,131.92,8.64;12,117.96,169.20,140.47,8.64">Multi-task deep neural networks for natural language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<ptr target="https://www.aclweb.org/anthology/P19-1441" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,277.87,169.02,227.79,8.59;12,117.96,179.98,138.86,8.59">Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 57th Annual Meeting of the Association for Computational Linguistics<address><addrLine>Florence, Italy</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2019-07">July 2019</date>
+			<biblScope unit="page" from="4487" to="4496" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,211.14,397.74,8.64;12,117.60,221.92,378.91,8.82" xml:id="b33">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hoifung</forename><surname>Poon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.08994</idno>
+		<title level="m" coords="12,117.60,222.09,211.28,8.64">Adversarial training for large neural language models</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,242.11,396.00,8.64;12,117.96,253.07,386.04,8.64;12,117.96,263.85,206.59,8.82" xml:id="b34">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Yinhan</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Myle</forename><surname>Ott</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Naman</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingfei</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mandar</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Danqi</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Omer</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mike</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Luke</forename><surname>Zettlemoyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Veselin</forename><surname>Stoyanov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Roberta</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1907.11692</idno>
+		<title level="m" coords="12,354.05,253.07,149.95,8.64;12,117.96,264.03,34.67,8.64">A robustly optimized bert pretraining approach</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,284.04,340.58,8.64" xml:id="b35">
+	<monogr>
+		<title level="m" type="main" coords="12,246.75,284.04,171.02,8.64">Fixing weight decay regularization in adam</title>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Loshchilov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Frank</forename><surname>Hutter</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,304.05,397.74,8.64;12,117.96,315.01,361.80,8.64" xml:id="b36">
+	<monogr>
+		<title level="m" type="main" coords="12,117.96,315.01,331.95,8.64">Coco-lm: Correcting and contrasting text sequences for language model pretraining</title>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chenyan</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Payal</forename><surname>Bajaj</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Saurabh</forename><surname>Tiwary</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Paul</forename><surname>Bennett</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiawei</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xia</forename><surname>Song</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,335.03,396.00,8.64;12,117.96,345.81,151.66,8.82" xml:id="b37">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Merity</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Caiming</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Bradbury</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Richard</forename><surname>Socher</surname></persName>
+		</author>
+		<title level="m" coords="12,405.33,335.03,98.67,8.64;12,117.96,345.81,55.38,8.82">Pointer sentinel mixture models. arXiv</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page">1609</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,366.00,397.65,8.64;12,117.96,376.78,386.03,8.82;12,117.96,387.74,100.17,8.82" xml:id="b38">
+	<monogr>
+		<title level="m" type="main" coords="12,256.26,366.00,249.39,8.64;12,117.96,376.96,316.08,8.64">Erik Cambria, Narjes Nikzad, Meysam Chenaghlu, and Jianfeng Gao. Deep learning based text classification: A comprehensive review</title>
+		<author>
+			<persName coords=""><forename type="first">Shervin</forename><surname>Minaee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nal</forename><surname>Kalchbrenner</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.03705</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,407.93,396.00,8.64;12,117.96,418.71,386.03,8.82;12,117.96,429.67,236.62,8.82" xml:id="b39">
+	<analytic>
+		<title level="a" type="main" coords="12,385.34,407.93,118.66,8.64;12,117.96,418.89,262.57,8.64">Virtual adversarial training: a regularization method for supervised and semi-supervised learning</title>
+		<author>
+			<persName coords=""><forename type="first">Takeru</forename><surname>Miyato</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shin-Ichi</forename><surname>Maeda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Masanori</forename><surname>Koyama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shin</forename><surname>Ishii</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,387.98,418.71,116.01,8.59;12,117.96,429.67,133.79,8.59">IEEE transactions on pattern analysis and machine intelligence</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1979" to="1993" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,449.87,396.17,8.64;12,117.96,460.65,386.04,8.82;12,117.96,471.60,386.04,8.59;12,117.41,482.56,286.84,8.82" xml:id="b40">
+	<analytic>
+		<title level="a" type="main" coords="12,351.14,449.87,153.03,8.64;12,117.96,460.82,211.02,8.64">Wic: the word-in-context dataset for evaluating context-sensitive meaning representations</title>
+		<author>
+			<persName coords=""><forename type="first">Mohammad</forename><surname>Taher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pilehvar</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jose</forename><surname>Camacho-Collados</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,347.38,460.65,156.62,8.59;12,117.96,471.60,113.51,8.59">Proceedings of the 2019 Conference of the North American Chapter</title>
+		<title level="s" coords="12,218.40,482.56,87.90,8.59">Long and Short Papers</title>
+		<meeting>the 2019 Conference of the North American Chapter</meeting>
+		<imprint>
+			<publisher>the Association for Computational Linguistics</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1267" to="1273" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,502.76,396.00,8.64;12,117.96,513.54,279.35,8.82" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coords="12,464.91,502.76,39.09,8.64;12,117.96,513.72,170.81,8.64">Language models are unsupervised multitask learners</title>
+		<author>
+			<persName coords=""><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jeffrey</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rewon</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Luan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dario</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,296.14,513.54,50.44,8.59">OpenAI Blog</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,533.73,397.25,8.64;12,117.39,544.69,386.62,8.64;12,117.96,555.47,386.53,8.82;12,117.96,567.54,230.14,7.01" xml:id="b42">
+	<analytic>
+		<title level="a" type="main" coords="12,279.28,544.69,224.72,8.64;12,117.96,555.65,93.70,8.64">Exploring the limits of transfer learning with a unified text-to-text transformer</title>
+		<author>
+			<persName coords=""><forename type="first">Colin</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adam</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Katherine</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sharan</forename><surname>Narang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Matena</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yanqi</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Peter</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+		</author>
+		<ptr target="http://jmlr.org/papers/v21/20-074.html" />
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,222.78,555.47,161.58,8.59">Journal of Machine Learning Research</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">140</biblScope>
+			<biblScope unit="page" from="1" to="67" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,586.62,396.00,8.64;12,117.96,597.40,386.04,8.82;12,117.96,608.36,201.19,8.82" xml:id="b43">
+	<analytic>
+		<title level="a" type="main" coords="12,387.83,586.62,116.17,8.64;12,117.96,597.58,136.03,8.64">SQuAD: 100,000+ questions for machine comprehension of text</title>
+		<author>
+			<persName coords=""><forename type="first">Pranav</forename><surname>Rajpurkar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Konstantin</forename><surname>Lopyrev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Percy</forename><surname>Liang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,271.62,597.40,232.38,8.59;12,117.96,608.36,127.83,8.59">Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2016 Conference on Empirical Methods in Natural Language Processing</meeting>
+		<imprint>
+			<date type="published" when="2016-11">November 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,628.55,396.00,8.64;12,117.96,639.33,386.04,8.82;12,117.68,650.29,229.67,8.82" xml:id="b44">
+	<analytic>
+		<title level="a" type="main" coords="12,293.47,628.55,210.53,8.64;12,117.96,639.51,37.14,8.64">Know what you don&apos;t know: Unanswerable questions for squad</title>
+		<author>
+			<persName coords=""><forename type="first">Pranav</forename><surname>Rajpurkar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Robin</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Percy</forename><surname>Liang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,177.89,639.33,326.11,8.59;12,117.68,650.29,43.74,8.59">Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics</title>
+		<meeting>the 56th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<publisher>Short Papers</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="784" to="789" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,670.49,397.39,8.64;12,117.60,681.27,386.04,8.82" xml:id="b45">
+	<analytic>
+		<title level="a" type="main" coords="12,377.98,670.49,127.41,8.64;12,117.60,681.44,192.38,8.64">Choice of plausible alternatives: An evaluation of commonsense causal reasoning</title>
+		<author>
+			<persName coords=""><forename type="first">Melissa</forename><surname>Roemmele</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Cosmin</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adrian</forename><surname>Bejan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><forename type="middle">S</forename><surname>Gordon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,328.48,681.27,146.42,8.59">2011 AAAI Spring Symposium Series</title>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,701.46,396.00,8.64;12,117.96,712.24,386.04,8.82;12,117.96,723.20,134.95,8.82" xml:id="b46">
+	<monogr>
+		<title level="m" type="main" coords="12,140.30,712.42,334.46,8.64">Enhancing the transformer with explicit relational encoding for math problem solving</title>
+		<author>
+			<persName coords=""><forename type="first">Imanol</forename><surname>Schlag</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Paul</forename><surname>Smolensky</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Roland</forename><surname>Fernandez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nebojsa</forename><surname>Jojic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jürgen</forename><surname>Schmidhuber</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1910.06611</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,85.34,397.74,8.64;13,117.96,96.12,386.03,8.82;13,117.63,107.08,387.61,8.82;13,117.96,118.22,22.42,8.64" xml:id="b47">
+	<analytic>
+		<title level="a" type="main" coords="13,305.46,85.34,196.43,8.64">Self-attention with relative position representations</title>
+		<author>
+			<persName coords=""><forename type="first">Peter</forename><surname>Shaw</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,129.54,96.12,374.45,8.59;13,117.63,107.08,231.02,8.59">Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<meeting>the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</meeting>
+		<imprint>
+			<publisher>Short Papers</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="464" to="468" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,138.74,397.65,8.64;13,117.96,149.52,386.03,8.82;13,117.96,160.48,100.17,8.82" xml:id="b48">
+	<monogr>
+		<title level="m" type="main" coords="13,490.98,138.74,14.67,8.64;13,117.96,149.70,318.77,8.64">Exploiting structured knowledge in text via graph-guided representation learning</title>
+		<author>
+			<persName coords=""><forename type="first">Tao</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengcheng</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Guodong</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Adam</forename><surname>Trischler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weizhu</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.14224</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,181.18,396.00,8.64;13,117.96,192.14,386.04,8.64;13,117.96,202.92,209.93,8.82" xml:id="b49">
+	<monogr>
+		<title level="m" type="main" coords="13,167.00,192.14,337.00,8.64;13,117.96,203.10,42.87,8.64">Megatron-lm: Training multi-billion parameter language models using gpu model parallelism</title>
+		<author>
+			<persName coords=""><forename type="first">Mohammad</forename><surname>Shoeybi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mostofa</forename><surname>Patwary</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Raul</forename><surname>Puri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Patrick</forename><surname>Legresley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jared</forename><surname>Casper</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bryan</forename><surname>Catanzaro</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1909.08053</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,223.63,396.00,8.64;13,117.96,234.41,277.45,8.82" xml:id="b50">
+	<analytic>
+		<title level="a" type="main" coords="13,178.99,223.63,325.01,8.64;13,117.96,234.59,85.41,8.64">Tensor product variable binding and the representation of symbolic structures in connectionist systems</title>
+		<author>
+			<persName coords=""><forename type="first">Paul</forename><surname>Smolensky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="13,211.21,234.41,83.03,8.59">Artificial intelligence</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="159" to="216" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,255.11,396.00,8.64;13,117.96,266.07,387.78,8.64;13,117.96,276.85,387.78,8.82;13,117.22,287.99,72.23,8.64" xml:id="b51">
+	<analytic>
+		<title level="a" type="main" coords="13,191.80,266.07,309.93,8.64">Recursive deep models for semantic compositionality over a sentiment treebank</title>
+		<author>
+			<persName coords=""><forename type="first">Richard</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Perelygin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jean</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><surname>Chuang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><forename type="middle">D</forename><surname>Manning</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><surname>Ng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Christopher</forename><surname>Potts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,128.79,276.85,357.82,8.59">Proceedings of the 2013 conference on empirical methods in natural language processing</title>
+		<meeting>the 2013 conference on empirical methods in natural language processing</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="1631" to="1642" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,308.51,397.25,8.64;13,117.96,319.29,386.04,8.82;13,117.96,330.25,134.95,8.82" xml:id="b52">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shuohuan</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yukun</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shikun</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xuyi</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xin</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Danxiang</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hua</forename><surname>Hao Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ernie</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1904.09223</idno>
+		<title level="m" coords="13,246.84,319.47,226.67,8.64">Enhanced representation through knowledge integration</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,350.78,396.00,8.82;13,117.96,361.74,100.17,8.82" xml:id="b53">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Trieu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc V</forename><surname>Trinh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Le</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1806.02847</idno>
+		<title level="m" coords="13,244.29,350.96,189.68,8.64">A simple method for commonsense reasoning</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,382.44,396.00,8.64;13,117.96,393.22,386.04,8.82;13,117.96,404.18,167.80,8.82" xml:id="b54">
+	<analytic>
+		<title level="a" type="main" coords="13,244.86,393.40,102.78,8.64">Attention is all you need</title>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Llion</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aidan</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Łukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Illia</forename><surname>Polosukhin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,371.65,393.22,132.35,8.59;13,117.96,404.18,74.02,8.59">Advances in neural information processing systems</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,424.88,396.17,8.64;13,117.96,435.84,386.04,8.64;13,117.96,446.62,387.28,8.82;13,117.96,457.76,26.84,8.64" xml:id="b55">
+	<analytic>
+		<title level="a" type="main" coords="13,241.69,435.84,262.31,8.64;13,117.96,446.80,90.54,8.64">Superglue: A stickier benchmark for general-purpose language understanding systems</title>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yada</forename><surname>Pruksachatkun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nikita</forename><surname>Nangia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanpreet</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julian</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Felix</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Omer</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Samuel</forename><surname>Bowman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,227.78,446.62,207.11,8.59">Advances in neural information processing systems</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="3266" to="3280" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,478.28,397.38,8.64;13,117.60,489.06,388.05,8.82;13,117.96,500.02,270.46,8.82" xml:id="b56">
+	<analytic>
+		<title level="a" type="main" coords="13,483.09,478.28,22.29,8.64;13,117.60,489.24,322.12,8.64">Glue: A multi-task benchmark and analysis platform for natural language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanpreet</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julian</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Felix</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Omer</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Samuel</forename><surname>Bowman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,458.23,489.06,47.43,8.59;13,117.96,500.02,187.44,8.59">7th International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,520.73,397.65,8.64;13,117.96,531.51,386.04,8.82;13,117.96,542.47,104.60,8.82" xml:id="b57">
+	<monogr>
+		<title level="m" type="main" coords="13,433.67,520.73,71.99,8.64;13,117.96,531.69,319.17,8.64">Structbert: Incorporating language structures into pre-training for deep language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bin</forename><surname>Bi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chen</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zuyi</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Liwei</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Luo</forename><surname>Si</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1908.04577</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,563.17,397.74,8.64;13,117.96,573.95,159.58,8.82" xml:id="b58">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Warstadt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanpreet</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Samuel R Bowman</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1805.12471</idno>
+		<title level="m" coords="13,344.29,563.17,157.07,8.64">Neural network acceptability judgments</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,594.65,396.17,8.64;13,117.96,605.43,386.04,8.82;13,117.36,616.39,388.29,8.59;13,117.96,627.35,387.78,8.82;13,117.96,638.49,240.60,8.64" xml:id="b59">
+	<analytic>
+		<title level="a" type="main" coords="13,342.04,594.65,162.13,8.64;13,117.96,605.61,168.08,8.64">A broad-coverage challenge corpus for sentence understanding through inference</title>
+		<author>
+			<persName coords=""><forename type="first">Adina</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nikita</forename><surname>Nangia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Samuel</forename><surname>Bowman</surname></persName>
+		</author>
+		<ptr target="http://aclweb.org/anthology/N18-1101" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,304.78,605.43,199.22,8.59;13,117.36,616.39,388.29,8.59;13,117.96,627.35,15.00,8.59">Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<title level="s" coords="13,183.64,627.35,46.85,8.59">Long Papers</title>
+		<meeting>the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1112" to="1122" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,659.02,397.74,8.64;13,117.60,669.80,386.39,8.82;13,117.96,680.75,217.34,8.82" xml:id="b60">
+	<analytic>
+		<title level="a" type="main" coords="13,117.60,669.97,291.13,8.64">Xlnet: Generalized autoregressive pretraining for language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Zhilin</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zihang</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yiming</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jaime</forename><surname>Carbonell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Russ</forename><forename type="middle">R</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Quoc V</forename><surname>Le</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,427.35,669.80,76.65,8.59;13,117.96,680.75,123.56,8.59">Advances in neural information processing systems</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="5754" to="5764" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="13,108.00,701.46,396.00,8.64;13,117.96,712.24,386.03,8.82;13,117.54,723.20,243.56,8.82" xml:id="b61">
+	<analytic>
+		<title level="a" type="main" coords="13,371.48,701.46,132.52,8.64;13,117.96,712.42,174.50,8.64">Swag: A large-scale adversarial dataset for grounded commonsense inference</title>
+		<author>
+			<persName coords=""><forename type="first">Rowan</forename><surname>Zellers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yonatan</forename><surname>Bisk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Roy</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yejin</forename><surname>Choi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,309.74,712.24,194.26,8.59;13,117.54,723.20,164.64,8.59">Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2018 Conference on Empirical Methods in Natural Language Processing</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="93" to="104" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="14,108.00,85.34,397.74,8.64;14,117.96,96.30,387.78,8.64;14,117.96,107.08,134.13,8.82" xml:id="b62">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Sheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaodong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingjing</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kevin</forename><surname>Duh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Benjamin</forename><surname>Van Durme</surname></persName>
+		</author>
+		<idno>1810.12885</idno>
+		<title level="m" coords="14,117.96,96.30,383.21,8.64">ReCoRD: Bridging the gap between human and machine commonsense reading comprehension</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="14,108.00,126.19,396.00,8.64;14,117.96,137.14,386.04,8.64;14,117.96,147.92,386.04,8.82;14,117.96,158.88,96.03,8.82" xml:id="b63">
+	<analytic>
+		<title level="a" type="main" coords="14,174.34,137.14,329.66,8.64;14,117.96,148.10,105.63,8.64">Aligning books and movies: Towards story-like visual explanations by watching movies and reading books</title>
+		<author>
+			<persName coords=""><forename type="first">Yukun</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ryan</forename><surname>Kiros</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rich</forename><surname>Zemel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ruslan</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Raquel</forename><surname>Urtasun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Antonio</forename><surname>Torralba</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sanja</forename><surname>Fidler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="14,244.65,147.92,259.35,8.59;14,117.96,158.88,22.53,8.59">Proceedings of the IEEE international conference on computer vision</title>
+		<meeting>the IEEE international conference on computer vision</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="19" to="27" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

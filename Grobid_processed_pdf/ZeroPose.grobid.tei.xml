@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,132.42,98.99,347.16,12.90">ZeroPose: CAD-Model-based Zero-Shot Pose Estimation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-08-21">21 Aug 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,86.60,132.14,68.77,10.75"><forename type="first">Jianqiu</forename><surname>Chen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Harbin Institute of Technology</orgName>
+								<address>
+									<settlement>Shenzhen</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,165.82,132.14,74.09,10.75"><forename type="first">Mingshan</forename><surname>Sun</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">SenseTime Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,253.36,132.14,71.21,10.75"><forename type="first">Tianpeng</forename><surname>Bao</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">SenseTime Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,338.01,132.14,48.17,10.75"><forename type="first">Zhao</forename><surname>Rui</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">SenseTime Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,399.63,132.14,49.55,10.75"><forename type="first">Liwei</forename><surname>Wu</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">SenseTime Research</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,462.63,132.14,56.80,10.75"><forename type="first">Zhenyu</forename><surname>He</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Harbin Institute of Technology</orgName>
+								<address>
+									<settlement>Shenzhen</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,132.42,98.99,347.16,12.90">ZeroPose: CAD-Model-based Zero-Shot Pose Estimation</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-08-21">21 Aug 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">3E0B9FC95F29338A0C9D30E6ECB885C2</idno>
+					<idno type="arXiv">arXiv:2305.17934v2[cs.CV]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:07+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this paper, we present a CAD model-based zero-shot pose estimation pipeline called ZeroPose. Existing pose estimation methods remain to require expensive training when applied to an unseen object, which greatly hinders their scalability in the practical application of industry. In contrast, the proposed method enables the accurate estimation of pose parameters for previously unseen objects without the need for training. Specifically, we design a two-step pipeline consisting of CAD model-based zero-shot instance segmentation and a zero-shot pose estimator. For the first step, there is a simple but effective way to leverage CAD models and visual foundation models SAM and Imagebind to segment the interest unseen object at the instance level. For the second step, we based on the intensive geometric information in the CAD model of the rigid object to propose a lightweight hierarchical geometric structure matching mechanism achieving zero-shot pose estimation. Extensive experimental results on the seven core datasets on the BOP challenge show that the proposed zero-shot instance segmentation methods achieve comparable performance with supervised MaskRCNN and the zero-shot pose estimation results outperform the SOTA pose estimators with better efficiency.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Pose estimation plays a crucial role in various robotic and augmented reality applications. Existing deep-learning methods <ref type="bibr" coords="1,90.25,514.07,57.20,8.64" target="#b7">(He et al. 2020</ref><ref type="bibr" coords="1,154.43,514.07,22.69,8.64" target="#b6">(He et al. , 2021;;</ref><ref type="bibr" coords="1,179.61,514.07,67.52,8.64">Sun et al. 2022b;</ref><ref type="bibr" coords="1,249.62,514.07,42.89,8.64;1,54.00,525.03,18.59,8.64" target="#b0">Chen et al. 2023</ref>) achieve remarkable performance for seen objects after absorbing a large amount of training data for each target object. However, when there is a novel (unseen) object introduced, it requires significant time and effort to synthesize or annotate data and re-train the model from scratch. This greatly restricts the universality and scalability of models, and the high time and training costs further hinder the practical application of pose estimation with novel objects. Hence, there is a pressing need for a pose estimation method that enables training once and generalizing to any unseen object during inference, addressing these challenges effectively.</p><p>To improve the generalization of pose estimation methods, some works <ref type="bibr" coords="1,127.80,656.97,65.86,8.64" target="#b15">(Lin et al. 2022;</ref><ref type="bibr" coords="1,196.71,656.97,67.17,8.64" target="#b27">Wang et al. 2019</ref>; Chen  <ref type="bibr" coords="1,319.50,476.34,46.16,8.64">et al. 2020;</ref><ref type="bibr" coords="1,368.95,476.34,58.30,8.64" target="#b14">Li et al. 2022;</ref><ref type="bibr" coords="1,430.55,476.34,88.18,8.64" target="#b16">Manhardt et al. 2020;</ref><ref type="bibr" coords="1,522.03,476.34,35.97,8.64;1,319.50,487.30,45.24,8.64" target="#b17">Manuelli et al. 2019;</ref><ref type="bibr" coords="1,367.57,487.30,61.98,8.64" target="#b28">Wen et al. 2021</ref>) leverage a category-level pose estimation pipeline, which can reduce the requirement of training for different instances in one category. However, generalization capabilities are not guaranteed when object instances that belong to categories are not included in the training data. Since the unlimited and unpredicted categories in the open-world environment of augmented reality (AR) applications, category-level methods become unaffordable. Some methods <ref type="bibr" coords="1,386.60,574.97,73.44,8.64">(Sun et al. 2022a;</ref><ref type="bibr" coords="1,463.59,574.97,74.27,8.64">He et al. 2022a,b)</ref> propose a CAD-model-free based novel object pose estimation pipeline. It estimated the pose based on one or a few userannotated images, and estimate the relative pose transformation by feature descriptor matching of 2D images. For AR applications, the goal of pose estimation is to set the "virtual anchors" of AR effects <ref type="bibr" coords="1,419.25,640.72,71.08,8.64">(Sun et al. 2022a)</ref>. Annotating the poses of target objects at the beginning frames of the video is an efficient and user-friendly way for their systems. While for robotic manipulation in the industry, the target object is typically artificially manufactured, whose CAD model is typically known and easily obtainable. In the robotic grasp-ing task, the CAD model is critical for calculating and planning grab points. Hence, the CAD-model-based pose estimation methods are suitable and urgent for robotic manipulation. Furthermore, since the CAD model does not require any samples from the test scene, the CAD-model-based pose estimation pipeline can be defined as a special type zero-shot setting with CAD model prompt <ref type="bibr" coords="2,191.41,123.23,72.05,8.64" target="#b20">(Park et al. 2020;</ref><ref type="bibr" coords="2,267.15,123.23,25.35,8.64;2,54.00,134.19,42.49,8.64" target="#b18">Okorn et al. 2021)</ref>. Given a CAD model as input, OSOP <ref type="bibr" coords="2,250.59,134.19,41.91,8.64;2,54.00,145.15,44.49,8.64">(Shugurov et al. 2022)</ref> based on 2D images rendering from CAD model to segment the object and estimate the pose by 2D-2D correspondence. However, this pipeline is limited to segmenting only a single instance of each object and cannot handle multi-instance scenes like the bin-picking task. Since the missing instance-level object localization method, the recent zero-shot object poses estimation method Megapose <ref type="bibr" coords="2,264.29,210.90,28.21,8.64;2,54.00,221.86,44.78,8.64" target="#b13">(Labbé et al. 2022)</ref> assumes the instance-level localization provided as input, and estimate pose by online pose hypotheses view rendering and compared with the scene instance. Ignoring the detection of unseen objects affects the application in practice in a zero-shot manner. Additionally, the efficiency of the model is constrained by the abundance of hypotheses.</p><p>To improve the scalability and generalization of pose estimation in the industry, we proposed a CAD-model-based zero-shot estimation method. As shown in Fig 1, it follows the common two steps pipeline <ref type="bibr" coords="2,182.06,320.68,70.99,8.64" target="#b10">(Jiang et al. 2022;</ref><ref type="bibr" coords="2,255.40,320.68,37.10,8.64;2,54.00,331.64,27.68,8.64">Sun et al. 2022b;</ref><ref type="bibr" coords="2,85.36,331.64,74.29,8.64" target="#b13">Labbé et al. 2022)</ref>, where instance location is followed by pose estimation, and the proposed method extends each step into the CAD-model-based zero-shot setting without the need for training when unseen object coming. In the first step, we introduce a simple yet effective method to leverage different visual foundation models to achieve instance segmentation. Specifically, there are three stages, first, extract visual descriptors of the CAD model by rendering in a few views synthetic images and leverage the visual foundation model ImageBind <ref type="bibr" coords="2,172.73,430.27,80.80,8.64" target="#b3">(Girdhar et al. 2023)</ref> to extract features as visual descriptors of this object. Second, we use SAM <ref type="bibr" coords="2,78.84,452.19,84.60,8.64" target="#b11">(Kirillov et al. 2023)</ref> to predict foreground instances as candidates. Third, based on visual descriptors of objects, we filter out interested instance regions and assign the object id as their label achieving instance segmentation. In the 6D pose parameter estimating step, we propose a novel zeroshot pose estimator through geometric structure matching. Unlike existing render-based methods, it offers the advantage of direct 3D structure matching between scene point clouds and CAD models, eliminating the need for rendering images and improving efficiency. During the test time, the proposed hierarchical geometric feature matching module first locates the visible region in the CAD model and based on the geometric feature calculates the 3D-3D correspondences to estimate the pose.</p><p>In summary, our paper makes the following key contributions:</p><p>• Introduction of a fully zero-shot pose estimation pipeline.</p><p>• Proposal of a simple yet effective zero-shot instance segmentation method. • Development of a lightweight zero-shot pose estimator based on hierarchical geometric feature matching. • Extensive experiments show that our proposed segmen-tation method in a zero-shot setting achieves comparable accuracy with the supervised instance segmentation method MaskRCNN and the pose estimation results outperform the SOTA pose estimators with better efficiency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Related Work</head><p>In this section, we will begin by providing an overview of the existing research on the zero-shot instance segmentation problem. Subsequently, we will delve into the extensive research conducted on the unseen object 6D pose estimation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Zero-Shot Instance Segmentation</head><p>Instance segmentation involves predicting a mask for each object and assigning corresponding class labels. It is typically performed as a prerequisite task for 6D pose estimation. However, previous research <ref type="bibr" coords="2,452.41,238.20,64.57,8.64" target="#b30">(Xie et al. 2021;</ref><ref type="bibr" coords="2,519.41,238.20,38.60,8.64;2,319.50,249.16,46.68,8.64">Shugurov et al. 2022;</ref><ref type="bibr" coords="2,369.74,249.16,74.60,8.64" target="#b29">Xiang et al. 2021;</ref><ref type="bibr" coords="2,449.84,246.85,73.20,10.95" target="#b19">Örnek et al. 2023;</ref><ref type="bibr" coords="2,526.60,249.16,31.40,8.64;2,319.50,260.12,48.80,8.64" target="#b11">Kirillov et al. 2023;</ref><ref type="bibr" coords="2,372.91,260.12,65.35,8.64" target="#b31">Zou et al. 2023</ref>) has primarily concentrated on zero-shot semantic segmentation and zero-shot categoryagnostic instance segmentation. Some methods <ref type="bibr" coords="2,515.95,282.03,42.05,8.64;2,319.50,292.99,22.69,8.64" target="#b30">(Xie et al. 2021;</ref><ref type="bibr" coords="2,347.58,290.68,68.76,10.95" target="#b19">Örnek et al. 2023</ref>) leverage the RGB and depth image for unseen object instance segmentation in a semantic category-agnostic manner. OSOP <ref type="bibr" coords="2,456.82,314.91,91.41,8.64">(Shugurov et al. 2022)</ref> is the closest work to ours, which is based on the reference image feature as clues to segment the related object. However, it semantic segmentation pipeline requires there only one instance for each object and is not available in the cluster scene where multiple instances for each object. Inspired by the development of prompt-based universal interfaces for large language models, both SAM <ref type="bibr" coords="2,474.57,391.62,83.44,8.64" target="#b11">(Kirillov et al. 2023)</ref> and SEEM <ref type="bibr" coords="2,367.58,402.58,70.18,8.64" target="#b31">(Zou et al. 2023)</ref> propose a model that is purposefully designed and trained to be promotable. This promotable model exhibits the ability to effectively transfer its knowledge and skills in a zero-shot manner to novel image distributions and tasks.</p><p>However, the aforementioned methods are primarily designed to predict foreground instances or instances associated with specific textual prompts that are not suitable for the pose estimation field. The main reason is the limitations in missing the capabilities of distinguishing the class label (related CAD model) of the candidate instances. In the case of foreground instance segmentation, the method fails to attribute the foreground instance to a specific object without human interaction. In the case of text-prompt instances segmentation, challenges arise in accurately describing complex properties of objects, such as their shape and materials, using natural language. This task requires domain experts with relevant knowledge, especially in specialized fields like industrial manufacturing or robotics applications. Additionally, foundation models may struggle to comprehend these professional descriptions, resulting in difficulties or errors. In summary, the field lacks a dedicated zero-shot instance segmentation method that effectively leverages 3D models</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Unseen Object 6D Pose Estimation</head><p>Category-level pose estimation is proposed to alleviate the expensive training cost in recent methods <ref type="bibr" coords="2,492.40,695.51,65.60,8.64" target="#b15">(Lin et al. 2022;</ref><ref type="bibr" coords="3,54.00,57.48,73.89,8.64" target="#b27">Wang et al. 2019;</ref><ref type="bibr" coords="3,131.68,57.48,71.93,8.64" target="#b1">Chen et al. 2020;</ref><ref type="bibr" coords="3,207.38,57.48,59.76,8.64" target="#b14">Li et al. 2022;</ref><ref type="bibr" coords="3,270.93,57.48,16.18,8.64;3,54.00,68.44,71.58,8.64" target="#b16">Manhardt et al. 2020;</ref><ref type="bibr" coords="3,129.42,68.44,87.08,8.64" target="#b17">Manuelli et al. 2019;</ref><ref type="bibr" coords="3,220.35,68.44,67.87,8.64" target="#b28">Wen et al. 2021)</ref>. When encountering unseen objects, the pipeline only needs to be trained once for each category, instead of training for each individual object. However, this solution remains inapplicable when the category of the object does not exist in the known training categories or there is a significant difference in shape and appearance.</p><p>CAD-model-free pose estimation methods <ref type="bibr" coords="3,249.56,145.59,42.94,8.64;3,54.00,156.55,27.12,8.64">(Sun et al. 2022a;</ref><ref type="bibr" coords="3,85.39,156.55,76.44,8.64">He et al. 2022a,b)</ref> leverage one-shot or few-shot pose-annotated images of the object as a reference to estimate the object pose in query images as the "virtual anchors" of AR effects. Since this pipeline is designed for AR, the target object is arbitrary, the CAD model is unknown and only perform in a video. Therefore, annotating the object poses in a few scene images of the video is an adorable and effective way to perform pose estimation in AR applications. However, in the industrial manufacturing field, objects are typically artificially manufactured, and their CAD models are usually given and critical for robotics to calculate grab points and accessibility detection.</p><p>CAD-model-based pose estimation is introduced in recent methods <ref type="bibr" coords="3,116.88,299.46,94.00,8.64">(Shugurov et al. 2022;</ref><ref type="bibr" coords="3,215.06,299.46,77.45,8.64" target="#b18">Okorn et al. 2021;</ref><ref type="bibr" coords="3,54.00,310.42,76.07,8.64" target="#b13">Labbé et al. 2022)</ref>. Since the CAD model is known and predefined for robotic grasping and not requires any annotated samples from the real scene, these methods can be seen as zero-shot learning. These methods widely adopt a rendering-based method that renders many pose hypothesis views as templates to train the network to distinguish the best pose from image similarity. While this solution is intuitive, it faces a particular efficiency issue. Due to the unpredictable object location and its correlation with appearance, a large number of pose hypothesis samples must be rendered to approximate the object in the scene improving the computational costs. Besides, it can not fully perform on the zero-shot setting and it requires an instance-level localization input provided by the user. Both of them restrict their availability in practical applications. The proposed Ze-roPose introduces a lightweight zero-shot pose estimation method by hierarchical 3D-3D geometric feature matching without the time consumption poses hypothesized rendering shows great improvement for efficiency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Method</head><p>Fig 2 illustrates our detailed implementation of the proposed zero-shot pose estimation pipeline which consists of two steps. We will provide a thorough explanation of the two steps in the following subsections, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CAD model-based Zero-Shot Instance Segmentation</head><p>As indicated by the yellow box in Fig 2, the target of the instance segmentation step is to search all potential instances related to the provided CAD models. To leverage the CAD model clues, we first render the CAD model from different camera views achieving a set of 2D template images. A visual foundation model ImageBind <ref type="bibr" coords="3,196.91,684.56,80.66,8.64" target="#b3">(Girdhar et al. 2023</ref>) is utilized to extract visual features from the template images as the visual clues of the CAD model, which can be presented in F t with shape (N * R, C), where N is the number of all candidate CAD models, R is the number rendered template images and C is the feature dimension for visual foundation model.</p><p>For the scene image, we adopt a category-agnostic segmentation method SAM <ref type="bibr" coords="3,419.81,124.19,79.18,8.64" target="#b11">(Kirillov et al. 2023</ref>) taking a uniform point set as a prompt to generate all foreground masks without labels. Then, similar to the template images, we crop all foreground instances and extract their visual features through the same visual foundation model as the template images. It presents as F s with shape (M, C) where M is the number of foreground masks. To assign the foreground instances with a label id corresponding with their objects, a feature similarity filter module calculates the cosine feature similarity between scene instances F s and template objects F t to filter out the potential instance and label it with the object model ID with the maximum feature similarity. There is the calculation formula,</p><formula xml:id="formula_0" coords="3,383.68,277.97,170.45,26.43">C = F t ∥F t ∥ F s ∥F s ∥ T , (<label>1</label></formula><formula xml:id="formula_1" coords="3,554.13,288.23,3.87,8.64">)</formula><p>where C is the cosine distances matrix with shape (N * R, M ) and any element in it is the score for feature similarity. The instance mask is labeled with the CAD model ID of the highest score rendered image and the instance mask and its label consist of the zero-shot instance segmentation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CAD model-based Zero-Shot Pose Estimator</head><p>As indicated by the green box in Fig 2, the target of the pose estimator is to estimate rigid transformation R, t of the CAD model from the target object's object coordinate systems to the camera coordinate system, where R ∈ SO(3) is a 3D rotation and t ∈ R 3 is a 3D translation.</p><p>Since the CAD model and the depth image of the scene are easy to acquire in the industry application, matching them by 3D-3D point correspondence is an intuitive way. However, in practice, it is challenging to establish point correspondences between them due to two main reasons: (i) diversity in object scale, and (ii) low inlier rate (overlap ratio for two point clouds). There are significant differences in object scale from 2 cm to 47cm in the BOP datasets. The wide range of object size distribution makes it difficult for the network to choose a suitable fixed receptive field scale for matching features to perform 3D-3D matching. For instance, a fixed receptive field scale, such as 0.2 cm, may be too large for tiny objects that lack precise estimation, and potentially too small for large objects that lack distinctiveness. The reason for the low inlier rate is from the visibility. For the CAD model, a set of point clouds O = o i ∈ R 3 | i = 1, . . . , n is uniformly sampled from the surface of the mesh. For the scene points, the mask is applied to index the object region from the depth image and convert it into a scene point cloud S = s i ∈ R 3 | i = 1, . . . , m . The scene point cloud refers to a subset of the CAD model point cloud that contains only the visible region that can be captured. Different viewpoints of the camera will correspond to a specific visible region in the object CAD model. Revisiting the percentage of the visible region in the image within the CAD model, we find that most samples are less than 15%, which leads to a low inlier rate. There are only a few points reliable for matching, and the rest large amount points in the CAD model are outliers disturbing the matching. Besides, the scene point cloud is captured from the depth sensor and cropped from the detection mask, which unavoidably includes some surrounding noisy points. These make it difficult for zero-shot learning methods to be achieved through efficient 3D-3D matching.</p><p>We proposed a novel 3D-3D zero-shot pose estimation method to solve these challenges. It consists of two modules of a dynamic scale module and a hierarchical matching module.</p><p>Dynamic scale module is proposed to solve the object scale problem. Given scene point clouds and the related CAD model point clouds, we first normalize both point clouds into zero-meaned and adopt the radius r O of the circumscribed sphere of the CAD model to scale the coordinates of physical dimensions into unit relative to r O . The relative unit to their r O can well solve the problem of invalid matching due to scale differences. Besides, we take the radius r O as a prior constraint to cluster the scene point through a Mean-Shift algorithm to filter the noisy points. These two operations build a normalized and clean input feeding into the following subsequent hierarchical matching modules.</p><p>Hierarchical matching module is proposed to extract hierarchical point cloud features for 3D-3D matching. As shown in Fig <ref type="figure" coords="5,107.73,79.39,3.74,8.64" target="#fig_2">3</ref>, the high-level feature with a larger receptive field (the red boxes) is utilized to choose the best viewpoint from predefined viewpoints of the CAD model according to the visible region. After that, a low-level feature is applied to find the point-to-point correspondence (green dotted lines) between the predicted visible region of the CAD model and the scene point cloud. The hierarchical design confines the matching scope within the visible area and alleviates the mismatching between visible and invisible regions. Based on the correspondence, we minimize the point cloud distance in Eq (2) to calculate a target R, t through Singular Value Decomposition (SVD). min</p><formula xml:id="formula_2" coords="5,100.12,217.96,192.38,23.50">R,t (oxi,syi)∈C ∥R • o xi + t -s yi ∥ 2 2 ,<label>(2)</label></formula><p>where s yi and o xi are matched corresponding points.</p><p>In order to obtain representative high-level and low-level features, we take the GeoTransformer <ref type="bibr" coords="5,201.96,274.33,64.92,8.64" target="#b21">(Qin et al. 2023)</ref> as our point extraction backbone model, and re-train it on the largescale CAD model dataset GSO <ref type="bibr" coords="5,180.44,296.25,79.20,8.64" target="#b2">(Downs et al. 2022)</ref> to learn viewpoint matching and local geometric structure matching. The backbone model produces features at multiple levels. The high-level features have a larger receptive field and are discriminative, while the low-level features have a smaller receptive field and can provide precise location information. For the training of high-level features, we adopt the overlapaware circle loss <ref type="bibr" coords="5,124.84,372.96,66.26,8.64" target="#b21">(Qin et al. 2023)</ref>, denoted as loss high , to train the model to locate the high overlap region. It selects the visible region of the CAD model and its corresponding scene point cloud area as positive samples. The others that have an overlap of less than a threshold are viewed as negative samples. For the low-level features, the small receptive field can be seen as a point-level feature adopted for Eq (2) to calculate the 3D point correspondences. During the training phase, we adopt the ground truth pose to match the point pairs by the distance within a matching radius, and negative log-likelihood loss loss low to train the network to find the matched pairs. At the inference, we use the prediction correspondences as C and based on the coordinate of points estimate the pose transformation. High-level and low-level features can be simultaneously trained in a network architecture with an equal weight based on their respective loss functions. The final loss is loss = loss high + loss low .</p><p>(3)</p><p>For detailed training methods and specifics, please refer to the implementation details section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experiments Benchmark</head><p>Datasets For the training dataset, we take the GSO <ref type="bibr" coords="5,262.06,651.68,30.44,8.64;5,54.00,662.64,40.45,8.64" target="#b25">(Suresh et al. 2023</ref>) to train our pose estimation module, which contains 1000 3D objects under household scenes and 1 million synthetic images provided by Megapose <ref type="bibr" coords="5,215.12,684.56,73.10,8.64" target="#b13">(Labbé et al. 2022)</ref>.</p><p>For the test datasets, we evaluated our method on the seven core datasets of the BOP challenge <ref type="bibr" coords="5,463.15,57.48,76.67,8.64" target="#b9">(Hodaň et al. 2020)</ref>, including LineMod Occlusion (LMO), T-LESS, TUD-L, IC-BIN, YCB-Video (YCB-V) ITODD, and HomebrewedDB (HB). The first 5 datasets are named BOP 5 usually conduct the ablation study on it and all of them are BOP 7. These datasets are enriched with diverse factors of variation, including scale, texture, symmetry, and household or industrial scenes, which accurately represent the different types of objects typically encountered in daily and robotic scenarios.</p><p>Instance Segmentation Metrics Following the COCO metric and the BOP Challenge, we evaluate the performance of instance segmentation by Mean Average Precision (mAP) which is the mean of AP at different Intersection over Union (IoU=.50:.05:.95) values.</p><p>Pose Estimation Metrics Following <ref type="bibr" coords="5,478.15,222.93,75.56,8.64" target="#b9">(Hodaň et al. 2020)</ref>, in order to measure the accuracy of an estimated pose P in relation to the ground-truth pose P of an object model M , we utilize the mean Average Recall of three pose-error functions, calculated by AR = (AR V SD + AR M SSD + AR M SP D )/3 and more information about evaluation metrics for the threshold to calculate the AR can be obtained from the BOP competition.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation of Zero-Shot Instance Segmentation</head><p>We conduct the experiments on seven BOP Challenge datasets. Since there are no other related methods following the CAD-model-based Zero-Shot Instance Segmentation setting, we select two supervised methods with training by the test objects and implement a text-based zero-shot instance segmentation method for comparison. The Mask RCNN method <ref type="bibr" coords="5,381.10,405.24,56.46,8.64" target="#b4">(He et al. 2017</ref>) is from the CosyPose <ref type="bibr" coords="5,529.79,405.24,28.21,8.64;5,319.50,416.20,42.84,8.64" target="#b12">(Labbe et al. 2020)</ref>, which is trained on the real or synthetic training datasets for each test object. The <ref type="bibr" coords="5,457.37,427.16,100.63,8.64;5,319.50,438.12,23.24,8.64">ZebraPoseSAT (Su et al. 2022)</ref> is the current SOTA method for the instance segmentation task, which leverages a two-stage setting that detection for coarse locating and pose estimation network for refinement. For the text-based zero-shot instance segmentation, we hold the same pipeline with our method and adopt the text embedding of the object name as the template feature, instead of the template image features to evaluate and compare the performance. For the T-LESS, TUD-L, and HB datasets, there are only object IDs without class names provided. As depicted in Tab 1, our CAD-model-based zeroshot instance segmentation method shows obvious performance improvements compared with the text-based method from 14.4 % to 36.5 % and outperforms the Mask RCNN method with training on the test objects.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation of Zero-Shot Pose Estimation</head><p>To evaluate our pose estimation performance, we compared the supervised methods without zero-shot setting and the latest zero-shot pose estimation methods. The zero-shot task can not achieve any object prior which is quite challenging and has performance limitations compared with the supervised method. Since current pose refinement methods can generalize to unseen objects, the most challenge is the pose initialization. Compared with Megapose (Labbé et al.</p><p>Table <ref type="table" coords="6,79.08,55.19,3.88,8.64">1</ref>: Instance segmentation results on the BOP challenge datasets. We report the mAP score at different Intersection over Union (IoU=.50:.05:.95) values. The header "Real" indicates whether training with real scene images. †denotes that no real images are provided for training . * denotes that object name is not provided and we use the object id as an alternative.  <ref type="bibr" coords="6,130.65,535.87,82.25,8.64">Shugurov et al. 2022)</ref>, although its object localization module is zero-shot, the semantic segmentation introduces the restriction of one instance for one object limiting its applicability to scenarios where multiple instances for one object. The proposed ZeroPose not only surpasses OSOP on their provided three datasets but also shows high applicability on the cluster scene which is critical for industry application such as Bin-Picking.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Time Efficiency</head><p>Compared to current zero-shot 6D pose estimation methods, the proposed pose estimation method based on point cloud feature 3D-3D matching eliminates the time-consuming online image rendering operation. As presented in Table <ref type="table" coords="6,269.38,684.56,3.74,8.64" target="#tab_1">3</ref>, our method achieves an impressive pose estimation time of 0.2 </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Implementation Details</head><p>The zero-shot pose estimation pipeline is trained on the SLURM cluster with 8 NVIDIA V100 and inferring on the  <ref type="bibr" coords="7,384.28,128.53,84.57,8.64" target="#b3">(Girdhar et al. 2023)</ref> 51.9</p><p>PC with NVIDIA RTX 3090.</p><p>Foreground Instance Segmentation It adopts the recent SOTA interactive segmentation method SAM <ref type="bibr" coords="7,501.81,186.45,56.20,8.64;7,319.50,197.41,21.44,8.64" target="#b11">(Kirillov et al. 2023)</ref>, uniformly setting 32 points per side of images as the prompt of Decoder to generate the mask of foreground instances and filtering out the tiny regions less than 200 pixels. Besides, the Intersection over Union (IoU) threshold in the NMS mechanism is set to 0.6 for removing the duplicating region in predicting masks.</p><p>Visual Feature Extraction The large-scaled visual foundation model ImageBind <ref type="bibr" coords="7,422.38,274.23,83.22,8.64" target="#b3">(Girdhar et al. 2023)</ref> takes the resized image with shape <ref type="bibr" coords="7,416.04,285.19,20.75,8.64">(224,</ref><ref type="bibr" coords="7,439.62,285.19,17.43,8.64">224,</ref><ref type="bibr" coords="7,459.88,285.19,8.30,8.64">3)</ref> as input to extract the scene images and template images visual features in (N, C) where N is the number of images and C is the feature dimension for 1024 in this experiment. In the text prompt version, we adopt the text embedding of the name of the object provided by their methods as the template feature.</p><p>Hierarchical Matching Mechanism We take the Geo-Transormer <ref type="bibr" coords="7,367.83,362.00,64.99,8.64" target="#b21">(Qin et al. 2023)</ref> as the backbone to extract hierarchical point cloud features and match the potentially visible regions based on the feature from level 4 and points matching based on the feature from level 2. For the input feature, we supply the RGB and normal information as the input feature of point clouds. For the receptive field, the high level is 0.5 * r O , and the low level is 0.1 * r O . It trains on the 10% data amount of the GSO dataset with 80 epochs. At the inference, there are following the same setting of hyperparameters for all the test bop datasets.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>In this paper, we propose a fully zero-shot pose estimation pipeline based on the CAD model. Our pipeline consists of a CAD-model-based zero-shot instance segmentation module to segment the candidate object at the instance level from the scene image and a lightweight zero-shot pose estimator is introduced to estimate the pose transformation between the object coordinate system to the camera coordinate system based on the 3D to 3D hierarchical point cloud structure matching mechanism. In a zero-shot setting, our proposed segmentation method achieves comparable accuracy to the supervised instance segmentation method, MaskRCNN. Additionally, our pose estimation results outperform state-ofthe-art (SOTA) zero-shot pose estimators with improved efficiency.</p><p>There is a limitation in that CAD models are not used as prompts in the zero-shot instance segmentation module because SAM <ref type="bibr" coords="7,369.48,673.60,84.24,8.64" target="#b11">(Kirillov et al. 2023)</ref> only supports text, point, box, and mask prompts. We will try to explore a multimodality model to support CAD model prompts in future work. The proposed pipeline operates fully in a zero-shot setting and demonstrates faster performance compared to previous approaches. This pipeline holds promise for inspiring innovative solutions in various fields, including industrial manufacturing, robotics, and beyond.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="1,319.50,387.00,238.50,9.03;1,319.50,398.35,238.50,8.64;1,319.50,409.31,238.50,8.64;1,319.50,420.26,238.50,8.64;1,319.50,431.22,238.50,8.64;1,319.50,442.18,90.05,8.64;1,319.50,216.00,246.97,160.24"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Overview of ZeroPose pipeline. Given a CAM model of the unseen target object, ZeroPose can (i) segment the instances related to this object from the input image and (ii) estimate each instance 6D pose transformation. The whole pipeline only requires training once and can perform on any unseen objects.</figDesc><graphic coords="1,319.50,216.00,246.97,160.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="4,54.00,380.14,504.00,8.64;4,54.00,391.10,504.00,8.64;4,54.00,402.06,504.00,8.64;4,54.00,413.02,256.18,8.64;4,54.00,81.49,501.07,287.50"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Overview architecture of CAD model-based zero-shot instance segmentation and pose estimator. The first step involves segmenting all candidate instances and classifying their corresponding CAD models using the RGB image as input. The second step leverages the depth image and the predicted mask to generate the scene point cloud and estimates the pose parameter based on the hierarchical geometric feature matching.</figDesc><graphic coords="4,54.00,81.49,501.07,287.50" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="4,319.50,554.25,238.50,8.64;4,319.50,565.21,238.50,8.64;4,319.50,576.17,238.50,8.64;4,319.50,587.13,238.50,8.64;4,319.50,598.09,238.50,8.64;4,319.50,609.04,22.87,8.64;4,319.50,442.72,246.96,100.38"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Hierarchical matching mechanism in the zero-shot pose estimator. A hierarchical geometric feature matching that high-level feature to locate the potentially visible region (red boxes) and predict the point correspondences (green dotted lines) in this region by local structure feature similarity.</figDesc><graphic coords="4,319.50,442.72,246.96,100.38" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="6,54.00,101.56,504.00,442.95"><head>Table 2 :</head><label>2</label><figDesc>Pose estimation results on the BOP challenge datasets. We report the AR score on each of the 7 core datasets in the BOP challenge and the mean score across datasets. The OSOP (rows 8, 9) are based on semantic segmentation with the prior for only one object for each category in the scene. For each column, we denote the best over result in italics and the best zero-shot pose estimation method for each setting block in bold.</figDesc><table coords="6,54.00,101.56,471.00,442.95"><row><cell></cell><cell>Method</cell><cell></cell><cell></cell><cell cols="9">Zero-Shot Real LM-O T-LESS TUD-L IC-BIN ITODD HB YCB-V Mean</cell></row><row><cell cols="4">1 Mask RCNN(He et al. 2017)</cell><cell>✗</cell><cell>✗</cell><cell>37.5</cell><cell>51.7</cell><cell>30.6</cell><cell>31.6</cell><cell cols="3">12.2 47.1 42.9 36.2</cell></row><row><cell cols="4">2 Mask RCNN(He et al. 2017)</cell><cell>✗</cell><cell cols="3">✓ 37.5 † 54.4</cell><cell>48.9</cell><cell cols="4">31.6 † 12.2 † 47.1 † 52.0 40.5</cell></row><row><cell cols="4">3 ZebraPoseSAT(Su et al. 2022)</cell><cell>✗</cell><cell>✗</cell><cell>50.6</cell><cell>62.9</cell><cell>51.4</cell><cell>37.9</cell><cell cols="3">36.1 64.6 62.2 52.2</cell></row><row><cell cols="4">4 ZebraPoseSAT(Su et al. 2022)</cell><cell>✗</cell><cell cols="3">✓ 50.6 † 70.9</cell><cell>70.7</cell><cell cols="4">37.9 † 36.1 † 64.6 † 74.0 57.8</cell></row><row><cell>5</cell><cell cols="2">Text-based</cell><cell></cell><cell>✓</cell><cell>✗</cell><cell>11.8</cell><cell>0.1*</cell><cell>0.2*</cell><cell>18.0</cell><cell>6.8</cell><cell cols="2">0.0* 34.9 14.4</cell></row><row><cell>6</cell><cell>Ours</cell><cell></cell><cell></cell><cell>✓</cell><cell>✗</cell><cell>34.4</cell><cell>32.7</cell><cell>41.4</cell><cell>25.1</cell><cell cols="3">22.4 47.8 51.9 36.5</cell></row><row><cell cols="3">Instance Localization</cell><cell cols="3">Pose Estimation</cell><cell></cell><cell></cell><cell></cell><cell cols="3">BOP Datasets</cell></row><row><cell>Method</cell><cell cols="12">Zero-shot Inst. level Zero-shot Refinement LM-O T-LESS TUD-L IC-BIN ITODD HB YCB-V Mean</cell></row><row><cell>1 CosyPose</cell><cell>✗</cell><cell>✓</cell><cell>✗</cell><cell>✓</cell><cell></cell><cell>63.3</cell><cell>64.0</cell><cell>68.5</cell><cell>58.3</cell><cell cols="3">21.6 65.6 57.4 57.0</cell></row><row><cell>2 DPODv2</cell><cell>✗</cell><cell>✓</cell><cell>✗</cell><cell>✓</cell><cell></cell><cell>63.0</cell><cell>43.5</cell><cell>79.1</cell><cell>45.0</cell><cell cols="3">18.6 71.2 53.2 53.4</cell></row><row><cell>3 SurfEmb</cell><cell>✗</cell><cell>✓</cell><cell>✗</cell><cell>✓</cell><cell></cell><cell>75.8</cell><cell>82.8</cell><cell>85.4</cell><cell>65.6</cell><cell cols="2">49.8 86.7 80.6</cell><cell>75.2</cell></row><row><cell>4 Megapose</cell><cell>✗</cell><cell>✓</cell><cell>✓</cell><cell>-</cell><cell></cell><cell>18.7</cell><cell>19.7</cell><cell>20.5</cell><cell>15.3</cell><cell cols="3">8.00 18.6 13.9 16.2</cell></row><row><cell>5 Ours</cell><cell>✗</cell><cell>✓</cell><cell>✓</cell><cell>-</cell><cell></cell><cell>26.1</cell><cell>24.3</cell><cell>61.1</cell><cell>24.7</cell><cell cols="3">26.4 38.2 29.5 32.6</cell></row><row><cell>6 Megapose</cell><cell>✗</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>58.3</cell><cell>54.3</cell><cell>71.2</cell><cell>37.1</cell><cell cols="3">40.4 75.7 63.3 57.2</cell></row><row><cell>7 Ours</cell><cell>✗</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>56.2</cell><cell>53.3</cell><cell>87.2</cell><cell>41.8</cell><cell cols="3">43.6 68.2 58.4 58.4</cell></row><row><cell>8 OSOP</cell><cell>✓</cell><cell>✗</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>48.2</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>60.5 57.2</cell><cell>-</cell></row><row><cell>9 Ours</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>-</cell><cell></cell><cell>26.0</cell><cell>17.8</cell><cell>41.2</cell><cell>17.7</cell><cell cols="3">38.0 43.9 25.7 25.7</cell></row><row><cell>10 Ours</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>49.1</cell><cell>34.0</cell><cell>74.5</cell><cell>39.0</cell><cell cols="3">42.9 61.0 57.7 51.2</cell></row><row><cell cols="7">2022), our method achieves 15.6% performance gain as the</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">rows 4,5 shown in Tab 2. After adopting the same refiner,</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">our method surpasses Megapose 1.2%. Besides, the mega-</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">pose (Labbé et al. 2022) has a limitation in that it is required</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">a supervised Mask RCNN to locate the candidate object but</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">our method is able to estimate the pose in and fully zero-shot</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">manner with a comparable performance of 51.2%. Com-</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>pared with OSOP (</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="6,319.50,456.87,238.50,247.29"><head>Table 3 :</head><label>3</label><figDesc>Time efficiency for zero-shot pose estimation on the YCB-V dataset. It can prepare the rendered images for each CAD model in seconds, suitable for applications such as AR with high requirements for onboarding time. The second strategy St.2 is an improved version for industry applications with high precision requirements. It increases the number of candidate poses to catch as different as possible appearances of objects and leverages the BlenderProc to synthetic more realistic images. Besides, we use K-means as a cluster to remove the similar appearance samples. While ensuring sample diversity, the computational overhead of the execution has been reduced. The experiment results show that both two strategies achieve adorable performance and the offline strategy achieves 3% additional advance. To show the potential of zero-shot pose estimation in the industry, we choose St.2 with 128 for the following pose estimation step.</figDesc><table coords="6,319.50,492.33,238.50,189.90"><row><cell>Method</cell><cell>Runtime per object (s)</cell></row><row><cell>Megapose(Labbé et al. 2022)</cell><cell>2.5</cell></row><row><cell>Ours</cell><cell>0.3</cell></row><row><cell cols="2">seconds per object, which is ten times faster than the current</cell></row><row><cell cols="2">state-of-the-art zero-shot method(Labbé et al. 2022).</cell></row><row><cell>Ablation Study</cell><cell></cell></row><row><cell cols="2">Comparison of the template images generation methods.</cell></row><row><cell cols="2">To investigate the effect of template image generation meth-</cell></row><row><cell cols="2">ods, we conduct an experiment on Tab 4. There are two types</cell></row><row><cell cols="2">of render strategies provided. The first strategy St.1 is a fast</cell></row><row><cell cols="2">employment version that renders the image by Pyrender pro-</cell></row><row><cell cols="2">gram with some predefined uniform sampling pose (Nguyen</cell></row><row><cell>et al. 2022).</cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="7,54.00,198.80,238.50,353.61"><head>Table 4 :</head><label>4</label><figDesc>Instance segmentation results for different render methods and views on the YCB-V dataset.</figDesc><table coords="7,54.00,234.26,238.50,318.15"><row><cell cols="4">Number Memory (MB) AP (%)</cell></row><row><cell>St.1</cell><cell>42 162 642</cell><cell>0.16 0.64 2.51</cell><cell>47.5 48.1 48.9</cell></row><row><cell>St.2</cell><cell>32 128</cell><cell>0.13 0.50</cell><cell>51.2 51.9</cell></row><row><cell cols="4">Effect of dynamic scale module and hierarchical match-</cell></row><row><cell cols="4">ing module To validate the effectiveness of the proposed</cell></row><row><cell cols="4">dynamic scale module and hierarchical matching module,</cell></row><row><cell cols="4">we conduct an ablation study on these modules. As demon-</cell></row><row><cell cols="4">strated in Tab 5, this hierarchical matching method is able to</cell></row><row><cell cols="4">improve the matching accuracy and shows 9% improvement</cell></row><row><cell cols="4">by removing the most outlier regions. The dynamic scale</cell></row><row><cell cols="4">module holds a stable scale of receptive fields for matched</cell></row><row><cell cols="4">features to advance the performance into 50.2 for the BOP 5</cell></row><row><cell>datasets.</cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="4">Comparison of Different Visual Foundation Models</cell></row><row><cell cols="4">The visual feature extraction foundation models depend on</cell></row><row><cell cols="4">the accuracy and robustness of the label selection in the zero-</cell></row><row><cell cols="4">shot instance segmentation step. There is an experiment for</cell></row><row><cell cols="4">two different foundation modules SLIP (Mu et al. 2022) (an</cell></row><row><cell cols="4">advanced version of CLIP (Radford et al. 2021)) and Image-</cell></row><row><cell cols="4">Bind (Girdhar et al. 2023) (a recent multi-modal pertaining</cell></row><row><cell cols="4">method). The results in Tab 6 show that a larger and stronger</cell></row><row><cell cols="4">foundation model increases the average precision and recall</cell></row><row><cell>significantly.</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="7,54.00,616.37,238.50,82.32"><head>Table 5</head><label>5</label><figDesc></figDesc><table coords="7,54.00,616.37,238.50,82.32"><row><cell cols="3">: Abalation study for dynamic scale module and hi-</cell></row><row><cell cols="3">erarchical matching module on the BOP 5 datasets</cell></row><row><cell cols="3">Dynamic scale Hierarchical matching AR(%)</cell></row><row><cell>-</cell><cell>-</cell><cell>17.1</cell></row><row><cell>-</cell><cell>✓</cell><cell>26.1</cell></row><row><cell>✓</cell><cell>✓</cell><cell>50.2</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="7,319.50,55.19,214.64,81.98"><head>Table 6 :</head><label>6</label><figDesc>Comparison of different visual foundation models on the YCB-V dataset, with the evaluation metrics of AP for instance segmentation.</figDesc><table coords="7,342.69,101.61,168.28,35.56"><row><cell>Visual Model</cell><cell>AP (%)</cell></row><row><cell>SLIP(Mu et al. 2022)</cell><cell>36.6</cell></row><row><cell>ImageBind</cell><cell></cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="8,54.00,139.97,238.50,7.77;8,54.00,149.93,238.50,7.77;8,54.00,159.73,238.50,7.93;8,54.00,169.69,67.74,7.73" xml:id="b0">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2210.10959</idno>
+		<title level="m" coords="8,221.19,149.93,71.31,7.77;8,54.00,159.89,171.10,7.77">Geo6D: Geometric Constraints Learning for 6D Pose Estimation</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,183.52,238.50,7.77;8,54.00,193.48,238.50,7.77;8,54.00,203.28,73.22,7.93" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="8,54.00,193.48,238.50,7.77;8,54.00,203.44,31.61,7.77">Category level object pose estimation via neural analysis-bysynthesis</title>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Geiger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Hilliges</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,102.06,203.28,20.13,7.73">ECCV</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,217.11,238.50,7.77;8,54.00,227.07,238.50,7.77;8,54.00,237.03,238.50,7.77;8,54.00,246.83,238.50,7.93;8,54.00,256.80,113.07,7.93" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="8,266.10,227.07,26.40,7.77;8,54.00,237.03,238.50,7.77;8,54.00,246.99,18.06,7.77">Google scanned objects: A high-quality dataset of 3d scanned household items</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Downs</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Francis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Koenig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Kinman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Hickman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Reymann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">B</forename><surname>Mchugh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Vanhoucke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,88.50,246.83,204.00,7.73;8,54.00,256.80,40.31,7.73">2022 International Conference on Robotics and Automation (ICRA)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="2553" to="2560" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,270.62,238.50,7.77;8,54.00,280.58,238.50,7.77;8,54.00,290.38,238.50,7.93;8,54.00,300.35,206.00,7.93" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="8,168.92,280.58,123.57,7.77;8,54.00,290.55,57.07,7.77">Imagebind: One embedding space to bind them all</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Girdhar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>El-Nouby</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">V</forename><surname>Alwala</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Joulin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Misra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,128.32,290.38,164.18,7.73;8,54.00,300.35,148.41,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+			<biblScope unit="page" from="15180" to="15190" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,314.17,238.50,7.77;8,54.00,323.97,238.50,7.93;8,54.00,333.93,104.60,7.93" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="8,260.86,314.17,31.64,7.77;8,54.00,324.13,15.88,7.77">Mask R-CNN</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Gkioxari</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Dollár</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Girshick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,94.03,323.97,198.47,7.73;8,54.00,333.93,56.39,7.73">Proceedings of the IEEE international conference on computer vision</title>
+		<meeting>the IEEE international conference on computer vision</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="2961" to="2969" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,347.76,238.50,7.77;8,54.00,357.72,238.50,7.77;8,54.00,367.52,238.50,7.93;8,54.00,377.49,72.31,7.73" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="8,54.00,357.72,238.50,7.77;8,54.00,367.68,103.76,7.77">2022a. OnePose++: Keypoint-Free One-Shot Object Pose Estimation without CAD Models</title>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,176.01,367.52,116.49,7.73;8,54.00,377.49,68.48,7.73">Advances in Neural Information Processing Systems</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,391.31,238.50,7.77;8,54.00,401.27,238.50,7.77;8,54.00,411.07,238.50,7.73;8,54.00,421.04,118.74,7.93" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="8,268.58,391.31,23.91,7.77;8,54.00,401.27,224.07,7.77">Ffb6d: A full flow bidirectional fusion network for 6d pose estimation</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,54.00,411.07,238.50,7.73;8,54.00,421.04,70.12,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="3003" to="3013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,434.86,238.50,7.77;8,54.00,444.82,238.50,7.77;8,54.00,454.62,238.50,7.93;8,54.00,464.59,200.57,7.93" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="8,54.00,444.82,238.50,7.77;8,54.00,454.78,55.35,7.77">Pvn3d: A deep point-wise 3d keypoints voting network for 6dof pose estimation</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,128.74,454.62,163.76,7.73;8,54.00,464.59,143.17,7.73">Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE/CVF conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="11632" to="11641" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,478.41,238.50,7.77;8,54.00,488.21,211.19,7.93" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="8,238.31,478.41,54.18,7.77;8,54.00,488.37,169.89,7.77">2022b. FS6D: Few-Shot 6D Pose Estimation of Novel Objects</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,240.54,488.21,19.73,7.73">CVPR</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,502.04,238.50,7.77;8,54.00,512.00,238.50,7.77;8,54.00,521.80,238.50,7.93;8,54.00,531.76,238.50,7.73;8,54.00,541.89,68.49,7.77" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="8,216.86,512.00,75.64,7.77;8,54.00,521.96,89.59,7.77">BOP challenge 2020 on 6D object localization</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Hodaň</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Sundermeyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Drost</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Labbé</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Brachmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Michel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Rother</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Matas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,160.40,521.80,132.10,7.73;8,54.00,531.76,19.51,7.73">Computer Vision-ECCV 2020 Workshops</title>
+		<meeting><address><addrLine>UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2020-08-23">2020. August 23-28, 2020</date>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="577" to="594" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,555.55,238.50,7.77;8,54.00,565.51,238.50,7.77;8,54.00,575.31,238.50,7.93;8,54.00,585.28,137.42,7.73" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="8,54.00,565.51,238.50,7.77;8,54.00,575.47,83.95,7.77">Uni6D: A Unified CNN Framework without Projection Breakdown for 6D Pose Estimation</title>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,146.54,575.31,145.96,7.73;8,54.00,585.28,133.04,7.73">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,599.10,238.50,7.77;8,54.00,609.06,238.50,7.77;8,54.00,618.86,191.41,7.93" xml:id="b11">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Kirillov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Mintun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Ravi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Rolland</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Gustafson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Whitehead</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">C</forename><surname>Berg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W.-Y</forename><surname>Lo</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.02643</idno>
+		<title level="m" coords="8,54.00,619.02,63.26,7.77">Segment anything</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="8,54.00,632.69,238.50,7.77;8,54.00,642.49,238.50,7.93;8,54.00,652.45,238.50,7.73" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="8,254.63,632.69,37.87,7.77;8,54.00,642.65,201.14,7.77">CosyPose: Consistent multi-view multi-object 6D pose estimation</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Labbe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Carpentier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Aubry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sivic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,276.47,642.49,16.03,7.73;8,54.00,652.45,234.05,7.73">Proceedings of the European Conference on Computer Vision (ECCV)</title>
+		<meeting>the European Conference on Computer Vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,54.00,666.27,238.50,7.77;8,54.00,676.24,238.50,7.77;8,54.00,686.20,238.50,7.77;8,54.00,696.00,71.22,7.93" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="8,54.00,686.20,238.50,7.77;8,54.00,696.16,30.72,7.77">MegaPose: 6D Pose Estimation of Novel Objects via Render &amp; Compare</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Labbé</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Manuelli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mousavian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Tyree</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Birchfield</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Tremblay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Carpentier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Aubry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fox</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sivic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,102.05,696.00,18.54,7.73">CoRL</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,58.13,238.50,7.77;8,319.50,68.09,238.50,7.77;8,319.50,77.89,238.50,7.94;8,319.50,88.01,20.17,7.77" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="8,319.50,68.09,238.50,7.77;8,319.50,78.05,36.00,7.77">Polarmesh: A star-convex 3d shape approximation for object pose estimation</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Shugurov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Busam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ilic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,365.60,77.89,142.65,7.73">IEEE Robotics and Automation Letters</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="4416" to="4423" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,100.66,238.50,7.77;8,319.50,110.62,238.50,7.77;8,319.50,120.43,127.00,7.93" xml:id="b15">
+	<monogr>
+		<title level="m" type="main" coords="8,319.50,110.62,238.50,7.77;8,319.50,120.59,87.79,7.77">Single-Stage Keypoint-Based Category-Level Object Pose Estimation from an RGB Image</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Tremblay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Tyree</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">A</forename><surname>Vela</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Birchfield</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note>In ICRA</note>
+</biblStruct>
+
+<biblStruct coords="8,319.50,133.23,238.50,7.77;8,319.50,143.20,238.50,7.77;8,319.50,153.16,238.50,7.77;8,319.50,162.96,196.65,7.93" xml:id="b16">
+	<monogr>
+		<title level="m" type="main" coords="8,450.03,143.20,107.96,7.77;8,319.50,153.16,238.50,7.77;8,319.50,163.12,68.70,7.77">CPS++: Improving class-level 6D pose and shape estimation from monocular images with selfsupervised learning</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Manhardt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Busam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Nickel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Meier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Minciullo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Ji</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Navab</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2003.05848</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="8,319.50,175.77,238.50,7.77;8,319.50,185.73,238.50,7.77;8,319.50,195.53,20.67,7.73;8,319.50,208.34,238.50,7.77;8,319.50,218.15,238.50,7.93;8,319.50,228.11,238.50,7.73;8,319.50,238.07,238.50,7.93;8,319.50,250.88,238.50,7.77;8,319.50,260.84,238.50,7.77;8,319.50,270.64,238.50,7.93;8,319.50,280.61,238.50,7.73;8,319.50,290.57,30.63,7.73" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="8,530.43,175.77,27.57,7.77;8,319.50,185.73,221.74,7.77;8,520.23,208.34,37.77,7.77;8,319.50,218.31,175.26,7.77;8,345.26,260.84,212.74,7.77;8,319.50,270.80,204.12,7.77">Templates for 3D Object Pose Estimation Revisited: Generalization to New objects and Robustness to Occlusions</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Manuelli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Florence</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Tedrake</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Kirillov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Wagner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><forename type="middle">N</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Salzmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Lepetit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,522.14,218.15,35.87,7.73;8,319.50,228.11,173.96,7.73;8,399.92,238.07,83.36,7.73;8,541.97,270.64,16.03,7.73;8,319.50,280.61,238.50,7.73;8,319.50,290.57,26.25,7.73">Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</title>
+		<meeting>IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)<address><addrLine>Tel Aviv, Israel</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2019">2019. 2022. October 23-27, 2022. 2022</date>
+			<biblScope unit="page" from="529" to="544" />
+		</imprint>
+	</monogr>
+	<note>Computer Vision-ECCV 2022: 17th European Conference</note>
+</biblStruct>
+
+<biblStruct coords="8,319.50,303.38,238.50,7.77;8,319.50,313.18,238.50,7.93;8,319.50,323.14,228.94,7.93" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="8,507.23,303.38,50.77,7.77;8,319.50,313.34,98.29,7.77">Zephyr: Zeroshot pose hypothesis rating</title>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Okorn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hebert</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Held</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,436.86,313.18,121.14,7.73;8,319.50,323.14,147.21,7.73">2021 IEEE International Conference on Robotics and Automation (ICRA)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="14141" to="14148" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,321.24,333.87,236.75,9.85;8,319.50,345.91,238.50,7.77;8,319.50,355.72,238.50,7.93;8,319.50,365.68,86.66,7.73" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="8,440.89,345.91,117.11,7.77;8,319.50,355.88,174.30,7.77">SupeRGB-D: Zero-shot Instance Segmentation in Cluttered Indoor Environments</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">P</forename><surname>Örnek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">K</forename><surname>Krishnan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gayaka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C.-H</forename><surname>Kuo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Sen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Navab</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Tombari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,504.03,355.72,53.98,7.73;8,319.50,365.68,83.28,7.73">IEEE Robotics and Automation Letters</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,378.49,238.50,7.77;8,319.50,388.45,238.50,7.77;8,319.50,398.25,238.50,7.93;8,319.50,408.21,238.50,7.93;8,319.50,418.34,24.66,7.77" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="8,532.10,378.49,25.89,7.77;8,319.50,388.45,238.50,7.77;8,319.50,398.41,108.34,7.77">Latentfusion: End-to-end differentiable reconstruction and rendering for unseen object pose estimation</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mousavian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fox</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,447.70,398.25,110.30,7.73;8,319.50,408.21,204.31,7.73">Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE/CVF conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="10710" to="10719" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,430.99,238.50,7.77;8,319.50,440.95,238.50,7.77;8,319.50,450.75,238.50,7.93;8,319.50,460.71,126.28,7.73" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coords="8,367.74,440.95,190.26,7.77;8,319.50,450.91,126.47,7.77">GeoTransformer: Fast and Robust Point Cloud Registration With Geometric Transformer</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Qin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ilic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,451.98,450.75,106.02,7.73;8,319.50,460.71,122.86,7.73">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,473.52,238.50,7.77;8,319.50,483.48,238.50,7.77;8,319.50,493.45,238.50,7.77;8,319.50,503.25,238.50,7.93;8,319.50,513.37,26.66,7.77;8,319.50,526.02,238.50,7.77;8,319.50,535.82,225.31,7.93;8,319.50,548.63,238.50,7.77;8,319.50,558.59,238.50,7.77;8,319.50,568.39,238.50,7.93;8,319.50,578.36,238.50,7.73;8,319.50,588.32,68.00,7.93" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="8,319.50,493.45,238.50,7.77;8,319.50,503.41,13.75,7.77;8,498.70,526.02,59.30,7.77;8,319.50,535.98,183.39,7.77;8,449.21,558.59,108.79,7.77;8,319.50,568.56,165.58,7.77">Zebrapose: Coarse to fine surface encoding for 6dof object pose estimation</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Hallacy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Goh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Mishkin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Clark</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,348.24,503.25,161.75,7.73;8,520.16,535.82,19.73,7.73;8,503.84,568.39,54.17,7.73;8,319.50,578.36,238.50,7.73;8,319.50,588.32,19.86,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2021">2021. 2022. 2022</date>
+			<biblScope unit="page" from="6738" to="6748" />
+		</imprint>
+	</monogr>
+	<note>International conference on machine learning</note>
+</biblStruct>
+
+<biblStruct coords="8,319.50,601.13,238.50,7.77;8,319.50,611.09,238.50,7.77;8,319.50,620.89,101.61,7.93" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="8,353.47,611.09,204.52,7.77;8,319.50,621.05,59.85,7.77">2022a. OnePose: One-Shot Object Pose Estimation without CAD Models</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,396.45,620.89,19.73,7.73">CVPR</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,633.70,238.50,7.77;8,319.50,643.66,238.50,7.77;8,319.50,653.47,165.54,7.93" xml:id="b24">
+	<monogr>
+		<title level="m" type="main" coords="8,403.79,643.66,154.20,7.77;8,319.50,653.63,37.37,7.77">Uni6Dv2: Noise Elimination for 6D Pose Estimation</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2208.06416</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="8,319.50,666.27,238.50,7.77;8,319.50,676.24,238.50,7.77;8,319.50,686.04,238.50,7.93" xml:id="b25">
+	<analytic>
+		<title level="a" type="main" coords="8,351.36,676.24,206.64,7.77;8,319.50,686.20,70.36,7.77">MidasTouch: Monte-Carlo inference over distributions across sliding touch</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Suresh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Si</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Kaess</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Mukadam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,407.73,686.04,110.21,7.73">Conference on Robot Learning</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+			<biblScope unit="page" from="319" to="331" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,319.50,696.16,26.66,7.77" xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><surname>Pmlr</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,58.13,238.50,7.77;9,54.00,68.09,238.50,7.77;9,54.00,77.89,238.50,7.94;9,54.00,87.85,238.50,7.73;9,54.00,97.81,61.02,7.94" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coords="9,105.41,68.09,187.08,7.77;9,54.00,78.05,147.81,7.77">Normalized object coordinate space for categorylevel 6d object pose and size estimation</title>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Sridhar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Valentin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">J</forename><surname>Guibas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="9,223.31,77.89,69.19,7.73;9,54.00,87.85,238.50,7.73;9,54.00,97.81,12.95,7.73">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="2642" to="2651" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,110.43,238.50,7.77;9,54.00,120.39,238.50,7.77;9,54.00,130.19,151.58,7.93" xml:id="b28">
+	<monogr>
+		<title level="m" type="main" coords="9,258.13,110.43,34.37,7.77;9,54.00,120.39,238.50,7.77;9,54.00,130.35,23.76,7.77">Catgrasp: Learning category-level task-relevant grasping in clutter from simulation</title>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Wen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Lian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Bekris</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Schaal</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2109.09163</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="9,54.00,142.81,238.50,7.77;9,54.00,152.77,238.50,7.77;9,54.00,162.57,187.71,7.93" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="9,260.13,142.81,32.37,7.77;9,54.00,152.77,234.66,7.77">Learning rgb-d feature embeddings for unseen object instance segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mousavian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fox</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="9,63.71,162.57,109.33,7.73">Conference on Robot Learning</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="461" to="470" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,175.19,238.50,7.77;9,54.00,184.99,238.50,7.93;9,54.00,194.95,141.96,7.93" xml:id="b30">
+	<analytic>
+		<title level="a" type="main" coords="9,251.20,175.19,41.30,7.77;9,54.00,185.15,185.26,7.77">Unseen object instance segmentation for robotic environments</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mousavian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fox</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,247.28,184.99,45.23,7.73;9,54.00,194.95,69.24,7.73">IEEE Transactions on Robotics</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1343" to="1359" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,54.00,207.56,238.50,7.77;9,54.00,217.37,238.50,7.93;9,54.00,227.33,67.74,7.73" xml:id="b31">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.06718</idno>
+		<title level="m" coords="9,78.47,217.53,154.34,7.77">Segment everything everywhere all at once</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

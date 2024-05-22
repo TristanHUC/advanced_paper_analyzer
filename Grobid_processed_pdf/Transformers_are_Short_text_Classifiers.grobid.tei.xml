@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,173.54,115.90,268.29,12.68">Transformers are Short-text Classifiers</title>
+				<funder ref="#_33NMbgy">
+					<orgName type="full">German Federal Ministry of Education and Research (BMBF)</orgName>
+				</funder>
+				<funder ref="#_wyPgVzy">
+					<orgName type="full">Ministry of Science, Research and the Arts Baden-Württemberg</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-08-11">11 Aug 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName coords="1,151.42,153.69,52.18,8.80"><forename type="first">Fabian</forename><surname>Karl</surname></persName>
+							<email>fabian.karl@uni-ulm.de</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Universität Ulm</orgName>
+								<address>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,173.54,115.90,268.29,12.68">Transformers are Short-text Classifiers</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-08-11">11 Aug 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">ECF2F711E3AE5B983ECC1FBCEDDB805E</idno>
+					<idno type="arXiv">arXiv:2211.16878v3[cs.CL]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:07+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Text Classification</term>
+					<term>Transformer</term>
+					<term>BERT</term>
+					<term>GNN</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Short text classification is a crucial and challenging aspect of Natural Language Processing. For this reason, there are numerous highly specialized short text classifiers. A variety of approaches have been employed in short text classifiers such as convolutional and recurrent networks. Also many short text classifier based on graph neural networks have emerged in the last years. However, in recent short text research, State of the Art (SOTA) methods for traditional text classification, particularly the pure use of Transformers, have been unexploited. In this work, we examine the performance of a variety of short text classifiers as well as the top performing traditional text classifier on benchmark datasets. We further investigate the effects on two new real-world short text datasets in an effort to address the issue of becoming overly dependent on benchmark datasets with a limited number of characteristics. The datasets are motivated from a real-world use case on classifying goods and services for tax auditing. NICE is a classification system for goods and services that divides them into 45 classes and is based on the Nice Classification of the World Intellectual Property Organization. The Short Texts Of Products and Services (STOPS) dataset is based on Amazon product descriptions and Yelp business entries. Our experiments unambiguously demonstrate that Transformers achieve SOTA accuracy on short text classification tasks, raising the question of whether specialized short text techniques are necessary. The NICE dataset showed to be particularly challenging and makes a good benchmark for future advancements.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Text classification is a crucial aspect of Natural Language Processing (NLP), and extensive research in this field is being conducted. Many researchers are working to improve the speed, accuracy, or robustness of their algorithms. Traditional text classification, however, does not take some traits into account that appear in numerous real-world applications, such as short text. Therefore, studies have been conducted specifically on short texts <ref type="bibr" coords="1,321.11,620.19,15.49,8.80" target="#b36">[37,</ref><ref type="bibr" coords="1,336.60,620.19,11.62,8.80" target="#b45">46]</ref>. From user-generated content like social media to business data like accounting records, short text covers a wide range of topics. For example, the division into goods and services (see Section 4.1) is an important part of the tax audit. Currently, an auditor checks whether the element descriptions match the appropriate class of good or service. Since this can be very time-consuming, it is desirable to bring it into a semiautomatic context with the help of classifiers. Also, the subdivision into more specific classes can be useful for determining whether a given amount for an entry in the accounting records is reasonable.</p><p>Since short texts are typically only one to two sentences long, they lack context and therefore pose a challenge for text classification. In order to get better results, many short text classifiers also operate in a transductive setup <ref type="bibr" coords="2,436.87,203.17,15.90,8.80" target="#b39">[40,</ref><ref type="bibr" coords="2,452.77,203.17,11.92,8.80" target="#b36">37,</ref><ref type="bibr" coords="2,464.69,203.17,11.92,8.80" target="#b41">42]</ref>, which includes the test set during training. However, as they need to be retrained each time new data needs to be classified, those transductive models are not very suitable for real-world applications. The results of both transductive and the generally more useful inductive short text classifier are typically unsatisfactory due to the challenge that short text presents. Recent studies on short texts have emphasized specialized models <ref type="bibr" coords="2,259.45,274.91,16.66,8.80" target="#b39">[40,</ref><ref type="bibr" coords="2,276.11,274.91,12.49,8.80" target="#b31">32,</ref><ref type="bibr" coords="2,288.61,274.91,12.49,8.80" target="#b45">46,</ref><ref type="bibr" coords="2,301.10,274.91,12.49,8.80" target="#b34">35,</ref><ref type="bibr" coords="2,313.59,274.91,12.49,8.80" target="#b36">37,</ref><ref type="bibr" coords="2,326.09,274.91,12.49,8.80" target="#b41">42]</ref> to address the issues associated with the short text length. However, State of the Art (SOTA) text classification methods, particularly the pure use of Transformers, have been unexploited. In this work, the effectiveness on short texts is examined and tested by means of benchmark datasets. We also introduce two new, realistic datasets in the domain of goods and services descriptions. Our contributions are in summary:</p><p>-We provide a comparison of various modern text classification techniques.</p><p>In particular, specialized short text methods are compared with the top performing traditional text classification models. -We introduce two new real-world datasets in the goods and services domain to cover additional dataset characteristics in a realistic use-case. -Transformers achieve SOTA accuracy on short text classification tasks. This questions the need of specialized short text classifier.</p><p>Below, we summarize the related work. Section 3 provides a description of the models that were selected for our experiments. The experimental apparatus is described in Section 4. An overview of the achieved results is reported in Section 5. Section 6 discusses the results, before we conclude.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Related Work</head><p>Despite the fact that Bag of Words (BoW)-based models have long represented the cutting edge in text classification, attention has recently shifted to sequencebased and, more recently, graph-based concepts. However, BoW-based models continue to offer a solid baseline <ref type="bibr" coords="2,277.73,584.33,9.96,8.80" target="#b6">[7]</ref>. For example in fastText <ref type="bibr" coords="2,401.26,584.33,15.49,8.80" target="#b11">[12]</ref> the average of the trained word representations are used as text representation and then fed into a linear classifier. This results in an efficient model for text classification.</p><p>To give an overview of the various concepts, Section 2.1 provides various works in the field of sequence-based models, Section 2.2 discusses graph-based models, and Section 2.3 examines how these concepts are applied to short text. Finally, a summary of the findings from the related work is presented in Section 2.4.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Sequence-based Models</head><p>For any NLP task, Recurrent Neural Networks (RNN) and Long short-term memory (LSTM) are frequently used and a logical choice because both models learn historical information while taking location information for all words into account <ref type="bibr" coords="3,191.40,175.10,15.49,8.80" target="#b15">[16,</ref><ref type="bibr" coords="3,206.89,175.10,11.62,8.80" target="#b21">22]</ref>. Since RNNs must be computed sequentially and cannot be computed in parallel, the use of Convolutional Neural Networks (CNNs) is also common <ref type="bibr" coords="3,174.71,199.01,15.49,8.80" target="#b15">[16,</ref><ref type="bibr" coords="3,190.21,199.01,11.62,8.80" target="#b32">33]</ref>. The text must be represented as a set of vectors that are concatenated into a matrix in order to be used by CNNs. The standard CNN convolution and pooling operations can then be applied to this matrix. TextCNN <ref type="bibr" coords="3,465.10,222.92,15.49,8.80" target="#b13">[14]</ref> uses this in combination with pretrained word embeddings for sentence-level classification tasks. While CNN-based models extract the characteristics from the convolution kernels, the relationship between the input words is captured by RNN-based models <ref type="bibr" coords="3,220.19,270.74,14.61,8.80" target="#b15">[16]</ref>. An important turning point in the advancement of NLP technologies was the introduction of Bidirectional Encoder Representations from Transformers (BERT) <ref type="bibr" coords="3,233.27,294.65,14.61,8.80" target="#b33">[34]</ref>. By performing extensive pre-training in an unsupervised manner and automatically mining semantic knowledge, BERT learns to produce contextualized word vectors that have a global semantic representation. The effectiveness of BERT-like models for text classification is demonstrated by Galke and Scherp <ref type="bibr" coords="3,214.82,342.48,9.96,8.80" target="#b6">[7]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Graph-based Models</head><p>Recently, text classification has paid a lot of attention to graph-based models, particularly Graph Neural Networks (GNNs) <ref type="bibr" coords="3,337.22,405.00,11.62,8.80" target="#b2">[3,</ref><ref type="bibr" coords="3,348.84,405.00,11.62,8.80" target="#b35">36,</ref><ref type="bibr" coords="3,360.46,405.00,11.62,8.80" target="#b26">27]</ref>. This is due to the fact that tasks with rich relational structures benefit from the powerful representation capabilities of GNNs, which preserve global structure information <ref type="bibr" coords="3,442.15,428.91,14.61,8.80" target="#b35">[36]</ref>. The task of text classification offers this rich relational structure because text can be modeled as edges and nodes in a graph structure. There are different ways to represent the documents in a graph structure, but two main approaches have emerged <ref type="bibr" coords="3,173.03,476.73,15.49,8.80" target="#b35">[36,</ref><ref type="bibr" coords="3,188.52,476.73,11.62,8.80" target="#b36">37]</ref>. The first approach builds a graph for each document using words as nodes and structural data, such as word co-occurence data, as edges. However, only local structural data is used. The task is constructed as a whole graph classification problem in order to classify the text. A popular document-level approach is HyperGAT <ref type="bibr" coords="3,226.47,524.55,10.51,8.80" target="#b4">[5]</ref> which uses a dual attention mechanism and hypergraphs applied to documents to learn text embeddings. The second approach creates a graph for the entire corpus using words and documents as nodes. The text classification task is now a node classification task for the unlabeled document nodes. The drawback of this method is that models using it are inherently transductive. For example, TextGCN <ref type="bibr" coords="3,267.52,584.33,15.49,8.80" target="#b40">[41]</ref> uses this concept by employing a standard Graph Convolutional Networks (GCN) on this heterogeneous graph. Following TextGCN, Lin et al. <ref type="bibr" coords="3,224.51,608.24,15.49,8.80" target="#b17">[18]</ref> propose BertGCN, a model that makes use of BERT to initialize representations for the document nodes in order to combine the benefits of both the large-scale pretraining of BERT and the transductive TextGCN. However, the increase provided by this method is limited to datasets with long average text lengths. Zeng et al. <ref type="bibr" coords="3,277.58,656.06,15.49,8.80" target="#b42">[43]</ref> also experiment with combining TextGCN and BERT in the form of TextGCN-Bert-serial-SB, a Simplified-Boosting Ensemble, where BERT is only trained on the TextGCN's misclassification. Which model is applied to which document is determined by a heuristic based on the node degree of the test document. However, TextGCN-CNN-serial-SB, which substitutes TextCNN for BERT, yields better results. By using a joint training mechanism, TextING <ref type="bibr" coords="4,250.01,178.71,15.49,8.80" target="#b44">[45]</ref> and BERT are trained on sub-word tokens and base their predictions on the results of the two models. In contrast to applying each model separately, this produces better results. Another approach combining graph classifiers with BERT is ContTextING <ref type="bibr" coords="4,333.69,214.58,14.61,8.80" target="#b10">[11]</ref>. ContTextING utilizes a joint training mechanism to create a unified model that incorporates both documentwise contextual information from a BERT-style model and node interactions within a document through the use of a GNN module. The predictions for the text classification task are determined by combining the output from both of these modules.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Short Text Models</head><p>Of course, short texts can also be classified using the methods discussed above. However, this is challenging because short texts tend to lack context and adhere to less strict syntactic structure <ref type="bibr" coords="4,278.14,345.22,14.61,8.80" target="#b36">[37]</ref>. This has led to the emergence of specialized techniques that focus on improving the results for short text. Early works focused on sentence classification using methods like Support Vector Machines (SVM) <ref type="bibr" coords="4,169.22,381.09,14.61,8.80" target="#b27">[28]</ref>. A survey by Galke et al. <ref type="bibr" coords="4,309.27,381.09,10.51,8.80" target="#b5">[6]</ref> compared SVM and other classical methods like Naive Bayes and kNN with multi-layer perceptron models (MLP) on short text classification. Other works on sentence classification used Convolutional Neural Networks (CNN) <ref type="bibr" coords="4,272.49,416.95,15.90,8.80" target="#b34">[35,</ref><ref type="bibr" coords="4,288.38,416.95,11.92,8.80" target="#b43">44,</ref><ref type="bibr" coords="4,300.30,416.95,11.92,8.80" target="#b12">13]</ref>, which showed strong performance on benchmark datasets. Recently, also methods exploiting graph neural networks were adopted to the needs of short text. For instance, Heterogeneous Graph Attention networks (HGAT) <ref type="bibr" coords="4,249.32,452.82,15.49,8.80" target="#b39">[40]</ref> is a powerful semi-supervised short text classifier. This was the first attempt to model short texts as well as additional information like topics gathered from a Latent Dirichlet Allocation (LDA) <ref type="bibr" coords="4,414.60,476.73,10.51,8.80" target="#b0">[1]</ref> and entities retrieved from Wikipedia with a Heterogeneous Information Network (HIN). To achieve this, a HIN embedding with a dual-level attention mechanism for nodes and their relations was used. For the semantic sparsity of short text, both the additional information and the captured relations are beneficial. A transductive and an inductive HGAT model were released, with the transductive model being better on every dataset. NC-HGAT <ref type="bibr" coords="4,291.12,548.46,15.49,8.80" target="#b31">[32]</ref> expands the HGAT model to produce a more robust variant. Neighbor contrastive learning is based on the premise that documents that are connected have a higher likelihood of sharing a class label and, as a result, should therefore be closer in feature space. In order to represent the additional information, SHINE <ref type="bibr" coords="4,289.00,596.28,15.49,8.80" target="#b36">[37]</ref> also makes use of a heterogenous graph. In contrast, SHINE generates component graphs in the form of word, entity, and Part Of Speech (POS) graphs and creates a dynamically learned short document graph by employing hierarchical pooling over all component graphs. In the semi-supervised setting, SHINE outperforms HGAT as a strong transductive model. SimpleSTC (Simple Short Text Classification) <ref type="bibr" coords="4,390.81,656.06,15.49,8.80" target="#b46">[47]</ref> is a graph-based method for short-text classification similar to SHINE. But instead of constructing the word-graph only over the data corpus itself, SimpleSTC employs a global corpus to create a reference graph that shall enrich and help to understand the short text in the smaller corpus. As global corpus, articles from Wikipedia are used. The authors sample 20 labeled documents per class as training set and validation set. Short-Text Graph Convolutional Networks (STGCN) <ref type="bibr" coords="5,439.80,178.71,15.49,8.80" target="#b41">[42]</ref> is an additional short text classifier. A graph of topics, documents, and unique words is the foundation of STGCN. Although the STGCN results by themselves are not particularly strong, the impact of pre-trained word vectors obtained by BERT was also examined. The classification of the STGCN is significantly enhanced by the combination of STGCN with BERT and a Bi-LSTM.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Summary</head><p>Graph neural network-based methods are widely used in short text classification. However, in recent short text research, SOTA text classification methods, particularly the pure use of Transformers, have been unexploited. The majority of short text models are transductive. The crucial drawback of being transductive is that every time new data needs to be classified, the model must be retrained.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Selected Models for Our Comparison</head><p>We begin with models for short text classification in Section 3.1 and then Section 3.2 introduces a selection of top-performing models for text classification. Following Galke and Scherp <ref type="bibr" coords="5,267.53,415.25,9.96,8.80" target="#b6">[7]</ref>, we have excluded works that employ nonstandard datasets only, use different measures, or are otherwise not comparable. For example, regarding short text classification there are works that are applied on non-standard datasets only <ref type="bibr" coords="5,270.25,451.11,15.49,8.80" target="#b9">[10,</ref><ref type="bibr" coords="5,285.74,451.11,11.62,8.80" target="#b47">48]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Models for Short Text Classification</head><p>The models listed below either make claims about their ability to categorize short texts or were designed with that specific goal. The SECNN <ref type="bibr" coords="5,443.77,512.60,15.49,8.80" target="#b34">[35]</ref> is a text classification model built on CNNs that was created specifically for short texts with few and insufficient semantic features. Wang et al. <ref type="bibr" coords="5,418.76,536.51,15.49,8.80" target="#b34">[35]</ref> suggested four components to address this issue. In order to achieve better coverage on the word vector table, they used an improved Jaro-Winkler similarity during preprocessing to identify any potential spelling mistakes. Second, they use a CNN model built on the attention mechanism to look for words that are related. Third, in order to accomplish the goal of short text semantic expansion, the external knowledgebase Probase <ref type="bibr" coords="5,276.89,608.24,15.49,8.80" target="#b37">[38]</ref> is used to enhance the semantic features of short text. Finally, the classification process is performed using a straightforward CNN with a Softmax output layer.</p><p>The Sequential Graph Neural Network (SGNN) <ref type="bibr" coords="5,364.45,644.10,15.49,8.80" target="#b45">[46]</ref> is a GNN-based model that emphasizes the propagation of features based on sequences. By training each document as a separate graph, it is possible to learn the words' local and sequential features. GloVe's <ref type="bibr" coords="6,258.01,130.89,15.49,8.80" target="#b22">[23]</ref> pre-trained word embedding is utilized as a semantic feature of words. In order to update the feature matrix for each document graph, a Bi-LSTM is used to extract the contextual feature of each word. After that, a simplified GCN aggregates the features of neighboring word nodes. Additionally, Zhao et al. <ref type="bibr" coords="6,231.14,178.71,15.49,8.80" target="#b45">[46]</ref> introduce two variants: Extended-SGNN (ESGNN), in which the initial contextual feature of words is preserved, and C-BERT, in which the Bi-LSTM is swapped for BERT.</p><p>The Deep Attention Diffusion Graph Neural Network (DADGNN) <ref type="bibr" coords="6,454.53,214.58,15.49,8.80" target="#b20">[21]</ref> is a graph-based method that combats the oversmoothing problem of GNNs and allows stacking more layers by utilizing attention diffusion and decoupling techniques. This decoupling technique is also very advantageous for short texts because it obtains distinct hidden features in deep graph networks.</p><p>The Long short-term memory (LSTM) <ref type="bibr" coords="6,324.22,274.35,9.96,8.80" target="#b8">[9]</ref>, which is frequently used in text classification, has a bidirectional variant called Bi-LSTM <ref type="bibr" coords="6,387.44,286.31,14.61,8.80" target="#b18">[19]</ref>. Due to its strong results for short texts <ref type="bibr" coords="6,234.35,298.26,16.13,8.80" target="#b45">[46,</ref><ref type="bibr" coords="6,250.48,298.26,12.09,8.80" target="#b21">22]</ref> and years of use as the SOTA method for many tasks, this model is a good baseline for our purpose.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Top-performing Models for Text Classification</head><p>An overview of the top text classification models that excel on texts of all lengths and were not specifically created with short texts in mind is provided in this section. We employ the base models for the Transformers.</p><p>The Bidirectional Encoder Representations from Transformers (BERT) <ref type="bibr" coords="6,470.07,393.04,10.51,8.80" target="#b3">[4]</ref> is a language representation model that is based on the Transformer architecture <ref type="bibr" coords="6,155.05,416.95,14.61,8.80" target="#b33">[34]</ref>. Encoder-only models, such as BERT, rely solely on the encoder component of the Transformer architecture, whereby the text sequences are converted into rich numerical representations <ref type="bibr" coords="6,292.43,440.86,14.61,8.80" target="#b32">[33]</ref>. These models are well suited for text classification due to this representation. BERT is designed to incorporate a token's left and right contexts into its computed representation. This is commonly referred to as bidirectional attention.</p><p>The Robustly optimized BERT approach (RoBERTa) <ref type="bibr" coords="6,397.10,488.69,15.48,8.80" target="#b19">[20]</ref> is a systematically improved BERT adaptation. In the Robustly optimized BERT approach (RoBERTa) model, the pre-training strategy was changed and training was done on larger batches with more data, to increase BERT's performance.</p><p>To improve BERT and RoBERTa models, Decoding-enhanced BERT with disentangled attention (DeBERTa) <ref type="bibr" coords="6,299.46,548.46,10.51,8.80" target="#b7">[8]</ref> makes two architectural adjustments. The first is the disentangled attention mechanism, which encodes the content and location of each word using two vectors. The content of the token at position i is represented by H i and the relative position i|j between the token at position i and j are represented by P i|j . The equation for determining the cross attention score is as follows: A i,j = H i H T j + H i P T j|i + P i|j H T j + P i|j P T j|i . The second adjustment is an enhanced mask decoder that uses absolute positions in the decoding layer to predict masked tokens during pre-training. For masked token prediction, DeBERTa includes the absolute position after the transform layers but before the softmax layer. In contrast, BERT incorporates the position embedding into the input layer. As a result, DeBERTa is able to capture the relative position in all Transformer layers. Sun et al. <ref type="bibr" coords="7,196.29,142.89,15.49,8.80" target="#b30">[31]</ref> proposed ERNIE 2.0, a continuous pre-training framework that builds and learns pre-training tasks through continuous multi-task learning. This allows the extraction of additional valuable lexical, syntactic, and semantic information in addition to co-occurring information, which is typically the focus.</p><p>The concept behind DistilBERT <ref type="bibr" coords="7,303.83,190.76,15.49,8.80" target="#b24">[25]</ref> is to leverage knowledge distillation to produce a more compact and faster version of BERT while retaining most of its language understanding capacities. DistilBERT reduces the size of BERT by 40%, is 60% faster, and still retains 97% of its language understanding capabilities. In order to accomplish this, DistilBERT optimizes the following three objectives while using the BERT model as a teacher: (1) Distillation loss: The model was trained to output probabilities equivalent to those of the BERT base model. ( <ref type="formula" coords="7,173.24,274.44,4.24,8.80">2</ref>) Masked Language Modeling (MLM): As described by Devlin et al. <ref type="bibr" coords="7,470.08,274.44,10.51,8.80" target="#b3">[4]</ref> for the BERT model, the common pre-training using masked language modeling is being used. (3) Cosine embedding loss: The model was trained to align the DistilBERT and BERT hidden state vectors.</p><p>A Lite BERT (ALBERT) <ref type="bibr" coords="7,272.71,322.31,15.49,8.80" target="#b14">[15]</ref> is a Transformer that uses two parameterreduction strategies to save memory and speed up training by sharing the weights of all layers across its Transformer. This model is therefore particularly effective for longer texts. During pretraining, ALBERTv2 employs MLM and Sentence-Order Prediction (SOP), which predicts the sequence of two subsequent text segments.</p><p>WideMLP <ref type="bibr" coords="7,205.33,394.08,10.51,8.80" target="#b6">[7]</ref> is a BoW-Based Multilayer Perceptron (MLP) with a single wide hidden layer of 1, 024 Rectified Linear Units (ReLUs). This model serves as a useful benchmark against which we can measure actual scientific progress.</p><p>InducTive Graph Convolutional Networks for Text classification (InducT-GCN) <ref type="bibr" coords="7,168.73,441.95,15.49,8.80" target="#b35">[36]</ref> is a GCN-based method that categorically rejects any information or statistics from the test set. To achieve the inductive setup, InducT-GCN represents document vectors with a weighted sum of word vectors and applies TF-IDF weights instead of representing document nodes with one-hot vectors. A two-layer GCN is employed for training, with the first layer learning the word embeddings and the second layer in the dimension of the dataset's classes outputs into a softmax activation function.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Experimental Apparatus</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Datasets</head><p>First, we describe the benchmark datasets. Second, we introduce our new datasets in the domain of goods and services. The characteristics are denoted in Table <ref type="table" coords="7,472.85,602.03,3.87,8.80" target="#tab_0">1</ref>.</p><p>Benchmark Datasets Six short text benchmark datasets, namely R8, MR, SearchSnippets, Twitter, TREC, and SST-2, are used in our experiments. The  The data set was derived from a potential use case in the form of Amazon descriptions and Yelp business entries, making it the most realistic. Like NICE, STOPS has a binary version STOPS-2. Both datasets provide novel characteristic properties that the benchmark datasets did not cover. In particular, the number of fine-granular classes presents a challenge that is not addressed by common benchmarks. For details on the class distribution of these datasets, please refer to Figure <ref type="figure" coords="9,230.77,519.30,3.87,8.80" target="#fig_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Preprocessing</head><p>To create NICE, the WIPO<ref type="foot" coords="9,255.30,568.28,3.97,6.16" target="#foot_2">9</ref> classification data was converted to lower case, all punctuation was removed, and side information that was enclosed in brackets was also removed. Additionally, accents were dropped. Following a random shuffle, the data was divided into 70% train and 30% test.</p><p>As product and service entries for STOPS, we use the product descriptions of MAVE 10 [39] and the business names of YELP 11 . Due to the different data sources, these also had to be preprocessed differently. All classes' occurrences in the MAVE data were counted, and 5, 000 sentences from each of the 20 most common classes were chosen. The multi-label categories for the YELP data were broken down into a list of single label categories, and the sentences were then mapped to the most common single label that each one has. In order to prevent any label from taking up too much of the dataset, the data was collected such that there is a maximum of 1, 200 documents per label. After that, all punctuation was dropped, the data was converted to lower case, and accents were also dropped. The data was split into train and test in a 70 : 30 ratio after being randomly shuffled.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Procedure</head><p>The best short text classifier and text classification models were retrieved from the literature (see description of the models in Section 3). The accuracy scores were extracted in order to establish a comparison. Own experiments, particularly using various Transformers, were conducted in order to compare them. Investigations into the impacts of hyperparameters on short texts were performed. More details about these are provided in Section 4.4. In order to test the methods in novel contexts, we also created two new datasets, whereby STOPS stands out due to its much higher quantity of documents.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">Hyperparameter Optimization</head><p>Our experiments for BERT, DistilBERT, and WideMLP used the hyperparameter from Galke and Scherp <ref type="bibr" coords="10,258.44,468.49,9.96,8.80" target="#b6">[7]</ref>. The parameters for BERT and DistilBERT are a learning rate of 5 • 10 -5 , a batch size of 128, and fine-tuning for 10 epochs. WideMLP was trained for 100 epochs with a learning rate of 10 -3 , a batch size of 16, and a dropout of 0.5. For ERNIE 2.0 and ALBERTv2, we make use of the SST-2 values that Sun et al. <ref type="bibr" coords="10,259.38,516.31,15.49,8.80" target="#b30">[31]</ref> and Lan et al. <ref type="bibr" coords="10,341.51,516.31,14.61,8.80" target="#b14">[15]</ref>, respectively, published. For our hyperparameter selection for DeBERTa and RoBERTa, we used the BERT values from Galke and Scherp <ref type="bibr" coords="10,268.19,540.22,10.51,8.80" target="#b6">[7]</ref> as a starting point and investigated the effect of smaller learning rates. This resulted in learning rates of 2 • 10 -5 for DeBERTa and 4 • 10 -5 for RoBERTa while maintaining the other parameters. For comparison, we followed the same procedure to create ERNIE 2.0 (optimized), which yields a learning rate of 25•10 -6 . The Bi-LSTM values from Zhao et al. <ref type="bibr" coords="10,442.74,588.04,15.49,8.80" target="#b45">[46]</ref> were used for both the LSTM and the Bi-LSTM model. We used DADGNN with the default parameters of 0.5 dropout, 10 -6 weight decay, and two attention heads for all datasets.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5">Metrics</head><p>Accuracy is used to measure the classification of short text. For multi-class cases, the subset accuracy is calculated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Results</head><p>The accuracy scores for the text classification models on the six benchmark datasets are shown in Table <ref type="table" coords="11,266.96,225.23,3.87,8.80" target="#tab_1">2</ref>. The findings demonstrate that the relatively straightforward models LSTM, Bi-LSTM, and WideMLP provide a strong baseline across all datasets. This comparison clearly demonstrates the limitations of some models, with InducT-GCN falling short in all datasets except SearchSnippets, SECNN underperforming on TREC, and DADGNN producing weak MR results in our own experiment. The Transformer models, on the other hand, are the best performing across all datasets with the exception of SearchSnippets. With consistently strong performance across all datasets, DeBERTa stands out in particular. The graph-based models from Zhao et el. <ref type="bibr" coords="11,385.28,320.87,14.61,8.80" target="#b45">[46]</ref>, SGNN, ESGNN, and C-BERT, all perform well for the datasets for which results are available and ESGNN even outperforms all other models for SearchSnippets. It is important to note that Zhao et al. <ref type="bibr" coords="11,264.72,356.73,15.49,8.80" target="#b45">[46]</ref> used a modified training split and additional preprocessing. While an increase of about 5 percentage points for MR could be obtained by extending ESGNN with BERT in C-BERT, the increase is not noticeable for other datasets. When applied to short texts, the inductive models even outperform transductive models. On Twitter, ERNIE 2.0 and ALBERTv2 reach a performance of 99.97%, and when using BERT on the TREC dataset, a performance of 99.4% is obtained. Non-Transformer models also perform well on TREC, although Transformers outperform them. For the graph-based models SHINE and InducT-GCN, we also calculated the mean and standard deviation of the accuracy scores across 5 runs. This is motivated from the observation that models based on graph-neural networks are susceptible to the initialization of the embeddings <ref type="bibr" coords="11,207.35,488.24,14.61,8.80" target="#b25">[26]</ref>. SHINE had a generally high standard deviation of up to nearly 5 points, indicating greater variance in its performance. In comparison, InducT-GCN has a rather small variance of always below 1 point.</p><p>The accuracy results for our newly introduced datasets, NICE and STOPS, are shown in Table <ref type="table" coords="11,226.05,536.51,3.87,8.80" target="#tab_2">3</ref>. New characteristics covered by NICE and STOPS include shorter average lengths and the ability to distinguish between classes at a fine-granular level in NICE-45 and STOPS-41. The investigation of more documents is also conducted in the case of STOPS. As a result, NICE-45 and STOPS-41 reveal that DADGNN encounters issues when dealing with more classes, even falling around 20 and 60 percent points behind the baseline models. While still performing worse than the baseline models, InducT-GCN outperforms DADGNN on all four datasets. Transformers once again demonstrate their strength and rank as the top performing models across all datasets on this dataset. There are also significant drops. ERNIE 2.0 performs worse than the baseline models with 45.55% on NICE-45. However, ERNIE 2.0 (optimized),  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Discussion</head><p>Graph-based models are computationally expensive because they require not only the creation of the graph but also its training, which can be resource-and time-intensive, especially for word-document graphs with O(N 2 ) space <ref type="bibr" coords="13,450.24,512.60,9.96,8.80" target="#b6">[7]</ref>. On STOPS, this drawback becomes very apparent. We could observe that DADGNN required roughly 30 hours of training time, while BERT only took 30 minutes to fine-tune with the same resources. Although in the case of BERT, the pretraining was already very expensive, transfer learning allows this effort to be used for a variety of tasks. Nevertheless, the Transformers outperform the inductive graph-based models as well as the short text models, with just one exception. The best model for SearchSnippets is ESGNN, but additional preprocessing and a modified training split were employed. Our Bi-LSTM results, obtained without additional preprocessing, differ by 16.66 percentage points from the Bi-LSTM results from Zhao et el. <ref type="bibr" coords="13,238.65,632.15,14.61,8.80" target="#b45">[46]</ref>. This indicates that preprocessing, and not a better model, is primarily responsible for the strong outcomes of the SearchSnippets experiments. Another interesting discovery can be made using the sentiment datasets. In comparison to other datasets, the Transformers outperform graphbased models that do not utilize a Transformer themselves by a large margin. This demonstrates that graph-based models may not be as effective at sentiment prediction tasks. In contrast, the CNN-based models show strong performance on the sentiment analysis task SST-2. Still, the best CNN model is more than 6 points below the best transformer. However, it should be noted that not all Transformers are consistently excellent. For instance, for NICE-45, one can observe a lower performance with ERNIE 2.0. But the absence of this performance decrease in our optimized version of ERNIE 2.0 (optimized) suggests that choosing suitable hyperparameters is crucial in this case.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1">Key Results</head><p>Our experiments unambiguously demonstrate that Transformers achieve SOTA accuracy on short text classification tasks. This raises the question of whether specialized short text techniques are necessary given that the performance of the existing models is insufficient. This observation is especially interesting because many of the short text models used are from 2021 <ref type="bibr" coords="14,366.77,321.31,16.52,8.80" target="#b39">[40,</ref><ref type="bibr" coords="14,383.28,321.31,12.39,8.80" target="#b45">46,</ref><ref type="bibr" coords="14,395.67,321.31,12.39,8.80" target="#b20">21,</ref><ref type="bibr" coords="14,408.06,321.31,12.39,8.80" target="#b34">35]</ref> or 2022 <ref type="bibr" coords="14,462.33,321.31,14.61,8.80" target="#b31">[32]</ref>.</p><p>Most short text models attempt to enrich the documents with some kind of external context, such as a knowledge base or POS tags. However, one could argue that Transformers implicitly contain context in their weights through their pre-training.</p><p>Those short text models that compare themselves to Transformers assert that they outperform them. For instance, Ye et al. <ref type="bibr" coords="14,370.30,393.04,15.49,8.80" target="#b41">[42]</ref> claim to outperform BERT by 2.2 percentage points on MR, but their fine-tuned BERT only achieves 80.3%. In contrast, our own experiments show that BERT achieves 86.94%. With 85.86% on MR, Zhao et al. <ref type="bibr" coords="14,289.05,428.91,15.49,8.80" target="#b45">[46]</ref> achieve better BERT results, but only to beat it by a meager 0.2% with C-BERT. Given the low surplus, they would no longer outperform it with a marginally better selection of hyperparameters for BERT. Therefore, it is reasonable to assume that the importance of good hyperparameters for Transformers is underestimated and that they are often not properly optimized. ERNIE 2.0 (optimized), which outperforms ERNIE 2.0 on every dataset, also demonstrates the effect of better hyperparameters. Finally, Zhao et al. <ref type="bibr" coords="14,182.60,512.60,15.49,8.80" target="#b45">[46]</ref> is already outperformed by other transformers like RoBERTa and DeBERTa by 3 and 4 points, respectively.</p><p>Additionally, there is a need for new short text datasets because the widely used benchmark datasets share many characteristics and fall short in many use cases. The common benchmark datasets all contain around 10, 000 documents, distinguish only a few classes, and frequently have a similar average length. Furthermore, many of them cover the same tasks. For instance, MR, Twitter, and SST-2 all perform sentiment prediction, which makes sense given how much short text is produced by social media. In this paper, we introduce two new datasets with distinctive attributes to cover more cases in NICE and STOPS. New and intriguing findings are produced by the new characteristics that are investigated using these datasets. Particularly, the ability to distinguish between classes at a fine-granular level reveals the shortcomings of various models, like DADGNN or ERNIE 2.0. NICE-45 in particular proved to be challenging for all models, making it a good benchmark for future advancements.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2">Threats to Validity</head><p>In our study, each experiment was generally conducted once. The rationale is the extremely low standard deviation for text classification tasks observed in previous studies <ref type="bibr" coords="15,209.41,202.33,11.62,8.80" target="#b6">[7,</ref><ref type="bibr" coords="15,221.03,202.33,11.62,8.80" target="#b45">46,</ref><ref type="bibr" coords="15,232.65,202.33,11.62,8.80" target="#b20">21]</ref>. However, it has been reported in the literature on models using graph neural networks (GNN) that they generally have high standard deviation in their performance, which has been attributed among others to the influence of the random initialization in the evaluation <ref type="bibr" coords="15,395.83,238.20,14.61,8.80" target="#b25">[26]</ref>. Thus, we have run our experiments for SHINE and InducT-GCN five times and report averages and standard deviation. The high standard deviation observed in SHINE's performance adds to the evidence of the need for caution when interpreting the results of GNNs <ref type="bibr" coords="15,207.79,286.02,14.61,8.80" target="#b25">[26]</ref>.</p><p>We acknowledge that STOPS contains user-generated labels, some of which may not be entirely accurate. However, given that this occurs frequently in numerous use cases, it is also crucial to test the models in these scenarios.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.3">Parameter Count of Models</head><p>Table <ref type="table" coords="15,163.00,369.42,4.98,8.80" target="#tab_3">4</ref> lists the parameter counts of selected Transformer models, the BoWbased baseline methods WideMLP, and graph-based methods used in our experiments. Generally, the top performing Transformer models have a similar size between 110M to 130M parameters. Although DistilBERT is only have of that size and ALBERTv2 only about a tens, our experiments show still comparable accuracy scores on R8, Snippets, Twitter, and TREC. ALBERTv2 with its 12M parameters outperforms the WideMLP baseline with 31.3M parameters on all datasets, some with a large margin. The graph-based model ConTextING-RoBERTa has a similar parameter count compared to the pure Transformer models, since the RoBERTa transformer is used internally. It is the top-performer among the graph-based models on R8 and MR but cannot outperform the pure Transformer models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.4">Generalization</head><p>As we cover in our experiments a range of diverse domains, with sentiment analysis on various themes (MR, SST-2, Twitter), question type classification (TREC), news (R8), and even search queries (SearchSnippets), we expect to find equivalent results on other short text classification datasets. Additionally, the categorization of goods and services is covered by our new datasets NICE and STOPS. They include additional features not covered by the benchmark datasets, including a significantly larger amount of training data in STOPS, a shorter average length, and the capacity to differentiate between a wider range of classes. By using an example from a business problem, STOPS specifically demonstrates how the knowledge gained here can be applied in corporate use. In this work, we cover a variety of models for each architecture, particularly the most popular and best-performing ones. Our findings are consistent with the studies by Galke and Scherp <ref type="bibr" coords="16,265.80,350.01,9.96,8.80" target="#b6">[7]</ref>, which demonstrate the tremendous power of Transformers for traditional text classification.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Conclusion and Future Work</head><p>Our experiments unequivocally demonstrate the outstanding capability of Transformers for short text classification tasks. Additional research on our newly released datasets, NICE and STOPS, supports these findings and highlights the issue of becoming overly dependent on benchmark datasets with a limited number of characteristics. In conclusion, our study raises the question of whether specialized short text techniques are required given the lower performance of current models.</p><p>Future research on improving the performance of Transformers on short text could be to do pre-training on short texts or on in-domain texts (i. e., pre-training in the same domain as the target task) <ref type="bibr" coords="16,309.09,525.35,15.49,8.80" target="#b29">[30,</ref><ref type="bibr" coords="16,324.58,525.35,11.62,8.80" target="#b32">33,</ref><ref type="bibr" coords="16,336.21,525.35,7.75,8.80" target="#b1">2]</ref>, multi-task fine-tuning <ref type="bibr" coords="16,449.60,525.35,15.49,8.80" target="#b29">[30,</ref><ref type="bibr" coords="16,465.09,525.35,11.62,8.80" target="#b32">33]</ref>, or an ensemble of multiple Transformer models <ref type="bibr" coords="16,343.65,537.31,14.61,8.80" target="#b48">[49]</ref>.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="9,145.20,280.13,324.96,8.97;9,134.77,193.03,82.99,62.25"><head>Fig. 1 :</head><label>1</label><figDesc>Fig. 1: Class distribution of our new datasets (separated by train and test split)</figDesc><graphic coords="9,134.77,193.03,82.99,62.25" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="8,134.77,126.74,345.83,538.17"><head>Table 1 :</head><label>1</label><figDesc>Characteristics of short text datasets. #C refers to the number of classes. Avg. L is the average document length. R8 is an 8-class subset of the Reuters 21578 news dataset 1 . It is not a classical short text scenario with an average length of 65.72 tokens but offers the ability to set the methods in comparison to traditional text classification. MR 2 is a widely used dataset for text classification. It contains movie-review documents with an average length of 20.39 tokens and is therefore suitable for short text classification. The dataset SearchSnippets 3 , which is made up of snippets returned by a search engine and has an average length of 18.10 tokens, was released by Phan et al.<ref type="bibr" coords="8,462.33,410.72,14.61,8.80" target="#b23">[24]</ref>. Twitter 4 is a collection of 10, 000 tweets that are split into the categories negative and positive based on sentiment. The length of those tweets is on average 11.64 tokens. TREC 5 , which was introduced by Li and Roth<ref type="bibr" coords="8,415.30,446.58,14.61,8.80" target="#b16">[17]</ref>, is a question type classification dataset with six classifications for questions. It provides the shortest texts in our collection of benchmark datasets, with an average text length of 10.06 tokens. SST-26 [29] or SST-binary is a subset of the Stanford Sentiment Treebank, a fine-grained sentiment analysis dataset, in which neutral reviews have been removed and the data has either a positive or negative label. The average number of tokens in the texts is 20.32.Goods and Services DatasetsIn order to evaluate the performance on data with real world applications, we introduce two new datasets that are focused on the distinction between goods and services. Although there are already datasets</figDesc><table coords="8,134.77,152.79,316.43,183.04"><row><cell>Benchmarks</cell><cell cols="5">#Doc #Train #Test #C Avg. L</cell></row><row><cell>R8</cell><cell>7,674</cell><cell>5,485</cell><cell>2,189</cell><cell>8</cell><cell>65.72</cell></row><row><cell>MR</cell><cell>10,662</cell><cell>7,108</cell><cell>3,554</cell><cell>2</cell><cell>20.39</cell></row><row><cell>SearchSnippets</cell><cell>12,340</cell><cell>10,060</cell><cell>2,280</cell><cell>8</cell><cell>18.10</cell></row><row><cell>Twitter</cell><cell>10,000</cell><cell>7,000</cell><cell>3,000</cell><cell>2</cell><cell>11.64</cell></row><row><cell>TREC</cell><cell>5,952</cell><cell>5,452</cell><cell>500</cell><cell>6</cell><cell>10.06</cell></row><row><cell>SST-2</cell><cell>9,613</cell><cell>7,792</cell><cell>1,821</cell><cell>2</cell><cell>20.32</cell></row><row><cell>Goods &amp; Services</cell><cell cols="5">#Doc #Train #Test #C Avg. L</cell></row><row><cell>NICE-45</cell><cell>9,593</cell><cell>6,715</cell><cell>2,878</cell><cell>45</cell><cell>3.75</cell></row><row><cell>NICE-2</cell><cell>9,593</cell><cell>6,715</cell><cell>2,878</cell><cell>2</cell><cell>3.75</cell></row><row><cell>STOPS-41</cell><cell>200,341</cell><cell>140,238</cell><cell>60,103</cell><cell>41</cell><cell>5.64</cell></row><row><cell>STOPS-2</cell><cell>200,341</cell><cell>140,238</cell><cell>60,103</cell><cell>2</cell><cell>5.64</cell></row><row><cell cols="3">following gives a detailed description of them.</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="12,137.16,126.74,427.26,509.98"><head>Table 2 :</head><label>2</label><figDesc>Accuracy on short text classification datasets. The "Short?" column indicates whether the model makes claims about its ability to categorize short texts.Provenance refers to the source of the accuracy scores. With a batch size of 32 and for DeBERTa of 16. 2 With only 40 randomly selected documents per class.3 Not reproducible. Authors have been contacted twice without a response.4 Using a modified training split of 8, 636 training and 3, 704 test documents and further preprocessing.</figDesc><table coords="12,141.12,162.78,423.31,473.95"><row><cell>Inductive Models</cell><cell>Short?</cell><cell>R8</cell><cell>MR</cell><cell>Snippets</cell><cell>Twitter</cell><cell>TREC</cell><cell>SST-2</cell><cell>Provenance</cell></row><row><cell>Transformer Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>BERT</cell><cell>N</cell><cell>98.17 1</cell><cell>86.94</cell><cell>88.20</cell><cell>99.96</cell><cell>99.4</cell><cell>91.37</cell><cell>Own experiment</cell></row><row><cell>RoBERTa</cell><cell>N</cell><cell>98.17 1</cell><cell>89.42</cell><cell>85.22</cell><cell>99.9</cell><cell>98.6</cell><cell>94.01</cell><cell>Own experiment</cell></row><row><cell>DeBERTa</cell><cell>N</cell><cell>98.45 1</cell><cell>90.21</cell><cell>86.14</cell><cell>99.93</cell><cell>98.8</cell><cell>94.78</cell><cell>Own experiment</cell></row><row><cell>ERNIE 2.0</cell><cell>N</cell><cell>98.04 1</cell><cell>88.97</cell><cell>89.12</cell><cell>99.97</cell><cell>98.8</cell><cell>93.36</cell><cell>Own experiment</cell></row><row><cell>ERNIE 2.0 (optimized)</cell><cell>N</cell><cell>98.17 1</cell><cell>89.53</cell><cell>89.17</cell><cell>99.97</cell><cell>99</cell><cell>94.07</cell><cell>Own experiment</cell></row><row><cell>DistilBERT</cell><cell>N</cell><cell>97.98 1</cell><cell>85.31</cell><cell>89.69</cell><cell>99.96</cell><cell>99</cell><cell>90.49</cell><cell>Own experiment</cell></row><row><cell>ALBERTv2</cell><cell>N</cell><cell>97.62</cell><cell>86.02</cell><cell>87.68</cell><cell>99.97</cell><cell>98.6</cell><cell>91.54</cell><cell>Own experiment</cell></row><row><cell>BoW Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>SVM</cell><cell>Y</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>95 6</cell><cell>-</cell><cell>Silva et al. [28]</cell></row><row><cell>WideMLP</cell><cell>N</cell><cell>96.98</cell><cell>76.48</cell><cell>67.28</cell><cell>99.86</cell><cell>97</cell><cell>82.26</cell><cell>Own experiment</cell></row><row><cell>fastText</cell><cell>N</cell><cell>96.13</cell><cell>75.14</cell><cell>88.56 4</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zhao et al. [46]</cell></row><row><cell>Graph-based Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>HGAT 2</cell><cell>Y</cell><cell>-</cell><cell>62.75</cell><cell>82.36</cell><cell>63.21</cell><cell>-</cell><cell>-</cell><cell>Yang et al. [40]</cell></row><row><cell>NC-HGAT 2</cell><cell>Y</cell><cell>-</cell><cell>62.46</cell><cell>-</cell><cell>63.76</cell><cell>-</cell><cell>-</cell><cell>Sun et al. [32]</cell></row><row><cell>SGNN 3</cell><cell>Y</cell><cell>98.09</cell><cell>80.58</cell><cell>90.68 4</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zhao et al. [46]</cell></row><row><cell>ESGNN 3</cell><cell>Y</cell><cell>98.23</cell><cell>80.93</cell><cell>90.80 4</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zhao et al. [46]</cell></row><row><cell>C-BERT (ESGNN+BERT) 3</cell><cell>Y</cell><cell>98.28</cell><cell>86.06</cell><cell>90.43 4</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zhao et al. [46]</cell></row><row><cell>DADGNN</cell><cell>Y</cell><cell>98.15</cell><cell>78.64</cell><cell>-</cell><cell>-</cell><cell>97.99</cell><cell>84.32</cell><cell>Liu et al. [21]</cell></row><row><cell>DADGNN</cell><cell>Y</cell><cell>97.28</cell><cell>74.54</cell><cell>84.91</cell><cell>98.16</cell><cell>97.54</cell><cell>82.81</cell><cell>Own experiment</cell></row><row><cell>HyperGAT</cell><cell>N</cell><cell>97.97</cell><cell>78.32</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Ding et al. [5]</cell></row><row><cell>InducT-GCN</cell><cell>N</cell><cell>96.68</cell><cell>75.34</cell><cell>76.67</cell><cell>88.56</cell><cell>92.50</cell><cell>79.97</cell><cell>Own experiment</cell></row><row><cell>ConTextING-BERT</cell><cell>N</cell><cell>97.91</cell><cell>86.01</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Huang et al. [11]</cell></row><row><cell>ConTextING-RoBERTa</cell><cell>N</cell><cell>98.13</cell><cell>89.43</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Huang et al. [11]</cell></row><row><cell>CNN and LSTMs</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>SECNN 3</cell><cell>Y</cell><cell>-</cell><cell>83.89</cell><cell>-</cell><cell>-</cell><cell>91.34</cell><cell>87.37</cell><cell>Wang et al. [35]</cell></row><row><cell>MGNC-CNN</cell><cell>Y</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>95.52</cell><cell>88.30 7</cell><cell>Zhang et al. [44]</cell></row><row><cell>DCNN</cell><cell>Y</cell><cell>-</cell><cell>86.80 8</cell><cell>-</cell><cell>-</cell><cell>93</cell><cell>-</cell><cell>Kalchbr. et al. [13]</cell></row><row><cell>LSTM (BERT)</cell><cell>Y</cell><cell>94.28</cell><cell>75.10</cell><cell>65.13</cell><cell>99.83</cell><cell>97</cell><cell>81.38</cell><cell>Own experiment</cell></row><row><cell>Bi-LSTM (BERT)</cell><cell>Y</cell><cell>95.52</cell><cell>75.30</cell><cell>66.79</cell><cell>99.76</cell><cell>97.2</cell><cell>80.83</cell><cell>Own experiment</cell></row><row><cell>LSTM (GloVe)</cell><cell>Y</cell><cell>96.34</cell><cell>74.99</cell><cell>67.67</cell><cell>95.23</cell><cell>97.4</cell><cell>79.95</cell><cell>Own experiment</cell></row><row><cell>Bi-LSTM (GloVe)</cell><cell>Y</cell><cell>96.84</cell><cell>75.32</cell><cell>68.15</cell><cell>95.53</cell><cell>97.2</cell><cell>80.17</cell><cell>Own experiment</cell></row><row><cell>Bi-LSTM (GloVe)</cell><cell>Y</cell><cell>96.31</cell><cell>77.68</cell><cell>84.81 4</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zhao et al. [46]</cell></row><row><cell>Transductive Models</cell><cell>Short?</cell><cell>R8</cell><cell>MR</cell><cell>Snippets</cell><cell>Twitter</cell><cell>TREC</cell><cell>SST-2</cell><cell>Provenance</cell></row><row><cell>Graph-based Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>SHINE 5</cell><cell>Y</cell><cell>-</cell><cell>64.58</cell><cell>82.39</cell><cell>72.54</cell><cell>-</cell><cell>-</cell><cell>Wang et al. [37]</cell></row><row><cell>SHINE</cell><cell>Y</cell><cell>79.80</cell><cell>62.05</cell><cell>82.14</cell><cell>70.64</cell><cell>79.90</cell><cell>61.71</cell><cell>Own experiment</cell></row><row><cell>STGCN</cell><cell>Y</cell><cell>97.2</cell><cell>78.2</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Ye et al. [42]</cell></row><row><cell>STGCN+BiLSTM</cell><cell>Y</cell><cell>-</cell><cell>78.5</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Ye et al. [42]</cell></row><row><cell>STGCN+BERT+BiLSTM</cell><cell>Y</cell><cell>98.5</cell><cell>82.5</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Ye et al. [42]</cell></row><row><cell>SimpleSTC 9</cell><cell>Y</cell><cell>-</cell><cell>62.27</cell><cell>80.96</cell><cell>62.19</cell><cell>-</cell><cell>-</cell><cell>Zheng et al. [47]</cell></row><row><cell>TextGCN</cell><cell>N</cell><cell>97.07</cell><cell>76.74</cell><cell>83.49</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zhao et al. [46]</cell></row><row><cell>TextGCN</cell><cell>N</cell><cell>97.07</cell><cell>76.74</cell><cell>-</cell><cell>-</cell><cell>91.40</cell><cell>81.02</cell><cell>Liu et al. [21]</cell></row><row><cell>BertGCN</cell><cell>N</cell><cell>98.1</cell><cell>86.0</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Lin et al. [18]</cell></row><row><cell>RoBERTaGCN</cell><cell>N</cell><cell>98.2</cell><cell>89.7</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Lin et al. [18]</cell></row><row><cell>TextGCN-BERT-serial-SB</cell><cell>N</cell><cell>97.78</cell><cell>86.69</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zeng et al. [43]</cell></row><row><cell>TextGCN-CNN-serial-SB</cell><cell>N</cell><cell>98.53</cell><cell>87.59</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>Zeng et al. [43]</cell></row><row><cell cols="4">5 Employing very low train ratios (0.38% to 6.22%).</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="8">6 Uni-gram model with extensive pre-processing, use of WordNet, etc. and 60 hand-coded rules</cell><cell></cell></row><row><cell cols="5">7 Removed phrases of length less than 4 from the training set</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="8">8 Using a slightly different split of 6,920 sentences for training, 872 for development, and 1,821 for test</cell><cell></cell></row><row><cell cols="6">9 Samples 20 labeled documents per class as training set and validation set</cell><cell></cell><cell></cell><cell></cell></row></table><note coords="12,141.12,565.22,3.39,4.35"><p>1 </p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="13,134.77,126.74,384.03,313.14"><head>Table 3 :</head><label>3</label><figDesc>Accuracy on our own short text classification datasets. The "Short?" column indicates whether the model makes claims about its ability to categorize short texts. Provenance refers to the source of the accuracy scores.</figDesc><table coords="13,134.77,163.74,384.03,276.14"><row><cell>Inductive Models</cell><cell cols="5">Short Text NICE-45 NICE-2 STOPS-41 STOPS-2</cell></row><row><cell>Transformer Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>BERT</cell><cell>N</cell><cell>72.79</cell><cell>99.72</cell><cell>89.4</cell><cell>99.87</cell></row><row><cell>RoBERTa</cell><cell>N</cell><cell>66.09</cell><cell>99.76</cell><cell>89.56</cell><cell>99.86</cell></row><row><cell>DeBERTa</cell><cell>N</cell><cell>59.42</cell><cell>99.72</cell><cell>89.73</cell><cell>99.85</cell></row><row><cell>ERNIE 2.0</cell><cell>N</cell><cell>45.55</cell><cell>99.69</cell><cell>89.39</cell><cell>99.85</cell></row><row><cell>ERNIE 2.0 (optimized)</cell><cell>N</cell><cell>67.65</cell><cell>99.72</cell><cell>89.65</cell><cell>99.88</cell></row><row><cell>DistilBERT</cell><cell>N</cell><cell>69.28</cell><cell>99.75</cell><cell>89.32</cell><cell>99.85</cell></row><row><cell>ALBERTv2</cell><cell>N</cell><cell>59.24</cell><cell>99.51</cell><cell>88.58</cell><cell>99.83</cell></row><row><cell>BoW Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>WideMLP</cell><cell>N</cell><cell>58.99</cell><cell>96.76</cell><cell>88.2</cell><cell>97.05</cell></row><row><cell>Graph-based Models</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>DADGNN</cell><cell>Y</cell><cell>28.51</cell><cell>91.15</cell><cell>26.75</cell><cell>97.48</cell></row><row><cell>InducT-GCN</cell><cell>N</cell><cell>47.06</cell><cell>94.98</cell><cell>86.08</cell><cell>97.74</cell></row><row><cell>CNN and LSTMs</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>LSTM (BERT)</cell><cell>Y</cell><cell>47.81</cell><cell>96.63</cell><cell>86.27</cell><cell>96.05</cell></row><row><cell>Bi-LSTM (BERT)</cell><cell>Y</cell><cell>52.39</cell><cell>96.63</cell><cell>85.93</cell><cell>98.54</cell></row><row><cell>LSTM (GloVe)</cell><cell>Y</cell><cell>52.64</cell><cell>96.17</cell><cell>87.4</cell><cell>99.46</cell></row><row><cell>Bi-LSTM (GloVe)</cell><cell>Y</cell><cell>55.35</cell><cell>95.93</cell><cell>87.38</cell><cell>99.43</cell></row><row><cell cols="6">which uses different hyperparameter values (see Section 4.4), comes in third with</cell></row><row><cell>67.65%</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="16,159.24,126.74,296.86,170.02"><head>Table 4 :</head><label>4</label><figDesc>Parameter counts for selected methods used in our experiments</figDesc><table coords="16,202.85,141.83,209.66,154.94"><row><cell>Model</cell><cell>#parameters</cell></row><row><cell>Transformer models</cell><cell></cell></row><row><cell>BERT</cell><cell>110M</cell></row><row><cell>RoBERTA</cell><cell>123M</cell></row><row><cell>DeBERTA</cell><cell>134M</cell></row><row><cell>ERNIE 2.0</cell><cell>110M</cell></row><row><cell>DistilBERT</cell><cell>66M</cell></row><row><cell>ALBERTv2</cell><cell>12M</cell></row><row><cell>BoW-based methods</cell><cell></cell></row><row><cell>WideMLP</cell><cell>31.3M</cell></row><row><cell>Graph-based methods</cell><cell></cell></row><row><cell>HyperGAT</cell><cell>LDA parameters + 3.1M</cell></row><row><cell>ConTextING-RoBERTa</cell><cell>129M</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_0" coords="9,144.73,624.57,235.31,7.47"><p>http://webdatacommons.org/largescaleproductcorpus/</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_1" coords="9,144.73,635.53,211.78,7.47"><p>https://www.wipo.int/classifications/nice/en/</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_2" coords="9,144.73,646.48,296.49,7.47;9,144.73,657.44,145.89,7.47"><p>https://www.wipo.int/nice/its4nice/ITSupport_and_download_area/ 20220101/MasterFiles/index.html</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_3" coords="10,144.73,646.48,226.90,7.47"><p>https://github.com/google-research-datasets/MAVE</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgement. This work is co-funded under the <rs type="projectName">2LIKE</rs> project by the <rs type="funder">German Federal Ministry of Education and Research (BMBF)</rs> and the <rs type="funder">Ministry of Science, Research and the Arts Baden-Württemberg</rs> within the funding line <rs type="projectName">Artificial Intelligence in Higher Education</rs>. We thank <rs type="person">Till Blume</rs> and <rs type="person">Felix Krieger</rs> from <rs type="person">Ernst &amp; Young</rs> (<rs type="affiliation">EY</rs>) for the discussion of the problem statement that motivated this work. We are grateful to Liu et al. [21] for providing the unreleased DADGNN source code.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funded-project" xml:id="_33NMbgy">
+					<orgName type="project" subtype="full">2LIKE</orgName>
+				</org>
+				<org type="funded-project" xml:id="_wyPgVzy">
+					<orgName type="project" subtype="full">Artificial Intelligence in Higher Education</orgName>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="17,142.95,145.14,337.63,8.97;17,151.52,156.10,281.06,8.97" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="17,302.01,145.14,105.35,8.97">Latent dirichlet allocation</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">M</forename><surname>Blei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">Y</forename><surname>Ng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">I</forename><surname>Jordan</surname></persName>
+		</author>
+		<ptr target="http://jmlr.org/papers/v3/blei03a.html" />
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,415.10,145.14,65.49,8.97;17,151.52,156.10,17.07,8.97">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="993" to="1022" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,167.69,337.63,8.97;17,151.52,178.65,319.82,8.97" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="17,268.10,167.69,212.49,8.97;17,151.52,178.65,140.74,8.97">Improving hierarchical product classification using domain-specific language modelling</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Brinkmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Bizer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,299.51,178.65,89.05,8.97">IEEE Data Eng. Bull</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="14" to="25" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,190.24,337.64,8.97;17,151.52,201.20,252.67,8.97" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="17,319.10,190.24,161.49,8.97;17,151.52,201.20,84.55,8.97">Text classification with attention gated graph neural network</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Mao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,243.47,201.20,94.69,8.97">Cognitive Computation</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,212.79,337.64,8.97;17,151.52,223.75,329.07,8.97;17,151.52,234.71,329.07,8.97;17,151.52,245.67,329.07,8.97;17,151.52,256.63,329.08,8.97;17,151.52,267.59,329.08,8.97;17,151.52,278.54,329.08,8.97" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="17,338.65,212.79,141.95,8.97;17,151.52,223.75,184.43,8.97">BERT: pre-training of deep bidirectional transformers for language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Toutanova</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/n19-1423</idno>
+		<ptr target="https://doi.org/10.18653/v1/n19-1423" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,190.53,234.71,290.06,8.97;17,151.52,245.67,329.07,8.97;17,151.52,256.63,74.45,8.97">Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT 2019</title>
+		<title level="s" coords="17,443.66,256.63,36.94,8.97;17,151.52,267.59,50.61,8.97">Long and Short Papers</title>
+		<editor>
+			<persName><forename type="first">J</forename><surname>Burstein</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Doran</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">T</forename><surname>Solorio</surname></persName>
+		</editor>
+		<meeting>the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-HLT 2019<address><addrLine>Minneapolis, MN, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2019">June 2-7, 2019. 2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="4171" to="4186" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,290.14,337.64,8.97;17,151.52,301.09,329.07,8.97;17,151.52,312.05,329.07,8.97;17,151.52,323.01,329.07,8.97;17,151.52,333.97,329.07,8.97;17,151.52,346.18,89.92,7.47" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="17,335.25,290.14,145.34,8.97;17,151.52,301.09,202.83,8.97">Be more with less: Hypergraph attention networks for inductive text classification</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2020.emnlp-main.399</idno>
+		<ptr target="https://aclanthology.org/2020.emnlp-main.399" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,378.89,301.09,101.70,8.97;17,151.52,312.05,323.65,8.97">Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</title>
+		<meeting>the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2020-11">Nov 2020</date>
+			<biblScope unit="page" from="4927" to="4936" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,356.52,337.63,8.97;17,151.52,367.48,329.07,8.97;17,151.52,378.44,329.07,8.97;17,151.52,389.40,329.07,8.97;17,151.52,400.36,329.08,8.97;17,151.52,412.56,108.24,7.47" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="17,385.26,356.52,95.33,8.97;17,151.52,367.48,220.63,8.97">Using titles vs. full-text as source for automated semantic document annotation</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Galke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Mai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Schelten</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Brunsch</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Scherp</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/3148011.3148039</idno>
+		<ptr target="https://doi.org/10.1145/3148011.3148039" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,330.72,378.44,149.87,8.97;17,151.52,389.40,62.48,8.97">Proceedings of the Knowledge Capture Conference</title>
+		<editor>
+			<persName><forename type="first">Ó</forename><surname>Corcho</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">K</forename><surname>Janowicz</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">G</forename><surname>Rizzo</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">I</forename><surname>Tiddi</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">D</forename><surname>Garijo</surname></persName>
+		</editor>
+		<meeting>the Knowledge Capture Conference<address><addrLine>Austin, TX, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2017-12-04">2017. December 4-6, 2017. 2017</date>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="1" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,422.90,337.64,8.97;17,151.52,433.86,329.07,8.97;17,151.52,444.82,284.00,8.97" xml:id="b6">
+	<monogr>
+		<title level="m" type="main" coords="17,244.43,422.90,236.16,8.97;17,151.52,433.86,324.59,8.97">Bag-of-words vs. graph vs. sequence in text classification: Questioning the necessity of text-graphs and the surprising strength of a wide mlp</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Galke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Scherp</surname></persName>
+		</author>
+		<idno>CoRR abs/2109.03777</idno>
+		<ptr target="https://arxiv.org/abs/2109.03777" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,456.41,337.64,8.97;17,151.52,467.37,329.08,8.97;17,151.52,478.33,329.07,8.97;17,151.52,490.54,202.37,7.47" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="17,304.00,456.41,176.59,8.97;17,151.52,467.37,78.60,8.97">Deberta: decoding-enhanced bert with disentangled attention</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<ptr target="https://openreview.net/forum?id=XPZIaotutsD" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,254.45,467.37,226.14,8.97;17,151.52,478.33,127.43,8.97">th International Conference on Learning Representations, ICLR 2021, Virtual Event</title>
+		<meeting><address><addrLine>Austria</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2021">May 3-7, 2021. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.95,500.88,337.64,8.97;17,151.52,511.84,92.82,8.97" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="17,288.76,500.88,100.72,8.97">Long short-term memory</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Hochreiter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Schmidhuber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,398.70,500.88,81.89,8.97">Neural computation</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1735" to="1780" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.61,523.43,337.98,8.97;17,151.52,534.39,329.07,8.97;17,151.52,546.59,169.42,7.47" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="17,305.41,523.43,175.19,8.97;17,151.52,534.39,89.22,8.97">Short-text classification detector: A BERTbased mental approach</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Dou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Chang</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2022/8660828</idno>
+		<ptr target="https://doi.org/10.1155/2022/8660828" />
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,247.30,534.39,179.49,8.97">Computational Intelligence and Neuroscience</title>
+		<imprint>
+			<biblScope unit="volume">2022</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.61,556.94,337.97,8.97;17,151.52,567.90,329.07,8.97;17,151.52,578.85,329.07,8.97;17,151.52,589.81,329.07,8.97;17,151.52,600.77,323.20,8.97" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="17,305.59,556.94,175.00,8.97;17,151.52,567.90,311.20,8.97">ConTextING: Granting document-wise contextual embeddings to graph neural networks for inductive text classification</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">S</forename><surname>Chen</surname></persName>
+		</author>
+		<ptr target="https://aclanthology.org/2022.coling-1.100" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,151.52,578.85,325.26,8.97">Proceedings of the 29th International Conference on Computational Linguistics</title>
+		<meeting>the 29th International Conference on Computational Linguistics<address><addrLine>Gyeongju, Republic of Korea</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2022-10">Oct 2022</date>
+			<biblScope unit="page" from="1163" to="1168" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,142.61,612.36,337.98,8.97;17,151.52,623.32,329.07,8.97;17,151.52,634.28,329.07,8.97;17,151.52,645.24,329.07,8.97;17,151.52,657.44,155.81,7.47" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="17,360.75,612.36,119.84,8.97;17,151.52,623.32,49.78,8.97">Bag of tricks for efficient text classification</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Joulin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Grave</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Bojanowski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Mikolov</surname></persName>
+		</author>
+		<ptr target="https://aclanthology.org/E17-2068" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,224.35,623.32,256.24,8.97">Proceedings of the 15th Conference of the European Chapter</title>
+		<title level="s" coords="17,407.20,634.28,51.99,8.97">Short Papers</title>
+		<meeting>the 15th Conference of the European Chapter<address><addrLine>Valencia, Spain</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2017-04">Apr 2017</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="427" to="431" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,119.07,337.98,8.97;18,151.52,130.03,329.07,8.97;18,151.52,140.99,329.08,8.97;18,151.52,151.95,329.07,8.97;18,151.52,162.91,329.07,8.97;18,151.52,175.11,38.14,7.47" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="18,352.65,119.07,127.94,8.97;18,151.52,130.03,90.94,8.97">A convolutional neural network for modelling sentences</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Kalchbrenner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Grefenstette</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Blunsom</surname></persName>
+		</author>
+		<idno type="DOI">10.3115/v1/p14-1062</idno>
+		<ptr target="https://doi.org/10.3115/v1/p" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,262.39,130.03,218.20,8.97;18,151.52,140.99,186.94,8.97;18,324.94,151.95,155.65,8.97;18,151.52,162.91,13.87,8.97">Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics, ACL 2014</title>
+		<title level="s" coords="18,217.66,151.95,48.14,8.97">Long Papers</title>
+		<meeting>the 52nd Annual Meeting of the Association for Computational Linguistics, ACL 2014<address><addrLine>Baltimore, MD, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014">June 22-27, 2014. 2014</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="14" to="1062" />
+		</imprint>
+	</monogr>
+	<note>The Association for Computer Linguistics</note>
+</biblStruct>
+
+<biblStruct coords="18,142.61,183.99,337.98,8.97;18,151.52,194.95,329.07,8.97;18,151.52,205.91,329.07,8.97;18,151.52,216.87,329.07,8.97;18,151.52,229.08,56.97,7.47" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="18,191.53,183.99,231.26,8.97">Convolutional neural networks for sentence classification</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Kim</surname></persName>
+		</author>
+		<idno type="DOI">10.3115/v1/D14-1181</idno>
+		<ptr target="https://aclanthology.org/D14-1181" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,445.37,183.99,35.22,8.97;18,151.52,194.95,329.07,8.97;18,151.52,205.91,53.90,8.97">Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)</title>
+		<meeting>the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)<address><addrLine>Doha, Qatar</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2014-10">Oct 2014</date>
+			<biblScope unit="page" from="1746" to="1751" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,237.96,337.98,8.97;18,151.52,248.92,329.07,8.97;18,151.52,259.87,251.40,8.97" xml:id="b14">
+	<monogr>
+		<title level="m" type="main" coords="18,464.85,237.96,15.74,8.97;18,151.52,248.92,297.95,8.97">AL-BERT: A lite BERT for self-supervised learning of language representations</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Goodman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Gimpel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Soricut</surname></persName>
+		</author>
+		<idno>CoRR abs/1909.11942</idno>
+		<ptr target="http://arxiv.org/abs/1909.11942" />
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,270.00,337.98,8.97;18,151.52,280.96,329.07,8.97;18,151.52,291.92,329.08,8.97;18,151.52,304.12,70.60,7.47" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="18,443.69,270.00,36.91,8.97;18,151.52,280.96,222.25,8.97">A survey on text classification: From traditional to deep learning</title>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">S</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>He</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/3495162</idno>
+		<ptr target="https://doi.org/10.1145/3495162" />
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,380.76,280.96,99.83,8.97;18,151.52,291.92,33.79,8.97">ACM Trans. Intell. Syst. Technol</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<date type="published" when="2022-04">apr 2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,313.00,337.98,8.97;18,151.52,323.96,329.07,8.97;18,151.52,336.17,56.97,7.47" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="18,218.27,313.00,110.34,8.97">Learning question classifiers</title>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Roth</surname></persName>
+		</author>
+		<ptr target="https://aclanthology.org/C02-1150" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,347.47,313.00,133.13,8.97;18,151.52,323.96,194.96,8.97">COLING 2002: The 19th International Conference on Computational Linguistics</title>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,345.05,337.98,8.97;18,151.52,356.01,329.08,8.97;18,151.52,366.97,329.07,8.97;18,151.52,377.93,329.07,8.97;18,151.52,388.88,329.07,8.97;18,151.52,401.09,99.33,7.47" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="18,459.71,345.05,20.88,8.97;18,151.52,356.01,282.77,8.97">Bert-GCN: Transductive text classification by combining GNN and BERT</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Kuang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2021.findings-acl.126</idno>
+		<ptr target="https://aclanthology.org/2021.findings-acl.126" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,458.71,356.01,21.88,8.97;18,151.52,366.97,324.87,8.97">Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021</title>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2021-08">Aug 2021</date>
+			<biblScope unit="page" from="1456" to="1462" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,409.97,337.98,8.97;18,151.52,420.93,329.07,8.97;18,151.52,433.13,47.06,7.47" xml:id="b18">
+	<monogr>
+		<title level="m" type="main" coords="18,279.71,409.97,200.88,8.97;18,151.52,420.93,93.97,8.97">Recurrent neural network for text classification with multi-task learning</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Huang</surname></persName>
+		</author>
+		<idno>CoRR abs/1605.05101</idno>
+		<ptr target="http://arxiv.org/abs/1605.05101" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,442.01,337.98,8.97;18,151.52,452.97,329.08,8.97;18,151.52,463.93,321.54,8.97" xml:id="b19">
+	<monogr>
+		<title level="m" type="main" coords="18,278.21,452.97,202.39,8.97;18,151.52,463.93,34.82,8.97">Roberta: A robustly optimized BERT pretraining approach</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ott</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zettlemoyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Stoyanov</surname></persName>
+		</author>
+		<idno>CoRR abs/1907.11692</idno>
+		<ptr target="http://arxiv.org/abs/1907.11692" />
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,474.06,337.98,8.97;18,151.52,485.02,329.08,8.97;18,151.52,495.98,313.34,8.97" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="18,382.38,474.06,98.22,8.97;18,151.52,485.02,171.09,8.97">Deep attention diffusion graph neural networks for text classification</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Guan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Giunchiglia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Feng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,341.30,485.02,139.30,8.97;18,151.52,495.98,220.18,8.97">Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2021 Conference on Empirical Methods in Natural Language Processing</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="8142" to="8152" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,506.10,337.97,8.97;18,151.52,517.06,329.07,8.97;18,151.52,528.02,177.11,8.97" xml:id="b21">
+	<monogr>
+		<title level="m" type="main" coords="18,274.38,506.10,206.21,8.97;18,151.52,517.06,222.05,8.97">Using deep learning for title-based semantic subject indexing to reach competitive performance to full-text</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Mai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Galke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Scherp</surname></persName>
+		</author>
+		<idno>CoRR abs/1801.06717</idno>
+		<ptr target="http://arxiv.org/abs/1801.06717" />
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,538.15,337.98,8.97;18,151.52,549.11,329.07,8.97;18,151.52,560.06,215.23,8.97" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="18,329.82,538.15,150.78,8.97;18,151.52,549.11,35.29,8.97">Glove: Global vectors for word representation</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Pennington</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">D</forename><surname>Manning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,207.70,549.11,272.89,8.97;18,151.52,560.06,120.75,8.97">Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP)</title>
+		<meeting>the 2014 conference on empirical methods in natural language processing (EMNLP)</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="1532" to="1543" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,570.19,337.98,8.97;18,151.52,581.15,329.08,8.97;18,151.52,592.11,296.69,8.97" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="18,327.72,570.19,152.87,8.97;18,151.52,581.15,250.71,8.97">Learning to classify short and sparse text &amp; web with hidden topics from large-scale data collections</title>
+		<author>
+			<persName coords=""><forename type="first">X</forename><forename type="middle">H</forename><surname>Phan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">M</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Horiguchi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,422.37,581.15,58.23,8.97;18,151.52,592.11,216.34,8.97">Proceedings of the 17th international conference on World Wide Web</title>
+		<meeting>the 17th international conference on World Wide Web</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="91" to="100" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,602.24,337.98,8.97;18,151.52,613.19,329.07,8.97;18,151.52,625.40,122.36,7.47" xml:id="b24">
+	<monogr>
+		<title level="m" type="main" coords="18,349.57,602.24,131.03,8.97;18,151.52,613.19,167.52,8.97">Distilbert, a distilled version of BERT: smaller, faster, cheaper and lighter</title>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Sanh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Debut</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Chaumond</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Wolf</surname></persName>
+		</author>
+		<idno>CoRR abs/1910.01108</idno>
+		<ptr target="http://arxiv.org/abs/1910.01108" />
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,142.61,634.28,337.98,8.97;18,151.52,645.24,329.07,8.97;18,151.52,657.44,47.06,7.47" xml:id="b25">
+	<monogr>
+		<title level="m" type="main" coords="18,392.95,634.28,87.64,8.97;18,151.52,645.24,89.07,8.97">Pitfalls of graph neural network evaluation</title>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Shchur</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Mumme</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Bojchevski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Günnemann</surname></persName>
+		</author>
+		<idno>CoRR abs/1811.05868</idno>
+		<ptr target="http://arxiv.org/abs/1811.05868" />
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,119.07,337.98,8.97;19,151.52,130.03,329.07,8.97;19,151.52,140.99,249.59,8.97" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="19,311.66,119.07,168.94,8.97;19,151.52,130.03,193.95,8.97">Inductive light graph convolution network for text classification based on word-label graph</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="19,367.53,130.03,113.06,8.97;19,151.52,140.99,135.40,8.97">International Conference on Intelligent Information Processing</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="42" to="55" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,152.80,337.98,8.97;19,151.52,163.76,329.07,8.97;19,151.52,174.72,329.08,8.97;19,151.52,186.93,119.15,7.47" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coords="19,406.62,152.80,73.97,8.97;19,151.52,163.76,213.32,8.97">From symbolic to sub-symbolic information in question classification</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">P C G</forename><surname>Da Silva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Coheur</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">C</forename><surname>Mendes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Wichert</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10462-010-9188-4</idno>
+		<ptr target="https://doi.org/10.1007/s10462-010-9188-4" />
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,374.24,163.76,75.56,8.97">Artif. Intell. Rev</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="137" to="154" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,197.49,337.97,8.97;19,151.52,208.45,272.08,8.97" xml:id="b28">
+	<analytic>
+		<title level="a" type="main" coords="19,151.52,208.45,187.60,8.97">Parsing With Compositional Vector Grammars</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Perelygin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Chuang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Manning</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Ng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Potts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,361.29,208.45,33.65,8.97">EMNLP</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,220.26,337.98,8.97;19,151.52,231.22,329.08,8.97;19,151.52,242.18,329.07,8.97;19,151.52,253.14,329.07,8.97;19,151.52,264.10,329.08,8.97;19,151.52,275.06,235.68,8.97" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="19,314.87,220.26,165.72,8.97;19,151.52,231.22,34.04,8.97">How to fine-tune BERT for text classification?</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Ji</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-030-32381-3_16</idno>
+		<ptr target="https://doi.org/10.1007/978-3-030-32381-3_16" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="19,422.89,231.22,57.70,8.97;19,151.52,242.18,232.19,8.97">Chinese Computational Linguistics -18th China National Conference</title>
+		<title level="s" coords="19,274.02,253.14,202.61,8.97">Proceedings. Lecture Notes in Computer Science</title>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Kunming, China</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2019-10-18">2019. October 18-20, 2019. 2019</date>
+			<biblScope unit="volume">11856</biblScope>
+			<biblScope unit="page" from="194" to="206" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,286.87,337.98,8.97;19,151.52,297.83,329.07,8.97;19,151.52,308.79,251.40,8.97" xml:id="b30">
+	<monogr>
+		<title level="m" type="main" coords="19,451.04,286.87,29.55,8.97;19,151.52,297.83,293.73,8.97">ERNIE 2.0: A continual pre-training framework for language understanding</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<idno>CoRR abs/1907.12412</idno>
+		<ptr target="http://arxiv.org/abs/1907.12412" />
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,320.60,337.97,8.97;19,151.52,331.56,329.07,8.97;19,151.52,342.52,329.07,8.97;19,151.52,353.48,238.20,8.97" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coords="19,434.19,320.60,46.40,8.97;19,151.52,331.56,325.51,8.97">Contrastive learning with heterogeneous graph attention networks on short text classification</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Harit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">I</forename><surname>Cristea</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Al Moubayed</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IJCNN55064.2022.9892257</idno>
+		<ptr target="https://doi.org/10.1109/IJCNN55064.2022.9892257" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="19,166.91,342.52,273.52,8.97">2022 International Joint Conference on Neural Networks (IJCNN)</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,365.29,337.98,8.97;19,151.52,376.25,127.40,8.97" xml:id="b32">
+	<monogr>
+		<title level="m" type="main" coords="19,300.60,365.29,179.99,8.97;19,151.52,376.25,10.42,8.97">Natural language processing with Transformers</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Tunstall</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Von Werra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Wolf</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<publisher>O&apos;Reilly Media, Inc</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,388.06,337.97,8.97;19,151.52,399.02,329.08,8.97;19,151.52,409.98,104.28,8.97" xml:id="b33">
+	<monogr>
+		<title level="m" type="main" coords="19,227.44,399.02,253.15,8.97;19,151.52,409.98,61.94,8.97">Attention is all you need. Advances in neural information processing systems</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ł</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Polosukhin</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">30</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,421.79,337.98,8.97;19,151.52,432.75,329.07,8.97;19,151.52,443.71,236.71,8.97" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coords="19,315.25,421.79,165.34,8.97;19,151.52,432.75,225.54,8.97">A short text classification method based on convolutional neural network and semantic extension</title>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,384.24,432.75,96.34,8.97;19,151.52,443.71,144.71,8.97">International Journal of Computational Intelligence Systems</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="367" to="375" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,455.52,337.98,8.97;19,151.52,466.48,248.71,8.97" xml:id="b35">
+	<monogr>
+		<title level="m" type="main" coords="19,275.40,455.52,205.19,8.97;19,151.52,466.48,83.07,8.97">Induct-gcn: Inductive graph convolutional networks for text classification</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">C</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Poon</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2206.00265</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="19,142.61,478.29,337.98,8.97;19,151.52,489.25,329.07,8.97;19,151.52,501.46,150.60,7.47" xml:id="b36">
+	<monogr>
+		<title level="m" type="main" coords="19,317.74,478.29,162.85,8.97;19,151.52,489.25,188.23,8.97">Hierarchical heterogeneous graph representation learning for short text classification</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Dou</surname></persName>
+		</author>
+		<idno>CoRR abs/2111.00180</idno>
+		<ptr target="https://arxiv.org/abs/2111.00180" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,512.02,337.98,8.97;19,151.52,522.98,329.08,8.97;19,151.52,533.94,329.07,8.97;19,151.52,544.90,329.07,8.97;19,151.52,555.86,329.07,8.97;19,151.52,568.07,183.54,7.47" xml:id="b37">
+	<analytic>
+		<title level="a" type="main" coords="19,321.78,512.02,158.81,8.97;19,151.52,522.98,75.95,8.97">Probase: a probabilistic taxonomy for text understanding</title>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">Q</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">S</forename><surname>Candan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">T</forename><surname>Snodgrass</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Gravano</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/2213836.2213891</idno>
+		<ptr target="https://doi.org/10.1145/2213836.2213891" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="19,235.85,533.94,244.75,8.97;19,151.52,544.90,122.72,8.97">Proceedings of the ACM SIGMOD International Conference on Management of Data</title>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Fuxman</surname></persName>
+		</editor>
+		<meeting>the ACM SIGMOD International Conference on Management of Data<address><addrLine>Scottsdale, AZ, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012-05-20">2012. May 20-24, 2012. 2012</date>
+			<biblScope unit="page" from="481" to="492" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,578.63,337.98,8.97;19,151.52,589.59,329.08,8.97;19,151.52,600.55,329.07,8.97;19,151.52,611.51,120.02,8.97" xml:id="b38">
+	<analytic>
+		<title level="a" type="main" coords="19,166.51,589.59,274.90,8.97">Mave: A product dataset for multi-source attribute value extraction</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Kulkarni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Sanghai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Shu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Elsas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Kanagal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="19,463.04,589.59,17.55,8.97;19,151.52,600.55,329.07,8.97;19,151.52,611.51,26.54,8.97">Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining</title>
+		<meeting>the Fifteenth ACM International Conference on Web Search and Data Mining</meeting>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="1256" to="1265" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,142.61,623.32,337.98,8.97;19,151.52,634.28,329.07,8.97;19,151.52,645.24,329.07,8.97;19,151.52,657.44,32.95,7.47" xml:id="b39">
+	<analytic>
+		<title level="a" type="main" coords="19,344.57,623.32,136.02,8.97;19,151.52,634.28,231.72,8.97">Hgat: Heterogeneous graph attention networks for semi-supervised short text classification</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Ji</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Nie</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/3450352</idno>
+		<ptr target="https://doi.org/10.1145/3450352" />
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,390.06,634.28,90.53,8.97">ACM Trans. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<date type="published" when="2021-05">may 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,142.61,119.07,337.98,8.97;20,151.52,130.03,329.07,8.97;20,151.52,140.99,329.08,8.97;20,151.52,153.20,211.78,7.47" xml:id="b40">
+	<analytic>
+		<title level="a" type="main" coords="20,274.16,119.07,206.43,8.97;20,151.52,130.03,14.74,8.97">Graph convolutional networks for text classification</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Luo</surname></persName>
+		</author>
+		<idno type="DOI">10.1609/aaai.v33i01.33017370</idno>
+		<ptr target="https://ojs.aaai.org/index.php/AAAI/article/view/4725" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="20,175.90,130.03,269.19,8.97">Proceedings of the AAAI Conference on Artificial Intelligence</title>
+		<meeting>the AAAI Conference on Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2019-07">Jul 2019</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="7370" to="7377" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,142.61,162.91,337.98,8.97;20,151.52,173.87,329.08,8.97;20,151.52,184.83,181.83,8.97" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coords="20,332.52,162.91,148.07,8.97;20,151.52,173.87,311.93,8.97">Document and word representations generated by graph convolutional network and bert for short text classification</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Yuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="20,151.52,184.83,43.02,8.97">ECAI 2020</title>
+		<imprint>
+			<publisher>IOS Press</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="2275" to="2281" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,142.61,195.79,337.98,8.97;20,151.52,206.74,294.69,8.97" xml:id="b42">
+	<analytic>
+		<title level="a" type="main" coords="20,309.09,195.79,171.50,8.97;20,151.52,206.74,118.15,8.97">Simplified-boosting ensemble convolutional network for text classification</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Meng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,276.30,206.74,103.87,8.97">Neural Processing Letters</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="16" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,142.61,217.70,337.98,8.97;20,151.52,228.66,329.08,8.97;20,151.52,239.62,329.07,8.97;20,151.52,250.58,329.07,8.97;20,151.52,261.54,329.08,8.97;20,151.52,272.50,329.08,8.97;20,151.52,283.46,193.98,8.97" xml:id="b43">
+	<analytic>
+		<title level="a" type="main" coords="20,296.68,217.70,183.91,8.97;20,151.52,228.66,208.71,8.97">MGNC-CNN: A simple approach to exploiting multiple word embeddings for sentence classification</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Roller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">C</forename><surname>Wallace</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/n16-1178</idno>
+		<ptr target="https://doi.org/10.18653/v1/n16-1178" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="20,231.22,239.62,249.37,8.97;20,151.52,250.58,329.07,8.97;20,151.52,261.54,49.19,8.97;20,448.94,261.54,31.65,8.97;20,151.52,272.50,159.23,8.97">NAACL HLT 2016, The 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</title>
+		<editor>
+			<persName><forename type="first">K</forename><surname>Knight</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Nenkova</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">O</forename><surname>Rambow</surname></persName>
+		</editor>
+		<meeting><address><addrLine>San Diego California, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">June 12-17, 2016. 2016</date>
+			<biblScope unit="page" from="1522" to="1527" />
+		</imprint>
+	</monogr>
+	<note>The Association for Computational Linguistics</note>
+</biblStruct>
+
+<biblStruct coords="20,142.61,294.42,337.98,8.97;20,151.52,305.38,329.07,8.97;20,151.52,316.33,97.78,8.97" xml:id="b44">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Wen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.13826</idno>
+		<title level="m" coords="20,378.36,294.42,102.24,8.97;20,151.52,305.38,262.61,8.97">Every document owns its structure: Inductive text classification via graph neural networks</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="20,142.61,327.29,337.97,8.97;20,151.52,338.25,239.41,8.97" xml:id="b45">
+	<analytic>
+		<title level="a" type="main" coords="20,344.21,327.29,136.37,8.97;20,151.52,338.25,106.69,8.97">A sequential graph neural network for short text classification</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,264.83,338.25,44.86,8.97">Algorithms</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">352</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,142.61,349.21,337.98,8.97;20,151.52,360.17,329.08,8.97;20,151.52,371.13,329.07,8.97;20,151.52,382.09,329.08,8.97;20,151.52,393.05,329.07,8.97;20,151.52,405.25,108.74,7.47" xml:id="b46">
+	<analytic>
+		<title level="a" type="main" coords="20,306.65,349.21,173.95,8.97;20,151.52,360.17,69.80,8.97">Simplified graph learning for inductive short text classification</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Dou</surname></persName>
+		</author>
+		<ptr target="https://aclanthology.org/2022.emnlp-main.735" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="20,432.53,360.17,48.07,8.97;20,151.52,371.13,324.97,8.97">Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing</title>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Goldberg</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Z</forename><surname>Kozareva</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</editor>
+		<meeting>the 2022 Conference on Empirical Methods in Natural Language Processing<address><addrLine>Abu Dhabi, United Arab Emirates</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2022">December 7-11, 2022. 2022</date>
+			<biblScope unit="volume">2022</biblScope>
+			<biblScope unit="page" from="10717" to="10724" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,142.61,414.96,337.97,8.97;20,151.52,425.92,329.07,8.97;20,151.52,436.88,329.08,8.97;20,151.52,447.84,329.07,8.97;20,151.52,458.80,329.07,8.97;20,151.52,469.76,329.07,8.97;20,151.52,481.96,180.83,7.47" xml:id="b47">
+	<analytic>
+		<title level="a" type="main" coords="20,327.28,414.96,153.31,8.97;20,151.52,425.92,222.05,8.97">BERT-KG: A short text classification model based on knowledge graph and deep semantics</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Hong</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-030-88480-2_58</idno>
+		<ptr target="https://doi.org/10.1007/978-3-030-88480-2_58" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="20,251.71,436.88,228.89,8.97;20,151.52,447.84,203.00,8.97;20,190.31,458.80,77.41,8.97">Natural Language Processing and Chinese Computing -10th CCF International Conference, NLPCC 2021</title>
+		<title level="s" coords="20,273.68,458.80,141.16,8.97">Lecture Notes in Computer Science</title>
+		<editor>
+			<persName><forename type="first">R</forename><surname>He</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Qingdao, China</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2021">October 13-17, 2021. 2021</date>
+			<biblScope unit="volume">13028</biblScope>
+			<biblScope unit="page" from="721" to="733" />
+		</imprint>
+	</monogr>
+	<note>Proceedings, Part I</note>
+</biblStruct>
+
+<biblStruct coords="20,142.61,491.68,337.98,8.97;20,151.52,502.64,329.07,8.97;20,151.52,513.59,329.07,8.97;20,151.52,524.55,329.07,8.97;20,151.52,535.51,329.08,8.97;20,151.52,547.72,108.24,7.47" xml:id="b48">
+	<analytic>
+		<title level="a" type="main" coords="20,466.13,491.68,14.46,8.97;20,151.52,502.64,203.46,8.97">Ensemble distillation for bert-based ranking models</title>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Qin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Bendersky</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Najork</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/3471158.3472238</idno>
+		<ptr target="https://doi.org/10.1145/3471158.3472238" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="20,379.76,502.64,100.83,8.97;20,151.52,513.59,325.19,8.97">Proceedings of the 2021 ACM SIGIR International Conference on Theory of Information Retrieval</title>
+		<meeting>the 2021 ACM SIGIR International Conference on Theory of Information Retrieval<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computing Machinery</publisher>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="131" to="136" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

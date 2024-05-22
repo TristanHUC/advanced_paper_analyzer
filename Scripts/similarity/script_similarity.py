@@ -19,7 +19,7 @@ def pdf_similarity(title,file, sbert_model):
         pre_processed_abstract = remove_stopwords(abstract)
         listSentence_abstract = text_to_ListSentences(pre_processed_abstract)
         sentence_embeddings = sbert_model.encode(listSentence_abstract)
-        sentences_embeddings_average = sentence_embeddings.mean(axis=0) #mean ? o np.mean ?
+        sentences_embeddings_average = sentence_embeddings.mean(axis=0)
 
 
         #list of sentence of our abstract
