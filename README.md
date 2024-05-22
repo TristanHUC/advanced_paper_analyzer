@@ -1,5 +1,8 @@
 # Advanced Paper Analyzer
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11243971.svg)](https://doi.org/10.5281/zenodo.11243971)
+[![Documentation Status](https://readthedocs.org/projects/advanced-paper-analyzer/badge/?version=latest)](https://advanced-paper-analyzer.readthedocs.io/en/latest/?badge=latest)
+
 ## Table of Contents
 - [Advanced Paper Analyzer](#advanced-paper-analyzer)
   - [Table of Contents](#table-of-contents)
