@@ -7,6 +7,7 @@ def pdf_similarity(title,file, sbert_model):
     list_listSentenceEmbedded_all_abstracts = []
 
     array = [title, file]
+    titles = []
 
     for filename in array:
         print('start similarities :', title, filename)
@@ -21,6 +22,8 @@ def pdf_similarity(title,file, sbert_model):
         sentence_embeddings = sbert_model.encode(listSentence_abstract)
         sentences_embeddings_average = sentence_embeddings.mean(axis=0)
 
+        #extract titles
+        titles.append(root[0][0][0][0].text)
 
         #list of sentence of our abstract
         if title == filename:
@@ -31,4 +34,5 @@ def pdf_similarity(title,file, sbert_model):
     for embedded_Abstract in list_listSentenceEmbedded_all_abstracts:
         similarities = cosine(embedded_Abstract, listSentenceEmbedded_of_interest)
 
-    return similarities
+
+    return titles,similarities

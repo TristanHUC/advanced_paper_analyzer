@@ -95,7 +95,7 @@ def extract_data_all_pdf():
         from itertools import combinations
 
         # Usar itertools.combinations para generar todos los pares posibles
-        diferencias = [((a, b), pdf_similarity(a,b,sbert_model)) for a, b in combinations(grobid_processed_pdf, 2)]
+        diferencias = [(pdf_similarity(a,b,sbert_model)) for a, b in combinations(grobid_processed_pdf, 2)]
 
         # Mostrar los resultados
         for par, diferencia in diferencias:
