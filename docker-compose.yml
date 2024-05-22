@@ -1,0 +1,23 @@
+version: '3'
+services:
+  container1:
+    image: stain/jena-fuseki
+    ports:
+      - "3035:3030"
+    environment:
+      - ADMIN_PASSWORD=pw123
+      - FUSEKI_DATASET_1=KG_dataset
+    networks:
+      - my-network
+
+  container2:
+    build:
+      context: ./Containers
+    ports:
+      - "8060:8060"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
