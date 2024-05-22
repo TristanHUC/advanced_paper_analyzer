@@ -15,7 +15,6 @@
 ## Introduction
 Advanced Paper Analyzer takes a set of research papers and extracts its metadata to obtain information. It accesses Wikidata and ROR to expand the information and also has processes that compare the similarity between the abstracts taken from the papers and that analyze the possible topics the paper is about.
 
-## Requirements
 
 ### Python
 The code runs on **Python 3.10**, so it must be installed in the system to be able to use Advanced Paper Analyzer.
@@ -44,7 +43,19 @@ Light image:
 
 ## How to use
 
-### To create the dataset
-At the same time as launching Jena-Fuseki, it creates the dataset with the command:
+Download the repository : git clone --recursive https://github.com/anastmur/advanced_paper_analyzer
 
-    docker run -p 3035:3030 -e ADMIN_PASSWORD=pw123 -e FUSEKI_DATASET_1=KG_dataset stain/jena-fuseki
+install the Dependencies : see dependencies section
+
+download grobid and Jena-Fuseki image from dockerhub : 
+- docker pull lfoppiano/grobid
+- docker pull stain/jena-fuseki
+
+and run them with : 
+- docker run -p 8070:8070 lfoppiano/grobid:latest-develop
+- docker run -p 3035:3030 -e ADMIN_PASSWORD=pw123 -e FUSEKI_DATASET_1=KG_dataset stain/jena-fuseki
+(it creates the dataset at the same time)
+
+- Run the script interface.py
+
+    
