@@ -1,18 +1,18 @@
-from Scripts.utils import extract_text, text_to_ListSentences, cosine, remove_stopwords
+from utils import extract_text, text_to_ListSentences, cosine, remove_stopwords
 from sentence_transformers import SentenceTransformer
 import os
 from lxml import etree
 
 
-def pdf_similarity(title,path_directory):
+def pdf_similarity(title,file):
 
     # list of lists of sentences from abstracts (to compare them with the abstract of interest)
     list_listSentenceEmbedded_all_abstracts = []
 
-    filenames = []
-    similarities = {}
+    array = [title, file]
 
-    for filename in os.listdir(path_directory):
+    for filename in array:
+
         path_to_file = '../Grobid_processed_pdf/' + filename
         tree = etree.parse(path_to_file)
 
@@ -27,13 +27,12 @@ def pdf_similarity(title,path_directory):
 
 
         #list of sentence of our abstract
-        if title == root[0][0][0][0].text:
+        if title == filename:
             listSentenceEmbedded_of_interest = sentences_embeddings_average
         else :
-            filenames.append(filename[: len(filename) - 15])
             list_listSentenceEmbedded_all_abstracts.append(sentences_embeddings_average)
 
-    for filename, embedded_Abstract in zip(filenames,list_listSentenceEmbedded_all_abstracts):
-        similarities[filename] = cosine(embedded_Abstract, listSentenceEmbedded_of_interest)
+    for embedded_Abstract in list_listSentenceEmbedded_all_abstracts:
+        similarities = cosine(embedded_Abstract, listSentenceEmbedded_of_interest)
 
     return similarities

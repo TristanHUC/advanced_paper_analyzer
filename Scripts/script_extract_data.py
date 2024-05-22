@@ -1,7 +1,7 @@
 from lxml import etree
 from utils import extract_text, extract_arXiv_id
 from topic_modeling.script_topic_modeling import topic_classification
-# from similarity.script_similarity import pdf_similarity
+from similarity.script_similarity import pdf_similarity
 import sys
 import os
 from pathlib import Path
@@ -89,17 +89,17 @@ for input_name in grobid_processed_pdf:
     # print(similarities)
 
 #compute the similarity between all papers and all the others
-# from itertools import combinations
+from itertools import combinations
 
-# # Usar itertools.combinations para generar todos los pares posibles
-# diferencias = [((a, b), pdf_similarity(a,b)) for a, b in combinations(grobid_processed_pdf, 2)]
+# Usar itertools.combinations para generar todos los pares posibles
+diferencias = [((a, b), pdf_similarity(a,b)) for a, b in combinations(grobid_processed_pdf, 2)]
 
-# # Mostrar los resultados
-# for par, diferencia in diferencias:
-#     print(f"Diferencia entre {par[0]} y {par[1]}: {diferencia}")
+# Mostrar los resultados
+for par, diferencia in diferencias:
+    print(f"Diferencia entre {par[0]} y {par[1]}: {diferencia}")
 
-# similarities_path = os.path.join("results", f"{Title}_similarities.txt")
-# with open(similarities_path, "w+") as similarities_file:
-#     similarity_list = diferencias.items()
-#     for similarity in similarity_list:
-#         similarities_file.write(str(similarity) + "\n")
+similarities_path = os.path.join("results", "similarities.txt")
+with open(similarities_path, "w+") as similarities_file:
+    similarity_list = diferencias
+    for similarity in similarity_list:
+        similarities_file.write(str(similarity) + "\n")
