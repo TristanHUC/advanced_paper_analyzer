@@ -1,0 +1,44 @@
+<h1 id="advanced-paper-analyzer">Advanced Paper Analyzer</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#advanced-paper-analyzer">Advanced Paper Analyzer</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#requirements">Requirements</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#grobid">Grobid</a></li>
+<li><a href="#apache-jena-fuseki">Apache Jena Fuseki</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use">How to use</a><ul>
+<li><a href="#to-create-the-dataset">To create the dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Advanced Paper Analyzer takes a set of research papers and extracts its metadata to obtain information. It accesses Wikidata and ROR to expand the information and also has processes that compare the similarity between the abstracts taken from the papers and that analyze the possible topics the paper is about.</p>
+<h2 id="requirements">Requirements</h2>
+<h3 id="python">Python</h3>
+<p>The code runs on <strong>Python 3.10</strong>, so it must be installed in the system to be able to use Advanced Paper Analyzer.</p>
+<h3 id="dependencies">Dependencies</h3>
+<p>Dependencies can be installed by using <a href="https://python-poetry.org/">Poetry</a>. You simply must go to the root directory of the repository and run:</p>
+<pre><code>poetry <span class="hljs-keyword">install</span>
+</code></pre><p>Or install all dependencies with pip using requirements.txt in the root directory of the repository by running:</p>
+<pre><code>pip <span class="hljs-keyword">install</span> -r requirements.txt
+</code></pre><h3 id="grobid">Grobid</h3>
+<p>Grobid is used to extract metadata from the papers, which are then used for further analysis. For this reason you must install either the full or light version of the <a href="https://grobid.readthedocs.io/en/latest/">Grobid 0.8.0</a> <a href="https://www.docker.com/">Docker</a> image. 
+To run Grobid use one of this commands depending on version you have:</p>
+<p>Full image:
+<a href="https://hub.docker.com/r/grobid/grobid">https://hub.docker.com/r/grobid/grobid</a></p>
+<p>Light image:
+<a href="https://hub.docker.com/r/lfoppiano/grobid/">https://hub.docker.com/r/lfoppiano/grobid/</a></p>
+<h3 id="apache-jena-fuseki">Apache Jena Fuseki</h3>
+<p><a href="https://jena.apache.org/documentation/fuseki2/">Jena Fuseki</a> is used to create the triple-store and the SPARQL endpoint, so it must be installed and run as described in the section to create the dataset</p>
+<h2 id="how-to-use">How to use</h2>
+<h3 id="to-create-the-dataset">To create the dataset</h3>
+<p>At the same time as launching Jena-Fuseki, it creates the dataset with the command:</p>
+<pre><code>docker <span class="hljs-keyword">run</span><span class="bash"> -p 3035:3030 <span class="hljs-_">-e</span> ADMIN_PASSWORD=pw123 <span class="hljs-_">-e</span> FUSEKI_DATASET_1=KG_dataset stain/jena-fuseki</span>
+</code></pre>
