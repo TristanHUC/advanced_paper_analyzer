@@ -5,13 +5,25 @@ Requires list of papers IDs (arXiv or DOI)
 
 import requests
 import xml.etree.ElementTree as ET
+import os
+from pathlib import Path
 
+TITLE = ""
 
-def main():
-    arxiv_ids = get_ids('arxiv.txt')
-    doi_ids = get_ids('doi.txt')
+def get_referenced_papers(title):
 
-    get_dois(doi_ids)
+    global TITLE
+    TITLE = title
+    # global final_results_path
+
+    # final_results_path = "enriched_results"
+
+    # final_results_path = os.path.join(results_path_name,f"{title}")
+
+    arxiv_ids = get_ids(os.path.join("results", TITLE,'arxiv.txt'))
+    # doi_ids = get_ids('doi.txt')
+
+    # get_dois(doi_ids)
 
     doi_list = []
 
@@ -21,8 +33,8 @@ def main():
             doi_list.append(doi)
 
     print(doi_list)
-    
-    get_dois(doi_list)
+
+    # get_dois(doi_list)
 
     get_arxivs(arxiv_ids)
 
@@ -47,33 +59,35 @@ def get_doi_from_arxiv(arxiv_id):
                 return link.attrib['href'].split('/')[-1]
     return None
 
-def get_dois(doi_list):
+# def get_dois(doi_list):
 
-    # Construir la parte VALUES de la consulta SPARQL dinámicamente
-    values_part = ' '.join(f'"{doi}"' for doi in doi_list)
+    # # Construir la parte VALUES de la consulta SPARQL dinámicamente
+    # values_part = ' '.join(f'"{doi}"' for doi in doi_list)
 
-    query = f"""
-    SELECT ?item ?itemLabel ?doi ?author ?authorLabel WHERE {{
-    VALUES ?doi {{ {values_part} }}
-    ?item wdt:P356 ?doi.
-    OPTIONAL {{ ?item wdt:P50 ?author. }}
-    SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
-    }}
-    """
+    # query = f"""
+    # SELECT ?item ?itemLabel ?doi ?author ?authorLabel WHERE {{
+    # VALUES ?doi {{ {values_part} }}
+    # ?item wdt:P356 ?doi.
+    # OPTIONAL {{ ?item wdt:P50 ?author. }}
+    # SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
+    # }}
+    # """
 
-    url = 'https://query.wikidata.org/sparql'
-    response = requests.get(url, params={'query': query, 'format': 'json'})
-    data = response.json()
+    # url = 'https://query.wikidata.org/sparql'
+    # response = requests.get(url, params={'query': query, 'format': 'json'})
+    # data = response.json()
 
-    for item in data['results']['bindings']:
-        doi = item['doi']['value']
-        title = item['itemLabel']['value']
-        authors = []
-        if 'author' in item:
-            authors = [item['authorLabel']['value'] for author in item['author']]
-        print(f"DOI: {doi}, Title: {title}, Authors: {', '.join(authors)}")
+    # with open(os.path.join(final_results_path, "papers_dois"), "+w") as file:
+    #     for item in data['results']['bindings']:
+    #         doi = item['doi']['value']
+    #         title = item['itemLabel']['value']
+    #         authors = []
+    #         if 'author' in item:
+    #             authors = [item['authorLabel']['value'] for author in item['author']]
+    #         file.write(f"DOI: {doi}, Title: {title}, Authors: {', '.join(authors)}")
 
 def get_arxivs(arxiv_list):
+    global TITLE
     values_part = ' '.join(f'"{doi}"' for doi in arxiv_list)
     query = f"""
     SELECT ?item ?itemLabel ?arxivId ?author ?authorLabel WHERE {{
@@ -87,10 +101,12 @@ def get_arxivs(arxiv_list):
     url = 'https://query.wikidata.org/sparql'
     response = requests.get(url, params={'query': query, 'format': 'json'})
     data = response.json()
-
+    i = 1
     for item in data['results']['bindings']:
-        print(item)
-
-
-if __name__ == "__main__":
-    main()
+        Path(os.path.join("results", TITLE, "papers",f"paper_{i}")).mkdir(parents=True, exist_ok=True)
+        if 'authorLabel' in item:
+            with open(os.path.join("results", TITLE, "papers",f"paper_{i}", "authors.txt"), "+w") as file:
+                file.write(str(item['authorLabel']['value']))
+        with open(os.path.join("results", TITLE, "papers",f"paper_{i}", "title.txt"), "+w") as file:
+            file.write(str(item['itemLabel']['value']))
+        i += 1

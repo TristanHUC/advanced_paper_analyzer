@@ -1,4 +1,4 @@
-from Scripts.utils import extract_text, text_to_ListSentences, remove_stopwords
+from utils import extract_text, text_to_ListSentences, remove_stopwords
 import os
 from lxml import etree
 from sklearn.decomposition import LatentDirichletAllocation

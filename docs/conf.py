@@ -1,0 +1,3 @@
+# -- Project information -----------------------------------------------------
+
+project = "AdvancedPaperAnalizer"
