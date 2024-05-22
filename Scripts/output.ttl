@@ -1,0 +1,3494 @@
+@prefix ex: <http://example.org/#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Probability a rdfs:Class ;
+    rdfs:label "Probability" ;
+    rdfs:comment "Probabiliti of a given Scholar Article to be of certain topic." .
+
+ex:Similarity a rdfs:Class ;
+    rdfs:label "Similarity" ;
+    rdfs:comment "Similarity between two diferent Scholar Articles." .
+
+ex:Topic a rdfs:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "Topic of a given Scholar Article." .
+
+sch:Organization a rdfs:Class .
+
+sch:Person a rdfs:Class .
+
+sch:Project a rdfs:Class .
+
+sch:ScholarlyArticle a rdfs:Class .
+
+ex:Article11 a sch:ScholarlyArticle ;
+    sch:about "Adam: A Method for Stochastic Optimization"^^xsd:string ;
+    sch:author ex:Person14,
+        ex:Person15,
+        ex:Person16,
+        ex:Person256,
+        ex:Person257,
+        ex:Person258 ;
+    sch:identifier "11"^^xsd:string ;
+    sch:sameAs "11"^^xsd:string .
+
+ex:Article12 a sch:ScholarlyArticle ;
+    sch:about "Sparks of Artificial General Intelligence: Early experiments with GPT-4"^^xsd:string ;
+    sch:author ex:Person259,
+        ex:Person260 ;
+    sch:identifier "12"^^xsd:string ;
+    sch:sameAs "12"^^xsd:string .
+
+ex:Article13 a sch:ScholarlyArticle ;
+    sch:about "ReAct: Synergizing Reasoning and Acting in Language Models"^^xsd:string ;
+    sch:identifier "13"^^xsd:string ;
+    sch:sameAs "13"^^xsd:string .
+
+ex:Article14 a sch:ScholarlyArticle ;
+    sch:about "Training Verifiers to Solve Math Word Problems"^^xsd:string ;
+    sch:author ex:Person216 ;
+    sch:identifier "14"^^xsd:string ;
+    sch:sameAs "14"^^xsd:string .
+
+ex:Article15 a sch:ScholarlyArticle ;
+    sch:about "Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning"^^xsd:string ;
+    sch:author ex:Person14,
+        ex:Person15,
+        ex:Person16 ;
+    sch:identifier "15"^^xsd:string ;
+    sch:sameAs "15"^^xsd:string .
+
+ex:Article16 a sch:ScholarlyArticle ;
+    sch:about "Chain of Thought Prompting Elicits Reasoning in Large Language Models"^^xsd:string ;
+    sch:author ex:Person261,
+        ex:Person262,
+        ex:Person263,
+        ex:Person264 ;
+    sch:identifier "16"^^xsd:string ;
+    sch:sameAs "16"^^xsd:string .
+
+ex:Article17 a sch:ScholarlyArticle ;
+    sch:about "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"^^xsd:string ;
+    sch:author ex:Person265 ;
+    sch:identifier "17"^^xsd:string ;
+    sch:sameAs "17"^^xsd:string .
+
+ex:Article18 a sch:ScholarlyArticle ;
+    sch:about "Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation"^^xsd:string ;
+    sch:author ex:Person266 ;
+    sch:identifier "18"^^xsd:string ;
+    sch:sameAs "18"^^xsd:string .
+
+ex:Article19 a sch:ScholarlyArticle ;
+    sch:about "Neural Network Acceptability Judgments"^^xsd:string ;
+    sch:identifier "19"^^xsd:string ;
+    sch:sameAs "19"^^xsd:string .
+
+ex:Article20 a sch:ScholarlyArticle ;
+    sch:about "Character-Level Language Modeling with Deeper Self-Attention"^^xsd:string ;
+    sch:author ex:Person263,
+        ex:Person267,
+        ex:Person268,
+        ex:Person269,
+        ex:Person270,
+        ex:Person271,
+        ex:Person272,
+        ex:Person273,
+        ex:Person274,
+        ex:Person275,
+        ex:Person276 ;
+    sch:identifier "20"^^xsd:string ;
+    sch:sameAs "20"^^xsd:string .
+
+ex:Article21 a sch:ScholarlyArticle ;
+    sch:about "Efficient Estimation of Word Representations in Vector Space"^^xsd:string ;
+    sch:author ex:Person14,
+        ex:Person15,
+        ex:Person16,
+        ex:Person258,
+        ex:Person266 ;
+    sch:identifier "21"^^xsd:string ;
+    sch:sameAs "21"^^xsd:string .
+
+ex:Article22 a sch:ScholarlyArticle ;
+    sch:about "ERNIE: Enhanced Representation through Knowledge Integration"^^xsd:string ;
+    sch:identifier "22"^^xsd:string ;
+    sch:sameAs "22"^^xsd:string .
+
+ex:Article23 a sch:ScholarlyArticle ;
+    sch:about "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding"^^xsd:string ;
+    sch:identifier "23"^^xsd:string ;
+    sch:sameAs "23"^^xsd:string .
+
+ex:Article24 a sch:ScholarlyArticle ;
+    sch:about "XLNet: Generalized Autoregressive Pretraining for Language Understanding"^^xsd:string ;
+    sch:author ex:Person263,
+        ex:Person277,
+        ex:Person278 ;
+    sch:identifier "24"^^xsd:string ;
+    sch:sameAs "24"^^xsd:string .
+
+ex:Article25 a sch:ScholarlyArticle ;
+    sch:about "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context"^^xsd:string ;
+    sch:author ex:Person263,
+        ex:Person277,
+        ex:Person278,
+        ex:Person279 ;
+    sch:identifier "25"^^xsd:string ;
+    sch:sameAs "25"^^xsd:string .
+
+ex:Article26 a sch:ScholarlyArticle ;
+    sch:about "Multi-Task Deep Neural Networks for Natural Language Understanding"^^xsd:string ;
+    sch:author ex:Person270,
+        ex:Person40 ;
+    sch:identifier "26"^^xsd:string ;
+    sch:sameAs "26"^^xsd:string .
+
+ex:Article27 a sch:ScholarlyArticle ;
+    sch:about "A large annotated corpus for learning natural language inference"^^xsd:string ;
+    sch:author ex:Person280,
+        ex:Person281,
+        ex:Person282 ;
+    sch:identifier "27"^^xsd:string ;
+    sch:sameAs "27"^^xsd:string .
+
+ex:Article28 a sch:ScholarlyArticle ;
+    sch:about "Deep contextualized word representations"^^xsd:string ;
+    sch:author ex:Person16,
+        ex:Person256,
+        ex:Person257,
+        ex:Person283,
+        ex:Person284 ;
+    sch:identifier "28"^^xsd:string ;
+    sch:sameAs "28"^^xsd:string .
+
+ex:Article29 a sch:ScholarlyArticle ;
+    sch:about "Language Models are Few-Shot Learners"^^xsd:string ;
+    sch:author ex:Person149,
+        ex:Person162,
+        ex:Person257,
+        ex:Person285,
+        ex:Person286,
+        ex:Person287,
+        ex:Person288,
+        ex:Person289,
+        ex:Person290,
+        ex:Person291,
+        ex:Person292,
+        ex:Person293,
+        ex:Person294,
+        ex:Person295,
+        ex:Person296,
+        ex:Person297,
+        ex:Person43,
+        ex:Person51,
+        ex:Person66 ;
+    sch:identifier "29"^^xsd:string ;
+    sch:sameAs "29"^^xsd:string .
+
+ex:Article30 a sch:ScholarlyArticle ;
+    sch:about "Layer Normalization"^^xsd:string ;
+    sch:author ex:Person298,
+        ex:Person299,
+        ex:Person300,
+        ex:Person301 ;
+    sch:identifier "30"^^xsd:string ;
+    sch:sameAs "30"^^xsd:string .
+
+ex:Article31 a sch:ScholarlyArticle ;
+    sch:about "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity"^^xsd:string ;
+    sch:author ex:Person219,
+        ex:Person302 ;
+    sch:identifier "31"^^xsd:string ;
+    sch:sameAs "31"^^xsd:string .
+
+ex:Article32 a sch:ScholarlyArticle ;
+    sch:about "RoBERTa: A Robustly Optimized BERT Pretraining Approach"^^xsd:string ;
+    sch:author ex:Person283,
+        ex:Person303,
+        ex:Person304 ;
+    sch:identifier "32"^^xsd:string ;
+    sch:sameAs "32"^^xsd:string .
+
+ex:Article33 a sch:ScholarlyArticle ;
+    sch:about "StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding"^^xsd:string ;
+    sch:identifier "33"^^xsd:string ;
+    sch:sameAs "33"^^xsd:string .
+
+ex:Article34 a sch:ScholarlyArticle ;
+    sch:about "Adversarial Training for Large Neural Language Models"^^xsd:string ;
+    sch:author ex:Person257,
+        ex:Person40 ;
+    sch:identifier "34"^^xsd:string ;
+    sch:sameAs "34"^^xsd:string .
+
+ex:Article35 a sch:ScholarlyArticle ;
+    sch:about "Longformer: The Long-Document Transformer"^^xsd:string ;
+    sch:author ex:Person305 ;
+    sch:identifier "35"^^xsd:string ;
+    sch:sameAs "35"^^xsd:string .
+
+ex:Article36 a sch:ScholarlyArticle ;
+    sch:about "SemEval-2017 Task 1: Semantic Textual Similarity - Multilingual and Cross-lingual Focused Evaluation"^^xsd:string ;
+    sch:author ex:Person306,
+        ex:Person307,
+        ex:Person308,
+        ex:Person309 ;
+    sch:identifier "36"^^xsd:string ;
+    sch:sameAs "36"^^xsd:string .
+
+ex:Article37 a sch:ScholarlyArticle ;
+    sch:about "Learning to Generate Reviews and Discovering Sentiment"^^xsd:string ;
+    sch:author ex:Person16,
+        ex:Person263,
+        ex:Person277,
+        ex:Person278,
+        ex:Person285 ;
+    sch:identifier "37"^^xsd:string ;
+    sch:sameAs "37"^^xsd:string .
+
+ex:Article38 a sch:ScholarlyArticle ;
+    sch:about "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"^^xsd:string ;
+    sch:author ex:Person310,
+        ex:Person311 ;
+    sch:identifier "38"^^xsd:string ;
+    sch:sameAs "38"^^xsd:string .
+
+ex:Article39 a sch:ScholarlyArticle ;
+    sch:about "The Computational Limits of Deep Learning"^^xsd:string ;
+    sch:author ex:Person149,
+        ex:Person283,
+        ex:Person303,
+        ex:Person304,
+        ex:Person312,
+        ex:Person40 ;
+    sch:identifier "39"^^xsd:string ;
+    sch:sameAs "39"^^xsd:string .
+
+ex:Article40 a sch:ScholarlyArticle ;
+    sch:about "Measuring Massive Multitask Language Understanding"^^xsd:string ;
+    sch:identifier "40"^^xsd:string ;
+    sch:sameAs "40"^^xsd:string .
+
+ex:Article41 a sch:ScholarlyArticle ;
+    sch:about "Scaling Language Models: Methods, Analysis & Insights from Training Gopher"^^xsd:string ;
+    sch:author ex:Person271,
+        ex:Person313,
+        ex:Person314,
+        ex:Person315,
+        ex:Person316 ;
+    sch:identifier "41"^^xsd:string ;
+    sch:sameAs "41"^^xsd:string .
+
+ex:Article42 a sch:ScholarlyArticle ;
+    sch:about "OPT: Open Pre-trained Transformer Language Models"^^xsd:string ;
+    sch:author ex:Person283,
+        ex:Person304,
+        ex:Person317,
+        ex:Person318 ;
+    sch:identifier "42"^^xsd:string ;
+    sch:sameAs "42"^^xsd:string .
+
+ex:Article43 a sch:ScholarlyArticle ;
+    sch:about "PaLM: Scaling Language Modeling with Pathways"^^xsd:string ;
+    sch:author ex:Person219,
+        ex:Person262,
+        ex:Person266,
+        ex:Person290,
+        ex:Person319,
+        ex:Person320,
+        ex:Person321,
+        ex:Person322 ;
+    sch:identifier "43"^^xsd:string ;
+    sch:sameAs "43"^^xsd:string .
+
+ex:Article44 a sch:ScholarlyArticle ;
+    sch:about "Large Language Models are Zero-Shot Reasoners"^^xsd:string ;
+    sch:identifier "44"^^xsd:string ;
+    sch:sameAs "44"^^xsd:string .
+
+ex:Article45 a sch:ScholarlyArticle ;
+    sch:about "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models"^^xsd:string ;
+    sch:author ex:Person219,
+        ex:Person257,
+        ex:Person278,
+        ex:Person280,
+        ex:Person292,
+        ex:Person298,
+        ex:Person302,
+        ex:Person305,
+        ex:Person311,
+        ex:Person319,
+        ex:Person323,
+        ex:Person324,
+        ex:Person325,
+        ex:Person326,
+        ex:Person327,
+        ex:Person328,
+        ex:Person329,
+        ex:Person330,
+        ex:Person331,
+        ex:Person332,
+        ex:Person333,
+        ex:Person334,
+        ex:Person335,
+        ex:Person336 ;
+    sch:identifier "45"^^xsd:string ;
+    sch:sameAs "45"^^xsd:string .
+
+ex:Article46 a sch:ScholarlyArticle ;
+    sch:about "Deep Learning Scaling is Predictable, Empirically"^^xsd:string ;
+    sch:author ex:Person77 ;
+    sch:identifier "46"^^xsd:string ;
+    sch:sameAs "46"^^xsd:string .
+
+ex:Article47 a sch:ScholarlyArticle ;
+    sch:about "BLOOM: A 176B-Parameter Open-Access Multilingual Language Model"^^xsd:string ;
+    sch:author ex:Person258,
+        ex:Person311,
+        ex:Person326,
+        ex:Person337,
+        ex:Person338,
+        ex:Person339,
+        ex:Person340,
+        ex:Person341,
+        ex:Person342,
+        ex:Person343,
+        ex:Person344,
+        ex:Person345,
+        ex:Person346 ;
+    sch:identifier "47"^^xsd:string ;
+    sch:sameAs "47"^^xsd:string .
+
+ex:Article48 a sch:ScholarlyArticle ;
+    sch:about "RoFormer: Enhanced Transformer with Rotary Position Embedding"^^xsd:string ;
+    sch:identifier "48"^^xsd:string ;
+    sch:sameAs "48"^^xsd:string .
+
+ex:Article49 a sch:ScholarlyArticle ;
+    sch:about "LLaMA: Open and Efficient Foundation Language Models"^^xsd:string ;
+    sch:author ex:Person304,
+        ex:Person347,
+        ex:Person348,
+        ex:Person349 ;
+    sch:identifier "49"^^xsd:string ;
+    sch:sameAs "49"^^xsd:string .
+
+ex:Article50 a sch:ScholarlyArticle ;
+    sch:about "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"^^xsd:string ;
+    sch:author ex:Person14,
+        ex:Person216,
+        ex:Person350 ;
+    sch:identifier "50"^^xsd:string ;
+    sch:sameAs "50"^^xsd:string .
+
+ex:Article51 a sch:ScholarlyArticle ;
+    sch:about "Training language models to follow instructions with human feedback"^^xsd:string ;
+    sch:author ex:Person15,
+        ex:Person161,
+        ex:Person183,
+        ex:Person199,
+        ex:Person216,
+        ex:Person230,
+        ex:Person291,
+        ex:Person292,
+        ex:Person351,
+        ex:Person352,
+        ex:Person66,
+        ex:Person76 ;
+    sch:identifier "51"^^xsd:string ;
+    sch:sameAs "51"^^xsd:string .
+
+ex:Article52 a sch:ScholarlyArticle ;
+    sch:about "Scaling Laws for Neural Language Models"^^xsd:string ;
+    sch:author ex:Person149,
+        ex:Person287,
+        ex:Person288,
+        ex:Person289,
+        ex:Person290,
+        ex:Person291,
+        ex:Person295 ;
+    sch:identifier "52"^^xsd:string ;
+    sch:sameAs "52"^^xsd:string .
+
+ex:Article53 a sch:ScholarlyArticle ;
+    sch:about "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot"^^xsd:string ;
+    sch:identifier "53"^^xsd:string ;
+    sch:sameAs "53"^^xsd:string .
+
+ex:Article54 a sch:ScholarlyArticle ;
+    sch:about "Training Compute-Optimal Large Language Models"^^xsd:string ;
+    sch:identifier "54"^^xsd:string ;
+    sch:sameAs "54"^^xsd:string .
+
+ex:Article55 a sch:ScholarlyArticle ;
+    sch:about "Backward Feature Correction: How Deep Learning Performs Deep (Hierarchical) Learning"^^xsd:string ;
+    sch:author ex:Person246 ;
+    sch:identifier "55"^^xsd:string ;
+    sch:sameAs "55"^^xsd:string .
+
+ex:Organization14 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "Center for Life Sciences"^^xsd:string .
+
+ex:Organization15 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "Collaborative Innovation Center of Quantum Matter"^^xsd:string .
+
+ex:Organization16 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory on Integrated Optoelectronics"^^xsd:string .
+
+ex:Organization17 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "The Synergetic Innovation Center for Advanced Materials"^^xsd:string .
+
+ex:Organization18 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "Tsinghua–Berkeley Shenzhen Institute"^^xsd:string .
+
+ex:Organization19 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Microwave and Digital Communication Technology"^^xsd:string .
+
+ex:Organization20 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Tribology"^^xsd:string .
+
+ex:Organization21 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Automobile Safety and Energy Conservation"^^xsd:string .
+
+ex:Organization22 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Water and Sediment Science and Water Conservancy and Hydropower Engineering"^^xsd:string .
+
+ex:Organization23 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Precision Testing Technology and Instruments"^^xsd:string .
+
+ex:Organization24 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of New Ceramics and Fine Processing"^^xsd:string .
+
+ex:Organization25 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Membrane Biology"^^xsd:string .
+
+ex:Organization26 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Low-Dimensional Quantum Physics"^^xsd:string .
+
+ex:Organization27 a sch:Organization ;
+    ex:hasChild ex:Organization5,
+        ex:Organization6 ;
+    sch:name "State Key Laboratory of Power System and Generation Equipment"^^xsd:string .
+
+ex:Probability1 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability10 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability100 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability101 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability102 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability103 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability104 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability105 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability106 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.94"^^xsd:float .
+
+ex:Probability107 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability108 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability109 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability11 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability110 a ex:Probability ;
+    ex:hasArticle ex:Article9 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability111 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability112 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability113 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability114 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability115 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability116 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.93"^^xsd:float .
+
+ex:Probability117 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability118 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability119 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability12 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability120 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability121 a ex:Probability ;
+    ex:hasArticle ex:Article10 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability13 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability14 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability15 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability16 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability17 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability18 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability19 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability2 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.98"^^xsd:float .
+
+ex:Probability20 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability21 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.96"^^xsd:float .
+
+ex:Probability22 a ex:Probability ;
+    ex:hasArticle ex:Article1 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability23 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability24 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability25 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability26 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability27 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability28 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability29 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability3 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability30 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability31 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability32 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability33 a ex:Probability ;
+    ex:hasArticle ex:Article2 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.92"^^xsd:float .
+
+ex:Probability34 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability35 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability36 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability37 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability38 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability39 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability4 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability40 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability41 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability42 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.94"^^xsd:float .
+
+ex:Probability43 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability44 a ex:Probability ;
+    ex:hasArticle ex:Article3 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability45 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability46 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability47 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability48 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.95"^^xsd:float .
+
+ex:Probability49 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability5 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability50 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability51 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability52 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability53 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability54 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability55 a ex:Probability ;
+    ex:hasArticle ex:Article4 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability56 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability57 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability58 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability59 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability6 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability60 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.94"^^xsd:float .
+
+ex:Probability61 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability62 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability63 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability64 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability65 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability66 a ex:Probability ;
+    ex:hasArticle ex:Article5 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability67 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability68 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability69 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.94"^^xsd:float .
+
+ex:Probability7 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability70 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability71 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability72 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability73 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability74 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability75 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability76 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability77 a ex:Probability ;
+    ex:hasArticle ex:Article6 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability78 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability79 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability8 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability80 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability81 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability82 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability83 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability84 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability85 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability86 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability87 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.94"^^xsd:float .
+
+ex:Probability88 a ex:Probability ;
+    ex:hasArticle ex:Article7 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability89 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic1 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability9 a ex:Probability ;
+    ex:hasArticle ex:Article0 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.0"^^xsd:float .
+
+ex:Probability90 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic2 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability91 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic3 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability92 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic4 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability93 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic5 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability94 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic6 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability95 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic7 ;
+    ex:probabilityValue "0.94"^^xsd:float .
+
+ex:Probability96 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic8 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability97 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic9 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability98 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic10 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Probability99 a ex:Probability ;
+    ex:hasArticle ex:Article8 ;
+    ex:hasTopic ex:Topic11 ;
+    ex:probabilityValue "0.01"^^xsd:float .
+
+ex:Similarity1 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article57 ;
+    ex:value "0.49777567"^^xsd:float .
+
+ex:Similarity10 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.51499575"^^xsd:float .
+
+ex:Similarity100 a ex:Similarity ;
+    ex:firstArticle ex:Article80 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.57790595"^^xsd:float .
+
+ex:Similarity101 a ex:Similarity ;
+    ex:firstArticle ex:Article80 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.6019223"^^xsd:float .
+
+ex:Similarity102 a ex:Similarity ;
+    ex:firstArticle ex:Article80 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.5438092"^^xsd:float .
+
+ex:Similarity103 a ex:Similarity ;
+    ex:firstArticle ex:Article80 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.6589597"^^xsd:float .
+
+ex:Similarity104 a ex:Similarity ;
+    ex:firstArticle ex:Article80 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.57047415"^^xsd:float .
+
+ex:Similarity105 a ex:Similarity ;
+    ex:firstArticle ex:Article80 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.6017555"^^xsd:float .
+
+ex:Similarity106 a ex:Similarity ;
+    ex:firstArticle ex:Article81 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.3811577"^^xsd:float .
+
+ex:Similarity107 a ex:Similarity ;
+    ex:firstArticle ex:Article81 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.7278128"^^xsd:float .
+
+ex:Similarity108 a ex:Similarity ;
+    ex:firstArticle ex:Article81 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.46561575"^^xsd:float .
+
+ex:Similarity109 a ex:Similarity ;
+    ex:firstArticle ex:Article81 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.45468974"^^xsd:float .
+
+ex:Similarity11 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.6104152"^^xsd:float .
+
+ex:Similarity110 a ex:Similarity ;
+    ex:firstArticle ex:Article81 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.42391628"^^xsd:float .
+
+ex:Similarity111 a ex:Similarity ;
+    ex:firstArticle ex:Article82 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.4340695"^^xsd:float .
+
+ex:Similarity112 a ex:Similarity ;
+    ex:firstArticle ex:Article82 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.38972282"^^xsd:float .
+
+ex:Similarity113 a ex:Similarity ;
+    ex:firstArticle ex:Article82 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.5004038"^^xsd:float .
+
+ex:Similarity114 a ex:Similarity ;
+    ex:firstArticle ex:Article82 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.45235127"^^xsd:float .
+
+ex:Similarity115 a ex:Similarity ;
+    ex:firstArticle ex:Article83 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.39147466"^^xsd:float .
+
+ex:Similarity116 a ex:Similarity ;
+    ex:firstArticle ex:Article83 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.33712837"^^xsd:float .
+
+ex:Similarity117 a ex:Similarity ;
+    ex:firstArticle ex:Article83 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.42684627"^^xsd:float .
+
+ex:Similarity118 a ex:Similarity ;
+    ex:firstArticle ex:Article84 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.5036315"^^xsd:float .
+
+ex:Similarity119 a ex:Similarity ;
+    ex:firstArticle ex:Article84 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.5515688"^^xsd:float .
+
+ex:Similarity12 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.56889075"^^xsd:float .
+
+ex:Similarity120 a ex:Similarity ;
+    ex:firstArticle ex:Article85 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.4433414"^^xsd:float .
+
+ex:Similarity13 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.4876328"^^xsd:float .
+
+ex:Similarity14 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.56664264"^^xsd:float .
+
+ex:Similarity15 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.5143982"^^xsd:float .
+
+ex:Similarity16 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article58 ;
+    ex:value "0.36067024"^^xsd:float .
+
+ex:Similarity17 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article59 ;
+    ex:value "0.41404206"^^xsd:float .
+
+ex:Similarity18 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article60 ;
+    ex:value "0.36319083"^^xsd:float .
+
+ex:Similarity19 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article61 ;
+    ex:value "0.41582865"^^xsd:float .
+
+ex:Similarity2 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article58 ;
+    ex:value "0.5187821"^^xsd:float .
+
+ex:Similarity20 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article62 ;
+    ex:value "0.8425052"^^xsd:float .
+
+ex:Similarity21 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.6453974"^^xsd:float .
+
+ex:Similarity22 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.54711884"^^xsd:float .
+
+ex:Similarity23 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.7013767"^^xsd:float .
+
+ex:Similarity24 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.41549125"^^xsd:float .
+
+ex:Similarity25 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.4262625"^^xsd:float .
+
+ex:Similarity26 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.36889216"^^xsd:float .
+
+ex:Similarity27 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.6308339"^^xsd:float .
+
+ex:Similarity28 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.42809713"^^xsd:float .
+
+ex:Similarity29 a ex:Similarity ;
+    ex:firstArticle ex:Article72 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.4378939"^^xsd:float .
+
+ex:Similarity3 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article59 ;
+    ex:value "0.6398837"^^xsd:float .
+
+ex:Similarity30 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article59 ;
+    ex:value "0.64376503"^^xsd:float .
+
+ex:Similarity31 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article60 ;
+    ex:value "0.3395448"^^xsd:float .
+
+ex:Similarity32 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article61 ;
+    ex:value "0.5475245"^^xsd:float .
+
+ex:Similarity33 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article62 ;
+    ex:value "0.25533944"^^xsd:float .
+
+ex:Similarity34 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.3649028"^^xsd:float .
+
+ex:Similarity35 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.46355516"^^xsd:float .
+
+ex:Similarity36 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.5309105"^^xsd:float .
+
+ex:Similarity37 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.47339028"^^xsd:float .
+
+ex:Similarity38 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.38386863"^^xsd:float .
+
+ex:Similarity39 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.51368195"^^xsd:float .
+
+ex:Similarity4 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article60 ;
+    ex:value "0.19845651"^^xsd:float .
+
+ex:Similarity40 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.3553392"^^xsd:float .
+
+ex:Similarity41 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.35370976"^^xsd:float .
+
+ex:Similarity42 a ex:Similarity ;
+    ex:firstArticle ex:Article73 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.3899342"^^xsd:float .
+
+ex:Similarity43 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article60 ;
+    ex:value "0.36966452"^^xsd:float .
+
+ex:Similarity44 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article61 ;
+    ex:value "0.7302821"^^xsd:float .
+
+ex:Similarity45 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article62 ;
+    ex:value "0.30463454"^^xsd:float .
+
+ex:Similarity46 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.37007338"^^xsd:float .
+
+ex:Similarity47 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.6118634"^^xsd:float .
+
+ex:Similarity48 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.66429764"^^xsd:float .
+
+ex:Similarity49 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.4128901"^^xsd:float .
+
+ex:Similarity5 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article61 ;
+    ex:value "0.4552086"^^xsd:float .
+
+ex:Similarity50 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.56632376"^^xsd:float .
+
+ex:Similarity51 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.47061375"^^xsd:float .
+
+ex:Similarity52 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.43098998"^^xsd:float .
+
+ex:Similarity53 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.51085365"^^xsd:float .
+
+ex:Similarity54 a ex:Similarity ;
+    ex:firstArticle ex:Article74 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.45750234"^^xsd:float .
+
+ex:Similarity55 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article61 ;
+    ex:value "0.40775377"^^xsd:float .
+
+ex:Similarity56 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article62 ;
+    ex:value "0.34656385"^^xsd:float .
+
+ex:Similarity57 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.43575278"^^xsd:float .
+
+ex:Similarity58 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.22936144"^^xsd:float .
+
+ex:Similarity59 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.34926486"^^xsd:float .
+
+ex:Similarity6 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article62 ;
+    ex:value "0.40540513"^^xsd:float .
+
+ex:Similarity60 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.23056285"^^xsd:float .
+
+ex:Similarity61 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.12481821"^^xsd:float .
+
+ex:Similarity62 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.10514477"^^xsd:float .
+
+ex:Similarity63 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.30190486"^^xsd:float .
+
+ex:Similarity64 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.23798476"^^xsd:float .
+
+ex:Similarity65 a ex:Similarity ;
+    ex:firstArticle ex:Article75 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.058664057"^^xsd:float .
+
+ex:Similarity66 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article62 ;
+    ex:value "0.3233653"^^xsd:float .
+
+ex:Similarity67 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.37257916"^^xsd:float .
+
+ex:Similarity68 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.55136675"^^xsd:float .
+
+ex:Similarity69 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.5471022"^^xsd:float .
+
+ex:Similarity7 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.42275512"^^xsd:float .
+
+ex:Similarity70 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.4440854"^^xsd:float .
+
+ex:Similarity71 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.4913307"^^xsd:float .
+
+ex:Similarity72 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.40507603"^^xsd:float .
+
+ex:Similarity73 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.49462053"^^xsd:float .
+
+ex:Similarity74 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.44242308"^^xsd:float .
+
+ex:Similarity75 a ex:Similarity ;
+    ex:firstArticle ex:Article76 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.41547498"^^xsd:float .
+
+ex:Similarity76 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article63 ;
+    ex:value "0.6319083"^^xsd:float .
+
+ex:Similarity77 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.47224107"^^xsd:float .
+
+ex:Similarity78 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.6057595"^^xsd:float .
+
+ex:Similarity79 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.33561262"^^xsd:float .
+
+ex:Similarity8 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.6401184"^^xsd:float .
+
+ex:Similarity80 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.38481617"^^xsd:float .
+
+ex:Similarity81 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.2931726"^^xsd:float .
+
+ex:Similarity82 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.567347"^^xsd:float .
+
+ex:Similarity83 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.32152167"^^xsd:float .
+
+ex:Similarity84 a ex:Similarity ;
+    ex:firstArticle ex:Article77 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.36456794"^^xsd:float .
+
+ex:Similarity85 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article64 ;
+    ex:value "0.50028855"^^xsd:float .
+
+ex:Similarity86 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.64861673"^^xsd:float .
+
+ex:Similarity87 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.44755623"^^xsd:float .
+
+ex:Similarity88 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.39410824"^^xsd:float .
+
+ex:Similarity89 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.34059188"^^xsd:float .
+
+ex:Similarity9 a ex:Similarity ;
+    ex:firstArticle ex:Article56 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.649337"^^xsd:float .
+
+ex:Similarity90 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.669916"^^xsd:float .
+
+ex:Similarity91 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.4237305"^^xsd:float .
+
+ex:Similarity92 a ex:Similarity ;
+    ex:firstArticle ex:Article78 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.41557416"^^xsd:float .
+
+ex:Similarity93 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article65 ;
+    ex:value "0.6652332"^^xsd:float .
+
+ex:Similarity94 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article66 ;
+    ex:value "0.42931882"^^xsd:float .
+
+ex:Similarity95 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article67 ;
+    ex:value "0.7003354"^^xsd:float .
+
+ex:Similarity96 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article68 ;
+    ex:value "0.44948077"^^xsd:float .
+
+ex:Similarity97 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article69 ;
+    ex:value "0.46784356"^^xsd:float .
+
+ex:Similarity98 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article70 ;
+    ex:value "0.655169"^^xsd:float .
+
+ex:Similarity99 a ex:Similarity ;
+    ex:firstArticle ex:Article79 ;
+    ex:secondArticle ex:Article71 ;
+    ex:value "0.49689263"^^xsd:float .
+
+ex:description a rdf:Property ;
+    rdfs:label "Description" ;
+    rdfs:comment "Description of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string .
+
+ex:firstArticle a rdf:Property ;
+    rdfs:label "First Article to be compared" ;
+    rdfs:comment "First Article to be compared by the similarity." ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:hasArticle a rdf:Property ;
+    rdfs:label "Article of a probabilty" ;
+    rdfs:comment "Indicates the article of an probabiliy." ;
+    rdfs:domain ex:Probability ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:hasChild a rdf:Property ;
+    rdfs:label "Organization childof" ;
+    rdfs:comment "The child of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range sch:Organization .
+
+ex:hasOrganizationType a rdf:Property ;
+    rdfs:label "Organization Type" ;
+    rdfs:comment "The type of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string .
+
+ex:hasProject a rdf:Property ;
+    rdfs:label "Projet of a given Organization" ;
+    rdfs:comment "Indicates the projet of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range sch:Project .
+
+ex:hasTopic a rdf:Property ;
+    rdfs:label "Topic of a probabilty" ;
+    rdfs:comment "Topic the article of an probabiliy." ;
+    rdfs:domain ex:Probability ;
+    rdfs:range ex:Topic .
+
+ex:identifier a rdf:Property ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "The identifier of a given topic." ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string .
+
+ex:isRelated a rdf:Property ;
+    rdfs:label "Organization related" ;
+    rdfs:comment "Related organization of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range sch:Organization .
+
+ex:name a rdf:Property ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of topic." ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string .
+
+ex:nationality a rdf:Property ;
+    rdfs:label "Nationality" ;
+    rdfs:comment "Nationality of a given person." ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string .
+
+ex:orcid a rdf:Property ;
+    rdfs:label "ORCID" ;
+    rdfs:comment "Website of a given Organization." ;
+    rdfs:domain sch:Person ;
+    rdfs:range xsd:string .
+
+ex:probabilityValue a rdf:Property ;
+    rdfs:label "Value of the Probability" ;
+    rdfs:comment "Probability of being a topic of a given Article." ;
+    rdfs:domain ex:Probability ;
+    rdfs:range xsd:float .
+
+ex:reference a rdf:Property ;
+    rdfs:label "Reference" ;
+    rdfs:comment "Reference of an Article from another Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:secondArticle a rdf:Property ;
+    rdfs:label "Second Article to be compared" ;
+    rdfs:comment "Second Article to be compared by the similarity." ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range sch:ScholarlyArticle .
+
+ex:value a rdf:Property ;
+    rdfs:label "Value of the similarity" ;
+    rdfs:comment "Value of the similarity between two Articles." ;
+    rdfs:domain ex:Similarity ;
+    rdfs:range xsd:float .
+
+sch:about a rdf:Property ;
+    rdfs:label "Main title" ;
+    rdfs:comment "Main title of a given Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range xsd:string .
+
+sch:affiliation a rdf:Property ;
+    rdfs:label "Affiliation to an organization" ;
+    rdfs:comment "The given person is afiliated to the given organization." ;
+    rdfs:domain sch:Person ;
+    rdfs:range sch:Organization .
+
+sch:author a rdf:Property ;
+    rdfs:label "Author of an Article" ;
+    rdfs:comment "Indicates author (organization) of an Article.",
+        "Indicates author (person) of an Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Organization,
+        sch:Person .
+
+sch:employee a rdf:Property ;
+    rdfs:label "Employee" ;
+    rdfs:comment "Indicates employment of a person to a given project." ;
+    rdfs:domain sch:Project ;
+    rdfs:range sch:Person .
+
+sch:funder a rdf:Property ;
+    rdfs:label "Founder of an Article" ;
+    rdfs:comment "Indicates founder organization of an Article." ;
+    rdfs:domain sch:ScholarlyArticle ;
+    rdfs:range sch:Organization .
+
+sch:identifier a rdf:Property ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "Identifier of a given Article.",
+        "Identifier of a given Organization.",
+        "Identifier of a given Project." ;
+    rdfs:domain sch:Organization,
+        sch:Project,
+        sch:ScholarlyArticle ;
+    rdfs:range xsd:string .
+
+sch:legalName a rdf:Property ;
+    rdfs:label "Legal Name" ;
+    rdfs:comment "Legal Name of a given Organization." ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string .
+
+sch:name a rdf:Property ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of a Project.",
+        "The name of a person." ;
+    rdfs:domain sch:Person,
+        sch:Project ;
+    rdfs:range xsd:string .
+
+sch:sameAs a rdf:Property ;
+    rdfs:label "DOI",
+        "Website" ;
+    rdfs:comment "DOI of a given Article.",
+        "Website of a given Organization." ;
+    rdfs:domain sch:Organization,
+        sch:ScholarlyArticle ;
+    rdfs:range xsd:string .
+
+ex:Article57 a sch:ScholarlyArticle ;
+    sch:about "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding']"^^xsd:string ;
+    sch:identifier "57"^^xsd:string ;
+    sch:sameAs "57"^^xsd:string .
+
+ex:Article85 a sch:ScholarlyArticle ;
+    sch:about "['Transformers are Short-text Classifiers"^^xsd:string ;
+    sch:identifier "85"^^xsd:string ;
+    sch:sameAs "85"^^xsd:string .
+
+ex:Organization1 a sch:Organization ;
+    ex:descriprtion "None"^^xsd:string ;
+    ex:hasChild ex:Organization7,
+        ex:Organization8 ;
+    ex:hasOrganizationType "Facility"^^xsd:string ;
+    sch:identifier "https://ror.org/04mp4zc06"^^xsd:string ;
+    sch:name "Data collection engineering co-lead"^^xsd:string .
+
+ex:Organization2 a sch:Organization ;
+    ex:descriprtion "None"^^xsd:string ;
+    ex:hasChild ex:Organization9 ;
+    ex:hasOrganizationType "Company"^^xsd:string ;
+    sch:identifier "https://ror.org/0300m5276"^^xsd:string ;
+    sch:name "Microsoft Research Asia"^^xsd:string .
+
+ex:Organization3 a sch:Organization ;
+    ex:descriprtion "None"^^xsd:string ;
+    ex:hasOrganizationType "Education"^^xsd:string ;
+    sch:identifier "https://ror.org/00m6w7z96"^^xsd:string ;
+    sch:name "Northwestern University"^^xsd:string .
+
+ex:Organization4 a sch:Organization ;
+    ex:descriprtion "None"^^xsd:string ;
+    ex:hasChild ex:Organization7,
+        ex:Organization8 ;
+    ex:hasOrganizationType "Facility"^^xsd:string ;
+    sch:identifier "https://ror.org/04mp4zc06"^^xsd:string ;
+    sch:name "Supercomputing lead"^^xsd:string .
+
+ex:Organization9 a sch:Organization ;
+    sch:name "Microsoft (United States)"^^xsd:string .
+
+ex:Person1 a sch:Person ;
+    sch:name "Hao Zhang"^^xsd:string .
+
+ex:Person10 a sch:Person ;
+    sch:name "Shenao Zhang"^^xsd:string .
+
+ex:Person100 a sch:Person ;
+    sch:name "Qiming Xu"^^xsd:string .
+
+ex:Person101 a sch:Person ;
+    sch:name "Wojciech Yuan"^^xsd:string .
+
+ex:Person102 a sch:Person ;
+    sch:name "Greg Zaremba"^^xsd:string .
+
+ex:Person103 a sch:Person ;
+    sch:name "Trevor Brockman"^^xsd:string .
+
+ex:Person104 a sch:Person ;
+    sch:name "Chris Cai"^^xsd:string .
+
+ex:Person105 a sch:Person ;
+    sch:name "Shantanu Hesse"^^xsd:string .
+
+ex:Person106 a sch:Person ;
+    sch:name "Yongjik Jain"^^xsd:string .
+
+ex:Person107 a sch:Person ;
+    sch:name "Kyle Kim"^^xsd:string .
+
+ex:Person108 a sch:Person ;
+    sch:name "Mateusz Kosic"^^xsd:string .
+
+ex:Person109 a sch:Person ;
+    sch:name "Jakub Litwin"^^xsd:string .
+
+ex:Person11 a sch:Person ;
+    sch:name "Pushi Zhang"^^xsd:string .
+
+ex:Person110 a sch:Person ;
+    sch:name "Mikhail Pachocki"^^xsd:string .
+
+ex:Person111 a sch:Person ;
+    sch:name "Szymon Pavlov"^^xsd:string .
+
+ex:Person112 a sch:Person ;
+    sch:name "Nikolas Sidor"^^xsd:string .
+
+ex:Person113 a sch:Person ;
+    sch:name "Madeleine Tezak"^^xsd:string .
+
+ex:Person114 a sch:Person ;
+    sch:name "Amin Thompson"^^xsd:string .
+
+ex:Person115 a sch:Person ;
+    sch:name "Qiming Tootoonchian"^^xsd:string .
+
+ex:Person116 a sch:Person ;
+    sch:name "Hardware Yuan"^^xsd:string .
+
+ex:Person117 a sch:Person ;
+    sch:name "Correctness"^^xsd:string .
+
+ex:Person118 a sch:Person ;
+    sch:name "Chelsea Voss"^^xsd:string .
+
+ex:Person119 a sch:Person ;
+    sch:name "Qiming Yuan"^^xsd:string .
+
+ex:Person12 a sch:Person ;
+    sch:name "Li Zhao"^^xsd:string .
+
+ex:Person120 a sch:Person ;
+    sch:name "Igor Babuschkin"^^xsd:string .
+
+ex:Person121 a sch:Person ;
+    sch:name "Adrien Ecoffet"^^xsd:string .
+
+ex:Person122 a sch:Person ;
+    sch:name "Jesse Han"^^xsd:string .
+
+ex:Person123 a sch:Person ;
+    sch:name "Ingmar Kanitscheider"^^xsd:string .
+
+ex:Person124 a sch:Person ;
+    sch:name "Daniel Levy"^^xsd:string .
+
+ex:Person125 a sch:Person ;
+    sch:name "Jakub Pachocki"^^xsd:string .
+
+ex:Person126 a sch:Person ;
+    sch:name "Jie Tang"^^xsd:string .
+
+ex:Person127 a sch:Person ;
+    sch:name "Jerry Tworek"^^xsd:string .
+
+ex:Person128 a sch:Person ;
+    sch:name "Qiming Tao Xu"^^xsd:string .
+
+ex:Person129 a sch:Person ;
+    sch:name "Trevor Cai"^^xsd:string .
+
+ex:Person13 a sch:Person ;
+    sch:name "Jianyu Chen"^^xsd:string .
+
+ex:Person130 a sch:Person ;
+    sch:name "Chris Hesse"^^xsd:string .
+
+ex:Person131 a sch:Person ;
+    sch:name "Yongjik Kim"^^xsd:string .
+
+ex:Person132 a sch:Person ;
+    sch:name "Madeleine Thompson"^^xsd:string .
+
+ex:Person133 a sch:Person ;
+    sch:name "Phil Tillet"^^xsd:string .
+
+ex:Person134 a sch:Person ;
+    sch:name "Ben Wang"^^xsd:string .
+
+ex:Person135 a sch:Person ;
+    sch:name "Yuan Long"^^xsd:string .
+
+ex:Person136 a sch:Person ;
+    sch:name "Gabriel Goh"^^xsd:string .
+
+ex:Person137 a sch:Person ;
+    sch:name "Kaiser Long"^^xsd:string .
+
+ex:Person138 a sch:Person ;
+    sch:name "Ben Wang Attention"^^xsd:string .
+
+ex:Person139 a sch:Person ;
+    sch:name "Ming Li"^^xsd:string .
+
+ex:Person140 a sch:Person ;
+    sch:name "Chen Vision"^^xsd:string .
+
+ex:Person141 a sch:Person ;
+    sch:name "Daniel Levy Overall"^^xsd:string .
+
+ex:Person142 a sch:Person ;
+    sch:name "Christine Mcleavey Vision"^^xsd:string .
+
+ex:Person143 a sch:Person ;
+    sch:name "Mikhail Pavlov Scaling"^^xsd:string .
+
+ex:Person144 a sch:Person ;
+    sch:name "Casey Chu"^^xsd:string .
+
+ex:Person145 a sch:Person ;
+    sch:name "Jamie Kiros"^^xsd:string .
+
+ex:Person146 a sch:Person ;
+    sch:name "Christine Mcleavey"^^xsd:string .
+
+ex:Person147 a sch:Person ;
+    sch:name "Hyeonwoo Noh"^^xsd:string .
+
+ex:Person148 a sch:Person ;
+    sch:name "Raul Puri"^^xsd:string .
+
+ex:Person150 a sch:Person ;
+    sch:name "Aditya Ramesh Compute"^^xsd:string .
+
+ex:Person151 a sch:Person ;
+    sch:name "Rory Carmichael"^^xsd:string .
+
+ex:Person152 a sch:Person ;
+    sch:name "Akila Welihinda"^^xsd:string .
+
+ex:Person153 a sch:Person ;
+    sch:name "Yunxing Dai"^^xsd:string .
+
+ex:Person154 a sch:Person ;
+    sch:name "Brandon Houghton"^^xsd:string .
+
+ex:Person155 a sch:Person ;
+    sch:name "Łukasz Kondraciuk"^^xsd:string .
+
+ex:Person156 a sch:Person ;
+    sch:name "Tianhao Zheng"^^xsd:string .
+
+ex:Person157 a sch:Person ;
+    sch:name "Hardware Correctness"^^xsd:string .
+
+ex:Person158 a sch:Person ;
+    sch:name "Alethea Power Data"^^xsd:string .
+
+ex:Person159 a sch:Person ;
+    sch:name "David Mély"^^xsd:string .
+
+ex:Person160 a sch:Person ;
+    sch:name "Reiichiro Nakano"^^xsd:string .
+
+ex:Person163 a sch:Person ;
+    sch:name "Tootoonchian Amin"^^xsd:string .
+
+ex:Person164 a sch:Person ;
+    sch:name "Deployment"^^xsd:string .
+
+ex:Person165 a sch:Person ;
+    sch:name "Ilge Akkaya"^^xsd:string .
+
+ex:Person166 a sch:Person ;
+    sch:name "Mark Chen"^^xsd:string .
+
+ex:Person167 a sch:Person ;
+    sch:name "Rachel Lim"^^xsd:string .
+
+ex:Person168 a sch:Person ;
+    sch:name "Jiayi Weng"^^xsd:string .
+
+ex:Person169 a sch:Person ;
+    sch:name "Liam Fedus"^^xsd:string .
+
+ex:Person17 a sch:Person ;
+    sch:name "Kristina Toutanova"^^xsd:string .
+
+ex:Person170 a sch:Person ;
+    sch:name "Tarun Gogineni"^^xsd:string .
+
+ex:Person171 a sch:Person ;
+    sch:name "Gontijo-Lopes Synthetic"^^xsd:string .
+
+ex:Person172 a sch:Person ;
+    sch:name "Joshua Gross"^^xsd:string .
+
+ex:Person173 a sch:Person ;
+    sch:name "Johannes Heidecke Refusals"^^xsd:string .
+
+ex:Person174 a sch:Person ;
+    sch:name "Chong Zhang Refusals"^^xsd:string .
+
+ex:Person175 a sch:Person ;
+    sch:name "Barret Zoph Overall"^^xsd:string .
+
+ex:Person176 a sch:Person ;
+    sch:name "Diogo Almeida"^^xsd:string .
+
+ex:Person177 a sch:Person ;
+    sch:name "Juan Felipe"^^xsd:string .
+
+ex:Person178 a sch:Person ;
+    sch:name "Hyung Cerón Uribe"^^xsd:string .
+
+ex:Person179 a sch:Person ;
+    sch:name "Tyna Eloun- Dou"^^xsd:string .
+
+ex:Person18 a sch:Person ;
+    sch:name "Yu Sun"^^xsd:string .
+
+ex:Person180 a sch:Person ;
+    sch:name "Shixiang Rapha Gontijo-Lopes"^^xsd:string .
+
+ex:Person181 a sch:Person ;
+    sch:name "Joost Huizinga"^^xsd:string .
+
+ex:Person182 a sch:Person ;
+    sch:name "Chak Christina Kim"^^xsd:string .
+
+ex:Person184 a sch:Person ;
+    sch:name "Stephanie Li"^^xsd:string .
+
+ex:Person185 a sch:Person ;
+    sch:name "Ryan Lin"^^xsd:string .
+
+ex:Person186 a sch:Person ;
+    sch:name "Jacob Lowe"^^xsd:string .
+
+ex:Person187 a sch:Person ;
+    sch:name "Luke Menick"^^xsd:string .
+
+ex:Person188 a sch:Person ;
+    sch:name "Pamela Metz"^^xsd:string .
+
+ex:Person189 a sch:Person ;
+    sch:name "Tong Mishkin"^^xsd:string .
+
+ex:Person19 a sch:Person ;
+    sch:name "Shuohuan Wang"^^xsd:string .
+
+ex:Person190 a sch:Person ;
+    sch:name "Oleg Mu"^^xsd:string .
+
+ex:Person191 a sch:Person ;
+    sch:name "Ashvin Murk"^^xsd:string .
+
+ex:Person192 a sch:Person ;
+    sch:name "Long Nair"^^xsd:string .
+
+ex:Person193 a sch:Person ;
+    sch:name "Michael Passos"^^xsd:string .
+
+ex:Person194 a sch:Person ;
+    sch:name "Rai Pokorny"^^xsd:string .
+
+ex:Person195 a sch:Person ;
+    sch:name "Vitchyr Pong"^^xsd:string .
+
+ex:Person196 a sch:Person ;
+    sch:name "Shibani Santurkar"^^xsd:string .
+
+ex:Person197 a sch:Person ;
+    sch:name "Daniel Selsam"^^xsd:string .
+
+ex:Person198 a sch:Person ;
+    sch:name "Sarah Shoker"^^xsd:string .
+
+ex:Person2 a sch:Person ;
+    sch:name "Feng Li"^^xsd:string .
+
+ex:Person20 a sch:Person ;
+    sch:name "Yukun Li"^^xsd:string .
+
+ex:Person200 a sch:Person ;
+    sch:name "Matt Wiethoff"^^xsd:string .
+
+ex:Person201 a sch:Person ;
+    sch:name "Jeff Wu"^^xsd:string .
+
+ex:Person202 a sch:Person ;
+    sch:name "Kai Xiao"^^xsd:string .
+
+ex:Person203 a sch:Person ;
+    sch:name "Kevin Yu"^^xsd:string .
+
+ex:Person204 a sch:Person ;
+    sch:name "Marvin Zhang"^^xsd:string .
+
+ex:Person205 a sch:Person ;
+    sch:name "Chong Zhang"^^xsd:string .
+
+ex:Person206 a sch:Person ;
+    sch:name "William Zhuk"^^xsd:string .
+
+ex:Person207 a sch:Person ;
+    sch:name "Barret Zoph Data Infrastructure"^^xsd:string .
+
+ex:Person208 a sch:Person ;
+    sch:name "Irwan Bello"^^xsd:string .
+
+ex:Person209 a sch:Person ;
+    sch:name "Lenny Bogdonoff"^^xsd:string .
+
+ex:Person21 a sch:Person ;
+    sch:name "Shikun Feng"^^xsd:string .
+
+ex:Person210 a sch:Person ;
+    sch:name "Haozhun Jin"^^xsd:string .
+
+ex:Person211 a sch:Person ;
+    sch:name "Teddy Lee"^^xsd:string .
+
+ex:Person212 a sch:Person ;
+    sch:name "David Medina"^^xsd:string .
+
+ex:Person213 a sch:Person ;
+    sch:name "Jacob Menick"^^xsd:string .
+
+ex:Person214 a sch:Person ;
+    sch:name "Luke Metz"^^xsd:string .
+
+ex:Person215 a sch:Person ;
+    sch:name "Ashvin Nair"^^xsd:string .
+
+ex:Person217 a sch:Person ;
+    sch:name "Jonathan Ward"^^xsd:string .
+
+ex:Person218 a sch:Person ;
+    sch:name "Sarah Yoo"^^xsd:string .
+
+ex:Person22 a sch:Person ;
+    sch:name "Hao Tian"^^xsd:string .
+
+ex:Person220 a sch:Person ;
+    sch:name "Chatml Format"^^xsd:string .
+
+ex:Person221 a sch:Person ;
+    sch:name "Andrey Mishchenko"^^xsd:string .
+
+ex:Person222 a sch:Person ;
+    sch:name "John Schul- Man"^^xsd:string .
+
+ex:Person223 a sch:Person ;
+    sch:name "Josh Achiam"^^xsd:string .
+
+ex:Person224 a sch:Person ;
+    sch:name "Steven Adler"^^xsd:string .
+
+ex:Person225 a sch:Person ;
+    sch:name "Won Chung"^^xsd:string .
+
+ex:Person226 a sch:Person ;
+    sch:name "Tyna Eloundou"^^xsd:string .
+
+ex:Person227 a sch:Person ;
+    sch:name "Shane Gu"^^xsd:string .
+
+ex:Person228 a sch:Person ;
+    sch:name "Johannes Heidecke"^^xsd:string .
+
+ex:Person229 a sch:Person ;
+    sch:name "Stephanie Lin"^^xsd:string .
+
+ex:Person23 a sch:Person ;
+    sch:name "Hua Wu"^^xsd:string .
+
+ex:Person231 a sch:Person ;
+    sch:name "Todor Markov"^^xsd:string .
+
+ex:Person232 a sch:Person ;
+    sch:name "Tong Mu"^^xsd:string .
+
+ex:Person233 a sch:Person ;
+    sch:name "Andrea Vallone"^^xsd:string .
+
+ex:Person234 a sch:Person ;
+    sch:name "Jason Wei"^^xsd:string .
+
+ex:Person235 a sch:Person ;
+    sch:name "Lilian Weng"^^xsd:string .
+
+ex:Person236 a sch:Person ;
+    sch:name "Barret Zoph Refusals"^^xsd:string .
+
+ex:Person237 a sch:Person ;
+    sch:name "Pamela Mishkin"^^xsd:string .
+
+ex:Person238 a sch:Person ;
+    sch:name "Foundational Rlhf"^^xsd:string .
+
+ex:Person239 a sch:Person ;
+    sch:name "Instructgpt Work"^^xsd:string .
+
+ex:Person24 a sch:Person ;
+    sch:name "Haifeng Wang"^^xsd:string .
+
+ex:Person240 a sch:Person ;
+    sch:name "Dan Mossing"^^xsd:string .
+
+ex:Person241 a sch:Person ;
+    sch:name "Katarina Slama"^^xsd:string .
+
+ex:Person242 a sch:Person ;
+    sch:name "Shengjia Zhao"^^xsd:string .
+
+ex:Person243 a sch:Person ;
+    sch:name "Edward Hu"^^xsd:string .
+
+ex:Person244 a sch:Person ;
+    sch:name "Yelong Shen"^^xsd:string .
+
+ex:Person245 a sch:Person ;
+    sch:name "Phillip Wallis"^^xsd:string .
+
+ex:Person247 a sch:Person ;
+    sch:name "Yuanzhi Li"^^xsd:string .
+
+ex:Person248 a sch:Person ;
+    sch:name "Shean Wang"^^xsd:string .
+
+ex:Person249 a sch:Person ;
+    sch:name "Lu Wang"^^xsd:string .
+
+ex:Person25 a sch:Person ;
+    sch:name "Zihao Wu"^^xsd:string .
+
+ex:Person250 a sch:Person ;
+    sch:name "Jianqiu Chen"^^xsd:string .
+
+ex:Person251 a sch:Person ;
+    sch:name "Mingshan Sun"^^xsd:string .
+
+ex:Person252 a sch:Person ;
+    sch:name "Tianpeng Bao"^^xsd:string .
+
+ex:Person253 a sch:Person ;
+    sch:name "Zhao Rui"^^xsd:string .
+
+ex:Person254 a sch:Person ;
+    sch:name "Liwei Wu"^^xsd:string .
+
+ex:Person255 a sch:Person ;
+    sch:name "Zhenyu He"^^xsd:string .
+
+ex:Person259 a sch:Person ;
+    sch:name "Ronen Eldan"^^xsd:string .
+
+ex:Person26 a sch:Person ;
+    sch:name "Huy Tran"^^xsd:string .
+
+ex:Person260 a sch:Person ;
+    sch:name "Sébastien Bubeck"^^xsd:string .
+
+ex:Person261 a sch:Person ;
+    sch:name "Ed H. Chi"^^xsd:string .
+
+ex:Person264 a sch:Person ;
+    sch:name "Dale Schuurmans"^^xsd:string .
+
+ex:Person265 a sch:Person ;
+    sch:name "Chelsea Finn"^^xsd:string .
+
+ex:Person267 a sch:Person ;
+    sch:name "Rami Al-Rfou"^^xsd:string .
+
+ex:Person268 a sch:Person ;
+    sch:name "Llion Jones"^^xsd:string .
+
+ex:Person269 a sch:Person ;
+    sch:name "Noah Constant"^^xsd:string .
+
+ex:Person27 a sch:Person ;
+    sch:name "Hamed Pirsiavash"^^xsd:string .
+
+ex:Person272 a sch:Person ;
+    sch:name "Zhifeng Chen"^^xsd:string .
+
+ex:Person273 a sch:Person ;
+    sch:name "Taku Kudo"^^xsd:string .
+
+ex:Person274 a sch:Person ;
+    sch:name "Mike Schuster"^^xsd:string .
+
+ex:Person275 a sch:Person ;
+    sch:name "Maxim Krikun"^^xsd:string .
+
+ex:Person276 a sch:Person ;
+    sch:name "Macduff Hughes"^^xsd:string .
+
+ex:Person279 a sch:Person ;
+    sch:name "Tomáš Mikolov"^^xsd:string .
+
+ex:Person28 a sch:Person ;
+    sch:name "Soheil Kolouri"^^xsd:string .
+
+ex:Person281 a sch:Person ;
+    sch:name "Christopher Potts"^^xsd:string .
+
+ex:Person282 a sch:Person ;
+    sch:name "Sam Bowman"^^xsd:string .
+
+ex:Person284 a sch:Person ;
+    sch:name "Mark Neumann"^^xsd:string .
+
+ex:Person286 a sch:Person ;
+    sch:name "Arvind Neelakantan"^^xsd:string .
+
+ex:Person29 a sch:Person ;
+    sch:name "Fabian Karl"^^xsd:string .
+
+ex:Person293 a sch:Person ;
+    sch:name "Girish Sastry"^^xsd:string .
+
+ex:Person294 a sch:Person ;
+    sch:name "Prafulla Dhariwal"^^xsd:string .
+
+ex:Person296 a sch:Person ;
+    sch:name "Benjamin Mann"^^xsd:string .
+
+ex:Person297 a sch:Person ;
+    sch:name "Melanie Subbiah"^^xsd:string .
+
+ex:Person299 a sch:Person ;
+    sch:name "Daniel Ziegler"^^xsd:string .
+
+ex:Person3 a sch:Person ;
+    sch:name "Shilong Liu"^^xsd:string .
+
+ex:Person30 a sch:Person ;
+    sch:name "Ansgar Scherp"^^xsd:string .
+
+ex:Person300 a sch:Person ;
+    sch:name "Ari Herbert-Voss"^^xsd:string .
+
+ex:Person301 a sch:Person ;
+    sch:name "Gretchen Krueger"^^xsd:string .
+
+ex:Person306 a sch:Person ;
+    sch:name "Inigo Lopez-Gazpio"^^xsd:string .
+
+ex:Person307 a sch:Person ;
+    sch:name "Eneko Agirre"^^xsd:string .
+
+ex:Person308 a sch:Person ;
+    sch:name "Lucia Specia"^^xsd:string .
+
+ex:Person309 a sch:Person ;
+    sch:name "Daniel Cer"^^xsd:string .
+
+ex:Person31 a sch:Person ;
+    sch:name "Ze Liu"^^xsd:string .
+
+ex:Person310 a sch:Person ;
+    sch:name "Noam Shazeer"^^xsd:string .
+
+ex:Person312 a sch:Person ;
+    sch:name "Neil Thompson"^^xsd:string .
+
+ex:Person313 a sch:Person ;
+    sch:name "Demis Hassabis"^^xsd:string .
+
+ex:Person314 a sch:Person ;
+    sch:name "Karén Simonyan"^^xsd:string .
+
+ex:Person315 a sch:Person ;
+    sch:name "Lisa Anne Hendricks"^^xsd:string .
+
+ex:Person316 a sch:Person ;
+    sch:name "Laurent Sifre"^^xsd:string .
+
+ex:Person317 a sch:Person ;
+    sch:name "Mikel Artetxe"^^xsd:string .
+
+ex:Person318 a sch:Person ;
+    sch:name "Rafał Józefowicz"^^xsd:string .
+
+ex:Person32 a sch:Person ;
+    sch:name "Yutong Lin"^^xsd:string .
+
+ex:Person320 a sch:Person ;
+    sch:name "Aakanksha Chowdhery"^^xsd:string .
+
+ex:Person321 a sch:Person ;
+    sch:name "Douglas Eck"^^xsd:string .
+
+ex:Person322 a sch:Person ;
+    sch:name "David Luan"^^xsd:string .
+
+ex:Person323 a sch:Person ;
+    sch:name "Louis-Philippe Morency"^^xsd:string .
+
+ex:Person324 a sch:Person ;
+    sch:name "Gerard de Melo"^^xsd:string .
+
+ex:Person325 a sch:Person ;
+    sch:name "Michael Strube"^^xsd:string .
+
+ex:Person327 a sch:Person ;
+    sch:name "Yejin Choi"^^xsd:string .
+
+ex:Person328 a sch:Person ;
+    sch:name "Tobias Gerstenberg"^^xsd:string .
+
+ex:Person329 a sch:Person ;
+    sch:name "Chris Callison-Burch"^^xsd:string .
+
+ex:Person33 a sch:Person ;
+    sch:name "Yue Cao"^^xsd:string .
+
+ex:Person330 a sch:Person ;
+    sch:name "Maarten Sap"^^xsd:string .
+
+ex:Person331 a sch:Person ;
+    sch:name "Hannaneh Hajishirzi"^^xsd:string .
+
+ex:Person332 a sch:Person ;
+    sch:name "Jascha Sohl-Dickstein"^^xsd:string .
+
+ex:Person333 a sch:Person ;
+    sch:name "Adrià Garriga-Alonso"^^xsd:string .
+
+ex:Person334 a sch:Person ;
+    sch:name "Emanuele Rodola"^^xsd:string .
+
+ex:Person335 a sch:Person ;
+    sch:name "Behnam Neyshabur"^^xsd:string .
+
+ex:Person336 a sch:Person ;
+    sch:name "Hannah Rashkin"^^xsd:string .
+
+ex:Person337 a sch:Person ;
+    sch:name "Dragomir R. Radev"^^xsd:string .
+
+ex:Person338 a sch:Person ;
+    sch:name "Ehud Reiter"^^xsd:string .
+
+ex:Person339 a sch:Person ;
+    sch:name "Sampo Pyysalo"^^xsd:string .
+
+ex:Person34 a sch:Person ;
+    sch:name "Han Hu"^^xsd:string .
+
+ex:Person340 a sch:Person ;
+    sch:name "Angelina McMillan-Major"^^xsd:string .
+
+ex:Person341 a sch:Person ;
+    sch:name "Thomas Wolf"^^xsd:string .
+
+ex:Person342 a sch:Person ;
+    sch:name "Patrick von Platen"^^xsd:string .
+
+ex:Person343 a sch:Person ;
+    sch:name "Urmish Thakker"^^xsd:string .
+
+ex:Person344 a sch:Person ;
+    sch:name "Irene Solaiman"^^xsd:string .
+
+ex:Person345 a sch:Person ;
+    sch:name "Teven Le Scao"^^xsd:string .
+
+ex:Person346 a sch:Person ;
+    sch:name "Thomas Scialom"^^xsd:string .
+
+ex:Person347 a sch:Person ;
+    sch:name "Armand Joulin"^^xsd:string .
+
+ex:Person348 a sch:Person ;
+    sch:name "Edouard Grave"^^xsd:string .
+
+ex:Person349 a sch:Person ;
+    sch:name "Guillaume Lample"^^xsd:string .
+
+ex:Person35 a sch:Person ;
+    sch:name "Yixuan Wei"^^xsd:string .
+
+ex:Person350 a sch:Person ;
+    sch:name "Tri Dao"^^xsd:string .
+
+ex:Person351 a sch:Person ;
+    sch:name "Paul Christiano"^^xsd:string .
+
+ex:Person352 a sch:Person ;
+    sch:name "Diogo Moitinho de Almeida"^^xsd:string .
+
+ex:Person36 a sch:Person ;
+    sch:name "Zheng Zhang"^^xsd:string .
+
+ex:Person37 a sch:Person ;
+    sch:name "Stephen Lin"^^xsd:string .
+
+ex:Person38 a sch:Person ;
+    sch:name "Baining Guo"^^xsd:string .
+
+ex:Person39 a sch:Person ;
+    sch:name "Pengcheng He"^^xsd:string .
+
+ex:Person4 a sch:Person ;
+    sch:name "Lei Zhang"^^xsd:string .
+
+ex:Person41 a sch:Person ;
+    sch:name "Jianfeng Gao"^^xsd:string .
+
+ex:Person44 a sch:Person ;
+    sch:name "Greg Brockman"^^xsd:string .
+
+ex:Person45 a sch:Person ;
+    sch:name "Trevor Cai Throughput"^^xsd:string .
+
+ex:Person46 a sch:Person ;
+    sch:name "David Farhi"^^xsd:string .
+
+ex:Person47 a sch:Person ;
+    sch:name "Kyle Kosic"^^xsd:string .
+
+ex:Person48 a sch:Person ;
+    sch:name "Alex Paino"^^xsd:string .
+
+ex:Person49 a sch:Person ;
+    sch:name "Mikhail Pavlov"^^xsd:string .
+
+ex:Person5 a sch:Person ;
+    sch:name "Hang Su"^^xsd:string .
+
+ex:Person50 a sch:Person ;
+    sch:name "Hardware correctness Michael Petrov"^^xsd:string .
+
+ex:Person52 a sch:Person ;
+    sch:name "Szymon Sidor"^^xsd:string .
+
+ex:Person53 a sch:Person ;
+    sch:name "Execution lead Nikolas Tezak"^^xsd:string .
+
+ex:Person54 a sch:Person ;
+    sch:name "Phil Tillet Triton"^^xsd:string .
+
+ex:Person55 a sch:Person ;
+    sch:name "Model distribution, systems & networking Amin Tootoonchian"^^xsd:string .
+
+ex:Person56 a sch:Person ;
+    sch:name "Wojciech Zaremba"^^xsd:string .
+
+ex:Person57 a sch:Person ;
+    sch:name "Oleg Boiko"^^xsd:string .
+
+ex:Person58 a sch:Person ;
+    sch:name "Andrew Cann"^^xsd:string .
+
+ex:Person59 a sch:Person ;
+    sch:name "Ben Chess"^^xsd:string .
+
+ex:Person6 a sch:Person ;
+    sch:name "Jun Zhu"^^xsd:string .
+
+ex:Person60 a sch:Person ;
+    sch:name "Christian Gibson"^^xsd:string .
+
+ex:Person61 a sch:Person ;
+    sch:name "Mateusz Litwin"^^xsd:string .
+
+ex:Person62 a sch:Person ;
+    sch:name "Emy Parparita"^^xsd:string .
+
+ex:Person63 a sch:Person ;
+    sch:name "Henri Roussez"^^xsd:string .
+
+ex:Person64 a sch:Person ;
+    sch:name "Eric Sigler"^^xsd:string .
+
+ex:Person65 a sch:Person ;
+    sch:name "Akila Welihinda Data"^^xsd:string .
+
+ex:Person67 a sch:Person ;
+    sch:name "Suchir Balaji"^^xsd:string .
+
+ex:Person68 a sch:Person ;
+    sch:name "Mo Bavarian"^^xsd:string .
+
+ex:Person69 a sch:Person ;
+    sch:name "Che Chang"^^xsd:string .
+
+ex:Person7 a sch:Person ;
+    sch:name "Lionel M Ni"^^xsd:string .
+
+ex:Person70 a sch:Person ;
+    sch:name "Sheila Dunning"^^xsd:string .
+
+ex:Person71 a sch:Person ;
+    sch:name "Leo Gao"^^xsd:string .
+
+ex:Person72 a sch:Person ;
+    sch:name "Jonathan Gordon"^^xsd:string .
+
+ex:Person73 a sch:Person ;
+    sch:name "Peter Hoeschele"^^xsd:string .
+
+ex:Person74 a sch:Person ;
+    sch:name "Shawn Jain"^^xsd:string .
+
+ex:Person75 a sch:Person ;
+    sch:name "Shantanu Jain"^^xsd:string .
+
+ex:Person78 a sch:Person ;
+    sch:name "Nitish Łukasz Kaiser"^^xsd:string .
+
+ex:Person79 a sch:Person ;
+    sch:name "Shirish Keskar"^^xsd:string .
+
+ex:Person8 a sch:Person ;
+    sch:name "Heung-Yeung Shum"^^xsd:string .
+
+ex:Person80 a sch:Person ;
+    sch:name "Jong Wook Kim"^^xsd:string .
+
+ex:Person81 a sch:Person ;
+    sch:name "Aris Konstantinidis"^^xsd:string .
+
+ex:Person82 a sch:Person ;
+    sch:name "Ming Chak"^^xsd:string .
+
+ex:Person83 a sch:Person ;
+    sch:name "Todor Li"^^xsd:string .
+
+ex:Person84 a sch:Person ;
+    sch:name "Bianca Markov"^^xsd:string .
+
+ex:Person85 a sch:Person ;
+    sch:name "David Martin"^^xsd:string .
+
+ex:Person86 a sch:Person ;
+    sch:name "Oleg Mély"^^xsd:string .
+
+ex:Person87 a sch:Person ;
+    sch:name "Hyeonwoo Murk"^^xsd:string .
+
+ex:Person88 a sch:Person ;
+    sch:name "Long Noh"^^xsd:string .
+
+ex:Person89 a sch:Person ;
+    sch:name "Alex Ouyang"^^xsd:string .
+
+ex:Person9 a sch:Person ;
+    sch:name "Xiaoyu Chen"^^xsd:string .
+
+ex:Person90 a sch:Person ;
+    sch:name "Vitchyr Paino"^^xsd:string .
+
+ex:Person91 a sch:Person ;
+    sch:name "Alec Pong"^^xsd:string .
+
+ex:Person92 a sch:Person ;
+    sch:name "Nick Radford"^^xsd:string .
+
+ex:Person93 a sch:Person ;
+    sch:name "John Ryder"^^xsd:string .
+
+ex:Person94 a sch:Person ;
+    sch:name "Daniel Schulman"^^xsd:string .
+
+ex:Person95 a sch:Person ;
+    sch:name "Ian Selsam"^^xsd:string .
+
+ex:Person96 a sch:Person ;
+    sch:name "Chelsea Sohl"^^xsd:string .
+
+ex:Person97 a sch:Person ;
+    sch:name "Lilian Voss"^^xsd:string .
+
+ex:Person98 a sch:Person ;
+    sch:name "Clemens Weng"^^xsd:string .
+
+ex:Person99 a sch:Person ;
+    sch:name "Tao Winter"^^xsd:string .
+
+ex:Article58 a sch:ScholarlyArticle ;
+    sch:about "ControlMol: Adding Substruture Control To Molecule Diffusion Models']"^^xsd:string ;
+    sch:identifier "58"^^xsd:string ;
+    sch:sameAs "58"^^xsd:string .
+
+ex:Article84 a sch:ScholarlyArticle ;
+    sch:about "['Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"^^xsd:string ;
+    sch:identifier "84"^^xsd:string ;
+    sch:sameAs "84"^^xsd:string .
+
+ex:Organization10 a sch:Organization ;
+    sch:name "Beijing Hua Xin Hospital"^^xsd:string .
+
+ex:Organization11 a sch:Organization ;
+    sch:name "Beijing Tsinghua Chang Gung Hospital"^^xsd:string .
+
+ex:Organization12 a sch:Organization ;
+    sch:name "Chinese Academy of Medical Sciences & Peking Union Medical College"^^xsd:string .
+
+ex:Organization13 a sch:Organization ;
+    sch:name "Peking Union Medical College Hospital"^^xsd:string .
+
+ex:Organization7 a sch:Organization ;
+    sch:name "Institut des Sciences Biologiques"^^xsd:string .
+
+ex:Organization8 a sch:Organization ;
+    sch:name "University of Burgundy"^^xsd:string .
+
+ex:Person161 a sch:Person ;
+    sch:name "Long Ouyang"^^xsd:string .
+
+ex:Person162 a sch:Person ;
+    sch:name "Pranav Shyam"^^xsd:string .
+
+ex:Person183 a sch:Person ;
+    sch:name "Jan Leike"^^xsd:string .
+
+ex:Person199 a sch:Person ;
+    sch:name "Carroll Wainwright"^^xsd:string .
+
+ex:Person230 a sch:Person ;
+    sch:name "Ryan Lowe"^^xsd:string .
+
+ex:Person246 a sch:Person ;
+    sch:name "Zeyuan Allen-Zhu"^^xsd:string .
+
+ex:Person256 a sch:Person ;
+    sch:name "Diederik P. Kingma"^^xsd:string .
+
+ex:Person262 a sch:Person ;
+    sch:name "Dengyong Zhou"^^xsd:string .
+
+ex:Person270 a sch:Person ;
+    sch:name "Greg S. Corrado"^^xsd:string .
+
+ex:Person271 a sch:Person ;
+    sch:name "Oriol Vinyals"^^xsd:string .
+
+ex:Person280 a sch:Person ;
+    sch:name "Christopher D. Manning"^^xsd:string .
+
+ex:Person285 a sch:Person ;
+    sch:name "Ilya Sutskever"^^xsd:string .
+
+ex:Person287 a sch:Person ;
+    sch:name "Jared Kaplan"^^xsd:string .
+
+ex:Person288 a sch:Person ;
+    sch:name "Dario Amodei"^^xsd:string .
+
+ex:Person289 a sch:Person ;
+    sch:name "Sam McCandlish"^^xsd:string .
+
+ex:Person295 a sch:Person ;
+    sch:name "Tom B. Brown"^^xsd:string .
+
+ex:Person298 a sch:Person ;
+    sch:name "Geoffrey Hinton"^^xsd:string .
+
+ex:Person302 a sch:Person ;
+    sch:name "William Fedus"^^xsd:string .
+
+ex:Person303 a sch:Person ;
+    sch:name "Veselin Stoyanov"^^xsd:string .
+
+ex:Person305 a sch:Person ;
+    sch:name "Jamie Ryan Kiros"^^xsd:string .
+
+ex:Person319 a sch:Person ;
+    sch:name "Sebastian Gehrmann"^^xsd:string .
+
+ex:Person326 a sch:Person ;
+    sch:name "Pascale Fung"^^xsd:string .
+
+ex:Person42 a sch:Person ;
+    sch:name "Weizhu Chen"^^xsd:string .
+
+ex:Person43 a sch:Person ;
+    sch:name "Christopher Berner"^^xsd:string .
+
+ex:Person51 a sch:Person ;
+    sch:name "Nick Ryder"^^xsd:string .
+
+ex:Person76 a sch:Person ;
+    sch:name "Roger Jiang"^^xsd:string .
+
+ex:Person77 a sch:Person ;
+    sch:name "Heewoo Jun"^^xsd:string .
+
+ex:Article59 a sch:ScholarlyArticle ;
+    sch:about "ProteinEngine: Empower LLM with Domain Knowledge for Protein Engineering']"^^xsd:string ;
+    sch:identifier "59"^^xsd:string ;
+    sch:sameAs "59"^^xsd:string .
+
+ex:Article83 a sch:ScholarlyArticle ;
+    sch:about "['Exponential improvements in the simulation of lattice gauge theories using near-optimal techniques"^^xsd:string ;
+    sch:identifier "83"^^xsd:string ;
+    sch:sameAs "83"^^xsd:string .
+
+ex:Person258 a sch:Person ;
+    sch:name "Kristina N. Toutanova"^^xsd:string .
+
+ex:Person266 a sch:Person ;
+    sch:name "Jeff Dean"^^xsd:string .
+
+ex:Person277 a sch:Person ;
+    sch:name "Jaime Carbonell"^^xsd:string .
+
+ex:Person290 a sch:Person ;
+    sch:name "Rewon Child"^^xsd:string .
+
+ex:Person291 a sch:Person ;
+    sch:name "Jeffrey Wu"^^xsd:string .
+
+ex:Person292 a sch:Person ;
+    sch:name "Amanda Askell"^^xsd:string .
+
+ex:Person311 a sch:Person ;
+    sch:name "Colin Raffel"^^xsd:string .
+
+ex:Person66 a sch:Person ;
+    sch:name "Sandhini Agarwal"^^xsd:string .
+
+ex:Article60 a sch:ScholarlyArticle ;
+    sch:about "Lysine-Cysteine-Serine-Tryptophan Inserted into the DNA-Binding Domain of Human Mineralocorticoid Receptor Increases Transcriptional Activation by Aldosterone']"^^xsd:string ;
+    sch:identifier "60"^^xsd:string ;
+    sch:sameAs "60"^^xsd:string .
+
+ex:Article82 a sch:ScholarlyArticle ;
+    sch:about "['IS MULTI-TASK LEARNING AN UPPER BOUND FOR CONTINUAL LEARNING?"^^xsd:string ;
+    sch:identifier "82"^^xsd:string ;
+    sch:sameAs "82"^^xsd:string .
+
+ex:Person149 a sch:Person ;
+    sch:name "Alec Radford"^^xsd:string .
+
+ex:Person216 a sch:Person ;
+    sch:name "John Schulman"^^xsd:string .
+
+ex:Person219 a sch:Person ;
+    sch:name "Barret Zoph"^^xsd:string .
+
+ex:Person278 a sch:Person ;
+    sch:name "Ruslan Salakhutdinov"^^xsd:string .
+
+ex:Person283 a sch:Person ;
+    sch:name "Luke Zettlemoyer"^^xsd:string .
+
+ex:Person304 a sch:Person ;
+    sch:name "Naman Goyal"^^xsd:string .
+
+ex:Person40 a sch:Person ;
+    sch:name "Xiaodong Liu"^^xsd:string .
+
+ex:Article61 a sch:ScholarlyArticle ;
+    sch:about "Machine Learning for Genomics Explorations workshop at ICLR 2024 PROTEIN REPRESENTATION LEARNING BY CAPTURING PROTEIN SEQUENCE-STRUCTURE-FUNCTION RELATIONSHIP']"^^xsd:string ;
+    sch:identifier "61"^^xsd:string ;
+    sch:sameAs "61"^^xsd:string .
+
+ex:Article81 a sch:ScholarlyArticle ;
+    sch:about "['Meson spectroscopy from spectral densities in lattice gauge theories"^^xsd:string ;
+    sch:identifier "81"^^xsd:string ;
+    sch:sameAs "81"^^xsd:string .
+
+ex:Person14 a sch:Person ;
+    sch:name "Jacob Devlin"^^xsd:string .
+
+ex:Person15 a sch:Person ;
+    sch:name "Ming-Wei Chang"^^xsd:string .
+
+ex:Person257 a sch:Person ;
+    sch:name "Jimmy Ba"^^xsd:string .
+
+ex:Person263 a sch:Person ;
+    sch:name "Quoc Viet Le"^^xsd:string .
+
+ex:Article62 a sch:ScholarlyArticle ;
+    sch:about "DEBERTA: DECODING-ENHANCED BERT WITH DIS-ENTANGLED ATTENTION']"^^xsd:string ;
+    sch:identifier "62"^^xsd:string ;
+    sch:sameAs "62"^^xsd:string .
+
+ex:Article80 a sch:ScholarlyArticle ;
+    sch:about "['LORA: LOW-RANK ADAPTATION OF LARGE LAN-GUAGE MODELS"^^xsd:string ;
+    sch:identifier "80"^^xsd:string ;
+    sch:sameAs "80"^^xsd:string .
+
+ex:Person16 a sch:Person ;
+    sch:name "Kenton Lee"^^xsd:string .
+
+ex:Article63 a sch:ScholarlyArticle ;
+    sch:about "DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection']"^^xsd:string ;
+    sch:identifier "63"^^xsd:string ;
+    sch:sameAs "63"^^xsd:string .
+
+ex:Article79 a sch:ScholarlyArticle ;
+    sch:about "['ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding"^^xsd:string ;
+    sch:identifier "79"^^xsd:string ;
+    sch:sameAs "79"^^xsd:string .
+
+ex:Article64 a sch:ScholarlyArticle ;
+    sch:about "ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding']"^^xsd:string ;
+    sch:identifier "64"^^xsd:string ;
+    sch:sameAs "64"^^xsd:string .
+
+ex:Article78 a sch:ScholarlyArticle ;
+    sch:about "['DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection"^^xsd:string ;
+    sch:identifier "78"^^xsd:string ;
+    sch:sameAs "78"^^xsd:string .
+
+ex:Article65 a sch:ScholarlyArticle ;
+    sch:about "LORA: LOW-RANK ADAPTATION OF LARGE LAN-GUAGE MODELS']"^^xsd:string ;
+    sch:identifier "65"^^xsd:string ;
+    sch:sameAs "65"^^xsd:string .
+
+ex:Article77 a sch:ScholarlyArticle ;
+    sch:about "['DEBERTA: DECODING-ENHANCED BERT WITH DIS-ENTANGLED ATTENTION"^^xsd:string ;
+    sch:identifier "77"^^xsd:string ;
+    sch:sameAs "77"^^xsd:string .
+
+ex:Article66 a sch:ScholarlyArticle ;
+    sch:about "Meson spectroscopy from spectral densities in lattice gauge theories']"^^xsd:string ;
+    sch:identifier "66"^^xsd:string ;
+    sch:sameAs "66"^^xsd:string .
+
+ex:Article76 a sch:ScholarlyArticle ;
+    sch:about "['Machine Learning for Genomics Explorations workshop at ICLR 2024 PROTEIN REPRESENTATION LEARNING BY CAPTURING PROTEIN SEQUENCE-STRUCTURE-FUNCTION RELATIONSHIP"^^xsd:string ;
+    sch:identifier "76"^^xsd:string ;
+    sch:sameAs "76"^^xsd:string .
+
+ex:Article0 a sch:ScholarlyArticle ;
+    sch:about "DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection"^^xsd:string ;
+    sch:author ex:Person1,
+        ex:Person2,
+        ex:Person3,
+        ex:Person4,
+        ex:Person5,
+        ex:Person6,
+        ex:Person7,
+        ex:Person8 ;
+    sch:identifier "0"^^xsd:string ;
+    sch:sameAs "0"^^xsd:string .
+
+ex:Article1 a sch:ScholarlyArticle ;
+    sch:about "Asking Before Action: Gather Information in Embodied Decision Making with Language Models"^^xsd:string ;
+    sch:author ex:Person10,
+        ex:Person11,
+        ex:Person12,
+        ex:Person13,
+        ex:Person9 ;
+    sch:funder ex:Organization2,
+        ex:Organization3,
+        ex:Organization5,
+        ex:Organization6 ;
+    sch:identifier "1"^^xsd:string ;
+    sch:sameAs "1"^^xsd:string .
+
+ex:Article10 a sch:ScholarlyArticle ;
+    sch:about "ZeroPose: CAD-Model-based Zero-Shot Pose Estimation"^^xsd:string ;
+    sch:author ex:Person250,
+        ex:Person251,
+        ex:Person252,
+        ex:Person253,
+        ex:Person254,
+        ex:Person255 ;
+    sch:identifier "10"^^xsd:string ;
+    sch:sameAs "10"^^xsd:string .
+
+ex:Article2 a sch:ScholarlyArticle ;
+    sch:about "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"^^xsd:string ;
+    sch:author ex:Person14,
+        ex:Person15,
+        ex:Person16,
+        ex:Person17 ;
+    sch:identifier "2"^^xsd:string ;
+    sch:sameAs "2"^^xsd:string .
+
+ex:Article3 a sch:ScholarlyArticle ;
+    sch:about "ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding"^^xsd:string ;
+    sch:author ex:Person18,
+        ex:Person19,
+        ex:Person20,
+        ex:Person21,
+        ex:Person22,
+        ex:Person23,
+        ex:Person24 ;
+    sch:identifier "3"^^xsd:string ;
+    sch:sameAs "3"^^xsd:string .
+
+ex:Article4 a sch:ScholarlyArticle ;
+    sch:about "IS MULTI-TASK LEARNING AN UPPER BOUND FOR CONTINUAL LEARNING?"^^xsd:string ;
+    sch:author ex:Person25,
+        ex:Person26,
+        ex:Person27,
+        ex:Person28 ;
+    sch:identifier "4"^^xsd:string ;
+    sch:sameAs "4"^^xsd:string .
+
+ex:Article5 a sch:ScholarlyArticle ;
+    sch:about "Transformers are Short-text Classifiers"^^xsd:string ;
+    sch:author ex:Person29,
+        ex:Person30 ;
+    sch:identifier "5"^^xsd:string ;
+    sch:sameAs "5"^^xsd:string .
+
+ex:Article6 a sch:ScholarlyArticle ;
+    sch:about "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"^^xsd:string ;
+    sch:author ex:Person31,
+        ex:Person32,
+        ex:Person33,
+        ex:Person34,
+        ex:Person35,
+        ex:Person36,
+        ex:Person37,
+        ex:Person38 ;
+    sch:identifier "6"^^xsd:string ;
+    sch:sameAs "6"^^xsd:string .
+
+ex:Article67 a sch:ScholarlyArticle ;
+    sch:about "IS MULTI-TASK LEARNING AN UPPER BOUND FOR CONTINUAL LEARNING?']"^^xsd:string ;
+    sch:identifier "67"^^xsd:string ;
+    sch:sameAs "67"^^xsd:string .
+
+ex:Article7 a sch:ScholarlyArticle ;
+    sch:about "DEBERTA: DECODING-ENHANCED BERT WITH DIS-ENTANGLED ATTENTION"^^xsd:string ;
+    sch:author ex:Person39,
+        ex:Person40,
+        ex:Person41,
+        ex:Person42 ;
+    sch:identifier "7"^^xsd:string ;
+    sch:sameAs "7"^^xsd:string .
+
+ex:Article75 a sch:ScholarlyArticle ;
+    sch:about "['Lysine-Cysteine-Serine-Tryptophan Inserted into the DNA-Binding Domain of Human Mineralocorticoid Receptor Increases Transcriptional Activation by Aldosterone"^^xsd:string ;
+    sch:identifier "75"^^xsd:string ;
+    sch:sameAs "75"^^xsd:string .
+
+ex:Article8 a sch:ScholarlyArticle ;
+    sch:about "Infrastructure lead"^^xsd:string ;
+    sch:author ex:Person100,
+        ex:Person101,
+        ex:Person102,
+        ex:Person103,
+        ex:Person104,
+        ex:Person105,
+        ex:Person106,
+        ex:Person107,
+        ex:Person108,
+        ex:Person109,
+        ex:Person110,
+        ex:Person111,
+        ex:Person112,
+        ex:Person113,
+        ex:Person114,
+        ex:Person115,
+        ex:Person116,
+        ex:Person117,
+        ex:Person118,
+        ex:Person119,
+        ex:Person120,
+        ex:Person121,
+        ex:Person122,
+        ex:Person123,
+        ex:Person124,
+        ex:Person125,
+        ex:Person126,
+        ex:Person127,
+        ex:Person128,
+        ex:Person129,
+        ex:Person130,
+        ex:Person131,
+        ex:Person132,
+        ex:Person133,
+        ex:Person134,
+        ex:Person135,
+        ex:Person136,
+        ex:Person137,
+        ex:Person138,
+        ex:Person139,
+        ex:Person140,
+        ex:Person141,
+        ex:Person142,
+        ex:Person143,
+        ex:Person144,
+        ex:Person145,
+        ex:Person146,
+        ex:Person147,
+        ex:Person148,
+        ex:Person149,
+        ex:Person150,
+        ex:Person151,
+        ex:Person152,
+        ex:Person153,
+        ex:Person154,
+        ex:Person155,
+        ex:Person156,
+        ex:Person157,
+        ex:Person158,
+        ex:Person159,
+        ex:Person160,
+        ex:Person161,
+        ex:Person162,
+        ex:Person163,
+        ex:Person164,
+        ex:Person165,
+        ex:Person166,
+        ex:Person167,
+        ex:Person168,
+        ex:Person169,
+        ex:Person170,
+        ex:Person171,
+        ex:Person172,
+        ex:Person173,
+        ex:Person174,
+        ex:Person175,
+        ex:Person176,
+        ex:Person177,
+        ex:Person178,
+        ex:Person179,
+        ex:Person180,
+        ex:Person181,
+        ex:Person182,
+        ex:Person183,
+        ex:Person184,
+        ex:Person185,
+        ex:Person186,
+        ex:Person187,
+        ex:Person188,
+        ex:Person189,
+        ex:Person190,
+        ex:Person191,
+        ex:Person192,
+        ex:Person193,
+        ex:Person194,
+        ex:Person195,
+        ex:Person196,
+        ex:Person197,
+        ex:Person198,
+        ex:Person199,
+        ex:Person200,
+        ex:Person201,
+        ex:Person202,
+        ex:Person203,
+        ex:Person204,
+        ex:Person205,
+        ex:Person206,
+        ex:Person207,
+        ex:Person208,
+        ex:Person209,
+        ex:Person210,
+        ex:Person211,
+        ex:Person212,
+        ex:Person213,
+        ex:Person214,
+        ex:Person215,
+        ex:Person216,
+        ex:Person217,
+        ex:Person218,
+        ex:Person219,
+        ex:Person220,
+        ex:Person221,
+        ex:Person222,
+        ex:Person223,
+        ex:Person224,
+        ex:Person225,
+        ex:Person226,
+        ex:Person227,
+        ex:Person228,
+        ex:Person229,
+        ex:Person230,
+        ex:Person231,
+        ex:Person232,
+        ex:Person233,
+        ex:Person234,
+        ex:Person235,
+        ex:Person236,
+        ex:Person237,
+        ex:Person238,
+        ex:Person239,
+        ex:Person240,
+        ex:Person241,
+        ex:Person242,
+        ex:Person43,
+        ex:Person44,
+        ex:Person45,
+        ex:Person46,
+        ex:Person47,
+        ex:Person48,
+        ex:Person49,
+        ex:Person50,
+        ex:Person51,
+        ex:Person52,
+        ex:Person53,
+        ex:Person54,
+        ex:Person55,
+        ex:Person56,
+        ex:Person57,
+        ex:Person58,
+        ex:Person59,
+        ex:Person60,
+        ex:Person61,
+        ex:Person62,
+        ex:Person63,
+        ex:Person64,
+        ex:Person65,
+        ex:Person66,
+        ex:Person67,
+        ex:Person68,
+        ex:Person69,
+        ex:Person70,
+        ex:Person71,
+        ex:Person72,
+        ex:Person73,
+        ex:Person74,
+        ex:Person75,
+        ex:Person76,
+        ex:Person77,
+        ex:Person78,
+        ex:Person79,
+        ex:Person80,
+        ex:Person81,
+        ex:Person82,
+        ex:Person83,
+        ex:Person84,
+        ex:Person85,
+        ex:Person86,
+        ex:Person87,
+        ex:Person88,
+        ex:Person89,
+        ex:Person90,
+        ex:Person91,
+        ex:Person92,
+        ex:Person93,
+        ex:Person94,
+        ex:Person95,
+        ex:Person96,
+        ex:Person97,
+        ex:Person98,
+        ex:Person99 ;
+    sch:funder ex:Organization1,
+        ex:Organization4 ;
+    sch:identifier "8"^^xsd:string ;
+    sch:sameAs "8"^^xsd:string .
+
+ex:Article9 a sch:ScholarlyArticle ;
+    sch:about "LORA: LOW-RANK ADAPTATION OF LARGE LAN-GUAGE MODELS"^^xsd:string ;
+    sch:author ex:Person243,
+        ex:Person244,
+        ex:Person245,
+        ex:Person246,
+        ex:Person247,
+        ex:Person248,
+        ex:Person249,
+        ex:Person42 ;
+    sch:identifier "9"^^xsd:string ;
+    sch:sameAs "9"^^xsd:string .
+
+ex:Topic1 a ex:Topic ;
+    ex:name "results classification pose shot zero"^^xsd:string .
+
+ex:Topic10 a ex:Topic ;
+    ex:name "language models method respectively performance"^^xsd:string .
+
+ex:Topic11 a ex:Topic ;
+    ex:name "model absolute improvement text point"^^xsd:string .
+
+ex:Topic2 a ex:Topic ;
+    ex:name "text performance end learning short"^^xsd:string .
+
+ex:Topic3 a ex:Topic ;
+    ex:name "information transformer vision experiments semantic"^^xsd:string .
+
+ex:Topic4 a ex:Topic ;
+    ex:name "tasks learning model continual training"^^xsd:string .
+
+ex:Topic5 a ex:Topic ;
+    ex:name "performance learning short text classification"^^xsd:string .
+
+ex:Topic6 a ex:Topic ;
+    ex:name "tasks bert based deberta models"^^xsd:string .
+
+ex:Topic7 a ex:Topic ;
+    ex:name "text vs performance benchmark scale"^^xsd:string .
+
+ex:Topic8 a ex:Topic ;
+    ex:name "tasks including parameters models benchmarks"^^xsd:string .
+
+ex:Topic9 a ex:Topic ;
+    ex:name "training model pre size results"^^xsd:string .
+
+ex:Article68 a sch:ScholarlyArticle ;
+    sch:about "Exponential improvements in the simulation of lattice gauge theories using near-optimal techniques']"^^xsd:string ;
+    sch:identifier "68"^^xsd:string ;
+    sch:sameAs "68"^^xsd:string .
+
+ex:Article74 a sch:ScholarlyArticle ;
+    sch:about "['ProteinEngine: Empower LLM with Domain Knowledge for Protein Engineering"^^xsd:string ;
+    sch:identifier "74"^^xsd:string ;
+    sch:sameAs "74"^^xsd:string .
+
+ex:Article69 a sch:ScholarlyArticle ;
+    sch:about "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows']"^^xsd:string ;
+    sch:identifier "69"^^xsd:string ;
+    sch:sameAs "69"^^xsd:string .
+
+ex:Article73 a sch:ScholarlyArticle ;
+    sch:about "['ControlMol: Adding Substruture Control To Molecule Diffusion Models"^^xsd:string ;
+    sch:identifier "73"^^xsd:string ;
+    sch:sameAs "73"^^xsd:string .
+
+ex:Article70 a sch:ScholarlyArticle ;
+    sch:about "Transformers are Short-text Classifiers']"^^xsd:string ;
+    sch:identifier "70"^^xsd:string ;
+    sch:sameAs "70"^^xsd:string .
+
+ex:Article72 a sch:ScholarlyArticle ;
+    sch:about "['BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"^^xsd:string ;
+    sch:identifier "72"^^xsd:string ;
+    sch:sameAs "72"^^xsd:string .
+
+ex:Article56 a sch:ScholarlyArticle ;
+    sch:about "['Asking Before Action: Gather Information in Embodied Decision Making with Language Models"^^xsd:string ;
+    sch:identifier "56"^^xsd:string ;
+    sch:sameAs "56"^^xsd:string .
+
+ex:Article71 a sch:ScholarlyArticle ;
+    sch:about "ZeroPose: CAD-Model-based Zero-Shot Pose Estimation']"^^xsd:string ;
+    sch:identifier "71"^^xsd:string ;
+    sch:sameAs "71"^^xsd:string .
+
+ex:Organization5 a sch:Organization ;
+    ex:descriprtion "None"^^xsd:string ;
+    ex:hasOrganizationType "Education"^^xsd:string ;
+    ex:isRelated ex:Organization10,
+        ex:Organization11,
+        ex:Organization12,
+        ex:Organization13 ;
+    sch:identifier "https://ror.org/03cve4549"^^xsd:string ;
+    sch:name "Tsinghua University"^^xsd:string .
+
+ex:Organization6 a sch:Organization ;
+    ex:descriprtion "None"^^xsd:string ;
+    ex:hasOrganizationType "Education"^^xsd:string ;
+    ex:isRelated ex:Organization10,
+        ex:Organization11,
+        ex:Organization12,
+        ex:Organization13 ;
+    sch:identifier "https://ror.org/03cve4549"^^xsd:string ;
+    sch:name "Tsinghua University Shanghai Qizhi Institute"^^xsd:string .
+

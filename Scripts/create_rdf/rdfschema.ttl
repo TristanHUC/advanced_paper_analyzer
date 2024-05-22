@@ -33,13 +33,13 @@ sch:name a rdf:Property ;
     rdfs:label "Name" ;
     rdfs:comment "The name of a person." .
 
-sch:orcid a rdf:Property ;
+ex:orcid a rdf:Property ;
     rdfs:domain sch:Person ;
     rdfs:range xsd:string;
     rdfs:label "ORCID" ;
     rdfs:comment "Website of a given Organization." .
 
-sch:nationality a rdf:Property ;
+ex:nationality a rdf:Property ;
     rdfs:domain sch:Person ;
     rdfs:range xsd:string ;
     rdfs:label "Nationality" ;
@@ -69,6 +69,24 @@ ex:hasOrganizationType a rdf:Property ;
     rdfs:range xsd:string;
     rdfs:label "Organization Type" ;
     rdfs:comment "The type of a given Organization." .
+
+ex:description a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range xsd:string;
+    rdfs:label "Description" ;
+    rdfs:comment "Description of a given Organization." .
+
+ex:hasChild a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range sch:Organization;
+    rdfs:label "Organization childof" ;
+    rdfs:comment "The child of a given Organization." .
+
+ex:isRelated a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range sch:Organization;
+    rdfs:label "Organization related" ;
+    rdfs:comment "Related organization of a given Organization." .
 
 
 sch:name a rdf:Property ;
@@ -161,6 +179,12 @@ sch:funder a rdf:Property ;
     rdfs:range sch:Organization;
     rdfs:label "Founder of an Article" ;
     rdfs:comment "Indicates founder organization of an Article." .
+
+ex:hasProject a rdf:Property ;
+    rdfs:domain sch:Organization ;
+    rdfs:range sch:Project;
+    rdfs:label "Projet of a given Organization" ;
+    rdfs:comment "Indicates the projet of a given Organization." .
 
 sch:author a rdf:Property ;
     rdfs:domain sch:ScholarlyArticle ;
