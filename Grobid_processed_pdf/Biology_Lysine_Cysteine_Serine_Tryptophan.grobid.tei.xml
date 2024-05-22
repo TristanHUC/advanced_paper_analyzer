@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,96.54,75.34,418.91,10.54;1,112.40,95.98,387.20,10.54">Lysine-Cysteine-Serine-Tryptophan Inserted into the DNA-Binding Domain of Human Mineralocorticoid Receptor Increases Transcriptional Activation by Aldosterone</title>
+				<funder ref="#_9CpvZKF">
+					<orgName type="full">Ministry of Education, Culture, Sports, Science and Technology of Japan</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Takeda Science Foundation</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,159.99,126.46,77.00,10.54"><forename type="first">Yoshinao</forename><surname>Katsu</surname></persName>
+							<email>ykatsu@sci.hokudai.ac.jp</email>
+							<affiliation key="aff0">
+								<orgName type="department">Faculty of Science</orgName>
+								<orgName type="institution">Hokkaido University Sapporo</orgName>
+								<address>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Graduate School of Life Science</orgName>
+								<orgName type="institution">Hokkaido University Sapporo</orgName>
+								<address>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,260.98,126.46,66.98,10.54"><forename type="first">Jiawen</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Graduate School of Life Science</orgName>
+								<orgName type="institution">Hokkaido University Sapporo</orgName>
+								<address>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,345.21,126.46,84.30,10.54"><forename type="first">Michael</forename><forename type="middle">E</forename><surname>Baker</surname></persName>
+							<email>mbaker@health.ucsd.edu</email>
+							<affiliation key="aff2">
+								<orgName type="department">Division of Nephrology-Hypertension Department of Medicine</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<addrLine>San Diego 9500 Gilman Drive La Jolla</addrLine>
+									<postCode>0693</postCode>
+									<region>CA</region>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<addrLine>San Diego La Jolla</addrLine>
+									<postCode>92093</postCode>
+									<region>CA</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,96.54,75.34,418.91,10.54;1,112.40,95.98,387.20,10.54">Lysine-Cysteine-Serine-Tryptophan Inserted into the DNA-Binding Domain of Human Mineralocorticoid Receptor Increases Transcriptional Activation by Aldosterone</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B4E1AAF0BDCE99622A7243993DA0EE2F</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:10+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>mineralocorticoid receptor</term>
+					<term>DNA-binding domain</term>
+					<term>Duplicated mineralocorticoid receptors</term>
+					<term>Aldosterone</term>
+					<term>Cortisol</term>
+					<term>MMTV</term>
+					<term>TAT3</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Due to alternative splicing in an ancestral DNA-binding domain (DBD) of the mineralocorticoid receptor (MR), humans contain two almost identical MR transcripts with either 984 amino acids (MR-984) or 988 amino acids (MR-988), in which their DBDs differ by only four amino acids, Lys,Cys,Ser,Trp (KCSW). Human MRs also contain mutations at two sites, codons 180 and 241, in the amino terminal domain (NTD). Together, there are five distinct full-length human MR genes in GenBank. Human MR-984, which was cloned in 1987, has been extensively studied. Human MR-988, cloned in 1995, contains KCSW in its DBD. Neither this human MR-988 nor the other human MR-988 genes have been studied for their response to aldosterone and other corticosteroids. Here, we report that transcriptional activation of human MR-988 by aldosterone is increased by about 50% compared to activation of human MR-984 in HEK293 cells transfected with the TAT3 promoter, while the half-maximal response (EC50) is similar for aldosterone activation of MR-984 and MR-988. Transcriptional activation of human MR also depends on the amino acids at codons 180 and 241. Interestingly, in HEK293 cells transfected with the MMTV promoter, transcriptional activation by aldosterone of human MR-988 is similar to activation of human MR-984, indicating that the promoter has a role in the regulation of the response of human MR-988 to aldosterone. The physiological responses to aldosterone and other corticosteroids in humans with MR genes containing KCSW and with differences at codons 180 and 241 in the NTD warrant investigation.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="21" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Running title: Increased Corticosteroid Activation of the Human Mineralocorticoid Receptor containing KCSW in the DBD</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction.</head><p>The mineralocorticoid receptor (MR) is a ligand-activated transcription factor that belongs to the nuclear receptor family, which arose in multicellular animals along with other vertebrate steroid receptors: the glucocorticoid receptor (GR), progesterone receptor (PR), androgen receptor (AR) and estrogen receptor (ER) <ref type="bibr" coords="3,322.22,264.94,9.66,10.54" target="#b0">[1]</ref><ref type="bibr" coords="3,331.89,264.94,4.83,10.54" target="#b1">[2]</ref><ref type="bibr" coords="3,331.89,264.94,4.83,10.54" target="#b2">[3]</ref><ref type="bibr" coords="3,331.89,264.94,4.83,10.54" target="#b3">[4]</ref><ref type="bibr" coords="3,331.89,264.94,4.83,10.54" target="#b4">[5]</ref><ref type="bibr" coords="3,336.72,264.94,9.66,10.54" target="#b5">[6]</ref>. The classical function of the MR in humans and other terrestrial vertebrates is to maintain electrolyte balance by regulating sodium and potassium transport in epithelial cells in the kidney and colon <ref type="bibr" coords="3,390.26,306.22,10.00,10.54" target="#b6">[7]</ref><ref type="bibr" coords="3,400.26,306.22,5.00,10.54" target="#b7">[8]</ref><ref type="bibr" coords="3,400.26,306.22,5.00,10.54" target="#b8">[9]</ref><ref type="bibr" coords="3,400.26,306.22,5.00,10.54" target="#b9">[10]</ref><ref type="bibr" coords="3,400.26,306.22,5.00,10.54" target="#b10">[11]</ref><ref type="bibr" coords="3,405.26,306.22,15.00,10.54" target="#b11">[12]</ref>. In addition, the MR also has important physiological functions in many other tissues, including brain, heart, skin and lungs <ref type="bibr" coords="3,101.00,347.74,20.36,10.54" target="#b10">[11,</ref><ref type="bibr" coords="3,121.36,347.74,10.18,10.54" target="#b12">[13]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b13">[14]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b14">[15]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b15">[16]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b16">[17]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b17">[18]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b18">[19]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b19">[20]</ref><ref type="bibr" coords="3,131.54,347.74,5.09,10.54" target="#b20">[21]</ref><ref type="bibr" coords="3,136.63,347.74,15.27,10.54" target="#b21">[22]</ref>.</p><p>The human MR sequence reported in 1987 by Arriza et al <ref type="bibr" coords="3,388.24,376.30,13.99,10.54" target="#b0">[1]</ref> contains 984 amino acids (MR-984). Inspection of the MR sequence revealed that, like other steroid receptors, the human MR is composed of four modular functional domains: a large amino-terminal domain (NTD) of about 600 amino acids, followed in the center by a DNA-binding domain (DBD) of about 65 amino acids, followed by a small hinge domain of about 60 amino acids that connected to the ligand-binding domain of about 250 amino acids at the C-terminus, where aldosterone, cortisol and other corticosteroids bind to activate transcription <ref type="bibr" coords="3,334.25,500.62,14.75,10.54" target="#b0">[1,</ref><ref type="bibr" coords="3,349.00,500.62,9.83,10.54" target="#b1">2,</ref><ref type="bibr" coords="3,358.83,500.62,9.83,10.54" target="#b22">[23]</ref><ref type="bibr" coords="3,368.67,500.62,4.92,10.54" target="#b23">[24]</ref><ref type="bibr" coords="3,373.58,500.62,14.75,10.54" target="#b24">[25]</ref>.</p><p>Analysis of the human MR sequence by Arriza et al. <ref type="bibr" coords="3,362.93,521.26,13.99,10.54" target="#b0">[1]</ref> revealed that the MR was closely related to the glucocorticoid receptor (GR), which was consistent with evidence that some corticosteroids, such as cortisol, corticosterone and 11-deoxycorticosterone were ligands for both the MR and GR <ref type="bibr" coords="3,151.33,583.42,20.00,10.54" target="#b12">[13,</ref><ref type="bibr" coords="3,171.33,583.42,15.00,10.54" target="#b14">15,</ref><ref type="bibr" coords="3,186.33,583.42,15.00,10.54" target="#b20">21,</ref><ref type="bibr" coords="3,201.33,583.42,15.00,10.54" target="#b23">24,</ref><ref type="bibr" coords="3,216.32,583.42,15.00,10.54" target="#b25">26]</ref> and that aldosterone, cortisol, corticosterone and 11deoxycorticosterone have similar binding affinity for human MR <ref type="bibr" coords="3,386.59,604.06,15.00,10.54" target="#b0">[1,</ref><ref type="bibr" coords="3,401.59,604.06,15.00,10.54" target="#b20">21,</ref><ref type="bibr" coords="3,416.59,604.06,10.00,10.54" target="#b25">[26]</ref><ref type="bibr" coords="3,426.58,604.06,5.00,10.54" target="#b26">[27]</ref><ref type="bibr" coords="3,431.58,604.06,15.00,10.54" target="#b27">[28]</ref>. Activation of the MR by cortisol and corticosterone, two steroids that are ligands for the GR <ref type="bibr" coords="3,433.92,624.70,15.37,10.54" target="#b27">[28]</ref><ref type="bibr" coords="3,449.29,624.70,5.12,10.54" target="#b28">[29]</ref><ref type="bibr" coords="3,454.42,624.70,15.37,10.54" target="#b29">[30]</ref>, is consistent with the evolution of the GR and MR from a common ancestral corticoid receptor (CR) in a cyclostome (jawless fish) that evolved about 550 million years ago at the base of the vertebrate line <ref type="bibr" coords="3,92.99,686.86,20.36,10.54" target="#b23">[24,</ref><ref type="bibr" coords="3,113.35,686.86,10.18,10.54" target="#b30">[31]</ref><ref type="bibr" coords="3,123.54,686.86,5.09,10.54" target="#b31">[32]</ref><ref type="bibr" coords="3,123.54,686.86,5.09,10.54" target="#b32">[33]</ref><ref type="bibr" coords="3,123.54,686.86,5.09,10.54" target="#b33">[34]</ref><ref type="bibr" coords="3,123.54,686.86,5.09,10.54" target="#b34">[35]</ref><ref type="bibr" coords="3,123.54,686.86,5.09,10.54" target="#b35">[36]</ref><ref type="bibr" coords="3,128.63,686.86,15.27,10.54" target="#b36">[37]</ref>.</p><p>Knowledge about the human MR family expanded in 1995, when Bloem et al. <ref type="bibr" coords="4,486.92,75.34,19.99,10.54" target="#b37">[38]</ref> cloned a human MR with 988 amino acids (MR-988). This human MR had four additional amino acids in the DBD due to alternative splicing between exons 3 and 4 of an in-frame insertion of 12 bp encoding Lys, Cys, Ser, Trp (KCSW) <ref type="bibr" coords="4,343.63,137.50,20.00,10.54" target="#b38">[39,</ref><ref type="bibr" coords="4,363.63,137.50,15.00,10.54" target="#b39">40]</ref> (Figure <ref type="figure" coords="4,419.95,137.50,4.33,10.54" target="#fig_0">1</ref>). As shown in Figure <ref type="figure" coords="4,72.00,158.14,4.50,10.54" target="#fig_0">1</ref>, the DBDs in terrestrial vertebrate MRs are highly conserved.   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>KCSW</head><p>Human MR-984a, cloned by Arriza et al <ref type="bibr" coords="6,305.27,75.34,12.74,10.54" target="#b0">[1]</ref>, has been studied for transcriptional activation by aldosterone and other corticosteroids <ref type="bibr" coords="6,317.26,95.98,14.44,10.54" target="#b0">[1,</ref><ref type="bibr" coords="6,331.69,95.98,14.44,10.54" target="#b25">26,</ref><ref type="bibr" coords="6,346.13,95.98,14.44,10.54" target="#b26">27,</ref><ref type="bibr" coords="6,360.56,95.98,14.44,10.54" target="#b28">29,</ref><ref type="bibr" coords="6,375.00,95.98,14.44,10.54" target="#b29">30]</ref>. However, it is not known if the KCSW insert in the DBD of human MR affects its transcriptional activation by corticosteroids, and if so, how? To answer these questions, we compared transcriptional activation by corticosteroids of each human MR-984 to its corresponding human MR-988 transfected into HEK293 cells in the presence of either a TAT3 promoter <ref type="bibr" coords="6,428.87,178.78,20.00,10.54" target="#b41">[42,</ref><ref type="bibr" coords="6,448.87,178.78,15.00,10.54" target="#b42">43]</ref> or an MMTV promoter <ref type="bibr" coords="6,118.99,199.42,19.00,10.54" target="#b22">[23,</ref><ref type="bibr" coords="6,137.98,199.42,14.25,10.54" target="#b43">44]</ref>. Here we report that compared to human MR-984, human MR-988, has about 50% to 90% increased transcriptional activation by aldosterone, cortisol, and other corticosteroids, when these MRs are transfected into HEK293 cells transfected with a TAT3</p><p>promoter. However, in contrast, in HEK293 cells transfected with the MMTV promoter, transcriptional activation by these corticosteroids of each human MR-984 and its corresponding human MR-988 are similar, indicating that the promoter has a role in the regulation of the response to corticosteroids of human MR-988. The physiological responses to corticosteroids in humans with MR genes containing KCSW in the DBD and with differences at codons 180 and 241 in their NTD warrants investigation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Corticosteroid-dependent activation of human MR-984 and human MR-988 containing</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>KCSW.</head><p>We have used human MR-984a (accession AAA59571) <ref type="bibr" coords="6,378.93,500.62,13.99,10.54" target="#b0">[1]</ref> for our studies of the human MR <ref type="bibr" coords="6,93.67,521.26,18.39,10.54" target="#b26">[27]</ref>. For this project, as described in the Methods Section, we constructed MR-984b (accession XP_054206038), MR-988b (accession XP_054206037), MR-984c (accession NP_000892), MR-988c (accession XP_01530277). We also constructed MR-988a by insertion of KCSW into the DBD of MR-984a. Assays were performed in HEK293 cells transfected with either a TAT3 luciferase reporter (Figure <ref type="figure" coords="6,271.90,604.06,4.50,10.54" target="#fig_4">3</ref>, Table <ref type="table" coords="6,314.21,604.06,5.00,10.54" target="#tab_1">1</ref>) or an MMTV luciferase reporter (Figure <ref type="figure" coords="6,523.80,604.06,4.50,10.54" target="#fig_6">4</ref>, Table <ref type="table" coords="6,102.31,624.70,4.33,10.54" target="#tab_3">2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MR activation by corticosteroids in the presence of a TAT3 luciferase promoter.</head><p>In Figure <ref type="figure" coords="6,155.33,682.30,4.50,10.54" target="#fig_4">3</ref>, we show the concentration dependence of transcriptional activation by corticosteroids of these six human MRs transfected into HEK293 cells with a TAT3 luciferase promoter. Luciferase levels were used to calculate an EC50 and fold-activation for each steroid (Table <ref type="table" coords="7,106.31,95.98,4.33,10.54" target="#tab_1">1</ref>). These results reveal that the three human MR-988 genes with KCSW in the DBD have a substantial increase in transcriptional activation compared to their MR-984 counterparts, which lack KCSW, while there is only a modest change in EC50s of corticosteroids for MR-988 compared to MR-984. As shown in Figure <ref type="figure" coords="7,281.65,158.14,6.00,10.54" target="#fig_4">3</ref> and Table <ref type="table" coords="7,341.29,158.14,4.50,10.54" target="#tab_1">1</ref>, there also were differences in the level of transcriptional activation by corticosteroids of MR-984a, MR-984b and MR-984c (Figure <ref type="figure" coords="7,518.58,178.78,12.44,10.54" target="#fig_4">3A</ref>    </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MR activation by corticosteroids in the presence of an MMTV luciferase promoter.</head><p>In Figure <ref type="figure" coords="10,155.33,510.46,4.50,10.54" target="#fig_6">4</ref>, we show the concentration dependence of transcriptional activation by corticosteroids of six human MRs transfected into HEK293 cells with an MMTV luciferase promoter. Luciferase levels were used to calculate an EC50 and fold-activation for each steroid (Table <ref type="table" coords="10,106.31,572.62,4.33,10.54" target="#tab_3">2</ref>). Each corticosteroid had a similar fold-activation for human MR-984 and its corresponding human MR-988 in assays with an MMTV luciferase reporter, while there is only a modest change in EC50s of corticosteroids for MR-988 compared to MR-984.      Figure <ref type="figure" coords="14,142.33,136.06,6.00,10.54" target="#fig_7">5</ref> shows a Western analysis of the level of each human MR used in the experiments depicted in Figures <ref type="figure" coords="14,228.62,156.70,6.00,10.54" target="#fig_4">3</ref> and<ref type="figure" coords="14,257.95,156.70,4.50,10.54" target="#fig_6">4</ref>. The MRs showed no marked difference in protein levels between human MR-984 and the human MR-988. This similarity in protein levels in our assays agrees with the similar fold-activation of the various human MRs in HEK293 cells transfected with an MMTV luciferase promoter shown in Figure <ref type="figure" coords="14,384.25,218.86,4.50,10.54" target="#fig_6">4</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion.</head><p>The human MR cloned by Arriza et al <ref type="bibr" coords="14,293.94,283.18,13.99,10.54" target="#b0">[1]</ref> has 984 amino acids (MR984a), and this is the MR that has been widely studied <ref type="bibr" coords="14,232.64,303.82,14.83,10.54" target="#b6">[7,</ref><ref type="bibr" coords="14,247.47,303.82,4.94,10.54" target="#b8">[9]</ref><ref type="bibr" coords="14,252.42,303.82,4.94,10.54" target="#b9">[10]</ref><ref type="bibr" coords="14,257.36,303.82,14.83,10.54" target="#b10">[11]</ref><ref type="bibr" coords="14,272.19,303.82,14.83,10.54" target="#b12">13,</ref><ref type="bibr" coords="14,287.02,303.82,14.83,10.54" target="#b14">15,</ref><ref type="bibr" coords="14,301.86,303.82,14.83,10.54" target="#b23">24]</ref>. However, our BLAST search of GenBank <ref type="bibr" coords="14,72.00,324.46,19.99,10.54" target="#b40">[41]</ref> revealed that MR984a is not the only human MR in GenBank (Figure <ref type="figure" coords="14,432.27,324.46,4.33,10.54" target="#fig_1">2</ref>). GenBank also </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials &amp; Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Construction of plasmid vectors</head><p>Full-length mineralocorticoid receptor (MR) of human as registered in Genbank (accession number: XP_054206038) was used as MR-984 to construct MR-984b, MR-984c, MR-988a, MR-988b, MR-988c. The insertion of 4-amino acids (Lys-Cys-Ser-Trp) into the DBD after codon 633 of human MR was performed using KOD-Plus-mutagenesis kit (TOYOBO).</p><p>The nucleic acid sequences of all constructs were verified by sequencing.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Chemical reagents</head><p>Cortisol, corticosterone, 11-deoxycorticosterone and aldosterone were purchased from Sigma-Aldrich. For reporter gene assays, all hormones were dissolved in dimethyl-sulfoxide (DMSO); the final DMSO concentration in the culture medium did not exceed 0.1%.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Transactivation assays and statistical analyses</head><p>Transfection and reporter assays were carried out in HEK293 cells, as described previously <ref type="bibr" coords="16,125.66,252.22,18.39,10.54" target="#b26">[27]</ref>. HEK293 cells were seeded in 24-well plates at 5x104 cells/well in phenol-red free Dulbecco's modified Eagle's medium supplemented with 10% charcoal-stripped fetal calf serum (HyClone). After 24 hours, the cells were transfected with 100 ng of receptor gene, reporter gene containing the Photinus pyralis luciferase gene and pRL-tk, as an internal control to normalize for variation in transfection efficiency; pRL-tk contains the Renilla reniformis luciferase gene with the herpes simplex virus thymidine kinase promoter. Each assay had a similar number of cells, and assays were done with the same batch of cells in each experiment.</p><p>All experiments were performed in triplicate. Promoter activity was calculated as firefly (P.</p><p>pyralis)-lucifease activity/sea pansy (R. reniformis)-lucifease activity. The values shown are mean ± SEM from three separate experiments, and dose-response data, which were used to calculate the half maximal response (EC50) for each steroid, were analyzed using GraphPad Prism.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Western blotting</head><p>Human MRs were transfected as described in "Transactivation assays and statistical analysis". Expressed human MR proteins were separated by SDS-PAGE in 10 % gel, blotted onto an Immobilon membrane (Millipore Corp. MA), and probed with anti-human mineralocorticoid antibody (monoclonal mouse IgG, clone #385707, R&amp;D Systems, Inc.).</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="4,72.00,350.14,452.71,10.54;4,72.00,371.02,445.97,10.54;4,72.00,391.66,463.66,10.54;4,72.00,412.30,454.61,10.54;4,72.00,432.94,450.20,10.54;4,72.00,453.82,456.27,10.54;4,72.00,474.46,458.22,10.54;4,72.00,495.10,445.20,10.54;4,72.00,515.74,456.53,10.54;4,72.00,536.62,414.30,10.54;4,72.00,557.26,463.66,10.54;4,72.00,577.90,429.98,10.54;4,72.00,598.54,442.33,10.54;4,72.00,619.42,322.61,10.54"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Comparison of the DNA-binding domains on human MR-984, human MR-988, platypus MR-990, platypus MR-994-, turtle MR-993, turtle MR-997, Xenopus MR-979, Xenopus MR-983, lungfish MR-985, zebrafish MR-970, elephant shark MR-956. The DBD of human MR-988 has an insertion of KCSW that is absent in human MR-984. Otherwise, the rest of the sequences of human MR-984 and human MR-988 are identical. A four amino acid insertion also is present at a corresponding position in the DBD of platypus MR turtle MR, and Xenopus MR. Moreover, except for the four amino acid insert in the DBD, the rest of the DBD sequences of human MR, platypus MR and turtle MR are identical. Differences between the DBD sequence in human MR and selected vertebrate MRs are shown in red. Protein accession numbers are XP_054206038 for human MR-984, XP_054206037 for human MR-988, XP_007669969 for platypus MR-990, XP_016083764 for platypus MR-994, XP_044874191 for turtle MR-993, XP_044874189 for turtle MR-997, NP_001084074 for Xenopus MR-979, XP_018098693 for Xenopus MR-983, BCV19931 for lungfish MR-985, NP_001093873 for zebrafish MR-970 and XP_007902220 for elephant shark MR-956.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="5,72.00,483.82,457.28,10.54;5,72.00,504.70,452.91,10.54;5,72.00,525.34,457.89,10.54;5,72.00,545.98,456.25,10.54;5,72.00,566.62,466.94,10.54;5,72.00,587.26,461.89,10.54;5,72.00,608.14,466.26,10.54;5,72.00,628.78,449.25,10.54;5,72.00,649.42,444.58,10.54;5,72.00,670.06,281.60,10.54"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Human MR Genes in GenBank. There are three human MR genes with 984 amino acids and two human MR genes with 988 amino acids in GenBank. These MRs contain either isoleucine-180, alanine-241 MR-984a (accession AAA59571), isoleucine-180, valine-241 MR-984b (accession XP_054206038), or valine-180, valine-241 MR-984c (accession NP_000892), in the NTD. GenBank also contains two human MRs with 988 amino acids containing KCSW in the DBD and either isoleucine-180, valine-241 MR-988b (accession XP_054206037), or valine-180, valine-241 MR-988c (accession XP_01530277) in the NTD. A human MR with isoleucine-180 and alanine-241 and a KCSW insert in the NTD was not found in GenBank. MR-988a is our construction of this human MR, which we studied for activation by corticosteroids along with the five human MR genes that are found in GenBank.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="7,531.02,178.78,6.22,10.54;7,72.00,199.42,458.22,10.54;7,72.00,220.30,236.62,10.54;7,108.00,248.86,414.57,10.54;7,72.00,269.74,457.89,10.54;7,72.00,290.38,245.65,10.54"><head></head><label></label><figDesc>-D), as well as for MR-988a, MR-988b and MR-9848c (Figure 3E-H), which also have different amino acids at codons 180 and 241 in their NTD. Compared to activation by aldosterone of the three human MRs with 984 amino acids, aldosterone increased fold activation by about 50% for MR-988a, MR-988b and MR-9848c, all of which contain KCSW in the DBD. As shown in</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="7,72.00,353.74,462.89,10.54;7,72.00,374.38,436.26,10.54;7,72.00,395.26,459.20,10.54;7,72.00,415.90,430.26,10.54;7,72.00,436.54,111.64,10.54;7,108.00,465.34,384.25,10.54;7,72.00,485.98,451.55,10.54;7,72.00,506.62,440.57,10.54;7,72.00,527.26,451.19,10.54;7,72.00,548.14,438.20,10.54;7,72.00,568.78,433.92,10.54;7,72.00,589.42,449.20,10.54;7,72.00,610.06,448.56,10.54;7,72.00,630.94,444.57,10.54;7,72.00,651.58,344.24,10.54"><head></head><label></label><figDesc>MR-988c compared to MR-984c. Corticosterone increases fold activation by 94% for MR-988a compared to MR984a, by 78% for MR-988b compared to 984b and by 111% for MR-988c compared to MR-984c. 11-Deoxycorticosterone increases fold activation by 94% for MR-988a compared to MR984a, by 78% for MR-988b compared to 984b and by 90% for MR-988c compared to MR-984c. The different amino acids in human MR at codons 180 and 241 in the NTD also influences corticosteroid activation of transcription. MR-984b and MR-988b, which have Ile-180 and Val-241 in the NTD, have the highest fold-activation, and MR-984c and MR-988c, which have Val-180 and Val-241 in the NTD have the lowest fold-activation. Transcriptional activation by aldosterone, cortisol, corticosterone and 11-deoxycorticosterone of MR-984a, which has Ile-180, Ala-241 in the NTD, is between that of MR-984b and MR-984c. Foldactivation by aldosterone, cortisol and 11-deoxycorticosterone of MR-988a is between that of MR-988b and MR-988c. An exception is corticosterone, which has similar fold-activation of MR-988a and MR-988c. These results indicate that the NTD in human MR has an allosteric influence on transcriptional activation by corticosteroids of human MR.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4" coords="9,72.00,75.34,459.64,10.54;9,72.00,95.98,431.68,10.54;9,72.00,116.62,138.63,10.54"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Concentration-dependent transcriptional activation by corticosteroids of human MR-984a, b and c and human MR-988a, b and c in HEK-293 cells transfected with a TAT3-luciferase promoter.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5" coords="10,84.83,382.14,290.07,8.87;10,84.83,397.96,444.22,8.87;10,84.83,413.77,442.99,8.87;10,84.83,429.59,202.76,8.87"><head>*</head><label></label><figDesc>Fold activation values were calculated based on the 100 nM values. **Ratio values were calculated by dividing the fold-activation value of MR-988 by the value of MR-984. MR-984a/988a = (Ile-180/Ala-241), MR-984b/988b = (Ile-180/Val-241), MR-984c/988c = (Val-180/Val-241). MR-988 contains KCSW motif in DBD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6" coords="12,72.00,75.34,459.64,10.54;12,72.00,95.98,438.35,10.54;12,72.00,116.62,147.27,10.54"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Concentration-dependent transcriptional activation by corticosteroids of human MR-984a, b and c and human MR-988a, b and c in HEK-293 cells transfected with an MMTV-luciferase promoter.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7" coords="13,72.00,671.50,441.95,10.54;13,72.00,686.38,464.20,10.54;13,72.00,701.26,467.83,10.54;13,260.97,538.60,113.67,106.29"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Western analysis of MR-984a, MR-984b, MR-984c and MR-988a, MR-988b, MR-988c. HEK293 cell lysates transfected with human MR constructs were treated with sample buffer and applied to a 10% SDS-polyacrylamide gel, and then transferred onto a membrane. The</figDesc><graphic coords="13,260.97,538.60,113.67,106.29" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8" coords="13,90.96,373.86,281.59,8.61;13,90.96,389.21,431.23,8.61;13,90.96,404.57,430.04,8.61;13,90.96,419.92,196.83,8.61;13,217.34,523.81,41.96,11.13;13,234.65,634.48,24.65,11.13;13,229.01,556.06,20.00,11.13;13,235.68,572.11,13.33,11.13;13,235.68,619.44,13.33,11.13;13,227.22,545.96,24.42,9.28;13,262.19,511.95,11.13,7.07;13,269.25,505.83,11.13,6.12;13,275.37,503.00,11.13,2.82;13,278.19,498.29,11.13,4.72;13,282.90,493.57,11.13,4.72;13,287.62,488.85,11.13,4.72;13,292.33,484.14,11.13,4.72;13,281.09,511.95,11.13,7.07;13,288.15,505.83,11.13,6.12;13,294.27,503.00,11.13,2.82;13,297.09,498.29,11.13,4.72;13,301.81,493.57,11.13,4.72;13,306.52,488.85,11.13,4.72;13,311.23,484.14,11.13,4.72;13,299.99,511.95,11.13,7.07;13,307.05,505.83,11.13,6.12;13,313.17,503.00,11.13,2.82;13,316.00,498.29,11.13,4.72;13,320.71,493.57,11.13,4.72;13,325.42,488.85,11.13,4.72;13,330.14,484.14,11.13,4.72;13,318.90,511.95,11.13,7.07;13,325.96,505.83,11.13,6.12;13,332.08,503.00,11.13,2.82;13,334.90,498.29,11.13,4.72;13,339.61,493.57,11.13,4.72;13,344.33,488.85,11.13,4.72;13,349.04,484.14,11.13,4.72;13,337.80,511.95,11.13,7.07;13,344.86,505.83,11.13,6.12;13,350.98,503.00,11.13,2.82;13,353.80,498.29,11.13,4.72;13,358.52,493.57,11.13,4.72;13,363.23,488.85,11.13,4.72;13,367.94,484.61,11.13,4.24;13,356.21,511.95,11.13,7.07;13,363.27,505.83,11.13,6.12;13,369.39,503.00,11.13,2.82;13,372.21,498.29,11.13,4.72;13,376.93,493.57,11.13,4.72;13,381.64,488.85,11.13,4.72;13,386.35,484.61,11.13,4.24;14,72.00,75.34,432.56,10.54;14,72.00,90.22,186.96,10.54"><head>*</head><label></label><figDesc>Fold activation values were calculated based on the 100 nM values. **Ratio values were calculated by dividing the fold-activation value of MR-988 by the value of MR-984. MR-984a/988a = (Ile-180/Ala-241), MR-984b/988b = (Ile-180/Val-241), MR-984c/988c = (Val-180/Val-241). MR-988 contains KCSW motif in DBD.expressed human MR proteins were detected with anti-human MR antibody. Upper panel: Western blot. Lower panel: CBB stain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9" coords="14,72.00,345.10,440.63,10.54;14,72.00,365.98,456.90,10.54;14,72.00,386.62,457.89,10.54;14,72.00,407.26,466.84,10.54;14,72.00,427.90,456.93,10.54;14,72.00,448.78,444.23,10.54;14,72.00,469.42,87.66,10.54;14,108.00,497.98,401.54,10.54;14,72.00,518.86,429.20,10.54;14,72.00,539.50,442.54,10.54;14,72.00,560.14,465.57,10.54;14,72.00,580.78,434.89,10.54;14,72.00,601.66,459.23,10.54;14,72.00,622.30,423.91,10.54;14,72.00,642.94,165.97,10.54;14,108.00,671.74,402.88,10.54;14,72.00,692.38,446.88,10.54;15,72.00,75.34,453.63,10.54;15,72.00,95.98,451.91,10.54;15,72.00,116.62,438.89,10.54;15,72.00,137.50,467.91,10.54;15,72.00,158.14,459.23,10.54;15,72.00,178.78,63.98,10.54;15,108.00,207.58,401.91,10.54;15,72.00,228.22,456.17,10.54;15,72.00,248.86,453.55,10.54;15,72.00,269.74,451.58,10.54;15,72.00,290.38,442.55,10.54;15,72.00,311.02,453.87,10.54;15,72.00,331.66,466.52,10.54;15,72.00,352.30,424.58,10.54;15,72.00,373.18,453.58,10.54;15,72.00,393.82,458.56,10.54;15,72.00,414.46,321.25,10.54;15,108.00,443.26,420.57,10.54;15,72.00,463.90,440.89,10.54;15,72.00,484.54,447.54,10.54;15,72.00,505.42,264.28,10.54"><head></head><label></label><figDesc>contains two human MRs (MR-988b, MR-988c) with KCSW beginning at codon 634 in the DBD and with different amino acids at codons 180 and 241 in the NTD, than are found in MR-988a, providing total of five distinct human MR sequences. To begin to understand the effects, if any, of the sequence differences among these human MRs, we studied corticosteroid activation of MR-984b, MR-988b, MR-984c and MR-988c for comparison with each other and with MR-984a. We also constructed MR988a for comparison with human MR984a and the other four human MR genes.We find that corticosteroids have a higher fold-activation for human MR-988 genes compared to their corresponding MR-984 gene in HEK293 cells transfected with a TAT3 promotor, while the half-maximal response (EC50) is similar for corticosteroid activation of MR-984 and MR-988. Transcriptional activation of human MR also depends on the amino acids at codons 180 and 241. However, in HEK293 cells transfected with the MMTV promoter, transcriptional activation by corticosteroids of human MR-988 is similar to activation of human MR-984, which suggests that the promoter has a role in the regulation of the response to corticosteroids of human MR-988. This increase of MR transcription by aldosterone and other corticosteroids may also occur in other terrestrial vertebrate MRs with KCSW in the DBD (Figure1). Transcriptional activation of human MR with KCSW is consistent with a homology model of human MR with KCSW in the DBD constructed by Wickert et al.<ref type="bibr" coords="15,309.28,95.98,18.39,10.54" target="#b39">[40]</ref>. Their 3D model of human MR-KCSW found no distortion by the four amino acids on adjacent secondary structures of the DBD in human MR. The mechanism(s) for the effects on human MR activity of KCSW and substitutions at codons 180 and 241 are unknown. Recruitment of co-factors and ubiquitination of MRs may be important.We find that mutations at codons 180 and 241 in the NTD of human MR also affect transcriptional activation by aldosterone and other corticosteroids. This allosteric effect of two mutations in the human NTD was surprising. Compared to chimpanzee, gorilla and orangutan MRs, human MRs are unique in containing an MR with either (Ile-180, Ala-241) or (Val-180, Val-241) in their NTD<ref type="bibr" coords="15,183.30,290.38,18.39,10.54" target="#b40">[41]</ref>. That is, chimpanzees, gorillas and orangutans lack an MR with either (Ile-180, Ala-241) or (Val-180, Val-241) in their NTD. We propose that MRs with (Ile-180, Ala-241) or (Val-180, Val-241) in their NTD evolved in humans after their divergence from chimpanzees. In the light of the diverse physiological functions of the MR in humans in regulating transcription in kidney, brain, heart, skin, lungs and other tissues<ref type="bibr" coords="15,436.93,373.18,20.28,10.54" target="#b10">[11,</ref><ref type="bibr" coords="15,457.21,373.18,10.14,10.54" target="#b12">[13]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b13">[14]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b14">[15]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b15">[16]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b16">[17]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b17">[18]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b18">[19]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b19">[20]</ref><ref type="bibr" coords="15,467.35,373.18,5.07,10.54" target="#b20">[21]</ref><ref type="bibr" coords="15,472.42,373.18,15.21,10.54" target="#b21">[22]</ref><ref type="bibr" coords="15,487.64,373.18,15.21,10.54" target="#b47">48]</ref>, the evolution of human MRs with (Ile-180, Ala-241) or (Val-180, Val-241) in their NTD may have been important in the evolution of humans from chimpanzees<ref type="bibr" coords="15,370.25,414.46,18.39,10.54" target="#b40">[41]</ref>.The interaction of the MR with the GR to form heterodimers is important<ref type="bibr" coords="15,462.93,443.26,15.37,10.54" target="#b48">[49]</ref><ref type="bibr" coords="15,478.30,443.26,5.12,10.54" target="#b49">[50]</ref><ref type="bibr" coords="15,478.30,443.26,5.12,10.54" target="#b50">[51]</ref><ref type="bibr" coords="15,478.30,443.26,5.12,10.54" target="#b51">[52]</ref><ref type="bibr" coords="15,478.30,443.26,5.12,10.54" target="#b52">[53]</ref><ref type="bibr" coords="15,478.30,443.26,5.12,10.54" target="#b53">[54]</ref><ref type="bibr" coords="15,483.42,443.26,15.37,10.54" target="#b54">[55]</ref>. The response to aldosterone and other corticosteroids to heterodimers of human MRs containing KCSW in the DBD, as well as either (Ile-180, Ala-241), (Ile-180, Val-241) or (Val-180, Val-241) in the NTD with human GR needs to be explored.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="5,83.50,159.75,434.41,285.02"><head>AAA59571 (MR-984a) MR-988a XP_054206038 (MR-984b) XP_054206037 (MR-988b) NP_000892 (MR-984c) XP_011530277 (MR-988c) 984 1 603 669 732 Ile Ala 180 241 NTD DBD hinge LBD 984 1 603 669 732 Val Val 180 241 NTD DBD hinge LBD 988 1 603 673 736 Val Val 180 241 KCSW NTD DBD hinge LBD 988 1 603 673 736 Ile Ala 180 241 NTD DBD hinge LBD 984 1 603 669 732 Ile Val 180 241 NTD DBD hinge LBD 988 1 603 673 736 Ile Val 180 241 KCSW NTD DBD hinge LBD</head><label></label><figDesc></figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="7,72.00,290.38,461.79,53.26"><head>Table 1</head><label>1</label><figDesc></figDesc><table /><note coords="7,355.46,290.38,175.46,10.54;7,72.00,311.74,461.79,10.54;7,72.00,333.10,447.25,10.54"><p><p><p>, cortisol, which activates the MR in organs that lack 11b-hydroxysteroid dehydrogenase</p><ref type="bibr" coords="7,324.18,311.74,15.00,10.54" target="#b6">[7,</ref><ref type="bibr" coords="7,339.18,311.74,10.00,10.54" target="#b44">[45]</ref><ref type="bibr" coords="7,349.18,311.74,5.00,10.54" target="#b45">[46]</ref><ref type="bibr" coords="7,354.18,311.74,15.00,10.54" target="#b46">[47]</ref></p>, increases fold activation by 29% for MR-988a compared to MR984a, by 73% for MR-988b compared to 984b and by 69% for</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="10,84.83,78.61,437.29,295.16"><head>Table 1 . Steroid Activation of Human MR in HEK293 Cells with a TAT3 Promoter.</head><label>1</label><figDesc></figDesc><table coords="10,89.89,112.84,432.23,260.93"><row><cell></cell><cell></cell><cell>TAT3-luc</cell><cell></cell><cell>TAT3-luc</cell><cell></cell><cell>TAT3-luc</cell><cell></cell></row><row><cell></cell><cell></cell><cell cols="3">MR-984a MR-988a MR-984b</cell><cell>MR-988b</cell><cell>MR-984c</cell><cell>MR-988c</cell></row><row><cell>Aldosterone</cell><cell>EC50 (nM)</cell><cell>0.05</cell><cell>0.067</cell><cell>0.059</cell><cell>0.069</cell><cell>0.064</cell><cell>0.069</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>75.5</cell><cell>113.1</cell><cell>84.3</cell><cell>124.3</cell><cell>56.0</cell><cell>91.0</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 5.61)</cell><cell>(± 3.53)</cell><cell>(± 6.88)</cell><cell>(± 6.23)</cell><cell>(± 3.71)</cell><cell>(± 5.36)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.49</cell><cell>1</cell><cell>1.47</cell><cell>1</cell><cell>1.62</cell></row><row><cell>Cortisol</cell><cell>EC50 (nM)</cell><cell>0.61</cell><cell>0.56</cell><cell>0.52</cell><cell>0.85</cell><cell>0.49</cell><cell>0.56</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>67.8</cell><cell>89.5</cell><cell>64.5</cell><cell>112.1</cell><cell>43.9</cell><cell>74.6</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 3.69)</cell><cell>(± 3.48)</cell><cell>(± 2.55)</cell><cell>(± 5.83)</cell><cell>(± 1.55)</cell><cell>(± 4.85)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.32</cell><cell>1</cell><cell>1.73</cell><cell>1</cell><cell>1.69</cell></row><row><cell>Corticosterone</cell><cell>EC50 (nM)</cell><cell>0.26</cell><cell>0.37</cell><cell>0.27</cell><cell>0.38</cell><cell>0.22</cell><cell>0.24</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>53.4</cell><cell>103.9</cell><cell>62.0</cell><cell>111.0</cell><cell>34.6</cell><cell>73.3</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 7.21)</cell><cell>(± 2.91)</cell><cell>(± 6.53)</cell><cell>(± 11.35)</cell><cell>(± 1.85)</cell><cell>(± 7.58)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.94</cell><cell>1</cell><cell>1.78</cell><cell>1</cell><cell>2.11</cell></row><row><cell cols="2">11-deoxycorticosterone EC50 (nM)</cell><cell>0.092</cell><cell>0.18</cell><cell>0.12</cell><cell>0.16</cell><cell>0.11</cell><cell>0.12</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>48.4</cell><cell>94.1</cell><cell>58.5</cell><cell>94.3</cell><cell>36.4</cell><cell>69.3</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 1.41)</cell><cell>(± 6.28)</cell><cell>(± 4.49)</cell><cell>(± 1.19)</cell><cell>(± 1.64)</cell><cell>(± 2.31)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.94</cell><cell>1</cell><cell>1.61</cell><cell>1</cell><cell>1.90</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="13,90.96,79.20,424.51,286.54"><head>Table 2 . Steroid Activation of Human MR in HEK293 Cells with an MMTV Promoter.</head><label>2</label><figDesc></figDesc><table coords="13,95.87,112.43,419.60,253.31"><row><cell></cell><cell></cell><cell>MMTV-luc</cell><cell></cell><cell>MMTV-luc</cell><cell></cell><cell>MMTV-luc</cell><cell></cell></row><row><cell></cell><cell></cell><cell cols="3">MR-984a MR-988a MR-984b</cell><cell>MR-988b</cell><cell>MR-984c</cell><cell>MR-988c</cell></row><row><cell>Aldosterone</cell><cell>EC50 (nM)</cell><cell>0.054</cell><cell>0.045</cell><cell>0.06</cell><cell>0.046</cell><cell>0.057</cell><cell>0.052</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>72.0</cell><cell>69.0</cell><cell>70.0</cell><cell>66.8</cell><cell>73.2</cell><cell>75.0</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 7.19)</cell><cell>(± 4.27)</cell><cell>(± 1.82)</cell><cell>(± 0.73)</cell><cell>(± 4.31)</cell><cell>(± 3.7)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.04</cell><cell>1</cell><cell>0.95</cell><cell>1</cell><cell>1.02</cell></row><row><cell>Cortisol</cell><cell>EC50 (nM)</cell><cell>0.57</cell><cell>0.51</cell><cell>0.58</cell><cell>0.51</cell><cell>0.65</cell><cell>0.59</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>86.7</cell><cell>87.7</cell><cell>87.2</cell><cell>81.8</cell><cell>94.2</cell><cell>86.9</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 7.77)</cell><cell>(± 4.5)</cell><cell>(± 3.51)</cell><cell>(± 2.68)</cell><cell>(± 3.36)</cell><cell>(± 3.52)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>0.99</cell><cell>1</cell><cell>0.96</cell><cell>1</cell><cell>0.92</cell></row><row><cell>Corticosterone</cell><cell>EC50 (nM)</cell><cell>0.18</cell><cell>0.16</cell><cell>0.13</cell><cell>0.12</cell><cell>0.17</cell><cell>0.15</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>80.7</cell><cell>78.5</cell><cell>76.0</cell><cell>72.9</cell><cell>81.0</cell><cell>79.8</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 6.89)</cell><cell>(± 4.23)</cell><cell>(± 1.25)</cell><cell>(± 0.7)</cell><cell>(± 1.79)</cell><cell>(± 2.89)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.03</cell><cell>1</cell><cell>0.94</cell><cell>1</cell><cell>0.99</cell></row><row><cell cols="2">11-deoxycorticosterone EC50 (nM)</cell><cell>0.13</cell><cell>0.1</cell><cell>0.14</cell><cell>0.11</cell><cell>0.14</cell><cell>0.12</cell></row><row><cell></cell><cell>Fold-Activation</cell><cell>72.4</cell><cell>67.0</cell><cell>67.1</cell><cell>63.1</cell><cell>71.2</cell><cell>69.1</cell></row><row><cell></cell><cell>(± SEM) *</cell><cell>(± 6.31)</cell><cell>(± 3.65)</cell><cell>(± 2.21)</cell><cell>(± 1.27)</cell><cell>(± 2.44)</cell><cell>(± 1.17)</cell></row><row><cell></cell><cell>Ratio**</cell><cell>1</cell><cell>1.08</cell><cell>1</cell><cell>0.94</cell><cell>1</cell><cell>0.97</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>Funding: This work was supported by <rs type="grantName">Grants-in-Aid for Scientific Research</rs> from the <rs type="funder">Ministry of Education, Culture, Sports, Science and Technology of Japan</rs> (<rs type="grantNumber">23K05839</rs>) to Y.K., and the <rs type="funder">Takeda Science Foundation</rs> to Y.K.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_9CpvZKF">
+					<idno type="grant-number">23K05839</idno>
+					<orgName type="grant-name">Grants-in-Aid for Scientific Research</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests:</head><p>The authors have declared that no competing interests exist.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Contributions.</head><p>Yoshinao Katsu: Investigation, Conceptualization, Supervision, Formal Analysis, Writingoriginal draft, Writing -review &amp; editing.</p><p>Jiawen Zhan: Data curation, Investigation, Methodology.</p><p>Michael E. Baker: Conceptualization; Formal analysis, Supervision, Writing -original draft, Writing -review &amp; editing.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="17,91.00,439.18,419.84,10.54;17,97.20,452.86,425.19,10.54;17,97.20,466.78,346.27,10.54" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="17,292.91,439.18,217.92,10.54;17,97.20,452.86,420.49,10.54">Cloning of human mineralocorticoid receptor complementary DNA: structural and functional kinship with the glucocorticoid receptor</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Arriza</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Weinberger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Cerelli</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.3037703</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,97.20,466.78,35.27,10.54">Science</title>
+		<imprint>
+			<biblScope unit="volume">237</biblScope>
+			<biblScope unit="issue">4812</biblScope>
+			<biblScope unit="page" from="268" to="275" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,91.00,480.46,363.89,10.54;17,97.20,494.38,302.96,10.54" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="17,148.00,480.46,258.55,10.54">The steroid and thyroid hormone receptor superfamily</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">M</forename><surname>Evans</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.3283939</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,414.58,480.46,35.27,10.54">Science</title>
+		<imprint>
+			<biblScope unit="volume">240</biblScope>
+			<biblScope unit="issue">4854</biblScope>
+			<biblScope unit="page" from="889" to="895" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,91.00,508.06,397.91,10.54;17,97.20,521.98,437.50,10.54;17,97.20,535.66,413.65,10.54;17,97.20,549.34,28.99,10.54" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="17,290.28,508.06,198.62,10.54;17,97.20,521.98,403.05,10.54">Protein evolution by molecular tinkering: diversification of the nuclear receptor superfamily from a ligand-dependent ancestor</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">T</forename><surname>Bridgham</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><forename type="middle">N</forename><surname>Eick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Larroux</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pbio.1000497</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,508.03,521.98,26.68,10.54;17,97.20,535.66,18.94,10.54">PLoS Biol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page">1000497</biblScope>
+			<date type="published" when="2010-10-05">2010. 2010 Oct 5</date>
+		</imprint>
+	</monogr>
+	<note>Published</note>
+</biblStruct>
+
+<biblStruct coords="17,91.00,563.26,443.25,10.54;17,97.20,576.94,432.90,10.54;17,97.20,590.86,304.00,10.54" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="17,263.32,563.26,270.93,10.54;17,97.20,576.94,313.54,10.54">Origin of the response to adrenal and sex steroids: Roles of promiscuity and co-evolution of enzymes and steroid receptors</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">R</forename><surname>Nelson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">A</forename><surname>Studer</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jsbmb.2014.10.020</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,418.43,576.94,111.66,10.54;17,97.20,590.86,18.94,10.54">J Steroid Biochem Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page" from="12" to="24" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,91.00,604.54,365.22,10.54;17,97.20,618.46,278.98,10.54" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="17,146.65,604.54,199.42,10.54">Steroid receptors and vertebrate evolution</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Baker</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.mce.2019.110526</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,353.90,604.54,97.20,10.54">Mol Cell Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">496</biblScope>
+			<biblScope unit="page">110526</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,91.00,632.14,428.92,10.54;17,97.20,646.06,379.33,10.54;17,97.20,659.74,105.34,10.54" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="17,231.65,632.14,206.61,10.54">Nuclear Receptors, RXR, and the Big Bang</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">M</forename><surname>Evans</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">J</forename><surname>Mangelsdorf</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2014.03.012</idno>
+		<idno type="PMID">24679540</idno>
+		<idno type="PMCID">PMC4029515</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,446.93,632.14,18.40,10.54">Cell</title>
+		<imprint>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="255" to="266" />
+			<date type="published" when="2014-03-27">2014 Mar 27</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,91.00,673.66,390.95,10.54;17,97.20,687.34,431.92,10.54;17,97.20,701.26,217.98,10.54" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="17,264.66,673.66,217.29,10.54;17,97.20,687.34,281.49,10.54">Epithelial sodium transport and its control by aldosterone: the story of our internal environment revisited</title>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">C</forename><surname>Rossier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">A</forename><surname>Studer</surname></persName>
+		</author>
+		<idno type="DOI">10.1152/physrev.00011.2014</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,386.12,687.34,61.34,10.54">Physiol Rev</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="297" to="340" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,91.00,75.10,446.91,10.54;18,97.20,88.78,432.25,10.54;18,97.20,102.70,187.98,10.54" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="18,228.31,75.10,309.59,10.54;18,97.20,88.78,293.56,10.54">Epithelial sodium channel (ENaC) family: Phylogeny, structurefunction, tissue distribution, and associated inherited diseases</title>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Hanukoglu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Hanukoglu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.gene.2015.12.061</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,398.46,88.78,22.65,10.54">Gene</title>
+		<imprint>
+			<biblScope unit="volume">579</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="95" to="132" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,91.00,116.38,427.24,10.54;18,97.20,130.30,321.30,10.54" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="18,263.97,116.38,223.27,10.54">Molecular mechanisms of human hypertension</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">P</forename><surname>Lifton</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">G</forename><surname>Gharavi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">S</forename><surname>Geller</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/s0092-8674(01)00241-0</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,495.24,116.38,18.40,10.54">Cell</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="545" to="556" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,143.98,439.64,10.54;18,97.20,157.90,394.21,10.54;18,97.20,171.58,271.97,10.54" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="18,148.67,143.98,387.98,10.54;18,97.20,157.90,321.93,10.54">30 YEARS OF THE MINERALOCORTICOID RECEPTOR: Mineralocorticoid receptor and NaCl transport mechanisms in the renal distal nephron</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Shibata</surname></persName>
+		</author>
+		<idno type="DOI">10.1530/JOE-16-0669</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,427.42,157.90,58.87,10.54">J Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">234</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="35" to="T47" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,185.50,436.21,10.54;18,97.20,199.18,429.22,10.54;18,97.20,213.10,322.63,10.54" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="18,414.59,185.50,118.62,10.54;18,97.20,199.18,254.33,10.54">Structural and molecular determinants of mineralocorticoid receptor signalling</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Grossmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Almeida-Prieto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Nolze</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Alvarez De La Rosa</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/bph.15746</idno>
+		<idno type="PMID">34811739</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,359.10,199.18,71.55,10.54">Br J Pharmacol</title>
+		<imprint>
+			<date type="published" when="2021-11-22">2021 Nov 22</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,226.78,428.27,10.54;18,97.20,240.70,441.53,10.54;18,97.20,254.38,436.63,10.54;18,97.20,268.30,122.33,10.54" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="18,209.18,240.70,324.37,10.54">New advances in endocrine hypertension: from genes to biomarkers</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">L</forename><surname>Fernandes-Rosa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Boulkroun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Fedlaoui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hureaux</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Travers-Allard</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Drossart</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Favier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">C</forename><surname>Zennaro</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.kint.2022.12.021</idno>
+		<idno type="PMID">36646167</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,97.20,254.38,54.65,10.54">Kidney Int</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="485" to="500" />
+			<date type="published" when="2023-01-13">2023 Mar. 2023 Jan 13</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,281.98,398.54,10.54;18,97.20,295.90,390.88,10.54;18,97.20,309.58,293.31,10.54" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="18,476.88,281.98,18.66,10.54;18,97.20,295.90,283.44,10.54">The ubiquitous mineralocorticoid receptor: clinical implications</title>
+		<author>
+			<persName coords=""><forename type="first">U</forename><forename type="middle">A</forename><surname>Hawkins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">P</forename><surname>Gomez-Sanchez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">M</forename><surname>Gomez-Sanchez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">E</forename><surname>Gomez-Sanchez</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11906-012-0297-0</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,388.44,295.90,94.06,10.54">Curr Hypertens Rep</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="573" to="580" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,323.50,413.58,10.54;18,97.20,337.18,415.58,10.54;18,97.20,351.10,165.99,10.54" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="18,198.99,323.50,311.59,10.54;18,97.20,337.18,239.71,10.54">Emerging Roles of the Mineralocorticoid Receptor in Pathology: Toward New Paradigms in Clinical Pharmacology</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Jaisser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Farman</surname></persName>
+		</author>
+		<idno type="DOI">10.1124/pr.115.011106</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,345.47,337.18,71.06,10.54">Pharmacol Rev</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="49" to="75" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,364.78,435.64,10.54;18,97.20,378.70,422.85,10.54;18,97.20,392.38,394.65,10.54;18,97.20,406.30,85.99,10.54" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="18,144.67,364.78,387.98,10.54;18,97.20,378.70,351.31,10.54">30 YEARS OF THE MINERALOCORTICOID RECEPTOR: Mineralocorticoid receptor activation and specificity-conferring mechanisms: a brief history</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Funder</surname></persName>
+		</author>
+		<idno type="DOI">10.1530/JOE-17-0119</idno>
+		<idno type="PMID">28533421</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,456.06,378.70,63.99,10.54">J Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">234</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="17" to="T21" />
+			<date type="published" when="2017-05-22">2017 Jul. 2017 May 22</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,419.98,433.88,10.54;18,97.20,433.90,422.32,10.54;18,97.20,447.58,28.99,10.54" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="18,146.01,419.98,247.86,10.54">Novel interactions of the mineralocorticoid receptor</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">J</forename><surname>Fuller</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.mce.2015.01.027</idno>
+		<idno type="PMID">25662276</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,401.56,419.98,97.20,10.54">Mol Cell Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">408</biblScope>
+			<biblScope unit="page" from="33" to="37" />
+			<date type="published" when="2015-02-07">2015 Jun 15. 2015 Feb 7</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,461.50,417.50,10.54;18,97.20,475.18,418.99,10.54;18,97.20,489.10,204.02,10.54" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="18,198.63,461.50,315.87,10.54;18,97.20,475.18,56.52,10.54">Brain mineralocorticoid receptors in cognition and cardiovascular homeostasis</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">P</forename><surname>Gomez-Sanchez</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.steroids.2014.08.014</idno>
+		<idno type="PMID">25173821</idno>
+		<idno type="PMCID">PMC4302001</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,161.86,475.18,37.63,10.54">Steroids</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="20" to="31" />
+			<date type="published" when="2014-12">2014 Dec</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,502.78,428.21,10.54;18,97.20,516.70,417.93,10.54;18,97.20,530.38,116.33,10.54" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="18,335.30,502.78,189.90,10.54;18,97.20,516.70,85.59,10.54">Brain corticosteroid receptor balance in health and disease</title>
+		<author>
+			<persName coords=""><forename type="first">De</forename><surname>Kloet</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">R</forename><surname>Vreugdenhil</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Oitzl</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">S</forename><surname>Joëls</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename></persName>
+		</author>
+		<idno type="DOI">10.1210/edrv.19.3.0331</idno>
+		<idno type="PMID">9626555</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,190.50,516.70,59.98,10.54">Endocr Rev</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="269" to="301" />
+			<date type="published" when="1998-06">1998 Jun</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,544.30,436.87,10.54;18,97.20,557.98,381.25,10.54;18,97.20,571.90,276.65,10.54" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="18,339.64,544.30,194.23,10.54;18,97.20,557.98,192.26,10.54">The neuronal mineralocorticoid receptor as a mediator of glucocorticoid response</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Arriza</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">B</forename><surname>Simerly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">W</forename><surname>Swanson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">M</forename><surname>Evans</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0896-6273(88)90136-5</idno>
+		<idno type="PMID">2856104</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,297.46,557.98,38.99,10.54">Neuron</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="887" to="900" />
+			<date type="published" when="1988-11">1988 Nov</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,585.58,430.85,10.54;18,97.20,599.50,313.97,10.54;18,97.20,613.18,372.32,10.54" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="18,205.99,585.58,321.87,10.54;18,97.20,599.50,99.32,10.54">Brain mineralocorticoid receptor function in control of salt balance and stress-adaptation</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">R</forename><surname>De Kloet</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Joëls</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.physbeh.2016.12.045</idno>
+		<idno type="PMID">28089704</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,204.17,599.50,67.06,10.54">Physiol Behav</title>
+		<imprint>
+			<biblScope unit="volume">178</biblScope>
+			<biblScope unit="page" from="13" to="20" />
+			<date type="published" when="2017-01-13">2017 Sep 1. 2017 Jan 13</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,97.00,627.10,437.53,10.54;18,97.20,640.78,425.56,10.54;18,97.20,654.70,441.33,10.54;18,97.20,668.38,149.69,10.54" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="18,312.30,627.10,222.23,10.54;18,97.20,640.78,340.80,10.54">Brain mineralocorticoid receptor in health and disease: From molecular signalling to cognitive and emotional function</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">N</forename><surname>Paul</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Wingenfeld</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Otte</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><forename type="middle">C</forename><surname>Meijer</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/bph.15835</idno>
+		<idno type="PMID">35297038</idno>
+		<idno type="PMCID">PMC9323486</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="18,445.78,640.78,71.55,10.54">Br J Pharmacol</title>
+		<imprint>
+			<biblScope unit="volume">179</biblScope>
+			<biblScope unit="issue">13</biblScope>
+			<biblScope unit="page" from="3205" to="3219" />
+			<date type="published" when="2022-04-07">2022 Jul. 2022 Apr 7</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,75.10,417.16,10.54;19,97.20,88.78,431.65,10.54;19,97.20,102.70,209.99,10.54" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coords="19,192.28,75.10,321.88,10.54">The Mineralocorticoid Receptor in the Vasculature: Friend or Foe?</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Ibarrola</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><forename type="middle">Z</forename><surname>Jaffe</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev-physiol-042022-015223</idno>
+		<idno type="PMID">37788489</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,97.20,88.78,86.13,10.54">Annu Rev Physiol</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="49" to="70" />
+			<date type="published" when="2023-10-03">2024 Feb 12. 2023 Oct 3</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,116.38,419.22,10.54;19,97.20,130.30,421.62,10.54;19,97.20,143.98,116.33,10.54" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="19,388.60,116.38,127.62,10.54;19,97.20,130.30,44.73,10.54">Gene regulation by steroid hormones</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Beato</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Arnemann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Chalepakis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Slater</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Willmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0022-4731(87)90288-3</idno>
+		<idno type="PMID">2826895</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,150.53,130.30,85.87,10.54">J Steroid Biochem</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">1-3</biblScope>
+			<biblScope unit="page" from="9" to="14" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,157.90,399.66,10.54;19,97.20,171.58,440.17,10.54;19,97.20,185.50,265.97,10.54" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="19,198.31,157.90,298.35,10.54;19,97.20,171.58,368.41,10.54">30 YEARS OF THE MINERALOCORTICOID RECEPTOR: Evolution of the mineralocorticoid receptor: sequence, structure and function</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Katsu</surname></persName>
+		</author>
+		<idno type="DOI">10.1530/JOE-16-0661</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,473.39,171.58,58.87,10.54">J Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">234</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="T16" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,199.18,425.57,10.54;19,97.20,213.10,408.63,10.54;19,97.20,226.78,122.33,10.54" xml:id="b24">
+	<analytic>
+		<title level="a" type="main" coords="19,218.35,199.18,276.51,10.54">Interdomain interactions in the mineralocorticoid receptor</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">M</forename><surname>Rogerson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">J</forename><surname>Fuller</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/s0303-7207(02)00413-6</idno>
+		<idno type="PMID">12644298</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,502.56,199.18,20.01,10.54;19,97.20,213.10,74.19,10.54">Mol Cell Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">200</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="45" to="55" />
+			<date type="published" when="2003-02-28">2003 Feb 28</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,240.70,436.86,10.54;19,97.20,254.38,420.51,10.54;19,97.20,268.30,282.31,10.54" xml:id="b25">
+	<analytic>
+		<title level="a" type="main" coords="19,302.27,240.70,231.59,10.54;19,97.20,254.38,333.49,10.54">Transactivation and synergistic properties of the mineralocorticoid receptor: relationship to the glucocorticoid receptor</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Rupprecht</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Arriza</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Spengler</surname></persName>
+		</author>
+		<idno type="DOI">10.1210/mend.7.4.8388999</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,438.39,254.38,74.20,10.54">Mol Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="597" to="603" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,281.98,420.54,10.54;19,97.20,295.90,439.20,10.54;19,97.20,309.58,380.62,10.54" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="19,235.97,281.98,281.57,10.54;19,97.20,295.90,335.78,10.54">Evolution of human, chicken, alligator, frog, and zebrafish mineralocorticoid receptors: Allosteric influence on steroid specificity</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Katsu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Oka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Baker</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/scisignal.aao1520</idno>
+		<idno type="PMID">29970600</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,440.40,295.90,47.19,10.54">Sci Signal</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">537</biblScope>
+			<biblScope unit="page">1520</biblScope>
+			<date type="published" when="2018-07-03">2018 Jul 3</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,323.50,440.15,10.54;19,97.20,337.18,424.30,10.54;19,97.20,351.10,28.99,10.54" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coords="19,155.99,323.50,376.27,10.54">Glucocorticoid and mineralocorticoid receptors: biology and clinical relevance</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Funder</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev.med.48.1.231</idno>
+		<idno type="PMID">9046958</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,97.20,337.18,76.99,10.54">Annu Rev Med</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="231" to="240" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,364.78,410.92,10.54;19,97.20,378.70,387.54,10.54;19,97.20,392.38,385.57,10.54;19,97.20,406.30,212.65,10.54" xml:id="b28">
+	<analytic>
+		<title level="a" type="main" coords="19,97.20,378.70,387.54,10.54;19,97.20,392.38,223.20,10.54">Specific hydroxylations determine selective corticosteroid recognition by human glucocorticoid and mineralocorticoid receptors</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Hellal-Levy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Couette</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Fagart</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Souque</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Gomez-Sanchez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Rafestin-Oblin</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/s0014-5793(99)01667-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,328.10,392.38,54.01,10.54">FEBS Lett</title>
+		<imprint>
+			<biblScope unit="volume">464</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="9" to="13" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,419.98,432.59,10.54;19,97.20,433.90,424.83,10.54;19,97.20,447.58,404.88,10.54;19,97.20,461.50,377.92,10.54;19,97.20,475.18,238.65,10.54" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="19,138.19,433.90,383.84,10.54;19,97.20,447.58,404.88,10.54;19,97.20,461.50,134.64,10.54">Transactivation via the human glucocorticoid and mineralocorticoid receptor by therapeutically used steroids in CV-1 cells: a comparison of their glucocorticoid and mineralocorticoid properties</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Grossmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Scholz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Rochel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Bumke-Vogt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Oelkers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">F</forename><surname>Pfeiffer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Diederich</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Bahr</surname></persName>
+		</author>
+		<idno type="DOI">10.1530/eje.0.1510397</idno>
+		<idno type="PMID">15362971</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,239.48,461.50,79.19,10.54">Eur J Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="397" to="406" />
+			<date type="published" when="2004-09">2004 Sep</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,489.10,385.30,10.54;19,97.20,502.78,391.92,10.54;19,97.20,516.70,226.99,10.54" xml:id="b30">
+	<monogr>
+		<title level="m" type="main" coords="19,237.02,489.10,245.28,10.54;19,97.20,502.78,236.28,10.54">Evolutionary crossroads in developmental biology: cyclostomes (lamprey and hagfish)</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">M</forename><surname>Shimeld</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">C</forename><surname>Donoghue</surname></persName>
+		</author>
+		<idno type="DOI">10.1242/dev.074716</idno>
+		<idno type="PMID">22619386</idno>
+		<imprint>
+			<date type="published" when="2012-06">2012 Jun</date>
+			<biblScope unit="volume">139</biblScope>
+			<biblScope unit="page" from="2091" to="2099" />
+		</imprint>
+	</monogr>
+	<note>Development</note>
+</biblStruct>
+
+<biblStruct coords="19,97.00,530.38,441.95,10.54;19,97.20,544.30,418.27,10.54;19,97.20,557.98,432.03,10.54;19,97.20,571.90,28.99,10.54" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coords="19,369.33,530.38,169.62,10.54;19,97.20,544.30,112.67,10.54">11-deoxycortisol is a corticosteroid hormone in the lamprey</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">A</forename><surname>Close</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">S</forename><surname>Yun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">D</forename><surname>Mccormick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">J</forename><surname>Wildbill</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.0914026107</idno>
+		<idno type="PMID">20643930</idno>
+		<idno type="PMCID">PMC2922276</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,218.16,544.30,122.48,10.54">Proc Natl Acad Sci U S A</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="issue">31</biblScope>
+			<biblScope unit="page" from="13942" to="13947" />
+			<date type="published" when="2010-07-19">2010 Aug 3. 2010 Jul 19</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,585.58,435.82,10.54;19,97.20,599.50,438.24,10.54;19,97.20,613.18,413.66,10.54;19,97.20,627.10,137.69,10.54" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coords="19,166.66,585.58,366.16,10.54;19,97.20,599.50,249.81,10.54">Evolution of vertebrate steroid receptors from an ancestral estrogen receptor by ligand exploitation and serial genome expansions</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Thornton</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.091553298</idno>
+		<idno type="PMID">11331759</idno>
+		<idno type="PMCID">PMC33271</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="19,355.13,599.50,122.48,10.54">Proc Natl Acad Sci U S A</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="5671" to="5676" />
+			<date type="published" when="2001-05-01">2001 May 8. 2001 May 1</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="19,97.00,640.78,408.64,10.54;19,97.20,654.70,435.96,10.54;19,97.20,668.38,417.93,10.54;19,97.20,682.30,417.65,10.54;19,97.20,695.98,424.26,10.54;20,97.20,75.10,434.61,10.54;20,97.20,88.78,414.27,10.54;20,97.20,102.70,439.61,10.54;20,97.20,116.38,405.24,10.54;20,97.20,130.30,426.91,10.54;20,97.20,143.98,334.69,10.54" xml:id="b33">
+	<analytic>
+		<title level="a" type="main" coords="20,97.20,116.38,405.24,10.54;20,97.20,130.30,94.45,10.54">Sequencing of the sea lamprey (Petromyzon marinus) genome provides insights into vertebrate evolution</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">J</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Kuraku</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Holt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Sauka-Spengler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">S</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">D</forename><surname>Yandell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Manousaki</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Meyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><forename type="middle">E</forename><surname>Bloom</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>Morgan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">D</forename><surname>Buxbaum</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Sachidanandam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Sims</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">S</forename><surname>Garruss</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Krumlauf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">M</forename><surname>Wiedemann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">A</forename><surname>Sower</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><forename type="middle">A</forename><surname>Decatur</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">A</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">T</forename><surname>Amemiya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">R</forename><surname>Saha</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">M</forename><surname>Buckley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">P</forename><surname>Rast</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hirano</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Mccurley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Rohner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">J</forename><surname>Tabin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Piccinelli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Elgar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ruffier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">L</forename><surname>Aken</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">M</forename><surname>Searle</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Muffato</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Pignatelli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Herrero</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">T</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">W</forename><surname>Chung-Davidson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">G</forename><surname>Nanlohy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">V</forename><surname>Libants</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">Y</forename><surname>Yeh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">W</forename><surname>Mccauley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">A</forename><surname>Langeland</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Pancer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Fritzsch</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">J</forename><surname>De Jong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">L</forename><surname>Fulton</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Theising</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Flicek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Bronner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><forename type="middle">C</forename><surname>Warren</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">W</forename><surname>Clifton</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">K</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><forename type="middle">W</forename></persName>
+		</author>
+		<idno type="DOI">10.1038/ng.2568</idno>
+		<idno type="PMID">23435085</idno>
+		<idno type="PMCID">PMC3709584</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,199.49,130.30,46.70,10.54">Nat Genet</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="415" to="421" />
+			<date type="published" when="2013-02-24">2013 Apr. 2013 Feb 24</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,157.90,423.85,10.54;20,97.20,171.58,399.66,10.54;20,97.20,185.50,204.02,10.54" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coords="20,222.31,157.90,265.38,10.54">The origin and evolution of vertebrate neural crest cells</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>York</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">W</forename><surname>Mccauley</surname></persName>
+		</author>
+		<idno type="DOI">10.1098/rsob.190285</idno>
+		<idno type="PMID">31992146</idno>
+		<idno type="PMCID">PMC7014683</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,494.86,157.90,25.99,10.54;20,97.20,171.58,23.67,10.54">Open Biol</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">190285</biblScope>
+			<date type="published" when="2020-01-29">2020 Jan. 2020 Jan 29</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,199.18,398.90,10.54;20,97.20,213.10,414.62,10.54;20,97.20,226.78,217.98,10.54" xml:id="b35">
+	<analytic>
+		<title level="a" type="main" coords="20,154.66,199.18,341.25,10.54;20,97.20,213.10,51.00,10.54">Evo-devo studies of cyclostomes and the origin and evolution of jawed vertebrates</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Kuratani</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/bs.ctdb.2020.11.011</idno>
+		<idno type="PMID">33602489</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,155.83,213.10,89.25,10.54">Curr Top Dev Biol</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="207" to="239" />
+			<date type="published" when="2020-12-13">2021. 2020 Dec 13</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,240.70,436.86,10.54;20,97.20,254.38,430.63,10.54;20,97.20,268.30,331.36,10.54" xml:id="b36">
+	<analytic>
+		<title level="a" type="main" coords="20,147.33,240.70,381.70,10.54">microRNAs revive old views about jawless vertebrate divergence and evolution</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Janvier</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1014583107</idno>
+		<idno type="PMID">21041649</idno>
+		<idno type="PMCID">PMC2984170</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,97.20,254.38,122.48,10.54">Proc Natl Acad Sci U S A</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="issue">45</biblScope>
+			<biblScope unit="page" from="19137" to="19138" />
+			<date type="published" when="2010-11-01">2010 Nov 9. 2010 Nov 1</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,281.98,391.22,10.54;20,97.20,295.90,422.58,10.54;20,97.20,309.58,296.99,10.54" xml:id="b37">
+	<analytic>
+		<title level="a" type="main" coords="20,232.67,281.98,255.56,10.54;20,97.20,295.90,155.87,10.54">Identification of a splice variant of the rat and human mineralocorticoid receptor genes</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">J</forename><surname>Bloem</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">H</forename><surname>Pratt</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0960-0760(95)00162-s</idno>
+		<idno type="PMID">7495694</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,261.12,295.90,138.33,10.54">J Steroid Biochem Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="159" to="162" />
+			<date type="published" when="1995-11">1995 Nov</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,323.50,442.54,10.54;20,97.20,337.18,424.59,10.54;20,97.20,351.10,232.65,10.54" xml:id="b38">
+	<analytic>
+		<title level="a" type="main" coords="20,410.60,323.50,128.94,10.54;20,97.20,337.18,194.90,10.54">Mineralocorticoid receptor splice variants in different human tissues</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wickert</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Watzka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">U</forename><surname>Bolkenius</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Bidlingmaier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ludwig</surname></persName>
+		</author>
+		<idno type="DOI">10.1530/eje.0.1380702</idno>
+		<idno type="PMID">9678540</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,299.48,337.18,79.19,10.54">Eur J Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">138</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="702" to="704" />
+			<date type="published" when="1998-06">1998 Jun</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,364.78,439.90,10.54;20,97.20,378.70,435.85,10.54;20,97.20,392.38,373.25,10.54;20,97.20,406.30,435.64,10.54;20,97.20,419.98,85.99,10.54" xml:id="b39">
+	<analytic>
+		<title level="a" type="main" coords="20,97.20,378.70,435.85,10.54;20,97.20,392.38,360.11,10.54">Differential mRNA expression of the two mineralocorticoid receptor splice variants within the human brain: structure analysis of their different DNA binding domains</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wickert</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Selbig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Watzka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Stoffel-Wagner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Schramm</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Bidlingmaier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ludwig</surname></persName>
+		</author>
+		<idno type="DOI">10.1046/j.1365-2826.2000.00535.x</idno>
+		<idno type="PMID">10971811</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,465.78,392.38,4.67,10.54;20,97.20,406.30,84.30,10.54">J Neuroendocrinol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="867" to="873" />
+			<date type="published" when="2000-09">2000 Sep</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,433.90,438.87,10.54;20,97.20,447.58,440.27,10.54;20,97.20,461.50,310.67,10.54" xml:id="b40">
+	<monogr>
+		<title level="m" type="main" coords="20,277.28,433.90,258.59,10.54;20,97.20,447.58,293.96,10.54">Novel Evolution of the Mineralocorticoid Receptor in Humans Compared to Chimpanzees, Gorillas and Orangutans</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Katsu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Baker</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename></persName>
+		</author>
+		<idno type="DOI">10.1101/2023.12.08.570861,bioRxiv</idno>
+		<idno>bioRxiv 2023.12.08.570861</idno>
+		<ptr target="https://doi.org/10.1101/2023.12.08.570861,bioRxiv" />
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,475.18,419.21,10.54;20,97.20,489.10,355.61,10.54;20,97.20,502.78,440.00,10.54;20,97.20,516.70,93.34,10.54" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coords="20,234.95,475.18,281.26,10.54;20,97.20,489.10,250.81,10.54">A common motif within the negative regulatory regions of multiple factors inhibits their transcriptional synergy</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">A</forename><surname>Iñiguez-Lluhí</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Pearce</surname></persName>
+		</author>
+		<idno type="DOI">10.1128/mcb.20.16.6040-6050.2000</idno>
+		<idno type="PMID">10913186</idno>
+		<idno type="PMCID">PMC86080</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,356.13,489.10,69.67,10.54">Mol Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">16</biblScope>
+			<biblScope unit="page" from="6040" to="6050" />
+			<date type="published" when="2000-08">2000 Aug</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,530.38,432.55,10.54;20,97.20,544.30,437.86,10.54;20,97.20,557.98,424.69,10.54;20,97.20,571.90,105.34,10.54" xml:id="b42">
+	<analytic>
+		<title level="a" type="main" coords="20,365.31,530.38,164.25,10.54;20,97.20,544.30,375.79,10.54">Characterization of the interaction of the human mineralocorticosteroid receptor with hormone response elements</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Lombès</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Binart</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Oblin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Joulin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">E</forename><surname>Baulieu</surname></persName>
+		</author>
+		<idno type="DOI">10.1042/bj2920577</idno>
+		<idno type="PMID">8389140</idno>
+		<idno type="PMCID">PMC1134249</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,481.06,544.30,53.99,10.54">Biochem J</title>
+		<imprint>
+			<biblScope unit="volume">292</biblScope>
+			<biblScope unit="issue">Pt 2</biblScope>
+			<biblScope unit="page" from="577" to="583" />
+			<date type="published" when="1993-06-01">1993 Jun 1</date>
+		</imprint>
+	</monogr>
+	<note>Pt 2</note>
+</biblStruct>
+
+<biblStruct coords="20,97.00,585.58,410.62,10.54;20,97.20,599.50,414.87,10.54;20,97.20,613.18,418.29,10.54;20,97.20,627.10,228.36,10.54" xml:id="b43">
+	<analytic>
+		<title level="a" type="main" coords="20,374.65,585.58,132.97,10.54;20,97.20,599.50,414.87,10.54;20,97.20,613.18,242.70,10.54">DNA sequences outside the receptor-binding sites differently modulate the responsiveness of the mouse mammary tumour virus promoter to various steroid hormones</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">C</forename><surname>Cato</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Skroch</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Weinmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Butkeraitis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Ponta</surname></persName>
+		</author>
+		<idno type="PMID">2842149</idno>
+		<idno type="PMCID">PMC458390</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,348.49,613.18,45.34,10.54">EMBO J</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1403" to="1410" />
+			<date type="published" when="1988-05">1988 May</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="20,97.00,640.78,426.67,10.54;20,97.20,654.70,399.28,10.54;20,97.20,668.38,386.68,10.54" xml:id="b44">
+	<analytic>
+		<title level="a" type="main" coords="20,257.98,640.78,265.68,10.54;20,97.20,654.70,182.98,10.54">11β-hydroxysteroid dehydrogenases: intracellular gatekeepers of tissue glucocorticoid action</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Chapman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Holmes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Seckl</surname></persName>
+		</author>
+		<idno type="DOI">10.1152/physrev.00020.2012</idno>
+		<idno type="PMID">23899562</idno>
+		<idno type="PMCID">PMC3962546</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="20,287.80,654.70,61.34,10.54">Physiol Rev</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1139" to="1206" />
+			<date type="published" when="2013-07">2013 Jul</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,75.10,412.22,10.54;21,97.20,88.78,423.26,10.54;21,97.20,102.70,321.34,10.54" xml:id="b45">
+	<analytic>
+		<title level="a" type="main" coords="21,251.99,75.10,257.23,10.54;21,97.20,88.78,136.42,10.54">Glucocorticoid-Mediated Mineralocorticoid Receptor Activation and Hypertension</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">J</forename><surname>Frey</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Odermatt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">M</forename><surname>Frey</surname></persName>
+		</author>
+		<idno type="DOI">10.1097/01.Mnh.0000133976.32559.B0</idno>
+		<idno type="PMID">15199296</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,241.83,88.78,141.40,10.54">Curr Opin Nephrol Hypertens</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="451" to="458" />
+			<date type="published" when="2004-07">2004 Jul</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,116.38,397.58,10.54;21,97.20,130.30,408.66,10.54;21,97.20,143.98,85.99,10.54" xml:id="b46">
+	<analytic>
+		<title level="a" type="main" coords="21,155.99,116.38,165.36,10.54">Apparent mineralocorticoid excess</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Funder</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jsbmb.2016.03.010</idno>
+		<idno type="PMID">26956190</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,329.25,116.38,133.60,10.54">J Steroid Biochem Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">165</biblScope>
+			<biblScope unit="page" from="151" to="153" />
+			<date type="published" when="2016-03-05">2017 Jan. 2016 Mar 5</date>
+		</imprint>
+	</monogr>
+	<note>Pt A</note>
+</biblStruct>
+
+<biblStruct coords="21,97.00,157.90,367.18,10.54;21,97.20,171.58,437.52,10.54;21,97.20,185.50,421.98,10.54;21,97.20,199.18,155.68,10.54" xml:id="b47">
+	<analytic>
+		<title level="a" type="main" coords="21,162.32,157.90,301.86,10.54;21,97.20,171.58,343.10,10.54">Brain mineralocorticoid and glucocorticoid receptor balance in neuroendocrine regulation and stress-related psychiatric etiopathologies</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">R</forename><surname>De Kloet</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.coemr.2022.100352</idno>
+		<idno type="PMID">38037568</idno>
+		<idno type="PMCID">PMC10687720</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,448.07,171.58,86.65,10.54;21,97.20,185.50,54.65,10.54">Curr Opin Endocr Metab Res</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">100352</biblScope>
+			<date type="published" when="2022-06">2022 Jun</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,213.10,436.50,10.54;21,97.20,226.78,381.62,10.54;21,97.20,240.70,355.69,10.54" xml:id="b48">
+	<analytic>
+		<title level="a" type="main" coords="21,282.94,213.10,250.56,10.54;21,97.20,226.78,77.79,10.54">Steroid receptor heterodimerization demonstrated in vitro and in vivo</title>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">K</forename><surname>Sauter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Pearce</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.92.26.12480</idno>
+		<idno type="PMID">8618925</idno>
+		<idno type="PMCID">PMC40381</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,182.86,226.78,122.48,10.54">Proc Natl Acad Sci U S A</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="issue">26</biblScope>
+			<biblScope unit="page" from="12480" to="12484" />
+			<date type="published" when="1995-12-19">1995 Dec 19</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,254.38,421.84,10.54;21,97.20,268.30,434.50,10.54;21,97.20,281.98,410.64,10.54" xml:id="b49">
+	<analytic>
+		<title level="a" type="main" coords="21,201.65,254.38,317.19,10.54;21,97.20,268.30,317.92,10.54">Heterodimerization between mineralocorticoid and glucocorticoid receptors increases the functional diversity of corticosteroid action</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Trapp</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Holsboer</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0165-6147(96)81590-2</idno>
+		<idno type="PMID">8984741</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,422.73,268.30,108.97,10.54">Trends Pharmacol Sci</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="145" to="149" />
+			<date type="published" when="1996-04">1996 Apr</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,295.90,379.25,10.54;21,97.20,309.58,434.50,10.54;21,97.20,323.50,429.65,10.54;21,97.20,337.18,279.36,10.54" xml:id="b50">
+	<analytic>
+		<title level="a" type="main" coords="21,204.34,295.90,271.90,10.54;21,97.20,309.58,351.95,10.54">Acute stress enhances heterodimerization and binding of corticosteroid receptors at glucocorticoid target genes in the hippocampus</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">R</forename><surname>Mifsud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">M</forename><surname>Reul</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1605246113</idno>
+		<idno type="PMID">27655894</idno>
+		<idno type="PMCID">PMC5056104</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,457.73,309.58,73.97,10.54;21,97.20,323.50,45.51,10.54">Proc Natl Acad Sci U S A</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="issue">40</biblScope>
+			<biblScope unit="page" from="11336" to="11341" />
+			<date type="published" when="2016-09-21">2016 Oct 4. 2016 Sep 21</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,351.10,431.97,10.54;21,97.20,364.78,428.56,10.54;21,97.20,378.70,401.22,10.54;21,97.20,392.38,405.32,10.54;21,97.20,406.30,105.34,10.54" xml:id="b51">
+	<monogr>
+		<title level="m" type="main" coords="21,271.52,364.78,254.24,10.54;21,97.20,378.70,349.47,10.54">Beyond the heterodimer model for mineralocorticoid and glucocorticoid receptor interactions in nuclei and at DNA. PLoS One</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>Pooley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">A</forename><surname>Rivers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">T</forename><surname>Kilcooley</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">N</forename><surname>Paul</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">D</forename><surname>Cavga</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">M</forename><surname>Kershaw</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Muratcioglu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gursoy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Keskin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">L</forename><surname>Lightman</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0227520</idno>
+		<idno type="PMID">31923266</idno>
+		<idno type="PMCID">PMC6953809</idno>
+		<imprint>
+			<date type="published" when="2020-01-10">2020 Jan 10</date>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">227520</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,419.98,386.21,10.54;21,97.20,433.90,431.56,10.54;21,97.20,447.58,180.66,10.54" xml:id="b52">
+	<analytic>
+		<title level="a" type="main" coords="21,344.94,419.98,138.27,10.54;21,97.20,433.90,261.62,10.54">Interaction between the trout mineralocorticoid and glucocorticoid receptors in vitro</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Kiilerich</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Triqueneaux</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">M</forename><surname>Christensen</surname></persName>
+		</author>
+		<idno type="DOI">10.1530/JME-15-0002</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,366.10,433.90,81.87,10.54">J Mol Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="55" to="68" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,461.50,367.18,10.54;21,97.20,475.18,437.52,10.54;21,97.20,489.10,421.98,10.54;21,97.20,502.78,155.68,10.54" xml:id="b53">
+	<analytic>
+		<title level="a" type="main" coords="21,162.32,461.50,301.86,10.54;21,97.20,475.18,343.10,10.54">Brain mineralocorticoid and glucocorticoid receptor balance in neuroendocrine regulation and stress-related psychiatric etiopathologies</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">R</forename><surname>De Kloet</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.coemr.2022.100352</idno>
+		<idno type="PMID">38037568</idno>
+		<idno type="PMCID">PMC10687720</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,448.07,475.18,86.65,10.54;21,97.20,489.10,54.65,10.54">Curr Opin Endocr Metab Res</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">100352</biblScope>
+			<date type="published" when="2022-06">2022 Jun</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="21,97.00,516.70,392.61,10.54;21,97.20,530.38,431.23,10.54;21,97.20,544.30,420.21,10.54;21,97.20,557.98,430.96,10.54;21,97.20,571.90,314.35,10.54" xml:id="b54">
+	<analytic>
+		<title level="a" type="main" coords="21,440.12,530.38,88.31,10.54;21,97.20,544.30,420.21,10.54;21,97.20,557.98,111.47,10.54">Crosstalk between glucocorticoid and mineralocorticoid receptors boosts glucocorticoid-induced killing of multiple myeloma cells</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Clarisse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Prekovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Vlummens</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Staessens</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Van Wesemael</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Thommis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fijalkowska</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Acke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Zwart</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><forename type="middle">M</forename><surname>Beck</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Offner</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">De</forename><surname>Bosscher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename></persName>
+		</author>
+		<idno type="DOI">10.1007/s00018-023-04900-x</idno>
+		<idno type="PMID">37578563</idno>
+		<idno type="PMCID">PMC10425521</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="21,215.84,557.98,82.74,10.54">Cell Mol Life Sci</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page">249</biblScope>
+			<date type="published" when="2023-08-14">2023 Aug 14</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

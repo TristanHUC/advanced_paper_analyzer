@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,60.83,98.99,490.34,12.90">ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2019-11-21">21 Nov 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,88.69,144.44,34.36,10.75"><forename type="first">Yu</forename><surname>Sun</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,131.77,144.44,81.04,10.75"><forename type="first">Shuohuan</forename><surname>Wang</surname></persName>
+							<email>wangshuohuan@baidu.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,222.36,144.44,46.63,10.75"><forename type="first">Yukun</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,276.74,144.44,61.89,10.75"><forename type="first">Shikun</forename><surname>Feng</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,347.21,144.44,45.60,10.75"><forename type="first">Hao</forename><surname>Tian</surname></persName>
+							<email>tianhao@baidu.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,401.14,144.44,38.91,10.75"><forename type="first">Hua</forename><surname>Wu</surname></persName>
+							<email>wuhua@baidu.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,450.03,144.44,73.29,10.75"><forename type="first">Haifeng</forename><surname>Wang</surname></persName>
+							<email>wanghaifeng@baidu.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Baidu Inc</orgName>
+								<address>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,60.83,98.99,490.34,12.90">ERNIE 2.0: A Continual Pre-Training Framework for Language Understanding</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2019-11-21">21 Nov 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">3DCDA6CA3443A5544EA7A2B467DF8010</idno>
+					<idno type="arXiv">arXiv:1907.12412v2[cs.CL]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-04-29T18:50+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Recently pre-trained models have achieved state-of-the-art results in various language understanding tasks. Current pretraining procedures usually focus on training the model with several simple tasks to grasp the co-occurrence of words or sentences. However, besides co-occurring information, there exists other valuable lexical, syntactic and semantic information in training corpora, such as named entities, semantic closeness and discourse relations. In order to extract the lexical, syntactic and semantic information from training corpora, we propose a continual pre-training framework named ERNIE 2.0 which incrementally builds pre-training tasks and then learn pre-trained models on these constructed tasks via continual multi-task learning. Based on this framework, we construct several tasks and train the ERNIE 2.0 model to capture lexical, syntactic and semantic aspects of information in the training data. Experimental results demonstrate that ERNIE 2.0 model outperforms BERT and XLNet on 16 tasks including English tasks on GLUE benchmarks and several similar tasks in Chinese. The source codes and pre-trained models have been released at https://github.com/PaddlePaddle/ERNIE.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Pre-trained language representations such as ELMo <ref type="bibr" coords="1,249.46,492.05,43.04,8.64;1,54.00,503.01,33.44,8.64" target="#b6">(Peters et al. 2018)</ref>, OpenAI <ref type="bibr" coords="1,128.56,503.01,100.00,8.64">GPT(Radford et al. 2018)</ref>, <ref type="bibr" coords="1,235.30,503.01,57.20,8.64;1,54.00,513.97,39.06,8.64">BERT (Devlin et al. 2018</ref><ref type="bibr" coords="1,93.06,513.97,124.41,8.64">), ERNIE 1.0 (Sun et al. 2019)</ref>  1 and XLNet <ref type="bibr" coords="1,266.67,513.97,25.83,8.64;1,54.00,524.93,45.92,8.64">(Yang et al. 2019)</ref> have been proven to be effective for improving the performances of various natural language understanding tasks including sentiment classification <ref type="bibr" coords="1,212.56,546.84,76.89,8.64" target="#b7">(Socher et al. 2013)</ref>, natural language inference <ref type="bibr" coords="1,167.62,557.80,89.78,8.64" target="#b0">(Bowman et al. 2015)</ref>, named entity recognition <ref type="bibr" coords="1,127.06,568.76,116.20,8.64" target="#b6">(Sang and De Meulder 2003)</ref> and so on.</p><p>Generally the pre-training of models often train the model based on the co-occurrence of words and sentences. While in fact, there are other lexical, syntactic and semantic information worth examining in training corpora other than cooccurrence. For example, named entities like person names, location names, and organization names, may contain conceptual information. Information like sentence order and sentence proximity enables the models to learn structureaware representations. And semantic similarity at the document level or discourse relations among sentences allow the models to learn semantic-aware representations. In order to discover all valuable information in training corpora, be it lexical, syntactic or semantic representations, we propose a continual pre-training framework named ERNIE 2.0 which could incrementally build and train a large variety of pre-training tasks through continual multi-task learning.</p><p>Our ERNIE framework supports the introduction of various customized tasks continually, which is realized through continual multi-task learning. When given one or more new tasks, the continual multi-task learning method simultaneously trains the newly-introduced tasks together with the original tasks in an efficient way, without forgetting previously learned knowledge. In this way, our framework can incrementally train the distributed representations based on the previously trained parameters that it grasped. Moreover, in this framework, all the tasks share the same encoding networks, thus making the encoding of lexical, syntactic and semantic information across different tasks possible.</p><p>In summary, our contributions are as follows:</p><p>• We propose a continual pre-training framework ERNIE 2.0, which efficiently supports customized training tasks and continual multi-task learning in an incremental way.</p><p>• We construct three kinds of unsupervised language processing tasks to verify the effectiveness of the proposed framework. Experimental results demonstrate that ERNIE 2.0 achieves significant improvements over BERT and XL-Net on 16 tasks including English GLUE benchmarks and several Chinese tasks.</p><p>• Our fine-tuning code of ERNIE 2.0 and models pre-trained on English corpora are available at https://github.com/ PaddlePaddle/ERNIE.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Related Work Unsupervised Learning for Language Representation</head><p>It is effective to learn general language representation by pre-training a language model with a large amount of unan- </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Continual Learning</head><p>Continual learning <ref type="bibr" coords="2,129.06,651.68,77.59,8.64" target="#b4">(Parisi et al. 2019;</ref><ref type="bibr" coords="2,209.79,651.68,83.38,8.64" target="#b1">Chen and Liu 2018)</ref> aims to train the model with several tasks in sequence so that it remembers the previously-learned tasks when learning the new ones. These methods are inspired by the learning process of humans, as humans are capable of continuously accumu- </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The ERNIE 2.0 Framework</head><p>As shown in Figure <ref type="figure" coords="2,405.05,478.40,3.81,8.64" target="#fig_0">1</ref>  </p><formula xml:id="formula_0" coords="3,90.62,118.12,380.09,86.61">+ + + + + ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ 3 ↑ ↑ ↑ [SEP]</formula><formula xml:id="formula_1" coords="3,54.00,281.17,226.26,144.12">…… Sentence Level Task Word Level Task V 1 word 2 V 2 word 3 V 3 CLS Figure 4:</formula><p>The architecture of multi-task learning in the ERNIE 2.0 framework, in which the encoder can be recurrent neural networks or a deep transformer.</p><p>structure-aware tasks and semantic-aware tasks<ref type="foot" coords="3,238.22,469.76,3.49,6.05" target="#foot_0">2</ref> . All of these pre-training tasks rely on self-supervised or weak-supervised signals that could be obtained from massive data without human annotation. Prior knowledge such as named entities, phrases and discourse relations is used to generate labels from large-scale data.</p><p>Continual Multi-task Learning The ERNIE 2.0 framework aims to learn lexical, syntactic and semantic information from a number of different tasks. Thus there are two main challenges to overcome. The first is how to train the tasks in a continual way without forgetting the knowledge learned before. The second is how to pre-train these tasks in an efficient way. We propose a continual multi-task learning method to tackle with these two problems. Whenever a new task comes, the continual multi-task learning method first uses the previously learned parameters to initialize the model, and then train the newly-introduced task together with the original tasks simultaneously. This will make sure that the learned parameters encodes the previously-learned knowledge. One left problem is how to make it trained more efficiently. We solve this problem by allocating each task N training iterations. Our framework needs to automatically assign these N iterations for each task to different stages of training. In this way, we can guarantee the efficiency of our method without forgetting the previously trained knowledge<ref type="foot" coords="3,319.50,354.57,3.49,6.05" target="#foot_1">3</ref> .</p><p>Figure <ref type="figure" coords="3,358.62,367.32,5.08,8.64" target="#fig_1">2</ref> shows the difference among our method, multitask learning from scratch and previous continual learning. Although multi-task learning from scratch could train multiple tasks at the same time, it is necessary that all customized pre-training tasks are prepared before the training could proceed. So this method takes as much time as continual learning does, if not more. Traditional continual learning method trains the model with only one task at each stage with the demerit that it may forget the previously learned knowledge.</p><p>As shown in Figure <ref type="figure" coords="3,414.22,466.07,3.81,8.64">4</ref>, the architecture of our continual multi-task learning in each stage contains a series of shared text encoding layers to encode contextual information, which can be customized by using recurrent neural networks or a deep Transformer consisting of stacked self-attention layers <ref type="bibr" coords="3,332.74,520.86,81.08,8.64" target="#b7">(Vaswani et al. 2017)</ref>. The parameters of the encoder can be updated across all learning tasks. There are two kinds of loss functions in our framework. One is the sentence-level loss and the other one is the token-level loss, which are similar to the loss functions of BERT. Each pre-training task has its own loss function. During pre-training, one sentence-level loss function can be combined with multiple token-level loss functions to continually update the model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fine-tuning for Application Tasks</head><p>By virtue of fine-tuning with task-specific supervised data, the pre-trained model can be adapted to different language understanding tasks, such as question answering, natural language inference, and semantic similarity. Each downstream task has its own fine-tuned models after being fine-tuned.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ERNIE 2.0 Model</head><p>In order to verify the effectiveness of the framework, we construct three different kinds of unsupervised language processing tasks and develop a pre-trained model called ERNIE 2.0 model. In this section we introduce the implementation of the model in the proposed framework.  <ref type="bibr" coords="4,54.00,371.82,21.79,8.64">2019)</ref>. The transformer can capture the contextual information for each token in the sequence via self-attention, and generate a sequence of contextual embeddings. Given a sequence, the special classification embedding [CLS] is added to the first place of the sequence. Furthermore, the symbol of [SEP] is added as the separator in the intervals of the segments for the multiple input segment tasks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model Structure</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Task Embedding</head><p>The model feeds task embedding to represent the characteristic of different tasks. We represent different tasks with an id ranging from 0 to N. Each task id is assigned to one unique task embedding. The corresponding token, segment, position and task embedding are taken as the input of the model. We can use any task id to initialize our model in the fine-tuning process. The model structure is shown in Figure <ref type="figure" coords="4,121.00,534.59,3.74,8.64" target="#fig_2">3</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pre-training Tasks</head><p>We construct three different kinds of tasks to capture different aspects of information in the training corpora. The wordaware tasks enable the model to capture the lexical information, the structure-aware tasks enable the model capture the syntactic information of the corpus and the semantic-aware tasks aims to learn semantic information. Capitalization Prediction Task Capitalized words usually have certain specific semantic information compared to other words in sentences. The cased model has some advantages in tasks like named entity recognition while the uncased model is more suitable for some other tasks. To combine the advantages of both models, we add a task to predict whether the word is capitalized or not.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Word</head><p>Token-Document Relation Prediction Task This task predicts whether the token in a segment appears in other segments of the original document. Empirically, the words that appear in many parts of a document are usually commonlyused words or relevant with the main topics of the document. Therefore, through identifying the frequently-occurring words of a document appearing in the segment, the task can enable the ability of a model to capture the key words of the document to some extent.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Structure-aware Pre-training Tasks</head><p>Sentence Reordering Task This task aims to learn the relationships among sentences. During the pre-training process of this task, a given paragraph is randomly split into 1 to m segments and then all of the combinations are shuffled by a random permuted order. We let the pre-trained model to reorganize these permuted segments, modeled as a k-class classification problem where k = m n=1 n!. Empirically, the sentences reordering task can enable the pre-trained model to learn relationships among sentences in a document.</p><p>Sentence Distance Task We also construct a pre-training task to learn the sentence distance using document-level information. This task is modeled as a 3-class classification problem. "0" represents that the two sentences are adjacent in the same document, "1" represent that the two sentences are in the same document, but not adjacent, and "2" represents that the two sentences are from two different documents.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Semantic-aware Pre-training Tasks</head><p>Discourse Relation Task Beside the distance task mentioned above, we introduce a task to predict the semantic or rhetorical relation between two sentences. We use the data built by Sileo et.al <ref type="bibr" coords="5,155.27,57.48,75.49,8.64" target="#b7">(Sileo et al. 2019)</ref> to train a pretrained model for English tasks. Following the method in Sileo et.al <ref type="bibr" coords="5,94.83,79.39,67.01,8.64" target="#b7">(Sileo et al. 2019)</ref>, we also automatically construct a Chinese dataset for pre-training.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IR Relevance Task</head><p>We build a pre-training task to learn the short text relevance in information retrieval. It is a 3-class classification task which predicts the relationship between a query and a title. We take the query as the first sentence and the title as the second sentence. The search log data from a commercial search engine is used as our pre-training data. There are three kinds of labels in this task. The query and title pairs that are labelled as " 0" stand for strong relevance, which means that the title is clicked by the users after they input the query. Those labelled as "1" represent weak relevance, which implies that when the query is input by the users, these titles appear in the search results but failed to be clicked by users. The label "2" means that the query and title are completely irrelevant and random in terms of semantic information.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experiments</head><p>We compare the performance of ERNIE 2.0 with the state-ofthe-art pre-training models. For English tasks, we compare our results with <ref type="bibr" coords="5,117.29,326.96,103.18,8.64">BERT (Devlin et al. 2018)</ref>   Table <ref type="table" coords="5,354.92,381.02,3.88,8.64">4</ref>: The Experiment Settings for Chinese datasets ERNIE 2.0 is trained on 48 NVidia v100 GPU cards for the base model and 64 NVidia v100 GPU cards for the large model in both English and Chinese. The ERNIE 2.0 framework is implemented on PaddlePaddle, which is an end-toend open source deep learning platform developed by Baidu. We use Adam optimizer that parameters of which are fixed to β 1 = 0.9, β 2 = 0.98, with a batch size of 393216 tokens. The learning rate is set as 5e-5 for English model and 1.28e-4 for Chinese model. It is scheduled by decay scheme noam <ref type="bibr" coords="5,319.17,504.92,79.63,8.64" target="#b7">(Vaswani et al. 2017</ref>) with warmup over the first 4,000 steps for every pre-training task. By virtue of float16 operations, we manage to accelerate the training and reduce the memory usage of our models. Each of the pre-training tasks is trained until the metrics of pre-training tasks converge.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fine-tuning Tasks</head><p>English Task As a multi-task benchmark and analysis platform for natural language understanding, General Language Understanding Evaluation (GLUE) is usually applied to evaluate the performance of models. We also test the performance of ERNIE 2.0 on GLUE. Specifically, GLUE covers a diverse range of NLP datasets, the details is shown (Wang et al.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2018).</head><p>Chinese Tasks We executed extensive experiments on 9 Chinese NLP tasks, including machine reading comprehension, named entity recognition, natural language inference,  We train the model with 4 tasks altogether from scratch in multi-task learning method and train the model in 4 stages in other two learning methods. We train different tasks in different stages. The learning order of these tasks is the same as the above tasks listed. To compare the result fairly, each of these 4 tasks are updated in 50,000 steps . The size of pre-training model is same as ERNIE base. We choose MNLI-m, SST-2 and MRPC as our fine-tuning dataset. The fine-tuning result is average of five random start. the fine-tuning experiment set is same as Table <ref type="table" coords="6,297.93,684.90,3.74,8.64" target="#tab_5">3</ref>.</p><p>semantic similarity, sentiment analysis and question answering. Specifically, the following Chinese datasets are chosen to evaluate the performance of ERNIE 2.0 on Chinese tasks: </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Implementation Details for Fine-tuning</head><p>Detailed fine-tuning experimental settings of English tasks are shown in Table <ref type="table" coords="7,132.58,273.56,5.06,8.64" target="#tab_5">3</ref> while that of Chinese tasks are shown in Table <ref type="table" coords="7,88.62,284.52,3.74,8.64">4</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental Results</head><p>Results on English Tasks We evaluate the performance of the base models and the large models of each method on GLUE. Considering the fact that only the results of the single model XLNet on the dev set are reported, we also reports the results of each method on the dev set. In order to obtain a fair comparison with BERT and XLNet, we run a single-task and single-model<ref type="foot" coords="7,126.81,384.43,3.49,6.05" target="#foot_4">6</ref> ERNIE 2.0 on the dev set. The detailed results on GLUE are depicted in Table <ref type="table" coords="7,209.53,397.06,3.74,8.64" target="#tab_6">5</ref>.</p><p>As shown in the BASE model columns of Results on Chinese Tasks Table <ref type="table" coords="7,192.51,524.20,4.88,8.64" target="#tab_7">6</ref> shows the performances on 9 classical Chinese NLP tasks. It can be seen that ERNIE 1.0 BASE outperforms BERT BASE on XNLI, MSRA-NER, ChnSentiCorp, LCQMC and NLPCC-DBQA tasks, yet the performance is less ideal on the rest, which is caused by the difference in pre-training between the two methods. Specifically, the pre-training data of ERNIE 1.0 BASE does not contain instances whose length exceeds 128, but BERT BASE is pre-trained with the instances whose length are 512. From the results, it can be also seen that the proposed ERNIE 2.0 makes further progress, which significantly outperforms BERT BASE on all of the nine tasks. Furthermore, we train a large version of ERNIE 2.0. ERNIE 2.0 LARGE achieves the best performance and creates new state-of-the-art results on these Chinese NLP tasks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparison of Different Learning Methods</head><p>In order to analyze the effectiveness of the continual multitask learning strategy adopted in our framework, we compare this method with two other methods as shown in figure <ref type="figure" coords="7,537.04,138.83,3.67,8.64" target="#fig_1">2</ref>. Table 7 describes the detailed information. For all the methods, we assume that the training iterations are the same for each task. In our settings, each task can be trained in 50k iterations, with 200k iterations for all of the tasks. As it can be seen, multi-task learning trains all the tasks in one stage, continual pre-training trains the tasks one by one, while our continual multi-task learning method can assign different iterations to each task in different training stages. The experimental result shows that continual multi-task learning obtains the better performance on downstream tasks compared with the other two methods, without sacrificing any efficiency. The result also indicates that our pre-training method can trains the new tasks in a more effective and efficient way. Moreover, the comparison between continual multi-task learning, multitask learning and traditional continual learning shows that the first two methods outperform the third one, which confirms our intuition that traditional continual learning tends to forget the knowledge it has learnt when there is only one new task involved each time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>We proposed a continual pre-training framework named ERNIE 2.0, in which pre-training tasks can be incrementally built and learned through continual multi-task learning in a continual way. Based on the framework, we constructed several pre-training tasks covering different aspects of language and trained a new model called ERNIE 2.0 model which is more competent in language representation. ERNIE 2.0 was tested on the GLUE benchmarks and various Chinese tasks. It obtained significant improvements over BERT and XLNet. In the future, we will introduce more pre-training tasks to the ERNIE 2.0 framework to further improve the performance of the model. We will also investigate other sophisticated continual learning method in our framework.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,54.00,258.21,504.00,8.64;2,54.00,269.17,505.74,8.64"><head>Figure 1 :</head><label>1</label><figDesc>Figure1: The framework of ERNIE 2.0, where the pre-training tasks can be incrementally constructed, the models are pre-trained through continual multi-task learning, and the pre-trained model is fine-tuned to adapt to various language understanding tasks.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="2,324.05,375.79,229.41,8.64"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: The different methods of continual pre-training.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="3,54.00,227.58,505.25,8.64;3,54.00,238.54,504.00,8.64;3,54.00,249.50,74.16,8.64"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: The structure of the ERNIE 2.0 model. The input embedding contains the token embedding, the sentence embedding, the position embedding and the task embedding. Seven pre-training tasks belonging to different kinds are constructed in the ERNIE 2.0 model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="4,77.35,644.28,124.12,9.81;4,54.00,662.25,239.17,9.03;4,54.00,673.60,238.50,8.64;4,54.00,684.56,238.50,8.64;4,54.00,695.51,238.50,8.64;4,319.50,208.89,240.15,8.64;4,319.50,219.85,240.24,8.64;4,319.03,230.81,219.87,8.64"><head></head><label></label><figDesc>-aware Pre-training Tasks Knowledge Masking Task ERNIE 1.0(Sun et al. 2019) proposed an effective strategy to enhance representation through knowledge integration. It introduced phrase masking and named entity masking and predicts the whole masked phrases and named entities to help the model learn the dependency information in both local contexts and global contexts. We use this task to train an initial version of the model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="4,53.69,57.93,504.30,127.56"><head>Table 1 :</head><label>1</label><figDesc>The Relationship between pre-training task and pre-training dataset. We use different pre-training dataset to construct different tasks. A type of pre-trained dataset can correspond to multiple pre-training tasks.</figDesc><table coords="4,76.00,57.93,460.00,87.87"><row><cell>Task</cell><cell></cell><cell cols="2">Token-Level Loss</cell><cell></cell><cell cols="2">Sentence-Level Loss</cell><cell></cell></row><row><cell>Corpus</cell><cell>Knowledge</cell><cell>Capital</cell><cell>Token-Document</cell><cell>Sentence</cell><cell>Sentence</cell><cell>Discourse</cell><cell>IR</cell></row><row><cell></cell><cell>Masking</cell><cell>Prediction</cell><cell>Relation</cell><cell>Reordering</cell><cell>Distance</cell><cell>Relation</cell><cell>Relevance</cell></row><row><cell>Encyclopedia</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>×</cell><cell>×</cell></row><row><cell>BookCorpus</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>×</cell><cell>×</cell></row><row><cell>News</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>×</cell><cell>×</cell></row><row><cell>Dialog</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>×</cell><cell>×</cell></row><row><cell>IR Relevance Data</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell></cell></row><row><cell>Discourse Relation Data</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell>×</cell><cell></cell><cell>×</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="5,54.00,326.96,240.15,148.16"><head></head><label></label><figDesc>and XLNet (Yang et al. 2019) on GLUE. For Chinese tasks, we compare the results with that of BERT (Devlin et al. 2018) and the previous ERNIE 1.0 (Sun et al. 2019) model on several Chinese datasets. Moreover, we will compare our method with multitask learning and traditional continual learning.</figDesc><table coords="5,55.55,407.17,235.40,67.95"><row><cell cols="3">Corpus Type English(#tokens) Chinese(#tokens)</cell></row><row><cell>Encyclopedia</cell><cell>2021M</cell><cell>7378M</cell></row><row><cell>BookCorpus</cell><cell>805M</cell><cell>-</cell></row><row><cell>News</cell><cell>-</cell><cell>1478M</cell></row><row><cell>Dialog</cell><cell>4908M</cell><cell>522M</cell></row><row><cell>IR Relevance Data</cell><cell>-</cell><cell>4500M</cell></row><row><cell>Discourse Relation Data</cell><cell>171M</cell><cell>1110M</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="5,53.69,57.48,505.97,646.67"><head>Table 2 :</head><label>2</label><figDesc>The size of pre-training datasets. 24 layers, 16 self-attention heads and 1024dimensional of hidden size. The model settings of XLNet (Yang et al. 2019) are same as BERT.</figDesc><table coords="5,53.69,529.40,240.55,123.60"><row><cell>Pre-training and Implementation</cell></row><row><cell>Pre-training Data Similar to that of BERT, some data in</cell></row><row><cell>the English corpus are crawled from Wikipedia and Book-</cell></row><row><cell>Corpus. Besides we also collect some data from Reddit and</cell></row><row><cell>use the Discovery data (Sileo et al. 2019) as our discourse</cell></row><row><cell>relation data. For the Chinese corpus, we collect a variety</cell></row><row><cell>of data, such as encyclopedia, news, dialogue, information</cell></row><row><cell>retrieval and discourse relation data from a search engine.</cell></row><row><cell>The details of the pre-training data are shown in Table 2.</cell></row><row><cell>The relationship between pre-training task and pre-training</cell></row><row><cell>dataset is shown in Table 1.</cell></row></table><note coords="5,54.00,662.25,238.50,9.03;5,54.00,673.60,238.50,8.64;5,54.00,684.56,238.50,8.64;5,54.00,695.51,238.50,8.64;5,319.50,57.48,61.41,8.64"><p>Pre-training Settings To compare with BERT(Devlin et al. 2018), We use the same model settings of transformer as BERT. The base model contains 12 layers, 12 self-attention heads and 768-dimensional of hidden size while the large model contains</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="5,327.12,229.76,223.26,131.97"><head>Table 3 :</head><label>3</label><figDesc>The Experiment settings for GLUE dataset</figDesc><table coords="5,327.12,268.45,223.26,93.28"><row><cell>Task</cell><cell>Epoch</cell><cell>BASE Learning Rate</cell><cell>Batch Size</cell><cell>Epoch</cell><cell>LARGE Learning Rate</cell><cell>Batch Size</cell></row><row><cell>CMRC 2018</cell><cell>2</cell><cell>3e-5</cell><cell>64</cell><cell>2</cell><cell>3e-5</cell><cell>64</cell></row><row><cell>DRCD</cell><cell>2</cell><cell>5e-5</cell><cell>64</cell><cell>2</cell><cell>3e-5</cell><cell>64</cell></row><row><cell>DuReader</cell><cell>2</cell><cell>5e-5</cell><cell>64</cell><cell>2</cell><cell>2e-5</cell><cell>64</cell></row><row><cell>MSRA-NER</cell><cell>6</cell><cell>5e-5</cell><cell>16</cell><cell>6</cell><cell>1e-5</cell><cell>16</cell></row><row><cell>XNLI</cell><cell>3</cell><cell>1e-4</cell><cell>512</cell><cell>3</cell><cell>4e-5</cell><cell>512</cell></row><row><cell>ChnSentiCorp</cell><cell>10</cell><cell>5e-5</cell><cell>24</cell><cell>10</cell><cell>1e-5</cell><cell>24</cell></row><row><cell>LCQMC</cell><cell>3</cell><cell>2e-5</cell><cell>32</cell><cell>3</cell><cell>5e-6</cell><cell>32</cell></row><row><cell>BQ Corpus</cell><cell>3</cell><cell>3e-5</cell><cell>64</cell><cell>3</cell><cell>1.5e-5</cell><cell>64</cell></row><row><cell>NLPCC-DBQA</cell><cell>3</cell><cell>2e-5</cell><cell>64</cell><cell>3</cell><cell>1e-5</cell><cell>64</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="6,53.69,66.23,504.31,320.51"><head>Table 5 :</head><label>5</label><figDesc>The results on GLUE benchmark, where the results on dev set are the median of five runs and the results on test set are scored by the GLUE evaluation server (https://gluebenchmark.com/leaderboard). The state-of-the-art results are in bold. All of the fine-tuned models of AX is trained by the data of MNLI.</figDesc><table coords="6,68.84,66.23,472.09,320.51"><row><cell></cell><cell></cell><cell></cell><cell cols="2">BASE model</cell><cell></cell><cell></cell><cell cols="2">LARGE model</cell><cell></cell></row><row><cell cols="2">Task(Metrics)</cell><cell></cell><cell></cell><cell>Test</cell><cell></cell><cell>Dev</cell><cell></cell><cell cols="2">Test</cell></row><row><cell></cell><cell></cell><cell></cell><cell>BERT</cell><cell cols="4">ERNIE 2.0 BERT XLNet ERNIE 2.0</cell><cell>BERT</cell><cell cols="2">ERNIE 2.0</cell></row><row><cell cols="3">CoLA (Matthew Corr.)</cell><cell>52.1</cell><cell>55.2</cell><cell>60.6</cell><cell>63.6</cell><cell>65.4</cell><cell>60.5</cell><cell></cell><cell>63.5</cell></row><row><cell cols="2">SST-2 (Accuracy)</cell><cell></cell><cell>93.5</cell><cell>95.0</cell><cell>93.2</cell><cell>95.6</cell><cell>96.0</cell><cell>94.9</cell><cell></cell><cell>95.6</cell></row><row><cell cols="2">MRPC (Accurary/F1)</cell><cell></cell><cell>84.8/88.9</cell><cell>86.1/89.9</cell><cell>88.0/-</cell><cell>89.2/-</cell><cell>89.7/-</cell><cell>85.4/89.3</cell><cell cols="2">87.4/90.2</cell></row><row><cell cols="4">STS-B (Pearson Corr./Spearman Corr.) 87.1/85.8</cell><cell>87.6/86.5</cell><cell>90.0/-</cell><cell>91.8/-</cell><cell>92.3/-</cell><cell>87.6/86.5</cell><cell cols="2">91.2/90.6</cell></row><row><cell cols="2">QQP (Accuracy/F1)</cell><cell></cell><cell>89.2/71.2</cell><cell>89.8/73.2</cell><cell>91.3/-</cell><cell>91.8/-</cell><cell>92.5/-</cell><cell>89.3/72.1</cell><cell cols="2">90.1/73.8</cell></row><row><cell cols="3">MNLI-m/mm (Accuracy)</cell><cell>84.6/83.4</cell><cell>86.1/85.5</cell><cell>86.6/-</cell><cell>89.8/-</cell><cell>89.1/-</cell><cell>86.7/85.9</cell><cell cols="2">88.7/88.8</cell></row><row><cell cols="2">QNLI (Accuracy)</cell><cell></cell><cell>90.5</cell><cell>92.9</cell><cell>92.3</cell><cell>93.9</cell><cell>94.3</cell><cell>92.7</cell><cell></cell><cell>94.6</cell></row><row><cell cols="2">RTE (Accuracy)</cell><cell></cell><cell>66.4</cell><cell>74.8</cell><cell>70.4</cell><cell>83.8</cell><cell>85.2</cell><cell>70.1</cell><cell></cell><cell>80.2</cell></row><row><cell cols="2">WNLI (Accuracy)</cell><cell></cell><cell>65.1</cell><cell>65.1</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>65.1</cell><cell></cell><cell>67.8</cell></row><row><cell cols="2">AX(Matthew Corr.)</cell><cell></cell><cell>34.2</cell><cell>37.4</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>39.6</cell><cell></cell><cell>48.0</cell></row><row><cell></cell><cell>Score</cell><cell></cell><cell>78.3</cell><cell>80.6</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>80.5</cell><cell></cell><cell>83.6</cell></row><row><cell>Task</cell><cell>Metrics</cell><cell cols="2">BERTBASE Dev Test</cell><cell cols="2">ERNIE 1.0BASE Dev Test</cell><cell cols="2">ERNIE 2.0BASE Dev Test</cell><cell cols="3">ERNIE 2.0LARGE Dev Test</cell></row><row><cell>CMRC 2018</cell><cell>EM/F1</cell><cell>66.3/85.9</cell><cell>-</cell><cell>65.1/85.1</cell><cell>-</cell><cell>69.1/88.6</cell><cell>-</cell><cell cols="2">71.5/89.9</cell><cell>-</cell></row><row><cell>DRCD</cell><cell>EM/F1</cell><cell cols="9">85.7/91.6 84.9/90.9 84.6/90.9 84.0/90.5 88.5/93.8 88.0/93.4 89.7/94.7 89.0/94.2</cell></row><row><cell>DuReader</cell><cell>EM/F1</cell><cell>59.5/73.1</cell><cell>-</cell><cell>57.9/72.1</cell><cell>-</cell><cell>61.3/74.9</cell><cell>-</cell><cell cols="2">64.2/77.3</cell><cell>-</cell></row><row><cell>MSRA-NER</cell><cell>F1</cell><cell>94.0</cell><cell>92.6</cell><cell>95.0</cell><cell>93.8</cell><cell>95.2</cell><cell>93.8</cell><cell>96.3</cell><cell></cell><cell>95.0</cell></row><row><cell>XNLI</cell><cell>Accuracy</cell><cell>78.1</cell><cell>77.2</cell><cell>79.9</cell><cell>78.4</cell><cell>81.2</cell><cell>79.7</cell><cell>82.6</cell><cell></cell><cell>81.0</cell></row><row><cell>ChnSentiCorp</cell><cell>Accuracy</cell><cell>94.6</cell><cell>94.3</cell><cell>95.2</cell><cell>95.4</cell><cell>95.7</cell><cell>95.5</cell><cell>96.1</cell><cell></cell><cell>95.8</cell></row><row><cell>LCQMC</cell><cell>Accuracy</cell><cell>88.8</cell><cell>87.0</cell><cell>89.7</cell><cell>87.4</cell><cell>90.9</cell><cell>87.9</cell><cell>90.9</cell><cell></cell><cell>87.9</cell></row><row><cell>BQ Corpus</cell><cell>Accuracy</cell><cell>85.9</cell><cell>84.8</cell><cell>86.1</cell><cell>84.8</cell><cell>86.4</cell><cell>85.0</cell><cell>86.5</cell><cell></cell><cell>85.2</cell></row><row><cell>NLPCC-DBQA</cell><cell>MRR/F1</cell><cell cols="9">94.7/80.7 94.6/80.8 95.0/82.3 95.1/82.7 95.7/84.7 95.7/85.3 95.9/85.3 95.8/85.8</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" coords="6,53.69,401.85,504.31,202.19"><head>Table 6 :</head><label>6</label><figDesc>The results of 9 common Chinese NLP tasks. ERNIE 1.0 indicates model released by(Sun et al. 2019, ERNIE)  . The reported results are the average of five experimental results, and the state-of-the-art results are in bold.</figDesc><table coords="6,80.14,450.25,449.48,153.79"><row><cell>Pre-training method</cell><cell>Pre-training task</cell><cell cols="7">Training iterations (steps) Stage 1 Stage 2 Stage 3 Stage 4 MNLI SST-2 MRPC Fine-tuning result</cell></row><row><cell></cell><cell>Knowledge Masking</cell><cell>50k</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Continual Learning</cell><cell>Capital Prediction Token-Document Relation</cell><cell>--</cell><cell>50k -</cell><cell>-50k</cell><cell>--</cell><cell>77.3</cell><cell>86.4</cell><cell>82.5</cell></row><row><cell></cell><cell>Sentence Reordering</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>50k</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Knowledge Masking</cell><cell></cell><cell>50k</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Multi-task Learning</cell><cell>Capital Prediction Token-Document Relation</cell><cell></cell><cell>50k 50k</cell><cell></cell><cell></cell><cell>78.7</cell><cell>87.5</cell><cell>83.0</cell></row><row><cell></cell><cell>Sentence Reordering</cell><cell></cell><cell>50k</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Knowledge Masking</cell><cell>20k</cell><cell>10k</cell><cell>10k</cell><cell>10k</cell><cell></cell><cell></cell><cell></cell></row><row><cell>continual Multi-task Learning</cell><cell>Capital Prediction Token-Document Relation</cell><cell>--</cell><cell>30k -</cell><cell>10k 40k</cell><cell>10k 10k</cell><cell>79.0</cell><cell>87.8</cell><cell>84.0</cell></row><row><cell></cell><cell>Sentence Reordering</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>50k</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8" coords="6,53.69,619.15,505.96,30.56"><head>Table 7 :</head><label>7</label><figDesc>The results of different methods of continual pre-training. We use knowledge masking, capital prediction, tokendocument relation and sentence reordering as our pre-training tasks. we sample 10% training data from our whole pre-training corpus.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10" coords="7,54.00,408.17,240.16,108.12"><head>Table 5 ,</head><label>5</label><figDesc>ERNIE 2.0 BASE outperforms BERT BASE on all of the 10 tasks and obtains a score of 80.6. As shown in the dev columns of LARGE model section in Table 5, ERNIE 2.0 LARGE consistently outperforms BERT LARGE and XLNet LARGE on most of the tasks except MNLI-m. Furthermore, as shown in the LARGE model section in Table 5, ERNIE 2.0 LARGE outperforms BERT LARGE on all of the 10 tasks, which gets a score of 83.6 on the GLUE test set and achieves a 3.1% improvement over the previous SOTA pre-training model BERT LARGE .</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_0" coords="3,70.14,686.20,222.36,7.77;3,54.00,696.16,45.19,7.77"><p>For the detailed information of these tasks, please refer to the next section.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_1" coords="3,335.64,686.20,222.36,7.77;3,319.50,696.16,27.64,7.77"><p>For more details, please refer to Table7in the experiment section.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_2" coords="7,70.14,664.45,183.45,7.77"><p>https://github.com/pengming617/bert classification</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_3" coords="7,70.14,675.33,208.07,7.77"><p>http://tcci.ccf.org.cn/conference/2016/dldoc/evagline2.pdf</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_4" coords="7,70.14,686.20,223.85,7.77;7,54.00,696.16,90.66,7.77"><p>which mean the result without additional tricks such as ensemble and multi-task losses.</p></note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="7,320.10,557.59,238.73,8.64;7,319.50,568.55,238.50,8.64;7,319.50,579.34,238.50,8.81;7,319.50,590.30,75.27,8.58;7,314.52,604.63,243.48,8.64;7,319.50,615.42,240.15,8.81;7,319.50,626.38,171.03,8.81" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="7,523.00,604.63,35.00,8.64;7,319.50,615.59,69.68,8.64">Lifelong machine learning</title>
+		<author>
+			<persName coords=""><surname>Bowman</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1508.05326</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="7,450.09,568.55,107.91,8.64;7,319.50,579.51,164.39,8.64">A large annotated corpus for learning natural language inference</title>
+		<imprint>
+			<date type="published" when="2015">2015. 2015. 2018</date>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="1" to="207" />
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Chen and Liu 2018</note>
+</biblStruct>
+
+<biblStruct coords="7,314.52,640.72,244.72,8.64;7,319.50,651.68,240.15,8.64;7,319.50,662.64,238.50,8.64;7,319.50,673.43,238.50,8.81;7,319.19,684.39,240.31,8.81;7,319.15,695.51,22.42,8.64" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="7,412.33,651.68,147.32,8.64;7,319.50,662.64,238.50,8.64;7,319.50,673.60,52.43,8.64">The bq corpus: A large-scale domainspecific chinese corpus for sentence semantic equivalence identification</title>
+		<author>
+			<persName coords=""><forename type="first">Chen</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="7,393.73,673.43,164.28,8.58;7,319.19,684.39,208.47,8.58">Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2018 Conference on Empirical Methods in Natural Language Processing</meeting>
+		<imprint>
+			<date type="published" when="2018">2018. 2018</date>
+			<biblScope unit="page" from="4946" to="4951" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,49.02,57.48,244.30,8.64;8,53.53,68.44,240.72,8.64;8,54.00,79.39,240.25,8.64;8,54.00,90.18,134.67,8.58;8,49.02,104.87,244.31,8.64;8,54.00,115.83,238.50,8.64;8,54.00,126.62,238.50,8.81;8,54.00,137.75,65.86,8.64" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="8,219.30,115.83,73.20,8.64;8,54.00,126.79,206.24,8.64">A span-extraction dataset for chinese machine reading comprehension</title>
+		<author>
+			<persName coords=""><surname>Conneau</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1809.05053.[Cuietal.2018</idno>
+		<idno>CoRR abs/1810.07366</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,78.50,79.39,211.90,8.64">Xnli: Evaluating cross-lingual sentence representations</title>
+		<imprint>
+			<date type="published" when="2018">2018. 2018. 2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="8,53.44,152.26,239.88,8.64;8,54.00,163.22,240.25,8.64;8,53.69,174.18,240.46,8.64;8,54.00,184.97,197.33,8.81;8,49.02,199.66,243.48,8.64;8,53.69,210.62,238.81,8.64;8,54.00,221.41,238.50,8.81;8,54.00,232.37,75.27,8.58;8,49.02,247.05,244.73,8.64;8,54.00,258.01,240.25,8.64;8,54.00,268.97,240.16,8.64;8,54.00,279.76,238.50,8.81;8,54.00,290.72,75.27,8.58;8,49.02,305.41,245.23,8.64;8,54.00,316.20,238.50,8.81;8,54.00,327.15,110.05,8.58;8,49.02,341.84,243.48,8.64;8,54.00,352.80,238.50,8.64;8,54.00,363.59,238.50,8.81;8,53.75,374.55,240.24,8.81;8,53.25,385.68,17.43,8.64;8,49.02,400.19,244.73,8.64;8,53.81,411.15,238.69,8.64;8,54.00,421.94,240.16,8.81;8,54.00,432.90,240.14,8.81" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="8,53.69,174.18,240.46,8.64;8,54.00,185.14,55.11,8.64;8,138.72,210.62,153.78,8.64;8,54.00,221.58,167.12,8.64;8,85.21,268.97,208.95,8.64;8,54.00,279.93,168.76,8.64;8,199.87,341.84,92.63,8.64;8,54.00,352.80,238.50,8.64;8,54.00,363.76,118.70,8.64;8,174.54,411.15,117.97,8.64;8,54.00,422.11,97.91,8.64">The third international chinese language processing bakeoff: Word segmentation and named entity recognition</title>
+		<author>
+			<persName coords=""><surname>Dai</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1901.02860</idno>
+		<idno>arXiv:1901.07291</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,85.36,316.36,172.14,8.64;8,193.48,363.59,99.02,8.58;8,53.75,374.55,213.35,8.58;8,168.76,421.94,125.40,8.58;8,54.00,432.90,187.45,8.58">Proceedings of the 27th International Conference on Computational Linguistics</title>
+		<meeting>the 27th International Conference on Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2006">2019. 2019. 2018. 2017. 2019. Levow 2006. 2006. 2018. 2018</date>
+			<biblScope unit="page" from="1952" to="1962" />
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Proceedings of the Fifth SIGHAN Workshop on Chinese Language Processing</note>
+</biblStruct>
+
+<biblStruct coords="8,49.02,447.59,245.22,8.64;8,54.00,458.55,240.16,8.64;8,54.00,469.34,174.51,8.81;8,49.02,484.02,243.48,8.64;8,54.00,494.98,238.50,8.64;8,54.00,505.77,195.38,8.81;8,49.02,520.46,244.72,8.64;8,54.00,531.42,238.50,8.64;8,54.00,542.21,180.94,8.81" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="8,54.00,458.55,240.16,8.64;8,54.00,469.50,32.23,8.64;8,163.07,531.42,129.43,8.64;8,54.00,542.37,103.14,8.64">Multi-task deep neural networks for natural language understanding</title>
+		<author>
+			<persName coords=""><surname>Liu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1901.11504</idno>
+		<idno>arXiv:1301.3781</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,116.47,494.98,176.03,8.64;8,54.00,505.94,57.99,8.64">Efficient estimation of word representations in vector space</title>
+		<imprint>
+			<date type="published" when="2013">2019. 2019. 2013. 2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Continual lifelong learning with neural networks: A review</note>
+</biblStruct>
+
+<biblStruct coords="8,53.29,556.89,214.07,8.64;8,284.01,556.89,9.32,8.64;8,54.00,567.85,238.67,8.64;8,53.64,578.64,238.86,8.81;8,54.00,589.60,238.50,8.58;8,53.33,600.56,91.60,8.81" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="8,193.38,567.85,99.28,8.64;8,53.64,578.81,77.93,8.64">Glove: Global vectors for word representation</title>
+		<author>
+			<persName coords=""><forename type="first">Socher</forename><surname>Pennington</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Manning ; Pennington</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Manning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,149.88,578.64,142.62,8.58;8,54.00,589.60,238.50,8.58;8,53.33,600.56,36.56,8.58">Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP)</title>
+		<meeting>the 2014 conference on empirical methods in natural language processing (EMNLP)</meeting>
+		<imprint>
+			<date type="published" when="2014">2014. 2014</date>
+			<biblScope unit="page" from="1532" to="1543" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,49.02,615.24,244.31,8.64;8,54.00,626.20,240.25,8.64;8,54.00,636.99,238.50,8.81;8,54.00,647.95,75.27,8.58;8,49.02,662.64,245.13,8.64;8,54.00,673.60,238.50,8.64;8,54.00,684.39,240.15,8.81;8,54.00,695.35,41.49,8.58;8,111.86,695.35,49.97,8.58;8,178.20,695.35,115.96,8.58;8,319.50,57.31,240.25,8.58;8,319.50,68.27,15.22,8.58;8,314.52,82.18,244.72,8.64;8,319.50,93.14,239.88,8.64;8,319.50,103.93,238.50,8.81;8,319.50,114.89,83.21,8.58" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="8,208.87,673.60,83.63,8.64;8,54.00,684.56,166.27,8.64">Improving language understanding by generative pre-training</title>
+		<author>
+			<persName coords=""><surname>Peters</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1802.05365</idno>
+		<idno>arXiv preprint cs/0306050</idno>
+		<ptr target="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/languageunsupervised/languageunderstandingpaper.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,54.00,637.16,170.55,8.64">Deep contextualized word representations</title>
+		<imprint>
+			<date type="published" when="2003">2018. 2018. 2018. 2003. 2003</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Radford et al. 2018. Introduction to the conll-2003 shared task: Language-independent named entity recognition</note>
+</biblStruct>
+
+<biblStruct coords="8,314.52,128.80,243.48,8.64;8,319.19,139.76,240.47,8.64;8,319.50,150.55,187.51,8.81;8,314.52,164.46,244.31,8.64;8,319.50,175.42,240.15,8.64;8,319.50,186.21,238.50,8.81;8,319.50,197.17,75.27,8.58;8,314.52,211.08,244.31,8.64;8,319.50,222.04,240.25,8.64;8,319.50,233.00,238.67,8.64;8,319.50,243.79,240.16,8.81;8,319.50,254.75,239.74,8.58;8,318.75,265.88,47.32,8.64;8,314.52,279.62,244.72,8.64;8,319.14,290.58,240.61,8.64;8,319.50,301.54,240.15,8.64;8,319.50,312.33,156.25,8.81;8,314.52,326.24,244.31,8.64;8,319.50,337.20,240.15,8.64;8,319.50,347.99,238.49,8.81;8,319.50,358.95,205.85,8.81;8,314.52,372.86,244.31,8.64;8,319.50,383.82,238.75,8.64;8,319.50,394.78,240.16,8.64;8,319.50,405.57,174.51,8.81;8,314.52,419.48,244.31,8.64;8,319.50,430.44,238.50,8.64;8,319.50,441.23,238.50,8.81;8,319.50,452.19,110.05,8.58" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="8,378.98,139.76,180.68,8.64;8,319.50,150.72,45.49,8.64;8,411.67,175.42,147.99,8.64;8,319.50,186.38,169.06,8.64;8,319.50,233.00,238.67,8.64;8,319.50,243.96,84.13,8.64;8,389.49,348.16,98.95,8.64">Recursive deep models for semantic compositionality over a sentiment treebank</title>
+		<author>
+			<persName coords=""><surname>Shao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1806.00920</idno>
+		<idno>arXiv:1906.08237</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="8,426.03,243.79,133.63,8.58;8,319.50,254.75,235.56,8.58;8,319.50,301.54,240.15,8.64;8,319.50,312.50,14.39,8.64;8,508.41,347.99,49.59,8.58;8,319.50,358.95,151.92,8.58;8,480.08,383.82,78.18,8.64;8,319.50,394.78,240.16,8.64;8,319.50,405.74,32.23,8.64">Proceedings of the 2013 conference on empirical methods in natural language processing</title>
+		<meeting>the 2013 conference on empirical methods in natural language processing</meeting>
+		<imprint>
+			<date type="published" when="2013">2018. 2018. 2019. 2019. 2013. 2019. 2017. 2018. 2019. 2019</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Glue: A multi-task benchmark and analysis platform for natural language understanding. Xlnet: Generalized autoregressive pretraining for language understanding</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,35.20,34.14,343.45,12.62;1,66.59,52.07,280.68,12.62;6,184.42,106.92,48.98,5.48;6,302.26,106.92,50.33,5.48;6,189.41,65.87,39.45,5.48;6,304.80,65.87,23.35,5.48;6,348.78,65.87,12.85,5.48;6,44.71,81.05,25.34,4.82;6,44.71,87.46,18.17,4.82">DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2022-07-11">11 Jul 2022</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,71.50,89.74,47.87,8.74"><forename type="first">Hao</forename><surname>Zhang</surname></persName>
+							<email>hzhangcx@connect.ust.hk</email>
+							<affiliation key="aff0">
+								<orgName type="institution">The Hong Kong University of Science and Technology</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">International Digital Economy Academy (IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,148.33,89.74,32.93,8.74"><forename type="first">Feng</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">The Hong Kong University of Science and Technology</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">International Digital Economy Academy (IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,209.21,89.74,49.95,8.74"><forename type="first">Shilong</forename><surname>Liu</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Dept. of CST</orgName>
+								<orgName type="department" key="dep2">Institute for AI</orgName>
+								<orgName type="institution" key="instit1">BNRist Center</orgName>
+								<orgName type="institution" key="instit2">Tsinghua University</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">International Digital Economy Academy (IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,287.11,89.74,43.86,8.74"><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+							<email>leizhang@idea.edu.cn</email>
+						</author>
+						<author>
+							<persName coords="1,71.41,101.69,37.36,8.74"><forename type="first">Hang</forename><surname>Su</surname></persName>
+							<email>suhangss@mail.tsinghua.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Dept. of CST</orgName>
+								<orgName type="department" key="dep2">Institute for AI</orgName>
+								<orgName type="institution" key="instit1">BNRist Center</orgName>
+								<orgName type="institution" key="instit2">Tsinghua University</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">International Digital Economy Academy (IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,122.65,101.69,36.39,8.74"><forename type="first">Jun</forename><surname>Zhu</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Dept. of CST</orgName>
+								<orgName type="department" key="dep2">Institute for AI</orgName>
+								<orgName type="institution" key="instit1">BNRist Center</orgName>
+								<orgName type="institution" key="instit2">Tsinghua University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,172.92,101.69,55.48,8.74"><forename type="first">Lionel</forename><forename type="middle">M</forename><surname>Ni</surname></persName>
+							<email>ni@ust.hk</email>
+							<affiliation key="aff0">
+								<orgName type="institution">The Hong Kong University of Science and Technology</orgName>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="institution">The Hong Kong University of Science and Technology (Guangzhou)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,248.62,101.69,86.34,8.74"><forename type="first">Heung-Yeung</forename><surname>Shum</surname></persName>
+							<email>hshum@ust.hk</email>
+							<affiliation key="aff0">
+								<orgName type="institution">The Hong Kong University of Science and Technology</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">International Digital Economy Academy (IDEA)</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="6,45.61,133.27,21.45,4.82;6,45.61,139.67,26.75,4.83"><forename type="first">Positional</forename><surname>Embeddings</surname></persName>
+						</author>
+						<title level="a" type="main" coords="1,35.20,34.14,343.45,12.62;1,66.59,52.07,280.68,12.62;6,184.42,106.92,48.98,5.48;6,302.26,106.92,50.33,5.48;6,189.41,65.87,39.45,5.48;6,304.80,65.87,23.35,5.48;6,348.78,65.87,12.85,5.48;6,44.71,81.05,25.34,4.82;6,44.71,87.46,18.17,4.82">DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2022-07-11">11 Jul 2022</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">67D4A04094BA5D33BE3C54A732E18733</idno>
+					<idno type="arXiv">arXiv:2203.03605v4[cs.CV]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-04-29T18:50+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Object Detection</term>
+					<term>Detection Transformer</term>
+					<term>End-to-End Detector</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We present DINO (DETR with Improved deNoising anchOr boxes), a state-of-the-art end-to-end object detector. DINO improves over previous DETR-like models in performance and efficiency by using a contrastive way for denoising training, a mixed query selection method for anchor initialization, and a look forward twice scheme for box prediction. DINO achieves 49.4AP in 12 epochs and 51.3AP in 24 epochs on COCO with a ResNet-50 backbone and multi-scale features, yielding a significant improvement of +6.0AP and +2.7AP, respectively, compared to DN-DETR, the previous best DETR-like model. DINO scales well in both model size and data size. Without bells and whistles, after pre-training on the Objects365 dataset with a SwinL backbone, DINO obtains the best results on both COCO val2017 (63.2AP) and test-dev (63.3AP). Compared to other models on the leaderboard, DINO significantly reduces its model size and pre-training data size while achieving better results. Our code will be available at https: //github.com/IDEACVR/DINO.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="21" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="22" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+		<surface n="23" ulx="0.0" uly="0.0" lrx="413.858" lry="615.118"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Object detection is a fundamental task in computer vision. Remarkable progress has been accomplished by classical convolution-based object detection algo- rithms <ref type="bibr" coords="2,67.69,273.95,16.05,8.74" target="#b30">[31,</ref><ref type="bibr" coords="2,83.74,273.95,12.04,8.74" target="#b34">35,</ref><ref type="bibr" coords="2,95.78,273.95,12.04,8.74" target="#b18">19,</ref><ref type="bibr" coords="2,107.81,273.95,8.03,8.74" target="#b1">2,</ref><ref type="bibr" coords="2,115.84,273.95,12.04,8.74" target="#b11">12]</ref>. Despite that such algorithms normally include handdesigned components like anchor generation and non-maximum suppression (NMS), they yield the best detection models such as DyHead <ref type="bibr" coords="2,259.09,297.86,9.96,8.74" target="#b6">[7]</ref>, Swin <ref type="bibr" coords="2,297.83,297.86,15.50,8.74" target="#b22">[23]</ref> and SwinV2 <ref type="bibr" coords="2,369.51,297.86,15.50,8.74" target="#b21">[22]</ref> with HTC++ <ref type="bibr" coords="2,97.39,309.82,9.96,8.74" target="#b3">[4]</ref>, as evidenced on the COCO test-dev leaderboard <ref type="bibr" coords="2,328.63,309.82,9.96,8.74" target="#b0">[1]</ref>.</p><p>In contrast to classical detection algorithms, DETR <ref type="bibr" coords="2,270.22,322.26,10.52,8.74" target="#b2">[3]</ref> is a novel Transformerbased detection algorithm. It eliminates the need of hand-designed components and achieves comparable performance with optimized classical detectors like Faster RCNN <ref type="bibr" coords="2,97.10,358.13,14.61,8.74" target="#b30">[31]</ref>. Different from previous detectors, DETR models object detection as a set prediction task and assigns labels by bipartite graph matching. It leverages learnable queries to probe the existence of objects and combine features from an image feature map, which behaves like soft ROI pooling <ref type="bibr" coords="2,318.81,393.99,14.61,8.74" target="#b20">[21]</ref>.</p><p>Despite its promising performance, the training convergence of DETR is slow and the meaning of queries is unclear. To address such problems, many methods have been proposed, such as introducing deformable attention <ref type="bibr" coords="2,311.31,430.35,14.61,8.74" target="#b40">[41]</ref>, decoupling positional and content information <ref type="bibr" coords="2,189.58,442.30,14.61,8.74" target="#b24">[25]</ref>, providing spatial priors <ref type="bibr" coords="2,317.04,442.30,15.90,8.74" target="#b10">[11,</ref><ref type="bibr" coords="2,332.94,442.30,11.93,8.74" target="#b38">39,</ref><ref type="bibr" coords="2,344.86,442.30,11.93,8.74" target="#b36">37]</ref>, etc. Recently, DAB-DETR <ref type="bibr" coords="2,137.55,454.26,15.50,8.74" target="#b20">[21]</ref> proposes to formulate DETR queries as dynamic anchor boxes (DAB), which bridges the gap between classical anchor-based detectors and DETR-like ones. DN-DETR <ref type="bibr" coords="2,212.09,478.17,15.50,8.74" target="#b16">[17]</ref> further solves the instability of bipartite matching by introducing a denoising (DN) technique. The combination of DAB and DN makes DETR-like models competitive with classical detectors on both training efficiency and inference performance.</p><p>The best detection models nowadays are based on improved classical detectors like DyHead <ref type="bibr" coords="2,114.37,538.43,10.52,8.74" target="#b7">[8]</ref> and HTC <ref type="bibr" coords="2,176.24,538.43,9.96,8.74" target="#b3">[4]</ref>. For example, the best result presented in SwinV2 <ref type="bibr" coords="2,70.71,550.39,15.50,8.74" target="#b21">[22]</ref> was trained with the HTC++ <ref type="bibr" coords="2,222.89,550.39,11.62,8.74" target="#b3">[4,</ref><ref type="bibr" coords="2,234.52,550.39,11.62,8.74" target="#b22">23]</ref> framework. Two main reasons contribute to the phenomenon: 1) Previous DETR-like models are inferior to the improved classical detectors. Most classical detectors have been well studied and highly optimized, leading to a better performance compared with the newly developed DETR-like models. For instance, the best performing DETR-like models nowadays are still under 50 AP on COCO. 2) The scalability of DETR-like models has not been well studied. There is no reported result about how DETR-like models perform when scaling to a large backbone and a large-scale data set. We aim to address both concerns in this paper. Specifically, by improving the denoising training, query initialization, and box prediction, we design a new DETR-like model based on DN-DETR <ref type="bibr" coords="3,361.58,124.56,14.61,8.74" target="#b16">[17]</ref>, DAB-DETR <ref type="bibr" coords="3,92.01,136.51,14.61,8.74" target="#b20">[21]</ref>, and Deformable DETR <ref type="bibr" coords="3,220.81,136.51,14.61,8.74" target="#b40">[41]</ref>. We name our model as DINO (DETR with Improved deNoising anchOr box). As shown in Fig. <ref type="figure" coords="3,317.63,148.47,3.87,8.74" target="#fig_0">1</ref>, the comparison on COCO shows the superior performance of DINO. In particular, DINO demonstrates a great scalability, setting a new record of 63.3 AP on the COCO test-dev leaderboard <ref type="bibr" coords="3,126.55,184.33,10.52,8.74" target="#b0">[1]</ref> As a DETR-like model, DINO contains a backbone, a multi-layer Transformer encoder, a multi-layer Transformer decoder, and multiple prediction heads. Following DAB-DETR <ref type="bibr" coords="3,125.22,223.90,14.61,8.74" target="#b20">[21]</ref>, we formulate queries in decoder as dynamic anchor boxes and refine them step-by-step across decoder layers. Following DN-DETR <ref type="bibr" coords="3,370.84,235.85,14.61,8.74" target="#b16">[17]</ref>, we add ground truth labels and boxes with noises into the Transformer decoder layers to help stabilize bipartite matching during training. We also adopt deformable attention <ref type="bibr" coords="3,120.00,271.72,15.50,8.74" target="#b40">[41]</ref> for its computational efficiency. Moreover, we propose three new methods as follows. First, to improve the one-to-one matching, we propose a contrastive denoising training by adding both positive and negative samples of the same ground truth at the same time. After adding two different noises to the same ground truth box, we mark the box with a smaller noise as positive and the other as negative. The contrastive denoising training helps the model to avoid duplicate outputs of the same target. Second, the dynamic anchor box formulation of queries links DETR-like models with classical two-stage models. Hence we propose a mixed query selection method, which helps better initialize the queries. We select initial anchor boxes as positional queries from the output of the encoder, similar to <ref type="bibr" coords="3,180.08,391.27,15.50,8.74" target="#b40">[41,</ref><ref type="bibr" coords="3,195.58,391.27,11.62,8.74" target="#b38">39]</ref>. However, we leave the content queries learnable as before, encouraging the first decoder layer to focus on the spatial prior. Third, to leverage the refined box information from later layers to help optimize the parameters of their adjacent early layers, we propose a new look forward twice scheme to correct the updated parameters with gradients from later layers.</p><p>We validate the effectiveness of DINO with extensive experiments on the COCO <ref type="bibr" coords="3,67.63,478.66,15.50,8.74" target="#b19">[20]</ref> detection benchmarks. As shown in Fig. <ref type="figure" coords="3,267.31,478.66,3.87,8.74" target="#fig_0">1</ref>, DINO achieves 49.4AP in 12 epochs and 51.3AP in 24 epochs with ResNet-50 and multi-scale features, yielding a significant improvement of +6.0AP and +2.7AP, respectively, compared to the previous best DETR-like model. In addition, DINO scales well in both model size and data size. After pre-training on the Objects365 <ref type="bibr" coords="3,340.97,526.48,15.50,8.74" target="#b32">[33]</ref> data set with a SwinL <ref type="bibr" coords="3,110.33,538.43,15.50,8.74" target="#b22">[23]</ref> backbone, DINO achieves the best results on both COCO val2017 (63.2AP) and test-dev (63.3AP) benchmarks, as shown in Table <ref type="table" coords="3,34.02,562.34,3.87,8.74" target="#tab_4">3</ref>. Compared to other models on the leaderboard <ref type="bibr" coords="3,253.10,562.34,9.96,8.74" target="#b0">[1]</ref>, we reduce the model size to 1/15 compared to SwinV2-G <ref type="bibr" coords="3,177.12,574.30,14.61,8.74" target="#b21">[22]</ref>. Compared to Florence <ref type="bibr" coords="3,298.68,574.30,14.61,8.74" target="#b39">[40]</ref>, we reduce the pre-training detection dataset to 1/5 and backbone pre-training dataset to 1/60 while achieving better results.</p><p>We summarize our contributions as follows.</p><p>1. We design a new end-to-end DETR-like object detector with several novel techniques, including contrastive DN training, mixed query selection, and look forward twice for different parts of the DINO model. 2. We conduct intensive ablation studies to validate the effectiveness of different design choices in DINO. As a result, DINO achieves 49.4AP in 12 epochs and 51.3AP in 24 epochs with ResNet-50 and multi-scale features, significantly outperforming the previous best DETR-like models. In particular, DINO trained in 12 epochs shows a more significant improvement on small objects, yielding an improvement of +7.5AP. 3. We show that, without bells and whistles, DINO can achieve the best performance on public benchmarks. After pre-training on the Objects365 <ref type="bibr" coords="4,364.34,200.34,15.50,8.74" target="#b32">[33]</ref> dataset with a SwinL <ref type="bibr" coords="4,145.55,212.29,15.50,8.74" target="#b22">[23]</ref> backbone, DINO achieves the best results on both COCO val2017 (63.2AP) and test-dev (63.3AP) benchmarks. To the best of our knowledge, this is the first time that an end-to-end Transformer detector outperforms state-of-the-art (SOTA) models on the COCO leaderboard <ref type="bibr" coords="4,79.48,260.11,9.96,8.74" target="#b0">[1]</ref>.</p><p>2 Related Work</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Classical Object Detectors</head><p>Early convolution-based object detectors are either two-stage or one-stage models, based on hand-crafted anchors or reference points. Two-stage models <ref type="bibr" coords="4,351.61,353.38,16.13,8.74" target="#b29">[30,</ref><ref type="bibr" coords="4,367.74,353.38,12.10,8.74" target="#b12">13]</ref> usually use an region proposal network (RPN) <ref type="bibr" coords="4,241.86,365.34,15.50,8.74" target="#b29">[30]</ref> to propose potential boxes, which are then refined in the second stage. One-stage models such as YOLO v2 <ref type="bibr" coords="4,47.44,389.25,15.50,8.74" target="#b27">[28]</ref> and YOLO v3 <ref type="bibr" coords="4,131.17,389.25,15.50,8.74" target="#b28">[29]</ref> directly output offsets relative to predefined anchors. Recently, some convolution-based models such as HTC++ <ref type="bibr" coords="4,297.24,401.20,10.52,8.74" target="#b3">[4]</ref> and Dyhead <ref type="bibr" coords="4,369.33,401.20,10.52,8.74" target="#b6">[7]</ref> have achieved top performance on the COCO 2017 dataset <ref type="bibr" coords="4,285.90,413.16,14.61,8.74" target="#b19">[20]</ref>. The performance of convolution-based models, however, relies on the way they generate anchors. Moreover, they need hand-designed components like NMS to remove duplicate boxes, and hence cannot perform end-to-end optimization.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">DETR and Its Variants</head><p>Carion et al. <ref type="bibr" coords="4,89.60,502.57,10.52,8.74" target="#b2">[3]</ref> proposed a Transformer-based end-to-end object detector named DETR (DEtection TRansformer) without using hand-designed components like anchor design and NMS. Many follow-up papers have attempted to address the slow training convergence issue of DETR introduced by decoder cross-attention. For instance, Sun et al. <ref type="bibr" coords="4,142.49,550.39,15.50,8.74" target="#b33">[34]</ref> designed an encoder-only DETR without using a decoder. Dai et al. <ref type="bibr" coords="4,115.17,562.34,10.52,8.74" target="#b6">[7]</ref> proposed a dynamic decoder to focus on important regions from multiple feature levels.</p><p>Another line of works is towards a deeper understanding of decoder queries in DETR. Many papers associate queries with spatial position from different perspectives. Deformable DETR <ref type="bibr" coords="5,175.99,61.08,15.50,8.74" target="#b40">[41]</ref> predicts 2D anchor points and designs a deformable attention module that only attends to certain sampling points around a reference point. Efficient DETR <ref type="bibr" coords="5,189.40,84.99,15.50,8.74" target="#b38">[39]</ref> selects top K positions from encoder's dense prediction to enhance decoder queries. DAB-DETR <ref type="bibr" coords="5,293.33,96.95,15.50,8.74" target="#b20">[21]</ref> further extends 2D anchor points to 4D anchor box coordinates to represent queries and dynamically update boxes in each decoder layer. Recently, DN-DETR <ref type="bibr" coords="5,315.76,120.86,15.50,8.74" target="#b16">[17]</ref> introduces a denoising training method to speed up DETR training. It feeds noise-added ground-truth labels and boxes into the decoder and trains the model to reconstruct the original ones. Our work of DINO in this paper is based on DAB-DETR and DN-DETR, and also adopts deformable attention for its computational efficiency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Large-scale Pre-training for Object Detection</head><p>Large-scale pre-training have had a big impact on both natural language processing <ref type="bibr" coords="5,67.00,244.37,15.50,8.74" target="#b9">[10]</ref> and computer vision <ref type="bibr" coords="5,176.74,244.37,14.61,8.74" target="#b26">[27]</ref>. The best performance detectors nowadays are mostly achieved with large backbones pre-trained on large-scale data. For example, Swin V2 <ref type="bibr" coords="5,116.98,268.28,15.50,8.74" target="#b21">[22]</ref> extends its backbone size to 3.0 Billion parameters and pre-trains its models with 70M privately collected images. Florence <ref type="bibr" coords="5,324.56,280.24,15.50,8.74" target="#b39">[40]</ref> first pretrains its backbone with 900M privately curated image-text pairs and then pretrains its detector with 9M images with annotated or pseudo boxes. In contrast, DINO achieves the SOTA result with a publicly available SwinL <ref type="bibr" coords="5,320.13,316.10,15.50,8.74" target="#b22">[23]</ref> backbone and a public dataset Objects365 <ref type="bibr" coords="5,178.31,328.06,15.50,8.74" target="#b32">[33]</ref> (1.7M annotated images) only.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">DINO: DETR with Improved DeNoising Anchor Boxes</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Preliminaries</head><p>As studied in Conditional DETR <ref type="bibr" coords="5,177.26,406.73,15.50,8.74" target="#b24">[25]</ref> and DAB-DETR <ref type="bibr" coords="5,270.17,406.73,14.61,8.74" target="#b20">[21]</ref>, it becomes clear that queries in DETR <ref type="bibr" coords="5,113.17,418.68,10.52,8.74" target="#b2">[3]</ref> are formed by two parts: a positional part and a content part, which are referred to as positional queries and content queries in this paper. DAB-DETR <ref type="bibr" coords="5,91.87,442.59,15.50,8.74" target="#b20">[21]</ref> explicitly formulates each positional query in DETR as a 4D anchor box (x, y, w, h), where x and y are the center coordinates of the box and w and h correspond to its width and height. Such an explicit anchor box formulation makes it easy to dynamically refine anchor boxes layer by layer in the decoder.</p><p>DN-DETR <ref type="bibr" coords="5,98.50,502.57,15.50,8.74" target="#b16">[17]</ref> introduces a denoising (DN) training method to accelerate the training convergence of DETR-like models. It shows that the slow convergence problem in DETR is caused by the instability of bipartite matching. To mitigate this problem, DN-DETR proposes to additionally feed noised ground-truth (GT) labels and boxes into the Transformer decoder and train the model to reconstruct the ground-truth ones. The added noise (∆x, ∆y, ∆w, ∆h) is constrained by |∆x| &lt; λw 2 , |∆y| &lt; λh 2 , |∆w| &lt; λw, and |∆y| &lt; λh, where (x, y, w, h) denotes a GT box and λ<ref type="foot" coords="6,105.72,253.85,3.97,6.12" target="#foot_0">1</ref> is a hyper-parameter to control the scale of noise. Since DN-DETR follows DAB-DETR to view decoder queries as anchors, a noised GT box can be viewed as a special anchor with a GT box nearby as λ is usually small. In addition to the orginal DETR queries, DN-DETR adds a DN part which feeds noised GT labels and boxes into the decoder to provide an auxiliary DN loss.</p><p>The DN loss effectively stabilizes and speeds up the DETR training and can be plugged into any DETR-like models.</p><p>Deformable DETR <ref type="bibr" coords="6,133.94,340.18,15.50,8.74" target="#b40">[41]</ref> is another early work to speed up the convergence of DETR. To compute deformable attention, it introduces the concept of reference point so that deformable attention can attend to a small set of key sampling points around a reference. The reference point concept makes it possible to develop several techniques to further improve the DETR performance. The first technique is query selection<ref type="foot" coords="6,156.60,398.38,3.97,6.12" target="#foot_1">2</ref> , which selects features and reference boxes from the encoder as inputs to the decoder directly. The second technique is iterative bounding box refinement with a careful gradient detachment design between two decoder layers. We call this gradient detachment technique "look forward once" in our paper.</p><p>Following DAB-DETR and DN-DETR, DINO formulates the positional queries as dynamic anchor boxes and is trained with an extra DN loss. Note that DN-DETR also adopts several techniques from Deformable DETR to achieve a better performance, including its deformable attention mechanism and "look forward once" implementation in layer parameter update. DINO further adopts the query selection idea from Deformable DETR to better initialize the positional queries. Built upon this strong baseline, DINO introduces three novel methods to further improve the detection performance, which will be described in Sec. 3.3, Sec. 3.4, and Sec. 3.5, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Model Overview</head><p>As a DETR-like model, DINO is an end-to-end architecture which contains a backbone, a multi-layer Transformer <ref type="bibr" coords="7,194.65,144.34,15.50,8.74" target="#b35">[36]</ref> encoder, a multi-layer Transformer decoder, and multiple prediction heads. The overall pipeline is shown in Fig. <ref type="figure" coords="7,372.09,156.30,3.87,8.74" target="#fig_1">2</ref>. Given an image, we extract multi-scale features with backbones like ResNet <ref type="bibr" coords="7,364.34,168.25,15.50,8.74" target="#b13">[14]</ref> or Swin Transformer <ref type="bibr" coords="7,131.36,180.21,14.61,8.74" target="#b22">[23]</ref>, and then feed them into the Transformer encoder with corresponding positional embeddings. After feature enhancement with the encoder layers, we propose a new mixed query selection strategy to initialize anchors as positional queries for the decoder. Note that this strategy does not initialize content queries but leaves them learnable. More details of mixed query selection are available in Sec. 3.4. With the initialized anchors and the learnable content queries, we use the deformable attention <ref type="bibr" coords="7,255.05,251.94,15.50,8.74" target="#b40">[41]</ref> to combine the features of the encoder outputs and update the queries layer-by-layer. The final outputs are formed with refined anchor boxes and classification results predicted by refined content features. As in DN-DETR <ref type="bibr" coords="7,215.52,287.80,14.61,8.74" target="#b16">[17]</ref>, we have an extra DN branch to perform denoising training. Beyond the standard DN method, we propose a new contrastive denoising training approach by taking into account hard negative samples, which will be presented in Sec. 3.3. To fully leverage the refined box information from later layers to help optimize the parameters of their adjacent early layer, a novel look forward twice method is proposed to pass gradients between adjacent layers, which will be described in Sec. 3.5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Contrastive DeNoising Training</head><p>DN-DETR is very effective in stabilizing training and accelerating convergence. With the help of DN queries, it learns to make predictions based on anchors which have GT boxes nearby. However, it lacks a capability of predicting "no object" for anchors with no object nearby. To address this issue, we propose a Contrastive DeNoising (CDN) approach to rejecting useless anchors. Implementation: DN-DETR has a hyper-parameter λ to control the noise scale. The generated noises are no larger than λ as DN-DETR wants the model to reconstruct the ground truth (GT) from moderately noised queries. In our method, we have two hyper-parameters λ 1 and λ 2 , where λ 1 &lt; λ 2 . As shown in the concentric squares in Fig. <ref type="figure" coords="7,164.42,514.52,3.87,8.74">3</ref>, we generate two types of CDN queries: positive queries and negative queries. Positive queries within the inner square have a noise scale smaller than λ 1 and are expected to reconstruct their corresponding ground truth boxes. Negative queries between the inner and outer squares have a noise scale larger than λ 1 and smaller than λ 2 . They are are expected to predict "no object". We usually adopt small λ 2 because hard negative samples closer to GT boxes are more helpful to improve the performance. As shown in Fig. <ref type="figure" coords="8,350.30,258.22,3.87,8.74">3</ref>, each CDN group has a set of positive queries and negative queries. If an image has n GT boxes, a CDN group will have 2 × n queries with each GT box generating a positive and a negative queries. Similar to DN-DETR, we also use multiple CDN groups to improve the effectiveness of our method. The reconstruction losses are l 1 and GIOU losses for box regression and focal loss <ref type="bibr" coords="8,266.78,318.00,15.50,8.74" target="#b18">[19]</ref> for classification. The loss to classify negative samples as background is also focal loss.</p><p>Analysis: The reason why our method works is that it can inhibit confusion and select high-quality anchors (queries) for predicting bounding boxes. The confusion happens when multiple anchors are close to one object. In this case, it is hard for the model to decide which anchor to choose. The confusion may lead to two problems. The first is duplicate predictions. Although DETR-like models can inhibit duplicate boxes with the help of set-based loss and self-attention <ref type="bibr" coords="8,366.56,404.30,9.96,8.74" target="#b2">[3]</ref>, this ability is limited. As shown in the left figure of </p><formula xml:id="formula_0" coords="8,285.14,574.30,77.12,9.65">i = (x i , y i , w i , h i ).</formula><p>For each b i , we can find its corresponding anchor and denote it as</p><formula xml:id="formula_1" coords="9,297.46,35.60,75.24,12.32">a i = (x ′ i , y ′ i , w ′ i , h ′ i</formula><p>). a i is the initial anchor box of the decoder whose refined box after the last decoder layer is assigned to b i during matching. Then we have</p><formula xml:id="formula_2" coords="9,39.42,81.13,340.43,22.31">AT D(k) = 1 k {topK ({∥b 0 -a 0 ∥ 1 , ∥b 1 -a 1 ∥ 1 , ..., ∥b N -1 -a N -1 ∥ 1 } , k)} (1)</formula><p>where ∥b i -a i ∥ 1 is the l 1 distance between b i and a i and topK(x, k) is a function that returns the set of k largest elements in x. The reason why we select the top-K elements is that the confusion problem is more likely to happen when the GT box is matched with a farther anchor. As shown in (a) and (b) of Fig. <ref type="figure" coords="9,372.09,149.74,3.87,8.74" target="#fig_3">4</ref>, DN is good enough for selecting a good anchor overall. However, CDN finds better anchors for small objects. Fig. <ref type="figure" coords="9,200.41,173.65,4.98,8.74" target="#fig_3">4</ref> (c) shows that CDN queries lead to an improvement of +1.3 AP over DN queries on small objects in 12 epochs with ResNet-50 and multi-scale features. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Mixed Query Selection</head><p>In DETR <ref type="bibr" coords="9,77.52,418.88,10.52,8.74" target="#b2">[3]</ref> and DN-DETR <ref type="bibr" coords="9,159.58,418.88,14.61,8.74" target="#b16">[17]</ref>, decoder queries are static embeddings without taking any encoder features from an individual image, as shown in Fig. <ref type="figure" coords="9,355.42,430.84,20.54,8.74" target="#fig_4">5 (a)</ref>. They learn anchors (in DN-DETR and DAB-DETR) or positional queries (in DETR) from training data directly and set the content queries as all 0 vectors. Deformable DETR <ref type="bibr" coords="9,121.53,466.70,15.50,8.74" target="#b40">[41]</ref> learns both the positional and content queries, which is another implementation of static query initialization. To further improve the performance, Deformable DETR <ref type="bibr" coords="9,178.70,490.61,15.50,8.74" target="#b40">[41]</ref> has a query selection variant (called "twostage" in <ref type="bibr" coords="9,76.49,502.57,14.76,8.74" target="#b40">[41]</ref>), which select top K encoder features from the last encoder layer as priors to enhance decoder queries. As shown in Fig. <ref type="figure" coords="9,270.79,514.52,4.98,8.74" target="#fig_4">5</ref> (b), both the positional and content queries are generated by a linear transform of the selected features. In addition, these selected features are fed to an auxiliary detection head to get predicted boxes, which are used to initialize reference boxes. Similarly, Efficient DETR <ref type="bibr" coords="9,66.74,562.34,15.50,8.74" target="#b38">[39]</ref>   means that they will keep the same for different images in inference. A common implementation for these static queries is to make them learnable.</p><p>The dynamic 4D anchor box formulation of queries in our model makes it closely related to decoder positional queries, which can be improved by query selection. We follow the above practice and propose a mixed query selection approach. As shown in Fig. <ref type="figure" coords="10,164.29,264.20,4.98,8.74" target="#fig_4">5</ref> (c), we only initialize anchor boxes using the position information associated with the selected top-K features, but leave the content queries static as before. Note that Deformable DETR <ref type="bibr" coords="10,312.09,288.11,15.50,8.74" target="#b40">[41]</ref> utilizes the top-K features to enhance not only the positional queries but also the content queries. As the selected features are preliminary content features without further refinement, they could be ambiguous and misleading to the decoder. For example, a selected feature may contain multiple objects or be only part of an object. In contrast, our mixed query selection approach only enhances the positional queries with top-K selected features and keeps the content queries learnable as before. It helps the model to use better positional information to pool more comprehensive content features from the encoder. We propose a new way to box prediction in this section. The iterative box refinement in Deformable DETR <ref type="bibr" coords="11,182.06,49.13,15.50,8.74" target="#b40">[41]</ref> blocks gradient back propagation to stabilize training. We name the method look forward once since the parameters of layer i are updated based on the auxiliary loss of boxes b i only, as shown in Fig. <ref type="figure" coords="11,34.02,84.99,4.98,8.74" target="#fig_5">6</ref> (a). However, we conjecture that the improved box information from a later layer could be more helpful to correct the box prediction in its adjacent early layer. Hence we propose another way called look forward twice to perform box update, where the parameters of layer-i are influenced by losses of both layer-i and layer-(i + 1), as shown in Fig. <ref type="figure" coords="11,183.40,132.82,20.05,8.74" target="#fig_5">6 (b)</ref>. For each predicted offset ∆b i , it will be used to update box twice, one for b ′ i and another for b</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">Look Forward Twice</head><formula xml:id="formula_3" coords="11,268.33,143.57,22.17,6.12">(pred)</formula><p>i+1 , hence we name our method as look forward twice.</p><p>The final precision of a predicted box b (pred) i is determined by two factors: the quality of the initial box b i-1 and the predicted offset of the box ∆b i . The look forward once scheme optimizes the latter only, as the gradient information is detached from layer-i to layer-(i -1). In contrast, we improve both the initial box b i-1 and the predicted box offset ∆b i . A simple way to improving the quality is supervising the final box b ′ i of layer i with the output of the next layer ∆b i+1 . Hence we use the sum of b ′ i and ∆b i+1 as the predicted box of layer-(i + 1). More specifically, given an input box b i-1 for the i-th layer, we obtain the final prediction box b (pred) i by:</p><formula xml:id="formula_4" coords="11,89.51,288.72,234.84,30.67">∆b i = Layer i (b i-1 ), b ′ i = Update(b i-1 , ∆b i ), b i = Detach(b ′ i ), b<label>(pred)</label></formula><formula xml:id="formula_5" coords="11,208.15,299.88,171.69,19.82">i = Update(b ′ i-1 , ∆b i ),<label>(2)</label></formula><p>where b ′ i is the undetached version of b i . The term Update(•, •) is a function that refines the box b i-1 by the predicted box offset ∆b i . We adopt the same way for box update<ref type="foot" coords="11,83.28,347.28,3.97,6.12" target="#foot_2">3</ref> as in Deformable DETR <ref type="bibr" coords="11,200.46,348.86,14.61,8.74" target="#b40">[41]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Experiments</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Setup</head><p>Dataset and Backbone: We conduct evaluation on the COCO 2017 object detection dataset <ref type="bibr" coords="11,111.17,440.14,14.61,8.74" target="#b19">[20]</ref>, which is split into train2017 and val2017 (also called minival). We report results with two different backbones: ResNet-50 <ref type="bibr" coords="11,343.90,452.09,15.50,8.74" target="#b13">[14]</ref> pretrained on ImageNet-1k <ref type="bibr" coords="11,145.20,464.05,10.52,8.74" target="#b8">[9]</ref> and SwinL <ref type="bibr" coords="11,213.04,464.05,15.50,8.74" target="#b22">[23]</ref> pre-trained on ImageNet-22k <ref type="bibr" coords="11,366.56,464.05,9.96,8.74" target="#b8">[9]</ref>. DINO with ResNet-50 is trained on train2017 without extra data, while DINO with SwinL is first pre-trained on Object365 <ref type="bibr" coords="11,261.22,487.96,15.50,8.74" target="#b32">[33]</ref> and then fine-tuned on train2017. We report the standard average precision (AP) result on val2017 under different IoU thresholds and object scales. We also report the test-dev results for DINO with SwinL.</p><p>Implementation Details: DINO is composed of a backbone, a Transformer encoder, a Transformer decoder, and multiple prediction heads. In appendix D, we provide more implementation details, including all the hyper-parameters and engineering techniques used in our models for those who want to reproduce our results. We will release the code after the blind review. Table <ref type="table" coords="12,62.03,258.37,4.13,7.89">1</ref>. Results for DINO and other detection models with the ResNet50 backbone on COCO val2017 trained with 12 epochs (the so called 1× setting). For models without multi-scale features, we test their GFLOPS and FPS for their best model ResNet-50-DC5. DINO uses 900 queries. † indicates models that use 900 queries or 300 queries with 3 patterns which has similar effect with 900 queries. Other DETR-like models except DETR (100 queries) uses 300 queries. * indicates that they are tested using the mmdetection <ref type="bibr" coords="12,89.31,324.15,9.73,7.86" target="#b4">[5]</ref> framework.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Main Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model</head><p>12-epoch setting: With our improved anchor box denoising and training losses, the training process can be significantly accelerated. As shown in Table <ref type="table" coords="12,356.73,382.76,3.87,8.74">1</ref>, we compare our method with strong baselines including both convolution-based methods <ref type="bibr" coords="12,74.47,406.67,15.50,8.74" target="#b29">[30,</ref><ref type="bibr" coords="12,89.96,406.67,7.75,8.74" target="#b3">4,</ref><ref type="bibr" coords="12,97.71,406.67,7.75,8.74" target="#b6">7]</ref> and DETR-like methods <ref type="bibr" coords="12,219.92,406.67,11.84,8.74" target="#b2">[3,</ref><ref type="bibr" coords="12,231.76,406.67,11.84,8.74" target="#b40">41,</ref><ref type="bibr" coords="12,243.60,406.67,7.90,8.74" target="#b7">8,</ref><ref type="bibr" coords="12,251.50,406.67,11.84,8.74" target="#b20">21,</ref><ref type="bibr" coords="12,263.35,406.67,11.84,8.74" target="#b16">17]</ref>. For a fair comparison, we report both GFLOPS and FPS tested on the same A100 NVIDIA GPU for all the models listed in Table <ref type="table" coords="12,162.27,430.58,3.87,8.74">1</ref>. All methods except for DETR and DAB-DETR use multi-scale features. For those without multi-scale features, we report their results with ResNet-DC5 which has a better performance for its use of a dilated larger resolution feature map. Since some methods adopt 5 scales of feature maps and some adopt 4, we report our results with both 4 and 5 scales of feature maps.</p><p>As shown in Table <ref type="table" coords="12,133.71,490.61,3.87,8.74">1</ref>, our method yields an improvement of +5.6 AP under the same setting using ResNet-50 with 4-scale feature maps and +6.0 AP with 5-scale feature maps. Our 4-scale model does not introduce much overhead in computation and the number of parameters. Moreover, our method performs especially well for small objects, gaining +7.2 AP with 4 scales and +7.5 AP with 5 scales. Note that the results of our models with ResNet-50 backbone are higher than those in the first version of our paper due to engineering techniques.  validate the effectiveness of our method in improving both convergence speed and performance, we compare our method with several strong baselines using the same ResNet-50 backbone. Despite the most common 50-epoch setting, we adopt the 24 (2×) and 36 (3×) epoch settings since our method converges faster and yields only a smaller additional gain with 50-epoch training. The results in Table <ref type="table" coords="13,61.56,514.52,4.98,8.74" target="#tab_3">2</ref> show that, using only 24 epochs, our method achieves an improvement of +1.8 AP and +2.7 AP with 4 and 5 scales, respectively. Moreover, using 36 epochs in the 3× setting, the improvement increases to +2.3 and +2.6 AP with 4 and 5 scales, respectively. The detailed convergence curve comparison is shown in Fig. <ref type="figure" coords="13,65.98,562.34,3.87,8.74" target="#fig_6">7</ref>. we use the term "end-to-end" to indicate if a model is free from hand-crafted components like RPN and NMS. The term "use mask" means whether a model is trained with instance segmentation annotations. We use the terms "IN" and "O365" to denote the ImageNet <ref type="bibr" coords="14,75.97,165.39,9.73,7.86" target="#b8">[9]</ref> and Objects365 <ref type="bibr" coords="14,154.51,165.39,14.34,7.86" target="#b32">[33]</ref> datasets, respectively. Note that "O365" is a subset of "FourODs" and "FLD-9M". * DyHead does not disclose the details of the datasets used for model pre-training.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Comparison with SOTA Models</head><p>To compare with SOTA results, we use the publicly available SwinL <ref type="bibr" coords="14,337.52,250.21,15.50,8.74" target="#b22">[23]</ref> backbone pre-trained on ImageNet-22K. We first pre-train DINO on the Objects365 <ref type="bibr" coords="14,34.02,274.12,15.50,8.74" target="#b32">[33]</ref> dataset and then fine-tune it on COCO. As shown in Table <ref type="table" coords="14,305.43,274.12,3.87,8.74" target="#tab_4">3</ref>, DINO achieves the best results of 63.2AP and 63.3AP on COCO val2017 and test-dev, which demonstrate its strong scalability to larger model size and data size. Note that all the previous SOTA models in Table <ref type="table" coords="14,229.31,309.98,4.98,8.74" target="#tab_4">3</ref> do not use Transformer decoderbased detection heads (HTC++ <ref type="bibr" coords="14,180.54,321.94,10.52,8.74" target="#b3">[4]</ref> and DyHead <ref type="bibr" coords="14,254.86,321.94,10.30,8.74" target="#b6">[7]</ref>). It is the first time that an end-to-end Transformer detector is established as a SOTA model on the leaderboard <ref type="bibr" coords="14,90.11,345.85,9.96,8.74" target="#b0">[1]</ref>. Compared with the previous SOTA models, we use a much smaller model size (1/15 parameters compared with SwinV2-G <ref type="bibr" coords="14,313.48,357.80,14.76,8.74" target="#b21">[22]</ref>), backbone pre-training data size (1/60 images compared with Florence), and detection pretraining data size (1/5 images compared with Florence), while achieving better results. In addition, our reported performance without test time augmentation (TTA) is a neat result without bells and whistles. These results effectively show the superior detection performance of DINO compared with traditional detectors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">Ablation</head><p>Effectiveness of New Algorithm Components: To validate the effectiveness of our proposed methods, we build a strong baseline with optimized DN-DETR and pure query selection as described in section 3.1. We include all the pipeline optimization and engineering techniques (see section 4.1 and Appendix D) in the strong baseline. The result of the strong baseline is available in Table <ref type="table" coords="14,341.06,526.48,4.98,8.74" target="#tab_5">4</ref> Row 3.</p><p>We also present the result of optimized DN-DETR without pure query selection from Deformable DETR <ref type="bibr" coords="14,144.08,550.39,15.50,8.74" target="#b40">[41]</ref> in Table <ref type="table" coords="15,64.28,116.35,4.13,7.89" target="#tab_5">4</ref>. Ablation comparison of the proposed algorithm components. We use the terms "QS", "CDN", and "LFT" to denote "Query Selection", "Contrastive De-Noising Training", and "Look Forward Twice", respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusion</head><p>In  A Test Time Augmentations (TTA)</p><p>We aim to build an end-to-end detector that is free from hand-crafted components. However, to compare with traditional detection models, we also explore the use of TTA in DETR-like models. We only use it in our large model with the SwinL backbone. Our TTA does not obtain an inspiring gain compared with traditional detectors, but we hope our exploration may provide some insights for future studies. We adopt multi-scale test and horizontal flip as TTA. However, the way of ensembling different augmentations in our method is different from that in traditional methods which usually output duplicate boxes. In traditional methods, the ensembling is done by first gathering predictions from all augmentations and ranked by a confidence score. Then, duplicate boxes are found and eliminated by NMS or box voting. The reason why predictions from all augmentations are gathered first is that duplicate boxes appear not only among different augmentations but also within one augmentation. This ensembling method decreases the performance for our method since DETR-like methods are not prone to output duplicate boxes since their set-based prediction loss inhibits duplicate predictions and ensembling may incorrectly remove true positive predictions <ref type="bibr" coords="19,297.66,263.16,9.96,8.74" target="#b2">[3]</ref>. To address this issue, we designed a one-to-one ensembling method. Assume we have n augmentations Aug 0 , Aug 1 , ..., Aug n-1 , where Aug i has predictions O i and a pre-defined hyper-parameter weight w</p><formula xml:id="formula_6" coords="19,147.09,297.45,222.57,12.20">i . O i = (b i 0 , l i 0 , s i 0 ), (b i 1 , l i 1 , s i 1 ), ..., (b i m-1 , l i m-1 , s i m-1</formula><p>) where b i j , l i j and s i j denote the j-th boundbox, label and score, respectively. We let Aug 0 be the main augmentation which is the most reliable one. For each prediction in O 0 , we select the prediction with the highest IOU from predictions of each of other augmentations O 1 , ..., O n-1 and make sure the IOU is higher than a predefined threshold. Finally, we ensemble the selected boxes through weighted average as follows b</p><formula xml:id="formula_7" coords="19,149.35,394.79,230.49,30.32">= 1 I i n-1 i=o I i w i s i idx(i) b i idx(i)<label>(3)</label></formula><p>where I i = 1 when there is at least one box in O i with IOU higher than the threshold and I i = 0 otherwise. idx(i) denotes the index of the selected box in O i .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B Training Efficiency</head><p>We provide the GPU memory and training time for our base model in Table <ref type="table" coords="19,34.02,550.39,3.87,8.74" target="#tab_6">5</ref>. All results are reported on 8 Nvidia A100 GPUs with ResNet-50 <ref type="bibr" coords="19,340.24,550.39,14.61,8.74" target="#b13">[14]</ref>. The results demonstrate that our models are not only effective but also efficient for training. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C Additional Analysis on our Model Components</head><p>Analysis on the Number of Encoder and Decoder Layers: We also investigate the influence of varying numbers of encoder and decoder layers. As shown in Table <ref type="table" coords="20,72.41,322.62,3.87,8.74" target="#tab_7">6</ref>, decreasing the number of decoder layers hurts the performance more significantly. For example, using the same 6 encoder layers while decreasing the number of decoder layers from 6 to 2 leads to a 3.0 AP drop. This performance drop is expected as the boxes are dynamically updated and refined through each decoder layer to get the final results. Moreover, we also observe that compared with other DETR-like models like Dynamic DETR <ref type="bibr" coords="20,256.82,382.39,10.52,8.74" target="#b6">[7]</ref> whose performance drops by 13.8AP (29.1 vs 42.9) when decreasing the number of decoder layers to 2, the performance drop of DINO is much smaller. This is because our mixed query selection approach feeds the selected boxes from the encoder to enhance the decoder queries. Therefore, the decoder queries are well initialized and not deeply coupled with decoder layer refinement. Analysis on Query Denoising: We continue to investigate the influence of query denoising by varying the number of denoising queries. We use the optimized dynamic denoising group (detailed in Appendix D.1). As shown in Table <ref type="table" coords="21,34.02,61.08,3.87,8.74" target="#tab_8">7</ref>, when we use less than 100 denoising queries, increasing the number can lead to a significant performance improvement. However, continuing to increase the DN number after 100 yields only a small additional or even worse performance improvement. We also analysis the effect of the number of encoder and decoder Layers in Appendix C.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D More Implementation Details</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.1 Dynamic DN groups</head><p>In DN-DETR, all the GT objects (label+box) in one image are collected as one GT group for denoising. To improve the DN training efficiency, multiple noised versions of the GT group in an image are used during training. In DN-DETR, the number of groups is set to five or ten according to different model sizes. As DETR-like models adopt mini-batch training, the total number of DN queries for each image in one batch is padded to the largest one in the batch. Considering that the number of objects in one image in COCO dataset ranges from 1 to 80, this design is inefficient and results in excessive memory consumption. To address this problem, we propose to fix the number of DN queries and dynamically adjust the number of groups for each image according to its number of objects.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.2 Large-Scale Model Pre-trianing</head><p>Objects365 <ref type="bibr" coords="21,86.98,344.26,15.50,8.74" target="#b32">[33]</ref> is a large-scale detection data set with over 1.7M annotated images for training and 80, 000 annotated images for validation. To use the data more efficiently, We select the first 5, 000 out of 80, 000 validation images as our validation set and add the others to training. We pre-train DINO on Objects365 for 26 epochs using 64 Nvidia A100 GPUs and fine-tune the model on COCO for 18 epochs using 16 Nvidia A100 GPUS. Each GPU has a local batch size of 1 image only. In the fine-tuning stage, we enlarge the image size to 1.5× (i.e., with max size 1200 × 2000). This adds around 0.5 AP to the final result. To reduce the GPU memory usage, we leverage checkpointing <ref type="bibr" coords="21,260.22,439.91,10.52,8.74" target="#b5">[6]</ref> and mixed precision <ref type="bibr" coords="21,364.35,439.91,15.50,8.74" target="#b25">[26]</ref> during training. Moreover, we use 1000 DN queries for this large model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.3 Other Implementation Details</head><p>Basic hyper-parameters. For hyper-parameters, as in DN-DETR, we use a 6-layer Transformer encoder and a 6-layer Transformer decoder and 256 as the hidden feature dimension. We set the initial learning rate (lr) as 1 × 10 -4 and adopt a simple lr scheduler, which drops lr at the 11-th, 20-th, and 30-th epoch by multiplying 0.1 for the 12, 24, and 36 epoch settings with RestNet50, respectively. We use the AdamW <ref type="bibr" coords="21,178.74,562.34,16.13,8.74" target="#b15">[16,</ref><ref type="bibr" coords="21,194.87,562.34,12.10,8.74" target="#b23">24]</ref> optimizer with weight decay of 1 × 10 </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,34.02,175.23,345.83,7.89;2,34.02,186.22,345.82,7.86;2,34.02,197.18,345.82,7.86;2,34.02,208.14,345.83,7.86;2,34.02,219.10,345.83,7.86;2,34.02,230.05,345.83,7.86;2,34.02,241.01,153.86,7.86;2,55.15,35.04,152.16,126.80"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. AP on COCO compared with other detection models. (a) Comparison to models with a ResNet-50 backbone w.r.t. training epochs. Models marked with DC5 use a dilated larger resolution feature map. Other models use multi-scale features. (b) Comparison to SOTA models w.r.t. pre-training data size and model size. SOTA models are from the COCO test-dev leaderboard. In the legend we list the backbone pretraining data size (first number) and detection pre-training data size (second number).* means the data size is not disclosed.</figDesc><graphic coords="2,55.15,35.04,152.16,126.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="6,34.02,175.23,345.83,7.89;6,34.02,186.21,345.83,7.86;6,34.02,197.17,345.83,7.86;6,34.02,208.13,345.83,7.86;6,34.02,219.09,309.54,7.86"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. The framework of our proposed DINO model. Our improvements are mainly in the Transformer encoder and decoder. The top-K encoder features in the last layer are selected to initialize the positional queries for the Transformer decoder, whereas the content queries are kept as learnable parameters. Our decoder also contains a Contrastive DeNoising (CDN) part with both positive and negative samples.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="8,264.24,416.26,115.60,8.74;8,34.02,428.21,345.83,8.74;8,34.02,440.17,345.82,8.74;8,34.02,452.13,345.82,8.74;8,34.02,464.08,345.83,8.74;8,34.02,476.04,345.83,8.74;8,34.02,487.99,345.83,8.74;8,34.02,499.95,137.98,8.74;8,34.02,514.49,345.83,8.77;8,34.02,526.48,345.83,8.74;8,34.02,538.43,345.82,8.74;8,34.02,550.39,345.82,8.74;8,34.02,562.34,345.83,8.74;8,34.02,574.30,251.12,9.65"><head>Fig. 8 , 8 .</head><label>88</label><figDesc>when replacing our CDN queries with DN queries, the boy pointed by the arrow has 3 duplicate predictions. With CDN queries, our model can distinguish the slight difference between anchors and avoid duplicate predictions as shown in the right figure of Fig. The second problem is that an unwanted anchor farther from a GT box might be selected. Although denoising training [17] has improved the model to choose nearby anchors, CDN further improves this capability by teaching the model to reject farther anchors. Effectiveness: To demonstrate the effectiveness of CDN, we define a metric called Average Top-K Distance (ATD(k)) and use it to evaluate how far anchors are from their target GT boxes in the matching part. As in DETR, each anchor corresponds to a prediction which may be matched with a GT box or background. We only consider those matched with GT boxes here. Assume we have N GT bounding boxes b 0 , b 2 , ..., b N -1 in a validation set, where b</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="9,34.02,333.14,345.82,7.89;9,34.02,344.13,84.20,7.86"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. (a) and (b) AT D(100) on all objects and small objects respectively. (c) The AP on small objects.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4" coords="10,34.02,167.65,345.82,7.89;10,34.02,178.63,345.83,7.86;10,34.02,189.59,256.54,7.86"><head>Fig. 5 .</head><label>5</label><figDesc>Fig.5. Comparison of three different query initialization methods. The term "static" means that they will keep the same for different images in inference. A common implementation for these static queries is to make them learnable.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5" coords="10,57.64,573.21,298.59,7.89"><head>Fig. 6 .</head><label>6</label><figDesc>Fig.6. Comparison of box update in Deformable DETR and our method.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6" coords="13,34.02,383.76,345.83,7.89;13,34.02,394.75,301.61,7.86;13,34.02,272.93,345.81,96.06"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Training convergence curves evaluated on COCO val2017 for DINO and two previous state-of-the-art models with ResNet-50 using multi-scale features.</figDesc><graphic coords="13,34.02,272.93,345.81,96.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7" coords="15,45.61,205.87,334.24,8.74;15,34.02,217.83,345.82,8.74;15,34.02,229.78,345.83,8.74;15,34.02,241.74,345.82,8.74;15,34.02,253.69,345.82,8.74;15,34.02,265.65,345.82,8.74;15,34.02,277.60,345.83,8.74;15,34.02,289.56,345.82,8.74;15,34.02,301.51,345.82,8.74;15,34.02,313.47,342.08,8.74"><head></head><label></label><figDesc>this paper, we have presented a strong end-to-end Transformer detector DINO with contrastive denoising training, mixed query selection, and look forward twice, which significantly improves both the training efficiency and the final detection performance. As a result, DINO outperforms all previous ResNet-50based models on COCO val2017 in both the 12-epoch and the 36-epoch settings using multi-scale features. Motivated by the improvement, we further explored to train DINO with a stronger backbone on a larger dataset and achieved a new state of the art, 63.3 AP on COCO 2017 test-dev. This result establishes DETR-like models as a mainstream detection framework, not only for its novel end-to-end detection optimization, but also for its superior performance.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8" coords="15,34.02,457.45,345.83,7.89;15,34.02,468.43,345.82,7.86;15,34.02,479.39,332.06,7.86;15,40.96,344.89,141.72,106.29"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. The left figure is the detection result using a model trained with DN queries and the right is the result of our method. In the left image, the boy pointed by the arrow has 3 duplicate bounding boxes. For clarity, we only show boxes of class "person".</figDesc><graphic coords="15,40.96,344.89,141.72,106.29" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="8,34.02,39.20,345.83,187.94"><head></head><label></label><figDesc>The structure of CDN group and a demonstration of positive and negative examples. Although both positive and negative examples are 4D anchors that can be represented as points in 4D space, we illustrate them as points in 2D space on concentric squares for simplicity. Assuming the square center is a GT box, points inside the inner square are regarded as a positive example and points between the inner square and the outer square are viewed as negative examples.</figDesc><table coords="8,34.02,39.20,294.03,133.15"><row><cell>reconstruction</cell><cell>no</cell><cell>reconstruction</cell><cell>no</cell></row><row><cell>loss</cell><cell>object</cell><cell>loss</cell><cell>object</cell></row><row><cell></cell><cell></cell><cell></cell><cell>negative</cell></row><row><cell></cell><cell></cell><cell></cell><cell>positive</cell></row><row><cell></cell><cell cols="2">Decoder Layers x M</cell><cell>1</cell><cell>2</cell></row><row><cell>positive</cell><cell>negative</cell><cell>positive</cell><cell>negative</cell></row><row><cell cols="2">CDN group0</cell><cell cols="2">CDN group1</cell></row><row><cell>Fig. 3.</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="12,34.02,574.27,345.83,8.77"><head>Table 2 .</head><label>2</label><figDesc>Comparison with the best models with a ResNet-50 backbone: To Model Epochs AP AP 50 AP 75 AP S AP M AP L Results for DINO and other detection models with the ResNet-50 backbone on COCO val2017 trained with more epochs (24, 36, or more).</figDesc><table coords="13,35.57,50.15,341.44,143.75"><row><cell>Faster-RCNN [30]</cell><cell>108</cell><cell>42.0</cell><cell>62.4 44.2 20.5 45.8 61.1</cell></row><row><cell>DETR(DC5) [41]</cell><cell>500</cell><cell>43.3</cell><cell>63.1 45.9 22.5 47.3 61.1</cell></row><row><cell>Deformable DETR [41]</cell><cell>50</cell><cell>46.2</cell><cell>65.2 50.0 28.8 49.2 61.7</cell></row><row><cell>SMCA-R [11]</cell><cell>50</cell><cell>43.7</cell><cell>63.6 47.2 24.2 47.0 60.4</cell></row><row><cell>TSP-RCNN-R [34]</cell><cell>96</cell><cell>45.0</cell><cell>64.5 49.6 29.7 47.7 58.0</cell></row><row><cell>Dynamic DETR(5scale) [7]</cell><cell>50</cell><cell>47.2</cell><cell>65.9 51.1 28.6 49.3 59.1</cell></row><row><cell cols="2">DAB-Deformable-DETR [21] 50</cell><cell>46.9</cell><cell>66.0 50.8 30.1 50.4 62.5</cell></row><row><cell>DN-Deformable-DETR [17]</cell><cell>50</cell><cell>48.6</cell><cell>67.4 52.7 31.0 52.0 63.7</cell></row><row><cell>DINO-4scale</cell><cell cols="3">24 50.4(+1.8) 68.3 54.8 33.3 53.7 64.8</cell></row><row><cell>DINO-5scale</cell><cell cols="3">24 51.3(+2.7) 69.1 56.0 34.5 54.2 65.8</cell></row><row><cell>DINO-4scale</cell><cell cols="3">36 50.9(+2.3) 69.0 55.3 34.6 54.1 64.6</cell></row><row><cell>DINO-5scale</cell><cell cols="3">36 51.2(+2.6) 69.0 55.8 35.0 54.3 65.3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" coords="14,34.02,36.97,345.82,92.44"><head>Table 3 .</head><label>3</label><figDesc>Comparison of the best detection models on MS-COCO. Similar to DETR<ref type="bibr" coords="14,367.55,121.55,9.22,7.86" target="#b2">[3]</ref>,</figDesc><table coords="14,34.87,36.97,342.26,75.48"><row><cell>Method</cell><cell>Params</cell><cell>Backbone Pre-training Dataset</cell><cell>Detection Pre-training Dataset</cell><cell>Use Mask</cell><cell>End-to-end</cell><cell cols="4">val2017 (AP) test-dev (AP) w/o TTA w/ TTA w/o TTA w/ TTA</cell></row><row><cell>SwinL [23]</cell><cell>284M</cell><cell>IN-22K-14M</cell><cell>O365</cell><cell>✓</cell><cell></cell><cell>57.1</cell><cell>58.0</cell><cell>57.7</cell><cell>58.7</cell></row><row><cell>DyHead [7]</cell><cell>≥ 284M</cell><cell>IN-22K-14M</cell><cell>Unknown*</cell><cell></cell><cell></cell><cell>-</cell><cell>58.4</cell><cell>-</cell><cell>60.6</cell></row><row><cell cols="2">Soft Teacher+SwinL [38] 284M</cell><cell>IN-22K-14M</cell><cell>O365</cell><cell>✓</cell><cell></cell><cell>60.1</cell><cell>60.7</cell><cell>-</cell><cell>61.3</cell></row><row><cell>GLIP [18]</cell><cell>≥ 284M</cell><cell>IN-22K-14M</cell><cell>FourODs [18],GoldG+ [18,15]</cell><cell></cell><cell></cell><cell>-</cell><cell>60.8</cell><cell>-</cell><cell>61.5</cell></row><row><cell cols="2">Florence-CoSwin-H[40] ≥ 637M</cell><cell>FLD-900M [40]</cell><cell>FLD-9M [40]</cell><cell></cell><cell></cell><cell>-</cell><cell>62.0</cell><cell>-</cell><cell>62.4</cell></row><row><cell>SwinV2-G [22]</cell><cell>3.0B</cell><cell>IN-22K-ext-70M [22]</cell><cell>O365</cell><cell>✓</cell><cell></cell><cell>61.9</cell><cell>62.5</cell><cell>-</cell><cell>63.1</cell></row><row><cell>DINO-SwinL(Ours)</cell><cell>218M</cell><cell>IN-22K-14M</cell><cell>O365</cell><cell></cell><cell>✓</cell><cell>63.1</cell><cell>63.2</cell><cell>63.2</cell><cell>63.3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="14,34.02,550.39,345.83,32.65"><head>Table 4</head><label>4</label><figDesc>Row 2. While our strong baseline outperforms all previous models, our three new methods in DINO further improve the performance significantly.</figDesc><table coords="15,35.21,36.19,343.46,64.11"><row><cell>#Row</cell><cell cols="2">QS CDN LFT AP AP50 AP75 APS APM APL</cell></row><row><cell>1. DN-DETR [17]</cell><cell>No</cell><cell>43.4 61.9 47.2 24.8 46.8 59.4</cell></row><row><cell>2. Optimized DN-DETR</cell><cell>No</cell><cell>44.9 62.8 48.6 26.9 48.2 60.0</cell></row><row><cell cols="2">3. Strong baseline (Row2+pure query selection) Pure</cell><cell>46.5 64.2 50.4 29.6 49.8 61.0</cell></row><row><cell>4. Row3+mixed query selection</cell><cell>Mixed</cell><cell>47.0 64.2 51.0 31.1 50.1 61.5</cell></row><row><cell>5. Row4+look forward twice</cell><cell>Mixed</cell><cell>✓ 47.4 64.8 51.6 29.9 50.8 61.9</cell></row><row><cell>6. DINO (ours, Row5+contrastive DN)</cell><cell>Mixed ✓</cell><cell>✓ 47.9 65.3 52.1 31.2 50.9 61.9</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="20,34.02,36.56,345.83,158.42"><head>Table 5 .</head><label>5</label><figDesc>Training efficieny for different models with ResNet-50 backbone. All models are trianed with 8 Nvidia A100 GPUs. All results are reported by us. * The results of Faster RCNN are tested with the mmdetection framework. ⋆ We use the vanilla Deformable DETR without two-stage and bbox refinement during testing.</figDesc><table coords="20,35.86,36.56,342.15,158.42"><row><cell>Model</cell><cell cols="4">Batch Size per GPU Traning Time GPU Mem. Epoch AP</cell></row><row><cell>Faster RCNN [30]*</cell><cell>8</cell><cell>∼ 60min/ep</cell><cell>13GB</cell><cell>108 42.0</cell></row><row><cell>DETR [3]</cell><cell>8</cell><cell>∼ 16min/ep</cell><cell>26GB</cell><cell>300 41.2</cell></row><row><cell>Deformable DETR [41] ⋆</cell><cell>2</cell><cell>∼ 55min/ep</cell><cell>16GB</cell><cell>50 45.4</cell></row><row><cell>DINO(Ours)</cell><cell>2</cell><cell>∼ 55min/ep</cell><cell>16GB</cell><cell>12 47.9</cell></row><row><cell cols="5"># Encoder/Decoder 6/6 4/6 3/6 2/6 6/4 6/2 2/4 2/2</cell></row><row><cell>AP</cell><cell cols="4">47.4 46.2 45.8 45.4 46.0 44.4 44.1 41.2</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" coords="20,34.02,207.48,345.83,29.81"><head>Table 6 .</head><label>6</label><figDesc>Ablation on the numbers of encoder layers and decoder layers with the ResNet-50 backbone on COCO val2017. We use the 12-epoch setting and 100 DN queries without negative samples here.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8" coords="20,34.02,476.57,345.83,61.38"><head>Table 7 .</head><label>7</label><figDesc>Ablation on number of denoising queries with the ResNet-50 backbone on COCO validation. Note that 100 CND query pairs contains 200 queries which are 100 positive and 100 negative queries.</figDesc><table coords="20,51.14,476.57,308.50,19.49"><row><cell cols="7"># Denoising query 100 CDN 1000 DN 200 DN 100 DN 50 DN 10 DN No DN</cell></row><row><cell>AP</cell><cell>47.9</cell><cell>47.6</cell><cell>47.4</cell><cell>47.4</cell><cell>46.7 46.0</cell><cell>45.1</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9" coords="21,34.02,560.77,345.83,22.27"><head>Table 8 .</head><label>8</label><figDesc>Hyper-parameters used in our models.</figDesc><table coords="23,112.72,148.86,185.34,292.40"><row><cell>Item</cell><cell>Value</cell></row><row><cell>lr</cell><cell>0.0001</cell></row><row><cell>lr backbone</cell><cell>1e-05</cell></row><row><cell>weight decay</cell><cell>0.0001</cell></row><row><cell>clip max norm</cell><cell>0.1</cell></row><row><cell>pe temperature</cell><cell>20</cell></row><row><cell>enc layers</cell><cell>6</cell></row><row><cell>dec layers</cell><cell>6</cell></row><row><cell>dim feedforward</cell><cell>2048</cell></row><row><cell>hidden dim</cell><cell>256</cell></row><row><cell>dropout</cell><cell>0.0</cell></row><row><cell>nheads</cell><cell>8</cell></row><row><cell>num queries</cell><cell>900</cell></row><row><cell>enc n points</cell><cell>4</cell></row><row><cell>dec n points</cell><cell>4</cell></row><row><cell>transformer activation</cell><cell>"relu"</cell></row><row><cell>batch norm type</cell><cell>"FrozenBatchNorm2d"</cell></row><row><cell>set cost class</cell><cell>2.0</cell></row><row><cell>set cost bbox</cell><cell>5.0</cell></row><row><cell>set cost giou</cell><cell>2.0</cell></row><row><cell>cls loss coef</cell><cell>1.0</cell></row><row><cell>bbox loss coef</cell><cell>5.0</cell></row><row><cell>giou loss coef</cell><cell>2.0</cell></row><row><cell>focal alpha</cell><cell>0.25</cell></row><row><cell>dn box noise scale</cell><cell>0.4</cell></row><row><cell>dn label noise ratio</cell><cell>0.5</cell></row></table><note coords="21,369.15,560.77,10.20,6.12;21,34.02,574.30,345.83,8.74"><p><p>-4  </p>and train our model on Nvidia A100 GPUs with batch size 16. Since DN-DETR</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0" coords="6,43.98,520.18,335.86,7.86;6,43.98,531.14,335.86,7.86;6,43.98,542.10,40.76,7.86"><p>The DN-DETR paper<ref type="bibr" coords="6,137.02,520.18,14.34,7.86" target="#b16">[17]</ref> uses λ1 and λ2 to denote noise scales of center shifting and box scaling, but sets λ1 = λ2. In this paper, we use λ in place of λ1andλ2 for simplicity.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1" coords="6,43.98,553.06,335.86,7.86;6,43.98,564.02,335.87,7.86;6,43.98,574.98,84.32,7.86"><p>Also named as "two-stage" in the Deformable DETR paper. As the "two-stage" name might confuse readers with classical detectors, we use the term "query selection" instead in our paper.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2" coords="11,43.98,542.10,335.87,7.86;11,43.98,553.06,335.87,7.86;11,43.98,564.02,335.87,7.86;11,43.98,574.98,51.78,7.86"><p>We use normalized forms of boxes in our model, hence each value of a box is a float between 0 and 1. Given two boxes, we sum them after inverse sigmoid and then transform the summation by sigmoid. Refer to Deformable DETR<ref type="bibr" coords="11,314.96,564.02,14.34,7.86" target="#b40">[41]</ref> Sec. A.3 for more details.</p></note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"> <ref type="bibr" coords="22,34.02,37.17,15.50,8.74" target="#b16">[17]</ref> <p>adopts 300 decoder queries and 3 patterns <ref type="bibr" coords="22,234.96,37.17,14.61,8.74" target="#b36">[37]</ref>, we use 300×3 = 900 decoder queries with the same computation cost. Learning schedules of our DINO with SwinL are available in the appendix.</p><p>Loss function. We use the L1 loss and GIOU <ref type="bibr" coords="22,244.71,88.50,15.50,8.74" target="#b31">[32]</ref> loss for box regression and focal loss <ref type="bibr" coords="22,77.85,100.46,15.50,8.74" target="#b18">[19]</ref> with α = 0.25, γ = 2 for classification. As in DETR <ref type="bibr" coords="22,331.42,100.46,9.96,8.74" target="#b2">[3]</ref>, we add auxiliary losses after each decoder layer. Similar to Deformable DETR <ref type="bibr" coords="22,346.70,112.41,14.61,8.74" target="#b40">[41]</ref>, we add extra intermediate losses after the query selection module, with the same components as for each decoder layer. We use the same loss coefficients as in DAB-DETR <ref type="bibr" coords="22,91.80,148.28,15.50,8.74" target="#b20">[21]</ref> and DN-DETR <ref type="bibr" coords="22,181.74,148.28,14.61,8.74" target="#b16">[17]</ref>, that is, 1.0 for classification loss, 5.0 for L1 loss, and 2.0 for GIOU loss.</p><p>Detailed model components. We also optimize the detection pipeline used in DAB-DETR <ref type="bibr" coords="22,91.00,199.61,15.50,8.74" target="#b20">[21]</ref> and DN-DETR <ref type="bibr" coords="22,178.48,199.61,14.61,8.74" target="#b16">[17]</ref>. Following DN-Deformable-DETR <ref type="bibr" coords="22,347.35,199.61,14.61,8.74" target="#b16">[17]</ref>, we use the same multi-scale approach as in Deformable DETR <ref type="bibr" coords="22,298.65,211.57,15.50,8.74" target="#b40">[41]</ref> and adopt the deformable attention. DN-DETR uses different prediction heads with unshared parameters in different decoder layers. In addition, we introduce dynamic denoising group to increase denoising training efficiency and alleviate memory overhead (see Appendix D.1). In this work, we find that using a shared prediction head will add additional performance improvement. This also leads to a reduction of about one million parameters. In addition, we find the conditional queries <ref type="bibr" coords="22,364.35,283.30,15.50,8.74" target="#b24">[25]</ref> used in DAB-DETR does not suit our model and we do not include them in our final model.</p><p>Training augmentation. We use the same random crop and scale augmentation during training following DETR <ref type="bibr" coords="22,213.67,346.58,9.96,8.74" target="#b2">[3]</ref>. For example, we randomly resize an input image with its shorter side between 480 and 800 pixels and its longer side at most 1333. For DINO with SwinL, we pre-train the model using the default setting, but finetune using 1.5× larger scale (shorter side between 720 and 1200 pixels and longer side at most 2000 pixels) to compare with models on the leaderboard <ref type="bibr" coords="22,88.32,406.36,9.96,8.74" target="#b0">[1]</ref>. Without using any other tricks, we achieve the result of 63.1 on val2017 and 63.2 on test-dev without test time augmentation (TTA) (see Appendix A), outperforming the previous state-of-the-art result 63.1 achieved by SwinV2 <ref type="bibr" coords="22,84.66,442.22,15.50,8.74" target="#b21">[22]</ref> with a much neater solution.</p><p>Multi-scale setting. For our 4-scale models, we extract features from stages 2, 3, and 4 of the backbone and add an extra feature by down-sampling the output of the stage 4. An additional feature map of the backbone stage 1 is used for our 5-scale models. For hyper-parameters, we set λ 1 = 1.0 and λ 2 = 2.0 and use 100 CDN pairs which contain 100 positive queries and 100 negative queries.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.4 Detailed Hyper-parameters</head><p>We list the hyper-parameters for those who want to reproduce our results in Table <ref type="table" coords="22,61.41,574.30,3.87,8.74">8</ref>.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="16,42.21,57.95,265.10,7.86" xml:id="b0">
+	<monogr>
+		<title level="m" type="main" coords="16,50.78,57.95,178.96,7.86">Papers with code -coco test-dev benchmark</title>
+		<imprint/>
+	</monogr>
+	<note>object detection</note>
+</biblStruct>
+
+<biblStruct coords="16,42.21,68.35,337.64,7.86;16,50.77,79.31,329.07,7.86;16,50.77,90.27,20.99,7.86" xml:id="b1">
+	<analytic>
+		<author>
+			<persName coords=""><forename type="first">Alexey</forename><surname>Bochkovskiy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chien-Yao</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hong-Yuan Mark</forename><surname>Liao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2004.10934</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,364.49,68.35,15.36,7.86;16,50.77,79.31,183.60,7.86">Optimal speed and accuracy of object detection</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">4</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,42.21,100.66,337.64,7.86;16,50.77,111.62,329.07,7.86;16,50.77,122.58,302.72,7.86" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="16,186.91,111.62,188.84,7.86">End-to-end object detection with transformers</title>
+		<author>
+			<persName coords=""><forename type="first">Nicolas</forename><surname>Carion</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Francisco</forename><surname>Massa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gabriel</forename><surname>Synnaeve</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nicolas</forename><surname>Usunier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alexander</forename><surname>Kirillov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sergey</forename><surname>Zagoruyko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,62.29,122.58,160.92,7.86">European conference on computer vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="213" to="229" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,42.21,132.98,337.64,7.86;16,50.77,143.94,329.07,7.86;16,50.77,154.90,329.07,7.86;16,50.77,165.86,225.81,7.86" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="16,287.28,143.94,92.57,7.86;16,50.77,154.90,86.84,7.86">Hybrid task cascade for instance segmentation</title>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiangmiao</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiaqi</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaoxiao</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shuyang</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wansen</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ziwei</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianping</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wanli</forename><surname>Ouyang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,156.50,154.90,223.35,7.86;16,50.77,165.86,125.46,7.86">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="4974" to="4983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,42.21,176.25,337.63,7.86;16,50.77,187.21,329.07,7.86;16,50.77,198.17,329.07,7.86" xml:id="b4">
+	<monogr>
+		<title level="m" type="main" coords="16,297.95,187.21,81.89,7.86;16,50.77,198.17,163.15,7.86">Mmdetection: Open mmlab detection toolbox and benchmark</title>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiaqi</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiangmiao</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuhang</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yu</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaoxiao</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shuyang</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wansen</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ziwei</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiarui</forename><surname>Xu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1906.07155</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,42.21,208.57,337.64,7.86;16,50.77,219.52,276.82,7.86" xml:id="b5">
+	<monogr>
+		<title level="m" type="main" coords="16,304.40,208.57,75.44,7.86;16,50.77,219.52,110.88,7.86">Training deep nets with sublinear memory cost</title>
+		<author>
+			<persName coords=""><forename type="first">Tianqi</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bing</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chiyuan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Carlos</forename><surname>Guestrin</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.06174</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,42.21,229.92,337.63,7.86;16,50.77,240.88,329.07,7.86;16,50.77,251.84,329.07,7.86;16,50.77,262.80,144.86,7.86" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="16,118.16,240.88,257.79,7.86">Dynamic head: Unifying object detection heads with attentions</title>
+		<author>
+			<persName coords=""><forename type="first">Xiyang</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yinpeng</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bin</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dongdong</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mengchen</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lu</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,63.49,251.84,316.35,7.86;16,50.77,262.80,44.51,7.86">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="7373" to="7382" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,42.21,273.19,337.64,7.86;16,50.77,284.15,329.07,7.86;16,50.77,295.11,329.07,7.86;16,50.77,306.07,128.84,7.86" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="16,81.00,284.15,264.09,7.86">Dynamic detr: End-to-end object detection with dynamic attention</title>
+		<author>
+			<persName coords=""><forename type="first">Xiyang</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yinpeng</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianwei</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengchuan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lu</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,362.19,284.15,17.66,7.86;16,50.77,295.11,324.26,7.86">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision (ICCV)</meeting>
+		<imprint>
+			<date type="published" when="2021-10">October 2021</date>
+			<biblScope unit="page" from="2988" to="2997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,42.21,316.47,337.64,7.86;16,50.77,327.42,329.07,7.86;16,50.77,338.38,230.40,7.86" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="16,340.16,316.47,39.68,7.86;16,50.77,327.42,165.21,7.86">Imagenet: A large-scale hierarchical image database</title>
+		<author>
+			<persName coords=""><forename type="first">Jia</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wei</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Richard</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li-Jia</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Fei-Fei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,236.61,327.42,143.23,7.86;16,50.77,338.38,118.25,7.86">2009 IEEE conference on computer vision and pattern recognition</title>
+		<imprint>
+			<publisher>Ieee</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="248" to="255" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,41.87,348.78,337.97,7.86;16,50.77,359.74,329.07,7.86;16,50.77,370.70,132.38,7.86" xml:id="b9">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Jacob</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ming-Wei</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kenton</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kristina</forename><surname>Toutanova</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Bert</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1810.04805</idno>
+		<title level="m" coords="16,362.79,348.78,17.05,7.86;16,50.77,359.74,293.36,7.86">Pretraining of deep bidirectional transformers for language understanding</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,41.87,381.09,337.98,7.86;16,50.77,392.05,329.07,7.86;16,50.77,403.01,97.09,7.86" xml:id="b10">
+	<monogr>
+		<title level="m" type="main" coords="16,50.77,392.05,259.29,7.86">Fast convergence of detr with spatially modulated co-attention</title>
+		<author>
+			<persName coords=""><forename type="first">Peng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Minghang</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaogang</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hongsheng</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2101.07448</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,41.87,413.41,337.98,7.86;16,50.77,424.37,238.15,7.86" xml:id="b11">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Ge</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Songtao</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Feng</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zeming</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Yolox</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2107.08430</idno>
+		<title level="m" coords="16,339.01,413.41,40.84,7.86;16,50.77,424.37,71.70,7.86">Exceeding yolo series in 2021</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,41.87,434.76,337.98,7.86;16,50.77,445.72,329.07,7.86;16,50.77,456.68,45.05,7.86" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="16,317.62,434.76,44.64,7.86">Mask r-cnn</title>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Georgia</forename><surname>Gkioxari</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollár</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Girshick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,50.77,445.72,274.60,7.86">Proceedings of the IEEE international conference on computer vision</title>
+		<meeting>the IEEE international conference on computer vision</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="2961" to="2969" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,41.87,467.08,337.98,7.86;16,50.77,478.04,329.07,7.86;16,50.77,488.99,172.86,7.86" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="16,290.48,467.08,89.37,7.86;16,50.77,478.04,83.30,7.86">Deep residual learning for image recognition</title>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiangyu</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shaoqing</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="16,152.78,478.04,227.06,7.86;16,50.77,488.99,80.55,7.86">2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="770" to="778" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,41.87,499.39,337.98,7.86;16,50.77,510.35,329.07,7.86;16,50.77,521.31,289.16,7.86" xml:id="b14">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Aishwarya</forename><surname>Kamath</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mannat</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yann</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ishan</forename><surname>Misra</surname></persName>
+		</author>
+		<title level="m" coords="16,306.76,499.39,73.08,7.86;16,50.77,510.35,329.07,7.86;16,50.77,521.31,261.05,7.86">Gabriel Synnaeve, and Nicolas Carion. Mdetr -modulated detection for end-to-end multi-modal understanding. arXiv: Computer Vision and Pattern Recognition</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="16,41.87,531.70,337.97,7.86;16,50.77,542.66,153.46,7.86" xml:id="b15">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Diederik</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jimmy</forename><surname>Kingma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ba</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1412.6980</idno>
+		<title level="m" coords="16,197.09,531.70,178.65,7.86">Adam: A method for stochastic optimization</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="16,41.87,553.06,337.97,7.86;16,50.77,564.02,329.07,7.86;16,50.77,574.98,97.09,7.86" xml:id="b16">
+	<monogr>
+		<title level="m" type="main" coords="16,364.61,553.06,15.23,7.86;16,50.77,564.02,256.61,7.86">Dndetr: Accelerate detr training by introducing query denoising</title>
+		<author>
+			<persName coords=""><forename type="first">Feng</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shilong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lionel</forename><forename type="middle">M</forename><surname>Ni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2203.01305</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,37.85,337.98,7.86;17,50.77,48.81,329.07,7.86;17,50.77,59.77,320.58,7.86" xml:id="b17">
+	<monogr>
+		<title level="m" type="main" coords="17,50.77,59.77,154.48,7.86">Grounded language-image pre-training</title>
+		<author>
+			<persName coords=""><forename type="first">Liunian</forename><surname>Harold</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pengchuan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Haotian</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianwei</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chunyuan</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yiwu</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lijuan</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lu</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jenq-Neng</forename><surname>Hwang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2112.03857</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,70.01,337.98,7.86;17,50.77,80.97,329.07,7.86;17,50.77,91.93,133.71,7.86" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="17,341.86,70.01,37.98,7.86;17,50.77,80.97,103.26,7.86">Focal loss for dense object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Priya</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,162.67,80.97,217.17,7.86;17,50.77,91.93,44.51,7.86">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="318" to="327" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,102.16,337.97,7.86;17,50.77,113.12,329.07,7.86;17,50.77,124.08,329.07,7.86;17,50.77,135.04,20.99,7.86" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="17,249.01,113.12,130.83,7.86;17,50.77,124.08,39.26,7.86">Microsoft coco: Common objects in context</title>
+		<author>
+			<persName coords=""><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Maire</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Serge</forename><surname>Belongie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Hays</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pietro</forename><surname>Perona</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Deva</forename><surname>Ramanan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Piotr</forename><surname>Dollár</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Lawrence</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zitnick</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,110.80,124.08,161.97,7.86">European conference on computer vision</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="740" to="755" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,145.28,337.97,7.86;17,50.77,156.24,329.07,7.86;17,50.77,167.20,158.15,7.86" xml:id="b20">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Shilong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Feng</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiao</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xianbiao</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hang</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jun</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2201.12329</idno>
+		<title level="m" coords="17,114.85,156.24,259.13,7.86">DAB-DETR: Dynamic anchor boxes are better queries for DETR</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,177.43,337.98,7.86;17,50.77,188.39,329.07,7.86;17,50.77,199.35,222.21,7.86" xml:id="b21">
+	<monogr>
+		<title level="m" type="main" coords="17,213.24,188.39,166.60,7.86;17,50.77,199.35,56.15,7.86">Swin transformer v2: Scaling up capacity and resolution</title>
+		<author>
+			<persName coords=""><forename type="first">Ze</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yutong</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhuliang</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhenda</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yixuan</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jia</forename><surname>Ning</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yue</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Dong</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2111.09883</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,209.59,337.98,7.86;17,50.77,220.55,329.07,7.86;17,50.77,231.51,329.07,7.86;17,50.77,242.47,134.21,7.86" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="17,126.28,220.55,253.56,7.86;17,50.77,231.51,32.07,7.86">Swin transformer: Hierarchical vision transformer using shifted windows</title>
+		<author>
+			<persName coords=""><forename type="first">Ze</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yutong</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yue</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yixuan</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stephen</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Baining</forename><surname>Guo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,101.72,231.51,278.12,7.86;17,50.77,242.47,24.59,7.86">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="10012" to="10022" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,252.70,337.98,7.86;17,50.77,263.66,132.38,7.86" xml:id="b23">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Loshchilov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Frank</forename><surname>Hutter</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1711.05101</idno>
+		<title level="m" coords="17,194.16,252.70,154.50,7.86">Decoupled weight decay regularization</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,273.90,337.98,7.86;17,50.77,284.86,329.07,7.86;17,50.77,295.82,132.38,7.86" xml:id="b24">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Depu</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaokang</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zejia</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gang</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Houqiang</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yuhui</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lei</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingdong</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2108.06152</idno>
+		<title level="m" coords="17,162.17,284.86,185.28,7.86">Conditional detr for fast training convergence</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,306.06,337.98,7.86;17,50.77,317.01,329.07,7.86;17,50.77,327.97,228.99,7.86" xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Paulius</forename><surname>Micikevicius</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sharan</forename><surname>Narang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonah</forename><surname>Alben</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gregory</forename><surname>Diamos</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Erich</forename><surname>Elsen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Boris</forename><surname>Ginsburg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Michael</forename><surname>Houston</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Oleksii</forename><surname>Kuchaiev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ganesh</forename><surname>Venkatesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Wu</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note>Mixed precision training</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,338.21,337.97,7.86;17,50.77,349.17,329.07,7.86;17,50.77,360.13,329.07,7.86;17,50.77,371.09,305.25,7.86" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="17,167.30,360.13,212.54,7.86;17,50.77,371.09,69.88,7.86">Learning transferable visual models from natural language supervision</title>
+		<author>
+			<persName coords=""><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jong</forename><forename type="middle">Wook</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chris</forename><surname>Hallacy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aditya</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gabriel</forename><surname>Goh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sandhini</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Girish</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amanda</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Pamela</forename><surname>Mishkin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jack</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gretchen</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,140.23,371.09,187.55,7.86">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,381.32,337.98,7.86;17,50.77,392.28,329.07,7.86;17,50.77,403.24,45.05,7.86" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coords="17,185.59,381.32,130.05,7.86">Yolo9000: better, faster, stronger</title>
+		<author>
+			<persName coords=""><forename type="first">Joseph</forename><surname>Redmon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ali</forename><surname>Farhadi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,333.96,381.32,45.88,7.86;17,50.77,392.28,272.84,7.86">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="7263" to="7271" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,413.48,337.98,7.86;17,50.77,424.44,132.38,7.86" xml:id="b28">
+	<monogr>
+		<title level="m" type="main" coords="17,194.89,413.48,150.94,7.86">Yolov3: An incremental improvement</title>
+		<author>
+			<persName coords=""><forename type="first">Joseph</forename><surname>Redmon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ali</forename><surname>Farhadi</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1804.02767</idno>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,434.68,337.98,7.86;17,50.77,445.64,329.07,7.86;17,50.77,456.59,158.14,7.86" xml:id="b29">
+	<monogr>
+		<title level="m" type="main" coords="17,291.04,434.68,88.81,7.86;17,50.77,445.64,329.07,7.86;17,50.77,456.59,115.09,7.86">Faster r-cnn: Towards real-time object detection with region proposal networks</title>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>Shaoqing Ren</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Sun</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="volume">28</biblScope>
+		</imprint>
+	</monogr>
+	<note>Advances in neural information processing systems</note>
+</biblStruct>
+
+<biblStruct coords="17,41.87,466.83,337.98,7.86;17,50.77,477.79,329.07,7.86;17,50.77,488.75,268.83,7.86" xml:id="b30">
+	<analytic>
+		<title level="a" type="main" coords="17,291.04,466.83,88.81,7.86;17,50.77,477.79,228.81,7.86">Faster r-cnn: Towards real-time object detection with region proposal networks</title>
+		<author>
+			<persName coords=""><forename type="first">Kaiming</forename><surname>Shaoqing Ren</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ross</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="17,289.02,477.79,90.82,7.86;17,50.77,488.75,170.40,7.86">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1137" to="1149" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,498.99,337.97,7.86;17,50.77,509.95,329.07,7.86;17,50.77,520.90,329.07,7.86;17,50.77,531.86,259.53,7.86" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coords="17,141.82,509.95,238.03,7.86;17,50.77,520.90,115.01,7.86">Generalized intersection over union: A metric and a loss for bounding box regression</title>
+		<author>
+			<persName coords=""><forename type="first">Hamid</forename><surname>Rezatofighi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nathan</forename><surname>Tsoi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Junyoung</forename><surname>Gwak</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Amir</forename><surname>Sadeghian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ian</forename><surname>Reid</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Silvio</forename><surname>Savarese</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,190.84,520.90,189.00,7.86;17,50.77,531.86,168.39,7.86">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="658" to="666" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="17,41.87,542.10,337.98,7.86;17,50.77,553.06,329.07,7.86;17,50.77,564.02,329.07,7.86;17,50.77,574.98,122.39,7.86" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coords="17,147.35,553.06,232.49,7.86;17,50.77,564.02,35.49,7.86">Objects365: A large-scale, high-quality dataset for object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Shuai</forename><surname>Shao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zeming</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tianyuan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chao</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gang</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiangyu</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jing</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="17,105.54,564.02,274.30,7.86;17,50.77,574.98,22.36,7.86">Proceedings of the IEEE/CVF international conference on computer vision</title>
+		<meeting>the IEEE/CVF international conference on computer vision</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="8430" to="8439" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,41.87,37.85,285.50,7.86;18,344.64,37.85,35.20,7.86;18,50.77,48.81,252.72,7.86;18,318.66,48.81,61.19,7.86;18,50.77,59.77,97.09,7.86" xml:id="b33">
+	<monogr>
+		<title level="m" type="main" coords="18,344.64,37.85,35.20,7.86;18,50.77,48.81,248.77,7.86">Rethinking transformer-based set prediction for object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Zhiqing</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Shengcao</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yiming</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kris</forename><surname>Kitani</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2011.10881</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="18,41.87,70.73,337.98,7.86;18,50.77,81.69,329.07,7.86;18,50.77,92.65,159.37,7.86" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coords="18,259.43,70.73,120.41,7.86;18,50.77,81.69,85.78,7.86">Fcos: Fully convolutional onestage object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Chunhua</forename><surname>Zhi Tian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hao</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tong</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,154.49,81.69,225.35,7.86;18,50.77,92.65,58.27,7.86">2019 IEEE/CVF International Conference on Computer Vision (ICCV)</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="9627" to="9636" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,41.87,103.61,337.97,7.86;18,50.77,114.57,329.07,7.86;18,50.77,125.53,314.70,7.86" xml:id="b35">
+	<analytic>
+		<title level="a" type="main" coords="18,275.71,114.57,99.93,7.86">Attention is all you need</title>
+		<author>
+			<persName coords=""><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Llion</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aidan</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Illia</forename><surname>Polosukhin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,62.29,125.53,202.74,7.86">Advances in neural information processing systems</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,41.87,136.48,337.98,7.86;18,50.77,147.44,315.59,7.86" xml:id="b36">
+	<monogr>
+		<title level="m" type="main" coords="18,300.37,136.48,79.48,7.86;18,50.77,147.44,149.42,7.86">Anchor detr: Query design for transformer-based detector</title>
+		<author>
+			<persName coords=""><forename type="first">Yingming</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiangyu</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tong</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jian</forename><surname>Sun</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2109.07107</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="18,41.87,158.40,337.97,7.86;18,50.77,169.36,329.07,7.86;18,50.77,180.32,329.07,7.86;18,50.77,191.28,125.00,7.86" xml:id="b37">
+	<analytic>
+		<title level="a" type="main" coords="18,165.24,169.36,214.60,7.86;18,50.77,180.32,27.57,7.86">End-to-end semi-supervised object detection with soft teacher</title>
+		<author>
+			<persName coords=""><forename type="first">Mengde</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zheng</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Han</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lijuan</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Fangyun</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiang</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zicheng</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,98.13,180.32,281.72,7.86;18,50.77,191.28,24.59,7.86">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="3060" to="3069" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="18,41.87,202.24,337.97,7.86;18,50.77,213.20,322.87,7.86" xml:id="b38">
+	<monogr>
+		<title level="m" type="main" coords="18,259.96,202.24,119.88,7.86;18,50.77,213.20,156.96,7.86">Efficient detr: Improving endto-end object detector with dense prior</title>
+		<author>
+			<persName coords=""><forename type="first">Zhuyu</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiangbo</forename><surname>Ai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Boxun</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chi</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2104.01318</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="18,41.87,224.16,337.98,7.86;18,50.77,235.11,329.07,7.86;18,50.77,246.07,316.95,7.86" xml:id="b39">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Lu</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dongdong</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yi-Ling</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Noel</forename><surname>Codella</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiyang</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Houdong</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xuedong</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Boxin</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Chunyuan</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2111.11432</idno>
+		<title level="m" coords="18,353.08,235.11,26.76,7.86;18,50.77,246.07,151.02,7.86">A new foundation model for computer vision</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="18,41.87,257.03,337.98,7.86;18,50.77,267.99,329.07,7.86;18,50.77,278.95,314.61,7.86" xml:id="b40">
+	<analytic>
+		<title level="a" type="main" coords="18,365.63,257.03,14.21,7.86;18,50.77,267.99,286.84,7.86">Deformable detr: Deformable transformers for end-to-end object detection</title>
+		<author>
+			<persName coords=""><forename type="first">Xizhou</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Weijie</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lewei</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bin</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xiaogang</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="18,357.22,267.99,22.62,7.86;18,50.77,278.95,286.43,7.86">ICLR 2021: The Ninth International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

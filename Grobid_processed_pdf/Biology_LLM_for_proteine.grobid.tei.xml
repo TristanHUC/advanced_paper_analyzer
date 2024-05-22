@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,153.82,115.90,307.72,12.68;1,185.83,133.83,243.70,12.68">ProteinEngine: Empower LLM with Domain Knowledge for Protein Engineering</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2024-04-21">21 Apr 2024</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,154.42,171.50,53.12,8.80"><forename type="first">Yiqing</forename><surname>Shen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Johns Hopkins University</orgName>
+								<address>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,218.10,171.50,55.48,8.80"><forename type="first">Outongyi</forename><surname>Lv</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Institute of Natural Sciences</orgName>
+								<orgName type="institution">Shanghai Jiao Tong University</orgName>
+								<address>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,284.13,171.50,56.72,8.80"><forename type="first">Houying</forename><surname>Zhu</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">School of Mathematical and Physical Sciences</orgName>
+								<orgName type="institution">Macquarie University</orgName>
+								<address>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,370.77,171.50,72.56,8.80"><forename type="first">Yu</forename><forename type="middle">Guang</forename><surname>Wang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Institute of Natural Sciences</orgName>
+								<orgName type="institution">Shanghai Jiao Tong University</orgName>
+								<address>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,153.82,115.90,307.72,12.68;1,185.83,133.83,243.70,12.68">ProteinEngine: Empower LLM with Domain Knowledge for Protein Engineering</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2024-04-21">21 Apr 2024</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">EB6BEC9AC68911122D77B7B21AA8D92C</idno>
+					<idno type="arXiv">arXiv:2405.06658v1[q-bio.BM]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:10+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Deep Learning</term>
+					<term>Large Language Model</term>
+					<term>Protein Design</term>
+					<term>AI for Protein Design</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Large language models (LLMs) have garnered considerable attention for their proficiency in tackling intricate tasks, particularly leveraging their capacities for zero-shot and in-context learning. However, their utility has been predominantly restricted to general tasks due to an absence of domain-specific knowledge. This constraint becomes particularly pertinent in the realm of protein engineering, where specialized expertise is required for tasks such as protein function prediction, protein evolution analysis, and protein design, with a level of specialization that existing LLMs cannot furnish. In response to this challenge, we introduce ProteinEngine, a human-centered platform aimed at amplifying the capabilities of LLMs in protein engineering by seamlessly integrating a comprehensive range of relevant tools, packages, and software via API calls. Uniquely, ProteinEngine assigns three distinct roles to LLMs, facilitating efficient task delegation, specialized task resolution, and effective communication of results. This design fosters high extensibility and promotes the smooth incorporation of new algorithms, models, and features for future development. Extensive user studies, involving participants from both the AI and protein engineering communities across academia and industry, consistently validate the superiority of ProteinEngine in augmenting the reliability and precision of deep learning in protein engineering tasks. Consequently, our findings highlight the potential of ProteinEngine to bride the disconnected tools for future research in the protein engineering domain.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Large language models (LLMs) have achieved remarkable successes in solving complex tasks, showcasing their zero-shot learning capabilities <ref type="bibr" coords="1,419.18,608.24,14.74,8.80" target="#b17">[18]</ref>. However, the effectiveness of these models tends to plateau when faced with more specialized tasks due to their inability to access domain-specific knowledge or utilize specialized tools tailored for certain applications. This limitation becomes glaringly apparent in the context of protein engineering tasks. Although LLMs have been explored for specific tasks within the protein engineering domain such as protein structure prediction <ref type="bibr" coords="2,181.22,130.89,14.51,8.80" target="#b10">[11]</ref>, protein evolution analysis, or de novo protein design <ref type="bibr" coords="2,431.40,130.89,11.08,8.80" target="#b5">[6,</ref><ref type="bibr" coords="2,442.48,130.89,11.08,8.80" target="#b12">13]</ref>, their application often demands significant alterations to the model architecture. These modifications, coupled with the need for learning from scratch using domainspecific datasets, present two-fold challenges. First, this approach underutilizes the capabilities of well-trained foundation models, given their robust pre-existing knowledge base. Second, the process of specialization often leads to the loss of the model's conversational abilities, a key feature that makes LLMs versatile and user-friendly.</p><p>The introduction of in-context learning capabilities in LLMs <ref type="bibr" coords="2,415.82,226.53,10.50,8.80" target="#b3">[4]</ref> has ushered potential solutions to the enduring challenge of domain knowledge scarcity <ref type="bibr" coords="2,455.44,238.49,9.84,8.80" target="#b3">[4]</ref>. In this new paradigm, the LLM acts as a centralized, cognitive-like system, which is capable of addressing domain-specific tasks by invoking relevant Application Programming Interfaces (APIs) or systems to bride the knowledge gap within the specific domain. However, despite these advancements, most existing solutions tend to restrict the tools they incorporate to commonly used APIs such as calculators, calendars, and web searches, or relatively simple AI models like text-to-image generation models. In the context of protein engineering, both the task formulation and the APIs involved, as well as the AI models, manifest greater complexity. They are characterized by a diverse modality of input and a larger set of arguments, accentuating the need for more sophisticated and flexible systems. Consequently, further research and development are required to fully leverage the potential of LLMs in complex domains such as protein engineering. To narrow the gap, we present ProteinEngine, a novel LLM system for protein engineering. The major contributions are three-fold:</p><p>(1) We introduce ProteinEngine, a human-centered platform to augment the capabilities of LLMs in tackling protein engineering tasks. This is achieved by seamlessly integrating a comprehensive array of tools, packages, and software relevant to protein engineering, all accessible through APIs. <ref type="bibr" coords="2,133.99,473.33,12.73,8.80" target="#b1">(2)</ref> We propose a role-playing framework, comprising AI Project Manager (AI-PM), AI Domain Expert (AI-DE), and AI Presenter (AI-Pr) modules, which facilitates efficient task delegation, promotes interdisciplinary integration, ensures dynamic adaptability, and enables effective communication of results respectively. This design principle provides substantial flexibility, allowing for easy integration and extensibility with emerging AI protein-design models. (3) Through comprehensive user studies, we demonstrate the superior performance of ProteinEngine in not only enhancing the usability of currently disconnected protein engineering tools but also reducing the workload and learning difficulty across users with different backgrounds.</p><p>2 ProteinEngine: LLM for Protein Engineering Method Overview Our proposed ProteinEngine is a human-centered system designed to augment the capabilities of existing LLMs to address a broader Fig. <ref type="figure" coords="3,153.78,244.37,3.95,8.80">1</ref>: The overall framework of the proposed ProteinEngine, which incorporates three distinct roles, each assigned to a separate LLM.</p><p>spectrum of intricate protein engineering tasks. Specifically, we assign three critical roles to the LLMs: the AI Project Manager (AI-PM), the AI Domain Expert (AI-DE), and the AI Presenter (AI-Pr). The overall pipeline illustrating these roles and their interactions is depicted in Figure <ref type="figure" coords="3,366.86,333.22,3.80,8.80">1</ref>. The AI-PM functions as the primary coordinator, interpreting user input expressed in natural language and ensuring all necessary inputs, configurations, arguments, and conditions are correctly provided. Subsequently, it breaks down a given complex task into smaller, more manageable sub-tasks, delegating them to the appropriate AI-DEs. Then, we employ multiple AI-DEs within the platform to address the wide variety of challenges inherent in protein engineering and to facilitate future expansion. Each AI-DE specializes in a particular domain or category of tasks, ensuring a comprehensive coverage of the diverse aspects of protein engineering. During the inference stage, the AI-PM selects and assigns a subset of all AI-DEs to execute relevant APIs based on the nature of the task at hand. Lastly, the AI-Pr is tasked with presenting the results, either unimodal or multimodal, generated by the AI-DEs to the user.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>AI Project Manager</head><p>The LLM performing as the AI-PM acts as the primary interface, bridging the gap between the user and the underlying protein engineering tools within the ProteinEngine platform. In its core role, the AI-PM is tasked with interpreting user input presented in natural language, discerning the context, and identifying the necessary tasks to be performed. Beyond this, the AI-PM ensures that all required inputs, arguments, configurations, and conditions are correctly provided. To accurately parse and deconstruct the user's query, the AI-PM uses in-context learning, a more efficient alternative to the computationally demanding process of LLM fine-tuning. By systematically decomposing complex tasks into smaller, manageable sub-tasks, the AI-PM ensures a thorough understanding of the user's requirements. Once the sub-tasks are defined, the AI-PM delegates them to the appropriate AI-DEs, taking into account their respective areas of specialization. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>AI Domain Expert</head><p>The AI-DE in the ProteinEngine is specifically designed to manage a distinct category of tasks pertaining to protein engineering. A team of multiple AI-DEs is assembled, with each expert equipped with the necessary domain-specific knowledge and tools to execute its designated tasks. To ensure the AI-DEs perform efficiently and adaptively, we have implemented a novel self-feedback communication loop mechanism between the AI-DE and the AI-PM. This autonomous mechanism, which operates without the need for human intervention, enables AI-DEs to progressively refine their understanding of new challenges that may arise during the execution process, and to seek assistance from their fellow AI-DEs, if required. As a result, AI-DEs can dynamically adjust and respond to the evolving demands of the tasks, thereby maintaining a high degree of accuracy and effectiveness.</p><p>AI Presenter AI-Pr aggregates and presents the results generated by the AI-DEs in a clear, concise, and user-friendly manner, ensuring the user can easily interpret and utilize the generated insights, fostering a deeper understanding. To effectively communicate the results to the user, the AI-Pr is capable of visualizing multimodal data, which includes, but is not limited to, images and textual data. This presentation is tailored to cater to different user preferences, and it enhances the comprehensibility of the data, enabling users to quickly grasp the key insights and outcomes delivered by the AI-DEs. APIs for Protein Engineering The APIs integrated within our system, along with their corresponding task category taxonomy, are delineated in Table <ref type="table" coords="5,443.41,492.80,3.95,8.80" target="#tab_0">1</ref>, which covers most of the task scenarios in protein design. Each category is mapped to a specific AI-DE. To provide a tangible understanding of the ProteinEngine in action, we illustrate its use through distinct case examples in Figure <ref type="figure" coords="5,444.44,528.67,3.83,8.80" target="#fig_0">2</ref>, where different AI-DEs are involved in each case. We illustrate typical examples of SOTA AI models in protein design which have been used in our ProteinEngine platform.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">User Study</head><p>Hypothesis Formulation and Testing To evaluate the effectiveness of ProteinEngine, we conducted a user study focused on gauging its proficiency as an intuitive, human-centered system for protein engineering tasks. We employed hypothesis testing to quantitatively compare the performance of ProteinEngine against a Fig. <ref type="figure" coords="6,153.78,247.74,3.95,8.80">3</ref>: The overall flowchart of the user study. This includes preparation (participant recruitment and briefing), user participation operation (familiarization with the technology and random assignment to conditions), data collection (sequential tasks under different conditions with intermittent feedback). Each stage of the process is color-coded for ease of understanding.</p><p>baseline condition, focusing on task completion time, number of attempts, system usability, and the perceived workload. In the baseline condition, participants employed traditional tools and methods, independent of ProteinEngine, such as executing Python scripts directly. Therefore, our null hypotheses were formulated as follows:</p><p>(H1) ProteinEngine does not reduce the time required for successful identification and execution of protein engineering models against the baseline. (H2) ProteinEngine does not improve the accuracy in identifying and executing models for protein engineering tasks against ProteinEngine does improve the accuracy against the baseline. (H3) ProteinEngine does not enhance the overall system usability for model identification and execution within protein engineering tasks against the baseline. (H4) ProteinEngine does not decrease the workload required for the completion of protein engineering model identification and execution against the baseline.</p><p>Based on the hypotheses, we used a single-sided t-test to assess statistical significance.</p><p>Dependent Variables Statistical tests on these hypotheses involve collecting data on the dependent variables from the user study, specifically the task completion time, number of attempts, usability score, and workload index, which are defined as follows.</p><p>-Task Completion Time: This objective, continuous variable measures the total time each participant takes to successfully complete a task under each condition.</p><p>-Number of Attempts: Another objective, continuous variable records the total attempts a participant takes to successfully complete each task under each condition. This variable is indicative of the accuracy of user actions. -Usability Score: This subjective, continuous variable is derived from the System Usability Scale (SUS) questionnaire <ref type="bibr" coords="7,332.36,166.94,9.84,8.80" target="#b1">[2]</ref>. The score reflects the perceived usability of the system. -Workload Index: This subjective, continuous variable, sourced from the NASA Task Load Index (NASA TLX) questionnaire <ref type="bibr" coords="7,371.95,202.99,9.83,8.80" target="#b7">[8]</ref>, assesses the perceived mental workload across six dimensions: mental demand, physical demand, temporal demand, effort, performance, and frustration level.</p><p>Independent Variables The primary independent variable is the Condition under which participants perform the protein engineering tasks, either the baseline or the ProteinEngine. Additionally, we consider potential confounding independent variables that could influence our study outcomes, including:</p><p>-Participant Background: These categorical variables encapsulate information about each participant's professional role and affiliations (academia or industry). This information could offer insights into a user's likely background knowledge and potential biases or preferences when using the interface. -Familiarity with Technology: These numerical variables represent the degree of each participant's familiarity with protein engineering tasks, Python programming language, AI models, and the intersection of these areas. The level of familiarity could potentially influence the ease with which participants adapt to the ProteinEngine, and thus might impact the measurements of variables like task completion time, number of attempts, and perceived usability and workload.</p><p>User Study Design The user study workflow, shown in Figure <ref type="figure" coords="7,416.81,452.82,3.95,8.80">3</ref>, consisted of several steps. First, participants received an introductory tutorial that provided information about the study's background, motivation, and procedures. Next, participants completed a preliminary questionnaire that assessed their background knowledge and familiarity with AI, protein engineering, and their interdisciplinary overlap. The study followed a between-subjects design, comparing participants exposed to two conditions: a baseline condition and the ProteinEngine condition.</p><p>To mitigate learning effects, the order in which participants encountered these conditions was randomized. To control for potential effects stemming from participants' background and familiarity with technology, all participants completed the same set of activities under both conditions (baseline and ProteinEngine). This approach provided paired data for analysis. Participants were assigned a series of six distinct protein engineering tasks under each experimental condition. These tasks included protein folding, inverse protein folding, and protein mutation prediction. During the task completion process, we carefully recorded the total time taken for each task and the number of attempts required for successful execution. After completing the tasks in either the baseline or ProteinEngine condition, participants were asked to fill out a questionnaire. This questionnaire aimed to assess their subjective impressions of the system's usability and their perceived workload during task completion. To ensure a valid comparison of user experiences, identical questionnaires were administered. Data was collected using Google Sheets, with all questions being mandatory to prevent missing data. Incomplete data from participants who withdrew or failed to complete tasks were excluded from the analysis.</p><p>Participants Recruitment We strategically planned the recruitment of volunteer participants to encompass a wide range of potential users. This design aimed to test the versatility and broad applicability of our proposed method across various user groups. Our participant cohort consisted of volunteers from both the AI and biological communities, spanning both academic and industrial fields. This diverse group, including students, AI researchers, lab technicians, and biologists, allows for a comprehensive evaluation of ProteinEngine's functionality across multiple user profiles.</p><p>Implementations For the LLM in ProteinEngine, we chose the gpt-3.5-turbo.</p><p>As the most advanced model in the GPT-3.5 series, this version provides robust capabilities and superior performance suitable for our application.</p><p>Collected Data The boxplots illustrating the distribution of our four key variables, namely Task Completion Time, Number of Attempts, Usability Score, and Workload Index, can be found in   Hypothesis Testing We applied the hypothesis testing to ascertain whether the performance differences observed between the two conditions i.e., baseline and ProteinEngine were statistically significant. The differences under consideration, represented as d i , were computed by subtracting the ProteinEngine measurements from the baseline measurements. Under the null hypothesis, where both platforms have an equivalent effect, these differences should follow a distribution centered around zero, i.e., µ d = 0. Our final dataset for hypothesis testing comprised n = 26 samples. We formulated our null and alternative hypotheses as follows:</p><formula xml:id="formula_0" coords="9,134.77,314.04,172.51,9.65">H 0 : µ d = 0 against H 1 : µ d &gt; 0.</formula><p>This holds for testing hypotheses H1, H2, and H4. For testing H3, the alternative hypothesis is µ d &lt; 0. Let d and s d represent the sample mean and sample standard deviation of the observed differences, respectively. Given these parameters, the sampling distribution for the test statistic follows a t distribution with degrees of freedom n -1. This means that, under null hypothesis H 0 , τ = d s d / √ n ∼ t n-1 . Table <ref type="table" coords="9,417.24,375.19,5.02,8.80" target="#tab_1">2</ref> compiles our hypothesis testing results. Of note, no significant difference was found for the workload measure between the two conditions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Our study encompassed a total of 45 participants. For hypothesis testing, we employed the paired two-sample t-test (effectively a one-sample, one-sided t-test on the difference) at a 5% significance level for the four variables under two conditions, baseline and ProteinEngine. The results allowed us to reject three of the null hypotheses, thereby highlighting the superior performance of ProteinEngine in facilitating protein engineering tasks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Conclusion</head><p>In this work, we presented ProteinEngine, a groundbreaking platform that amplifies the capabilities of LLMs in the realm of protein engineering. This platform's human-centered design greatly eases the learning curve traditionally associated with specialized tools, thereby making protein engineering tasks more accessible. By integrating advanced LLMs with domain-specific expertise, ProteinEngine marks a significant leap forward in the application of AI to protein engineering, showing great potential to accelerate scientific discoveries and spur innovation. As we continue to develop and refine ProteinEngine, it is critical to emphasize the importance of responsible use and rigorous validation. Therefore, the development of comprehensive ethical guidelines and robust validation protocols is a key direction for future work.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="5,134.77,420.77,346.09,9.36;5,134.77,432.73,345.83,9.08;5,134.77,444.68,20.56,8.80;5,152.06,115.84,311.23,293.47"><head>Fig. 2 :</head><label>2</label><figDesc>Fig. 2: Three representative use case examples of the ProteinEngine in user mode, where only the absence of mandatory parameters will be requested to the user.</figDesc><graphic coords="5,152.06,115.84,311.23,293.47" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="8,290.20,397.17,190.39,8.80;8,134.77,409.12,347.21,8.80;8,134.77,421.08,345.83,8.80;8,134.77,433.03,345.82,8.80;8,134.77,444.99,347.76,8.80;8,134.77,456.94,345.83,8.80;8,134.77,468.90,346.19,8.80;8,134.77,480.85,88.31,8.80"><head>Figure 4 .</head><label>4</label><figDesc>Each box plot provides a visual summary of the minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum values for these variables. The box represents the interquartile range (IQR) from Q1 to Q3, the line inside the box denotes the median, and the whiskers extend to show the range of the data within 1.5 times the IQR. Observations beyond this range are considered outliers and are represented as individual points. On average it take 36.40 minutes to complete the user study for each participant.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="8,225.13,652.47,165.09,8.80;8,186.64,514.36,242.07,126.64"><head>Fig. 4 :</head><label>4</label><figDesc>Fig. 4: Boxplots for the four variables.</figDesc><graphic coords="8,186.64,514.36,242.07,126.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="4,134.41,127.30,346.19,248.00"><head>Table 1 :</head><label>1</label><figDesc>The involved AI models and APIs for protein engineering in the proposed ProteinEngine.</figDesc><table coords="4,137.16,163.39,341.03,211.91"><row><cell>API</cell><cell>Functionality</cell><cell>Description</cell><cell>Input</cell><cell>Output</cell></row><row><cell>AlphaFold 2 [9]</cell><cell>protein folding</cell><cell>single-chain structure prediction with MSA</cell><cell>protein sequence</cell><cell>atom-level 3D coordinates; residue-level pLDDT</cell></row><row><cell cols="2">AlphaFold-Multimer [5] protein folding</cell><cell>multi-chain structure prediction with MSA</cell><cell>protein sequence</cell><cell>atom-level 3D coordinates; residue-level pLDDT</cell></row><row><cell>ESMFold [11]</cell><cell>protein folding</cell><cell>MLM-based structure prediction without MSA</cell><cell>protein sequence</cell><cell>atom-level 3D coordinates; residue-level pLDDT</cell></row><row><cell cols="2">MSA Transformer [14] protein folding</cell><cell>single-chain structure prediction with MSA</cell><cell>multiple sequence alignment</cell><cell>atom-level 3D coordinates; in .pdb format</cell></row><row><cell>ESM-IF1 [11]</cell><cell>inverse folding</cell><cell>single-site mutation Transformer-based</cell><cell>protein sequence</cell><cell>de novo protein sequence</cell></row><row><cell>LGN [19]</cell><cell>variant effect prediction</cell><cell>deep mutation GNN based denoising</cell><cell>protein graph</cell><cell>de novo protein sequence</cell></row><row><cell>Equidock [7]</cell><cell cols="2">protein-target interaction rigid-body docking</cell><cell>two protein structures in .pdb format</cell><cell>binding affinity score</cell></row><row><cell>EquiBind [15]</cell><cell cols="2">protein-target interaction rigid-body docking</cell><cell>protein-ligand structure in .pdb format</cell><cell>protein-ligand interaction sites binding affinity score</cell></row><row><cell>DiffDock [3]</cell><cell cols="2">protein-target interaction rigid-body docking</cell><cell>antibody-antigen structures in .pdb format</cell><cell>bound structure of complex</cell></row><row><cell>Diffab [12]</cell><cell cols="2">protein target interaction antibody-antigen interaction</cell><cell>antibody-antibody structures in .pdb format</cell><cell>bound structure of complex binding affinity, epitope mapping</cell></row><row><cell>ProtENN [1]</cell><cell>sequence generation</cell><cell>language-based model</cell><cell cols="2">protein sequence and structure de novo protein sequence with function</cell></row><row><cell>Progen [13]</cell><cell>sequence generation</cell><cell>language-based model</cell><cell>protein sequence</cell><cell>de novo protein sequence with function</cell></row><row><cell>Grade-IF [16]</cell><cell>sequence generation</cell><cell>graph-based model</cell><cell>protein sequence</cell><cell>de novo protein sequence</cell></row><row><cell>GearNet [17]</cell><cell>property prediction</cell><cell>latent representation of protein structure</cell><cell>protein graph</cell><cell>function or structure label</cell></row><row><cell>DeepSol [10]</cell><cell>property prediction</cell><cell>solubility prediction</cell><cell>protein sequence</cell><cell>solubility</cell></row><row><cell>PyMOL</cell><cell>protein visualization</cell><cell>visualize 3D conformation for a given protein molecule</cell><cell>.pdb document</cell><cell>3D visualization of the protein</cell></row><row><cell>VMD</cell><cell>protein visualization</cell><cell>visualize 3D conformation for a given protein molecule</cell><cell>.pdb document</cell><cell>3D visualization of the protein</cell></row><row><cell>BioMedLM</cell><cell>biomedical domain Q&amp;A</cell><cell>trained on biomedical literature and clinical notes</cell><cell>natural language on biomedicine or healthcare</cell><cell>answer questions as a specialist in the field</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="9,163.92,127.30,287.52,65.00"><head>Table 2 :</head><label>2</label><figDesc>Null hypothesis testing results.</figDesc><table coords="9,163.92,139.10,287.52,53.20"><row><cell cols="4">Hypothesis Observed test statistics P-value Reject null hypothesis</cell></row><row><cell>H1</cell><cell>7.7012</cell><cell>2.335 × 10 -8</cell><cell>Yes</cell></row><row><cell>H2</cell><cell>3.1944</cell><cell>1.884 × 10 -3</cell><cell>Yes</cell></row><row><cell>H3</cell><cell>-2.4162</cell><cell>1.166 × 10 -2</cell><cell>Yes</cell></row><row><cell>H4</cell><cell>0.74029</cell><cell>2.330 × 10 -1</cell><cell>No</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="10,142.95,140.06,339.42,8.97;10,151.00,151.01,173.44,8.97" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="10,260.15,140.06,218.21,8.97">Using deep learning to annotate the protein universe</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Maxwell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Bileschi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,151.00,151.56,83.85,7.92">Nature Biotechnology</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="932" to="937" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,161.59,337.64,8.97;10,150.93,172.55,116.24,8.97" xml:id="b1">
+	<monogr>
+		<title level="m" type="main" coords="10,232.10,161.59,248.49,8.97;10,150.93,173.09,31.44,7.92">Sus-a quick and dirty usability scale. Usability evaluation in industry</title>
+		<author>
+			<persName coords=""><forename type="first">John</forename><surname>Brooke</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1996">1996</date>
+			<biblScope unit="volume">189</biblScope>
+			<biblScope unit="page" from="4" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,183.12,337.82,8.97;10,151.52,194.08,330.35,8.97;10,151.29,205.04,20.99,8.97" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="10,244.28,183.12,236.49,8.97;10,151.52,194.08,29.75,8.97">DiffDock: diffusion steps, twists, and turns for molecular docking</title>
+		<author>
+			<persName coords=""><forename type="first">Gabriele</forename><surname>Corso</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,201.18,194.62,276.52,7.92">The Eleventh International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,215.61,337.61,8.97;10,150.81,226.57,97.06,8.97" xml:id="b3">
+	<monogr>
+		<title level="m" type="main" coords="10,257.17,215.61,143.35,8.97">A survey for in-context learning</title>
+		<author>
+			<persName coords=""><forename type="first">Qingxiu</forename><surname>Dong</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2301.00234</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,142.95,237.14,338.92,8.97;10,151.52,248.10,84.00,8.97" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="10,234.22,237.14,208.25,8.97">Protein complex prediction with AlphaFold-Multimer</title>
+		<author>
+			<persName coords=""><forename type="first">Richard</forename><surname>Evans</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,450.19,237.69,27.72,7.92">bioRxiv</title>
+		<imprint>
+			<biblScope unit="page" from="2021" to="2031" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,258.67,337.64,8.97;10,151.52,269.63,200.91,8.97" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="10,234.95,258.67,245.64,8.97;10,151.52,269.63,23.74,8.97">Protgpt2 is a deep unsupervised language model for protein design</title>
+		<author>
+			<persName coords=""><forename type="first">Noelia</forename><surname>Ferruz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,183.30,270.18,93.00,7.92">Nature communications</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">4348</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,280.20,337.63,8.97;10,151.52,291.16,330.35,8.97;10,151.29,302.12,20.99,8.97" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="10,269.86,280.20,210.73,8.97;10,151.52,291.16,84.37,8.97">Independent SE(3)-equivariant models for end-to-end rigid protein docking</title>
+		<author>
+			<persName coords=""><forename type="first">Octavian-Eugen</forename><surname>Ganea</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,256.40,291.71,221.28,7.92">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,312.69,337.64,8.97;10,151.52,323.65,330.86,8.97;10,151.52,334.61,58.30,8.97" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="10,234.71,312.69,245.89,8.97;10,151.52,323.65,97.42,8.97">Development of nasa-tlx (task load index): Results of empirical and theoretical research</title>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Sandra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Hart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,270.47,324.20,94.46,7.92">Advances in psychology</title>
+		<imprint>
+			<publisher>Elsevier</publisher>
+			<date type="published" when="1988">1988</date>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="139" to="183" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.95,345.18,339.42,8.97;10,151.00,356.14,133.64,8.97" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="10,234.82,345.18,243.51,8.97">Highly accurate protein structure prediction with alphafold</title>
+		<author>
+			<persName coords=""><forename type="first">John</forename><surname>Jumper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,151.00,356.69,25.49,7.92">Nature</title>
+		<imprint>
+			<biblScope unit="volume">596</biblScope>
+			<biblScope unit="issue">7873</biblScope>
+			<biblScope unit="page" from="583" to="589" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,366.71,337.98,8.97;10,151.52,377.67,280.20,8.97" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="10,251.57,366.71,229.02,8.97;10,151.52,377.67,110.84,8.97">Deepsol: a deep learning framework for sequence-based protein solubility prediction</title>
+		<author>
+			<persName coords=""><forename type="first">Sameer</forename><surname>Khurana</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,270.36,378.22,57.93,7.92">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="2605" to="2613" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,388.25,337.97,8.97;10,151.19,399.20,243.32,8.97" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="10,226.25,388.25,254.34,8.97;10,151.19,399.20,89.45,8.97">Evolutionary-scale prediction of atomic-level protein structure with a language model</title>
+		<author>
+			<persName coords=""><forename type="first">Zeming</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,249.20,399.75,28.17,7.92">Science</title>
+		<imprint>
+			<biblScope unit="volume">379</biblScope>
+			<biblScope unit="issue">6637</biblScope>
+			<biblScope unit="page" from="1123" to="1130" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,409.78,339.51,8.97;10,151.52,420.74,330.35,8.97;10,151.52,431.69,329.07,8.97;10,151.01,442.65,103.52,8.97" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="10,225.45,409.78,256.68,8.97;10,151.52,420.74,190.12,8.97">Antigen-specific antibody design and optimization with diffusionbased generative models for protein structures</title>
+		<author>
+			<persName coords=""><forename type="first">Shitong</forename><surname>Luo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,350.70,432.24,129.89,7.92;10,151.01,443.20,75.15,7.92">Advances in Neural Information Processing Systems</title>
+		<editor>
+			<persName><forename type="first">Alice</forename><forename type="middle">H</forename><surname>Oh</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Alekh</forename><surname>Agarwal</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Danielle</forename><surname>Belgrave</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Kyunghyun</forename><surname>Cho</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,453.23,337.97,8.97;10,151.52,464.18,251.79,8.97" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="10,228.07,453.23,252.52,8.97;10,151.52,464.18,87.43,8.97">Large language models generate functional protein sequences across diverse families</title>
+		<author>
+			<persName coords=""><forename type="first">Ali</forename><surname>Madani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,246.71,464.73,83.85,7.92">Nature Biotechnology</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="8" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,474.76,339.25,8.97;10,151.01,485.72,329.81,8.97;10,151.52,496.68,329.07,8.97;10,151.29,507.63,20.99,8.97" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="10,239.22,474.76,64.77,8.97">Msa transformer</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Roshan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Rao</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,151.01,486.26,277.96,7.92">Proceedings of the 38th International Conference on Machine Learning</title>
+		<editor>
+			<persName><forename type="first">Marina</forename><surname>Meila</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Tong</forename><surname>Zhang</surname></persName>
+		</editor>
+		<meeting>the 38th International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2021-07">Jul 2021</date>
+			<biblScope unit="volume">139</biblScope>
+			<biblScope unit="page" from="18" to="24" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,518.21,337.98,8.97;10,151.52,529.17,330.86,8.97;10,151.52,540.12,53.86,8.97" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="10,233.62,518.21,246.98,8.97;10,151.52,529.17,38.99,8.97">Equibind: geometric deep learning for drug binding structure prediction</title>
+		<author>
+			<persName coords=""><forename type="first">Hannes</forename><surname>Stärk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,210.00,529.71,186.99,7.92">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="20503" to="20521" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,550.70,337.98,8.97;10,151.00,561.66,199.54,8.97" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="10,208.31,550.70,214.28,8.97">Graph denoising diffusion for inverse protein folding</title>
+		<author>
+			<persName coords=""><forename type="first">Kai</forename><surname>Yi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,431.22,551.24,49.37,7.92;10,151.00,562.20,156.32,7.92">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,572.23,337.98,8.97;10,151.52,583.19,330.35,8.97;10,151.29,594.15,20.99,8.97" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="10,247.46,572.23,233.13,8.97;10,151.52,583.19,42.34,8.97">Protein representation learning by geometric structure pretraining</title>
+		<author>
+			<persName coords=""><forename type="first">Zuobai</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,212.10,583.73,265.74,7.92">The Eleventh International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,142.61,604.72,337.95,8.97;10,150.81,615.68,97.06,8.97" xml:id="b17">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">Wayne</forename><surname>Xin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Zhao</forename></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.18223</idno>
+		<title level="m" coords="10,259.84,604.72,147.05,8.97">A survey of large language models</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,142.61,626.25,337.98,8.97;10,151.52,637.21,330.35,8.97;10,151.29,648.17,20.99,8.97" xml:id="b18">
+	<monogr>
+		<title level="m" type="main" coords="10,244.85,626.25,235.74,8.97;10,151.52,637.21,185.92,8.97">Accurate and definite mutational effect prediction with lightweight equivariant graph neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">Bingxin</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.08299</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

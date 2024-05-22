@@ -1,18 +1,15 @@
 from utils import extract_text, text_to_ListSentences, cosine, remove_stopwords
-from sentence_transformers import SentenceTransformer
-import os
 from lxml import etree
 
 
-def pdf_similarity(title,file):
-
+def pdf_similarity(title,file, sbert_model):
     # list of lists of sentences from abstracts (to compare them with the abstract of interest)
     list_listSentenceEmbedded_all_abstracts = []
 
     array = [title, file]
 
     for filename in array:
-
+        print('start similarities :', title, filename)
         path_to_file = '../Grobid_processed_pdf/' + filename
         tree = etree.parse(path_to_file)
 
@@ -21,9 +18,8 @@ def pdf_similarity(title,file):
         abstract = extract_text(root[0][2])
         pre_processed_abstract = remove_stopwords(abstract)
         listSentence_abstract = text_to_ListSentences(pre_processed_abstract)
-        sbert_model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
         sentence_embeddings = sbert_model.encode(listSentence_abstract)
-        sentences_embeddings_average = sentence_embeddings.mean(axis=0) #mean ? o np.mean ?
+        sentences_embeddings_average = sentence_embeddings.mean(axis=0)
 
 
         #list of sentence of our abstract

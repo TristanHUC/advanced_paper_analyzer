@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,85.33,97.62,442.77,10.75">IS MULTI-TASK LEARNING AN UPPER BOUND FOR CONTINUAL LEARNING?</title>
+				<funder ref="#_rfDm96u">
+					<orgName type="full">Defense Advanced Research Projects Agency</orgName>
+					<orgName type="abbreviated">DARPA</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2022-10-26">26 Oct 2022</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,152.75,126.78,46.17,10.29"><forename type="first">Zihao</forename><surname>Wu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Vanderbilt University</orgName>
+								<address>
+									<settlement>Nashville</settlement>
+									<region>TN</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,209.63,126.78,45.32,10.29"><forename type="first">Huy</forename><surname>Tran</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Vanderbilt University</orgName>
+								<address>
+									<settlement>Nashville</settlement>
+									<region>TN</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,265.66,126.78,88.54,10.29"><forename type="first">Hamed</forename><surname>Pirsiavash</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<settlement>Davis</settlement>
+									<region>CA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,385.83,126.78,69.60,10.29"><forename type="first">Soheil</forename><surname>Kolouri</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Vanderbilt University</orgName>
+								<address>
+									<settlement>Nashville</settlement>
+									<region>TN</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,85.33,97.62,442.77,10.75">IS MULTI-TASK LEARNING AN UPPER BOUND FOR CONTINUAL LEARNING?</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2022-10-26">26 Oct 2022</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BA968B76D5CD8B45655A47ADBCE782E7</idno>
+					<idno type="arXiv">arXiv:2210.14797v1[cs.LG]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:07+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Continual Learning</term>
+					<term>Multi-Task Learning</term>
+					<term>Self Supervised Learning</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Continual and multi-task learning are common machine learning approaches to learning from multiple tasks. The existing works in the literature often assume multi-task learning as a sensible performance upper bound for various continual learning algorithms. While this assumption is empirically verified for different continual learning benchmarks, it is not rigorously justified. Moreover, it is imaginable that when learning from multiple tasks, a small subset of these tasks could behave as adversarial tasks reducing the overall learning performance in a multi-task setting. In contrast, continual learning approaches can avoid the performance drop caused by such adversarial tasks to preserve their performance on the rest of the tasks, leading to better performance than a multi-task learner. This paper proposes a novel continual self-supervised learning setting, where each task corresponds to learning an invariant representation for a specific class of data augmentations. In this setting, we show that continual learning often beats multi-task learning on various benchmark datasets, including MNIST, CIFAR-10, and CIFAR-100.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>Modern Machine Learning (ML) is rapidly moving away from single-task experts towards foundational models that can generalize to multiple tasks. Multi-task and continual learning are the two commonly used paradigms in machine learning when learning from a multitude of tasks. Multi-task learning (MTL) assumes simultaneous access to independent and identically distributed (i.i.d) samples from the joint distribution over all tasks and trains the ML model on this joint distribution. However, in many practical settings, e.g., autonomous driving, one deals with an input data stream and joint training on the ever-growing data and its ever-changing distribution poses a major challenge to MTL. In contrast, continual learning (CL) assumes that the ML model can only have access to one task at a time and learns them sequentially. We note that, appropriately, MTL is sometimes referred to as joint training, while CL is referred to as sequential/incremental training. A dire consequence of not having access to i.i.d. samples from the joint distribution in CL is the catastrophic forgetting phenomenon, which refers to the loss of performance on previous tasks while learning new ones.</p><p>The research community has recently proposed a plethora of approaches for overcoming catastrophic forgetting in the continual learning of deep neural networks. One can broadly categorize these methods into: 1) regularization-based approaches that penalize large changes to important parameters of previous tasks <ref type="bibr" coords="1,388.02,342.36,10.79,8.64" target="#b1">[1,</ref><ref type="bibr" coords="1,402.32,342.36,7.47,8.64" target="#b2">2,</ref><ref type="bibr" coords="1,413.29,342.36,7.47,8.64" target="#b3">3,</ref><ref type="bibr" coords="1,424.26,342.36,7.47,8.64" target="#b4">4,</ref><ref type="bibr" coords="1,435.24,342.36,7.19,8.64" target="#b5">5]</ref>, and 2) memory replay and rehearsal-based approaches <ref type="bibr" coords="1,428.93,354.32,10.79,8.64">[6,</ref><ref type="bibr" coords="1,443.18,354.32,7.47,8.64" target="#b7">7,</ref><ref type="bibr" coords="1,454.12,354.32,7.47,8.64" target="#b8">8,</ref><ref type="bibr" coords="1,465.07,354.32,7.19,8.64" target="#b9">9]</ref>, and 3) architectural methods that rely on model expansion, parameter isolation, and masking <ref type="bibr" coords="1,371.72,378.23,15.77,8.64" target="#b10">[10,</ref><ref type="bibr" coords="1,391.67,378.23,12.45,8.64" target="#b11">11,</ref><ref type="bibr" coords="1,408.30,378.23,12.45,8.64" target="#b12">12,</ref><ref type="bibr" coords="1,424.93,378.23,11.83,8.64" target="#b13">13]</ref>. Others have studied braininspired mechanisms <ref type="bibr" coords="1,404.47,390.18,16.60,8.64" target="#b14">[14]</ref> that allow for continual learning in mammalian brains and how to leverage them for continual machine learning. Interestingly, in nearly all existing approaches, the common baselines are MTL (i.e., joint training) as an upper bound and naive sequential training, leading to catastrophic forgetting, as a lower bound.</p><p>In this paper, we argue that MTL, while being a valuable baseline, is not necessarily an upper bound for CL. We observe that interference in learning is not unique to the CL framework and can happen in MTL. For instance, adversarial examples/tasks, whether optimized or occurring naturally, could significantly reduce the performance of a multi-task learner during training. While CL methods that overcome catastrophic forgetting could avoid the performance drop caused by such adversarial examples/tasks in favor of preserving the performance on non-adversarial examples/tasks. Notably, one can argue that this effect does not happen in non-adversarial settings, as evident in the results on most CL benchmark problems indicating MTL as an upper bound for CL; hence, it could be of limited interest to the community. In response to this criticism, we show that our observation is not unique to adversarial settings and can naturally happen in CL. We introduce the continual learning of augmentation invariant representations as a continual self-supervised learning (SSL) problem. We show that, in this setting, CL often outperforms its MTL counterpart on various benchmark datasets, including MNIST, CIFAR10, and CIFAR100.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">RELATED WORK</head><p>Self Supervised Learning (SSL) has become the dominant paradigm in unsupervised learning of visual representations. State-of-the-art SSL algorithms share the underlying theme of learning representations that are invariant to input augmentations (i.e., distortions of input images). These methods can be generally categorized into contrastive and non-contrastive approaches. Contrastive learning algorithms encourage similar embeddings for different augmentations of the same image while distancing embeddings from other images (i.e., the negative samples). Non-contrastive methods, on the other hand, remove the need for explicit negative samples, and only enforce similar embeddings for different augmentations of positive samples. In this paper, we utilize Barlow Twins <ref type="bibr" coords="2,271.58,242.06,15.27,8.64" target="#b15">[15]</ref>, a non-contrastive SSL algorithm that relies on redundancy reduction, as our core SSL algorithm. Continual Learning (CL) concerns learning ML models from non-stationary input data streams. The majority of existing research in the literature focuses on overcoming catastrophic forgetting in data, class, or domain incremental learning settings <ref type="bibr" coords="2,136.77,326.20,15.27,8.64" target="#b16">[16]</ref>. Notably, the standard benchmarks in the CL literature consider supervised continual learning, while the CL setting is better suited for learning from unlabeled data. Recently, there have been several works that focus on continual self-supervised learning <ref type="bibr" coords="2,203.26,374.02,15.77,8.64" target="#b17">[17,</ref><ref type="bibr" coords="2,221.24,374.02,12.45,8.64" target="#b18">18,</ref><ref type="bibr" coords="2,235.90,374.02,11.83,8.64" target="#b19">19]</ref>, which hold promise for the next generation of CL algorithms. In this paper, we leverage the CaSSLe framework <ref type="bibr" coords="2,234.35,397.93,16.60,8.64" target="#b19">[19]</ref> for continual SSL. In contrast to the existing works in the literature, however, we do not consider incremental learning of classes or domains as our tasks. We observe that the choice of augmentation used for learning invariant representations in SSL changes the input distribution of a CL model. Hence, we treat each type of augmentation as a task and continually train an SSL model on these tasks/augmentations. In other words, we incrementally learn invariant representations to different types of input augmentations. We show that in incremental invariant representation learning, MTL's performance is inferior to CL approaches.</p><p>Lastly, there are emerging works providing connections between MTL and CL methods, e.g., Mirzadeh et al. <ref type="bibr" coords="2,279.11,553.80,15.27,8.64" target="#b20">[20]</ref>, which relate the solutions of multitask and continual learning. Such approaches, however, show these connections on standard CL benchmark datasets for which MTL provides an "upper bound" for CL. Our work encourages the research community to consider alternative learning settings in which MTL is not an upper bound for CL.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">METHOD</head><p>Let X = {x i } n i=1 denote a batch of images sampled from the dataset, T t denote the distribution of image augmentation for the t'th task (e.g., cropping), and f t denote the deep SSL model consisting of a backbone and a projection head. At and ZB = f t-1 (Y B ). We then predict the embedding of the previous model using the current embedding via a past predictor model, g, leading to ẐA = g(Z A ) and ẐB = g(Z B ).</p><formula xml:id="formula_0" coords="2,323.78,79.53,186.33,141.17">! " ! " " # ! # " ! ! ! !"# # ̅ ! # ̅ " % # &amp; ! % # &amp; " ℒ "# Images Distorted Images Embeddings Past Predictor ℒ "# ℒ "# ! ! ! !"# ! ∼ # ! Augmentations for</formula><p>Lastly, we enforce the correlation matrices between: 1) Z A and Z B , 2) ZA and ẐA , and 3) ZB and ẐB to be close to the identity matrix, simultaneously enforcing invariant representations, redundancy reduction, and information accumulation.</p><p>task t, two distorted views of the input batch are generated as</p><formula xml:id="formula_1" coords="2,315.21,417.23,240.79,12.32">Y A = {y A i = T A i (x i )} n i=1 and Y B = {y B i = T B i (x i )} n i=1</formula><p>, where T A i , T B i ∼ T t for ∀i. The distorted batches are then fed to the function f t to produce batches of d-dimensional embeddings Z A , Z B ∈ R n×d (we use Z A = f t (Y A ), and Z B = f t (Y B )). We adopt the Barlow Twins framework <ref type="bibr" coords="2,542.39,466.94,16.60,8.64" target="#b15">[15]</ref> and enforce the cross correlation between Z A and Z B to be close to the identity matrix by minimizing the following loss,</p><formula xml:id="formula_2" coords="2,340.85,511.75,218.14,22.75">L BT (Z A , Z B ) = ∆ i (1 -C ii ) 2 + λ i j =i C 2 ij (1)</formula><p>where the first term enforces invariance to augmentation, the second term enforces redundancy reduction, λ is a positive regularization coefficient that quantifies the relative importance of each term, and C ∈ R d×d is the cross correlation matrix along the batch dimension.</p><p>In our continual self-supervised learning setting, the input data is fixed and the tasks are formed by changing the distribution of data augmentations. In short, we use a set of T unique types of augmentations, {T t } T t=1 , e.g., cropping, jittering, Gaussian noise, etc., and incrementally learn invariant representations to these augmentations, only using augmentation T t when learning the t'th task.</p><p>To avoid catastrophic forgetting, we use the CaSSLe framework <ref type="bibr" coords="2,361.61,702.69,15.27,8.64" target="#b19">[19]</ref>, which is designed for continual SSL. Similar to distillation-based approaches in CL, CaSSLe carries a frozen copy of the model trained on the previous task, f t-1 . However, unlike distillation-based approaches that require representations not to change while training the new model, CaSSLe requires the output of the new model to be predictive of the old model (i.e., no information should be lost). Formally, for Task t, let ZA = f t-1 (Y A ) and ZB = f t-1 (Y B ) be the outputs of the old model on different views of the images augmented with T t , let g : R d → R d denote a past prediction model that is to predict the output of the previous model from the output of the current model, and let ẐA = g(Z A ) denote the prediction of past embedding. Then, CaSSLe uses the following loss:</p><formula xml:id="formula_3" coords="3,58.63,227.35,239.58,37.93">L = L BT (Z A , Z B ) SSL +γ(L BT ( ZA , ẐA ) + L BT ( ZB , ẐB ) CL ) (2)</formula><p>where the first term is the SSL loss, while the second and third terms are the distillation terms enforcing no information loss during continual training of the SSL model, and gamma is the distillation weight. Figure <ref type="figure" coords="3,182.69,315.13,4.98,8.64" target="#fig_0">1</ref> depicts the architecture of CaSSLe used in our work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">NUMERICAL EXPERIMENTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Experimental Setup</head><p>Our goal is to incrementally learn invariant representations for different types of augmentations, in a continual SSL setting. We demonstrate our approach on three benchmark datasets, namely CIFAR-10, CIFAR-100, and MNIST. For each dataset, we select five types of augmentations to create a CL experiment with five tasks. For each dataset, each augmentation is treated as a task in the task sequence for training our models. For CIFAR-10/100 we select cropping, flipping, jittering, adding Gaussian noises, gray scaling, while for MNIST we select cropping, perspective shifting, affine shifting, rotation, and adding Gaussian noise. Note that order of tasks, i.e., the curriculum, matters for our continual learner. Thus, we generate five random curricula for CIFAR-10/100 and another set of five random curricula for MNIST. These curricula are shown in Table <ref type="table" coords="3,169.85,569.04,3.74,8.64" target="#tab_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Training Details</head><p>For our model architecture, f in Figure <ref type="figure" coords="3,209.06,619.01,3.74,8.64" target="#fig_0">1</ref>, we utilize ResNet18 as our backbone along with a projector network that has three linear layers, each with 2048 output units. For the past predictor module, g, we use two linear layers, each with 2048 output units. All these linear layers except the output layer are followed by a batch normalization layer and rectified linear units. We train the model with a batch size of 256 using the Adam optimizer <ref type="bibr" coords="3,121.99,702.69,15.27,8.64" target="#b21">[21]</ref>, distillation weight of γ = 0.5, the Barlow Twins regularization coefficient of λ = 0.005, and a fixed learning rate of 5e -4 for all three datasets. We train the models for 100 epochs/task for CIFAR-10/100 and 50 epochs/task for MNIST. We randomly split five percent of each training set as validation set.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Evaluation Details</head><p>We follow the common practice in SSL and evaluate the trained models via a linear head. In short, for each dataset, we train a linear classifier on top of the fixed representations of our self-supervised ResNet18, and report the classification accuracy. We perform linear evaluation at the end of learning each task. As the baseline, we report the MTL performance on the same number of tasks (jointly trained) trained over an equivalent number of epochs to the continual learner (i.e, for a sequence of five tasks trained on MNIST, MTL is trained on 250 epochs). We repeat each experiment five times and report the average performance throughout our Results section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">Results</head><p>We start by quantifying the contribution of each individual augmentation to SSL on the three datasets. We train our model using the Barlow Twins loss using only one type of augmentation, and report the linear evaluations averaged over  <ref type="table" coords="4,207.18,317.42,3.74,8.64" target="#tab_0">1</ref>.</p><p>five runs in Table <ref type="table" coords="4,125.79,347.42,3.74,8.64" target="#tab_1">2</ref>. In accordance with prior published work in the literature we see that flip and crop augmentations contribute the most to learning CIFAR-10/100, while for MNIST perspective shifting and crop have the largest contribution. Next, we follow the random curricula in Table <ref type="table" coords="4,255.69,398.10,4.98,8.64" target="#tab_0">1</ref> and train the model sequentially on different augmentations. At the end of each task, we perform linear evaluation. For comparison, we perform MTL and jointly train the model on the augmentations. We repeat each experiment five times and report the average performance for all datasets, for all curricula, and for both CL and MTL in Table <ref type="table" coords="4,170.43,469.83,3.74,8.64" target="#tab_2">3</ref>. Note that, CL and MTL are identical when learning from a single task. Our results indicate that MTL is no longer an upper bound for CL, and in fact, CL more consistently results in better or comparable performance to that of MTL.</p><p>We point out that learning invariant representations introduces naturally adversarial tasks. For instance, for CIFAR-10, SSL with A 1 for Curriculum 1 (Crop) results in a %53.60 linear evaluation performance, while joint training with A 1 and A 2 (Flip) results in %50.52, which means that there is negative transfer between the two tasks (i.e., the tasks are naturally adversarial to one another). Interestingly, CL also suffers from a performance drop but the effect is less severe, from %53.60 to %52.62. This phenomenon happens many times throughout our experiment, as it is evident in Table <ref type="table" coords="4,284.29,640.06,3.74,8.64" target="#tab_2">3</ref>.</p><p>Lastly, we calculate the average negative transfer for MTL and CL for all datasets and over all curricula. Briefly, we calculate the number of times when there is a performance drop from A 1:i to A 1:i+1 and report the average performance drop for MTL and CL. Table <ref type="table" coords="4,173.96,702.69,4.98,8.64" target="#tab_3">4</ref> shows the calculated average negative transfer. As can be seen, MTL suffers from higher </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">CONCLUSION</head><p>In this paper, we sought to answer the question: does multitask learning (MTL) provide an upper bound for continual learning (CL)? We posed the problem of learning invariant representations in self-supervised learning (SSL) as a CL problem, where the learner must incrementally learn invariant representations to different types of augmentations. We showed that such a continual learning setting poses naturally adversarial (i.e., conflicting) tasks that lead to a performance drop for MTL. We then showed that CL could avoid this performance drop and provide superior performance compared to MTL on continual self-supervised learning on various benchmark datasets, namely CIFAR-10, CIFAR-100, and MNIST. In the future, we will leverage the observations in this paper to design better self-supervised learning algorithms on large-scale image datasets.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,315.21,242.97,243.78,9.03;2,315.21,255.00,5.78,8.74;2,323.21,253.42,5.99,6.12;2,332.52,255.00,22.99,8.96;2,357.73,253.42,6.02,6.12;2,364.59,255.00,194.41,8.96;2,315.21,266.95,243.78,9.65;2,315.21,278.91,93.06,9.65;2,408.99,277.33,5.99,6.12;2,418.63,278.91,28.95,9.65;2,449.79,277.33,5.99,6.12;2,456.28,278.91,30.46,8.96;2,487.46,277.33,6.02,6.12;2,497.47,278.91,28.95,9.65;2,528.63,277.33,6.02,6.12;2,535.49,278.91,23.50,8.96;2,315.21,288.34,231.20,12.17;2,548.63,289.29,5.99,6.12;2,555.12,290.86,3.87,8.74;2,315.21,300.30,73.72,12.17;2,391.15,301.24,6.02,6.12;2,398.01,302.82,160.98,8.96;2,315.21,315.09,243.77,8.64;2,315.21,324.21,154.00,11.48;2,469.93,325.15,5.99,6.12;2,476.42,324.21,68.64,11.48;2,545.77,325.15,6.02,6.12;2,552.63,326.73,6.36,8.74;2,315.21,338.68,236.58,8.96;2,552.50,337.11,5.99,6.12;2,315.21,350.64,23.58,8.96;2,339.51,349.06,6.02,6.12;2,346.37,348.12,212.62,11.47;2,315.21,362.91,243.77,8.64;2,315.21,374.87,243.77,8.64"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. While learning Task t, we first generate two views, Y A and Y B , of the input batch of images, X, based on augmentations sampled from T t , and embed them via the current model, f t , leading toZ A = f t (Y A ) and Z B = f t (Y B ), and the previous model f t-1 (frozen) leading to ZA = f t-1 (Y A ) and ZB = f t-1 (Y B ). We then predict the embedding of the previous model using the current embedding via a past predictor model, g, leading to ẐA = g(Z A ) and ẐB = g(Z B ). Lastly, we enforce the correlation matrices between: 1) Z A and Z B , 2) ZA and ẐA , and 3) ZB and ẐB to be close to the identity matrix, simultaneously enforcing invariant representations, redundancy reduction, and information accumulation.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="3,315.21,81.95,247.17,173.69"><head>Table 1 .</head><label>1</label><figDesc>Training curricula, where GN refers to Gaussian noise, Rot. to rotation, and Pers. to perspective shifting.</figDesc><table coords="3,315.52,110.10,246.86,145.55"><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>Curriculum</cell><cell></cell><cell></cell></row><row><cell></cell><cell>Task</cell><cell>1</cell><cell>2</cell><cell>3</cell><cell>4</cell><cell>5</cell></row><row><cell></cell><cell>A1</cell><cell>Crop</cell><cell>Crop</cell><cell>Jitter</cell><cell>Jitter</cell><cell>Gray</cell></row><row><cell>CIFARs</cell><cell>A2 A3 A4</cell><cell>Flip Jitter GN</cell><cell>Jitter Gray Flip</cell><cell>Flip GN Crop</cell><cell>GN Flip Gray</cell><cell>GN Jitter Flip</cell></row><row><cell></cell><cell>A5</cell><cell>Gray</cell><cell>GN</cell><cell>Gray</cell><cell>Crop</cell><cell>Crop</cell></row><row><cell></cell><cell>B1</cell><cell>Crop</cell><cell>GN</cell><cell>Affine</cell><cell>Affine</cell><cell>Persp.</cell></row><row><cell>MNIST</cell><cell>B2 B3 B4</cell><cell>Persp. Affine Rot.</cell><cell>Rot. Affine Persp.</cell><cell>Persp. Rot. Crop</cell><cell>Rot. Persp. GN</cell><cell>Rot. Affine GN</cell></row><row><cell></cell><cell>B5</cell><cell>GN</cell><cell>Crop</cell><cell>GN</cell><cell>Crop</cell><cell>Crop</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="3,320.95,269.14,229.81,132.83"><head>Table 2 .</head><label>2</label><figDesc>Training results for individual augmentations.</figDesc><table coords="3,320.95,285.34,229.81,116.63"><row><cell></cell><cell></cell><cell>Dataset</cell><cell></cell></row><row><cell>Augmentation</cell><cell>CIFAR-10</cell><cell>CIFAR-100</cell><cell>MNIST</cell></row><row><cell>Flip</cell><cell>43.74</cell><cell>20.95</cell><cell>-</cell></row><row><cell>Jitter</cell><cell>42.89</cell><cell>17.75</cell><cell>-</cell></row><row><cell>Gray</cell><cell>32.49</cell><cell>9.61</cell><cell>-</cell></row><row><cell>Gaussian Noise</cell><cell>37.96</cell><cell>15.73</cell><cell>93.67</cell></row><row><cell>Crop</cell><cell>53.60</cell><cell>28.59</cell><cell>98.85</cell></row><row><cell>Perspective</cell><cell>-</cell><cell>-</cell><cell>98.88</cell></row><row><cell>Affine</cell><cell>-</cell><cell>-</cell><cell>96.85</cell></row><row><cell>Rotation</cell><cell>-</cell><cell>-</cell><cell>96.26</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="4,54.43,78.17,504.57,247.89"><head>Table 3 .</head><label>3</label><figDesc>Comparison between our CL method and the MTL baseline across curricula. Tasks for each sequence are selected based on curricula as defined in Table</figDesc><table coords="4,54.73,78.17,499.91,212.01"><row><cell></cell><cell></cell><cell cols="2">Curriculum 1</cell><cell cols="2">Curriculum 2</cell><cell cols="2">Curriculum 3</cell><cell cols="2">Curriculum 4</cell><cell cols="2">Curriculum 5</cell></row><row><cell></cell><cell>Task Sequence</cell><cell>MTL</cell><cell>CL</cell><cell>MTL</cell><cell>CL</cell><cell>MTL</cell><cell>CL</cell><cell>MTL</cell><cell>CL</cell><cell>MTL</cell><cell>CL</cell></row><row><cell>CIFAR-10</cell><cell>A 1 A 1 , A 2 A 1 , A 2 , A 3 A 1 , A 2 , A 3 , A 4</cell><cell>53.60 50.52 53.96 59.57</cell><cell>53.60 52.62 58.93 57.83</cell><cell>53.60 53.76 51.7 50.45</cell><cell>53.60 60.83 60.84 60.67</cell><cell>42.89 45.60 44.38 59.57</cell><cell>42.89 44.15 44.72 53.32</cell><cell>42.89 41.36 44.38 40.17</cell><cell>42.89 42.76 43.85 44.00</cell><cell>32.49 34.64 38.44 40.17</cell><cell>32.49 34.28 38.18 45.32</cell></row><row><cell></cell><cell>A 1 , A 2 , A 3 , A 4 , A 5</cell><cell>50.55</cell><cell>57.38</cell><cell>50.55</cell><cell>60.90</cell><cell>50.55</cell><cell>52.24</cell><cell>50.55</cell><cell>52.84</cell><cell>50.55</cell><cell>57.33</cell></row><row><cell>CIFAR-100</cell><cell>A 1 A 1 , A 2 A 1 , A 2 , A 3 A 1 , A 2 , A 3 , A 4 A 1 , A 2 , A 3 , A 4 , A 5</cell><cell>28.59 26.54 27.74 33.98 25.76</cell><cell>28.59 27.27 33.59 32.22 30.90</cell><cell>28.59 27.09 23.79 23.30 25.76</cell><cell>28.59 34.88 34.09 33.47 33.77</cell><cell>17.75 19.25 19.10 33.98 25.76</cell><cell>17.75 18.30 18.78 27.91 26.47</cell><cell>17.75 16.29 19.10 14.94 25.76</cell><cell>17.75 17.78 18.66 18.31 27.70</cell><cell>9.61 11.57 13.89 14.94 25.76</cell><cell>9.61 10.05 11.81 14.72 29.20</cell></row><row><cell></cell><cell>B 1</cell><cell>98.85</cell><cell>98.85</cell><cell>93.67</cell><cell>93.67</cell><cell>96.85</cell><cell>96.85</cell><cell>96.85</cell><cell>96.85</cell><cell>98.88</cell><cell>98.88</cell></row><row><cell>MNIST</cell><cell>B 1 , B 2 B 1 , B 2 , B 3 B 1 , B 2 , B 3 , B 4</cell><cell>98.92 99.19 99.13</cell><cell>99.23 99.26 99.28</cell><cell>95.80 96.46 98.98</cell><cell>96.82 97.64 99.05</cell><cell>99.06 98.31 99.13</cell><cell>98.92 98.9 99.13</cell><cell>96.75 98.32 98.98</cell><cell>96.84 98.81 98.78</cell><cell>99.02 98.32 98.98</cell><cell>99.01 99.06 98.90</cell></row><row><cell></cell><cell>B 1 , B 2 , B 3 , B 4 , B 5</cell><cell>99.14</cell><cell>99.15</cell><cell>99.14</cell><cell>99.25</cell><cell>99.14</cell><cell>99.02</cell><cell>99.14</cell><cell>99.26</cell><cell>99.14</cell><cell>99.24</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" coords="4,315.21,346.70,232.14,97.54"><head>Table 4 .</head><label>4</label><figDesc>Average negative transfer.</figDesc><table coords="4,453.61,362.89,29.88,8.64"><row><cell>Dataset</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>This work was supported by the <rs type="funder">Defense Advanced Research Projects Agency (DARPA)</rs> under Contract No. <rs type="grantNumber">HR00112190135</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_rfDm96u">
+					<idno type="grant-number">HR00112190135</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="4,400.62,680.04,76.69,8.96" xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><surname>References</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="4,336.79,702.69,222.20,8.64;4,336.79,714.65,222.20,8.64;5,76.00,75.48,222.20,8.64;5,76.00,87.43,222.21,8.64;5,76.00,99.22,222.20,8.81;5,76.00,111.17,222.20,8.81;5,76.00,123.30,47.32,8.64" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="5,197.23,87.43,100.98,8.64;5,76.00,99.39,115.48,8.64">Overcoming catastrophic forgetting in neural networks</title>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Kirkpatrick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Razvan</forename><surname>Pascanu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Neil</forename><surname>Rabinowitz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Joel</forename><surname>Veness</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Guillaume</forename><surname>Desjardins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrei</forename><forename type="middle">A</forename><surname>Rusu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Kieran</forename><surname>Milan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">John</forename><surname>Quan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tiago</forename><surname>Ramalho</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Agnieszka</forename><surname>Grabska-Barwinska</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,206.04,99.22,92.16,8.58;5,76.00,111.17,106.51,8.58">Proceedings of the national academy of sciences</title>
+		<meeting>the national academy of sciences</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="3521" to="3526" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,142.98,222.20,8.64;5,76.00,154.94,222.19,8.64;5,76.00,166.72,222.20,8.81;5,76.00,178.85,87.17,8.64" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="5,80.38,154.94,195.43,8.64">Continual learning through synaptic intelligence</title>
+		<author>
+			<persName coords=""><forename type="first">Friedemann</forename><surname>Zenke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ben</forename><surname>Poole</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Surya</forename><surname>Ganguli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,76.00,166.72,186.10,8.58">International Conference on Machine Learning</title>
+		<imprint>
+			<publisher>PMLR</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="3987" to="3995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,198.53,222.21,8.64;5,76.00,210.48,222.20,8.64;5,76.00,222.44,222.20,8.64;5,76.00,234.23,52.86,8.81" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="5,275.19,210.48,23.01,8.64;5,76.00,222.44,201.73,8.64">Memory aware synapses: Learning what (not) to forget</title>
+		<author>
+			<persName coords=""><forename type="first">Rahaf</forename><surname>Aljundi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Francesca</forename><surname>Babiloni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mohamed</forename><surname>Elhoseiny</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Marcus</forename><surname>Rohrbach</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Tinne</forename><surname>Tuytelaars</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,76.00,234.23,22.36,8.58">ECCV</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,254.08,222.21,8.64;5,76.00,266.03,222.20,8.64;5,76.00,277.99,222.20,8.64;5,76.00,289.77,222.20,8.58;5,76.00,301.90,22.42,8.64" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="5,157.95,266.03,140.25,8.64;5,76.00,277.99,200.25,8.64">Sliced cramer synaptic consolidation for preserving deeply learned representations</title>
+		<author>
+			<persName coords=""><forename type="first">Soheil</forename><surname>Kolouri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nicholas</forename><forename type="middle">A</forename><surname>Ketz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrea</forename><surname>Soltoggio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Praveen</forename><forename type="middle">K</forename><surname>Pilly</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,76.00,289.77,218.06,8.58">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,321.58,222.21,8.64;5,76.00,333.54,222.20,8.64;5,76.00,345.49,222.20,8.64;5,76.00,357.28,222.20,8.81;5,76.00,369.23,86.38,8.81" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="5,80.31,345.49,217.89,8.64;5,76.00,357.45,14.48,8.64">Lifelong learning with sketched structural regularization</title>
+		<author>
+			<persName coords=""><forename type="first">Haoran</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aditya</forename><surname>Krishnan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jingfeng</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Soheil</forename><surname>Kolouri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Praveen</forename><forename type="middle">K</forename><surname>Pilly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vladimir</forename><surname>Braverman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,171.85,357.28,126.36,8.58;5,76.00,369.23,49.93,8.58">Proceedings of Machine Learning Research</title>
+		<meeting>Machine Learning Research</meeting>
+		<imprint>
+			<publisher>PMLR</publisher>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="volume">157</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,389.09,222.20,8.64;5,76.00,401.04,222.20,8.64;5,76.00,412.83,222.20,8.81;5,76.00,424.78,222.20,8.81;5,76.00,436.91,62.27,8.64" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="5,124.35,401.04,173.85,8.64;5,76.00,413.00,15.15,8.64">Continual learning with deep generative replay</title>
+		<author>
+			<persName coords=""><forename type="first">Hanul</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jung</forename><surname>Kwon Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jaehong</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jiwon</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,114.41,412.83,183.80,8.58;5,76.00,424.78,192.31,8.58">Proceedings of the 31st International Conference on Neural Information Processing Systems</title>
+		<meeting>the 31st International Conference on Neural Information Processing Systems</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="2994" to="3003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,456.59,222.21,8.64;5,76.00,468.54,222.20,8.64;5,76.00,480.33,222.20,8.81;5,76.00,492.29,137.71,8.81" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="5,225.45,468.54,72.74,8.64;5,76.00,480.50,84.06,8.64">Experience replay for continual learning</title>
+		<author>
+			<persName coords=""><forename type="first">David</forename><surname>Rolnick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Arun</forename><surname>Ahuja</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Schwarz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Timothy</forename><surname>Lillicrap</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Gregory</forename><surname>Wayne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="5,170.74,480.33,127.47,8.58;5,76.00,492.29,76.09,8.58">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,512.14,222.21,8.64;5,76.00,524.09,222.20,8.64;5,76.00,535.88,222.20,8.81;5,76.00,547.83,209.46,8.81" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="5,180.54,524.09,117.66,8.64;5,76.00,536.05,31.09,8.64">Generative continual concept learning</title>
+		<author>
+			<persName coords=""><forename type="first">Mohammad</forename><surname>Rostami</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Soheil</forename><surname>Kolouri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Praveen</forename><surname>Pilly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">James</forename><surname>Mcclelland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,133.72,535.88,164.48,8.58;5,76.00,547.83,83.54,8.58">Proceedings of the AAAI Conference on Artificial Intelligence</title>
+		<meeting>the AAAI Conference on Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="5545" to="5552" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,567.69,222.20,8.64;5,76.00,579.64,222.20,8.64;5,76.00,591.43,222.20,8.81;5,76.00,603.38,203.31,8.81" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="5,99.78,579.64,198.42,8.64;5,76.00,591.60,11.37,8.64">Orthogonal gradient descent for continual learning</title>
+		<author>
+			<persName coords=""><forename type="first">Mehrdad</forename><surname>Farajtabar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Navid</forename><surname>Azizan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Mott</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ang</forename><surname>Li</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,113.42,591.43,184.79,8.58;5,76.00,603.38,78.04,8.58">International Conference on Artificial Intelligence and Statistics</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="3762" to="3773" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,623.23,222.20,8.64;5,76.00,635.19,222.20,8.64;5,76.00,647.14,222.20,8.64;5,76.00,659.10,222.20,8.64;5,76.00,670.89,222.20,8.81;5,76.00,682.84,160.80,8.81" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="5,263.78,647.14,34.42,8.64;5,76.00,659.10,222.20,8.64;5,76.00,671.06,31.09,8.64">Progress &amp; compress: A scalable framework for continual learning</title>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Schwarz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Wojciech</forename><surname>Czarnecki</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jelena</forename><surname>Luketina</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Agnieszka</forename><surname>Grabska-Barwinska</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yee</forename><forename type="middle">Whye</forename><surname>Teh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Razvan</forename><surname>Pascanu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Raia</forename><surname>Hadsell</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,140.18,670.89,158.03,8.58;5,76.00,682.84,34.69,8.58">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="4528" to="4537" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,76.00,702.69,222.20,8.64;5,76.00,714.65,222.20,8.64;5,336.79,75.31,222.20,8.81;5,336.79,87.26,208.32,8.81" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="5,230.87,702.69,67.33,8.64;5,76.00,714.65,213.93,8.64">Packnet: Adding multiple tasks to a single network by iterative pruning</title>
+		<author>
+			<persName coords=""><forename type="first">Arun</forename><surname>Mallya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Svetlana</forename><surname>Lazebnik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,346.92,75.31,212.07,8.58;5,336.79,87.26,114.44,8.58">Proceedings of the IEEE conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="7765" to="7773" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,105.41,222.21,8.64;5,336.79,117.37,222.21,8.64;5,336.79,129.15,222.20,8.81;5,336.79,141.11,222.20,8.81;5,336.79,153.23,42.34,8.64" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="5,341.27,117.37,217.73,8.64;5,336.79,129.32,109.76,8.64">Piggyback: Adapting a single network to multiple tasks by learning to mask weights</title>
+		<author>
+			<persName coords=""><forename type="first">Arun</forename><surname>Mallya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dillon</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Svetlana</forename><surname>Lazebnik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,468.26,129.15,90.74,8.58;5,336.79,141.11,191.96,8.58">Proceedings of the European Conference on Computer Vision (ECCV)</title>
+		<meeting>the European Conference on Computer Vision (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="67" to="82" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,171.21,222.21,8.64;5,336.79,183.16,222.20,8.64;5,336.79,195.12,222.21,8.64;5,336.79,206.91,222.20,8.81;5,336.79,218.86,152.84,8.81" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="5,455.21,195.12,103.78,8.64;5,336.79,207.07,14.48,8.64">Supermasks in superposition</title>
+		<author>
+			<persName coords=""><forename type="first">Mitchell</forename><surname>Wortsman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Rosanne</forename><surname>Vivek Ramanujan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Aniruddha</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mohammad</forename><surname>Kembhavi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jason</forename><surname>Rastegari</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ali</forename><surname>Yosinski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Farhadi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,363.31,206.91,195.68,8.58;5,336.79,218.86,16.60,8.58">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="15173" to="15184" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,237.01,222.20,8.64;5,336.79,248.96,222.21,8.64;5,336.79,260.92,222.20,8.64;5,336.79,272.87,222.20,8.64;5,336.79,284.66,222.20,8.81;5,336.79,296.61,163.25,8.81" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="5,456.53,272.87,102.46,8.64;5,336.79,284.83,119.03,8.64">Biological underpinnings for lifelong learning machines</title>
+		<author>
+			<persName coords=""><forename type="first">Dhireesha</forename><surname>Kudithipudi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Mario</forename><surname>Aguilar-Simon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jonathan</forename><surname>Babb</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Maxim</forename><surname>Bazhenov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Douglas</forename><surname>Blackiston</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Josh</forename><surname>Bongard</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><forename type="middle">P</forename><surname>Brna</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Suraj</forename><surname>Chakravarthi Raja</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Nick</forename><surname>Cheney</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jeff</forename><surname>Clune</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="5,469.60,284.66,89.39,8.58;5,336.79,296.61,27.27,8.58">Nature Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="196" to="210" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,314.76,222.20,8.64;5,336.79,326.72,222.20,8.64;5,336.79,338.50,222.20,8.81;5,336.79,350.46,222.20,8.81;5,336.79,362.58,27.40,8.64" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="5,410.18,326.72,148.81,8.64;5,336.79,338.67,114.56,8.64">Barlow twins: Self-supervised learning via redundancy reduction</title>
+		<author>
+			<persName coords=""><forename type="first">Jure</forename><surname>Zbontar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Li</forename><surname>Jing</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ishan</forename><surname>Misra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Yann</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Stéphane</forename><surname>Deny</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,473.13,338.50,85.86,8.58;5,336.79,350.46,108.58,8.58">International Conference on Machine Learning</title>
+		<imprint>
+			<publisher>PMLR</publisher>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="12310" to="12320" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,380.56,222.21,8.64;5,336.79,392.52,144.02,8.64;5,498.10,392.35,60.89,8.58;5,336.79,404.30,100.17,8.81" xml:id="b16">
+	<monogr>
+		<title level="m" type="main" coords="5,535.95,380.56,23.05,8.64;5,336.79,392.52,136.25,8.64">Three scenarios for continual learning</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Gido</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andreas</forename><forename type="middle">S</forename><surname>Van De Ven</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Tolias</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1904.07734</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="5,336.79,422.45,222.21,8.64;5,336.79,434.24,222.20,8.81;5,336.79,446.19,222.20,8.58;5,336.79,458.15,108.76,8.81" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="5,536.85,422.45,22.14,8.64;5,336.79,434.40,120.51,8.64">Co2l: Contrastive continual learning</title>
+		<author>
+			<persName coords=""><forename type="first">Hyuntak</forename><surname>Cha</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jaeho</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jinwoo</forename><surname>Shin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,482.92,434.24,76.07,8.58;5,336.79,446.19,222.20,8.58;5,336.79,458.15,15.28,8.58">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="9516" to="9525" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,476.29,222.21,8.64;5,336.79,488.25,222.20,8.64;5,336.79,500.20,222.21,8.64;5,336.79,511.99,222.20,8.81;5,336.79,523.94,222.20,8.58;5,336.79,535.90,140.20,8.81" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="5,528.48,488.25,30.50,8.64;5,336.79,500.20,222.21,8.64;5,336.79,512.16,123.73,8.64">Continually learning self-supervised representations with projected functional regularization</title>
+		<author>
+			<persName coords=""><forename type="first">Alex</forename><surname>Gomez-Villa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bartlomiej</forename><surname>Twardowski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Lu</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Andrew</forename><forename type="middle">D</forename><surname>Bagdanov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Joost</forename><surname>Van De Weijer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,483.89,511.99,75.10,8.58;5,336.79,523.94,222.20,8.58;5,336.79,535.90,46.33,8.58">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="3867" to="3877" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,554.05,222.20,8.64;5,336.79,566.00,222.20,8.64;5,336.79,577.79,222.20,8.81;5,336.79,589.74,222.20,8.58;5,336.79,601.70,208.32,8.81" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="5,340.94,577.96,179.53,8.64">Self-supervised models are continual learners</title>
+		<author>
+			<persName coords=""><forename type="first">Enrico</forename><surname>Fini</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G Turrisi</forename><surname>Victor</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Xavier</forename><surname>Da Costa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Elisa</forename><surname>Alameda-Pineda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Karteek</forename><surname>Ricci</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Julien</forename><surname>Alahari</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Mairal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,541.18,577.79,17.81,8.58;5,336.79,589.74,222.20,8.58;5,336.79,601.70,114.44,8.58">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="9621" to="9630" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,619.85,222.19,8.64;5,336.79,631.80,222.20,8.64;5,336.79,643.76,222.21,8.64;5,336.79,655.54,222.20,8.81;5,336.79,667.50,75.73,8.81" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="5,341.14,643.76,217.86,8.64;5,336.79,655.71,31.09,8.64">Linear mode connectivity in multitask and continual learning</title>
+		<author>
+			<persName coords=""><forename type="first">Mehrdad</forename><surname>Seyed Iman Mirzadeh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dilan</forename><surname>Farajtabar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Razvan</forename><surname>Gorur</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Hassan</forename><surname>Pascanu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ghasemzadeh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="5,387.82,655.54,171.17,8.58;5,336.79,667.50,46.92,8.58">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,336.79,685.64,158.00,8.64;5,510.78,685.64,48.21,8.64;5,336.79,697.43,222.20,8.81;5,336.79,709.39,95.19,8.81" xml:id="b21">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Diederik</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jimmy</forename><surname>Kingma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Ba</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1412.6980</idno>
+		<title level="m" coords="5,515.90,685.64,43.08,8.64;5,336.79,697.60,143.56,8.64">Adam: A method for stochastic optimization</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

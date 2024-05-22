@@ -1,0 +1,2012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,139.12,101.17,333.15,15.48;1,118.29,121.09,375.43,15.48">Asking Before Action: Gather Information in Embodied Decision Making with Language Models</title>
+				<funder ref="#_5KrzYu6">
+					<orgName type="full">unknown</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-05-25">25 May 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,189.69,181.86,55.63,8.96;1,247.81,180.35,1.36,6.12"><forename type="first">Xiaoyu</forename><surname>Chen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Tsinghua University</orgName>
+								<orgName type="institution" key="instit2">Northwestern University</orgName>
+								<orgName type="institution" key="instit3">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit4">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit5">Tsinghua University Shanghai Qizhi Institute</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,354.08,181.86,61.18,8.96"><forename type="first">Shenao</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Tsinghua University</orgName>
+								<orgName type="institution" key="instit2">Northwestern University</orgName>
+								<orgName type="institution" key="instit3">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit4">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit5">Tsinghua University Shanghai Qizhi Institute</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,152.80,220.95,53.99,8.96"><forename type="first">Pushi</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Tsinghua University</orgName>
+								<orgName type="institution" key="instit2">Northwestern University</orgName>
+								<orgName type="institution" key="instit3">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit4">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit5">Tsinghua University Shanghai Qizhi Institute</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,290.07,220.95,34.05,8.96"><forename type="first">Li</forename><surname>Zhao</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Tsinghua University</orgName>
+								<orgName type="institution" key="instit2">Northwestern University</orgName>
+								<orgName type="institution" key="instit3">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit4">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit5">Tsinghua University Shanghai Qizhi Institute</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,406.31,220.95,53.98,8.96"><forename type="first">Jianyu</forename><surname>Chen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Tsinghua University</orgName>
+								<orgName type="institution" key="instit2">Northwestern University</orgName>
+								<orgName type="institution" key="instit3">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit4">Microsoft Research Asia</orgName>
+								<orgName type="institution" key="instit5">Tsinghua University Shanghai Qizhi Institute</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,139.12,101.17,333.15,15.48;1,118.29,121.09,375.43,15.48">Asking Before Action: Gather Information in Embodied Decision Making with Language Models</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-05-25">25 May 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">38A61CE074471D7A3C33B2A4FEC64854</idno>
+					<idno type="arXiv">arXiv:2305.15695v1[cs.AI]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1-SNAPSHOT" ident="GROBID" when="2024-05-20T18:11+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>With strong capabilities of reasoning and a generic understanding of the world, Large Language Models (LLMs) have shown great potential in building versatile embodied decision making agents capable of performing diverse tasks. However, when deployed to unfamiliar environments, we show that LLM agents face challenges in efficiently gathering necessary information, leading to suboptimal performance. On the other hand, in unfamiliar scenarios, human individuals often seek additional information from their peers before taking action, leveraging external knowledge to avoid unnecessary trial and error. Building upon this intuition, we propose Asking Before Action (ABA), a method that empowers the agent to proactively query external sources for pertinent information using natural language during their interactions in the environment. In this way, the agent is able to enhance its efficiency and performance by mitigating wasteful steps and circumventing the difficulties associated with exploration in unfamiliar environments. We empirically evaluate our method on an embodied decision making benchmark, ALFWorld, and demonstrate that despite modest modifications in prompts, our method exceeds baseline LLM agents by more than 40%. Further experiments on two variants of ALFWorld illustrate that by imitation learning, ABA effectively retains and reuses queried and known information in subsequent tasks, mitigating the need for repetitive inquiries. Both qualitative and quantitative results exhibit remarkable performance on tasks that previous methods struggle to solve.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="12" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="13" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="14" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="15" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="16" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="17" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="18" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="19" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="20" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="21" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="22" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="23" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="24" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="25" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="26" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="27" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="28" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="29" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="30" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="31" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="32" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="33" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+		<surface n="34" ulx="0.0" uly="0.0" lrx="612.0" lry="792.0"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Recent advances in large language models (LLMs) have exhibited remarkable abilities in language comprehension, text generation, question answering, dialogue, reasoning, and can even exhibit human-level performance on various benchmarks <ref type="bibr" coords="1,314.36,593.72,87.86,8.64" target="#b32">(Ouyang et al., 2022;</ref><ref type="bibr" coords="1,405.36,593.72,99.47,8.64" target="#b8">Chowdhery et al., 2022;</ref><ref type="bibr" coords="1,108.00,604.63,59.37,8.64" target="#b31">OpenAI, 2023;</ref><ref type="bibr" coords="1,169.86,604.63,55.38,8.64">Google, 2023)</ref>. Since LLMs have been trained on extensive and diverse text corpora, they have captured a broad range of commonsense understanding about the world, enabling them to adeptly handle a multitude of various and complex scenarios. Therefore, recently, researchers have proposed to integrate LLMs in embodied decision making <ref type="bibr" coords="1,340.59,637.36,83.34,8.64" target="#b21">(Huang et al., 2022a;</ref><ref type="bibr" coords="1,426.42,637.36,58.05,8.64" target="#b23">Li et al., 2022;</ref><ref type="bibr" coords="1,486.95,637.36,17.05,8.64;1,108.00,648.27,46.11,8.64" target="#b0">Ahn et al., 2022;</ref><ref type="bibr" coords="1,156.56,648.27,79.47,8.64" target="#b22">Huang et al., 2022b;</ref><ref type="bibr" coords="1,238.49,648.27,75.68,8.64" target="#b40">Singh et al., 2022a;</ref><ref type="bibr" coords="1,316.61,648.27,63.83,8.64" target="#b49">Yao et al., 2022;</ref><ref type="bibr" coords="1,382.90,648.27,71.08,8.64" target="#b46">Wang et al., 2023;</ref><ref type="bibr" coords="1,456.42,648.27,48.82,8.64;1,108.00,659.18,22.69,8.64" target="#b15">Driess et al., 2023;</ref><ref type="bibr" coords="1,133.19,659.18,69.86,8.64" target="#b6">Carta et al., 2023)</ref>, either using LLMs to do task planning or directly using LLM as an agent.</p><p>Although language agents are capable of making sound decisions when provided with ample information, they face challenges when encountering situations with limited or insufficient information Figure <ref type="figure" coords="2,136.22,274.59,3.83,8.64">1</ref>: Asking Before Action (ABA) allows the agent to efficiently query for pertinent information from external sources via natural language and subsequently execute actions based on the acquired responses. Imagine the room owner instructs the robot to "put a statue on the dresser" (in the purple box), however, the robot lacks precise knowledge of the statue's location. To accomplish the task, the robot must first gather the necessary information (in this case, the statue's location), then take further actions as shown in the gray box. In the process of information gathering, classical methods (in red dashed box) search for the statute through onerous trial and error, which is both inefficient and demanding especially in complex environments. In contrast, our proposed method (in green dashed box) empowers the robot to directly ask for the location in natural language and proceed directly to the statute according to the answer, which significantly improves both efficiency and success rates. such as unfamiliar environments. In such cases, the agents may struggle to make informed decisions. To illustrate this, let's consider the scenario depicted in Figure <ref type="figure" coords="2,356.03,402.53,3.71,8.64">1</ref>, where a robot is deployed in an unfamiliar house with the task to put a statue on the dresser. However, the robot lacks prior information about the house like the statue's location. Consequently, the robot decides to systematically search for every possible position in order, as shown in the red dashed box in Figure <ref type="figure" coords="2,404.39,435.26,3.75,8.64">1</ref>. Even though the robot finally manages to find the statue, this decision-making process is notably inefficient, not to mention the possibility of suboptimal searching behavior which may lead to failure in finding the statue.</p><p>On the other hand, when we humans encounter such scenarios, we tend to adopt a different approach. Rather than onerous trial and error, it is natural for us to actively query external information from our peers or other information sources to accelerate information gathering and guide decision making. Imagine you are invited to your friend's house and your friend asks you to help move a statue. As shown in Figure <ref type="figure" coords="2,174.61,517.10,3.71,8.64">1</ref>, instead of opening each and every cabinet to check whether there is a statue, you would likely opt to directly ask "where is the statue?", then directly go to the specific location after you got the answer (as shown in green dashed box).</p><p>Building upon this intuition, we focus on a novel setting where the agent can actively query for additional pertinent information from external sources using natural language during their interactions within environments. Though some existing works have explored scenarios involving human-in-theloop interactions to provide additional information, our setting is stands apart from these previous ones. A majority of works <ref type="bibr" coords="2,216.01,598.94,123.94,8.64" target="#b28">(Nguyen and Daumé III, 2019;</ref><ref type="bibr" coords="2,342.45,598.94,81.60,8.64">Nguyen et al., 2019;</ref><ref type="bibr" coords="2,426.55,598.94,78.28,8.64" target="#b41">Singh et al., 2022b;</ref><ref type="bibr" coords="2,108.00,609.85,84.31,8.64" target="#b12">Da Silva et al., 2020)</ref> ask humans for oracle actions or action descriptions, <ref type="bibr" coords="2,406.17,609.85,82.33,8.64" target="#b30">Nguyen et al. (2022)</ref> ask for information about current states and (sub-)goals. <ref type="bibr" coords="2,325.92,620.76,66.95,8.64" target="#b26">Liu et al. (2022)</ref> asks three-word-templated questions to accelerate training, while <ref type="bibr" coords="2,269.90,631.67,87.27,8.64" target="#b22">Huang et al. (2022b)</ref> ask for scene, task, or preferences descriptions. In contrast to existing works, we concentrate on designing a generic mechanism to gather information through natural language, which imposes fewer restrictions and aligns more closely with human decision-making processes.</p><p>In this paper, we aim to investigate the feasibility of designing an agent that is able to automatically ask proper questions in unfamiliar environments via natural language. Two questions linger in our mind: Firstly, can the agent ask various questions to gather a variety of necessary information while filtering out the irrelevant one? Furthermore, can the agent remember and reuse the previously acquired information, thereby avoiding asking for the same information in later-on tasks? The main paper solves these questions in the following organization:</p><p>• We introduce Contextual MDP with Human / External Information Sources in the Loop, a novel theoretical formulation that is able to formalize the scenarios where the agent can actively query to efficiently gather information via language (Section 3.1). • We propose Asking Before Action (ABA), an efficient method that is able to accelerate information gathering by allowing the agent to actively query for pertinent information in natural language while interacting with the environments. ABA can learn to ask proper questions even only with a modest modification of existing agents by providing in-context examples. To further improve the performance, we propose to use imitation learning to enable asking diverse yet pertinent questions as well as remembering and reusing the acquired information (Section 3.2). • Experiments on a series of tasks in ALFWorld <ref type="bibr" coords="3,327.08,223.06,86.01,8.64" target="#b39">(Shridhar et al., 2021)</ref> and its variants empirically demonstrate that our method is capable of asking proper questions and acting upon the answers. Our method demonstrates more than 40% improvement in ALFWorld tasks success rate and achieves remarkable performance on tasks that can hardly be completed using previous methods on ALFWorld variants (Section 4).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Preliminaries</head><p>To effectively portray the obstacles that arise when deploying an agent to unfamiliar environments, we formulate the embodied decision making problem as Contextual Markov Decision Processes (Contextual MDPs) <ref type="bibr" coords="3,188.33,339.68,78.16,8.64" target="#b16">(Hallak et al., 2015)</ref>.</p><formula xml:id="formula_0" coords="3,108.00,360.18,245.35,8.96">Definition 2.1 Contextual MDP is a tuple (S, A, C, M(c)).</formula><p>Here S and A stand for state space and action space respectively. C is the context space. M is a function mapping</p><formula xml:id="formula_1" coords="3,108.00,371.16,396.00,19.65">context c ∈ C to a specific T -horizon MDP M(c) = (S, A, p(•|s, a, c), r(s, a, c)).</formula><p>Here, {M(c), ∀c ∈ C} represents a family of MDPs characterized by a shared state space S and action space A, but with different transition function p(•|s, a, c) and reward function r(s, a, c) specified by c. The goal of the agent is to learn a policy π to maximize the accumulative rewards on the target environment(s). Denote C ′ ⊂ C as the context set in evaluation, we would like to optimize for</p><formula xml:id="formula_2" coords="3,226.07,452.67,278.59,30.20">J (π) = E c ′ ∈C ′ ,s0,p,π T t=0 •r(s t , a t , c)<label>(1)</label></formula><p>Note that the context c varies across different environments, and oftentimes, it remains unknown. Optionally, the agent will be additionally provided with a task instruction i, which is usually a concise language description of the goal, providing extra information about the context c. As shown in Defenition 2.1, when deployed to a new environment, understanding the context c becomes a prerequisite for comprehending the transition and reward functions and ultimately achieving success. In light of this, one common approach is to gather information about the context c through interactions with the environment by trial and error, i.e., infer the context from history</p><formula xml:id="formula_3" coords="3,107.67,560.42,397.49,20.56">ĉ = f θ (s 1 , a 1 , r 1 , • • • , s t ) (or ĉ = f θ (i, s 1 , a 1 , r 1 , • • • , s t ) if i is provided) while trying to solve the task. Here t ∈ {1, 2, • • • , T }</formula><p>and f θ refers to some learnable encoder of c as in <ref type="bibr" coords="3,305.05,582.56,84.93,8.64" target="#b51">(Zintgraf et al., 2020)</ref> Consider an example setting where a robot is tasked with the delivery of food to a bedroom within an unfamiliar house, where c represents the house layout, encompassing the precise locations of the food and the bedroom. To effectively complete the food delivery, the robot must embark on a journey of exploration, aimlessly wandering around to discover both the food and the bedroom.</p><p>However, efficiently gathering information in various unknown environments with different contexts c can be challenging. Aside from limited generalization capability <ref type="bibr" coords="3,362.59,653.49,68.49,8.64" target="#b2">Beck et al. (2023)</ref>, existing methods often rely on dense rewards and sufficiently small state space <ref type="bibr" coords="3,351.34,664.40,83.45,8.64" target="#b52">(Zintgraf et al., 2021)</ref>, which may lead to catastrophic failure in embodied decision making where the environments often lack carefully crafted dense reward functions and the state spaces are often large.</p><p>We argue that this is not, at least always, the case for how we humans deal with unfamiliar environments. Instead of trying to explore everything on our own, we usually turn to another human, maybe a more experienced senior, and ask for helpful information. This behavior will significantly alleviate the exploration burden in a lot of situations. The above intuition urges us to reconsider the process of embodied decision making in unfamiliar evaluation environments: what if the agent does not necessarily need to figure out everything on itself? Though some prior works have studied the scenarios with human-in-the-loop (refer to Section 5 for a detailed survey), as far as we know, we are the first to deal with the setting of enabling information gathering for embodied decision making with LLM agents.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Method</head><p>In this section, we present our new problem formulation as well as the corresponding algorithm.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Contextual MDP with Human / External Information Source in the Loop</head><p>To incorporate humans (or other external knowledge sources) in the loop of decision making, the key difference is that the agent is able to interact with humans directly to efficiently gather information:</p><p>Definition 3.1 Contextual MDP with Human / External information source in the loop based on (S U , A U , C, H(c), M(c)). Here S U , A U are the augmented state space and action space: S U = S ∪ L ans , A U = A ∪ L ask , where L ask and L ans include all possible questions and answers in natural language. H(c) maps context c ∈ C to H c , which is a model of human (or other external information source) in context c that can map any questions to information.</p><formula xml:id="formula_4" coords="4,106.83,314.67,397.17,42.33">M(c) = (S U , A U , H c , p U (•|s, a, c, H c ), r(s, a, c), γ) Like Contextual MDP, M(c) = (S U , A U , H c , p U (•|s, a, c, H c ), r(s, a, c), γ</formula><p>) has a transition function and a reward function parameterized by c. However, the state space S U and the action space A U are augmented with answers and questions respectively, and the transition function p U (•|s, a, c, H c ) can be factorized as:</p><formula xml:id="formula_5" coords="4,171.39,396.42,333.28,12.39">p U (s ′ |s, a, c, H c ) = p(s ′ |s, a, c) • 1 a∈A + p(H c (a) = s ′ ) • 1 a∈L ask (2)</formula><p>With the augmented action space, the agent can now query to gather information while interacting with the environments. For instance, by simply asking "where is the kitchen?", the agent can omit tens of steps of exploration to find the food. However, several challenges exist in this process. Firstly, when deployed to unfamiliar environments, it is important for the agent to identify the key information that is pertinent while filtering out the task-irrelevant ones. Secondly, it would be icing on the cake if the agent can choose to ask only when it cannot reason the answers from historical information.</p><p>To solve these challenges, we propose Asking Before Action (ABA), an effective method for the language agent to cleverly gather necessary information.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Asking Before Action</head><p>In this paper, we focus on the setting where the task instruction i is provided. Therefore, the agent will integrate i and the historical observations and actions (s</p><formula xml:id="formula_6" coords="4,108.00,560.42,396.00,20.56">1 , a 1 , • • • , s t ) by concatenation to get τ t = concat(i, s 1 , a 1 , • • • , s t )</formula><p>, which is used as the input to the policy a t ∼ π(τ t ).</p><p>To efficiently phrase the questions and comprehend the answers, we use pretrained LLMs as the initialization of the agent's policy. Therefore without loss of generality, in the following of this paper we assume that both the states and the actions are in the form of natural language. However, our method can be easily extended to visual settings with multimodal LLMs such as <ref type="bibr" coords="4,426.27,620.76,78.56,8.64" target="#b20">(Huang et al., 2023;</ref><ref type="bibr" coords="4,108.00,631.67,73.25,8.64" target="#b15">Driess et al., 2023)</ref>, or be combined with pretrained low-level policies as in <ref type="bibr" coords="4,408.06,631.67,66.21,8.64" target="#b0">Ahn et al. (2022)</ref>; <ref type="bibr" coords="4,480.91,631.67,23.09,8.64;4,108.00,642.58,52.84,8.64" target="#b40">Singh et al. (2022a)</ref> to solve complex robot control tasks.</p><p>While notable progress has been made in instruction-following LLMs <ref type="bibr" coords="4,389.86,658.97,84.90,8.64" target="#b32">(Ouyang et al., 2022;</ref><ref type="bibr" coords="4,477.24,658.97,26.76,8.64;4,108.00,669.88,45.26,8.64" target="#b9">Chung et al., 2022)</ref>, relying solely on the zero-shot deployment of an LLM agent based on task instruction i falls short of meeting the desired outcomes. To this end, we describe two methods in the following sections to further improve the performance. In Section 3.2.1, we introduce a simple yet effective method to improve policy learning via few-shot in-context examples. In Section 3.2.2, to further improve the performance, we propose to do model finetuning with expert demonstration data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.1">Asking Before Action via In-context Examples</head><p>In-context learning <ref type="bibr" coords="5,186.58,94.25,80.43,8.64" target="#b3">(Brown et al., 2020)</ref> allows LLMs to learn new tasks just by prepending several input-output examples before the inputs, without even optimizing any model parameters. Its superior efficiency and the ability of generalization has attracted a lot of attention <ref type="bibr" coords="5,399.65,116.07,67.34,8.64" target="#b48">(Xie et al., 2021;</ref><ref type="bibr" coords="5,469.47,116.07,34.78,8.64;5,108.00,126.98,46.37,8.64" target="#b1">Akyürek et al., 2022;</ref><ref type="bibr" coords="5,156.87,126.98,61.79,8.64" target="#b13">Dai et al., 2022)</ref>. Recent works focus on embodied planning <ref type="bibr" coords="5,396.01,126.98,82.62,8.64" target="#b21">(Huang et al., 2022a;</ref><ref type="bibr" coords="5,481.12,126.98,22.88,8.64;5,108.00,137.89,53.49,8.64" target="#b40">Singh et al., 2022a)</ref> or embodied decision making <ref type="bibr" coords="5,288.18,137.89,71.06,8.64" target="#b49">(Yao et al., 2022)</ref> with LLM also leverage in-context learning to learn the policy. Therefore, an intuitive and natural way is to provide the agent with examples which show the ability to ask appropriate questions at appropriate time, and then try to generalize to new tasks via in-context learning.</p><p>Instead of directly using the history of current task τ t = concat(i, s 1 , a 1 , • • • , s t ) as inputs, we provide the agent with K human annotated trajectories</p><formula xml:id="formula_7" coords="5,324.81,197.05,152.88,12.48">τ k = concat(i k , s k 1 , a k 1 , • • • , s k T , a k T ),</formula><p>where k ∈ {1, 2, • • • , K}. τ k contains proper asking actions as well as actions interacting with the environment. We then sample i k randomly for different k. With K examples, for the current task, the agent will select actions according to</p><formula xml:id="formula_8" coords="5,248.77,250.93,255.90,11.72">a t ∼ π LLM (τ 1 , • • • , τ K , τ t )<label>(3)</label></formula><p>Instead of directly letting the LLM agent to generate the final action, we follow <ref type="bibr" coords="5,424.30,277.00,67.66,8.64" target="#b0">Ahn et al. (2022)</ref> by directly outputting the conditional probability of each action a i ∈ A by</p><formula xml:id="formula_9" coords="5,203.79,306.30,300.88,31.18">a t = arg max a∈A |a| i=0 π LLM (e i |τ 1 , • • • , τ K , τ t , e 1:i-1 )<label>(4)</label></formula><p>where e i is the i-th token of the action, and |a| refers to the number of tokens of encoded action a. However, in our paper, the action space is augmented with L ask , and therefore A U is infinite. Thus, we propose to first augment the action space with one special action "ask", then score and select. If the action "ask" is selected, the agent will then keep generating the corresponding questions via LLM until the stop token.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.2">Asking Before Action with Imitation Learning</head><p>In experiments, we find that when the task time horizon is relatively short, in-context learning is enough. However, when the time horizon is relatively long, purely in-context learning might be insufficient, and the reasons are as follows. First of all, due to the token limitations of LLMs, sometimes even only providing two examples will also result in truncation during evaluation time. Therefore, sometimes we can only use one example which results in limited diversity and thus hampers the performance of in-context learning. Furthermore, as the task horizon increases, the policy usually tends to become more complex. This complexity exacerbates the need for samples, which may further refrain the agent from learning a good policy especially when the number of samples is limited. Taking these two factors into consideration, more proper treatment is needed for the agent to learn a robust policy.</p><p>To this end, we propose to further finetune the model via imitation learning. We collect a dataset of N trajectories using expert policy</p><formula xml:id="formula_10" coords="5,261.63,556.48,103.51,13.20">D = {(τ i t , a i t , n i t ) Ti t=0 } N i=0</formula><p>where each trajectory consists of input-output pairs for T i timesteps and n i t is a mask variable. To alleviate the distribution shift problem <ref type="bibr" coords="5,144.01,581.00,71.59,8.64" target="#b34">(Ross et al., 2011)</ref>, we intentionally corrupt the expert policy by randomly injecting noisy actions with probability p and mark this as noise by setting n i t = 1 in the dataset. Then, the policy is trained to maximize the probability of actions across trajectories via the cross-entropy loss with all the noisy actions ignored as follows:</p><formula xml:id="formula_11" coords="5,225.44,631.65,160.63,30.43">L = - N i=0 Ti t=0 log π LLM (a i t |τ i t ) • 1 n i t =0</formula><p>(5)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Experiments</head><p>In this section, we empirically evaluate ABA on a series of decision making tasks in ALFWorld <ref type="bibr" coords="5,108.00,713.51,90.41,8.64" target="#b39">Shridhar et al. (2021)</ref> and its variants. In Section 4.1, we assess the effectiveness of ABA on To minimize human involvement, during the evaluation phase, we implement the model of human (or other information sources) H via another language model which is instructed to respond to questions based on the provided information. To incorporate prior knowledge about the current room, we extract the information about the object placement from the simulator and transform it into a descriptive paragraph. This paragraph is then fed to H. Whenever the agent poses a question, H is tasked with providing an answer based on the paragraph. To further improve the answer accuracy, H is prompted with several question-answer examples. We use Vicuna-7B <ref type="bibr" coords="6,419.28,503.08,85.39,8.64" target="#b7">(Chiang et al., 2023)</ref> to implement H. For more details, please refer to Appendix A. It's worth noting that this design allows for the straightforward replacement of the current language model with human or alternative information sources for more appropriate answers.</p><p>As for baselines, we propose to use:</p><p>• BUTLER <ref type="bibr" coords="6,184.10,573.07,83.97,8.64" target="#b39">(Shridhar et al., 2021)</ref>, which is an imitation learning-based method without LLM. Instead, it trains independent models using a substantial dataset of 10 5 expert trajectories for each task.</p><p>• ReAct <ref type="bibr" coords="6,171.60,610.79,66.69,8.64" target="#b49">(Yao et al., 2022)</ref>, which is an LLM-based method synergizing reasoning and acting to take actions.</p><p>As for the implementation, we use Vicuna-7B <ref type="bibr" coords="6,295.72,642.58,80.87,8.64" target="#b7">Chiang et al. (2023)</ref> as the language model for both ReAct and our method, and we incorporate the reasoning process when making decisions <ref type="bibr" coords="6,462.47,653.49,42.77,8.64;6,108.00,664.40,22.56,8.64" target="#b49">(Yao et al., 2022;</ref><ref type="bibr" coords="6,133.05,664.40,65.10,8.64" target="#b0">Ahn et al., 2022)</ref>. For a fair comparison, we use the same scoring method to select actions for both our method and ReAct. In this section, we present the results for ABA with human-annotated in-context examples. For our method and ReAct, we use K in-context examples with K = 2.</p><p>The results are presented in Table   <ref type="formula" coords="7,295.83,313.30,17.76,8.64">2023</ref>) (with a success rate 6%). We hypothesize that the limited model size hampers the reasoning ability, and it is likely that our method would yield even better results with larger models. For example trajectories and qualitative analysis, please refer to Appendix B.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Modified ALFWorld: Multiround ALFWorld and ALFWorld with ambiguous tasks</head><p>To further assess the capabilities of ABA in terms of question asking for gathering diverse information and the ability to remember queried or known information to avoid repetitive questioning, we expand the ALFWorld environment to include two additional variants: ALFWorld with ambiguous tasks and multiround ALFWorld. In this section, we compare two variants of our methods, namely ABA-IC and ABA-IL, with ReAct <ref type="bibr" coords="7,215.75,434.05,70.25,8.64" target="#b49">(Yao et al., 2022)</ref>. ABA-IC refers to ABA via in-context examples as elaborated in Section 3.2.1, while ABA-IL refers to ABA with imitation learning as elaborated in Section 3.2.2. For ABA-IC and ReAct, we utilize human-annotated examples, while for ABA-IL, we manually design an expert policy to collect data. Additional details can be found in Appendix C. In the following, we will detail the modified environments and present the experiment results:</p><p>ALFWorld with ambiguous tasks In this setting, we manually adjusted the task descriptions and reward functions to introduce ambiguity. Instead of providing precise task descriptions, we deliberately left some aspects open-ended, thereby necessitating the agent to gather additional information for successful completion. For instance, in ALFWorld, the task "put a mug on the shelf" is typically considered accomplished as long as any mug is placed on the shelf (there might be multiple mugs in the room). But in this modified setting, the task is only deemed completed when a specific mug is put on the shelf. To complete this task, one can either enumerate all possibilities accordingly until the correct one is identified or directly ask for further clarification about the task.</p><p>For ABA-IC and ReAct, we use K = 2 in-context examples. For ABA-IL, we collect a dataset of 1500 trajectories. The results are shown in Figure <ref type="figure" coords="7,323.64,604.42,3.81,8.64">4</ref>.2. Both ABA-IC and ABA-IL consistently exhibit superior performance compared to ReAct, while the baseline fails to complete the task in many scenarios. In Appendix D, we provide example trajectories that demonstrate the effectiveness of ABA-IC and ABA-IL in asking pertinent questions to gather necessary information, while ReAct struggles to conduct consistent exploration. This again highlights the significance of asking: actively questioning for necessary information does not only improve efficiency but also improves success rate, as it proves challenging to gather the necessary information in various complex environments solely using one policy. Furthermore, ABA-IL slightly outperforms ABA-IC. For ID tasks average success rate, ABA-IL achieves 54% while ABA-IC achieves 45%, and for OOD tasks, ABA-IL achieves 43% while ABA-IC achieves 37%, which proves that, compared learning via in-context examples, imitation learning can further improve the performance. Multiround ALFWorld To further test whether the agent is able to remember the previously known information and avoid asking repeatedly, we introduce multiround ALFWorld. In previous experiments, the episode ends as long as the current task is completed. subsequently, in the next episode, the environment will reset to another room with a different layout. In Multiround ALFWorld, after one task is completed, we randomly sample a new task for the agent to undertake within the same room for multiple rounds. This adjustment enables the agent to familiarize itself with the object placement and provides an opportunity to test its capability to remember and refrain from repetitive questioning. For instance, suppose the agent has previously visited the sidetable to complete a previous task and happened to see there is a mug, or the agent has previously ask about the location of the mug, when the agent is tasked to bring a mug, it can directly go to the location without the need for further inquiries. In this environment, instead of measuring the success rate as in previous experiments, we assign a reward r = 1 upon the completion of each task and measure the total reward after T steps.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pick</head><p>For ReAct and ABA-IC, we use K = 1 in-context example due to the longer trajectory length and token limitation. For ABA-IL, we have a dataset of 500 trajectories. For all experiments, we set T = 50. The agent first queries itself whether it has seen a certain object, and asks only when the answer is negative. For more details, please refer to Appendix E. As for the qualitative results, we show the example trajectories in Appendix F, which demonstrates that the agent is capable of recalling previously acquired information and leveraging it in the following tasks. As for the quantitative results, in Figure <ref type="figure" coords="8,180.84,462.26,3.81,8.64">4</ref>.2, ReAct achieves less than 0.1 rewards in almost all the scenarios. In sharp contrast with that, ABA-IC achieves an average of 0.98 for ID tasks and 0.76 for OOD tasks, while ABA-IL achieves 2.4 and 2.1 respectively. These results indicate that our approach is particularly effective in handling complex tasks.</p><p>Moreover, the deterioration in ReAct's performance compared with previous experiments aligns with our analysis in Section 3.2.2, which suggests that longer in-context examples and smaller K can hinder its effectiveness. While ABA-IC partially overcomes this limitation through a relatively clear policy mapping, we show that ABA-IL can further improve the ABA-IC's performance by around 2X. These findings provide additional evidence for the effectiveness of our proposed methods.</p><p>5 Related Works</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Language Agent</head><p>Natural language modeling pre-trained on large-scale unstructured text corpus has seen tremendous success in a variety of applications, including downstream NLP tasks <ref type="bibr" coords="8,388.26,637.15,86.15,8.64" target="#b33">(Radford et al., 2019;</ref><ref type="bibr" coords="8,476.91,637.15,27.08,8.64;8,108.00,648.06,47.54,8.64" target="#b14">Devlin et al., 2018;</ref><ref type="bibr" coords="8,158.02,648.06,75.94,8.64" target="#b3">Brown et al., 2020)</ref>, logic reasoning <ref type="bibr" coords="8,305.12,648.06,74.09,8.64" target="#b50">(Zhao et al., 2023;</ref><ref type="bibr" coords="8,381.69,648.06,76.34,8.64" target="#b10">Cobbe et al., 2021;</ref><ref type="bibr" coords="8,460.51,648.06,44.73,8.64;8,108.00,658.97,21.02,8.64" target="#b35">Shen et al., 2021)</ref>, and human-AI coordination <ref type="bibr" coords="8,246.81,658.97,81.80,8.64" target="#b4">(Bubeck et al., 2023;</ref><ref type="bibr" coords="8,331.10,658.97,84.11,8.64" target="#b19">Hu and Sadigh, 2023)</ref>. The rich information contained in LLMs as an implicit knowledge base also catalyzes the research on in-context learning <ref type="bibr" coords="8,107.67,680.79,76.21,8.64" target="#b36">(Shin et al., 2022;</ref><ref type="bibr" coords="8,187.64,680.79,69.42,8.64" target="#b48">Xie et al., 2021)</ref> and prompting <ref type="bibr" coords="8,325.37,680.79,84.98,8.64" target="#b3">(Brown et al., 2020;</ref><ref type="bibr" coords="8,414.11,680.79,70.88,8.64" target="#b47">Wei et al., 2022)</ref> that prepend instructions and a few examples to the input of LLMs. However, the time and memory complexity for encoding the prompt is quadratic in the length of the interaction history, such as all the previous trajectories in embodied decision-making, which can increase the burden of the self-attention mechanism and even exceed the token limitations of LLMs. Despite the techniques introduced to address this issue <ref type="bibr" coords="9,181.63,86.39,68.55,8.64" target="#b27">(Mu et al., 2023;</ref><ref type="bibr" coords="9,252.90,86.39,81.81,8.64" target="#b5">Bulatov et al., 2023)</ref>, the proposed ABA-IL is inspired by the recent studies on fine-tuning LLMs <ref type="bibr" coords="9,250.82,97.30,86.46,8.64" target="#b17">(Houlsby et al., 2019;</ref><ref type="bibr" coords="9,339.76,97.30,86.75,8.64" target="#b19">Hu and Sadigh, 2023;</ref><ref type="bibr" coords="9,429.00,97.30,71.96,8.64" target="#b24">Lialin et al., 2023)</ref>, especially those that leverage decision-making signals to train language agents that satisfy certain goals <ref type="bibr" coords="9,131.52,119.11,74.43,8.64" target="#b6">(Carta et al., 2023;</ref><ref type="bibr" coords="9,208.44,119.11,80.77,8.64">Snell et al., 2022a,b)</ref>.</p><p>LLMs have also shown great potential for task planning <ref type="bibr" coords="9,328.34,135.50,82.69,8.64" target="#b22">(Huang et al., 2022b;</ref><ref type="bibr" coords="9,413.46,135.50,62.08,8.64" target="#b25">Lin et al., 2023;</ref><ref type="bibr" coords="9,477.97,135.50,26.03,8.64;9,108.00,146.41,52.94,8.64" target="#b21">Huang et al., 2022a;</ref><ref type="bibr" coords="9,163.71,146.41,74.66,8.64" target="#b46">Wang et al., 2023;</ref><ref type="bibr" coords="9,241.13,146.41,60.22,8.64" target="#b23">Li et al., 2022;</ref><ref type="bibr" coords="9,304.11,146.41,79.43,8.64" target="#b40">Singh et al., 2022a;</ref><ref type="bibr" coords="9,386.30,146.41,71.92,8.64" target="#b6">Carta et al., 2023)</ref>. However, recent criticisms are made on the planning abilities of LLMs <ref type="bibr" coords="9,349.43,157.32,82.58,8.64" target="#b4">(Bubeck et al., 2023;</ref><ref type="bibr" coords="9,434.49,157.32,70.76,8.64;9,108.00,168.23,18.29,8.64" target="#b44">Valmeekam et al., 2022</ref><ref type="bibr" coords="9,133.69,168.23,21.87,8.64" target="#b45">Valmeekam et al., , 2023))</ref>. They show that LLMs can get stuck in long-horizon decision-making tasks and the resulting search procedure often degrades to exhaustive search over the large state and action spaces. While pure LLM planning remains a highly challenging open problem, in this work, we investigate the capacity of LLM agents to actively gather information with humans in the loop.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Embodied Decision Making with Human-in-the-Loop</head><p>Some existing works have also studied the scenarios with human-in-the-loop. They query humans for extra information to guide decision making. A majority of works <ref type="bibr" coords="9,382.25,263.05,122.58,8.64" target="#b28">(Nguyen and Daumé III, 2019;</ref><ref type="bibr" coords="9,108.00,273.96,79.68,8.64">Nguyen et al., 2019;</ref><ref type="bibr" coords="9,190.17,273.96,76.43,8.64" target="#b41">Singh et al., 2022b;</ref><ref type="bibr" coords="9,269.09,273.96,83.01,8.64" target="#b12">Da Silva et al., 2020)</ref>  Existing works include human-in-the-loop of decision making, either (1) directly asking for numerical vectors like actions/states <ref type="bibr" coords="9,215.46,410.35,91.00,8.64" target="#b12">(Da Silva et al., 2020;</ref><ref type="bibr" coords="9,309.51,410.35,80.87,8.64" target="#b41">Singh et al., 2022b;</ref><ref type="bibr" coords="9,393.44,410.35,84.80,8.64" target="#b30">Nguyen et al., 2022)</ref> or (2) querying humans to give exhaustive instruction and learn to convert them to actions <ref type="bibr" coords="9,454.33,421.26,49.67,8.64;9,108.00,432.17,70.21,8.64" target="#b28">(Nguyen and Daumé III, 2019;</ref><ref type="bibr" coords="9,180.72,432.17,81.33,8.64">Nguyen et al., 2019)</ref>. However, in our setting, we only put a minimal burden on humans and ask them for natural language information which is more natural and more straightforward than providing detailed action instructions for humans. Instead of considering human feedback as the scene (or task, preference) descriptor in the decision making pipeline <ref type="bibr" coords="9,401.87,464.90,83.53,8.64" target="#b22">(Huang et al., 2022b)</ref>, we formally formulate the setting as Contextual MDP with Human / External Information Sources in the Loop, which elaborate the effects of asking via context c and allow the agent to query a broader range of information to gather information. Finally, unlike <ref type="bibr" coords="9,345.17,497.62,63.65,8.64" target="#b26">Liu et al. (2022)</ref>, we focus on zero-shot adaptation setting and propose more natural end-to-end methods to circumvent the needs of template and similarity designing.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Conclusion and Discussion</head><p>In this paper, we focus on the setting where the agent can actively query for additional pertinent information from external sources using natural language while interacting in the environments. To formalize this problem, we propose Contextual MDP with Human / External Information Sources in the Loop. Then, we propose Asking Before Action (ABA), a method that empowers the agent to ask various questions to gather diverse information and filter out irrelevant ones. ABA is also able to remember and reuse the acquired information in subsequent tasks, thus avoiding redundant queries.</p><p>In a series of experiments on ALFWorld and its variants, we show qualitatively that ABA is able to propose appropriate questions that satisfy our expectations and make informed decisions based on the answers. Furthermore, the quantitative experiments indicate that ABA consistently outperforms the baselines and achieves a remarkable performance on tasks that are challenging for existing methods. Though currently our method is confined to the language environment, it can readily be extended to incorporate image inputs via multimodal language model <ref type="bibr" coords="9,354.06,691.70,80.61,8.64" target="#b15">(Driess et al., 2023)</ref> or tackle control tasks via low-level policies. We believe that this exciting and promising direction has the potential to significantly expand the capabilities and performance of embodied agents.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A Design and Details about Human Model</head><p>In this section, we describe the design and details about the human model (or other information sources) H. To minimize human involvement, during the evaluation phase, we implement H via another language model which is instructed to respond to questions based on the provided information.</p><p>To incorporate prior knowledge about the current room, we extract the information about the object placement from the simulator and transform it into a descriptive paragraph. This paragraph is then fed to H. Specifically, we use Vicuna-7B <ref type="bibr" coords="14,275.20,152.95,82.60,8.64" target="#b7">(Chiang et al., 2023)</ref> to implement H. Using a pretrained LLM as H allows for answering questions in free-form language based on the information provided, which acts just like humans.</p><p>To better demonstrate, we provide an example for the ALFWorld experiment in Section 4.1. Other experiments in Section 4.2 are similar. In ALFWorld, the context c mainly refers to the initial mappings of the object placement. For different rooms, the initial mappings are, therefore, different.</p><p>We slightly abuse the notations about c here since the agent may replace the objects. Under this mapping, we can directly get the ground truth object locations from the simulator, which are unobservable to the agent. Then, we use a rule-based conversion to convert that list to a string of "A is in B", where A refers to the object, while B refers to the place containing the object.</p><p>Here is an example. After converting, we derive a descriptive paragraph like:</p><formula xml:id="formula_12" coords="14,143.60,294.25,324.53,117.39">bowl 2 is in diningtable 2. saltshaker 2 is in sidetable 1. spatula 1 is in countertop 1. pot 1 is in stoveburner 4. spatula 2 is in drawer 1. dishsponge 3 is in diningtable 2. peppershaker 1 is in cabinet 2. tomato 4 is in sidetable 1. knife 1 is in diningtable 3. cup 1 is in sidetable 1. bread 2 is in diningtable 3. spatula 3 is in diningtable 2. pan 1 is in cabinet 4. tomato 3 is in fridge 1. potato 1 is in sinkbasin 1. peppershaker 3 is in diningtable 3. apple 1 is in fridge 1. saltshaker 1 is in cabinet 4. fork 2 is in drawer 1. spoon 1 is in sidetable 1. egg 1 is in fridge 1. lettuce 1 is in sidetable 1. plate 1 is in diningtable 2.</formula><p>Whenever the agent poses a question, H is tasked with providing an answer based on this paragraph. For instance, the agent may learn to ask:</p><p>Where can I find the dishsponge? Then, in this example, the input to H will be <ref type="bibr" coords="14,293.19,476.41,11.85,8.64" target="#b53">(1)</ref> an instruction that tells the model to provide the answers (in gray); (2) a descriptive paragraph (in black); (3) the question proposed by the agent (in blue).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Read the following paragraph and answer questions</head><formula xml:id="formula_13" coords="14,143.60,519.48,324.53,128.30">: bowl 2 is in diningtable 2. saltshaker 2 is in sidetable 1. spatula 1 is in countertop 1. pot 1 is in stoveburner 4. spatula 2 is in drawer 1. dishsponge 3 is in diningtable 2. peppershaker 1 is in cabinet 2. tomato 4 is in sidetable 1. knife 1 is in diningtable 3. cup 1 is in sidetable 1. bread 2 is in diningtable 3. spatula 3 is in diningtable 2. pan 1 is in cabinet 4. tomato 3 is in fridge 1. potato 1 is in sinkbasin 1. peppershaker 3 is in diningtable 3. apple 1 is in fridge 1. saltshaker 1 is in cabinet 4. fork 2 is in drawer 1. spoon 1 is in sidetable 1. egg 1 is in fridge 1. lettuce 1 is in sidetable 1. plate 1 is in diningtable 2.</formula><p>The questions is: Where can I find the dishsponge?</p><p>Then, the pretrained LLM (e.g., Vicuna-7B <ref type="bibr" coords="14,288.51,670.84,82.43,8.64" target="#b7">Chiang et al. (2023)</ref> in our case), H will provide the answers since it can follow the instructions. In our case, the answer is: dishsponge 1 is in garbagecan 1, dishsponge 2 is in drawer 3, dishsponge 3 is in drawer 4.</p><p>To enhance the performance and improve the accuracy, we provide a few in-context examples and use the prompting format as in Vicuna <ref type="bibr" coords="15,263.19,86.39,78.03,8.64" target="#b7">Chiang et al. (2023)</ref>. Please refer to Appendix G for details.</p><p>It's worth noting that, though we use a language model to simulate humans in our evaluation phase, this design allows for the straightforward replacement of the current language model with human or alternative information sources for more appropriate answers. The performance of our method will be further improved if H can provide more accurate and meaningful answers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B Examples and Qualitative Analysis for ALFWorld Experiments</head><p>This section provides some examples and qualitative analysis for ALFWorld experiments in Section 4.1.</p><p>First, we provide an episode trajectory of our method (ABA-IC), which is randomly sampled from the evaluation set:</p><formula xml:id="formula_14" coords="15,158.81,250.26,31.38,8.30">Obs 1:</formula><p>You are in the middle of a room. Looking quickly around you, you see a bed 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a garbagecan 1, a sidetable 2, and a sidetable 1. Your task is to: put a mug in sidetable.</p><p>Act 1: think: To solve the task, I need to find and take a mug, then put it in sidetable. But where is the mug? Let me ask that person.</p><p>Obs 2: OK. Act 2: ask: Where is the mug?</p><formula xml:id="formula_15" coords="15,143.60,361.49,324.53,19.21">Obs 3: mug 1 is in diningtable 1, mug 3 is in diningtable 1, mug 2 is in diningtable 1.</formula><p>Act 3: think: We can go to diningtable 1 and take the mug 1, then put it in sidetable.</p><p>Obs 4: OK. Act 4: go to diningtable 1 Obs 5: On the diningtable 1, you see a creditcard 3, a creditcard 2, a keychain 3, a keychain 2, a mug 3, a mug 2, a mug 1, a pen 2, a pen 1, a pencil 3, and a pencil 1.</p><p>Act 5: think: Now I find the mug 1. Next, I need to take it, then put it in sidetable.</p><p>Obs 6: Ok. Act 6: take mug 1 from diningtable 1 Obs 7: You pick up the mug 1 from the diningtable 1.</p><p>Act 7: think: Now I take a mug 1. Next, I need to put it in sidetable.</p><p>Obs 8: Ok. Act 8: go to sidetable 1 Obs 9: On the sidetable 1, you see a keychain 1.</p><p>Act 9: put mug 1 in/on sidetable 1 Obs 10: You put the mug 1 in/on the sidetable 1.</p><p>It can be concluded that, for our method, the agent can identify the correct context that is related to the task (i.e., the location of the mug) and then summarize the question and ask a pertinent question (i.e., "Where is the mug?"). After that, the agent can integrate the information in the answer (i.e., notice that mug 1 is in diningtable 1) and act according to that information (i.e., go to diningtable 1, take the mug, and place it in the specific location).</p><p>For comparison, we provide the trajectory of the same episode of ReAct <ref type="bibr" coords="15,397.94,668.99,67.43,8.64" target="#b49">(Yao et al., 2022)</ref>:</p><formula xml:id="formula_16" coords="15,158.81,692.09,31.38,8.30">Obs 1:</formula><p>You are in the middle of a room. Looking quickly around you, you see a bed 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a garbagecan 1, a sidetable 2, and a sidetable 1. Your task is to: put a mug in sidetable.</p><p>Act 1: think: To solve the task, I need to find and take a mug, then put it in sidetable.</p><p>Obs 2: OK. Act 2: think: First I need to find a mug. A mug is more likely to appear in drawer <ref type="bibr" coords="16,285.05,141.72,10.46,8.30" target="#b53">(1)</ref><ref type="bibr" coords="16,295.51,141.72,5.23,8.30">(2)</ref><ref type="bibr" coords="16,295.51,141.72,5.23,8.30">(3)</ref><ref type="bibr" coords="16,300.74,141.72,10.46,8.30">(4)</ref> Obs 51: OK.</p><p>It can be concluded that the agent failed to provide the right plan at first (i.e., Action 1,2), since none of these locations has a mug. Moreover, even with the plans, it failed to yield coherent and correct actions in later steps. For instance, in Action 5, 8, 10, 12, etc., the agent is constantly confused by hallucination (it believes that "Now I find a mug" while there wasn't a mug actually). It also got stuck in loops (it repeatedly visited drawer 1,2,3,4, sidetable 1,2, and bed 1). These together prevent the agent from finishing the task.</p><p>To further understand the experiment results, we provide more examples for our method and ReAct.</p><p>For our method:</p><p>Obs 1: You are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a countertop 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a shelf 2, a shelf 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1. Your task is to: put some spraybottle on toilet.</p><p>Act 1: think: To solve the task, I need to find and take a spraybottle, then put it on the toilet. But where is the spraybottle? Let me ask that person.</p><p>Obs 2: OK. Act 2: ask: Where is the spraybottle? Obs 3: spraybottle 3 is in countertop 1, spraybottle 4 is in dresser 1, spraybottle 2 is in shelf 1.</p><p>Act 3: think: We can go to countertop 1 and take the spraybottle 3, then put it on the toilet.</p><p>Obs 4: OK. Act 4: go to countertop 1 Obs 5: On the countertop 1, you see a mirror 1, a soapbar 1, and a spraybottle 1.</p><p>Act 5: think: Now I find the spraybottle 1. Next, I need to take it, then put it on the toilet.</p><p>Obs 6: OK. Act 6: take spraybottle 1 from countertop 1 Obs 7: You pick up the spraybottle 1 from the countertop 1.</p><p>Act 7: think: Now I take a spraybottle 1. Next, I need to put it on the toilet.</p><p>Obs 8: OK. Act 8: go to toilet 1 Obs 9: On the toilet 1, you see a candle 1, a toiletpaper 2, and a toiletpaper 1.</p><p>Act 9: think: Now I put the spraybottle 1 on the toilet.</p><p>Obs 10: OK. Act 10: put spraybottle 1 in/on toilet 1 Obs 11: You put the spraybottle 1 in/on the toilet 1.</p><p>For ReAct:</p><p>Obs 1: You are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a countertop 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a shelf 2, a shelf 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1. Your task is to: put some spraybottle on toilet.</p><p>Act 1: think: To solve the task, I need to find and take a spraybottle, then put it on toilet.</p><p>Obs 2: OK. Act 2: think: First I need to find a spraybottle. A spraybottle is more likely to appear in drawer <ref type="bibr" coords="19,389.63,339.08,10.46,8.30" target="#b53">(1)</ref><ref type="bibr" coords="19,400.09,339.08,5.23,8.30">(2)</ref><ref type="bibr" coords="19,400.09,339.08,5.23,8.30">(3)</ref><ref type="bibr" coords="19,405.32,339.08,10.46,8.30">(4)</ref>, dresser (1), sinkbasin <ref type="bibr" coords="19,221.78,349.99,15.69,8.30" target="#b53">(1)</ref>, toilet <ref type="bibr" coords="19,284.53,349.99,15.69,8.30" target="#b53">(1)</ref>, and towelholder <ref type="bibr" coords="19,394.34,349.99,15.69,8.30" target="#b53">(1)</ref>. I can check one by one, starting with drawer 1.</p><p>Obs 3: OK. From the above examples, our method can ask proper questions and act accordingly. Though H provides information with slight error (e.g., it mentions that spraybottle 3 is in countertop 1, but only spraybottle 1 is in countertop 1), the agent is robust to such error and successfully adjust its behavior after observing the objects on countertop 1 (i.e., action 5, 6, 7).</p><p>As for ReAct, it successfully visited four drawers and finally found the spraybottle at dresser 1.</p><p>However, first, it failed to list every possible container for the spraybottle (i.e., action 2, it omits countertop, shelf, etc.). In the reasoning step, we observe an interesting pattern (i.e., in Action 5, 8, 11, 14): "Now I find a spraybottle (not). Next, I need to take it", which seems inconsistent (though it does not affect the next step). Moreover, though the agent finally finds the spraybottle and completes the task successfully, it is inefficient and slow to search every possible location: ReAct takes 20 steps.</p><p>In comparison, our method only takes 10 steps to finish the task.</p><p>Four above examples demonstrate that, first, it is challenging to learn a information-gathering policy especially in unfamiliar environments, due to the complexity of the environment. Moreover, even if the agent manage to follow this policy, the information-gathering phase can be inefficient, which needs to exhaustively search every possible position. In contrast, our method succeeds in proposing proper questions and then acting accordingly, which improve the success rate as well as the efficiency. This proves our method's efficacy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C Details about the Data Collection and Environment Variants</head><p>In this section, we provide details about how the data is collected and training as mentioned in Section 4.2.</p><p>As for in-context examples used in ABA-IC, we manually interact with the environment and try to finish the tasks. We ask questions related to the tasks, and answer the questions ourselves by checking the ground truth states in the simulator. Beside the questions, we also add reasoning steps as in <ref type="bibr" coords="20,488.38,533.49,15.62,8.64;20,108.00,544.40,48.39,8.64" target="#b49">Yao et al. (2022)</ref> and select actions according to the information we have. Once completing the task, we take down all the actions and observations and use them as in-context examples.</p><p>As for ABA-IL, we design a rule-based policy according to the PDDL planning trajectories provided along with the environment. Specifically, we integrate the PDDL trajectories and the ground truth states within the simulator to find out what we should do to finish the tasks. Then, we extract the ground truth placements of the necessary objects from the simulator, and we write template-based questions to query this information and provide corresponding answers as observations. We also write chain-of-thought reasoning steps. As mentioned in Section 3.2.2, we manually inject noises by randomly inserting noisy actions at probability p = 0.2. These noisy actions are randomly sampled from the action space. The planning trajectories are also modified accordingly to correctly finish the task. Finally, we organize these questions, reasoning, and interactive actions to get a list of actions.</p><p>When the actions belong to asking for reasoning, we use provided answers or simply "OK." as observations. When the actions aim to interact with the environment, we use environmental feedback as the observations. As for Ambiguous ALFWorld, we use K = 2 for ABA-IC and collect 1500 trajectories for ABA-IL. As for Multiround ALFWorld, we use K = 1 for ABA-IC and collect 500 trajectories for ABA-IL. As for training, to ease the computational burden, we use LoRA <ref type="bibr" coords="20,465.33,713.51,39.91,8.64;21,108.00,75.48,22.92,8.64" target="#b18">(Hu et al., 2021)</ref> with r = 16 and a learning rate of 1e -5. We train the model with 3000 steps for Ambiguous ALFWorld and 6000 steps for Multiround ALFWorld.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D Examples and Qualitative Analysis for ALFWorld with Ambiguous Tasks</head><p>This section provides some examples and qualitative analysis for ALFWorld with Ambiguous Tasks experiments in Section 4.2.</p><p>First, we provide an episode trajectory of ReAct, which is randomly sampled from the evaluation set:</p><p>Obs 1: You are in the middle of a room. Looking quickly around you, you see a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 2, a diningtable 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1. Your task is to: put a hot egg in diningtable.</p><p>Act 1: think: To finish the task, I need to find an egg, then heat it with microwave, then put it in/on diningtable.</p><p>Obs 2: OK. Act 2: think: First I need to find an egg. An egg is more likely to appear in stoveburner 2, countertop 1-3, diningtable 1, and cabinet 9-10. But I have checked stoveburner 2 and countertop 1-3. I can check the remaining places one by one, starting with cabinet 9.</p><p>Obs 3: OK. Act 3: go to cabinet 9 Obs 4: The cabinet 9 is closed. Act 4: think: An egg does not appear in cabinet 9.</p><p>Obs 5: OK. Act 5: go to cabinet 10 Obs 6: The cabinet 10 is closed. Act 6: think: An egg does not appear in cabinet 10. Obs 7: OK. Act 7: go to diningtable 1 Obs 8: On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a dishsponge 1, a fork 1, a potato 1, and a spatula 1.</p><p>Act 8: think: I have checked all the remaining places, and I have not found an egg. The task is not finished.</p><p>Obs 9: OK. Act 9: think: I have not found an egg. This is not a failure, just an unexpected result.</p><p>Obs 10: OK. Act 10: think: What should I do now? The task is not finished.</p><p>Obs 11: OK. Act 11: think: I could try to find an egg again.</p><p>Obs 12: OK. Act 12: go to stoveburner 1 Obs 13: On the stoveburner 1, you see nothing.</p><p>Act 13: go to countertop 1 Obs 14: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 14: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 15: OK.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Obs 1:</head><p>You are in the middle of a room. Looking quickly around you, you see a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 2, a diningtable 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1. Your task is to: put a hot mug in cabinet.</p><p>Act 1: think: To solve the task, I need to find and take a mug, then heat it with microwave, then put it in cabinet. But where is the mug? Let me ask that person.</p><p>Obs 2: OK. Act 2: ask: Where is the mug? Obs 3: mug 1 is in countertop 1, mug 2 is in microwave 1.</p><p>Act 3: think: There are multiple mug. I need to ask which mug should be taken.</p><p>Obs 4: OK. Act 4: ask: Which mug do you prefer? Obs 5: I mean mug 1.</p><p>Act 5: think: Now I understand the task. I can go to countertop 1 and take the mug 1, then heat it with microwave, then put it in cabinet.</p><p>Obs 6: OK. Act 6: go to countertop 1 Obs 7: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 7: take mug 1 from countertop 1 Obs 8: You pick up the mug 1 from the countertop 1.</p><p>Act 8: think: Now I take a mug 1. Next, I need to go to microwave 1 and heat mug 1, then put it in cabinet.</p><p>Obs 9: OK. Act 9: go to microwave 1 Obs 10: The microwave 1 is closed.</p><p>Act 10: heat mug 1 with microwave 1 Obs 11: You heat the mug 1 using the microwave 1.</p><p>Act 11: think: Now I heat mug 1. Next, I need to put it in cabinet 1.</p><p>Obs 12: OK. Act 12: go to cabinet 1 Obs 13: On the cabinet 1, you see nothing.</p><p>Act 13: put mug 1 in/on cabinet 1</p><p>The above trajectory shows that, for our method (ABA-IL), the agent is able to identify the correct object related to the task (i.e., mug) and propose a proper question (i.e., Action 2) to ask the position of the mug, which is also shown in Appendix B. Moreover, when it realized that there were multiple mugs in the room, it further asked for clarification about the task (i.e., Action 4) since in Ambiguous ALFWorld, only the specified object is desirable. This demonstrates that it can ask diverse questions to query various information. Finally, the agent is able to integrate the acquired information into the following decision making: it knows which object is needed, it can head for the correct mug, heat it, and place it on the target location. In contrast to ReAct trajectory where the agent got stuck before finding the mug, the effiency in qualitative examples further proves our method's efficacy.</p><p>As a supplement, we show a typical failure case of our method:</p><p>Obs 1: You are in the middle of a room. Looking quickly around you, you see a cabinet 27, a cabinet 26, a cabinet 25, a cabinet 24, a cabinet 23, a cabinet 22, a cabinet 21, a cabinet 20, a cabinet 19, a cabinet 18, a cabinet 17, a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 1, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1. Your task is to: clean some spatula and put it in drawer.</p><p>Act 1: think: To solve the task, I need to find and take a spatula, then clean it with sinkbasin, then put it in drawer. But where is the spatula? Let me ask that person.</p><p>Obs 2: OK. Act 2: ask: Where is the spatula? Obs 3: spatula 1 is in countertop 2, spatula 2 is in sinkbasin 1.</p><p>Act 3: think: There are multiple spatula. I need to ask which spatula should be taken.</p><p>Obs 4: OK. Act 4: ask: Which spatula do you prefer? Obs 5: I mean, it depends on personal preference. Act 5: think: Now I understand the task better. I need to ask which spatula should be taken, then find and take it, then clean it with sinkbasin, then put it in drawer.</p><p>Obs 6: OK. Act 6: ask: Which spatula do you prefer? Obs 7: I am not sure. Could you remind me the information about each spatula?</p><p>Act 7: think: There are multiple spatula. Let me ask which spatula should be taken first.</p><p>Obs 8: OK. Act 8: ask: Which spatula do you prefer? Obs 9: I am not sure. Could you remind me the information about each spatula?</p><p>Act 9: think: Now I understand the task better. I need to ask which spatula should be taken first, then find and take it, then clean it with sinkbasin, then put it in drawer.</p><p>Obs 10: OK. Act 10: ask: Which spatula do you prefer? Obs 11: I am not sure. Could you remind me the information about each spatula?</p><p>Act 11: think: Now I understand the task better. I need to ask which spatula should be taken first, then find and take it, then clean it with sinkbasin, then put it in drawer.</p><p>Obs 12: OK. Act 12: ask: Which spatula do you prefer? Obs 13: ...</p><p>Though H is instructed with the goal, namely which spatula it is looking for (see Appendix G for more details), it fails to provide the correct answer (e.g., <ref type="bibr" coords="25,330.13,628.19,25.71,8.64">Obs 5,</ref><ref type="bibr" coords="25,355.84,628.19,7.48,8.64">7,</ref><ref type="bibr" coords="25,363.32,628.19,7.48,8.64">9,</ref><ref type="bibr" coords="25,370.81,628.19,11.23,8.64">11)</ref>. Therefore, we assume that by providing more accurate H, the performance of our model will further enhance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E Details about Multiround ALFWorld</head><p>In this section, we provide more details about data collection in Multiround ALFWorld. In Multiround ALFWorld, the main challenge is proposing the right questions. Specifically, the agent needs to avoid repeatedly asking by identifying whether the information to query has already been collected. This requires a specical treatment to the data and we explicitly implement this for clarity. In our case, the agent first asks itself whether it has seen a specific object before asking a question. Only when the answer is negative will it continue to ask. Otherwise, it may directly act based on its memory.</p><p>For ABA-IC, we provide the agent with manually labeled trajectories, in which we manually identify whether the agent needs to ask according to previous interactions, and only ask for more information if needed. As for ABA-IL, we integrate this part in the reasoning step. To be specific, the reasoning will include an explicit query about the target object. When the agent has never seen a particular object, the reasoning step will be like:</p><p>think: To solve the task, I need to find and take a mug, then put it in sidetable. First I need to find the locations of mug. ### query: mug &gt; I have never seen mug before.</p><p>In the above example, the target object is the mug (i.e., "query: mug"), and the agent believes it has never seen the mug before (i.e., "I have never seen mug before.").</p><p>On the other hand, if the agent has ever seen the object (e.g., it has visited diningtable 1 and seen pencil 1 and pencil 3 there), the query and the answer will be like: think: To solve the task, I need to find and take a pencil, then put it in garbagecan. First I need to find the locations of pencil. ### query: pencil &gt; pencil 3 is in diningtable 1, pencil 1 is in diningtable 1.</p><p>After querying itself about the target object, the will act according to the answers. If the agent believes it has never seen the object, it will probably ask for more information. Otherwise, it will directly make decisions depend on the information.</p><p>For ABA-IL, we make it clearer to split the reasoning into two steps. For the first step, we identify the target object. For the second step, we identify whether and where we have seen this object before. These two steps form two pairs of input/output training samples in the dataset. During training, we use teacher forcing. We further augment the dataset by inserting several new queries asking for another object which is randomly sampled from the object list in this environment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F Examples and Qualitative Analysis for Multiround ALFWorld</head><p>In this section, we provide some examples and qualitative analysis for Multiround ALFWorld experiments in Section 4.2.</p><p>We first provide an trajectory for ReAct, which is randomly sampled from the evaluation set:</p><formula xml:id="formula_17" coords="26,158.81,517.55,31.38,8.30">Obs 1:</formula><p>You are in the middle of a room. Looking quickly around you, you see a bed 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a garbagecan 1, a sidetable 2, and a sidetable 1. Your task is to: put a cellphone in diningtable.</p><p>Act 1: think: To solve the task, I need to find and take a cellphone, then put it in diningtable.</p><p>Obs 2: OK. Act 2: think: First I need to find a cellphone. A cellphone is more likely to appear in drawer 1-4. But there is no cellphone on drawer 1-2. I can check one by one, starting with drawer 3.</p><p>Obs 3: OK. Act 3: go to drawer 3 Obs 4: On the drawer 3, you see a cellphone 2. Act 4: take cellphone 2 from drawer 3 Obs 5: You pick up the cellphone 2 from the drawer 3. Act 5: think: Now I take a cellphone 2. Next, I need to put it in diningtable 1.</p><p>Obs 49: OK. Act 49: go to garbagecan 1 Obs 50: On the garbagecan 1, you see nothing. Act 50:</p><p>think: I have finished to put all the objects in their places.</p><p>We show that, in the above example, though the agent successfully located the cellphone after opening drawer3, the initial planning (i.e., Action 2) seemed to contain hallucination ("There is no cellphone on drawer 1-2"), which makes the result a bit of a coincidence. After finishing the first task, the agent again makes some erroneous claims that seem like hallucinations (i.e., Action 9, "there is no pen on drawer 2"). Then, the agent searched for the remaining locations and mistook the "pencil" for the "pen" (i.e., Action 11), and got stuck after wrongly placing the pencil on the target location.</p><p>In comparison, we provide an episode trajectory of our method:</p><formula xml:id="formula_18" coords="29,158.81,233.35,31.38,8.30">Obs 1:</formula><p>You are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a countertop 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a shelf 2, a shelf 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1. Your task is to: put a toiletpaper in drawer.</p><p>Act 1: think: To solve the task, I need to find and take a toiletpaper, then put it in drawer. First I need to find the locations of toiletpaper. ### query: toiletpaper &gt; I have never seen toiletpaper before.</p><p>Obs 2: OK. Act 2: think: I cannot locate toiletpaper, I need to ask the owner of this room.</p><p>Obs 3: OK. Act 3: ask: Where is the toiletpaper? Obs 4: toiletpaper 1 is in toilet 1, toiletpaper 2 is in drawer 2.</p><p>Act 4: think: I can go to toilet 1 and take the toiletpaper, then put it in drawer.</p><p>Obs 5: OK. Act 5: go to toilet 1 Obs 6: On the toilet 1, you see a candle 1, a toiletpaper 2, and a toiletpaper 1.</p><p>Act 6: take toiletpaper 1 from toilet 1 Obs 7: You pick up the toiletpaper 1 from the toilet 1.</p><p>Act 7: think: Now I take a toiletpaper 1. Next, I need to put it in drawer.</p><p>Obs 8: OK. Act 10: put toiletpaper 1 in/on drawer 1 Obs 11: You put the toiletpaper 1 in/on the drawer 1. Your next task is to: put some candle on shelf.</p><p>Act 11: think: To solve the task, I need to find and take a candle, then put it in shelf. First I need to find the locations of candle. ### query: candle &gt; candle 1 is in toilet 1.</p><p>Obs 12: OK. Act 12: think: I can go to toilet 1 and take the candle, then put it in shelf.</p><p>Obs 13: OK.</p><p>Obs 34: You put the soapbottle 3 in/on the toilet 1. Your next task is to: put some cloth on countertop.</p><p>Act 34: think: To solve the task, I need to find and take a cloth, then put it in countertop. First I need to find the locations of cloth. ### query: cloth &gt; I have never seen cloth before.</p><p>Obs Act 49: put toiletpaper 1 in/on shelf 1</p><p>In the above example, the agent can correctly reason whether the information has been collected before. For instance, at the beginning (i.e., Action 1), the agent knows that it has never seen the toiletpaper before, so it decides to ask for more information (i.e., Action 2,3). Moreover, when the information has been collected, it can omit the asking. Since it has seen the candle before (i.e., in Obs 6), when it is tasked to replace the candle, it recalls this information (i.e., Action 11) and directly acts upon it. Action 18, 25, 34, and 43 also successfully identify whether the required information has been collected. The above examples demonstrate that our method can ask proper questions and can avoid repeatedly asking for acquired information. With this ability, it is able to solve more challenging tasks and can achieve better performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>G Examples provided for Human Model</head><p>In this section, we provide more details about the human model examples. As mentioned in Appendix A, we use Vicuna prompts <ref type="bibr" coords="32,212.18,158.83,79.84,8.64" target="#b7">(Chiang et al., 2023)</ref> to help organize these examples (i.e., "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions."). For ALFWorld experiments in Section 4.1, and the multiround ALFWorld experiments in Section 4.2, the in-context examples are:</p><p>A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions. ### Human: Read the following paragraph and answer questions: dishsponge 2 is in drawer 3. spatula 1 is in diningtable</p><formula xml:id="formula_19" coords="32,143.60,266.64,308.78,128.30">1. spoon 1 is in diningtable 1. cup 1 is in fridge 1. dishsponge 1 is in garbagecan 1. butterknife 2 is in diningtable 1. fork 3 is in diningtable 1. saltshaker 1 is in diningtable 1. pot 2 is in stoveburner 3. lettuce 2 is in diningtable 1. tomato 2 is in countertop 2. spatula 2 is in diningtable 1. bowl 3 is in cabinet 16. egg 2 is in countertop 1. bowl 2 is in cabinet 6. fork 1 is in countertop 2. pan 1 is in fridge 1. cup 2 is in cabinet 16. papertowelroll 1 is in diningtable 1. butterknife 3 is in drawer 5. soapbottle 1 is in cabinet 9. apple 1 is in diningtable 1. kettle 2 is in cabinet 12. knife 1 is in countertop 2. cup 3 is in microwave 1.</formula><p>butterknife 1 is in drawer 3. tomato 1 is in sinkbasin 1. peppershaker 1 is in countertop 2. potato 1 is in fridge 1. bread 2 is in diningtable 1. pot 1 is in cabinet 10. dishsponge 3 is in drawer 4. soapbottle 2 is in countertop 1. kettle 1 is in countertop 2. houseplant 1 is in diningtable 1. pot 3 is in stoveburner 4. fork 2 is in drawer 2. mug 1 is in sinkbasin 1. lettuce 1 is in countertop 2. bread 1 is in countertop 2. peppershaker 2 is in countertop 2. plate 1 is in countertop 2. potato 2 is in sinkbasin 1. egg 1 is in countertop 2. bowl 1 is in cabinet 1. peppershaker 3 is in countertop 2. The questions is: Where can I find the dishsponge? ### Assistant: dishsponge 1 is in garbagecan 1, dishsponge 2 is in drawer 3, dishsponge 3 is in drawer 4. ### Human: Read the following paragraph and answer questions:</p><formula xml:id="formula_20" coords="32,143.60,550.28,324.47,171.93">plate 1 is in cabinet 4. soapbottle 1 is in shelf 2. spoon 2 is in diningtable 1. egg 1 is in sinkbasin 1. knife 3 is in diningtable 1. bowl 1 is in diningtable 1. butterknife 2 is in countertop 1. spatula 3 is in diningtable 1. apple 2 is in countertop 1. tomato 1 is in garbagecan 1. pan 1 is in stoveburner 2. mug 2 is in cabinet 7. lettuce 1 is in fridge 1. tomato 2 is in sinkbasin 1. bread 1 is in diningtable 1. ladle 2 is in countertop 1. fork 1 is in countertop 1. saltshaker 1 is in countertop 1. soapbottle 3 is in diningtable 1. spoon 1 is in diningtable 1. butterknife 1 is in countertop 1. spatula 2 is in diningtable 1. ladle 1 is in countertop 1. spatula 1 is in diningtable 1. plate 3 is in diningtable 1. peppershaker 3 is in cabinet 13. cup 1 is in diningtable 1. dishsponge 1 is in cabinet 7. winebottle 1 is in countertop 1. butterknife 3 is in countertop 1. peppershaker 1 is in countertop 1. potato 2 is in fridge 1. peppershaker 2 is in diningtable 1. mug 3 is in diningtable 1. apple 1 is in microwave 1. potato 1 is in garbagecan 1. mug 1 is in cabinet 5. pot 1 is in diningtable 1. saltshaker 3 is in diningtable 1. knife 1 is in countertop 1. pan 1 is in stoveburner 1. knife 2 is in diningtable 1. saltshaker 2 is in countertop 1.</formula><p>soapbottle 2 is in diningtable 1. The questions is: Where is the soapbottle? ### Assistant: soapbottle 1 is in shelf 2, soapbottle 2 is in diningtable 1, soapbottle 3 is in diningtable 1. ### Human: Read the following paragraph and answer questions: remotecontrol 1 is in coffeetable 1. pillow 1 is in sofa 1. book 1 is in dresser 1. creditcard 2 is in coffeetable 1. pen 1 is in coffeetable 1. pen 2 is in sidetable 2. statue 2 is in sidetable 2. creditcard 1 is in dresser 1. cellphone 1 is in dresser 1. creditcard 3 is in armchair 1. pencil 1 is in coffeetable 1. tissuebox 2 is in coffeetable 1. tissuebox 3 is in sidetable 2. houseplant 1 is in sidetable 1. remotecontrol 2 is in armchair 1. book 2 is in coffeetable 1. tissuebox 1 is in coffeetable 1. laptop 1 is in sofa 1. television 1 is in dresser 1. statue 1 is in coffeetable 1. box 1 is in coffeetable 1. The questions is: Where can I find the pen? ### Assistant: pen 1 is in coffeetable 1, pen 2 is in sidetable 2. ### Human: Read the following paragraph and answer questions: bowl 2 is in diningtable 2. potato 2 is in sidetable 1. tomato 1 is in sidetable 1. bread 1 is in diningtable 3. fork 1 is in sidetable 1. dishsponge 1 is in countertop 1. peppershaker 2 is in cabinet 2. lettuce 2 is in garbagecan 1. spoon 2 is in drawer 1. bowl 1 is in cabinet 1. cup 2 is in diningtable 2. soapbottle 2 is in diningtable 2. egg 2 is in sidetable 1. mug 2 is in sinkbasin 1. mug 1 is in coffeemachine 1. plate 2 is in diningtable 3. tomato 2 is in sinkbasin 1. spoon 3 is in drawer 1. saltshaker 2 is in sidetable 1. spatula 1 is in countertop 1. pot 1 is in stoveburner 4. spatula 2 is in drawer 1. dishsponge 3 is in diningtable 2. peppershaker 1 is in cabinet 2. tomato 4 is in sidetable 1. knife 1 is in diningtable 3. cup 1 is in sidetable 1. bread 2 is in diningtable 3. spatula 3 is in diningtable 2. pan 1 is in cabinet 4. tomato 3 is in fridge 1. potato 1 is in sinkbasin 1. peppershaker 3 is in diningtable 3. apple 1 is in fridge 1. saltshaker 1 is in cabinet 4. butterknife 2 is in countertop 1. soapbottle 1 is in cabinet 4. fork 2 is in drawer 1. spoon 1 is in sidetable 1. egg 1 is in fridge 1. lettuce 1 is in sidetable 1. plate 1 is in diningtable 2. egg 3 is in diningtable 2. dishsponge 2 is in diningtable 3. The questions is: Where is the apple? ### Assistant: apple 1 is in fridge 1.</p><p>For ambiguous AFLWorld experiments in Section 4.2, besides the basic information about the object placements, we further assign the specific object the task is looking for. The in-context examples are:</p><p>A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions. ### Human: Read the following paragraph and answer questions: dishsponge 2 is in drawer 3. spatula 1 is in diningtable 1. spoon 1 is in diningtable 1. cup 1 is in fridge 1. dishsponge 1 is in garbagecan 1. saltshaker 1 is in diningtable 1. fork 1 is in countertop 2. pan 1 is in fridge 1. soapbottle 1 is in cabinet 9. apple 1 is in diningtable 1. knife 1 is in countertop 2. butterknife 1 is in drawer 3. tomato 1 is in sinkbasin 1. peppershaker 1 is in countertop 2. potato 1 is in fridge 1. dishsponge 3 is in drawer 4. kettle 1 is in countertop 2. houseplant 1 is in diningtable 1. mug 1 is in sinkbasin 1. You are looking for dishsponge 1. The questions is: Where can I find the dishsponge? ### Assistant: dishsponge 1 is in garbagecan 1, dishsponge 2 is in drawer 3, dishsponge 3 is in drawer 4. ### Human: Another question is: Which dishsponge do you prefer? ### Assistant: I mean dishsponge 1. ### Human: Read the following paragraph and answer questions: plate 1 is in cabinet 4. soapbottle 1 is in shelf 2. tomato 1 is in garbagecan 1. pan 1 is in stoveburner 2. mug 2 is in cabinet 7. lettuce 1 is in fridge 1. ladle 2 is in countertop 1. soapbottle 3 is in diningtable 1. butterknife 1 is in countertop 1. spatula 2 is in diningtable 1. ladle 1 is in countertop 1. cup 1 is in diningtable 1. winebottle 1 is in countertop 1. peppershaker 1 is in countertop 1. potato 2 is in fridge 1. peppershaker 2 is in diningtable 1. mug 3 is in diningtable 1. apple 1 is in microwave 1. mug 1 is in cabinet 5. saltshaker 2 is in countertop 1. soapbottle 2 is in diningtable 1. You are looking for soapbottle 1, soapbottle 2. The questions is: Where can I find the soapbottle? ### Assistant: soapbottle 1 is in shelf 2, soapbottle 2 is in diningtable 1, soapbottle 3 is in diningtable 1. ### Human: Another question is: Which soapbottle do you prefer? ### Assistant: I mean soapbottle 1 and soapbottle 2. ### Human: Read the following paragraph and answer questions: remotecontrol 1 is in coffeetable 1. pillow 1 is in sofa 1. book 1 is in dresser 1. creditcard 2 is in coffeetable 1. pen 1 is in coffeetable 1. pen 2 is in sidetable 2. statue 2 is in sidetable 2. creditcard 1 is in dresser 1. cellphone 1 is in dresser 1. creditcard 3 is in armchair 1. pencil 1 is in coffeetable 1. tissuebox 2 is in coffeetable 1. tissuebox 3 is in sidetable 2. houseplant 1 is in sidetable 1. remotecontrol 2 is in armchair 1. book 2 is in coffeetable 1. tissuebox 1 is in coffeetable 1. laptop 1 is in sofa 1. television 1 is in dresser 1. statue 1 is in coffeetable 1. box 1 is in coffeetable 1. You are looking for pen 2. The questions is: Where can I find the pen? ### Assistant: pen 1 is in coffeetable 1, pen 2 is in sidetable 2. ### Human: Another question is: Which pen do you prefer? ### Assistant: I mean pen 2. ### Human: Read the following paragraph and answer questions: bowl 2 is in diningtable 2. saltshaker 2 is in sidetable 1. spatula 1 is in countertop 1. pot 1 is in stoveburner 4. spatula 2 is in drawer 1. dishsponge 3 is in diningtable 2. peppershaker 1 is in cabinet 2. tomato 4 is in sidetable 1. knife 1 is in diningtable 3. cup 1 is in sidetable 1. bread 2 is in diningtable 3. spatula 3 is in diningtable 2. pan 1 is in cabinet 4. tomato 3 is in fridge 1. potato 1 is in sinkbasin 1. peppershaker 3 is in diningtable 3. apple 1 is in fridge 1. saltshaker 1 is in cabinet 4. fork 2 is in drawer 1. spoon 1 is in sidetable 1. egg 1 is in fridge 1. lettuce 1 is in sidetable 1. plate 1 is in diningtable 2. You are looking for spatula 1. The questions is: Where is the spatula? ### Assistant: spatula 1 is in countertop 1, spatula 2 is in drawer 1. ### Human: Another question is: Which spatula do you prefer? ### Assistant I mean spatula 1.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="8,146.03,218.04,319.95,8.64"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Performance on multiround ALFWorld for our methods and baselines.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="29,158.81,550.06,109.40,8.30;29,158.81,561.00,156.46,8.30;29,158.81,571.93,104.17,8.30;29,158.81,582.86,36.61,8.30;29,211.91,582.86,256.23,8.30;29,143.87,593.77,104.58,8.30"><head></head><label></label><figDesc>You open the drawer 1. The drawer 1 is open. In it, you see nothing.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" coords="2,142.39,72.00,324.70,191.20"><head></head><label></label><figDesc></figDesc><graphic coords="2,142.39,72.00,324.70,191.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="6,107.53,72.27,398.22,357.60"><head>Table 1 :</head><label>1</label><figDesc>Success rate on ALFWorld environments for our methods and baselines. ID and OOD refer to in distribution evaluation set and out-of-distribution evaluation set provided in ALFWorld environment respectively. V7B refers to Vicuna 7B model. We report the best BUTLER success rates across 8 seeds aligned with the original paper<ref type="bibr" coords="6,287.84,105.00,84.11,8.64" target="#b39">(Shridhar et al., 2021)</ref>. For ReAct<ref type="bibr" coords="6,422.41,105.00,65.08,8.64" target="#b49">Yao et al. (2022)</ref> and out method (ABA), we report success rates mean and std across 5 seeds.</figDesc><table coords="6,107.53,137.38,398.22,292.49"><row><cell></cell><cell></cell><cell>Pick</cell><cell>Examine</cell><cell>Clean</cell><cell>Heat</cell><cell>Cool</cell><cell>Pick 2</cell><cell>All</cell></row><row><cell>BUTLER</cell><cell>ID</cell><cell>61</cell><cell>39</cell><cell>44</cell><cell>81</cell><cell>60</cell><cell>29</cell><cell>40</cell></row><row><cell>(best of 8)</cell><cell>OOD</cell><cell>46</cell><cell>22</cell><cell>39</cell><cell>74</cell><cell>100</cell><cell>24</cell><cell>37</cell></row><row><cell>ReAct + V7B</cell><cell>ID</cell><cell>9 ± 7</cell><cell>8 ± 4</cell><cell>9 ± 3</cell><cell>4 ± 5</cell><cell>9 ± 8</cell><cell>4 ± 4</cell><cell>7 ± 3</cell></row><row><cell>(avg of 5)</cell><cell>OOD</cell><cell>3 ± 3</cell><cell>6 ± 3</cell><cell>5 ± 3</cell><cell>10 ± 3</cell><cell>2 ± 3</cell><cell>9 ± 5</cell><cell>6 ± 1</cell></row><row><cell>ABA + V7B</cell><cell>ID</cell><cell cols="7">60 ± 6 52 ± 5 59 ± 6 46 ± 6 61 ± 3 61 ± 10 56 ± 3</cell></row><row><cell>(avg of 5)</cell><cell>OOD</cell><cell>37 ± 5</cell><cell cols="6">53 ± 5 51 ± 2 52 ± 6 50 ± 15 41 ± 0 48 ± 2</cell></row><row><cell cols="9">ALFWorld, demonstrating its capability to formulate proper questions and take subsequent actions.</cell></row><row><cell cols="9">We show ABA results in improvements exceeding 40% in success rate than LLM baseline without</cell></row><row><cell cols="9">asking. In Section 4.2, we extend our evaluation to two variants of ALFWorld, showing the agent's</cell></row><row><cell cols="9">adeptness in gathering diverse information through question-asking, as well as its ability to retain</cell></row><row><cell cols="9">and reuse acquired knowledge to avoid redundant querying. Notably, these modifications to the</cell></row><row><cell cols="9">environments introduce new challenges that previous methods struggle to solve, while ABA exhibits</cell></row><row><cell cols="5">exceptional performance in tackling these tasks.</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>4.1 ALFWorld</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="9">ALFWorld Shridhar et al. (2021) is an embodied decision making environment based on TextWorld</cell></row><row><cell cols="9">Côté et al. (2019), which serves widely as a testbed in previous papers analyzing embodied decision</cell></row><row><cell cols="9">making with LLMs Yao et al. (2022); Shinn et al. (2023). ALFWorld contains six types of different</cell></row><row><cell cols="9">everyday tasks from ALFRED Shridhar et al. (2020) encompassing activities such as picking and</cell></row><row><cell cols="9">placing, examining in light, cleaning, etc. Within each episode, the agent is deployed in a new room</cell></row><row><cell cols="9">and assigned specific tasks to accomplish. All observations and actions are in natural language.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="6,107.67,702.61,398.07,19.55"><head></head><label></label><figDesc>Performance on ALFWorld with ambiguous tasks for our methods and baselines. ID and OOD refer to in-distribution and out-of-distribution evaluation sets.</figDesc><table coords="7,108.00,80.94,360.54,145.74"><row><cell></cell><cell>0.6</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0.5</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Success Rate</cell><cell>0.2 0.3 0.4</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0.1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0.0</cell><cell>Pick</cell><cell cols="2">Examine Clean</cell><cell>Heat</cell><cell>Cool</cell><cell>Pick 2</cell><cell>All</cell></row><row><cell cols="2">ReAct ID</cell><cell></cell><cell>ReAct OOD</cell><cell>ABA-IC ID</cell><cell></cell><cell>ABA-IC OOD</cell><cell>ABA-IL ID</cell><cell>ABA-IL OOD</cell></row><row><cell>Figure 2:</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table><note coords="6,248.95,702.61,256.79,8.64;6,107.67,713.51,396.33,8.64;7,108.00,258.75,396.00,8.64;7,108.00,269.34,396.00,8.96;7,108.00,280.25,77.28,8.96;7,185.28,278.68,3.97,6.12;7,192.24,280.57,311.76,8.64;7,108.00,291.48,396.00,8.64;7,108.00,302.39,396.00,8.64;7,108.00,313.30,187.83,8.64"><p><p><p><p><p><p><p><p><p><p>. The results of BUTLER are directly taken from</p><ref type="bibr" coords="6,449.13,702.61,56.61,8.64;6,107.67,713.51,26.03,8.64" target="#b39">Shridhar et al. (2021)</ref> </p>which reports the best performance across 8 different seeds. As for ReAct and ABA, we report the performance mean and standard deviation across 5 seeds. As shown in Table</p>1</p>, ABA average scores outperform BULTER best scores in 10 out of 14 scenarios despite using only K = 2 in-context examples versus 10 5 expert trajectories used by BUTLER. As for ReAct, our method outperforms it across all tasks by a substantial margin. We observe a performance drop compared with the original results in</p><ref type="bibr" coords="7,146.75,302.39,66.52,8.64" target="#b49">Yao et al. (2022)</ref> </p>when switching the model from PaLM-540B Driess et al. (</p>2023</p>) (with a success rate 57%) to Vicuna-7B</p>Chiang et al. (</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" coords="19,143.87,383.05,324.27,339.16"><head></head><label></label><figDesc>You put the spraybottle 4 in/on the toilet 1.</figDesc><table coords="19,143.87,405.19,324.27,317.02"><row><cell cols="2">Obs 15: OK.</cell></row><row><cell cols="2">Act 15: go to dresser 1</cell></row><row><cell cols="2">Obs 16: On the dresser 1, you see a candle 2, a soapbottle</cell></row><row><cell cols="2">3, a soapbottle 2, and a spraybottle 4.</cell></row><row><cell cols="2">Act 16: take spraybottle 4 from dresser 1</cell></row><row><cell cols="2">Obs 17: You pick up the spraybottle 4 from the dresser 1.</cell></row><row><cell cols="2">Act 17: think: Now I find a spraybottle (4). Next, I need</cell></row><row><cell cols="2">to put it in/on toilet 1.</cell></row><row><cell cols="2">Obs 18: OK.</cell></row><row><cell cols="2">Act 18: go to toilet 1</cell></row><row><cell cols="2">Obs 19: On the toilet 1, you see a candle 1, a toiletpaper</cell></row><row><cell cols="2">2, and a toiletpaper 1.</cell></row><row><cell cols="2">Act 19: put spraybottle 4 in/on toilet 1</cell></row><row><cell>Obs 20:</cell><cell></cell></row><row><cell cols="2">Act 4: open drawer 1</cell></row><row><cell>Obs 5:</cell><cell>You open the drawer 1. The drawer 1 is open. In</cell></row><row><cell cols="2">it, you see nothing.</cell></row><row><cell>Act 5:</cell><cell>think: Now I find a spraybottle (not). Next, I</cell></row><row><cell cols="2">need to take it.</cell></row><row><cell>Obs 6: OK.</cell><cell></cell></row><row><cell cols="2">Act 6: go to drawer 2</cell></row><row><cell cols="2">Obs 7: The drawer 2 is closed.</cell></row><row><cell cols="2">Act 7: open drawer 2</cell></row><row><cell>Obs 8:</cell><cell>You open the drawer 2. The drawer 2 is open. In</cell></row><row><cell cols="2">it, you see a candle 3.</cell></row><row><cell>Act 8:</cell><cell>think: Now I find a spraybottle (not). Next, I</cell></row><row><cell cols="2">need to take it.</cell></row><row><cell>Obs 9: OK.</cell><cell></cell></row><row><cell cols="2">Act 9: go to drawer 3</cell></row><row><cell cols="2">Obs 10: The drawer 3 is closed.</cell></row><row><cell cols="2">Act 10: open drawer 3</cell></row><row><cell>Obs 11:</cell><cell>You open the drawer 3. The drawer 3 is open. In</cell></row><row><cell cols="2">it, you see nothing.</cell></row><row><cell>Act 11:</cell><cell>think: Now I find a spraybottle (not). Next, I</cell></row><row><cell cols="2">need to take it.</cell></row><row><cell cols="2">Obs 12: OK.</cell></row><row><cell cols="2">Act 12: go to drawer 4</cell></row><row><cell cols="2">Obs 13: The drawer 4 is closed.</cell></row><row><cell cols="2">Act 13: open drawer 4</cell></row><row><cell>Obs 14:</cell><cell>You open the drawer 4. The drawer 4 is open. In</cell></row><row><cell cols="2">it, you see nothing.</cell></row><row><cell>Act 14:</cell><cell>think: Now I find a spraybottle (not). Next, I</cell></row><row><cell cols="2">need to take it.</cell></row></table><note coords="19,158.81,383.05,109.40,8.30;19,158.81,394.12,156.46,8.30"><p>Act 3: go to drawer 1 Obs 4: The drawer 1 is closed.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" coords="31,143.60,141.68,324.79,493.26"><head></head><label></label><figDesc>35: OK. You put the cloth 1 in/on the countertop 1. Your next task is to: put some toiletpaper on shelf.</figDesc><table coords="31,143.60,152.77,324.79,482.17"><row><cell>Act 35:</cell><cell>think: I cannot locate cloth, I need to ask the</cell></row><row><cell cols="2">owner of this room.</cell></row><row><cell cols="2">Obs 36: OK.</cell></row><row><cell cols="2">Act 36: ask: Where is the cloth?</cell></row><row><cell cols="2">Obs 37: cloth 1 is in bathtubbasin 1, cloth 2 is in dresser</cell></row><row><cell cols="2">1, cloth 3 is in drawer 2.</cell></row><row><cell>Act 37:</cell><cell>think: I can go to bathtubbasin 1 and take the</cell></row><row><cell cols="2">cloth, then put it in countertop.</cell></row><row><cell cols="2">Obs 38: OK.</cell></row><row><cell cols="2">Act 38: go to bathtubbasin 1</cell></row><row><cell>Obs 39:</cell><cell>On the bathtubbasin 1, you see a cloth 3, a cloth</cell></row><row><cell cols="2">2, and a cloth 1.</cell></row><row><cell cols="2">Act 39: take cloth 1 from bathtubbasin 1</cell></row><row><cell cols="2">Obs 40: You pick up the cloth 1 from the bathtubbasin 1.</cell></row><row><cell cols="2">Act 40: think: Now I take a cloth 1. Next, I need to put</cell></row><row><cell cols="2">it in countertop.</cell></row><row><cell cols="2">Obs 41: OK.</cell></row><row><cell cols="2">Act 41: go to countertop 1</cell></row><row><cell cols="2">Obs 42: On the countertop 1, you see a mirror 1, a soapbar</cell></row><row><cell cols="2">1, and a spraybottle 1.</cell></row><row><cell cols="2">Act 42: put cloth 1 in/on countertop 1</cell></row><row><cell>Obs 43:</cell><cell></cell></row><row><cell>Act 43:</cell><cell>think: To solve the task, I need to find and</cell></row><row><cell cols="2">take a toiletpaper, then put it in shelf. First I need to</cell></row><row><cell cols="2">find the locations of toiletpaper. ### query: toiletpaper &gt;</cell></row><row><cell cols="2">toiletpaper 1 is in garbagecan 1, toiletpaper 2 is in drawer</cell></row><row><cell>2.</cell><cell></cell></row><row><cell cols="2">Obs 44: OK.</cell></row><row><cell>Act 44:</cell><cell>think: I can go to garbagecan 1 and take the</cell></row><row><cell cols="2">toiletpaper, then put it in shelf.</cell></row><row><cell cols="2">Obs 45: OK.</cell></row><row><cell cols="2">Act 45: go to garbagecan 1</cell></row><row><cell cols="2">Obs 46: On the garbagecan 1, you see a spraybottle 3, and a</cell></row><row><cell cols="2">toiletpaper 1.</cell></row><row><cell cols="2">Act 46: take toiletpaper 1 from garbagecan 1</cell></row><row><cell>Obs 47:</cell><cell>You pick up the toiletpaper 1 from the garbagecan</cell></row><row><cell>1.</cell><cell></cell></row><row><cell>Act 47:</cell><cell>think: Now I take a toiletpaper 1. Next, I need</cell></row><row><cell cols="2">to put it in shelf.</cell></row><row><cell cols="2">Obs 48: OK.</cell></row><row><cell cols="2">Act 48: go to shelf 1</cell></row><row><cell>Obs 49:</cell><cell>On the shelf 1, you see a candle 1, and a</cell></row><row><cell cols="2">spraybottle 2.</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Act 15: go to countertop 2 Obs 16: On the countertop 2, you see a bowl 2, and a knife 1.</p><p>Act 16: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 17: OK. Act 17: go to countertop 1 Obs 18: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 18: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 19: OK. Act 19: go to countertop 2 Obs 20: On the countertop 2, you see a bowl 2, and a knife 1.</p><p>Act 20: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 21: OK. Act 21: go to countertop 1 Obs 22: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 22: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 23: OK. Act 23: go to countertop 2 Obs 24: On the countertop 2, you see a bowl 2, and a knife 1.</p><p>Act 24: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 25: OK. Act 25: go to countertop 1 Obs 26: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 26: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 27: OK. Act 27: go to countertop 2 Obs 28: On the countertop 2, you see a bowl 2, and a knife 1.</p><p>Act 28: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 29: OK. Act 29: go to countertop 1 Obs 30: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 30: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 31: OK. Act 31: go to countertop 2 Obs 32: On the countertop 2, you see a bowl 2, and a knife 1. Act 32: think: It is possible that an egg is Obs 33: OK. Act 33: go to countertop 1 Obs 34: On the countertop 1, you see a butterknife 1, and a mug 1. Act 34: think: It is possible that an egg is hidden under one of these objects. Obs 35: OK. Act 35: go to countertop 2 Obs 36: On the countertop 2, you see a bowl 2, and a knife 1. Act 36: think: It is possible that an egg is hidden under one Obs 37: OK. Act 37: go to countertop 1 Obs 38: On the countertop 1, you see a butterknife 1, and a mug 1. Act 38: think: It is possible that an egg is hidden under one of these objects. Obs 39: OK. Act 39: go to countertop 2 Obs 40: On the countertop 2, you see a bowl 2, and a knife 1. Act 40: think: It is possible that an egg is hidden under one of these objects. Obs 41: OK. Act 41: go to countertop 1 Obs 42: On the countertop 1, you see a butterknife 1, and a mug 1. Act 42: think: It is possible that an egg is hidden under one of these objects. Obs 43: OK. Act 43: go to countertop 2 Obs 44: On the countertop 2, you see a bowl 2, and a knife 1.</p><p>Act 44: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 45: OK. Act 45: go to countertop 1 Obs 46: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 46: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 47: OK. Act 47: go to countertop 2 Obs 48: On the countertop 2, you see a bowl 2, and a knife 1.</p><p>Act 48: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 49: OK. Act 49: go to countertop 1 Obs 50: On the countertop 1, you see a butterknife 1, and a mug 1.</p><p>Act 50: think: It is possible that an egg is hidden under one of these objects.</p><p>Obs 51: OK.</p><p>In this episode, the agent failed to find the egg. Initially, it failed to propose correct plans (i.e., action 2). It listed several locations where the eggs could be but not all (e.g., cabinet 1-8, diningtable 2, fridge, etc). Then, it incorrectly thought it had checked some of these places, which suggested there might be hallucinations. These two steps limit the searching range of the agent and prevent the agent from finding the target object. In the following steps, it checked cabinet 9-10 (but without opening the cabinets), stoveburner 1, countertop 1-2, and then got stuck by repeatedly visiting the countertop <rs type="grantNumber">1-2</rs>.</p><p>The episode of the same room setting for our method (ABA-IL) is:</p></div>
+			</div>
+			<div type="funding">
+<div><p>Now I find a mug (3). Next, I need to put it in drawer 3.</p><p>Obs 23: OK. Act 23: go to drawer 4 Obs 24: On the drawer 4, you see nothing.</p><p>Act 24: think: Now I find a mug (4). Next, I need to put it in drawer 4.</p><p>Obs 25: OK. Act 25: go to bed 1 Obs 26: On the bed 1, you see a book 2, a book 1, a laptop 2, a laptop 1, and a pillow 1.</p><p>Act 26: think: Now I find a mug (1). Next, I need to put it on bed 1.</p><p>Obs 27: OK. Act 27: go to sidetable 1 Obs 28: On the sidetable 1, you see a keychain 1. Act 28: think: Now I find a mug (1). Next, I need to put it on sidetable 1. Obs 29: OK. Act 29: go to sidetable 2 Obs 30: On the sidetable 2, you see a alarmclock 1, a cd 1, and a pencil 2. Act 30: think: Now I find a mug (1). Next, I need to put it on sidetable 2. Obs 31: OK. Act 31: go to drawer 1 Obs 32: The drawer 1 is open. In it, you see a cellphone 1. Act 32: think: Now I find a mug (1). Next, I need to put it in drawer 1. Obs 33: OK. Act 33: go to drawer 2 Obs 34: The drawer 2 is open. In it, you see a creditcard 1. Act 34: think: Now I find a mug (1). Next, I need to put it in drawer 2. Obs 35: OK. Act 35: go to drawer 3 Obs 36: On the drawer 3, you see a cellphone 2. Act 36: think: Now I find a mug (2). Next, I need to put it in drawer 3. Obs 37: OK. Act 37: go to drawer 4 Obs 38: On the drawer 4, you see nothing. Act 38: think: Now I find a mug (3). Next, I need to put it in drawer 4. Obs 39: OK. Act 39: go to bed 1 Obs 40: On the bed 1, you see a book 2, a book 1, a laptop 2, a laptop 1, and a pillow 1.</p><p>Act 40: think: Now I find a mug (1). Next, I need to put it on bed 1.</p><p>Obs 41: OK. Act 41: go to sidetable 1 Obs 42: On the sidetable 1, you see a keychain 1.</p><p>Act 42: think: Now I find a mug (1). Next, I need to put it on sidetable 1.</p><p>Obs 43: OK.</p><p>Obs 6: OK. Act 6: go to diningtable 1 Obs 7: On the diningtable 1, you see a creditcard 3, a creditcard 2, a keychain 3, a keychain 2, a mug 3, a mug 2, a mug 1, a pen 2, a pen 1, a pencil 3, and a pencil 1.</p><p>Act 7: put cellphone 2 in/on diningtable 1 Obs 8: You put the cellphone 2 in/on the diningtable 1. Your next task is to: put a pen in sidetable.</p><p>Act 8: think: To solve the task, I need to find and take a pen and go to a sidetable.</p><p>Obs 9: OK. Act 9: think: First I need to find a pen. A pen is more likely to appear in drawer 2, sidetable 2. But there is no pen on drawer 2, therefore I need to check sidetable 2.</p><p>Obs 10: OK. Act 10: go to sidetable 2 Obs 11: On the sidetable 2, you see a alarmclock 1, a cd 1, and a pencil 2. Act 11: think: Now I find a pencil 2. Next, I need to take it. Obs 12: OK. Act 12: take pencil 2 from sidetable 2 Obs 13: You pick up the pencil 2 from the sidetable 2. Act 13: think: Now I take a pencil 2. Obs 14: OK. Act 14: go to sidetable 1 Obs 15: On the sidetable 1, you see a keychain 1. Act 15: put pencil 2 in/on sidetable 1 Obs 16: You put the pencil 2 in/on the sidetable 1. Act 16: think: The task is complete. Obs 17: OK. Act 17: go to garbagecan 1 Obs 18: On the garbagecan 1, you see nothing. Act 18: think: I have finished to put all the objects in their places. Obs 19: OK. Act 19: go to bed 1 Obs 20: On the bed 1, you see a book 2, a book 1, a laptop 2, a laptop 1, and a pillow 1. Act 20: think: The room is clean. Obs 21: OK. Act 21: go to diningtable 1 Obs 22:</p><p>On the diningtable 1, you see a cellphone 2, a creditcard 3, a creditcard 2, a keychain 3, a keychain 2, a mug 3, a mug 2, a mug 1, a pen 2, a pen 1, a pencil 3, and a pencil 1.</p><p>Act 22: think: The room is clean.</p><p>Obs 23: OK. Act 23: go to bed 1 Obs 24: On the bed 1, you see a book 2, a book 1, a laptop 2, a laptop 1, and a pillow 1.</p><p>Act 24: think: The room is clean.</p><p>Obs 25: OK. Act 25: go to garbagecan 1 Obs 26: On the garbagecan 1, you see nothing.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_5KrzYu6">
+					<idno type="grant-number">1-2</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="10,108.00,93.49,397.25,8.64;10,117.96,104.40,386.04,8.64;10,117.96,115.13,186.97,8.82" xml:id="b0">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Brohan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Chebotar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Cortes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>David</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Finn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Gopalakrishnan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Hausman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Herzog</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2204.01691</idno>
+		<title level="m" coords="10,279.88,104.40,224.12,8.64;10,117.96,115.31,44.65,8.64">Do as i can, not as i say: Grounding language in robotic affordances</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,135.31,396.00,8.64;10,117.96,146.04,355.05,8.82" xml:id="b1">
+	<monogr>
+		<title level="m" type="main" coords="10,397.34,135.31,106.66,8.64;10,117.96,146.22,212.33,8.64">What learning algorithm is in-context learning? investigations with linear models</title>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Akyürek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Schuurmans</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Andreas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2211.15661</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,166.22,396.35,8.64;10,117.96,176.95,265.24,8.82" xml:id="b2">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Beck</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Vuorio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zintgraf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Finn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Whiteson</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2301.08028</idno>
+		<title level="m" coords="10,468.57,166.22,35.79,8.64;10,117.96,177.13,123.08,8.64">A survey of meta-reinforcement learning</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,197.13,397.25,8.64;10,117.96,207.86,386.04,8.82;10,117.96,218.77,190.22,8.82" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="10,270.16,208.04,151.69,8.64">Language models are few-shot learners</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Ryder</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Subbiah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">D</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Dhariwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Neelakantan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Shyam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Askell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="10,428.89,207.86,75.11,8.59;10,117.96,218.77,123.56,8.59">Advances in neural information processing systems</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1877" to="1901" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,238.95,397.25,8.64;10,117.39,249.86,386.62,8.64;10,117.96,260.59,161.78,8.82" xml:id="b4">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Bubeck</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Chandrasekaran</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Eldan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Gehrke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Horvitz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Kamar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">T</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Lundberg</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.12712</idno>
+		<title level="m" coords="10,245.18,249.86,258.82,8.64;10,117.96,260.77,19.60,8.64">Sparks of artificial general intelligence: Early experiments with gpt-4</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,280.77,396.00,8.64;10,117.60,291.50,174.79,8.82" xml:id="b5">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Bulatov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Kuratov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">S</forename><surname>Burtsev</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.11062</idno>
+		<title level="m" coords="10,320.24,280.77,183.76,8.64;10,117.60,291.68,32.45,8.64">Scaling transformer to 1m tokens and beyond with rmt</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,311.68,396.00,8.64;10,117.96,322.41,386.04,8.82;10,117.96,333.32,75.27,8.59" xml:id="b6">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Carta</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Romac</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Wolf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Lamprier</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Sigaud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P.-Y</forename><surname>Oudeyer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2302.02662</idno>
+		<title level="m" coords="10,439.47,311.68,64.53,8.64;10,117.96,322.59,320.96,8.64">Grounding large language models in interactive environments with online reinforcement learning</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,353.50,397.25,8.64;10,117.96,364.41,386.04,8.64;10,117.96,375.32,130.80,8.64" xml:id="b7">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">W.-L</forename><surname>Chiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Sheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">E</forename><surname>Gonzalez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Stoica</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">P</forename><surname>Xing</surname></persName>
+		</author>
+		<title level="m" coords="10,324.40,364.41,179.60,8.64;10,117.96,375.32,127.11,8.64">Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,395.32,397.24,8.64;10,117.96,406.23,387.28,8.64;10,117.96,417.14,387.28,8.64;10,117.77,428.05,387.47,8.64;10,117.96,438.96,387.29,8.64;10,117.96,449.87,387.28,8.64;10,117.96,460.78,387.28,8.64;10,117.49,471.69,387.75,8.64;10,117.77,482.60,343.51,8.64" xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Chowdhery</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Narang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Bosma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Mishra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Barham</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">W</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Sutton</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gehrmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Schuh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Tsvyashchenko</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Maynez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Barnes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Tay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Prabhakaran</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Reif</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Hutchinson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Pope</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Bradbury</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Austin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Isard</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Gur-Ari</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Duke</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Levskaya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ghemawat</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Dev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Michalewski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Misra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Fedus</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Ippolito</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Luan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Lim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Zoph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Spiridonov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Sepassi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Dohan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Agrawal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Omernick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">M</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">S</forename><surname>Pillai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Pellat</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Lewkowycz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Moreira</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Polozov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Saeta</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Diaz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Firat</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Catasta</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Meier-Hellstern</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Eck</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Dean</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Petrov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Fiedel</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note>Palm: Scaling language modeling with pathways</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,502.60,397.25,8.64;10,117.96,513.33,386.03,8.82;10,117.96,524.24,75.27,8.59" xml:id="b9">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">W</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Longpre</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Zoph</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Tay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Fedus</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Dehghani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Brahma</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2210.11416</idno>
+		<title level="m" coords="10,246.38,513.51,188.66,8.64">Scaling instruction-finetuned language models</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,544.42,397.24,8.64;10,117.77,555.15,386.23,8.82;10,117.96,566.06,75.27,8.59" xml:id="b10">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Cobbe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Kosaraju</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Bavarian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Jun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Plappert</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Tworek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Hilton</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Nakano</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2110.14168</idno>
+		<title level="m" coords="10,241.90,555.33,193.10,8.64">Training verifiers to solve math word problems</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,586.24,397.25,8.64;10,117.96,597.15,386.04,8.64;10,117.63,607.88,386.36,8.59;10,117.63,618.79,386.36,8.59;10,117.71,629.70,166.78,8.82" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="10,265.50,597.15,222.08,8.64">Textworld: A learning environment for text-based games</title>
+		<author>
+			<persName coords=""><forename type="first">M.-A</forename><surname>Côté</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Kádár</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Kybartas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Barnes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Fine</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hausknecht</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>El Asri</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Adada</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,117.63,607.88,386.36,8.59;10,117.63,618.79,148.34,8.59">Computer Games: 7th Workshop, CGW 2018, Held in Conjunction with the 27th International Conference on Artificial Intelligence</title>
+		<meeting><address><addrLine>Stockholm, Sweden</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2018-07-13">2019. 2018. July 13. 2018</date>
+			<biblScope unit="page" from="41" to="75" />
+		</imprint>
+	</monogr>
+	<note>Revised Selected Papers 7</note>
+</biblStruct>
+
+<biblStruct coords="10,108.00,649.88,396.00,8.64;10,117.96,660.61,386.04,8.82;10,117.96,671.52,207.80,8.82" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="10,402.49,649.88,101.51,8.64;10,117.96,660.79,198.03,8.64">Uncertainty-aware action advising for deep reinforcement learning agents</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">L</forename><surname>Da Silva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Hernandez-Leal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Kartal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">E</forename><surname>Taylor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="10,339.12,660.61,164.89,8.59;10,117.96,671.52,81.93,8.59">Proceedings of the AAAI conference on artificial intelligence</title>
+		<meeting>the AAAI conference on artificial intelligence</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="5792" to="5799" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="10,108.00,691.70,397.65,8.64;10,117.96,702.43,386.03,8.82;10,117.96,713.34,75.27,8.59" xml:id="b13">
+	<monogr>
+		<title level="m" type="main" coords="10,408.68,691.70,96.97,8.64;10,117.96,702.61,320.42,8.64">Why can gpt learn incontext? language models secretly perform gradient descent as meta optimizers</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Sui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Wei</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2212.10559</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,75.48,395.99,8.64;11,117.96,86.21,302.60,8.82" xml:id="b14">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M.-W</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Toutanova</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1810.04805</idno>
+		<title level="m" coords="11,351.22,75.48,152.78,8.64;11,117.96,86.39,160.13,8.64">Bert: Pre-training of deep bidirectional transformers for language understanding</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,106.08,397.25,8.64;11,117.60,116.81,386.40,8.82;11,117.96,127.71,75.27,8.59;11,108.00,147.58,159.49,8.64" xml:id="b15">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Driess</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">S</forename><surname>Sajjadi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Lynch</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Chowdhery</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Ichter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Wahid</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Tompson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Vuong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Yu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.03378.Google</idno>
+		<title level="m" coords="11,244.24,116.98,196.07,8.64">Palm-e: An embodied multimodal language model</title>
+		<imprint>
+			<date type="published" when="2023">2023. 2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+	<note>Palm 2 technical report</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,167.09,396.00,8.82;11,117.96,178.00,110.05,8.59" xml:id="b16">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Hallak</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Di Castro</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Mannor</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1502.02259</idno>
+		<title level="m" coords="11,317.19,167.27,155.17,8.64">Contextual markov decision processes</title>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,197.87,397.25,8.64;11,117.96,208.60,386.04,8.82;11,117.96,219.51,195.77,8.82" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="11,218.93,208.78,168.53,8.64">Parameter-efficient transfer learning for nlp</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Houlsby</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Giurgiu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Jastrzebski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Morrone</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>De Laroussilhe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gesmundo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Attariyan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Gelly</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,405.35,208.60,98.65,8.59;11,117.96,219.51,84.34,8.59">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="2790" to="2799" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,239.38,397.38,8.64;11,117.96,250.29,188.26,8.64" xml:id="b18">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">E</forename><forename type="middle">J</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Wallis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Allen-Zhu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<title level="m" coords="11,483.98,239.38,21.41,8.64;11,117.96,250.29,183.80,8.64">Lora: Low-rank adaptation of large language models</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,269.97,397.74,8.64;11,117.96,280.70,134.67,8.59" xml:id="b19">
+	<monogr>
+		<title level="m" type="main" coords="11,228.18,269.97,273.58,8.64">Language instructed reinforcement learning for human-ai coordination</title>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Sadigh</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.07297</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,300.57,397.24,8.64;11,117.96,311.30,386.04,8.82;11,117.96,322.21,110.05,8.59" xml:id="b20">
+	<monogr>
+		<title level="m" type="main" coords="11,186.83,311.48,287.12,8.64">Language is not all you need: Aligning perception with language models</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Singhal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><forename type="middle">K</forename><surname>Mohammed</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2302.14045</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,342.08,397.39,8.64;11,117.96,352.81,386.03,8.82;11,117.68,363.72,146.12,8.82" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coords="11,348.71,342.08,156.68,8.64;11,117.96,352.99,215.59,8.64">Language models as zero-shot planners: Extracting actionable knowledge for embodied agents</title>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Abbeel</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Pathak</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Mordatch</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,352.03,352.81,151.97,8.59;11,117.68,363.72,34.69,8.59">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2022">2022a</date>
+			<biblScope unit="page" from="9118" to="9147" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,383.59,397.25,8.64;11,117.96,394.50,386.04,8.64;11,117.96,405.23,207.99,8.82" xml:id="b22">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Florence</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Tompson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Mordatch</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Chebotar</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2207.05608</idno>
+		<title level="m" coords="11,248.86,394.50,255.14,8.64;11,117.96,405.40,65.26,8.64">Inner monologue: Embodied reasoning through planning with language models</title>
+		<imprint>
+			<date type="published" when="2022">2022b</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,425.09,397.25,8.64;11,117.60,436.00,388.14,8.64;11,117.36,446.73,283.87,8.82" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="11,252.81,436.00,248.55,8.64">Pre-trained language models for interactive decision-making</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Puig</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Paxton</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D.-A</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Akyürek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Anandkumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="11,117.36,446.73,207.11,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="31199" to="31212" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,466.60,397.65,8.64;11,117.96,477.33,219.36,8.82" xml:id="b24">
+	<monogr>
+		<title level="m" type="main" coords="11,317.89,466.60,187.76,8.64;11,117.96,477.51,77.25,8.64">Scaling down to scale up: A guide to parameterefficient fine-tuning</title>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Lialin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Deshpande</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Rumshisky</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.15647</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,497.20,396.00,8.64;11,117.96,507.93,292.94,8.82" xml:id="b25">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Agia</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Migimatsu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Pavone</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Bohg</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.12153</idno>
+		<title level="m" coords="11,391.70,497.20,112.30,8.64;11,117.96,508.11,150.76,8.64">Text2motion: From natural language instructions to feasible plans</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,527.80,396.00,8.64;11,117.63,538.53,386.37,8.82;11,117.96,549.44,205.74,8.82" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="11,413.08,527.80,90.92,8.64;11,117.63,538.71,268.68,8.64">Asking for knowledge (afk): Training rl agents to query external knowledge using language</title>
+		<author>
+			<persName coords=""><forename type="first">I.-J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M.-A</forename><surname>Côté</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P.-Y</forename><surname>Oudeyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Schwing</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,404.76,538.53,99.24,8.59;11,117.96,549.44,84.34,8.59">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="14073" to="14093" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,569.13,396.00,8.82;11,117.96,580.03,110.05,8.59" xml:id="b27">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Mu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><forename type="middle">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Goodman</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.08467</idno>
+		<title level="m" coords="11,285.92,569.30,187.92,8.64">Learning to compress prompts with gist tokens</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,599.90,397.66,8.64;11,117.96,610.63,387.78,8.82" xml:id="b28">
+	<monogr>
+		<title level="m" type="main" coords="11,264.57,599.90,241.08,8.64;11,117.96,610.81,247.68,8.64">Help, anna! visual navigation with natural multimodal assistance via retrospective curiosity-encouraging imitation learning</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Iii</forename><surname>Daumé</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename></persName>
+		</author>
+		<idno type="arXiv">arXiv:1909.01871</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="11,108.00,630.50,397.65,8.64;11,117.96,641.23,386.04,8.82;11,117.63,652.14,314.57,8.82" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="11,344.04,630.50,161.61,8.64;11,117.96,641.41,250.55,8.64">Vision-based navigation with languagebased assistance via imitation learning with indirect intervention</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Dey</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Brockett</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Dolan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,386.43,641.23,117.57,8.59;11,117.63,652.14,225.40,8.59">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE/CVF Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="12527" to="12537" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,672.01,396.00,8.64;11,117.96,682.74,387.28,8.82;11,117.96,693.83,114.57,8.64" xml:id="b30">
+	<analytic>
+		<title level="a" type="main" coords="11,314.19,672.01,189.80,8.64;11,117.96,682.92,177.51,8.64">A framework for learning to request rich and contextually useful information from humans</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">X</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Bisk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">D</forename><surname>Iii</surname></persName>
+		</author>
+		<idno>PMLR</idno>
+	</analytic>
+	<monogr>
+		<title level="m" coords="11,314.55,682.74,186.39,8.59">International Conference on Machine Learning</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="16553" to="16568" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="11,108.00,713.51,157.69,8.64" xml:id="b31">
+	<monogr>
+		<author>
+			<persName coords=""><surname>Openai</surname></persName>
+		</author>
+		<title level="m" coords="11,175.22,713.51,86.72,8.64">Gpt-4 technical report</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,75.48,397.25,8.64;12,117.96,86.39,386.04,8.64;12,117.96,97.12,325.90,8.82" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coords="12,256.85,86.39,247.16,8.64;12,117.96,97.30,34.17,8.64">Training language models to follow instructions with human feedback</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Ouyang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Almeida</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Wainwright</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Mishkin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Slama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Ray</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,160.00,97.12,207.11,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="27730" to="27744" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,116.22,396.00,8.64;12,117.96,126.95,229.82,8.82" xml:id="b33">
+	<analytic>
+		<title level="a" type="main" coords="12,433.24,116.22,70.77,8.64;12,117.96,127.13,139.54,8.64">Language models are unsupervised multitask learners</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Child</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Luan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,264.87,126.95,49.56,8.59">OpenAI blog</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page">9</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,146.05,396.00,8.64;12,117.96,156.78,386.04,8.82;12,117.96,167.69,387.78,8.82" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coords="12,305.03,146.05,198.97,8.64;12,117.96,156.96,145.98,8.64">A reduction of imitation learning and structured prediction to no-regret online learning</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ross</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Gordon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Bagnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,280.54,156.78,223.46,8.59;12,117.96,167.69,134.37,8.59;12,321.86,167.87,179.70,8.64">Proceedings of the fourteenth international conference on artificial intelligence and statistics</title>
+		<meeting>the fourteenth international conference on artificial intelligence and statistics</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="627" to="635" />
+		</imprint>
+	</monogr>
+	<note>JMLR Workshop and Conference Proceedings</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,186.79,396.35,8.64;12,117.96,197.52,325.96,8.82" xml:id="b35">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Shang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2109.03034</idno>
+		<title level="m" coords="12,423.13,186.79,81.22,8.64;12,117.96,197.70,183.31,8.64">Generate &amp; rank: A multi-task framework for math word problems</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,216.62,397.75,8.64;12,117.63,227.53,388.11,8.64;12,117.96,238.26,134.67,8.59" xml:id="b36">
+	<monogr>
+		<title level="m" type="main" coords="12,149.34,227.53,351.94,8.64">On the effect of pretraining corpora on in-context learning by a large-scale language model</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S.-W</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J.-W</forename><surname>Ha</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2204.13509</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,257.36,396.00,8.64;12,117.96,268.09,248.65,8.82" xml:id="b37">
+	<monogr>
+		<title level="m" type="main" coords="12,311.51,257.36,192.49,8.64;12,117.96,268.27,106.78,8.64">Reflexion: an autonomous agent with dynamic memory and self-reflection</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Shinn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Labash</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gopinath</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.11366</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,287.19,396.00,8.64;12,117.96,298.10,387.78,8.64;12,117.96,308.83,386.03,8.82;12,117.22,319.92,57.29,8.64" xml:id="b38">
+	<analytic>
+		<title level="a" type="main" coords="12,184.25,298.10,317.68,8.64">Alfred: A benchmark for interpreting grounded instructions for everyday tasks</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Shridhar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Thomason</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Gordon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Bisk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Mottaghi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zettlemoyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fox</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,128.90,308.83,345.45,8.59">Proceedings of the IEEE/CVF conference on computer vision and pattern recognition</title>
+		<meeting>the IEEE/CVF conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="10740" to="10749" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,338.84,397.38,8.64;12,117.60,349.57,386.39,8.82;12,117.79,360.48,251.63,8.59" xml:id="b39">
+	<analytic>
+		<title level="a" type="main" coords="12,459.65,338.84,45.73,8.64;12,117.60,349.75,283.55,8.64">ALFWorld: Aligning Text and Embodied Environments for Interactive Learning</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Shridhar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M.-A</forename><surname>Côté</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Bisk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Trischler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hausknecht</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="12,425.67,349.57,78.33,8.59;12,117.79,360.48,247.25,8.59">Proceedings of the International Conference on Learning Representations (ICLR)</title>
+		<meeting>the International Conference on Learning Representations (ICLR)</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,379.58,396.00,8.64;12,117.96,390.49,387.78,8.64;12,117.96,401.22,134.67,8.59" xml:id="b40">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Blukis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mousavian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Tremblay</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Fox</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Thomason</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Garg</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2209.11302</idno>
+		<title level="m" coords="12,191.64,390.49,309.65,8.64">Progprompt: Generating situated robot task plans using large language models</title>
+		<imprint>
+			<date type="published" when="2022">2022a</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,420.32,397.38,8.64;12,117.96,431.05,386.04,8.82;12,117.71,441.96,106.54,8.82" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coords="12,463.81,420.32,41.57,8.64;12,117.96,431.23,201.15,8.64">Ask4help: Learning to leverage an expert for embodied tasks</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">P</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Weihs</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Herrasti</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Kembhavi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Mottaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="12,326.50,431.05,177.50,8.59;12,117.71,441.96,29.78,8.59">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="16221" to="16232" />
+			<date type="published" when="2022">2022b</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="12,108.00,461.06,396.00,8.64;12,117.96,471.79,317.57,8.82" xml:id="b42">
+	<monogr>
+		<title level="m" type="main" coords="12,380.93,461.06,123.07,8.64;12,117.96,471.97,175.40,8.64">Offline rl for natural language generation with implicit language q learning</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Snell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Kostrikov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Levine</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2206.11871</idno>
+		<imprint>
+			<date type="published" when="2022">2022a</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,490.89,396.17,8.64;12,117.96,501.62,264.71,8.82" xml:id="b43">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Snell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Levine</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2204.10198</idno>
+		<title level="m" coords="12,349.27,490.89,154.90,8.64;12,117.96,501.80,122.20,8.64">Context-aware language modeling for goal-oriented dialogue systems</title>
+		<imprint>
+			<date type="published" when="2022">2022b</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,520.72,396.00,8.64;12,117.96,531.45,386.03,8.82;12,117.96,542.36,75.27,8.59" xml:id="b44">
+	<monogr>
+		<title level="m" type="main" coords="12,409.11,520.72,94.89,8.64;12,117.96,531.63,319.56,8.64">Large language models still can&apos;t plan (a benchmark for llms on planning and reasoning about change)</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Valmeekam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Olmo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Sreedharan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Kambhampati</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2206.10498</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,561.46,396.00,8.64;12,117.96,572.37,387.78,8.64;12,117.96,583.10,134.67,8.59" xml:id="b45">
+	<monogr>
+		<title level="m" type="main" coords="12,475.97,561.46,28.03,8.64;12,117.96,572.37,383.18,8.64">On the planning abilities of large language models (a critical investigation with a proposed benchmark)</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Valmeekam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Sreedharan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Marquez</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Olmo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Kambhampati</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2302.06706</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,602.20,397.38,8.64;12,117.96,612.93,386.04,8.82;12,117.96,623.84,110.05,8.59" xml:id="b46">
+	<monogr>
+		<title level="m" type="main" coords="12,360.76,602.20,144.62,8.64;12,117.96,613.11,353.79,8.64">Describe, explain, plan and select: Interactive planning with large language models enables open-world multi-task agents</title>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Liang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2302.01560</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,642.94,396.00,8.64;12,117.96,653.67,384.91,8.82" xml:id="b47">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Schuurmans</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Bosma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2201.11903</idno>
+		<title level="m" coords="12,468.27,642.94,35.73,8.64;12,117.96,653.85,242.19,8.64">Chain of thought prompting elicits reasoning in large language models</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,672.77,396.00,8.64;12,117.96,683.50,248.65,8.82" xml:id="b48">
+	<monogr>
+		<title level="m" type="main" coords="12,344.00,672.77,160.00,8.64;12,117.96,683.68,106.44,8.64">An explanation of in-context learning as implicit bayesian inference</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">M</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Raghunathan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Ma</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2111.02080</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="12,108.00,702.61,396.00,8.64;12,117.96,713.34,303.17,8.82" xml:id="b49">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Shafran</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Narasimhan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Cao</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2210.03629</idno>
+		<title level="m" coords="12,429.03,702.61,74.97,8.64;12,117.96,713.51,160.44,8.64">React: Synergizing reasoning and acting in language models</title>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,75.48,396.00,8.64;13,117.96,86.21,179.48,8.82" xml:id="b50">
+	<monogr>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Mei</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2303.15714</idno>
+		<title level="m" coords="13,304.02,75.48,199.99,8.64;13,117.96,86.39,37.10,8.64">Explicit planning helps language models in logical reasoning</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,105.27,397.39,8.64;13,117.96,116.00,372.24,8.82" xml:id="b51">
+	<monogr>
+		<title level="m" type="main" coords="13,472.33,105.27,33.06,8.64;13,117.96,116.17,255.94,8.64">Varibad: a very good method for bayes-adaptive deep rl via meta-learning</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zintgraf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Shiarlis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Igl</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Schulze</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Gal</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Hofmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Whiteson</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note>Proceedings of ICLR 2020</note>
+</biblStruct>
+
+<biblStruct coords="13,108.00,135.05,397.75,8.64;13,117.96,145.78,386.04,8.82;13,117.63,156.69,253.79,8.82;28,158.81,75.88,309.32,8.30;28,143.87,86.78,156.88,8.30;28,158.81,97.82,177.38,8.30;28,158.81,108.86,57.11,8.30;28,158.81,119.90,140.77,8.30;28,158.81,130.94,36.61,8.30;28,227.60,130.94,240.54,8.30;28,143.87,141.85,308.51,8.30;28,143.87,152.76,313.75,8.30;28,143.87,163.67,47.06,8.30;28,158.81,174.70,177.38,8.30;28,158.81,185.74,57.11,8.30;28,158.81,196.78,98.94,8.30;28,158.81,207.82,309.32,8.30;28,143.87,218.73,156.88,8.30;28,158.81,229.77,177.38,8.30;28,158.81,240.81,57.11,8.30;28,158.81,251.85,135.54,8.30;28,158.81,262.88,234.89,8.30;28,158.81,273.92,36.61,8.30;28,211.91,273.92,256.23,8.30;28,143.87,284.83,67.98,8.30;28,158.81,295.87,57.11,8.30;28,158.81,306.91,98.94,8.30;28,158.81,317.95,309.32,8.30;28,143.87,328.86,156.88,8.30;28,158.81,339.90,177.38,8.30;28,158.81,350.93,57.11,8.30;28,158.81,361.97,140.77,8.30;28,158.81,373.01,36.61,8.30;28,227.60,373.01,240.54,8.30;28,143.87,383.92,308.51,8.30;28,143.87,394.83,313.75,8.30;28,143.87,405.74,47.06,8.30;28,158.81,416.78,177.38,8.30;28,158.81,427.82,57.11,8.30;28,158.81,438.85,98.94,8.30;28,158.81,449.89,309.32,8.30;28,143.87,460.80,156.88,8.30;28,158.81,471.84,177.38,8.30;28,158.81,482.88,57.11,8.30;28,158.81,493.92,135.54,8.30;28,158.81,504.96,234.89,8.30;28,158.81,515.99,36.61,8.30;28,211.91,515.99,256.23,8.30;28,143.87,526.90,67.98,8.30;28,158.81,537.94,57.11,8.30;28,158.81,548.98,98.94,8.30;28,158.81,560.02,309.32,8.30;28,143.87,570.93,156.88,8.30;28,158.81,581.97,177.38,8.30;28,158.81,593.01,57.11,8.30;28,158.81,604.04,140.77,8.30;28,158.81,615.08,36.61,8.30;28,227.60,615.08,240.54,8.30;28,143.87,625.99,308.51,8.30;28,143.87,636.90,313.75,8.30;28,143.87,647.81,47.06,8.30;28,158.81,658.85,177.38,8.30;28,158.81,669.89,57.11,8.30;28,158.81,680.93,98.94,8.30;28,158.81,691.96,309.32,8.30;28,143.87,702.87,156.88,8.30;28,158.81,713.91,177.38,8.30;30,158.81,75.88,114.63,8.30;30,158.81,86.92,36.61,8.30;30,248.51,86.92,219.62,8.30;30,143.87,97.83,73.21,8.30;30,158.81,108.87,182.61,8.30;30,158.81,119.91,266.27,8.30;30,158.81,130.95,309.32,8.30;30,143.87,141.86,62.75,8.30;30,158.81,152.90,57.11,8.30;30,158.81,163.94,109.40,8.30;30,158.81,174.99,250.58,8.30;30,158.81,186.03,177.38,8.30;30,158.81,197.07,309.33,8.30;30,143.87,207.98,251.00,8.30;30,158.81,219.02,309.33,8.30;30,143.87,229.93,303.28,8.30;30,143.87,240.84,318.97,8.30;30,143.87,251.75,308.51,8.30;30,158.81,262.79,57.11,8.30;30,158.81,273.83,36.61,8.30;30,253.74,273.83,214.39,8.30;30,143.87,284.74,203.94,8.30;30,158.81,295.78,57.11,8.30;30,158.81,306.82,114.63,8.30;30,158.81,317.87,309.59,8.30" xml:id="b52">
+	<analytic>
+		<title level="a" type="main" coords="13,117.96,145.96,314.00,8.64;28,158.81,97.82,172.15,8.30;28,200.23,108.86,10.46,8.30;28,158.81,119.90,140.77,8.30;28,158.81,130.94,36.61,8.30;28,227.60,130.94,224.85,8.30;28,158.81,174.70,177.38,8.30;28,158.81,185.74,57.11,8.30;28,158.81,196.78,98.94,8.30;28,158.81,207.82,309.32,8.30;28,143.87,218.73,156.88,8.30;28,158.81,229.77,177.38,8.30;28,158.81,240.81,57.11,8.30;28,158.81,251.85,135.54,8.30;28,158.81,262.88,229.67,8.30;28,158.81,273.92,36.61,8.30;28,211.91,273.92,256.23,8.30;28,143.87,284.83,62.75,8.30;28,200.23,295.87,15.69,8.30;28,158.81,306.91,98.94,8.30;28,158.81,317.95,309.32,8.30;28,143.87,328.86,156.88,8.30;28,158.81,339.90,172.15,8.30;28,158.81,361.97,140.77,8.30;28,158.81,373.01,36.61,8.30;28,227.60,373.01,240.54,8.30;28,143.87,383.92,308.51,8.30;28,143.87,394.83,120.27,8.30;28,158.81,471.84,177.38,8.30;28,158.81,482.88,57.11,8.30;28,158.81,493.92,135.54,8.30;28,158.81,504.96,229.67,8.30;28,158.81,515.99,36.61,8.30;28,211.91,515.99,256.23,8.30;28,143.87,526.90,62.75,8.30;28,190.19,581.97,140.77,8.30;28,190.19,658.85,140.77,8.30;28,190.19,713.91,146.00,8.30;30,158.81,75.88,114.63,8.30;30,158.81,86.92,36.61,8.30;30,248.51,86.92,219.62,8.30;30,143.87,97.83,73.21,8.30;30,158.81,108.87,182.61,8.30;30,158.81,119.91,266.27,8.30;30,158.81,130.95,309.32,8.30;30,143.87,141.86,57.52,8.30">think: The room is clean. Act 13: go to toilet 1 Obs 14: On the toilet 1, you see a candle 1, and a toiletpaper 2. Act 14: take candle 1 from toilet 1 Obs 15: You pick up the candle 1 from the toilet 1. Act 15: think: Now I take a candle 1. Next, I need to put it in shelf</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">M</forename><surname>Zintgraf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Igl</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Hartikainen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Hofmann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Whiteson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="13,450.47,145.78,53.53,8.59;13,117.63,156.69,132.39,8.59">International Conference on Machine Learning</title>
+		<imprint>
+			<publisher>OK</publisher>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="12991" to="13001" />
+		</imprint>
+	</monogr>
+	<note>Obs. Act 16: go to shelf 1 Obs 17: On the shelf 1, you see a spraybottle 2. Act 17: put candle 1 in/on shelf 1 Obs 18: You put the candle 1 in/on the shelf 1. Your next task is to: put some toiletpaper on garbagecan. Act 18: think: To solve the task, I need to find and take a toiletpaper, then put it in garbagecan. First I need to find the locations of toiletpaper. ### query: toiletpaper &gt; toiletpaper 1 is in drawer 1, toiletpaper 2 is in drawer 2. Obs 19: OK. Act 19: think: I can go to drawer 1 and take the toiletpaper, then put it in garbagecan. Obs 20: OK. Act 20: go to drawer 1 Obs 21: The drawer 1 is open. In it, you see a toiletpaper</note>
+</biblStruct>
+
+<biblStruct coords="30,148.83,328.78,5.23,8.30;30,158.81,339.82,208.76,8.30;30,158.81,350.86,292.42,8.30;30,158.81,361.90,36.61,8.30;30,211.91,361.90,256.23,8.30;30,143.87,372.81,125.50,8.30;30,158.81,383.85,57.11,8.30;30,158.81,394.89,135.54,8.30;30,158.81,405.94,276.73,8.30;30,158.81,416.98,229.67,8.30;30,158.81,428.02,36.61,8.30;30,215.57,428.02,256.23,8.30;30,143.60,438.93,277.15,8.30;30,158.81,449.97,309.33,8.30;30,143.87,460.88,303.29,8.30;30,143.87,471.79,318.97,8.30;30,143.87,482.70,151.64,8.30;30,158.81,493.74,57.11,8.30;30,158.81,504.78,36.61,8.30;30,212.17,504.78,256.23,8.30;30,143.87,515.69,120.27,8.30;30,158.81,526.73,57.11,8.30;30,158.81,537.77,198.30,8.30;30,158.81,548.82,36.61,8.30;30,217.14,548.82,251.00,8.30;30,143.87,559.72,198.70,8.30;30,158.81,570.77,36.61,8.30;30,248.51,570.77,219.62,8.30;30,143.87,581.68,177.79,8.30;30,158.81,592.72,57.11,8.30;30,158.81,603.76,119.86,8.30;30,158.81,614.80,309.33,8.30;30,143.87,625.71,203.93,8.30;30,158.81,636.75,208.76,8.30;30,158.81,647.79,292.42,8.30;30,158.81,658.84,309.32,8.30;30,143.87,669.74,88.89,8.30;30,158.81,680.79,57.11,8.30;30,158.81,691.83,114.63,8.30;30,158.81,702.87,255.81,8.30;30,158.81,713.91,203.53,8.30" xml:id="b53">
+	<analytic>
+		<title level="a" type="main" coords="30,158.81,361.90,36.61,8.30;30,211.91,361.90,256.23,8.30;30,143.87,372.81,120.27,8.30;30,158.81,383.85,57.11,8.30;30,158.81,394.89,135.54,8.30;30,158.81,405.94,276.73,8.30;30,158.81,416.98,229.67,8.30;30,158.81,428.02,36.61,8.30;30,215.57,428.02,256.23,8.30;30,143.60,438.93,271.92,8.30;30,158.81,449.97,309.33,8.30;30,143.87,460.88,303.29,8.30;30,143.87,471.79,318.97,8.30;30,143.87,482.70,151.64,8.30;30,158.81,493.74,57.11,8.30;30,158.81,504.78,36.61,8.30;30,212.17,504.78,256.23,8.30;30,143.87,515.69,120.27,8.30;30,158.81,526.73,57.11,8.30;30,158.81,537.77,198.30,8.30;30,158.81,548.82,36.61,8.30;30,217.14,548.82,251.00,8.30;30,143.87,559.72,198.70,8.30;30,158.81,570.77,36.61,8.30;30,248.51,570.77,219.62,8.30;30,143.87,581.68,172.56,8.30">Act 25: think: To solve the task, I need to find and take a soapbottle, then put it in toilet. First I need to find the locations of soapbottle. ### query: soapbottle &gt; I have never seen soapbottle before. Obs 26: OK. Act 26: think: I cannot locate soapbottle, I need to ask the owner of this room. Obs 27: OK. Act 27: ask: Where is the soapbottle? Obs 28: soapbottle 3 is in dresser 1, soapbottle 2 is in dresser 1, soapbottle 1 is in shelf 2. Act 28: think: I can go to dresser 1 and take the soapbottle, then put it in toilet</title>
+	</analytic>
+	<monogr>
+		<title level="j" coords="30,158.81,592.72,15.69,8.30;30,200.23,592.72,15.69,8.30;30,158.81,603.76,15.69,8.30;30,158.81,680.79,15.69,8.30">OK. Act</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<publisher>OK</publisher>
+		</imprint>
+	</monogr>
+	<note>Obs. Act 32: go to toilet 1 Obs 33: On the toilet 1, you see a toiletpaper 2. Act 33: put soapbottle 3 in/on toilet 1</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
