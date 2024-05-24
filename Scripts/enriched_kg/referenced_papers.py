@@ -46,7 +46,7 @@ def get_ids(ids_file):
     with open(ids_file) as my_file:
         all_ids = [line.strip('\n\r') for line in my_file]
 
-    print(all_ids)
+    #print(all_ids)
     return all_ids
 
 def get_doi_from_arxiv(arxiv_id):

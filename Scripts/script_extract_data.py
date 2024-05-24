@@ -84,9 +84,9 @@ def extract_data_all_pdf():
                     topics_file.write(str(topic) + "\n")
 
 
-            print(Title)
-            print(Date)
-            print(topics)
+            #print(Title)
+            #print(Date)
+            #print(topics)
 
             i += 1
             # print(similarities)
@@ -99,7 +99,7 @@ def extract_data_all_pdf():
 
         # Mostrar los resultados
         for par, diferencia in diferencias:
-            print(f"Similarity entre {par[0]} y {par[1]}: {diferencia}")
+            #print(f"Similarity entre {par[0]} y {par[1]}: {diferencia}")
 
         similarities_path = os.path.join("results", "similarities.txt")
         with open(similarities_path, "w+") as similarities_file:
