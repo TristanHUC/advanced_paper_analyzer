@@ -1,12 +1,12 @@
-import requests
 from SPARQLWrapper import SPARQLWrapper, JSON
 import os
 from pathlib import Path
+from enriched_kg.utils_request import make_request_with_retry
 
 # Función para obtener datos de ROR
 def get_ror_data(organization_name):
     ror_api_url = f"https://api.ror.org/organizations?query={organization_name}"
-    response = requests.get(ror_api_url)
+    response = make_request_with_retry(ror_api_url)
     data = response.json()
 
     if data['number_of_results'] > 0:

@@ -1,4 +1,5 @@
-import requests
+from enriched_kg.utils_request import make_request_with_retry
+import os
 
 # def query_wikidata(query):
 #     sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
@@ -12,7 +13,7 @@ def query_wikidata(query):
     headers = {
         "Accept": "application/sparql-results+json"
     }
-    response = requests.get(url, headers=headers, params={'query': query})
+    response = make_request_with_retry(url, headers=headers, params={'query': query})
     response.raise_for_status()
     return response.json()
 
@@ -33,24 +34,23 @@ def query_wikidata(query):
 
 def search_by_name_and_title(name, title):
     query = f"""
-    SELECT ?person ?personLabel ?publication ?publicationLabel WHERE {{
+    SELECT DISTINCT ?person ?personLabel ?publication ?publicationLabel WHERE {{
     ?person wdt:P31 wd:Q5;  # ?person is an instance of human
-            rdfs:label ?name.
-    FILTER(CONTAINS(LCASE(?name), "{name.lower()}")).
+            rdfs:label "{name}".
 
     ?publication wdt:P50 ?person;  # ?publication has author ?person
-                rdfs:label ?publicationName.
-    FILTER(CONTAINS(LCASE(?publicationName), "asking before action: gather information in embodied decision making with language models")).
+                rdfs:label "{title}".
     
     SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
     }}
     """
+    print(query)
     return query_wikidata(query)
 
 
 def search_by_name_and_doi(name, doi):
     query = f"""
-    SELECT ?person ?personLabel ?publication ?publicationLabel WHERE {{
+    SELECT DISTINCT ?person ?personLabel ?publication ?publicationLabel WHERE {{
       ?person wdt:P31 wd:Q5;
               rdfs:label ?name.
       FILTER(CONTAINS(LCASE(?name), "{name.lower()}")).
@@ -75,23 +75,24 @@ def get_names(names_file):
     print(separated_names)
     return separated_names
 
-def main():
+def process_authors():
 
-    for line in get_names("authors.txt"):
-        title = line[0]
-        name = line[1]
-        results_arxiv = search_by_name_and_title(name, title)
-        print("Results:")
-        for result in results_arxiv["results"]["bindings"]:
-            print(result)
-
-    # # Search by DOI
-    # doi = "10.1234/example.doi"
-    # results_doi = search_by_name_and_doi(name, doi)
-    # print("\nResults for DOI:")
-    # for result in results_doi["results"]["bindings"]:
-    #     print(result)
+    path_result = os.path.join("Scripts", "results")
+    for dir in os.listdir(path_result):
+        for filename in dir:
+            if filename == "authors.txt":
+                for line in get_names(filename):
+                    title = line[0]
+                    name = line[1]
+                    results_arxiv = search_by_name_and_title(name, title)
+                    print("Results:")
+                    for result in results_arxiv["results"]["bindings"]:
+                        print(result)
 
 
-if __name__ == "__main__":
-    main()
+                # # Search by DOI
+                # doi = "10.1234/example.doi"
+                # results_doi = search_by_name_and_doi(name, doi)
+                # print("\nResults for DOI:")
+                # for result in results_doi["results"]["bindings"]:
+                #     print(result)

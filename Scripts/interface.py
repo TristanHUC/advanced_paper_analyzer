@@ -3,6 +3,7 @@ from KG_server_queries.script_KG_query import query
 from KG_server_queries.script_KG_insertion_data import insert
 from script_grobit_pdf import process_pdf
 from script_extract_data import extract_data_all_pdf
+from enriched_kg.script_enrich_data import process_enriched_kg
 
 def request(requete, Insert = False, Query = False):
     if Query and not Insert:
@@ -35,6 +36,10 @@ def submit_extract():
     output.delete(1.0, tk.END)
     output.insert(tk.END,extract_data_all_pdf())
 
+def submit_enrich():
+    output.delete(1.0, tk.END)
+    output.insert(tk.END,process_enriched_kg())
+
 window = tk.Tk()
 
 window.title("Interface")
@@ -60,5 +65,8 @@ bouton_process.pack()
 
 bouton_extract = tk.Button(window, text="EXTRACT DATA (2)", command=submit_extract, height=2, width=24)
 bouton_extract.pack()
+
+bouton_enrich = tk.Button(window, text="Enrich DATA ", command=submit_enrich, height=2, width=24)
+bouton_enrich.pack()
 
 window.mainloop()

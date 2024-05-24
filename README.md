@@ -61,4 +61,25 @@ and run them with :
 
 - Run the script interface.py
 
+Exemple of query :
+- to request all the pair of article with more than 70% of similarity :
+
+> "PREFIX http: <http://www.w3.org/2011/http#>
+> PREFIX ex: <http://example.org/#>
+> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+> PREFIX sch: <http://schema.org/> 
+> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+> 
+> SELECT ?title1 ?title2 ?SimilarityScore
+> WHERE {
+>   ?Entity ex:value ?SimilarityScore .
+>   ?Entity ex:firstArticle ?Article1 .
+>   ?Article1 sch:about ?title1 .
+>   ?Article2 sch:about ?title2 .
+>   ?Entity ex:secondArticle ?Article2 .
+>   FILTER (?SimilarityScore > 0.70)
+> }
+> "
+
     

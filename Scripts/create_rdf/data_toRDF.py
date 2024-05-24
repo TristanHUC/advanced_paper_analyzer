@@ -2,6 +2,7 @@ from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, RDFS, XSD
 import os
 import json
+import chardet
 
 NAMESPACE = Namespace("http://example.org/#")
 SCH = Namespace("http://schema.org/")
@@ -19,12 +20,14 @@ def create_rdf(path = None) -> Graph:
     g.bind("ex", NAMESPACE)
     g.bind("sch", SCH)
 
-    g.parse("Scripts//create_rdf//rdfschema.ttl",format="turtle")
+    g.parse(filename,format="turtle")
+
+    g.serialize("graph_created.ttl", format="turtle")
     return g
            
 # Función para añadir una persona al grafo
 def add_person(graph, person_id, name=None, orcid=None, nationality=None, affiliation=None):
-    person_uri = URIRef(f"http://example.org/#Person{person_id}")
+    person_uri = URIRef(f"http://schema.org/Person{person_id}")
     graph.add((person_uri, RDF.type, SCH.Person))
     if name:
         graph.add((person_uri, SCH.name, Literal(name, datatype=XSD.string)))
@@ -38,7 +41,7 @@ def add_person(graph, person_id, name=None, orcid=None, nationality=None, affili
 
 # Función para añadir una organizacion al grafo
 def add_organization(graph, org_id, name,description=None, identifier=None, legal_name=None, website=None, org_type=None):
-    org_uri = URIRef(f"http://example.org/#Organization{org_id}")
+    org_uri = URIRef(f"http://schema.org/Organization{org_id}")
     graph.add((org_uri, RDF.type, SCH.Organization))
     graph.add((org_uri, SCH.name, Literal(name, datatype=XSD.string)))
     if description:
@@ -55,7 +58,7 @@ def add_organization(graph, org_id, name,description=None, identifier=None, lega
 
 # Función para crear un artículo académico en el grafo
 def create_scholarly_article(graph, article_id, title, identifier, doi, funder_uri=None, author_uri=None):
-    article_uri = URIRef(f"http://example.org/#Article{article_id}")
+    article_uri = URIRef(f"http://schema.org/Article{article_id}")
     graph.add((article_uri, RDF.type, SCH.ScholarlyArticle))
     graph.add((article_uri, SCH.about, Literal(title, datatype=XSD.string)))
     graph.add((article_uri, SCH.identifier, Literal(identifier, datatype=XSD.string)))
@@ -83,13 +86,13 @@ def create_topic(graph, topic_id, name, identifier = None):
 
 def set_prob_value(graph,prob_id,article_uri,topic_uri,value):
     prob_uri = URIRef(f"http://example.org/#Probability{prob_id}")
-    graph.add(prob_uri,NAMESPACE.probabilityValue,value)
+    graph.add(prob_uri,NAMESPACE.probabilityValue,Literal(value, datatype=XSD.float))
     graph.add(prob_uri,NAMESPACE.hasTopic,topic_uri)
     graph.add(prob_uri,NAMESPACE.hasArticle,article_uri)
 
 # Función para crear un proyecto en el grafo
 def create_project(graph, project_id, name, identifier=None, date_created=None):
-    project_uri = URIRef(f"http://example.org/#Project{project_id}")
+    project_uri = URIRef(f"http://schema.org/Project{project_id}")
     graph.add((project_uri, RDF.type, SCH.Project))
     graph.add((project_uri, SCH.name, Literal(name, datatype=XSD.string)))
     if identifier:
@@ -148,7 +151,12 @@ def get_organization_list(g,location):
             # Comprobar si el archivo 'organizations' existe
             if os.path.isfile(file_dir):
                 # Leer el contenido del archivo
-                with open(file_dir, 'r',encoding="utf-8") as file:
+                # get the encoding
+                with open(file_dir, 'rb') as file:
+                    raw_data = file.read()
+                    result = chardet.detect(raw_data)
+                    encoding = result['encoding']
+                with open(file_dir, 'r',encoding=encoding) as file:
                     ror_id = file.readline().removeprefix("ROR ID: ").removesuffix("\n")
                     file.readline()
                     org_type = file.readline().removesuffix("\n")
@@ -191,7 +199,12 @@ def get_organization_list(g,location):
 
 def get_paper_name(path):
     c_path = os.path.join(path,"title.txt")
-    with open(c_path, 'r',encoding="utf-8") as file:
+    # get the encoding
+    with open(c_path, 'rb') as file:
+        raw_data = file.read()
+        result = chardet.detect(raw_data)
+        encoding = result['encoding']
+    with open(c_path, 'r',encoding=encoding) as file:
         name = file.readline().removesuffix("\n")
         return name
 
@@ -209,7 +222,7 @@ def create_all_papers(g,location):
         for dir_name in dirs:
             subdir_path = os.path.join(subdir, dir_name)
             if dir_name == "organizations":
-                get_organization_list(g,subdir_path) 
+                get_organization_list(g,subdir_path)
             elif dir_name == "papers":
                 pass
             else:
@@ -222,7 +235,12 @@ def create_all_papers(g,location):
                     paper_uri = create_scholarly_article(g,len(paper_list)-1,paper_name,len(paper_list)-1,len(paper_list)-1)
                     paper_list_uri.append(paper_uri)
                 if os.path.isfile(authors_file_path):
-                    with open(authors_file_path, 'r',encoding="utf-8") as file:
+                    # get the encoding
+                    with open(authors_file_path, 'rb') as file:
+                        raw_data = file.read()
+                        result = chardet.detect(raw_data)
+                        encoding = result['encoding']
+                    with open(authors_file_path, 'r',encoding=encoding) as file:
                         line = file.readline()
                         while line:
                             person_uri =""
@@ -236,7 +254,12 @@ def create_all_papers(g,location):
                             add_author_to_article(g,paper_uri,person_uri)
                             line = file.readline()
                 if os.path.isfile(organizations_file_path):
-                    with open(organizations_file_path, 'r',encoding="utf-8") as file:
+                    # get the encoding
+                    with open(organizations_file_path, 'rb') as file:
+                        raw_data = file.read()
+                        result = chardet.detect(raw_data)
+                        encoding = result['encoding']
+                    with open(organizations_file_path, 'r',encoding=encoding) as file:
                         line = file.readline()
                         while line:
                             org_uri =""
@@ -250,7 +273,12 @@ def create_all_papers(g,location):
                             add_funder_to_article(g,paper_uri,org_uri)
                             line = file.readline()
                 if os.path.isfile(topics_file_path):
-                    with open(topics_file_path, 'r',encoding="utf-8") as file:
+                    # get the encoding
+                    with open(topics_file_path, 'rb') as file:
+                        raw_data = file.read()
+                        result = chardet.detect(raw_data)
+                        encoding = result['encoding']
+                    with open(topics_file_path, 'r',encoding=encoding) as file:
                         line = file.readline().removesuffix("\n")
                         while line:                            
                             cleaned_str = line.strip("()")
@@ -269,6 +297,7 @@ def create_all_papers(g,location):
                             create_probability(g,prob_it,porcentaje,paper_uri,topic_uri)
 
                             line = file.readline().removesuffix("\n")
+    g.serialize("graph_all_papers.ttl", format="turtle")
 
 def create_org_relations(g):
     global relation_list
@@ -304,6 +333,7 @@ def create_org_relations(g):
                 org_relatedTo(g,from_uri,to_uri)
             else:
                 pass
+    g.serialize("graph_org_relations.ttl", format="turtle")
 
 def create_similarities(g,location):
     global sim_it
@@ -313,7 +343,12 @@ def create_similarities(g,location):
     global paper_list_uri
     path = os.path.join(location,"similarities.txt")
     if os.path.isfile(path):
-        with open(path, 'r',encoding="utf-8") as file:
+        # get the encoding
+        with open(path, 'rb') as file:
+            raw_data = file.read()
+            result = chardet.detect(raw_data)
+            encoding = result['encoding']
+        with open(path, 'r',encoding=encoding) as file:
             line = file.readline().removesuffix("\n")
             while line:
                 cleaned_str = line.strip("()")
@@ -343,9 +378,10 @@ def create_similarities(g,location):
 
                 sim_it+=1
                 sim_uri = create_similarity(g,sim_it,sim,art_uri1,art_uri2)
+    g.serialize("graph_similarities", format="turtle")
 
 
-data_location = os.path.join("Scripts","results")
+data_location = "results"
 
 person_list = []
 person_list_uri = []
@@ -371,11 +407,18 @@ similarity_list_uri = []
 prob_it =0
 sim_it =0
 
-def make_rdf_file():
+def make_rdf_file(path):
+
     global data_location
-    g =create_rdf()
+    g =create_rdf(path)
     create_all_papers(g,data_location)
     create_org_relations(g)
     create_similarities(g,data_location)
-    g.serialize(destination=os.path.join("Scripts","output.ttl"), format="turtle")
+
+    if not path:
+        filename = "output.ttl"
+    else :
+        filename = path+"output.ttl"
+
+    g.serialize(filename, format="turtle")
     return g

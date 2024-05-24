@@ -3,10 +3,11 @@ Extracts data of referenced papers
 Requires list of papers IDs (arXiv or DOI)
 '''
 
-import requests
 import xml.etree.ElementTree as ET
 import os
 from pathlib import Path
+from enriched_kg.utils_request import make_request_with_retry
+
 
 TITLE = ""
 
@@ -32,7 +33,6 @@ def get_referenced_papers(title):
         if doi:
             doi_list.append(doi)
 
-    print(doi_list)
 
     # get_dois(doi_list)
 
@@ -51,7 +51,7 @@ def get_ids(ids_file):
 
 def get_doi_from_arxiv(arxiv_id):
     url = f'http://export.arxiv.org/api/query?id_list={arxiv_id}'
-    response = requests.get(url)
+    response = make_request_with_retry(url)
     root = ET.fromstring(response.content)
     for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
         for link in entry.findall('{http://www.w3.org/2005/Atom}link'):
@@ -74,7 +74,7 @@ def get_doi_from_arxiv(arxiv_id):
     # """
 
     # url = 'https://query.wikidata.org/sparql'
-    # response = requests.get(url, params={'query': query, 'format': 'json'})
+    # response = make_request_with_retry(url, params={'query': query, 'format': 'json'})
     # data = response.json()
 
     # with open(os.path.join(final_results_path, "papers_dois"), "+w") as file:
@@ -99,7 +99,8 @@ def get_arxivs(arxiv_list):
     """
 
     url = 'https://query.wikidata.org/sparql'
-    response = requests.get(url, params={'query': query, 'format': 'json'})
+    response = make_request_with_retry(url, params={'query': query, 'format': 'json'})
+
     data = response.json()
     i = 1
     for item in data['results']['bindings']:
