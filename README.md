@@ -7,79 +7,100 @@
 - [Advanced Paper Analyzer](#advanced-paper-analyzer)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Requirements](#requirements)
-    - [Python](#python)
-    - [Dependencies](#dependencies)
-    - [Grobid](#grobid)
-    - [Apache Jena Fuseki](#apache-jena-fuseki)
+    - [Installation](#Installation)
   - [How to use](#how-to-use)
-    - [To create the dataset](#to-create-the-dataset)
 
 ## Introduction
 Advanced Paper Analyzer takes a set of research papers and extracts its metadata to obtain information. It accesses Wikidata and ROR to expand the information and also has processes that compare the similarity between the abstracts taken from the papers and that analyze the possible topics the paper is about.
 
+### Installation
 
-### Python
+1. Clone the repository:
+
+```bash
+git clone https://gitlab.utc.fr/royhucheradorni/ia04.git
+```
+
+2. Python
+
 The code runs on **Python 3.10**, so it must be installed in the system to be able to use Advanced Paper Analyzer.
 
-### Dependencies
+
+3. Dependencies
+
 Dependencies can be installed by using [Poetry](https://python-poetry.org/). You simply must go to the root directory of the repository and run:
 
-    poetry install
+```bash
+poetry install
+```
 
 Or install all dependencies with pip using requirements.txt in the root directory of the repository by running:
 
-    pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
-### Grobid
+4. Grobid
+
 Grobid is used to extract metadata from the papers, which are then used for further analysis. For this reason you must install either the full or light version of the [Grobid 0.8.0](https://grobid.readthedocs.io/en/latest/) [Docker](https://www.docker.com/) image. 
 To run Grobid use one of this commands depending on version you have:
 
 Full image:
 [https://hub.docker.com/r/grobid/grobid](https://hub.docker.com/r/grobid/grobid)
+```bash
+docker pull grobid/grobid
+```
 
 Light image:
 [https://hub.docker.com/r/lfoppiano/grobid/](https://hub.docker.com/r/lfoppiano/grobid/)
+```bash
+docker pull lfoppiano/grobid
+```
 
-### Apache Jena Fuseki
+5. Apache Jena Fuseki
+
 [Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) is used to create the triple-store and the SPARQL endpoint, so it must be installed and run as described in the section to create the dataset
-
+```bash
+docker pull stain/jena-fuseki
+```
 ## How to use
 
-Download the repository : git clone --recursive https://github.com/anastmur/advanced_paper_analyzer
 
-install the Dependencies : see dependencies section
+1. run Jena-fuseki and grobid with : 
+```bash
+docker run -p 8070:8070 lfoppiano/grobid:latest-develop
+```
+```bash
+docker run -p 3035:3030 -e ADMIN_PASSWORD=pw123 -e FUSEKI_DATASET_1=KG_dataset stain/jena-fuseki
+```
+it creates the dataset at the same time
 
-download grobid and Jena-Fuseki image from dockerhub : 
-- docker pull lfoppiano/grobid
-- docker pull stain/jena-fuseki
+2. Run the script interface.py
 
-and run them with : 
-- docker run -p 8070:8070 lfoppiano/grobid:latest-develop
-- docker run -p 3035:3030 -e ADMIN_PASSWORD=pw123 -e FUSEKI_DATASET_1=KG_dataset stain/jena-fuseki
-(it creates the dataset at the same time)
+You can now : 
+- PROCESS PDF WITH GROBID  : process all the pdf in the directory Corpus_pdf to reformat the data/metadata in a XML format.
 
-- Run the script interface.py
+- EXTRACT DATA : Extract the data (title, date, author) from the processed pdf and do some topic modeling and compute similarity between the abstract of each pdf.
 
-Exemple of query :
-- to request all the pair of article with more than 70% of similarity :
+- Enrich DATA : Add more information coming from ROR and WIKIDATA (name, authors, organizations_founder of referenced papers).
 
-> "PREFIX http: <http://www.w3.org/2011/http#>
-> PREFIX ex: <http://example.org/#>
-> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-> PREFIX sch: <http://schema.org/> 
-> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-> 
-> SELECT ?title1 ?title2 ?SimilarityScore
-> WHERE {
->   ?Entity ex:value ?SimilarityScore .
->   ?Entity ex:firstArticle ?Article1 .
->   ?Article1 sch:about ?title1 .
->   ?Article2 sch:about ?title2 .
->   ?Entity ex:secondArticle ?Article2 .
->   FILTER (?SimilarityScore > 0.70)
-> }
-> "
+- INSERT DATA FROM RDF : Add all this data to KG server Jena-fuseki.
+
+- SUBMIT QUERY : in the input box, write your SPARQL queries and submit. 
+
+Example of queries :
+1. select each topic of which the papers have more than 0.90 probability of belonging to that topic :
+<img width="100%" src="images/example_query_1.png" alt="our RDF diagram">
+
+2. to request all the pair of article with more than 70% of similarity :
+<img width="100%" src="images/example_query_2.png" alt="our RDF diagram">
+
+
+
+Our RDF diagram :
+<img width="100%" src="images/RDF_diagram.png" alt="our RDF diagram">
 
     
+### Coming soon 
+
+- Docker containerization (still problem to display GUI)

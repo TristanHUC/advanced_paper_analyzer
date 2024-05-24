@@ -16,11 +16,17 @@ def query(URL = "http://localhost:3035/KG_dataset/query", query = None):
     output = []
     try:
         results = sparql_query.query().convert()
+        headers = []
+        for var in results["results"]["bindings"][0]:
+            headers.append(var)
+        output.append(" | ".join(headers))
+        output.append("\n")
         for result in results["results"]["bindings"]:
-            Entity = result["Entity"]["value"] if "Entity" in result else "N/A"
-            Attribut = result["Attribut"]["value"] if "Attribut" in result else "N/A"
-            Value = result["Value"]["value"] if "Value" in result else "N/A"
-            output.append(f"{Entity} | {Attribut} | {Value}")
+            row = []
+            for var in result:
+                value = result[var]["value"] if "value" in result[var] else "N/A"
+                row.append(value)
+            output.append(" | ".join(row))
     except Exception as e:
         print(e)
         output.append(f" fail : {e}")

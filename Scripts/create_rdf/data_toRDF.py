@@ -22,7 +22,6 @@ def create_rdf(path = None) -> Graph:
 
     g.parse(filename,format="turtle")
 
-    g.serialize("graph_created.ttl", format="turtle")
     return g
            
 # Función para añadir una persona al grafo
@@ -297,7 +296,6 @@ def create_all_papers(g,location):
                             create_probability(g,prob_it,porcentaje,paper_uri,topic_uri)
 
                             line = file.readline().removesuffix("\n")
-    g.serialize("graph_all_papers.ttl", format="turtle")
 
 def create_org_relations(g):
     global relation_list
@@ -333,7 +331,6 @@ def create_org_relations(g):
                 org_relatedTo(g,from_uri,to_uri)
             else:
                 pass
-    g.serialize("graph_org_relations.ttl", format="turtle")
 
 def create_similarities(g,location):
     global sim_it
@@ -353,15 +350,15 @@ def create_similarities(g,location):
             while line:
                 cleaned_str = line.strip("()")
                 parts = cleaned_str.rsplit(", ", 1)
-                strings_part = parts[0].strip("()")
-                s1, s2 = strings_part.split(", ")
-                s1 = s1.strip("'")
-                s2 = s2.strip("'")
+                s1, s2 = parts[0].split(", ")
+                s1 = s1.strip("['")
+                s2 = s2.strip("']")
                 sim = float(parts[1])
                 line = file.readline().removesuffix("\n")
                 
                 art_uri1 = ""
                 art_uri2 = ""
+
                 if not paper_list.count(s1) > 0:
                     paper_list.append(s1)
                     art_uri1 = create_scholarly_article(g,len(paper_list)-1,s1,len(paper_list)-1,len(paper_list)-1)
@@ -378,7 +375,6 @@ def create_similarities(g,location):
 
                 sim_it+=1
                 sim_uri = create_similarity(g,sim_it,sim,art_uri1,art_uri2)
-    g.serialize("graph_similarities", format="turtle")
 
 
 data_location = "results"
