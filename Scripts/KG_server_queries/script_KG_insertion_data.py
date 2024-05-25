@@ -1,5 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, POST
-import create_rdf.data_toRDF as dtrdf
+import Scripts.create_rdf.data_toRDF as dtrdf
+import os
 
 def insert(URL = "http://localhost:3035/KG_dataset/update"):
     # URL of endpoint
@@ -9,7 +10,7 @@ def insert(URL = "http://localhost:3035/KG_dataset/update"):
     sparql_update.setMethod(POST)
     sparql_update.setCredentials("admin", "pw123")
 
-    g = dtrdf.make_rdf_file('create_rdf/')
+    g = dtrdf.make_rdf_file(os.path.join("Scripts", "create_rdf"))
 
     # Serialize without prefixes (prefixes make it bug)
     data = g.serialize(format='nt')

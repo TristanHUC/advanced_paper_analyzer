@@ -13,7 +13,7 @@ def create_rdf(path = None) -> Graph:
     if not path:
         filename = "rdfschema.ttl"
     else :
-        filename = path+"rdfschema.ttl"
+        filename = os.path.join(path, "rdfschema.ttl")
 
     g = Graph()
 
@@ -377,7 +377,7 @@ def create_similarities(g,location):
                 sim_uri = create_similarity(g,sim_it,sim,art_uri1,art_uri2)
 
 
-data_location = "results"
+data_location = os.path.join("Scripts","results")
 
 person_list = []
 person_list_uri = []
@@ -414,7 +414,7 @@ def make_rdf_file(path):
     if not path:
         filename = "output.ttl"
     else :
-        filename = path+"output.ttl"
+        filename = os.path.join(path, "output.ttl")
 
     g.serialize(filename, format="turtle")
     return g

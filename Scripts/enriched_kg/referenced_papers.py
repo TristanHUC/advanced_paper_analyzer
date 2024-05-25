@@ -6,7 +6,7 @@ Requires list of papers IDs (arXiv or DOI)
 import xml.etree.ElementTree as ET
 import os
 from pathlib import Path
-from enriched_kg.utils_request import make_request_with_retry
+from Scripts.enriched_kg.utils_request import make_request_with_retry
 
 
 TITLE = ""
@@ -21,7 +21,7 @@ def get_referenced_papers(title):
 
     # final_results_path = os.path.join(results_path_name,f"{title}")
 
-    arxiv_ids = get_ids(os.path.join("results", TITLE,'arxiv.txt'))
+    arxiv_ids = get_ids(os.path.join("Scripts","results", TITLE,'arxiv.txt'))
     # doi_ids = get_ids('doi.txt')
 
     # get_dois(doi_ids)
@@ -104,10 +104,10 @@ def get_arxivs(arxiv_list):
     data = response.json()
     i = 1
     for item in data['results']['bindings']:
-        Path(os.path.join("results", TITLE, "papers",f"paper_{i}")).mkdir(parents=True, exist_ok=True)
+        Path(os.path.join("Scripts","results", TITLE, "papers",f"paper_{i}")).mkdir(parents=True, exist_ok=True)
         if 'authorLabel' in item:
-            with open(os.path.join("results", TITLE, "papers",f"paper_{i}", "authors.txt"), "+w") as file:
+            with open(os.path.join("Scripts","results", TITLE, "papers",f"paper_{i}", "authors.txt"), "+w") as file:
                 file.write(str(item['authorLabel']['value']))
-        with open(os.path.join("results", TITLE, "papers",f"paper_{i}", "title.txt"), "+w") as file:
+        with open(os.path.join("Scripts","results", TITLE, "papers",f"paper_{i}", "title.txt"), "+w") as file:
             file.write(str(item['itemLabel']['value']))
         i += 1

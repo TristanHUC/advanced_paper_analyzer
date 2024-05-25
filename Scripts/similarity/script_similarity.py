@@ -1,4 +1,4 @@
-from utils import extract_text, text_to_ListSentences, cosine, remove_stopwords
+from Scripts.utils import extract_text, text_to_ListSentences, cosine, remove_stopwords
 from lxml import etree
 
 
@@ -10,8 +10,8 @@ def pdf_similarity(title,file, sbert_model):
     titles = []
 
     for filename in array:
-        print('start similarities :', title, filename)
-        path_to_file = '../Grobid_processed_pdf/' + filename
+        #print('start similarities :', title, filename)
+        path_to_file = 'Grobid_processed_pdf/' + filename
         tree = etree.parse(path_to_file)
 
         root = tree.getroot()

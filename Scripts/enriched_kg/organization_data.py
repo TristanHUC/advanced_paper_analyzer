@@ -1,7 +1,7 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 import os
 from pathlib import Path
-from enriched_kg.utils_request import make_request_with_retry
+from Scripts.enriched_kg.utils_request import make_request_with_retry
 
 # Función para obtener datos de ROR
 def get_ror_data(organization_name):
@@ -76,16 +76,16 @@ def get_names(names_file):
 
 
 def get_organization_data(title):
-    organizations = get_names(os.path.join("results", title, "organizations.txt"))
+    organizations = get_names(os.path.join("Scripts","results", title, "organizations.txt"))
 
     # Recopilación de datos
     for org in organizations:
         ror_data = get_ror_data(org)
         wikidata_data = get_wikidata_data(org)
 
-        Path(os.path.join("results", "organizations")).mkdir(parents=True, exist_ok=True)
+        Path(os.path.join("Scripts","results", "organizations")).mkdir(parents=True, exist_ok=True)
 
-        path = os.path.join("results", "organizations", org)
+        path = os.path.join("Scripts","results", "organizations", org)
         with open(path,"w+") as file:
             if ror_data:
                 for key, value in ror_data.items():

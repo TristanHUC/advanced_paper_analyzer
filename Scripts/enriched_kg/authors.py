@@ -1,4 +1,4 @@
-from enriched_kg.utils_request import make_request_with_retry
+from Scripts.enriched_kg.utils_request import make_request_with_retry
 import os
 
 # def query_wikidata(query):

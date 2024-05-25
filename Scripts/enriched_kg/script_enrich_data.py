@@ -1,5 +1,5 @@
-from enriched_kg.process_grobid_data import process_grobid
-from enriched_kg.authors import process_authors
+from Scripts.enriched_kg.process_grobid_data import process_grobid
+from Scripts.enriched_kg.authors import process_authors
 
 def process_enriched_kg():
     try :

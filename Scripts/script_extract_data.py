@@ -1,7 +1,7 @@
 from lxml import etree
-from utils import extract_text, extract_arXiv_id
-from topic_modeling.script_topic_modeling import topic_classification
-from similarity.script_similarity import pdf_similarity
+from Scripts.utils import extract_text, extract_arXiv_id
+from Scripts.topic_modeling.script_topic_modeling import topic_classification
+from Scripts.similarity.script_similarity import pdf_similarity
 import sys
 import os
 from pathlib import Path
@@ -11,16 +11,16 @@ from sentence_transformers import SentenceTransformer
 def extract_data_all_pdf():
     sbert_model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
     try :
-        grobid_processed_pdf = os.listdir(os.path.join("..", "Grobid_processed_pdf"))
+        grobid_processed_pdf = os.listdir("Grobid_processed_pdf")
 
-        results_path_name = "results"
+        results_path_name = os.path.join("Scripts", "results")
 
         i = 1
 
         for input_name in grobid_processed_pdf:
 
-            path_to_file = os.path.join("..", "Grobid_processed_pdf", input_name[:len(input_name)])
-            # path_to_file = '../Grobid_processed_pdf/'+input_name[:len(input_name)]+'.grobid.tei.xml'
+            path_to_file = os.path.join("Grobid_processed_pdf", input_name[:len(input_name)])
+            # path_to_file = 'Grobid_processed_pdf/'+input_name[:len(input_name)]+'.grobid.tei.xml'
             tree = etree.parse(path_to_file)
 
             root = tree.getroot()
@@ -54,7 +54,7 @@ def extract_data_all_pdf():
             list_ID_arXiv = extract_arXiv_id(root)
 
             #topics modeling and classification
-            topics = topic_classification(Title,"../Grobid_processed_pdf")
+            topics = topic_classification(Title,"Grobid_processed_pdf")
 
             # RESULTS
             Path(os.path.join(results_path_name,f"paper_{i}")).mkdir(parents=True, exist_ok=True)
@@ -101,7 +101,7 @@ def extract_data_all_pdf():
         #for par, diferencia in diferencias:
             #print(f"Similarity entre {par[0]} y {par[1]}: {diferencia}")
 
-        similarities_path = os.path.join("results", "similarities.txt")
+        similarities_path = os.path.join("Scripts","results", "similarities.txt")
         with open(similarities_path, "w+") as similarities_file:
             similarity_list = diferencias
             for similarity in similarity_list:

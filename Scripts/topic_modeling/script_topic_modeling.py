@@ -1,4 +1,4 @@
-from utils import extract_text, text_to_ListSentences, remove_stopwords
+from Scripts.utils import extract_text, text_to_ListSentences, remove_stopwords
 import os
 from lxml import etree
 from sklearn.decomposition import LatentDirichletAllocation
@@ -16,7 +16,7 @@ def topic_classification(title,path_directory):
     all_abstracts = ''
     for filename in os.listdir(path_directory):
         i += 1
-        path_to_file = '../Grobid_processed_pdf/' + filename
+        path_to_file = 'Grobid_processed_pdf/' + filename
         tree = etree.parse(path_to_file)
 
         root = tree.getroot()

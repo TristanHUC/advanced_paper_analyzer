@@ -1,9 +1,9 @@
 import tkinter as tk
-from KG_server_queries.script_KG_query import query
-from KG_server_queries.script_KG_insertion_data import insert
-from script_grobit_pdf import process_pdf
-from script_extract_data import extract_data_all_pdf
-from enriched_kg.script_enrich_data import process_enriched_kg
+from Scripts.KG_server_queries.script_KG_query import query
+from Scripts.KG_server_queries.script_KG_insertion_data import insert
+from Scripts.script_grobit_pdf import process_pdf
+from Scripts.script_extract_data import extract_data_all_pdf
+from Scripts.enriched_kg.script_enrich_data import process_enriched_kg
 
 def request(raw_text, Insert = False, Query = False):
     if Query and not Insert:
