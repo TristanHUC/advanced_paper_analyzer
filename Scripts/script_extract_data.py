@@ -98,7 +98,7 @@ def extract_data_all_pdf():
         diferencias = [(pdf_similarity(a,b,sbert_model)) for a, b in combinations(grobid_processed_pdf, 2)]
 
         # Mostrar los resultados
-        for par, diferencia in diferencias:
+        #for par, diferencia in diferencias:
             #print(f"Similarity entre {par[0]} y {par[1]}: {diferencia}")
 
         similarities_path = os.path.join("results", "similarities.txt")
