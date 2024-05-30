@@ -75,7 +75,10 @@ docker run -p 3035:3030 -e ADMIN_PASSWORD=pw123 -e FUSEKI_DATASET_1=KG_dataset s
 ```
 it creates the dataset at the same time
 
-2. Run the script interface.py
+2. Run the script interface.py with the parameter 0
+```bash
+poetry run python interface.py 0
+```
 
 You can now : 
 - PROCESS PDF WITH GROBID  : process all the pdf in the directory Corpus_pdf to reformat the data/metadata in a XML format.

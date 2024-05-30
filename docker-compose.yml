@@ -9,14 +9,26 @@ services:
       - FUSEKI_DATASET_1=KG_dataset
     networks:
       - my-network
+    restart: "no"
 
   container2:
     build:
-      context: ./Containers
+      context: vnc_ubuntu
     ports:
-      - "8060:8060"
+      - "5901:5901"
     networks:
       - my-network
+    stdin_open: true
+    tty: true
+    restart: "no"
+
+  container3:
+    image: lfoppiano/grobid:latest-develop
+    ports:
+      - "8070:8070"
+    networks:
+      - my-network
+    restart: "no"
 
 networks:
   my-network:

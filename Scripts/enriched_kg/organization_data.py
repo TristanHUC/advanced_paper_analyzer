@@ -71,7 +71,7 @@ def get_names(names_file):
     with open(names_file) as my_file:
         all_names = [line.strip('\n\r') for line in my_file]
 
-    print(all_names)
+    #print(all_names)
     return all_names
 
 

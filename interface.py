@@ -4,12 +4,15 @@ from Scripts.KG_server_queries.script_KG_insertion_data import insert
 from Scripts.script_grobit_pdf import process_pdf
 from Scripts.script_extract_data import extract_data_all_pdf
 from Scripts.enriched_kg.script_enrich_data import process_enriched_kg
+import sys
 
 def request(raw_text, Insert = False, Query = False):
     if Query and not Insert:
-        return query(query = raw_text)
+        URL_Jena_QUERY = URL_Jena + "query"
+        return query(URL_Jena_QUERY,query = raw_text)
     elif Insert and not Query:
-        return insert()
+        URL_Jena_Insert = URL_Jena + "update"
+        return insert(URL_Jena_Insert)
 
 def submit_query():
     raw_text = input.get(1.0, tk.END)
@@ -28,7 +31,7 @@ def submit_insert():
 
 def submit_process():
     output.delete(1.0, tk.END)
-    output.insert(tk.END,process_pdf())
+    output.insert(tk.END,process_pdf(URL_Grobid))
 
 def submit_extract():
     output.delete(1.0, tk.END)
@@ -37,6 +40,16 @@ def submit_extract():
 def submit_enrich():
     output.delete(1.0, tk.END)
     output.insert(tk.END,process_enriched_kg())
+
+URL_Jena = ""
+URL_Grobid = ""
+
+if int(sys.argv[1]) == 0:
+    URL_Jena = "http://localhost:3035/KG_dataset/"
+    URL_Grobid = 'localhost'
+elif int(sys.argv[1]) == 1:
+    URL_Jena = "http://container1:3035/KG_dataset/"
+    URL_Grobid = 'container3'
 
 window = tk.Tk()
 
