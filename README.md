@@ -8,12 +8,16 @@
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
     - [Installation](#Installation)
-  - [How to use](#how-to-use)
+    - [How to use](#how-to-use)
+  - [Docker](#Docker)
+    - [How to install and run](#how-to-install-and-run)
 
 ## Introduction
 Advanced Paper Analyzer takes a set of research papers and extracts its metadata to obtain information. It accesses Wikidata and ROR to expand the information and also has processes that compare the similarity between the abstracts taken from the papers and that analyze the possible topics the paper is about.
 
 ### Installation
+
+You have the choice to run the application in a container (note that you need a VNC-client) [here](#Docker) or in your computer as follows :
 
 1. Clone the repository:
 
@@ -63,7 +67,7 @@ docker pull lfoppiano/grobid
 ```bash
 docker pull stain/jena-fuseki
 ```
-## How to use
+### How to use
 
 
 1. run Jena-fuseki and grobid with : 
@@ -104,6 +108,22 @@ Our RDF diagram :
 <img width="100%" src="images/RDF_diagram.png" alt="our RDF diagram">
 
     
-### Coming soon 
+# DOCKER
 
-- Docker containerization (still problem to display GUI)
+In order to display the Graphic User Interface running in a docker container, we create a VNC-server. 
+Therefore, you will need to have a VNC-client software (such as RealVNC Viewer).
+
+## How to install and run
+
+1. Go to the location of the docker-compose and run : 
+```bash
+docker-compose build 
+docker-compose up -d
+```
+2. Connect to the container using your VNC-client at the adress : localhost:5901
+The password is : pw123
+
+3. Open a terminal and execute :
+```bash
+poetry run python interface.py 1
+```

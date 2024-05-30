@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir /root/.vnc \
-    && echo "password" | vncpasswd -f > /root/.vnc/passwd \
+    && echo "pw123" | vncpasswd -f > /root/.vnc/passwd \
     && chmod 600 /root/.vnc/passwd
 
 RUN touch /root/.Xauthority
