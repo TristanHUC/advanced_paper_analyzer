@@ -107,7 +107,6 @@ Example of queries :
 Our RDF diagram :
 <img width="100%" src="images/RDF_diagram.png" alt="our RDF diagram">
 
-    
 # DOCKER
 
 In order to display the Graphic User Interface running in a docker container, we create a VNC-server. 
