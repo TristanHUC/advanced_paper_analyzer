@@ -55,7 +55,7 @@ RUN curl -sSL https://install.python-poetry.org | python3.10 -
 
 ENV PATH="/root/.local/bin:$PATH"
 
-RUN git clone --recursive https://github.com/anastmur/advanced_paper_analyzer
+RUN git clone --recursive https://github.com/TristanHUC/advanced_paper_analyzer
 
 WORKDIR /advanced_paper_analyzer
 
