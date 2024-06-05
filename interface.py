@@ -49,7 +49,7 @@ if int(sys.argv[1]) == 0:
     URL_Grobid = 'localhost'
 elif int(sys.argv[1]) == 1:
     URL_Jena = "http://container1:3030/KG_dataset/"
-    URL_Grobid = "http://container3:8070/KG_dataset/"
+    URL_Grobid = "http://container3:8070"
 
 window = tk.Tk()
 
