@@ -22,7 +22,7 @@ You have the choice to run the application in a container (note that you need a 
 1. Clone the repository:
 
 ```bash
-git clone https://gitlab.utc.fr/royhucheradorni/ia04.git
+git clone https://github.com/TristanHUC/advanced_paper_analyzer
 ```
 
 2. Python
